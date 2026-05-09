@@ -1,3 +1,3 @@
 export const App = () => {
-	return <h1>Car History - ARVINO</h1>;
+  return <h1>Car History - ARVINO</h1>;
 };
