@@ -110,5 +110,11 @@ export const baseTheme = {
       '3xl': '96px',
       '4xl': '120px',
     },
+    controllerSize: {
+      sm: '32px',
+      md: '40px',
+      lg: '48px',
+      xl: '56px',
+    },
   },
 } as const;

@@ -324,5 +324,11 @@ export const vars = createThemeContract({
       '3xl': null,
       '4xl': null,
     },
+    controllerSize: {
+      sm: null,
+      md: null,
+      lg: null,
+      xl: null,
+    },
   },
 });
