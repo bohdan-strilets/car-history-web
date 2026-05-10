@@ -88,4 +88,27 @@ export const baseTheme = {
     toast: '6000',
     tooltip: '7000',
   },
+
+  layout: {
+    iconSize: {
+      xs: '12px',
+      sm: '16px',
+      md: '20px',
+      lg: '24px',
+      xl: '32px',
+      '2xl': '40px',
+      '3xl': '48px',
+      '4xl': '64px',
+    },
+    iconBoxSize: {
+      xs: '20px',
+      sm: '28px',
+      md: '36px',
+      lg: '44px',
+      xl: '52px',
+      '2xl': '64px',
+      '3xl': '80px',
+      '4xl': '96px',
+    },
+  },
 } as const;
