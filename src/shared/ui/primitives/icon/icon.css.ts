@@ -73,6 +73,7 @@ export const root = recipe({
       tertiary: { color: vars.color.text.tertiary },
       disabled: { color: vars.color.text.disabled },
       inverse: { color: vars.color.text.inverse },
+      inherit: { color: 'inherit' },
       onColor: { color: vars.color.text.onColor },
       accent: { color: vars.color.accent.solid },
       success: { color: vars.color.semantic.success.solid },
