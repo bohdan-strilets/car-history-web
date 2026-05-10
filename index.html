@@ -1,10 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background-color: #1a1a1a">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web</title>
+    <title>Arvino</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body,
+      #root {
+        height: 100%;
+        min-height: 100%;
+      }
+      html.dark,
+      html.dark body,
+      html.dark #root {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+      }
+      html.light,
+      html.light body,
+      html.light #root {
+        background-color: #e8e9ef;
+        color: #1c1f2e;
+      }
+    </style>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('arvino-theme');
+          var theme = stored ? JSON.parse(stored).state?.theme : 'system';
+          var isDark =
+            theme === 'dark' ||
+            (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.className = isDark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
