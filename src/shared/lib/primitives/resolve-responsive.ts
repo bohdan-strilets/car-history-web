@@ -1,11 +1,12 @@
 import type { Breakpoint } from '@shared/styles';
 import type { ResponsiveStyleMap, ResponsiveValue } from '@shared/types';
 
-export const resolveResponsive = <T extends string>(
+export const resolveResponsive = <T extends string | number>(
   map: ResponsiveStyleMap,
   value: ResponsiveValue<T> | undefined,
 ): string[] => {
-  if (!value || typeof value === 'string') return [];
+  if (value === undefined || value === null) return [];
+  if (typeof value === 'string' || typeof value === 'number') return [];
 
   const classes: string[] = [];
 
