@@ -22,19 +22,20 @@ const SurfaceInner = <T extends ElementType = 'div'>(
 ) => {
   const Tag = (as ?? 'div') as ElementType;
 
-  const recipeClass = root({ variant, border, shadow, radius });
-
-  const colorClass =
-    !gradient && color
+  const fillClass = gradient
+    ? gradientVariants[gradient]
+    : color
       ? colorVariant === 'solid'
         ? colorSolidVariants[color]
         : colorSoftVariants[color]
       : undefined;
 
-  const gradientClass = gradient ? gradientVariants[gradient] : undefined;
-
   return (
-    <Tag ref={ref} className={clsx(recipeClass, colorClass, gradientClass, className)} {...rest}>
+    <Tag
+      ref={ref}
+      className={clsx(root({ variant, border, shadow, radius }), fillClass, className)}
+      {...rest}
+    >
       {children}
     </Tag>
   );

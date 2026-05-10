@@ -15,3 +15,4 @@ export interface ThemeStore {
 
 // Colors
 export type PaletteColors = keyof typeof vars.color.palette;
+export type SemanticColors = keyof typeof vars.color.semantic;

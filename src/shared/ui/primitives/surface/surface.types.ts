@@ -1,4 +1,4 @@
-import type { PaletteColors } from '@shared/styles';
+import type { PaletteColors, SemanticColors } from '@shared/styles';
 import { type RecipeVariants } from '@vanilla-extract/recipes';
 import { type ComponentPropsWithoutRef, type ElementType } from 'react';
 
@@ -10,6 +10,8 @@ export type SurfaceVariant = NonNullable<SurfaceVariants['variant']>;
 export type SurfaceBorder = NonNullable<SurfaceVariants['border']>;
 export type SurfaceShadow = NonNullable<SurfaceVariants['shadow']>;
 export type SurfaceRadius = NonNullable<SurfaceVariants['radius']>;
+
+export type SurfaceColor = PaletteColors | SemanticColors;
 
 export type ColorVariant = 'soft' | 'solid';
 
@@ -23,7 +25,7 @@ export type GradientToken =
 
 export interface SurfaceOwnProps {
   variant?: SurfaceVariant;
-  color?: PaletteColors;
+  color?: SurfaceColor;
   colorVariant?: ColorVariant;
   gradient?: GradientToken;
   border?: SurfaceBorder;

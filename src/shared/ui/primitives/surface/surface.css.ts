@@ -1,28 +1,32 @@
-import { vars, type PaletteColors } from '@shared/styles';
+import { vars, type PaletteColors, type SemanticColors } from '@shared/styles';
 import { styleVariants } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-// Palette Keys
+// Color Variants
 
 const paletteKeys = Object.keys(vars.color.palette) as PaletteColors[];
 
-// Color Variants
+export const colorSoftVariants = styleVariants({
+  ...Object.fromEntries(
+    paletteKeys.map((k) => [k, { backgroundColor: vars.color.palette[k].soft }]),
+  ),
+  success: { backgroundColor: vars.color.semantic.success.soft },
+  warning: { backgroundColor: vars.color.semantic.warning.soft },
+  danger: { backgroundColor: vars.color.semantic.danger.soft },
+  info: { backgroundColor: vars.color.semantic.info.soft },
+  accent: { backgroundColor: vars.color.accent.soft },
+} as unknown as Record<PaletteColors | SemanticColors, { backgroundColor: string }>);
 
-export const colorSoftVariants = styleVariants(
-  Object.fromEntries(paletteKeys.map((k) => [k, vars.color.palette[k].soft])) as Record<
-    PaletteColors,
-    string
-  >,
-  (v) => ({ backgroundColor: v }),
-);
-
-export const colorSolidVariants = styleVariants(
-  Object.fromEntries(paletteKeys.map((k) => [k, vars.color.palette[k].solid])) as Record<
-    PaletteColors,
-    string
-  >,
-  (v) => ({ backgroundColor: v }),
-);
+export const colorSolidVariants = styleVariants({
+  ...Object.fromEntries(
+    paletteKeys.map((k) => [k, { backgroundColor: vars.color.palette[k].solid }]),
+  ),
+  success: { backgroundColor: vars.color.semantic.success.solid },
+  warning: { backgroundColor: vars.color.semantic.warning.solid },
+  danger: { backgroundColor: vars.color.semantic.danger.solid },
+  info: { backgroundColor: vars.color.semantic.info.solid },
+  accent: { backgroundColor: vars.color.accent.solid },
+} as unknown as Record<PaletteColors | SemanticColors, { backgroundColor: string }>);
 
 // Gradient Variants
 
@@ -32,21 +36,9 @@ export const gradientVariants = styleVariants({
   'accent-solid': { backgroundImage: vars.gradient.accent.solid },
   'accent-soft': { backgroundImage: vars.gradient.accent.soft },
   'accent-glow': { backgroundImage: vars.gradient.accent.glow },
-  'palette-orange': { backgroundImage: vars.gradient.palette.orange },
-  'palette-amber': { backgroundImage: vars.gradient.palette.amber },
-  'palette-yellow': { backgroundImage: vars.gradient.palette.yellow },
-  'palette-lime': { backgroundImage: vars.gradient.palette.lime },
-  'palette-green': { backgroundImage: vars.gradient.palette.green },
-  'palette-teal': { backgroundImage: vars.gradient.palette.teal },
-  'palette-cyan': { backgroundImage: vars.gradient.palette.cyan },
-  'palette-sky': { backgroundImage: vars.gradient.palette.sky },
-  'palette-blue': { backgroundImage: vars.gradient.palette.blue },
-  'palette-indigo': { backgroundImage: vars.gradient.palette.indigo },
-  'palette-violet': { backgroundImage: vars.gradient.palette.violet },
-  'palette-purple': { backgroundImage: vars.gradient.palette.purple },
-  'palette-pink': { backgroundImage: vars.gradient.palette.pink },
-  'palette-rose': { backgroundImage: vars.gradient.palette.rose },
-  'palette-gray': { backgroundImage: vars.gradient.palette.gray },
+  ...Object.fromEntries(
+    paletteKeys.map((k) => [`palette-${k}`, { backgroundImage: vars.gradient.palette[k] }]),
+  ),
 });
 
 // Recipe
