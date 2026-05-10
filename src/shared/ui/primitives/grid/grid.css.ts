@@ -1,56 +1,13 @@
-import { media, vars } from '@shared/styles';
-import { styleVariants } from '@vanilla-extract/css';
+import { createResponsiveStyles } from '@shared/lib/primitives';
+import { vars } from '@shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
 
-// Responsive
-
-const columnValues = {
-  1: { gridTemplateColumns: 'repeat(1, minmax(0, 1fr))' },
-  2: { gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' },
-  3: { gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' },
-  4: { gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' },
-  5: { gridTemplateColumns: 'repeat(5, minmax(0, 1fr))' },
-  6: { gridTemplateColumns: 'repeat(6, minmax(0, 1fr))' },
-  7: { gridTemplateColumns: 'repeat(7, minmax(0, 1fr))' },
-  8: { gridTemplateColumns: 'repeat(8, minmax(0, 1fr))' },
-  9: { gridTemplateColumns: 'repeat(9, minmax(0, 1fr))' },
-  10: { gridTemplateColumns: 'repeat(10, minmax(0, 1fr))' },
-  11: { gridTemplateColumns: 'repeat(11, minmax(0, 1fr))' },
-  12: { gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' },
-} as const;
+import { column } from './grid.config';
 
 export const responsiveStyles = {
-  columns: {
-    tablet: styleVariants(columnValues, (v) => ({
-      '@media': { [media.tablet]: v },
-    })),
-    laptop: styleVariants(columnValues, (v) => ({
-      '@media': { [media.laptop]: v },
-    })),
-    desktop: styleVariants(columnValues, (v) => ({
-      '@media': { [media.desktop]: v },
-    })),
-    wideDesktop: styleVariants(columnValues, (v) => ({
-      '@media': { [media.wideDesktop]: v },
-    })),
-  },
-  gap: {
-    tablet: styleVariants(vars.spacing, (v) => ({
-      '@media': { [media.tablet]: { gap: v } },
-    })),
-    laptop: styleVariants(vars.spacing, (v) => ({
-      '@media': { [media.laptop]: { gap: v } },
-    })),
-    desktop: styleVariants(vars.spacing, (v) => ({
-      '@media': { [media.desktop]: { gap: v } },
-    })),
-    wideDesktop: styleVariants(vars.spacing, (v) => ({
-      '@media': { [media.wideDesktop]: { gap: v } },
-    })),
-  },
-} as const;
-
-// ─── Recipe ───────────────────────────────────────────────────────────────────
+  columns: createResponsiveStyles(column, (v) => ({ gridTemplateColumns: v })),
+  gap: createResponsiveStyles(vars.spacing, (v) => ({ gap: v })),
+};
 
 export const root = recipe({
   base: {
@@ -59,18 +16,18 @@ export const root = recipe({
 
   variants: {
     columns: {
-      1: { gridTemplateColumns: 'repeat(1, minmax(0, 1fr))' },
-      2: { gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' },
-      3: { gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' },
-      4: { gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' },
-      5: { gridTemplateColumns: 'repeat(5, minmax(0, 1fr))' },
-      6: { gridTemplateColumns: 'repeat(6, minmax(0, 1fr))' },
-      7: { gridTemplateColumns: 'repeat(7, minmax(0, 1fr))' },
-      8: { gridTemplateColumns: 'repeat(8, minmax(0, 1fr))' },
-      9: { gridTemplateColumns: 'repeat(9, minmax(0, 1fr))' },
-      10: { gridTemplateColumns: 'repeat(10, minmax(0, 1fr))' },
-      11: { gridTemplateColumns: 'repeat(11, minmax(0, 1fr))' },
-      12: { gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' },
+      '1': { gridTemplateColumns: 'repeat(1, minmax(0, 1fr))' },
+      '2': { gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' },
+      '3': { gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' },
+      '4': { gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' },
+      '5': { gridTemplateColumns: 'repeat(5, minmax(0, 1fr))' },
+      '6': { gridTemplateColumns: 'repeat(6, minmax(0, 1fr))' },
+      '7': { gridTemplateColumns: 'repeat(7, minmax(0, 1fr))' },
+      '8': { gridTemplateColumns: 'repeat(8, minmax(0, 1fr))' },
+      '9': { gridTemplateColumns: 'repeat(9, minmax(0, 1fr))' },
+      '10': { gridTemplateColumns: 'repeat(10, minmax(0, 1fr))' },
+      '11': { gridTemplateColumns: 'repeat(11, minmax(0, 1fr))' },
+      '12': { gridTemplateColumns: 'repeat(12, minmax(0, 1fr))' },
     },
 
     gap: {

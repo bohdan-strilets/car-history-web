@@ -1,30 +1,27 @@
 import { baseToken, resolveResponsive } from '@shared/lib/primitives';
 import { clsx } from 'clsx';
-import { forwardRef, type ElementType } from 'react';
+import { type ElementType } from 'react';
 
 import { responsiveStyles, root } from './text.css';
 import type { TextProps } from './text.types';
 
-const TextInner = <T extends ElementType = 'p'>(
-  {
-    as,
-    children,
-    className,
-    size,
-    weight,
-    color,
-    align,
-    lineHeight,
-    letterSpacing,
-    transform,
-    italic,
-    underline,
-    strike,
-    truncate,
-    ...rest
-  }: TextProps<T>,
-  ref: React.Ref<Element>,
-) => {
+export const Text = <T extends ElementType = 'p'>({
+  as,
+  children,
+  className,
+  size,
+  weight,
+  color,
+  align,
+  lineHeight,
+  letterSpacing,
+  transform,
+  italic,
+  underline,
+  strike,
+  truncate,
+  ...rest
+}: TextProps<T>) => {
   const Tag = (as ?? 'p') as ElementType;
 
   const recipeClass = root({
@@ -47,12 +44,8 @@ const TextInner = <T extends ElementType = 'p'>(
   ];
 
   return (
-    <Tag ref={ref} className={clsx(recipeClass, ...responsiveClasses, className)} {...rest}>
+    <Tag className={clsx(recipeClass, ...responsiveClasses, className)} {...rest}>
       {children}
     </Tag>
   );
 };
-
-export const Text = forwardRef(TextInner) as <T extends ElementType = 'p'>(
-  props: TextProps<T> & { ref?: React.Ref<Element> },
-) => React.ReactElement | null;

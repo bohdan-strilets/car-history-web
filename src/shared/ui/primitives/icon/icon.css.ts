@@ -1,27 +1,10 @@
-import { media, vars } from '@shared/styles';
-import { styleVariants } from '@vanilla-extract/css';
+import { createResponsiveStyles } from '@shared/lib/primitives';
+import { vars } from '@shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
 
-// Responsive
-
 export const responsiveStyles = {
-  size: {
-    tablet: styleVariants(vars.layout.iconSize, (v) => ({
-      '@media': { [media.tablet]: { width: v, height: v } },
-    })),
-    laptop: styleVariants(vars.layout.iconSize, (v) => ({
-      '@media': { [media.laptop]: { width: v, height: v } },
-    })),
-    desktop: styleVariants(vars.layout.iconSize, (v) => ({
-      '@media': { [media.desktop]: { width: v, height: v } },
-    })),
-    wideDesktop: styleVariants(vars.layout.iconSize, (v) => ({
-      '@media': { [media.wideDesktop]: { width: v, height: v } },
-    })),
-  },
-} as const;
-
-// Recipe
+  size: createResponsiveStyles(vars.layout.iconSize, (v) => ({ width: v, height: v })),
+};
 
 export const root = recipe({
   base: {
@@ -76,10 +59,12 @@ export const root = recipe({
       inherit: { color: 'inherit' },
       onColor: { color: vars.color.text.onColor },
       accent: { color: vars.color.accent.solid },
+
       success: { color: vars.color.semantic.success.solid },
       warning: { color: vars.color.semantic.warning.solid },
       danger: { color: vars.color.semantic.danger.solid },
       info: { color: vars.color.semantic.info.solid },
+
       orange: { color: vars.color.palette.orange.solid },
       amber: { color: vars.color.palette.amber.solid },
       yellow: { color: vars.color.palette.yellow.solid },

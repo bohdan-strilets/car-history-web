@@ -1,26 +1,22 @@
 import { baseToken, resolveResponsive } from '@shared/lib/primitives';
 import { clsx } from 'clsx';
-import { forwardRef } from 'react';
 
 import { responsiveStyles, root } from './heading.css';
 import type { HeadingProps } from './heading.types';
 
-const HeadingInner = (
-  {
-    as: Tag = 'h2',
-    children,
-    className,
-    size,
-    weight,
-    font,
-    color,
-    align,
-    transform,
-    truncate,
-    ...rest
-  }: HeadingProps,
-  ref: React.Ref<HTMLHeadingElement>,
-) => {
+export const Heading = ({
+  as: Tag = 'h2',
+  children,
+  className,
+  size,
+  weight,
+  font,
+  color,
+  align,
+  transform,
+  truncate,
+  ...rest
+}: HeadingProps) => {
   const recipeClass = root({
     size: baseToken(size),
     weight,
@@ -37,10 +33,8 @@ const HeadingInner = (
   ];
 
   return (
-    <Tag ref={ref} className={clsx(recipeClass, ...responsiveClasses, className)} {...rest}>
+    <Tag className={clsx(recipeClass, ...responsiveClasses, className)} {...rest}>
       {children}
     </Tag>
   );
 };
-
-export const Heading = forwardRef(HeadingInner);

@@ -1,72 +1,13 @@
-import { media, vars } from '@shared/styles';
-import { styleVariants } from '@vanilla-extract/css';
+import { createResponsiveStyles } from '@shared/lib/primitives';
+import { vars } from '@shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
 
-// Responsive
-
-const spacing = vars.spacing;
-const radius = vars.radius;
-
 export const responsiveStyles = {
-  p: {
-    tablet: styleVariants(spacing, (v) => ({
-      '@media': { [media.tablet]: { padding: v } },
-    })),
-    laptop: styleVariants(spacing, (v) => ({
-      '@media': { [media.laptop]: { padding: v } },
-    })),
-    desktop: styleVariants(spacing, (v) => ({
-      '@media': { [media.desktop]: { padding: v } },
-    })),
-    wideDesktop: styleVariants(spacing, (v) => ({
-      '@media': { [media.wideDesktop]: { padding: v } },
-    })),
-  },
-  px: {
-    tablet: styleVariants(spacing, (v) => ({
-      '@media': { [media.tablet]: { paddingLeft: v, paddingRight: v } },
-    })),
-    laptop: styleVariants(spacing, (v) => ({
-      '@media': { [media.laptop]: { paddingLeft: v, paddingRight: v } },
-    })),
-    desktop: styleVariants(spacing, (v) => ({
-      '@media': { [media.desktop]: { paddingLeft: v, paddingRight: v } },
-    })),
-    wideDesktop: styleVariants(spacing, (v) => ({
-      '@media': { [media.wideDesktop]: { paddingLeft: v, paddingRight: v } },
-    })),
-  },
-  py: {
-    tablet: styleVariants(spacing, (v) => ({
-      '@media': { [media.tablet]: { paddingTop: v, paddingBottom: v } },
-    })),
-    laptop: styleVariants(spacing, (v) => ({
-      '@media': { [media.laptop]: { paddingTop: v, paddingBottom: v } },
-    })),
-    desktop: styleVariants(spacing, (v) => ({
-      '@media': { [media.desktop]: { paddingTop: v, paddingBottom: v } },
-    })),
-    wideDesktop: styleVariants(spacing, (v) => ({
-      '@media': { [media.wideDesktop]: { paddingTop: v, paddingBottom: v } },
-    })),
-  },
-  radius: {
-    tablet: styleVariants(radius, (v) => ({
-      '@media': { [media.tablet]: { borderRadius: v } },
-    })),
-    laptop: styleVariants(radius, (v) => ({
-      '@media': { [media.laptop]: { borderRadius: v } },
-    })),
-    desktop: styleVariants(radius, (v) => ({
-      '@media': { [media.desktop]: { borderRadius: v } },
-    })),
-    wideDesktop: styleVariants(radius, (v) => ({
-      '@media': { [media.wideDesktop]: { borderRadius: v } },
-    })),
-  },
+  p: createResponsiveStyles(vars.spacing, (v) => ({ padding: v })),
+  px: createResponsiveStyles(vars.spacing, (v) => ({ paddingInline: v })),
+  py: createResponsiveStyles(vars.spacing, (v) => ({ paddingBlock: v })),
+  radius: createResponsiveStyles(vars.radius, (v) => ({ borderRadius: v })),
 } as const;
-
-// Recipe
 
 export const root = recipe({
   base: {

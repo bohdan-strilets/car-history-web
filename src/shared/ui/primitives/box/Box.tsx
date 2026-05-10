@@ -1,27 +1,24 @@
 import { baseToken, resolveResponsive } from '@shared/lib/primitives';
 import { clsx } from 'clsx';
-import { forwardRef, type ElementType } from 'react';
+import { type ElementType } from 'react';
 
 import { responsiveStyles, root } from './box.css';
 import type { BoxProps } from './box.types';
 
-const BoxInner = <T extends ElementType = 'div'>(
-  {
-    as,
-    children,
-    className,
-    p,
-    px,
-    py,
-    radius,
-    width,
-    height,
-    overflow,
-    position,
-    ...rest
-  }: BoxProps<T>,
-  ref: React.Ref<Element>,
-) => {
+export const Box = <T extends ElementType = 'div'>({
+  as,
+  children,
+  className,
+  p,
+  px,
+  py,
+  radius,
+  width,
+  height,
+  overflow,
+  position,
+  ...rest
+}: BoxProps<T>) => {
   const Tag = (as ?? 'div') as ElementType;
 
   const recipeClass = root({
@@ -43,12 +40,8 @@ const BoxInner = <T extends ElementType = 'div'>(
   ];
 
   return (
-    <Tag ref={ref} className={clsx(recipeClass, ...responsiveClasses, className)} {...rest}>
+    <Tag className={clsx(recipeClass, ...responsiveClasses, className)} {...rest}>
       {children}
     </Tag>
   );
 };
-
-export const Box = forwardRef(BoxInner) as <T extends ElementType = 'div'>(
-  props: BoxProps<T> & { ref?: React.Ref<Element> },
-) => React.ReactElement | null;

@@ -1,70 +1,14 @@
-import { media, vars } from '@shared/styles';
-import { styleVariants } from '@vanilla-extract/css';
+import { createResponsiveStyles } from '@shared/lib/primitives';
+import { vars } from '@shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
 
-// Responsive
-
-const gapValues = vars.spacing;
-
-const directionValues = {
-  row: 'row',
-  column: 'column',
-  'row-reverse': 'row-reverse',
-  'column-reverse': 'column-reverse',
-} as const;
-
-const wrapValues = {
-  wrap: 'wrap',
-  nowrap: 'nowrap',
-  'wrap-reverse': 'wrap-reverse',
-} as const;
+import { direction, wrap } from './stack.config';
 
 export const responsiveStyles = {
-  gap: {
-    tablet: styleVariants(gapValues, (v) => ({
-      '@media': { [media.tablet]: { gap: v } },
-    })),
-    laptop: styleVariants(gapValues, (v) => ({
-      '@media': { [media.laptop]: { gap: v } },
-    })),
-    desktop: styleVariants(gapValues, (v) => ({
-      '@media': { [media.desktop]: { gap: v } },
-    })),
-    wideDesktop: styleVariants(gapValues, (v) => ({
-      '@media': { [media.wideDesktop]: { gap: v } },
-    })),
-  },
-  direction: {
-    tablet: styleVariants(directionValues, (v) => ({
-      '@media': { [media.tablet]: { flexDirection: v as never } },
-    })),
-    laptop: styleVariants(directionValues, (v) => ({
-      '@media': { [media.laptop]: { flexDirection: v as never } },
-    })),
-    desktop: styleVariants(directionValues, (v) => ({
-      '@media': { [media.desktop]: { flexDirection: v as never } },
-    })),
-    wideDesktop: styleVariants(directionValues, (v) => ({
-      '@media': { [media.wideDesktop]: { flexDirection: v as never } },
-    })),
-  },
-  wrap: {
-    tablet: styleVariants(wrapValues, (v) => ({
-      '@media': { [media.tablet]: { flexWrap: v as never } },
-    })),
-    laptop: styleVariants(wrapValues, (v) => ({
-      '@media': { [media.laptop]: { flexWrap: v as never } },
-    })),
-    desktop: styleVariants(wrapValues, (v) => ({
-      '@media': { [media.desktop]: { flexWrap: v as never } },
-    })),
-    wideDesktop: styleVariants(wrapValues, (v) => ({
-      '@media': { [media.wideDesktop]: { flexWrap: v as never } },
-    })),
-  },
-} as const;
-
-// Recipe
+  gap: createResponsiveStyles(vars.spacing, (v) => ({ gap: v })),
+  direction: createResponsiveStyles(direction, (v) => ({ flexDirection: v })),
+  wrap: createResponsiveStyles(wrap, (v) => ({ flexWrap: v })),
+};
 
 export const root = recipe({
   base: {
