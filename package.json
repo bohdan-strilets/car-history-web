@@ -22,8 +22,10 @@
     "@vanilla-extract/dynamic": "^2.1.5",
     "@vanilla-extract/recipes": "^0.5.7",
     "clsx": "^2.1.1",
+    "i18next": "^26.0.10",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
+    "react-i18next": "^17.0.7",
     "zod": "^4.4.3",
     "zustand": "^5.0.13"
   },
