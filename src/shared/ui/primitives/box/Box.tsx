@@ -5,7 +5,7 @@ import { forwardRef, type ElementType } from 'react';
 import { responsiveStyles, root } from './box.css';
 import type { BoxProps } from './box.types';
 
-function BoxInner<T extends ElementType = 'div'>(
+const BoxInner = <T extends ElementType = 'div'>(
   {
     as,
     children,
@@ -21,7 +21,7 @@ function BoxInner<T extends ElementType = 'div'>(
     ...rest
   }: BoxProps<T>,
   ref: React.Ref<Element>,
-) {
+) => {
   const Tag = (as ?? 'div') as ElementType;
 
   const recipeClass = root({
@@ -47,7 +47,7 @@ function BoxInner<T extends ElementType = 'div'>(
       {children}
     </Tag>
   );
-}
+};
 
 export const Box = forwardRef(BoxInner) as <T extends ElementType = 'div'>(
   props: BoxProps<T> & { ref?: React.Ref<Element> },
