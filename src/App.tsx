@@ -1,4 +1,4 @@
-import { Box, Center, Divider, Grid, Stack, Surface } from '@shared/ui';
+import { Box, Center, Divider, Grid, Stack, Surface, Text } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,7 @@ export const App = () => {
 
   return (
     <Stack gap="xl">
-      <p>{t('welcome')}</p>
+      <Text>{t('welcome')}</Text>
       <ThemeToggle />
       <LanguageToggle />
 
@@ -16,18 +16,18 @@ export const App = () => {
         <Stack gap="3xl">
           <Center>
             <Stack direction={{ mobile: 'column', tablet: 'row' }} justify="around">
-              <p>Box1</p>
-              <p>Box2</p>
+              <Text>Box1</Text>
+              <Text>Box2</Text>
             </Stack>
           </Center>
 
           <Grid columns={{ mobile: 2, tablet: 3, desktop: 4 }} gap="md">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <p>4</p>
-            <p>5</p>
-            <p>6</p>
+            <Text>1</Text>
+            <Text>2</Text>
+            <Text>3</Text>
+            <Text>4</Text>
+            <Text>5</Text>
+            <Text>6</Text>
           </Grid>
 
           <Divider color="accent" />
@@ -48,9 +48,11 @@ export const App = () => {
           </Surface>
           <Surface variant="neu-raised" radius="md">
             <Box p="lg">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque exercitationem
-              consequatur vero ratione numquam, dolores, aperiam dolorem, tempore eveniet explicabo
-              iusto ab enim labore rerum iure impedit at illo minima!
+              <Text color="accent" weight="medium" letterSpacing="wide" transform="uppercase">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque exercitationem
+                consequatur vero ratione numquam, dolores, aperiam dolorem, tempore eveniet
+                explicabo iusto ab enim labore rerum iure impedit at illo minima!
+              </Text>
             </Box>
           </Surface>
         </Stack>
