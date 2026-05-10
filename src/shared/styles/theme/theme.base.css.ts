@@ -40,6 +40,7 @@ export const baseTheme = {
   },
 
   spacing: {
+    none: '0px',
     xs: '4px',
     sm: '8px',
     md: '12px',

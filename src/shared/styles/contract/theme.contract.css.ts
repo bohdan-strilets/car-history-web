@@ -188,6 +188,7 @@ export const vars = createThemeContract({
   },
 
   spacing: {
+    none: null,
     xs: null,
     sm: null,
     md: null,
