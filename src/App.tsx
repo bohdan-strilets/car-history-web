@@ -1,4 +1,4 @@
-import { Box, Center, Divider, Grid, Heading, Stack, Surface, Text } from '@shared/ui';
+import { Box, Center, Divider, Grid, Heading, Icon, Stack, Surface, Text } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { useTranslation } from 'react-i18next';
@@ -58,6 +58,8 @@ export const App = () => {
               </Text>
             </Box>
           </Surface>
+
+          <Icon name="batteryFull" size="4xl" strokeWidth="medium" color="amber" />
         </Stack>
       </Box>
     </Stack>

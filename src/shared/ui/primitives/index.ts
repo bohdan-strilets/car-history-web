@@ -3,6 +3,7 @@ export * from './center';
 export * from './divider';
 export * from './grid';
 export * from './heading';
+export * from './icon';
 export * from './stack';
 export * from './surface';
 export * from './text';
