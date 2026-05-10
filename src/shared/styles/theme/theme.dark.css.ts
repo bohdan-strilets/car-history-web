@@ -149,6 +149,37 @@ export const darkTheme = createTheme(vars, {
     },
   },
 
+  gradient: {
+    bg: {
+      subtle: 'linear-gradient(135deg, #1A1A1A 0%, #252525 50%, #1A1A1A 100%)',
+      mesh: 'radial-gradient(at 20% 20%, rgba(249, 115, 22, 0.08) 0px, transparent 50%), radial-gradient(at 80% 80%, rgba(99, 102, 241, 0.08) 0px, transparent 50%), radial-gradient(at 50% 50%, rgba(20, 184, 166, 0.05) 0px, transparent 60%)',
+    },
+
+    accent: {
+      solid: 'linear-gradient(135deg, #F97316 0%, #EAB308 100%)',
+      soft: 'linear-gradient(135deg, rgba(249, 115, 22, 0.2) 0%, rgba(234, 179, 8, 0.2) 100%)',
+      glow: 'linear-gradient(135deg, rgba(249, 115, 22, 0.4) 0%, rgba(234, 179, 8, 0.4) 100%)',
+    },
+
+    palette: {
+      orange: 'linear-gradient(135deg, #EA6A10 0%, #F97316 100%)',
+      amber: 'linear-gradient(135deg, #C99A07 0%, #EAB308 100%)',
+      yellow: 'linear-gradient(135deg, #D4A812 0%, #FACC15 100%)',
+      lime: 'linear-gradient(135deg, #65A30D 0%, #84CC16 100%)',
+      green: 'linear-gradient(135deg, #16A34A 0%, #22C55E 100%)',
+      teal: 'linear-gradient(135deg, #0F766E 0%, #14B8A6 100%)',
+      cyan: 'linear-gradient(135deg, #0891B2 0%, #06B6D4 100%)',
+      sky: 'linear-gradient(135deg, #0284C7 0%, #38BDF8 100%)',
+      blue: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 100%)',
+      indigo: 'linear-gradient(135deg, #4F46E5 0%, #6366F1 100%)',
+      violet: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%)',
+      purple: 'linear-gradient(135deg, #9333EA 0%, #A855F7 100%)',
+      pink: 'linear-gradient(135deg, #DB2777 0%, #EC4899 100%)',
+      rose: 'linear-gradient(135deg, #E11D48 0%, #F43F5E 100%)',
+      gray: 'linear-gradient(135deg, #475569 0%, #64748B 100%)',
+    },
+  },
+
   shadow: {
     neu: {
       raised: '6px 6px 14px rgba(8, 8, 8, 0.9), -6px -6px 14px rgba(50, 50, 50, 0.8)',

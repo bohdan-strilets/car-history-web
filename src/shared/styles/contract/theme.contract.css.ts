@@ -143,6 +143,37 @@ export const vars = createThemeContract({
     },
   },
 
+  gradient: {
+    bg: {
+      subtle: null,
+      mesh: null,
+    },
+
+    accent: {
+      solid: null,
+      soft: null,
+      glow: null,
+    },
+
+    palette: {
+      orange: null,
+      amber: null,
+      yellow: null,
+      lime: null,
+      green: null,
+      teal: null,
+      cyan: null,
+      sky: null,
+      blue: null,
+      indigo: null,
+      violet: null,
+      purple: null,
+      pink: null,
+      rose: null,
+      gray: null,
+    },
+  },
+
   typography: {
     font: {
       display: null,
