@@ -1,4 +1,4 @@
 export { useTheme } from './theme';
 export { THEME_STORAGE_KEY } from './theme.constants';
 export { useThemeStore } from './theme.store';
-export type { ResolvedTheme, Theme, ThemeStore } from './theme.types';
+export type { PaletteColors, ResolvedTheme, Theme, ThemeStore } from './theme.types';

@@ -1,6 +1,10 @@
+import type { vars } from '../contract';
+
+// Themes
 export type Theme = 'light' | 'dark' | 'system';
 export type ResolvedTheme = 'light' | 'dark';
 
+// Store
 export interface ThemeStore {
   theme: Theme;
   resolvedTheme: ResolvedTheme;
@@ -8,3 +12,6 @@ export interface ThemeStore {
   setTheme: (theme: Theme) => void;
   setResolvedTheme: (theme: ResolvedTheme) => void;
 }
+
+// Colors
+export type PaletteColors = keyof typeof vars.color.palette;
