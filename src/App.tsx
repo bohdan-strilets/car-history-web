@@ -1,4 +1,15 @@
-import { Box, Center, Divider, Grid, Heading, Icon, Stack, Surface, Text } from '@shared/ui';
+import {
+  Box,
+  Center,
+  Divider,
+  Grid,
+  Heading,
+  Icon,
+  IconBox,
+  Stack,
+  Surface,
+  Text,
+} from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { useTranslation } from 'react-i18next';
@@ -60,6 +71,16 @@ export const App = () => {
           </Surface>
 
           <Icon name="batteryFull" size="4xl" strokeWidth="medium" color="amber" />
+          <IconBox
+            name="eyeOff"
+            variant="soft"
+            gradient="palette-green"
+            color="info"
+            size={'2xl'}
+            radius="sm"
+            shadow="lime"
+            strokeWidth="bold"
+          />
         </Stack>
       </Box>
     </Stack>
