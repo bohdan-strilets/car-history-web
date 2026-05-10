@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Center,
   Divider,
   Grid,
@@ -23,64 +24,84 @@ export const App = () => {
       <ThemeToggle />
       <LanguageToggle />
 
-      <Box p="md">
-        <Stack gap="3xl">
+      <Box p="2xl" width="full">
+        <Stack gap="2xl">
+          {/* Header */}
+          <Stack direction="row" align="center" justify="between">
+            <Heading as="h1" size="3xl">
+              Arvino
+            </Heading>
+            <Stack direction="row" gap="sm" align="center">
+              <ThemeToggle />
+              <LanguageToggle />
+            </Stack>
+          </Stack>
+
+          <Divider />
+
+          {/* Welcome */}
           <Center>
-            <Stack direction={{ mobile: 'column', tablet: 'row' }} justify="around">
-              <Text>Box1</Text>
-              <Text>Box2</Text>
+            <Stack gap="sm" align="center">
+              <IconBox name="car" size="xl" soft="orange" radius="xl" />
+              <Heading as="h2" size="2xl">
+                {t('welcome')}
+              </Heading>
+              <Text color="secondary">Twój cyfrowy paszport pojazdu</Text>
             </Stack>
           </Center>
 
-          <Grid columns={{ mobile: 2, tablet: 3, desktop: 4 }} gap="md">
-            <Text>1</Text>
-            <Text>2</Text>
-            <Text>3</Text>
-            <Text>4</Text>
-            <Text>5</Text>
-            <Text>6</Text>
+          <Divider />
+
+          {/* Stats grid */}
+          <Grid columns="3" gap="md">
+            <Surface variant="neuRaised" radius="lg">
+              <Box p="lg">
+                <Stack gap="xs">
+                  <Text size="sm" color="tertiary">
+                    Przebieg
+                  </Text>
+                  <Heading size="2xl">85 420 km</Heading>
+                </Stack>
+              </Box>
+            </Surface>
+
+            <Surface variant="neuRaised" radius="lg">
+              <Box p="lg">
+                <Stack gap="xs">
+                  <Text size="sm" color="tertiary">
+                    Wydatki
+                  </Text>
+                  <Heading size="2xl">12 340 zł</Heading>
+                </Stack>
+              </Box>
+            </Surface>
+
+            <Surface soft="danger" radius="lg">
+              <Box p="lg">
+                <Stack gap="xs">
+                  <Text size="sm" color="tertiary">
+                    OC wygasa
+                  </Text>
+                  <Heading size="2xl" color="danger">
+                    14 dni
+                  </Heading>
+                </Stack>
+              </Box>
+            </Surface>
           </Grid>
 
-          <Divider color="accent" />
-          <Heading as="h1" size={'2xl'} transform="uppercase" weight="bold">
-            Example title
-          </Heading>
-
-          <Surface color="amber" colorVariant="soft">
-            <Box p="lg">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque exercitationem
-              consequatur vero ratione numquam, dolores, aperiam dolorem, tempore eveniet explicabo
-              iusto ab enim labore rerum iure impedit at illo minima!
-            </Box>
-          </Surface>
-          <Surface gradient="palette-indigo">
-            <Box p="lg">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque exercitationem
-              consequatur vero ratione numquam, dolores, aperiam dolorem, tempore eveniet explicabo
-              iusto ab enim labore rerum iure impedit at illo minima!
-            </Box>
-          </Surface>
-          <Surface variant="neu-raised" radius="md">
-            <Box p="lg">
-              <Text color="accent" weight="medium" letterSpacing="wide" transform="uppercase">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque exercitationem
-                consequatur vero ratione numquam, dolores, aperiam dolorem, tempore eveniet
-                explicabo iusto ab enim labore rerum iure impedit at illo minima!
-              </Text>
-            </Box>
-          </Surface>
-
-          <Icon name="batteryFull" size="4xl" strokeWidth="medium" color="amber" />
-          <IconBox
-            name="eyeOff"
-            variant="soft"
-            gradient="palette-green"
-            color="info"
-            size={'2xl'}
-            radius="sm"
-            shadow="lime"
-            strokeWidth="bold"
-          />
+          {/* Actions */}
+          <Stack direction="row" gap="sm">
+            <Button variant="solid" color="accent" leftIcon="plus" size="lg">
+              Dodaj pojazd
+            </Button>
+            <Button variant="soft" color="accent" leftIcon="car">
+              Garage
+            </Button>
+            <Button variant="outline" color="gray" iconOnly>
+              <Icon name="settings" />
+            </Button>
+          </Stack>
         </Stack>
       </Box>
     </Stack>
