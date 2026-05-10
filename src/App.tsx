@@ -1,4 +1,4 @@
-import { Box, Stack } from '@shared/ui';
+import { Box, Center, Stack } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { useTranslation } from 'react-i18next';
@@ -13,10 +13,12 @@ export const App = () => {
       <LanguageToggle />
 
       <Box p="md">
-        <Stack direction={{ mobile: 'column', tablet: 'row' }} justify="around">
-          <p>Box1</p>
-          <p>Box2</p>
-        </Stack>
+        <Center>
+          <Stack direction={{ mobile: 'column', tablet: 'row' }} justify="around">
+            <p>Box1</p>
+            <p>Box2</p>
+          </Stack>
+        </Center>
       </Box>
     </>
   );
