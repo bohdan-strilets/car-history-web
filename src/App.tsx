@@ -1,4 +1,4 @@
-import { Box } from '@shared/ui';
+import { Box, Stack } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { useTranslation } from 'react-i18next';
@@ -13,9 +13,10 @@ export const App = () => {
       <LanguageToggle />
 
       <Box p="md">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eos laboriosam maxime
-        tempore distinctio. Aperiam reprehenderit magni asperiores unde ut repellat autem illum
-        rerum voluptas? Inventore enim molestias est qui?
+        <Stack direction={{ mobile: 'column', tablet: 'row' }} justify="around">
+          <p>Box1</p>
+          <p>Box2</p>
+        </Stack>
       </Box>
     </>
   );
