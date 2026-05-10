@@ -1,4 +1,4 @@
-import { Box, Center, Divider, Grid, Stack, Surface, Text } from '@shared/ui';
+import { Box, Center, Divider, Grid, Heading, Stack, Surface, Text } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { useTranslation } from 'react-i18next';
@@ -31,6 +31,9 @@ export const App = () => {
           </Grid>
 
           <Divider color="accent" />
+          <Heading as="h1" size={'2xl'} transform="uppercase" weight="bold">
+            Example title
+          </Heading>
 
           <Surface color="amber" colorVariant="soft">
             <Box p="lg">
