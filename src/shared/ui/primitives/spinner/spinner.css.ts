@@ -57,7 +57,15 @@ export const outerRing = recipe({
 
   variants: {
     color: {
-      accent: { borderTopColor: vars.color.accent.solid, borderRightColor: vars.color.accent.soft },
+      onColor: {
+        borderTopColor: vars.color.text.onColor,
+        borderRightColor: vars.color.text.onColor,
+      },
+      accent: {
+        borderTopColor: vars.color.accent.solid,
+        borderRightColor: vars.color.accent.soft,
+      },
+
       success: {
         borderTopColor: vars.color.semantic.success.solid,
         borderRightColor: vars.color.semantic.success.soft,
@@ -83,6 +91,10 @@ export const outerRing = recipe({
         borderTopColor: vars.color.palette.amber.solid,
         borderRightColor: vars.color.palette.amber.soft,
       },
+      yellow: {
+        borderTopColor: vars.color.palette.yellow.solid,
+        borderRightColor: vars.color.palette.yellow.soft,
+      },
       lime: {
         borderTopColor: vars.color.palette.lime.solid,
         borderRightColor: vars.color.palette.lime.soft,
@@ -95,6 +107,14 @@ export const outerRing = recipe({
         borderTopColor: vars.color.palette.teal.solid,
         borderRightColor: vars.color.palette.teal.soft,
       },
+      cyan: {
+        borderTopColor: vars.color.palette.cyan.solid,
+        borderRightColor: vars.color.palette.cyan.soft,
+      },
+      sky: {
+        borderTopColor: vars.color.palette.sky.solid,
+        borderRightColor: vars.color.palette.sky.soft,
+      },
       blue: {
         borderTopColor: vars.color.palette.blue.solid,
         borderRightColor: vars.color.palette.blue.soft,
@@ -106,6 +126,18 @@ export const outerRing = recipe({
       violet: {
         borderTopColor: vars.color.palette.violet.solid,
         borderRightColor: vars.color.palette.violet.soft,
+      },
+      purple: {
+        borderTopColor: vars.color.palette.purple.solid,
+        borderRightColor: vars.color.palette.purple.soft,
+      },
+      pink: {
+        borderTopColor: vars.color.palette.pink.solid,
+        borderRightColor: vars.color.palette.pink.soft,
+      },
+      rose: {
+        borderTopColor: vars.color.palette.rose.solid,
+        borderRightColor: vars.color.palette.rose.soft,
       },
       gray: {
         borderTopColor: vars.color.palette.gray.solid,
@@ -131,11 +163,19 @@ export const innerRing = recipe({
 
   variants: {
     color: {
-      accent: { borderTopColor: vars.color.accent.glow, borderLeftColor: vars.color.accent.soft },
+      onColor: {
+        borderTopColor: vars.color.text.onColor,
+        borderLeftColor: vars.color.text.onColor,
+      },
+      accent: {
+        borderTopColor: vars.color.accent.glow,
+        borderLeftColor: vars.color.accent.soft,
+      },
       success: {
         borderTopColor: vars.color.semantic.success.soft,
         borderLeftColor: vars.color.semantic.success.soft,
       },
+
       warning: {
         borderTopColor: vars.color.semantic.warning.soft,
         borderLeftColor: vars.color.semantic.warning.soft,
@@ -148,6 +188,7 @@ export const innerRing = recipe({
         borderTopColor: vars.color.semantic.info.soft,
         borderLeftColor: vars.color.semantic.info.soft,
       },
+
       orange: {
         borderTopColor: vars.color.palette.orange.soft,
         borderLeftColor: vars.color.palette.orange.soft,
@@ -155,6 +196,10 @@ export const innerRing = recipe({
       amber: {
         borderTopColor: vars.color.palette.amber.soft,
         borderLeftColor: vars.color.palette.amber.soft,
+      },
+      yellow: {
+        borderTopColor: vars.color.palette.yellow.soft,
+        borderLeftColor: vars.color.palette.yellow.soft,
       },
       lime: {
         borderTopColor: vars.color.palette.lime.soft,
@@ -168,6 +213,14 @@ export const innerRing = recipe({
         borderTopColor: vars.color.palette.teal.soft,
         borderLeftColor: vars.color.palette.teal.soft,
       },
+      cyan: {
+        borderTopColor: vars.color.palette.cyan.soft,
+        borderLeftColor: vars.color.palette.cyan.soft,
+      },
+      sky: {
+        borderTopColor: vars.color.palette.sky.soft,
+        borderLeftColor: vars.color.palette.sky.soft,
+      },
       blue: {
         borderTopColor: vars.color.palette.blue.soft,
         borderLeftColor: vars.color.palette.blue.soft,
@@ -179,6 +232,18 @@ export const innerRing = recipe({
       violet: {
         borderTopColor: vars.color.palette.violet.soft,
         borderLeftColor: vars.color.palette.violet.soft,
+      },
+      purple: {
+        borderTopColor: vars.color.palette.purple.soft,
+        borderLeftColor: vars.color.palette.purple.soft,
+      },
+      pink: {
+        borderTopColor: vars.color.palette.pink.soft,
+        borderLeftColor: vars.color.palette.pink.soft,
+      },
+      rose: {
+        borderTopColor: vars.color.palette.rose.soft,
+        borderLeftColor: vars.color.palette.rose.soft,
       },
       gray: {
         borderTopColor: vars.color.palette.gray.soft,

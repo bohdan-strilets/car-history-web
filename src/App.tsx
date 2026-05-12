@@ -99,7 +99,7 @@ export const App = () => {
 
           {/* Actions */}
           <Stack direction="row" gap="sm">
-            <Button variant="outline" color="green" leftIcon="plus" size="lg" loading>
+            <Button variant="solid" color="green" leftIcon="plus" size="lg" loading>
               Dodaj pojazd
             </Button>
             <Button variant="soft" color="warning" leftIcon="car">

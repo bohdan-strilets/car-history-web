@@ -27,6 +27,8 @@ export const Button = ({
   const responsiveClasses = resolveResponsive(responsiveStyles.size, size);
   const iconSize = baseSize === 'sm' ? 'sm' : 'md';
 
+  const spinnerColor = variant === 'solid' ? 'onColor' : color;
+
   return (
     <button
       className={clsx(
@@ -39,7 +41,10 @@ export const Button = ({
       {...rest}
     >
       {loading ? (
-        <Spinner size="xs" />
+        <>
+          <Spinner size="xs" color={spinnerColor} />
+          {children}
+        </>
       ) : (
         <>
           {leftIcon && (
@@ -66,3 +71,5 @@ export const Button = ({
     </button>
   );
 };
+
+Button.displayName = 'Button';
