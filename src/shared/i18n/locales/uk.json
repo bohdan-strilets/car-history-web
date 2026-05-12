@@ -1,3 +1,7 @@
 {
-  "welcome": "Ласкаво просимо до Arvino!"
+  "welcome": "Ласкаво просимо до Arvino!",
+
+  "common": {
+    "hidePassword": "Сховати пароль"
+  }
 }

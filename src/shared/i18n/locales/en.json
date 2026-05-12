@@ -1,3 +1,7 @@
 {
-  "welcome": "Welcome to Arvino!"
+  "welcome": "Welcome to Arvino!",
+
+  "common": {
+    "hidePassword": "Hide Password"
+  }
 }

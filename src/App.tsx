@@ -9,6 +9,7 @@ import {
   Icon,
   IconBox,
   Input,
+  PasswordInput,
   Stack,
   Surface,
   Text,
@@ -119,6 +120,7 @@ export const App = () => {
             label="   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam veritatis ipsum totam?
               Odio, temporibus aut!"
           />
+          <PasswordInput placeholder="Enter your password" size="lg" />
         </form>
       </Box>
     </Stack>

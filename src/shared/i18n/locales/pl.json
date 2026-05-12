@@ -1,3 +1,7 @@
 {
-  "welcome": "Witaj w Arvino!"
+  "welcome": "Witaj w Arvino!",
+
+  "common": {
+    "hidePassword": "Ukryj hasło"
+  }
 }
