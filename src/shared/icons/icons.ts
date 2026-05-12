@@ -35,6 +35,7 @@ import {
   ChevronRight,
   ChevronUp,
   Circle,
+  CircleAlert,
   // Tires & Service
   CircleDot,
   Clock,
@@ -218,6 +219,7 @@ export const Icons = {
   xCircle: XCircle,
   clock: Clock,
   loader: Loader2,
+  circleAlert: CircleAlert,
 
   // Auth & User
   logIn: LogIn,

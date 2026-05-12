@@ -5,6 +5,7 @@ import {
   Checkbox,
   Divider,
   Field,
+  FormError,
   Grid,
   Heading,
   Icon,
@@ -122,6 +123,7 @@ export const App = () => {
               Odio, temporibus aut!"
           />
           <PasswordInput placeholder="Enter your password" size="lg" />
+          <FormError message="Error message for example" />
 
           <Field label="Enter first name" hint="Example Bohdan" error="Short name" required>
             <Input placeholder="Enter first name" size="lg" leftIcon="calendar" />
