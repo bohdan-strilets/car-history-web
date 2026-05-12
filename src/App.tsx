@@ -10,6 +10,7 @@ import {
   IconBox,
   Input,
   Logo,
+  Spinner,
   Stack,
   Surface,
   Text,
@@ -43,6 +44,7 @@ export const App = () => {
           </Stack>
 
           <Divider />
+          <Spinner size="lg" />
 
           {/* Welcome */}
           <Center>
@@ -97,7 +99,7 @@ export const App = () => {
 
           {/* Actions */}
           <Stack direction="row" gap="sm">
-            <Button variant="solid" color="danger" leftIcon="plus" size="lg">
+            <Button variant="outline" color="green" leftIcon="plus" size="lg" loading>
               Dodaj pojazd
             </Button>
             <Button variant="soft" color="warning" leftIcon="car">

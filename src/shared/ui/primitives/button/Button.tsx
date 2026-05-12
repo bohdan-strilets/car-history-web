@@ -2,6 +2,8 @@ import { baseToken, resolveResponsive } from '@shared/lib/primitives';
 import { Icon } from '@shared/ui/primitives/icon';
 import { clsx } from 'clsx';
 
+import { Spinner } from '../spinner';
+
 import { responsiveStyles, root } from './button.css';
 import type { ButtonProps } from './button.types';
 
@@ -37,7 +39,7 @@ export const Button = ({
       {...rest}
     >
       {loading ? (
-        'Loading...'
+        <Spinner size="xs" />
       ) : (
         <>
           {leftIcon && (
