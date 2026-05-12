@@ -11,6 +11,7 @@ import {
   Stack,
   Surface,
   Text,
+  Textarea,
 } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
@@ -107,6 +108,7 @@ export const App = () => {
 
         <form>
           <Input placeholder="Enter email" size="lg" leftIcon="calendar" />
+          <Textarea placeholder="Enter your message" size="lg" rows={4} maxRows={8} />
         </form>
       </Box>
     </Stack>

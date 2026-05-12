@@ -10,3 +10,4 @@ export * from './input';
 export * from './stack';
 export * from './surface';
 export * from './text';
+export * from './textarea';
