@@ -16,8 +16,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       state: resolvedState,
     });
 
-    const inputClass = nativeInput({});
-
     const iconClass = iconSlot({
       size: typeof size === 'string' ? size : size?.mobile,
     });
@@ -32,10 +30,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <div className={clsx(rootClass, ...responsiveClasses, className)}>
         {leftIcon && <Icon name={leftIcon} className={iconClass} />}
 
-        <input ref={ref} className={inputClass} disabled={disabled} {...rest} />
+        <input ref={ref} className={nativeInput()} disabled={disabled} {...rest} />
 
         {rightIcon && !rightElement && <Icon name={rightIcon} className={iconClass} />}
-        {rightElement && <span className={clsx(iconClass)}>{rightElement}</span>}
+        {rightElement && <span className={iconClass}>{rightElement}</span>}
       </div>
     );
   },
