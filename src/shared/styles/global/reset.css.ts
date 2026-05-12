@@ -78,7 +78,6 @@ globalStyle('button, select', {
 
 globalStyle('button, [type="button"], [type="reset"], [type="submit"]', {
   WebkitAppearance: 'button',
-  backgroundColor: 'transparent',
   backgroundImage: 'none',
   cursor: 'pointer',
   border: 'none',
