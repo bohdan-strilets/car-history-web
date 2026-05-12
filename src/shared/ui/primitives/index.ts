@@ -1,6 +1,7 @@
 export * from './box';
 export * from './button';
 export * from './center';
+export * from './checkbox';
 export * from './divider';
 export * from './grid';
 export * from './heading';

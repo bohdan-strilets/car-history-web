@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Center,
+  Checkbox,
   Divider,
   Grid,
   Heading,
@@ -15,10 +16,12 @@ import {
 } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const App = () => {
   const { t } = useTranslation();
+  const [checked, setChecked] = useState(false);
 
   return (
     <Stack gap="xl">
@@ -109,6 +112,13 @@ export const App = () => {
         <form>
           <Input placeholder="Enter email" size="lg" leftIcon="calendar" />
           <Textarea placeholder="Enter your message" size="lg" rows={4} maxRows={8} />
+          <Checkbox
+            checked={checked}
+            onChange={(e) => setChecked(e.target.checked)}
+            size="lg"
+            label="   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam veritatis ipsum totam?
+              Odio, temporibus aut!"
+          />
         </form>
       </Box>
     </Stack>
