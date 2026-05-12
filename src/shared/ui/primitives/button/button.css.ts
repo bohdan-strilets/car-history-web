@@ -425,7 +425,10 @@ export const root = recipe({
     // Outline
     {
       variants: { variant: 'outline', color: 'accent' },
-      style: { border: `1px solid ${vars.color.accent.solid}`, color: vars.color.accent.solid },
+      style: {
+        border: `1px solid ${vars.color.accent.solid}`,
+        color: vars.color.accent.solid,
+      },
     },
     {
       variants: { variant: 'outline', color: 'success' },
