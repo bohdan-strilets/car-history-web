@@ -9,6 +9,7 @@ import {
   Icon,
   IconBox,
   Input,
+  Logo,
   Stack,
   Surface,
   Text,
@@ -34,6 +35,7 @@ export const App = () => {
             <Heading as="h1" size="3xl">
               Arvino
             </Heading>
+            <Logo size={'xl'} variant="icon" />
             <Stack direction="row" gap="sm" align="center">
               <ThemeToggle />
               <LanguageToggle />

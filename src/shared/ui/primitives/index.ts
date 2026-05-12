@@ -8,6 +8,7 @@ export * from './heading';
 export * from './icon';
 export * from './icon-box';
 export * from './input';
+export * from './logo';
 export * from './password-input';
 export * from './stack';
 export * from './surface';
