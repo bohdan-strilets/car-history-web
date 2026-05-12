@@ -4,6 +4,7 @@ import {
   Center,
   Checkbox,
   Divider,
+  Field,
   Grid,
   Heading,
   Icon,
@@ -121,6 +122,10 @@ export const App = () => {
               Odio, temporibus aut!"
           />
           <PasswordInput placeholder="Enter your password" size="lg" />
+
+          <Field label="Enter first name" hint="Example Bohdan" error="Short name" required>
+            <Input placeholder="Enter first name" size="lg" leftIcon="calendar" />
+          </Field>
         </form>
       </Box>
     </Stack>
