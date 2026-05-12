@@ -10,6 +10,7 @@ export * from './icon-box';
 export * from './input';
 export * from './logo';
 export * from './password-input';
+export * from './skeleton';
 export * from './spinner';
 export * from './stack';
 export * from './surface';

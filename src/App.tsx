@@ -10,6 +10,7 @@ import {
   IconBox,
   Input,
   Logo,
+  Skeleton,
   Spinner,
   Stack,
   Surface,
@@ -96,6 +97,8 @@ export const App = () => {
               </Box>
             </Surface>
           </Grid>
+
+          <Skeleton width={'100%'} height={90} />
 
           {/* Actions */}
           <Stack direction="row" gap="sm">
