@@ -7,6 +7,7 @@ import {
   Heading,
   Icon,
   IconBox,
+  Input,
   Stack,
   Surface,
   Text,
@@ -103,6 +104,10 @@ export const App = () => {
             </Button>
           </Stack>
         </Stack>
+
+        <form>
+          <Input placeholder="Enter email" size="lg" leftIcon="calendar" />
+        </form>
       </Box>
     </Stack>
   );

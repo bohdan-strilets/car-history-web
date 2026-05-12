@@ -6,6 +6,7 @@ export * from './grid';
 export * from './heading';
 export * from './icon';
 export * from './icon-box';
+export * from './input';
 export * from './stack';
 export * from './surface';
 export * from './text';
