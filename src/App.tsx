@@ -2,16 +2,13 @@ import {
   Box,
   Button,
   Center,
-  Checkbox,
   Divider,
-  Field,
-  FormError,
+  Form,
   Grid,
   Heading,
   Icon,
   IconBox,
   Input,
-  PasswordInput,
   Stack,
   Surface,
   Text,
@@ -19,12 +16,10 @@ import {
 } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const App = () => {
   const { t } = useTranslation();
-  const [checked, setChecked] = useState(false);
 
   return (
     <Stack gap="xl">
@@ -100,35 +95,30 @@ export const App = () => {
 
           {/* Actions */}
           <Stack direction="row" gap="sm">
-            <Button variant="solid" color="accent" leftIcon="plus" size="lg">
+            <Button variant="solid" color="danger" leftIcon="plus" size="lg">
               Dodaj pojazd
             </Button>
-            <Button variant="soft" color="accent" leftIcon="car">
+            <Button variant="soft" color="warning" leftIcon="car">
               Garage
             </Button>
-            <Button variant="outline" color="gray" iconOnly>
-              <Icon name="settings" />
+            <Button variant="outline" color="lime" iconOnly>
+              <Icon name="settings" color="inherit" />
             </Button>
           </Stack>
         </Stack>
 
-        <form>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log('Form submitted');
+          }}
+          submitLabel="Submit"
+          error="Error message"
+          submitIcon="sparkles"
+        >
           <Input placeholder="Enter email" size="lg" leftIcon="calendar" />
           <Textarea placeholder="Enter your message" size="lg" rows={4} maxRows={8} />
-          <Checkbox
-            checked={checked}
-            onChange={(e) => setChecked(e.target.checked)}
-            size="lg"
-            label="   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam veritatis ipsum totam?
-              Odio, temporibus aut!"
-          />
-          <PasswordInput placeholder="Enter your password" size="lg" />
-          <FormError message="Error message for example" />
-
-          <Field label="Enter first name" hint="Example Bohdan" error="Short name" required>
-            <Input placeholder="Enter first name" size="lg" leftIcon="calendar" />
-          </Field>
-        </form>
+        </Form>
       </Box>
     </Stack>
   );
