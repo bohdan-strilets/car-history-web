@@ -9,5 +9,6 @@ export type DividerColor = NonNullable<DividerVariants['color']>;
 export interface DividerProps {
   orientation?: DividerOrientation;
   color?: DividerColor;
+  label?: string;
   className?: string;
 }

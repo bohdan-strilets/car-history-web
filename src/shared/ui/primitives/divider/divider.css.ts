@@ -1,4 +1,5 @@
 import { vars } from '@shared/styles';
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const root = recipe({
@@ -32,4 +33,33 @@ export const root = recipe({
     orientation: 'horizontal',
     color: 'base',
   },
+});
+
+export const withLabel = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: vars.spacing.md,
+  border: 'none',
+  backgroundColor: 'transparent',
+
+  '::before': {
+    content: '""',
+    flex: 1,
+    height: '1px',
+    backgroundColor: vars.color.border.base,
+  },
+
+  '::after': {
+    content: '""',
+    flex: 1,
+    height: '1px',
+    backgroundColor: vars.color.border.base,
+  },
+});
+
+export const labelText = style({
+  fontSize: vars.typography.size.sm,
+  color: vars.color.text.tertiary,
+  whiteSpace: 'nowrap',
+  flexShrink: 0,
 });
