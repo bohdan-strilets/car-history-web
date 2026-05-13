@@ -16,6 +16,20 @@
         { "icon": "barChart", "text": "Real-time expense statistics" },
         { "icon": "bot", "text": "AI assistant that knows your car" }
       ]
+    },
+
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your account",
+      "form": {
+        "email": "Email",
+        "password": "Password",
+        "submit": "Sign in",
+        "forgotPassword": "Forgot password?",
+        "noAccount": "Don't have an account?",
+        "register": "Sign up",
+        "orContinueWith": "or continue with"
+      }
     }
   }
 }

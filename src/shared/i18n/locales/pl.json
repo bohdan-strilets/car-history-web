@@ -16,6 +16,20 @@
         { "icon": "barChart", "text": "Statystyki wydatków w czasie rzeczywistym" },
         { "icon": "bot", "text": "AI asystent znający Twój samochód" }
       ]
+    },
+
+    "login": {
+      "title": "Witaj z powrotem",
+      "subtitle": "Zaloguj się do swojego konta",
+      "form": {
+        "email": "Email",
+        "password": "Hasło",
+        "submit": "Zaloguj się",
+        "forgotPassword": "Nie pamiętasz hasła?",
+        "noAccount": "Nie masz konta?",
+        "register": "Zarejestruj się",
+        "orContinueWith": "lub kontynuuj z"
+      }
     }
   }
 }

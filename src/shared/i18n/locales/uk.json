@@ -16,6 +16,20 @@
         { "icon": "barChart", "text": "Статистика витрат у реальному часі" },
         { "icon": "bot", "text": "AI асистент що знає твоє авто" }
       ]
+    },
+
+    "login": {
+      "title": "Ласкаво просимо",
+      "subtitle": "Увійдіть у свій акаунт",
+      "form": {
+        "email": "Email",
+        "password": "Пароль",
+        "submit": "Увійти",
+        "forgotPassword": "Забули пароль?",
+        "noAccount": "Немає акаунту?",
+        "register": "Зареєструватись",
+        "orContinueWith": "або продовжити з"
+      }
     }
   }
 }
