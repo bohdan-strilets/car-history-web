@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Icon } from '../icon';
 import { Input } from '../input';
 
+import { button } from './password-input.css';
 import type { PasswordInputProps } from './password-input.types';
 
 export const PasswordInput = ({ ...rest }: PasswordInputProps) => {
@@ -19,6 +20,7 @@ export const PasswordInput = ({ ...rest }: PasswordInputProps) => {
           type="button"
           onClick={() => setVisible((v) => !v)}
           aria-label={visible ? t('common.hidePassword') : t('common.showPassword')}
+          className={button}
         >
           <Icon name={visible ? 'eyeOff' : 'eye'} color="tertiary" />
         </button>
