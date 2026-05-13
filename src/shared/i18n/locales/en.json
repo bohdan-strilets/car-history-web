@@ -3,5 +3,19 @@
 
   "common": {
     "hidePassword": "Hide Password"
+  },
+
+  "auth": {
+    "panel": {
+      "title": "Your digital car passport",
+      "subtitle": "Expenses, service, documents and AI assistant in one place.",
+
+      "features": [
+        { "icon": "gauge", "text": "Full mileage and service history" },
+        { "icon": "fileText", "text": "Documents with OC and inspection reminders" },
+        { "icon": "barChart", "text": "Real-time expense statistics" },
+        { "icon": "bot", "text": "AI assistant that knows your car" }
+      ]
+    }
   }
 }

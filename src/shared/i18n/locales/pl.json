@@ -1,7 +1,21 @@
 {
-  "welcome": "Witaj w Arvino!",
+  "welcome": "Welcome to Arvino!",
 
   "common": {
     "hidePassword": "Ukryj hasło"
+  },
+
+  "auth": {
+    "panel": {
+      "title": "Twój cyfrowy paszport samochodu",
+      "subtitle": "Wydatki, serwis, dokumenty i AI asystent w jednym miejscu.",
+
+      "features": [
+        { "icon": "gauge", "text": "Pełna historia przebiegu i serwisu" },
+        { "icon": "fileText", "text": "Dokumenty z przypomnieniami OC i przegląd" },
+        { "icon": "barChart", "text": "Statystyki wydatków w czasie rzeczywistym" },
+        { "icon": "bot", "text": "AI asystent znający Twój samochód" }
+      ]
+    }
   }
 }
