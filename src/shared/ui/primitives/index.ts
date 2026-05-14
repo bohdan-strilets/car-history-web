@@ -15,4 +15,5 @@ export * from './spinner';
 export * from './stack';
 export * from './surface';
 export * from './text';
+export * from './text-link';
 export * from './textarea';
