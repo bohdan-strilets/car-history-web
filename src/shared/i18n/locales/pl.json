@@ -31,5 +31,118 @@
         "orContinueWith": "lub kontynuuj z"
       }
     }
+  },
+
+  "errors": {
+    "INVALID_CREDENTIALS": "Nieprawidłowy email lub hasło",
+    "ACCOUNT_LOCKED": "Konto zostało tymczasowo zablokowane",
+    "ACCOUNT_SUSPENDED": "Konto zostało zawieszone",
+    "ACCOUNT_DELETED": "To konto nie istnieje",
+
+    "ACCESS_TOKEN_INVALID": "Sesja jest nieprawidłowa",
+    "ACCESS_TOKEN_EXPIRED": "Sesja wygasła",
+    "REFRESH_TOKEN_INVALID": "Sesja jest nieprawidłowa",
+    "REFRESH_TOKEN_EXPIRED": "Sesja wygasła",
+    "REFRESH_TOKEN_REUSE": "Wykryto podejrzaną aktywność, zaloguj się ponownie",
+
+    "SESSION_NOT_FOUND": "Sesja nie została znaleziona",
+    "SESSION_EXPIRED": "Sesja wygasła, zaloguj się ponownie",
+    "SESSION_REVOKED": "Sesja została odwołana",
+
+    "GOOGLE_AUTH_FAILED": "Logowanie przez Google nie powiodło się",
+    "GOOGLE_EMAIL_MISSING": "Nie można pobrać adresu email z Google",
+
+    "EMAIL_ALREADY_EXISTS": "Ten adres email jest już zajęty",
+    "EMAIL_NOT_VERIFIED": "Potwierdź swój adres email",
+    "EMAIL_ALREADY_VERIFIED": "Adres email został już potwierdzony",
+    "EMAIL_CHANGE_PENDING": "Zmiana adresu email oczekuje na potwierdzenie",
+
+    "TOKEN_INVALID": "Link jest nieprawidłowy",
+    "TOKEN_EXPIRED": "Link wygasł",
+    "TOKEN_ALREADY_USED": "Link został już użyty",
+    "TOKEN_NOT_FOUND": "Link nie został znaleziony",
+
+    "USER_NOT_FOUND": "Użytkownik nie został znaleziony",
+    "PASSWORD_INCORRECT": "Nieprawidłowe hasło",
+    "PASSWORD_SAME": "Nowe hasło musi się różnić od poprzedniego",
+
+    "WORKSPACE_NOT_FOUND": "Workspace nie został znaleziony",
+    "WORKSPACE_ACCESS_DENIED": "Brak dostępu do workspace",
+    "WORKSPACE_INSUFFICIENT_ROLE": "Niewystarczające uprawnienia",
+    "WORKSPACE_OWNER_CANNOT_LEAVE": "Właściciel nie może opuścić workspace",
+    "WORKSPACE_ALREADY_MEMBER": "Użytkownik jest już członkiem workspace",
+
+    "INVITE_NOT_FOUND": "Zaproszenie nie zostało znalezione",
+    "INVITE_EXPIRED": "Zaproszenie wygasło",
+    "INVITE_ALREADY_USED": "Zaproszenie zostało już użyte",
+    "INVITE_EMAIL_MISMATCH": "Email nie zgadza się z zaproszeniem",
+
+    "VEHICLE_NOT_FOUND": "Pojazd nie został znaleziony",
+    "VEHICLE_ACCESS_DENIED": "Brak dostępu do pojazdu",
+    "VEHICLE_INVALID_MILEAGE": "Nieprawidłowy przebieg",
+
+    "TIMELINE_EVENT_NOT_FOUND": "Zdarzenie nie zostało znalezione",
+    "TIMELINE_INVALID_MILEAGE": "Nieprawidłowy przebieg",
+    "TIMELINE_INVALID_EVENT_TYPE": "Nieprawidłowy typ zdarzenia",
+
+    "REMINDER_NOT_FOUND": "Przypomnienie nie zostało znalezione",
+    "REMINDER_ALREADY_COMPLETED": "Przypomnienie zostało już ukończone",
+    "REMINDER_ALREADY_DISMISSED": "Przypomnienie zostało już odrzucone",
+
+    "MAINTENANCE_INTERVAL_NOT_FOUND": "Interwał serwisowy nie został znaleziony",
+    "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Interwał serwisowy jest już wyłączony",
+
+    "TIRE_NOT_FOUND": "Opona nie została znaleziona",
+    "TIRE_ALREADY_MOUNTED": "Opona jest już zamontowana",
+    "TIRE_ALREADY_RETIRED": "Opona jest już wycofana",
+
+    "SERVICE_STATION_NOT_FOUND": "Stacja serwisowa nie została znaleziona",
+    "SERVICE_STATION_ACCESS_DENIED": "Brak dostępu do stacji serwisowej",
+
+    "MEDIA_NOT_FOUND": "Plik nie został znaleziony",
+    "MEDIA_UPLOAD_FAILED": "Nie udało się przesłać pliku",
+    "MEDIA_INVALID_FILE_TYPE": "Nieprawidłowy typ pliku",
+    "MEDIA_FILE_TOO_LARGE": "Plik jest zbyt duży",
+    "MEDIA_ACCESS_DENIED": "Brak dostępu do pliku",
+
+    "AI_CONVERSATION_NOT_FOUND": "Rozmowa nie została znaleziona",
+    "AI_MESSAGE_FAILED": "Nie udało się wysłać wiadomości",
+    "AI_SERVICE_UNAVAILABLE": "Usługa AI jest niedostępna",
+
+    "VALIDATION_ERROR": "Sprawdź poprawność danych",
+    "BAD_REQUEST": "Nieprawidłowe żądanie",
+    "NOT_FOUND": "Nie znaleziono",
+    "FORBIDDEN": "Brak dostępu",
+    "UNAUTHORIZED": "Wymagane logowanie",
+    "CONFLICT": "Konflikt danych",
+    "INTERNAL_SERVER_ERROR": "Błąd serwera, spróbuj ponownie",
+    "TOO_MANY_REQUESTS": "Zbyt wiele żądań, spróbuj za chwilę",
+    "UNKNOWN_ERROR": "Wystąpił nieznany błąd"
+  },
+
+  "validation": {
+    "REQUIRED": "To pole jest wymagane",
+    "NOT_ALLOWED": "Ta wartość nie jest dozwolona",
+    "INVALID_FORMAT": "Nieprawidłowy format",
+    "INVALID_EMAIL": "Nieprawidłowy adres email",
+    "INVALID_URL": "Nieprawidłowy adres URL",
+    "INVALID_DATE": "Nieprawidłowa data",
+    "INVALID_ENUM": "Nieprawidłowa wartość",
+    "INVALID_UUID": "Nieprawidłowy identyfikator",
+    "INVALID_PHONE": "Nieprawidłowy numer telefonu",
+    "INVALID_PLATE_NUMBER": "Nieprawidłowy numer rejestracyjny",
+    "INVALID_VIN": "Nieprawidłowy numer VIN",
+    "INVALID_COLOR": "Nieprawidłowy kolor",
+    "TOO_SHORT": "Wartość jest zbyt krótka",
+    "TOO_LONG": "Wartość jest zbyt długa",
+    "TOO_SMALL": "Wartość jest zbyt mała",
+    "TOO_LARGE": "Wartość jest zbyt duża",
+    "MUST_BE_POSITIVE": "Wartość musi być dodatnia",
+    "MUST_BE_INTEGER": "Wartość musi być liczbą całkowitą",
+    "ALREADY_EXISTS": "Ta wartość już istnieje",
+    "MUST_MATCH": "Wartości muszą być zgodne",
+    "MUST_BE_FUTURE": "Data musi być w przyszłości",
+    "MUST_BE_PAST": "Data musi być w przeszłości",
+    "MUST_BE_AFTER": "Data musi być późniejsza"
   }
 }

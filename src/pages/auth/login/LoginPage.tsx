@@ -1,12 +1,12 @@
-import { LoginForm } from '@features/auth/login';
+import { LoginForm } from '@features/auth';
 import { ROUTES } from '@shared/config/routes';
+import { TextLink } from '@shared/ui';
 import { Button } from '@shared/ui/primitives/button';
 import { Divider } from '@shared/ui/primitives/divider';
 import { Heading } from '@shared/ui/primitives/heading';
 import { Stack } from '@shared/ui/primitives/stack';
 import { Text } from '@shared/ui/primitives/text';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
 export const LoginPage = () => {
   const { t } = useTranslation();
@@ -23,26 +23,22 @@ export const LoginPage = () => {
       <LoginForm />
 
       <Stack direction="row" align="center" justify="between">
-        <Link to={ROUTES.AUTH.FORGOT_PASSWORD}>
-          <Text size="sm" color="tertiary">
-            {t('auth.login.form.forgotPassword')}
-          </Text>
-        </Link>
+        <TextLink
+          to={ROUTES.AUTH.FORGOT_PASSWORD}
+          label={t('auth.login.form.forgotPassword')}
+          color="tertiary"
+        />
         <Stack direction="row" gap="xs" align="center">
           <Text size="sm" color="tertiary">
             {t('auth.login.form.noAccount')}
           </Text>
-          <Link to={ROUTES.AUTH.REGISTER}>
-            <Text size="sm" color="accent">
-              {t('auth.login.form.register')}
-            </Text>
-          </Link>
+          <TextLink to={ROUTES.AUTH.REGISTER} label={t('auth.login.form.register')} />
         </Stack>
       </Stack>
 
       <Divider label={t('auth.login.form.orContinueWith')} />
 
-      <Button variant="soft" color="gray" size="lg" fullWidth leftIcon="globe">
+      <Button variant="solid" color="blue" size="lg" fullWidth leftIcon="globe">
         Google
       </Button>
     </Stack>
