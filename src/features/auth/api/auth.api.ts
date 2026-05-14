@@ -1,3 +1,4 @@
+import type { User } from '@entities/user';
 import { apiClient, ENDPOINTS } from '@shared/api';
 
 import type {
@@ -10,6 +11,10 @@ import type {
 } from '../model';
 
 export const authApi = {
+  getMe: () => {
+    return apiClient.get<User>(ENDPOINTS.AUTH.ME);
+  },
+
   login: (dto: LoginDto) => {
     return apiClient.post<AuthResponse>(ENDPOINTS.AUTH.LOGIN, dto);
   },
