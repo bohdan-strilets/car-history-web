@@ -4,8 +4,13 @@ import { useAuthStore } from './auth.store';
 
 export const authService = {
   getUser: () => useAuthStore.getState().user,
-  isAuthenticated: () => useAuthStore.getState().isAuthenticated,
   setUser: (user: User) => useAuthStore.getState().setUser(user),
   clearAuth: () => useAuthStore.getState().clearAuth(),
+
+  isAuthenticated: () => useAuthStore.getState().isAuthenticated,
+
   setLoading: (loading: boolean) => useAuthStore.getState().setLoading(loading),
+
+  getAccessToken: () => useAuthStore.getState().accessToken,
+  setAccessToken: (token: string) => useAuthStore.getState().setAccessToken(token),
 };

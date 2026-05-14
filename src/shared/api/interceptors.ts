@@ -2,15 +2,20 @@ import axios, { type AxiosInstance } from 'axios';
 
 import { parseApiError } from './api.utils';
 
-export const setupInterceptors = (instance: AxiosInstance) => {
+export const setupRequestInterceptor = (instance: AxiosInstance, getToken: () => string | null) => {
   instance.interceptors.request.use(
     (config) => {
-      // TODO: attach access token
+      const token = getToken();
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
       return config;
     },
     (error) => Promise.reject(error),
   );
+};
 
+export const setupResponseInterceptor = (instance: AxiosInstance) => {
   instance.interceptors.response.use(
     (response) => response,
     (error) => {

@@ -14,6 +14,7 @@ export const useLoginMutation = () => {
 
     onSuccess: (response) => {
       authService.setUser(response.data.user);
+      authService.setAccessToken(response.data.accessToken);
       navigate(ROUTES.DASHBOARD);
     },
   });

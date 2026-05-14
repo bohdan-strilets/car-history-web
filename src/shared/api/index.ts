@@ -10,4 +10,4 @@ export type {
 export { isHttpError, isValidationError, parseApiError } from './api.utils';
 export { axiosInstance } from './axios-instance';
 export { ENDPOINTS } from './endpoints';
-export { setupInterceptors } from './interceptors';
+export { setupRequestInterceptor, setupResponseInterceptor } from './interceptors';
