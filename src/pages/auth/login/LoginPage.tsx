@@ -36,7 +36,7 @@ export const LoginPage = () => {
         </Stack>
       </Stack>
 
-      <Divider label={t('auth.login.form.orContinueWith')} />
+      <Divider label={t('auth.common.orContinueWith')} />
 
       <Button variant="solid" color="blue" size="lg" fullWidth leftIcon="globe">
         Google

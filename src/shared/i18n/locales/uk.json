@@ -1,15 +1,27 @@
 {
-  "welcome": "Welcome to Arvino!",
+  "welcome": "Ласкаво просимо до Arvino!",
 
   "common": {
-    "hidePassword": "Сховати пароль"
+    "hidePassword": "Сховати пароль",
+    "showPassword": "Показати пароль"
   },
 
   "auth": {
+    "common": {
+      "orContinueWith": "або продовжити з",
+      "googleButton": "Google",
+      "fields": {
+        "email": "Email",
+        "password": "Пароль",
+        "confirmPassword": "Підтвердіть пароль",
+        "firstName": "Ім'я",
+        "lastName": "Прізвище"
+      }
+    },
+
     "panel": {
       "title": "Твій цифровий паспорт автомобіля",
       "subtitle": "Витрати, сервіс, документи та AI асистент в одному місці.",
-
       "features": [
         { "icon": "gauge", "text": "Повна історія пробігу та сервісу" },
         { "icon": "fileText", "text": "Документи з нагадуваннями OC та огляд" },
@@ -22,13 +34,20 @@
       "title": "Ласкаво просимо",
       "subtitle": "Увійдіть у свій акаунт",
       "form": {
-        "email": "Email",
-        "password": "Пароль",
         "submit": "Увійти",
         "forgotPassword": "Забули пароль?",
         "noAccount": "Немає акаунту?",
-        "register": "Зареєструватись",
-        "orContinueWith": "або продовжити з"
+        "register": "Зареєструватись"
+      }
+    },
+
+    "register": {
+      "title": "Створити акаунт",
+      "subtitle": "Приєднуйся до Arvino вже сьогодні",
+      "form": {
+        "submit": "Зареєструватись",
+        "hasAccount": "Вже є акаунт?",
+        "login": "Увійти"
       }
     }
   },
@@ -38,77 +57,60 @@
     "ACCOUNT_LOCKED": "Акаунт тимчасово заблоковано",
     "ACCOUNT_SUSPENDED": "Акаунт призупинено",
     "ACCOUNT_DELETED": "Цей акаунт не існує",
-
     "ACCESS_TOKEN_INVALID": "Сесія недійсна",
     "ACCESS_TOKEN_EXPIRED": "Сесія закінчилась",
     "REFRESH_TOKEN_INVALID": "Сесія недійсна",
     "REFRESH_TOKEN_EXPIRED": "Сесія закінчилась",
     "REFRESH_TOKEN_REUSE": "Виявлено підозрілу активність, увійдіть знову",
-
     "SESSION_NOT_FOUND": "Сесію не знайдено",
     "SESSION_EXPIRED": "Сесія закінчилась, увійдіть знову",
     "SESSION_REVOKED": "Сесію відкликано",
-
     "GOOGLE_AUTH_FAILED": "Вхід через Google не вдався",
     "GOOGLE_EMAIL_MISSING": "Не вдалося отримати email з Google",
-
     "EMAIL_ALREADY_EXISTS": "Цей email вже зайнятий",
     "EMAIL_NOT_VERIFIED": "Підтвердіть свій email",
     "EMAIL_ALREADY_VERIFIED": "Email вже підтверджено",
     "EMAIL_CHANGE_PENDING": "Зміна email очікує підтвердження",
-
     "TOKEN_INVALID": "Посилання недійсне",
     "TOKEN_EXPIRED": "Посилання застаріло",
     "TOKEN_ALREADY_USED": "Посилання вже використано",
     "TOKEN_NOT_FOUND": "Посилання не знайдено",
-
     "USER_NOT_FOUND": "Користувача не знайдено",
     "PASSWORD_INCORRECT": "Невірний пароль",
     "PASSWORD_SAME": "Новий пароль має відрізнятись від попереднього",
-
     "WORKSPACE_NOT_FOUND": "Workspace не знайдено",
     "WORKSPACE_ACCESS_DENIED": "Немає доступу до workspace",
     "WORKSPACE_INSUFFICIENT_ROLE": "Недостатньо прав",
     "WORKSPACE_OWNER_CANNOT_LEAVE": "Власник не може покинути workspace",
     "WORKSPACE_ALREADY_MEMBER": "Користувач вже є членом workspace",
-
     "INVITE_NOT_FOUND": "Запрошення не знайдено",
     "INVITE_EXPIRED": "Запрошення застаріло",
     "INVITE_ALREADY_USED": "Запрошення вже використано",
     "INVITE_EMAIL_MISMATCH": "Email не збігається із запрошенням",
-
     "VEHICLE_NOT_FOUND": "Автомобіль не знайдено",
     "VEHICLE_ACCESS_DENIED": "Немає доступу до автомобіля",
     "VEHICLE_INVALID_MILEAGE": "Невірний пробіг",
-
     "TIMELINE_EVENT_NOT_FOUND": "Подію не знайдено",
     "TIMELINE_INVALID_MILEAGE": "Невірний пробіг",
     "TIMELINE_INVALID_EVENT_TYPE": "Невірний тип події",
-
     "REMINDER_NOT_FOUND": "Нагадування не знайдено",
     "REMINDER_ALREADY_COMPLETED": "Нагадування вже виконано",
     "REMINDER_ALREADY_DISMISSED": "Нагадування вже відхилено",
-
     "MAINTENANCE_INTERVAL_NOT_FOUND": "Інтервал обслуговування не знайдено",
     "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Інтервал обслуговування вже вимкнено",
-
     "TIRE_NOT_FOUND": "Шину не знайдено",
     "TIRE_ALREADY_MOUNTED": "Шина вже встановлена",
     "TIRE_ALREADY_RETIRED": "Шина вже списана",
-
     "SERVICE_STATION_NOT_FOUND": "Сервісну станцію не знайдено",
     "SERVICE_STATION_ACCESS_DENIED": "Немає доступу до сервісної станції",
-
     "MEDIA_NOT_FOUND": "Файл не знайдено",
     "MEDIA_UPLOAD_FAILED": "Не вдалося завантажити файл",
     "MEDIA_INVALID_FILE_TYPE": "Невірний тип файлу",
     "MEDIA_FILE_TOO_LARGE": "Файл занадто великий",
     "MEDIA_ACCESS_DENIED": "Немає доступу до файлу",
-
     "AI_CONVERSATION_NOT_FOUND": "Розмову не знайдено",
     "AI_MESSAGE_FAILED": "Не вдалося надіслати повідомлення",
     "AI_SERVICE_UNAVAILABLE": "Сервіс AI недоступний",
-
     "VALIDATION_ERROR": "Перевірте правильність даних",
     "BAD_REQUEST": "Невірний запит",
     "NOT_FOUND": "Не знайдено",

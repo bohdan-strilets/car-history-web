@@ -2,14 +2,26 @@
   "welcome": "Welcome to Arvino!",
 
   "common": {
-    "hidePassword": "Hide Password"
+    "hidePassword": "Hide Password",
+    "showPassword": "Show Password"
   },
 
   "auth": {
+    "common": {
+      "orContinueWith": "or continue with",
+      "googleButton": "Google",
+      "fields": {
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm password",
+        "firstName": "First name",
+        "lastName": "Last name"
+      }
+    },
+
     "panel": {
       "title": "Your digital car passport",
       "subtitle": "Expenses, service, documents and AI assistant in one place.",
-
       "features": [
         { "icon": "gauge", "text": "Full mileage and service history" },
         { "icon": "fileText", "text": "Documents with OC and inspection reminders" },
@@ -22,13 +34,20 @@
       "title": "Welcome back",
       "subtitle": "Sign in to your account",
       "form": {
-        "email": "Email",
-        "password": "Password",
         "submit": "Sign in",
         "forgotPassword": "Forgot password?",
         "noAccount": "Don't have an account?",
-        "register": "Sign up",
-        "orContinueWith": "or continue with"
+        "register": "Sign up"
+      }
+    },
+
+    "register": {
+      "title": "Create an account",
+      "subtitle": "Join Arvino today",
+      "form": {
+        "submit": "Sign up",
+        "hasAccount": "Already have an account?",
+        "login": "Sign in"
       }
     }
   },
@@ -38,77 +57,60 @@
     "ACCOUNT_LOCKED": "Account has been temporarily locked",
     "ACCOUNT_SUSPENDED": "Account has been suspended",
     "ACCOUNT_DELETED": "This account does not exist",
-
     "ACCESS_TOKEN_INVALID": "Session is invalid",
     "ACCESS_TOKEN_EXPIRED": "Session has expired",
     "REFRESH_TOKEN_INVALID": "Session is invalid",
     "REFRESH_TOKEN_EXPIRED": "Session has expired",
     "REFRESH_TOKEN_REUSE": "Suspicious activity detected, please sign in again",
-
     "SESSION_NOT_FOUND": "Session not found",
     "SESSION_EXPIRED": "Session expired, please sign in again",
     "SESSION_REVOKED": "Session has been revoked",
-
     "GOOGLE_AUTH_FAILED": "Google sign in failed",
     "GOOGLE_EMAIL_MISSING": "Could not retrieve email from Google",
-
     "EMAIL_ALREADY_EXISTS": "This email is already taken",
     "EMAIL_NOT_VERIFIED": "Please verify your email address",
     "EMAIL_ALREADY_VERIFIED": "Email has already been verified",
     "EMAIL_CHANGE_PENDING": "Email change is pending confirmation",
-
     "TOKEN_INVALID": "Link is invalid",
     "TOKEN_EXPIRED": "Link has expired",
     "TOKEN_ALREADY_USED": "Link has already been used",
     "TOKEN_NOT_FOUND": "Link not found",
-
     "USER_NOT_FOUND": "User not found",
     "PASSWORD_INCORRECT": "Incorrect password",
     "PASSWORD_SAME": "New password must differ from the previous one",
-
     "WORKSPACE_NOT_FOUND": "Workspace not found",
     "WORKSPACE_ACCESS_DENIED": "Access to workspace denied",
     "WORKSPACE_INSUFFICIENT_ROLE": "Insufficient permissions",
     "WORKSPACE_OWNER_CANNOT_LEAVE": "Owner cannot leave the workspace",
     "WORKSPACE_ALREADY_MEMBER": "User is already a member of this workspace",
-
     "INVITE_NOT_FOUND": "Invitation not found",
     "INVITE_EXPIRED": "Invitation has expired",
     "INVITE_ALREADY_USED": "Invitation has already been used",
     "INVITE_EMAIL_MISMATCH": "Email does not match the invitation",
-
     "VEHICLE_NOT_FOUND": "Vehicle not found",
     "VEHICLE_ACCESS_DENIED": "Access to vehicle denied",
     "VEHICLE_INVALID_MILEAGE": "Invalid mileage",
-
     "TIMELINE_EVENT_NOT_FOUND": "Event not found",
     "TIMELINE_INVALID_MILEAGE": "Invalid mileage",
     "TIMELINE_INVALID_EVENT_TYPE": "Invalid event type",
-
     "REMINDER_NOT_FOUND": "Reminder not found",
     "REMINDER_ALREADY_COMPLETED": "Reminder has already been completed",
     "REMINDER_ALREADY_DISMISSED": "Reminder has already been dismissed",
-
     "MAINTENANCE_INTERVAL_NOT_FOUND": "Maintenance interval not found",
     "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Maintenance interval is already disabled",
-
     "TIRE_NOT_FOUND": "Tire not found",
     "TIRE_ALREADY_MOUNTED": "Tire is already mounted",
     "TIRE_ALREADY_RETIRED": "Tire is already retired",
-
     "SERVICE_STATION_NOT_FOUND": "Service station not found",
     "SERVICE_STATION_ACCESS_DENIED": "Access to service station denied",
-
     "MEDIA_NOT_FOUND": "File not found",
     "MEDIA_UPLOAD_FAILED": "Failed to upload file",
     "MEDIA_INVALID_FILE_TYPE": "Invalid file type",
     "MEDIA_FILE_TOO_LARGE": "File is too large",
     "MEDIA_ACCESS_DENIED": "Access to file denied",
-
     "AI_CONVERSATION_NOT_FOUND": "Conversation not found",
     "AI_MESSAGE_FAILED": "Failed to send message",
     "AI_SERVICE_UNAVAILABLE": "AI service is unavailable",
-
     "VALIDATION_ERROR": "Please check your input",
     "BAD_REQUEST": "Bad request",
     "NOT_FOUND": "Not found",

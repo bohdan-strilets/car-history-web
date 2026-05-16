@@ -1,15 +1,27 @@
 {
-  "welcome": "Welcome to Arvino!",
+  "welcome": "Witamy w Arvino!",
 
   "common": {
-    "hidePassword": "Ukryj hasło"
+    "hidePassword": "Ukryj hasło",
+    "showPassword": "Pokaż hasło"
   },
 
   "auth": {
+    "common": {
+      "orContinueWith": "lub kontynuuj z",
+      "googleButton": "Google",
+      "fields": {
+        "email": "Email",
+        "password": "Hasło",
+        "confirmPassword": "Potwierdź hasło",
+        "firstName": "Imię",
+        "lastName": "Nazwisko"
+      }
+    },
+
     "panel": {
       "title": "Twój cyfrowy paszport samochodu",
       "subtitle": "Wydatki, serwis, dokumenty i AI asystent w jednym miejscu.",
-
       "features": [
         { "icon": "gauge", "text": "Pełna historia przebiegu i serwisu" },
         { "icon": "fileText", "text": "Dokumenty z przypomnieniami OC i przegląd" },
@@ -22,13 +34,20 @@
       "title": "Witaj z powrotem",
       "subtitle": "Zaloguj się do swojego konta",
       "form": {
-        "email": "Email",
-        "password": "Hasło",
         "submit": "Zaloguj się",
         "forgotPassword": "Nie pamiętasz hasła?",
         "noAccount": "Nie masz konta?",
-        "register": "Zarejestruj się",
-        "orContinueWith": "lub kontynuuj z"
+        "register": "Zarejestruj się"
+      }
+    },
+
+    "register": {
+      "title": "Utwórz konto",
+      "subtitle": "Dołącz do Arvino już dziś",
+      "form": {
+        "submit": "Zarejestruj się",
+        "hasAccount": "Masz już konto?",
+        "login": "Zaloguj się"
       }
     }
   },
@@ -38,77 +57,60 @@
     "ACCOUNT_LOCKED": "Konto zostało tymczasowo zablokowane",
     "ACCOUNT_SUSPENDED": "Konto zostało zawieszone",
     "ACCOUNT_DELETED": "To konto nie istnieje",
-
     "ACCESS_TOKEN_INVALID": "Sesja jest nieprawidłowa",
     "ACCESS_TOKEN_EXPIRED": "Sesja wygasła",
     "REFRESH_TOKEN_INVALID": "Sesja jest nieprawidłowa",
     "REFRESH_TOKEN_EXPIRED": "Sesja wygasła",
     "REFRESH_TOKEN_REUSE": "Wykryto podejrzaną aktywność, zaloguj się ponownie",
-
     "SESSION_NOT_FOUND": "Sesja nie została znaleziona",
     "SESSION_EXPIRED": "Sesja wygasła, zaloguj się ponownie",
     "SESSION_REVOKED": "Sesja została odwołana",
-
     "GOOGLE_AUTH_FAILED": "Logowanie przez Google nie powiodło się",
     "GOOGLE_EMAIL_MISSING": "Nie można pobrać adresu email z Google",
-
     "EMAIL_ALREADY_EXISTS": "Ten adres email jest już zajęty",
     "EMAIL_NOT_VERIFIED": "Potwierdź swój adres email",
     "EMAIL_ALREADY_VERIFIED": "Adres email został już potwierdzony",
     "EMAIL_CHANGE_PENDING": "Zmiana adresu email oczekuje na potwierdzenie",
-
     "TOKEN_INVALID": "Link jest nieprawidłowy",
     "TOKEN_EXPIRED": "Link wygasł",
     "TOKEN_ALREADY_USED": "Link został już użyty",
     "TOKEN_NOT_FOUND": "Link nie został znaleziony",
-
     "USER_NOT_FOUND": "Użytkownik nie został znaleziony",
     "PASSWORD_INCORRECT": "Nieprawidłowe hasło",
     "PASSWORD_SAME": "Nowe hasło musi się różnić od poprzedniego",
-
     "WORKSPACE_NOT_FOUND": "Workspace nie został znaleziony",
     "WORKSPACE_ACCESS_DENIED": "Brak dostępu do workspace",
     "WORKSPACE_INSUFFICIENT_ROLE": "Niewystarczające uprawnienia",
     "WORKSPACE_OWNER_CANNOT_LEAVE": "Właściciel nie może opuścić workspace",
     "WORKSPACE_ALREADY_MEMBER": "Użytkownik jest już członkiem workspace",
-
     "INVITE_NOT_FOUND": "Zaproszenie nie zostało znalezione",
     "INVITE_EXPIRED": "Zaproszenie wygasło",
     "INVITE_ALREADY_USED": "Zaproszenie zostało już użyte",
     "INVITE_EMAIL_MISMATCH": "Email nie zgadza się z zaproszeniem",
-
     "VEHICLE_NOT_FOUND": "Pojazd nie został znaleziony",
     "VEHICLE_ACCESS_DENIED": "Brak dostępu do pojazdu",
     "VEHICLE_INVALID_MILEAGE": "Nieprawidłowy przebieg",
-
     "TIMELINE_EVENT_NOT_FOUND": "Zdarzenie nie zostało znalezione",
     "TIMELINE_INVALID_MILEAGE": "Nieprawidłowy przebieg",
     "TIMELINE_INVALID_EVENT_TYPE": "Nieprawidłowy typ zdarzenia",
-
     "REMINDER_NOT_FOUND": "Przypomnienie nie zostało znalezione",
     "REMINDER_ALREADY_COMPLETED": "Przypomnienie zostało już ukończone",
     "REMINDER_ALREADY_DISMISSED": "Przypomnienie zostało już odrzucone",
-
     "MAINTENANCE_INTERVAL_NOT_FOUND": "Interwał serwisowy nie został znaleziony",
     "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Interwał serwisowy jest już wyłączony",
-
     "TIRE_NOT_FOUND": "Opona nie została znaleziona",
     "TIRE_ALREADY_MOUNTED": "Opona jest już zamontowana",
     "TIRE_ALREADY_RETIRED": "Opona jest już wycofana",
-
     "SERVICE_STATION_NOT_FOUND": "Stacja serwisowa nie została znaleziona",
     "SERVICE_STATION_ACCESS_DENIED": "Brak dostępu do stacji serwisowej",
-
     "MEDIA_NOT_FOUND": "Plik nie został znaleziony",
     "MEDIA_UPLOAD_FAILED": "Nie udało się przesłać pliku",
     "MEDIA_INVALID_FILE_TYPE": "Nieprawidłowy typ pliku",
     "MEDIA_FILE_TOO_LARGE": "Plik jest zbyt duży",
     "MEDIA_ACCESS_DENIED": "Brak dostępu do pliku",
-
     "AI_CONVERSATION_NOT_FOUND": "Rozmowa nie została znaleziona",
     "AI_MESSAGE_FAILED": "Nie udało się wysłać wiadomości",
     "AI_SERVICE_UNAVAILABLE": "Usługa AI jest niedostępna",
-
     "VALIDATION_ERROR": "Sprawdź poprawność danych",
     "BAD_REQUEST": "Nieprawidłowe żądanie",
     "NOT_FOUND": "Nie znaleziono",
