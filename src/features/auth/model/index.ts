@@ -7,3 +7,4 @@ export type {
   ResetPasswordDto,
 } from './auth.types';
 export { createLoginSchema, type LoginValues } from './login.schema';
+export { createRegisterSchema, type RegisterValues } from './register.schema';
