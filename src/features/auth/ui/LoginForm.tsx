@@ -13,13 +13,17 @@ import { createLoginSchema, type LoginValues } from '../model';
 export const LoginForm = () => {
   const { t } = useTranslation();
   const resolver = zodResolver(createLoginSchema(t));
+  const defaultValues: LoginValues = {
+    email: '',
+    password: '',
+  };
 
   const {
     control,
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm<LoginValues>({ resolver });
+  } = useForm<LoginValues>({ resolver, defaultValues });
 
   const { mutate: login, isPending, error } = useLoginMutation();
   const errorMessage = useFormErrors({ error, setError, t });
