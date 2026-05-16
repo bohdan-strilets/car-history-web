@@ -1,4 +1,6 @@
 import { isHttpError, isValidationError } from '@shared/api';
+import i18next from 'i18next';
+import { useEffect } from 'react';
 import type { FieldValues, Path } from 'react-hook-form';
 
 import type { FormErrorsParams } from './form-errors.types';
@@ -8,21 +10,22 @@ export const useFormErrors = <T extends FieldValues>({
   setError,
   t,
 }: FormErrorsParams<T>): string | undefined => {
-  if (!error) return undefined;
-
-  if (isValidationError(error)) {
-    Object.entries(error.fields).forEach(([field, code]) => {
-      setError(field as Path<T>, {
-        message: t(`validation.${code}`),
+  useEffect(() => {
+    if (isValidationError(error)) {
+      Object.entries(error.fields).forEach(([field, code]) => {
+        setError(field as Path<T>, {
+          message: i18next.t(`validation.${code}` as never),
+        });
       });
-    });
+    }
+  }, [error, setError, t]);
 
-    return undefined;
-  }
+  if (!error) return undefined;
+  if (isValidationError(error)) return undefined;
 
   if (isHttpError(error)) {
-    return t(`errors.${error.errorCode}`);
+    return i18next.t(`errors.${error.errorCode}` as never);
   }
 
-  return t('errors.UNKNOWN_ERROR');
+  return i18next.t('errors.UNKNOWN_ERROR' as never);
 };
