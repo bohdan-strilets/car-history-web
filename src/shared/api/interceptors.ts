@@ -1,27 +1,84 @@
 import axios, { type AxiosInstance } from 'axios';
 
 import { parseApiError } from './api.utils';
+import { ENDPOINTS } from './endpoints';
 
 export const setupRequestInterceptor = (instance: AxiosInstance, getToken: () => string | null) => {
   instance.interceptors.request.use(
     (config) => {
       const token = getToken();
+
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
+
       return config;
     },
     (error) => Promise.reject(error),
   );
 };
 
-export const setupResponseInterceptor = (instance: AxiosInstance) => {
+export const setupResponseInterceptor = (
+  instance: AxiosInstance,
+  onRefresh: () => Promise<string>,
+  onLogout: () => void,
+) => {
+  let isRefreshing = false;
+  let queue: Array<{
+    resolve: (token: string) => void;
+    reject: (error: unknown) => void;
+  }> = [];
+
+  const processQueue = (error: unknown, token: string | null) => {
+    queue.forEach((p) => {
+      if (error) {
+        p.reject(error);
+      } else {
+        p.resolve(token!);
+      }
+    });
+
+    queue = [];
+  };
+
   instance.interceptors.response.use(
     (response) => response,
-    (error) => {
+    async (error) => {
+      const originalRequest = error.config;
+      const isRefresh = originalRequest.url?.includes(ENDPOINTS.AUTH.REFRESH);
+      const is401 = axios.isAxiosError(error) && error.response?.status === 401;
+
+      if (is401 && !originalRequest._retry && !isRefresh) {
+        if (isRefreshing) {
+          return new Promise((resolve, reject) => {
+            queue.push({ resolve, reject });
+          }).then((token) => {
+            originalRequest.headers.Authorization = `Bearer ${token}`;
+            return instance(originalRequest);
+          });
+        }
+
+        originalRequest._retry = true;
+        isRefreshing = true;
+
+        try {
+          const newToken = await onRefresh();
+          processQueue(null, newToken);
+          originalRequest.headers.Authorization = `Bearer ${newToken}`;
+          return instance(originalRequest);
+        } catch (refreshError) {
+          processQueue(refreshError, null);
+          onLogout();
+          return Promise.reject(refreshError);
+        } finally {
+          isRefreshing = false;
+        }
+      }
+
       if (axios.isAxiosError(error) && error.response?.data) {
         return Promise.reject(parseApiError(error.response.data));
       }
+
       return Promise.reject(error);
     },
   );
