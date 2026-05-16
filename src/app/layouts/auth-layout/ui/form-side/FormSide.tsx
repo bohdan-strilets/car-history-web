@@ -5,11 +5,11 @@ import { container, logoWrapper, wrapper } from './form-side.css';
 
 export const FormSide = () => {
   return (
-    <Box p={{ mobile: '3xl', tablet: '5xl' }} height="screen">
-      <Stack align="center" justify="center" className={container}>
+    <Box p={{ mobile: '3xl', tablet: '5xl' }} height="screen" overflow="y-auto">
+      <Stack align="center" className={container}>
         <div className={wrapper}>
           <div className={logoWrapper}>
-            <Logo size="xl" />
+            <Logo size="xl" variant="icon" />
           </div>
           <Outlet />
         </div>

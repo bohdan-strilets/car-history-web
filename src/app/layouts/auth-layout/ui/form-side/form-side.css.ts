@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 
 export const container = style({
   flex: 1,
-  height: '100%',
+  minHeight: '100%',
 });
 
 export const wrapper = style({
@@ -13,6 +13,7 @@ export const wrapper = style({
 
   width: '100%',
   maxWidth: '400px',
+  marginBlock: 'auto',
 });
 
 export const logoWrapper = style({
