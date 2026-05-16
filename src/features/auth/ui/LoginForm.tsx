@@ -39,7 +39,7 @@ export const LoginForm = () => {
         control={control}
         name="email"
         render={({ field }) => (
-          <Field label={t('auth.login.form.email')} error={errors.email?.message}>
+          <Field label={t('auth.common.fields.email')} error={errors.email?.message}>
             <Input type="email" placeholder="email@example.com" size="lg" {...field} />
           </Field>
         )}
@@ -49,7 +49,7 @@ export const LoginForm = () => {
         control={control}
         name="password"
         render={({ field }) => (
-          <Field label={t('auth.login.form.password')} error={errors.password?.message}>
+          <Field label={t('auth.common.fields.password')} error={errors.password?.message}>
             <PasswordInput placeholder="••••••••" size="lg" {...field} />
           </Field>
         )}
