@@ -3,9 +3,9 @@ import { ROUTES } from '@shared/config/routes';
 import { TextLink } from '@shared/ui';
 import { Button } from '@shared/ui/primitives/button';
 import { Divider } from '@shared/ui/primitives/divider';
-import { Heading } from '@shared/ui/primitives/heading';
 import { Stack } from '@shared/ui/primitives/stack';
 import { Text } from '@shared/ui/primitives/text';
+import { AuthHeader } from '@widgets/auth-header';
 import { useTranslation } from 'react-i18next';
 
 export const LoginPage = () => {
@@ -13,12 +13,7 @@ export const LoginPage = () => {
 
   return (
     <Stack gap="2xl">
-      <Stack gap="xs">
-        <Heading as="h1" size="3xl" weight="extraBold">
-          {t('auth.login.title')}
-        </Heading>
-        <Text color="tertiary">{t('auth.login.subtitle')}</Text>
-      </Stack>
+      <AuthHeader title={t('auth.login.title')} subtitle={t('auth.login.subtitle')} />
 
       <LoginForm />
 
