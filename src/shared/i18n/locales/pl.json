@@ -88,6 +88,10 @@
         "resend": "Wyślij ponownie",
         "resendIn": "Wyślij ponownie za {{seconds}}s"
       }
+    },
+
+    "emailVerification": {
+      "banner": "Potwierdź swój adres email, aby uzyskać pełny dostęp."
     }
   },
 

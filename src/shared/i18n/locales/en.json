@@ -88,6 +88,10 @@
         "resend": "Resend email",
         "resendIn": "Resend in {{seconds}}s"
       }
+    },
+
+    "emailVerification": {
+      "banner": "Please verify your email address to get full access."
     }
   },
 

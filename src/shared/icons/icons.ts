@@ -95,6 +95,7 @@ import {
   LogIn,
   LogOut,
   Mail,
+  MailWarning,
   // Location & Map
   Map,
   MapPin,
@@ -222,6 +223,7 @@ export const Icons = {
   loader: Loader2,
   circleAlert: CircleAlert,
   badgeCheck: BadgeCheck,
+  mailWarning: MailWarning,
 
   // Auth & User
   logIn: LogIn,
