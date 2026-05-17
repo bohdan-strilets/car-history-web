@@ -1,4 +1,4 @@
-import { RegisterForm } from '@features/auth';
+import { RegisterForm, useGoogleAuth } from '@features/auth';
 import { ROUTES } from '@shared/config/routes';
 import { Button } from '@shared/ui/primitives/button';
 import { Divider } from '@shared/ui/primitives/divider';
@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 
 export const RegisterPage = () => {
   const { t } = useTranslation();
+  const { redirectToGoogle } = useGoogleAuth();
 
   return (
     <Stack gap="2xl">
@@ -26,7 +27,14 @@ export const RegisterPage = () => {
 
       <Divider label={t('auth.common.orContinueWith')} />
 
-      <Button variant="solid" color="blue" size="lg" fullWidth leftIcon="globe">
+      <Button
+        variant="solid"
+        color="blue"
+        size="lg"
+        fullWidth
+        leftIcon="globe"
+        onClick={redirectToGoogle}
+      >
         {t('auth.common.googleButton')}
       </Button>
     </Stack>

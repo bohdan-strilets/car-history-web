@@ -13,6 +13,7 @@ export type {
 export { useConfirmEmail } from './confirm-email';
 export { useForgotPassword } from './forgot-password';
 export { createForgotPasswordSchema, type ForgotPasswordValues } from './forgot-password.schema';
+export { useGoogleAuth } from './google-auth';
 export { createLoginSchema, type LoginValues } from './login.schema';
 export { createRegisterSchema, type RegisterValues } from './register.schema';
 export { createResetPasswordSchema, type ResetPasswordValues } from './reset-password.schema';

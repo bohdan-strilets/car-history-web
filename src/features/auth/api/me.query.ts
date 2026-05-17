@@ -8,12 +8,21 @@ export const useMeQuery = () => {
   return useQuery({
     queryKey: queryKeys.auth.me(),
     queryFn: async () => {
-      const response = await authApi.getMe();
-      authService.setUser(response.data);
-      return response.data;
+      try {
+        if (!authService.getAccessToken()) {
+          const refreshResponse = await authApi.refresh();
+          authService.setAccessToken(refreshResponse.data.accessToken);
+        }
+
+        const meResponse = await authApi.getMe();
+        authService.setUser(meResponse.data);
+        return meResponse.data;
+      } catch {
+        authService.clearAuth();
+        return null;
+      }
     },
     retry: false,
     staleTime: Infinity,
-    throwOnError: false,
   });
 };

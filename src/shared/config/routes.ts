@@ -4,6 +4,7 @@ export const ROUTES = {
   AUTH: {
     LOGIN: '/auth/login',
     REGISTER: '/auth/register',
+    GOOGLE_CALLBACK: '/auth/google/callback',
     FORGOT_PASSWORD: '/auth/forgot-password',
     RESET_PASSWORD: '/auth/reset-password',
     CONFIRM_EMAIL: '/auth/confirm-email',

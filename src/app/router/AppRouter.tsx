@@ -2,6 +2,7 @@ import { AuthLayout } from '@app/layouts';
 import {
   ConfirmEmailPage,
   ForgotPasswordPage,
+  GoogleCallbackPage,
   LoginPage,
   RegisterPage,
   ResetPasswordPage,
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
         children: [
           { path: ROUTES.AUTH.LOGIN, element: <LoginPage /> },
           { path: ROUTES.AUTH.REGISTER, element: <RegisterPage /> },
+          { path: ROUTES.AUTH.GOOGLE_CALLBACK, element: <GoogleCallbackPage /> },
           { path: ROUTES.AUTH.FORGOT_PASSWORD, element: <ForgotPasswordPage /> },
           { path: ROUTES.AUTH.RESET_PASSWORD, element: <ResetPasswordPage /> },
           { path: ROUTES.AUTH.CONFIRM_EMAIL, element: <ConfirmEmailPage /> },

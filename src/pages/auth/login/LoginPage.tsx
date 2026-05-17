@@ -1,4 +1,4 @@
-import { LoginForm } from '@features/auth';
+import { LoginForm, useGoogleAuth } from '@features/auth';
 import { ROUTES } from '@shared/config/routes';
 import { TextLink } from '@shared/ui';
 import { Button } from '@shared/ui/primitives/button';
@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 
 export const LoginPage = () => {
   const { t } = useTranslation();
+  const { redirectToGoogle } = useGoogleAuth();
 
   return (
     <Stack gap="2xl">
@@ -33,7 +34,14 @@ export const LoginPage = () => {
 
       <Divider label={t('auth.common.orContinueWith')} />
 
-      <Button variant="solid" color="blue" size="lg" fullWidth leftIcon="globe">
+      <Button
+        variant="solid"
+        color="blue"
+        size="lg"
+        fullWidth
+        leftIcon="globe"
+        onClick={redirectToGoogle}
+      >
         Google
       </Button>
     </Stack>
