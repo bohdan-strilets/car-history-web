@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
-import { Field, Form, Input, PasswordInput } from '@shared/ui';
-import { Controller, useForm } from 'react-hook-form';
+import { Form, FormField, Input, PasswordInput } from '@shared/ui';
+import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { useRegisterMutation } from '../api';
@@ -46,57 +46,41 @@ export const RegisterForm = () => {
       isLoading={isPending}
       error={errorMessage}
     >
-      <Controller
+      <FormField
         control={control}
         name="firstName"
-        render={({ field }) => (
-          <Field label={t('auth.common.fields.firstName')} error={errors.firstName?.message}>
-            <Input size="lg" {...field} />
-          </Field>
-        )}
+        label={t('auth.common.fields.firstName')}
+        render={(field) => <Input size="lg" {...field} />}
       />
 
-      <Controller
+      <FormField
         control={control}
         name="lastName"
-        render={({ field }) => (
-          <Field label={t('auth.common.fields.lastName')} error={errors.lastName?.message}>
-            <Input size="lg" {...field} />
-          </Field>
-        )}
+        label={t('auth.common.fields.lastName')}
+        render={(field) => <Input size="lg" {...field} />}
       />
 
-      <Controller
+      <FormField
         control={control}
         name="email"
-        render={({ field }) => (
-          <Field label={t('auth.common.fields.email')} error={errors.email?.message}>
-            <Input type="email" placeholder="email@example.com" size="lg" {...field} />
-          </Field>
+        label={t('auth.common.fields.email')}
+        render={(field) => (
+          <Input type="email" placeholder="email@example.com" size="lg" {...field} />
         )}
       />
 
-      <Controller
+      <FormField
         control={control}
         name="password"
-        render={({ field }) => (
-          <Field label={t('auth.common.fields.password')} error={errors.password?.message}>
-            <PasswordInput placeholder="••••••••" size="lg" {...field} />
-          </Field>
-        )}
+        label={t('auth.common.fields.password')}
+        render={(field) => <PasswordInput placeholder="••••••••" size="lg" {...field} />}
       />
 
-      <Controller
+      <FormField
         control={control}
         name="confirmPassword"
-        render={({ field }) => (
-          <Field
-            label={t('auth.common.fields.confirmPassword')}
-            error={errors.confirmPassword?.message}
-          >
-            <PasswordInput placeholder="••••••••" size="lg" {...field} />
-          </Field>
-        )}
+        label={t('auth.common.fields.confirmPassword')}
+        render={(field) => <PasswordInput placeholder="••••••••" size="lg" {...field} />}
       />
     </Form>
   );
