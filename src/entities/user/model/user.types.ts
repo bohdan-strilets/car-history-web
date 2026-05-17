@@ -18,5 +18,6 @@ export interface User {
   lastName: string;
   avatarUrl: string | null;
   status: UserStatus;
+  onboardingCompleted: boolean;
   createdAt: Date;
 }
