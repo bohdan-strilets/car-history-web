@@ -31,7 +31,7 @@ export const IconBox = ({
       aria-label={ariaLabel}
       aria-hidden={ariaLabel ? undefined : true}
     >
-      <Icon name={name} strokeWidth={strokeWidth} />
+      <Icon name={name} strokeWidth={strokeWidth} size={size} color="inherit" />
     </span>
   );
 };
