@@ -13,6 +13,7 @@ export * from './password-input';
 export * from './skeleton';
 export * from './spinner';
 export * from './stack';
+export * from './success-state';
 export * from './surface';
 export * from './text';
 export * from './text-link';
