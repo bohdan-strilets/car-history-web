@@ -1,4 +1,4 @@
-import { AuthLayout } from '@app/layouts';
+import { AppLayout, AuthLayout } from '@app/layouts';
 import {
   ConfirmEmailPage,
   ForgotPasswordPage,
@@ -36,7 +36,18 @@ const router = createBrowserRouter([
   },
   {
     element: <ProtectedRoute />,
-    children: [{ path: ROUTES.DASHBOARD, element: <DashboardPage /> }],
+    children: [
+      {
+        element: <AppLayout />,
+        children: [
+          { path: ROUTES.DASHBOARD, element: <DashboardPage /> },
+          { path: ROUTES.WORKSPACES.ROOT, element: <div>Workspaces</div> },
+          { path: ROUTES.SERVICE_STATIONS.ROOT, element: <div>Service Stations</div> },
+          { path: ROUTES.AI.ROOT, element: <div>AI</div> },
+          { path: ROUTES.PROFILE.ROOT, element: <div>Profile</div> },
+        ],
+      },
+    ],
   },
 ]);
 
