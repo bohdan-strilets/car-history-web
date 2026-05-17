@@ -46,9 +46,10 @@ export const setupResponseInterceptor = (
     async (error) => {
       const originalRequest = error.config;
       const isRefresh = originalRequest.url?.includes(ENDPOINTS.AUTH.REFRESH);
+      const isAuthMe = originalRequest.url?.includes(ENDPOINTS.AUTH.ME);
       const is401 = axios.isAxiosError(error) && error.response?.status === 401;
 
-      if (is401 && !originalRequest._retry && !isRefresh) {
+      if (is401 && !originalRequest._retry && !isRefresh && !isAuthMe) {
         if (isRefreshing) {
           return new Promise((resolve, reject) => {
             queue.push({ resolve, reject });

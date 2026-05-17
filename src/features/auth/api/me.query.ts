@@ -14,5 +14,6 @@ export const useMeQuery = () => {
     },
     retry: false,
     staleTime: Infinity,
+    throwOnError: false,
   });
 };
