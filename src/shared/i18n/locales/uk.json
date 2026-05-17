@@ -3,7 +3,11 @@
 
   "common": {
     "hidePassword": "Сховати пароль",
-    "showPassword": "Показати пароль"
+    "showPassword": "Показати пароль",
+    "close": "Закрити",
+    "back": "Назад",
+    "confirm": "Підтвердити",
+    "cancel": "Скасувати"
   },
 
   "auth": {

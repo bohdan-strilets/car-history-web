@@ -3,7 +3,11 @@
 
   "common": {
     "hidePassword": "Hide Password",
-    "showPassword": "Show Password"
+    "showPassword": "Show Password",
+    "close": "Close",
+    "back": "Back",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   },
 
   "auth": {
