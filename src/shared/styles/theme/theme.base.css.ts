@@ -116,5 +116,17 @@ export const baseTheme = {
       lg: '48px',
       xl: '56px',
     },
+    appLayout: {
+      header: {
+        height: '74px',
+      },
+      bottomNav: {
+        height: '74px',
+      },
+      sidebar: {
+        collapsedWidth: '74px',
+        expandedWidth: '280px',
+      },
+    },
   },
 } as const;

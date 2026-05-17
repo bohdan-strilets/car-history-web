@@ -330,5 +330,17 @@ export const vars = createThemeContract({
       lg: null,
       xl: null,
     },
+    appLayout: {
+      header: {
+        height: null,
+      },
+      bottomNav: {
+        height: null,
+      },
+      sidebar: {
+        collapsedWidth: null,
+        expandedWidth: null,
+      },
+    },
   },
 });
