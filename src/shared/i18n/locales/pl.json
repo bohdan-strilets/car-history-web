@@ -64,6 +64,15 @@
         "resend": "Wyślij ponownie",
         "resendIn": "Wyślij ponownie za {{seconds}}s"
       }
+    },
+
+    "resetPassword": {
+      "title": "Ustaw nowe hasło",
+      "subtitle": "Wprowadź nowe hasło dla swojego konta",
+      "form": {
+        "submit": "Zapisz hasło"
+      },
+      "success": "Hasło zostało zmienione. Możesz się zalogować."
     }
   },
 

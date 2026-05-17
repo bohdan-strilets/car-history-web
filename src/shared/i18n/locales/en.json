@@ -64,6 +64,15 @@
         "resend": "Resend email",
         "resendIn": "Resend in {{seconds}}s"
       }
+    },
+
+    "resetPassword": {
+      "title": "Set new password",
+      "subtitle": "Enter a new password for your account",
+      "form": {
+        "submit": "Save password"
+      },
+      "success": "Password changed. You can now sign in."
     }
   },
 

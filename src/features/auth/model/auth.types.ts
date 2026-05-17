@@ -39,3 +39,14 @@ export interface AuthResponse {
 export interface ForgotPasswordFormProps {
   onSuccess: (email: string) => void;
 }
+
+export interface ResetPasswordFormProps {
+  token: string;
+  onSuccess: () => void;
+}
+
+// Params
+
+export interface ResetPasswordParams {
+  onSuccess?: () => void;
+}

@@ -1,3 +1,30 @@
+import { ResetPasswordForm } from '@features/auth';
+import { ROUTES } from '@shared/config';
+import { showToast } from '@shared/lib/toast';
+import { Stack } from '@shared/ui';
+import { AuthHeader } from '@widgets/auth-header';
+import { useTranslation } from 'react-i18next';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+
 export const ResetPasswordPage = () => {
-  return <h1>ResetPasswordPage</h1>;
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const token = searchParams.get('token') ?? '';
+
+  const handleSuccess = () => {
+    showToast.success(t('auth.resetPassword.success'));
+    navigate(ROUTES.AUTH.LOGIN);
+  };
+
+  return (
+    <Stack gap="2xl">
+      <AuthHeader
+        title={t('auth.resetPassword.title')}
+        subtitle={t('auth.resetPassword.subtitle')}
+      />
+
+      <ResetPasswordForm token={token} onSuccess={handleSuccess} />
+    </Stack>
+  );
 };
