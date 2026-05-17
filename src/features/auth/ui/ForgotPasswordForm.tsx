@@ -1,8 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
-import { Field } from '@shared/ui/components/field';
-import { Form } from '@shared/ui/components/form';
-import { Input } from '@shared/ui/primitives/input';
+import { Field, Form, Input } from '@shared/ui';
 import { Controller, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
