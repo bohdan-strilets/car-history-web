@@ -5,10 +5,12 @@ export type {
   ForgotPasswordFormProps,
   LoginDto,
   RegisterDto,
+  ResendConfirmationParams,
   ResetPasswordDto,
   ResetPasswordFormProps,
   ResetPasswordParams,
 } from './auth.types';
+export { useConfirmEmail } from './confirm-email';
 export { useForgotPassword } from './forgot-password';
 export { createForgotPasswordSchema, type ForgotPasswordValues } from './forgot-password.schema';
 export { createLoginSchema, type LoginValues } from './login.schema';

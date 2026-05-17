@@ -50,3 +50,7 @@ export interface ResetPasswordFormProps {
 export interface ResetPasswordParams {
   onSuccess?: () => void;
 }
+
+export interface ResendConfirmationParams {
+  onSuccess?: () => void;
+}

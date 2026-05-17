@@ -73,6 +73,21 @@
         "submit": "Zapisz hasło"
       },
       "success": "Hasło zostało zmienione. Możesz się zalogować."
+    },
+
+    "confirmEmail": {
+      "verifying": "Weryfikacja adresu email...",
+      "success": {
+        "title": "Email potwierdzony!",
+        "subtitle": "Twój adres email został pomyślnie potwierdzony.",
+        "login": "Zaloguj się"
+      },
+      "error": {
+        "title": "Link jest nieprawidłowy",
+        "subtitle": "Link wygasł lub został już użyty.",
+        "resend": "Wyślij ponownie",
+        "resendIn": "Wyślij ponownie za {{seconds}}s"
+      }
     }
   },
 

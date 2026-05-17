@@ -73,6 +73,21 @@
         "submit": "Save password"
       },
       "success": "Password changed. You can now sign in."
+    },
+
+    "confirmEmail": {
+      "verifying": "Verifying email address...",
+      "success": {
+        "title": "Email confirmed!",
+        "subtitle": "Your email address has been successfully confirmed.",
+        "login": "Sign in"
+      },
+      "error": {
+        "title": "Link is invalid",
+        "subtitle": "The link has expired or has already been used.",
+        "resend": "Resend email",
+        "resendIn": "Resend in {{seconds}}s"
+      }
     }
   },
 
