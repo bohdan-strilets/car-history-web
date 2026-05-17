@@ -1,6 +1,7 @@
 import { AppRouter } from '@app/router';
 
 import { I18nProvider } from './I18nProvider';
+import { InitProvider } from './InitProvider';
 import { QueryProvider } from './QueryProvider';
 import { ThemeProvider } from './ThemeProvider';
 import { ToastProvider } from './ToastProvider';
@@ -10,8 +11,10 @@ export const AppProvider = () => {
     <I18nProvider>
       <ThemeProvider>
         <QueryProvider>
-          <ToastProvider />
-          <AppRouter />
+          <InitProvider>
+            <ToastProvider />
+            <AppRouter />
+          </InitProvider>
         </QueryProvider>
       </ThemeProvider>
     </I18nProvider>
