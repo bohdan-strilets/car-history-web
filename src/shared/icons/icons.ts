@@ -7,6 +7,7 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUp,
+  BadgeCheck,
   BadgePercent,
   BarChart2,
   Battery,
@@ -220,6 +221,7 @@ export const Icons = {
   clock: Clock,
   loader: Loader2,
   circleAlert: CircleAlert,
+  badgeCheck: BadgeCheck,
 
   // Auth & User
   logIn: LogIn,
