@@ -95,6 +95,22 @@
     }
   },
 
+  "nav": {
+    "home": "Strona główna",
+    "garage": "Garaż",
+    "stations": "Stacje",
+    "ai": "AI",
+    "profile": "Profil",
+    "bottomBar": {
+      "ariaLabel": "Nawigacja główna"
+    },
+    "sidebar": {
+      "ariaLabel": "Nawigacja boczna",
+      "collapse": "Zwiń",
+      "expand": "Rozwiń"
+    }
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Nieprawidłowy email lub hasło",
     "ACCOUNT_LOCKED": "Konto zostało tymczasowo zablokowane",

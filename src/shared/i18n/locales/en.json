@@ -94,6 +94,21 @@
       "banner": "Please verify your email address to get full access."
     }
   },
+  "nav": {
+    "home": "Home",
+    "garage": "Garage",
+    "stations": "Stations",
+    "ai": "AI",
+    "profile": "Profile",
+    "bottomBar": {
+      "ariaLabel": "Main navigation"
+    },
+    "sidebar": {
+      "ariaLabel": "Side navigation",
+      "collapse": "Collapse",
+      "expand": "Expand"
+    }
+  },
 
   "errors": {
     "INVALID_CREDENTIALS": "Invalid email or password",

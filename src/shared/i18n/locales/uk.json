@@ -95,6 +95,22 @@
     }
   },
 
+  "nav": {
+    "home": "Головна",
+    "garage": "Гараж",
+    "stations": "Станції",
+    "ai": "AI",
+    "profile": "Профіль",
+    "bottomBar": {
+      "ariaLabel": "Головна навігація"
+    },
+    "sidebar": {
+      "ariaLabel": "Бічна навігація",
+      "collapse": "Згорнути",
+      "expand": "Розгорнути"
+    }
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Невірний email або пароль",
     "ACCOUNT_LOCKED": "Акаунт тимчасово заблоковано",
