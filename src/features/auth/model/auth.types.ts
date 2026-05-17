@@ -33,3 +33,9 @@ export interface AuthResponse {
   user: User;
   accessToken: string;
 }
+
+// Props
+
+export interface ForgotPasswordFormProps {
+  onSuccess: (email: string) => void;
+}

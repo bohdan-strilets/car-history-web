@@ -49,6 +49,21 @@
         "hasAccount": "Already have an account?",
         "login": "Sign in"
       }
+    },
+
+    "forgotPassword": {
+      "title": "Forgot password?",
+      "subtitle": "We'll send you a link to reset your password",
+      "form": {
+        "submit": "Send reset link"
+      },
+      "backToLogin": "Back to sign in",
+      "success": {
+        "title": "Check your inbox",
+        "subtitle": "We sent a reset link to {{email}}",
+        "resend": "Resend email",
+        "resendIn": "Resend in {{seconds}}s"
+      }
     }
   },
 

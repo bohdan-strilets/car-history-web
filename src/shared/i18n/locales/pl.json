@@ -49,6 +49,21 @@
         "hasAccount": "Masz już konto?",
         "login": "Zaloguj się"
       }
+    },
+
+    "forgotPassword": {
+      "title": "Nie pamiętasz hasła?",
+      "subtitle": "Wyślemy Ci link do resetowania hasła",
+      "form": {
+        "submit": "Wyślij link"
+      },
+      "backToLogin": "Wróć do logowania",
+      "success": {
+        "title": "Sprawdź swoją skrzynkę",
+        "subtitle": "Wysłaliśmy link na {{email}}",
+        "resend": "Wyślij ponownie",
+        "resendIn": "Wyślij ponownie za {{seconds}}s"
+      }
     }
   },
 
