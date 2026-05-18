@@ -18,3 +18,24 @@ export interface OnboardingStore extends OnboardingState {
   setWorkspaceId: (id: string) => void;
   canGoNext: () => boolean;
 }
+
+// Props
+
+export interface WorkspaceStepProps {
+  onNext: () => void;
+}
+
+export interface VehicleStepProps {
+  onNext: () => void;
+  onSkip: () => void;
+}
+
+export interface SettingsStepProps {
+  onNext: () => void;
+  onSkip: () => void;
+}
+
+export interface TimelineStepProps {
+  onNext: () => void;
+  onSkip: () => void;
+}

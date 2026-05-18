@@ -5,4 +5,11 @@ export {
   TOTAL_STEPS,
 } from './onboarding.config';
 export { useOnboardingStore } from './onboarding.store';
-export type { OnboardingState, OnboardingStep } from './onboarding.types';
+export type {
+  OnboardingState,
+  OnboardingStep,
+  SettingsStepProps,
+  TimelineStepProps,
+  VehicleStepProps,
+  WorkspaceStepProps,
+} from './onboarding.types';

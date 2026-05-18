@@ -11,10 +11,10 @@ import {
   useOnboardingStore,
 } from '../model';
 
-import { SettingsStep } from './steps/SettingsStep';
-import { TimelineStep } from './steps/TimelineStep';
-import { VehicleStep } from './steps/VehicleStep';
-import { WorkspaceStep } from './steps/WorkspaceStep';
+import { SettingsStep } from './SettingsStep';
+import { TimelineStep } from './TimelineStep';
+import { VehicleStep } from './VehicleStep';
+import { WorkspaceStep } from './WorkspaceStep';
 
 export const OnboardingStepper = () => {
   const { t } = useTranslation();
