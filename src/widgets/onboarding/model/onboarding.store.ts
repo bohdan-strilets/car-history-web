@@ -1,8 +1,7 @@
 import { create } from 'zustand';
 
-import type { OnboardingStep, OnboardingStore } from './onboarding.types';
-
-const STEPS: OnboardingStep[] = ['workspace', 'vehicle', 'settings', 'timeline'];
+import { ONBOARDING_STEPS } from './onboarding.config';
+import type { OnboardingStore } from './onboarding.types';
 
 export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
   currentStep: 'workspace',
@@ -20,10 +19,10 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
 
   goNext: () => {
     const { currentStep, completedSteps } = get();
-    const currentIndex = STEPS.indexOf(currentStep);
-    if (currentIndex < STEPS.length - 1) {
+    const currentIndex = ONBOARDING_STEPS.indexOf(currentStep);
+    if (currentIndex < ONBOARDING_STEPS.length - 1) {
       set({
-        currentStep: STEPS[currentIndex + 1],
+        currentStep: ONBOARDING_STEPS[currentIndex + 1],
         completedSteps: [...completedSteps, currentStep],
       });
     }

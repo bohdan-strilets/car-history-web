@@ -11,6 +11,21 @@
     "step": "Step {{current}} of {{total}}"
   },
 
+  "onboarding": {
+    "workspace": {
+      "title": "Create your workspace"
+    },
+    "vehicle": {
+      "title": "Add your first vehicle"
+    },
+    "settings": {
+      "title": "Customize settings"
+    },
+    "timeline": {
+      "title": "Add your first event"
+    }
+  },
+
   "auth": {
     "common": {
       "orContinueWith": "or continue with",
@@ -99,6 +114,7 @@
       "banner": "Please verify your email address to get full access."
     }
   },
+
   "nav": {
     "home": "Home",
     "garage": "Garage",

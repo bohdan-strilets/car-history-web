@@ -11,6 +11,21 @@
     "step": "Крок {{current}} з {{total}}"
   },
 
+  "onboarding": {
+    "workspace": {
+      "title": "Створіть свій workspace"
+    },
+    "vehicle": {
+      "title": "Додайте перший автомобіль"
+    },
+    "settings": {
+      "title": "Налаштуйте параметри"
+    },
+    "timeline": {
+      "title": "Додайте першу подію"
+    }
+  },
+
   "auth": {
     "common": {
       "orContinueWith": "або продовжити з",

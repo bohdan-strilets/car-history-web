@@ -11,6 +11,21 @@
     "step": "Krok {{current}} z {{total}}"
   },
 
+  "onboarding": {
+    "workspace": {
+      "title": "Utwórz swój workspace"
+    },
+    "vehicle": {
+      "title": "Dodaj swój pierwszy pojazd"
+    },
+    "settings": {
+      "title": "Dostosuj ustawienia"
+    },
+    "timeline": {
+      "title": "Dodaj pierwsze zdarzenie"
+    }
+  },
+
   "auth": {
     "common": {
       "orContinueWith": "lub kontynuuj z",
