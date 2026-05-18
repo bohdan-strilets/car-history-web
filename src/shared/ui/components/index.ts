@@ -8,4 +8,5 @@ export * from './modal';
 export * from './nav-item';
 export * from './panel';
 export * from './select';
+export * from './stepper';
 export * from './tooltip';

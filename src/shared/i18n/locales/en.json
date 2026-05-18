@@ -7,7 +7,8 @@
     "close": "Close",
     "back": "Back",
     "confirm": "Confirm",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "step": "Step {{current}} of {{total}}"
   },
 
   "auth": {

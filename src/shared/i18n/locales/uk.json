@@ -7,7 +7,8 @@
     "close": "Закрити",
     "back": "Назад",
     "confirm": "Підтвердити",
-    "cancel": "Скасувати"
+    "cancel": "Скасувати",
+    "step": "Крок {{current}} з {{total}}"
   },
 
   "auth": {
