@@ -4,7 +4,7 @@ import { ONBOARDING_STEPS } from './onboarding.config';
 import type { OnboardingStore } from './onboarding.types';
 
 export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
-  currentStep: 'workspace',
+  currentStep: 'welcome',
   workspaceId: null,
   completedSteps: [],
 

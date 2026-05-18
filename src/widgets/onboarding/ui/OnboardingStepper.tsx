@@ -14,6 +14,7 @@ import {
 import { SettingsStep } from './SettingsStep';
 import { TimelineStep } from './TimelineStep';
 import { VehicleStep } from './VehicleStep';
+import { WelcomeStep } from './WelcomeStep';
 import { WorkspaceStep } from './WorkspaceStep';
 
 export const OnboardingStepper = () => {
@@ -30,8 +31,10 @@ export const OnboardingStepper = () => {
 
   const renderStep = () => {
     switch (currentStep) {
+      case 'welcome':
+        return <WelcomeStep onNext={goNext} />;
       case 'workspace':
-        return <WorkspaceStep onNext={goNext} />;
+        return <WorkspaceStep onNext={goNext} onSkip={skip} />;
       case 'vehicle':
         return <VehicleStep onNext={goNext} onSkip={skip} />;
       case 'settings':

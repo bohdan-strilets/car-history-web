@@ -1,6 +1,4 @@
 {
-  "welcome": "Witamy w Arvino!",
-
   "common": {
     "hidePassword": "Ukryj hasło",
     "showPassword": "Pokaż hasło",
@@ -12,6 +10,12 @@
   },
 
   "onboarding": {
+    "welcome": {
+      "title": "Witaj w Arvino",
+      "subtitle": "Twój cyfrowy paszport samochodu",
+      "description": "Zarządzaj wydatkami, serwisem, dokumentami i historią swojego auta w jednym miejscu.",
+      "start": "Zaczynamy"
+    },
     "workspace": {
       "title": "Utwórz swój workspace"
     },

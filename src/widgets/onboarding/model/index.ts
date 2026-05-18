@@ -11,5 +11,6 @@ export type {
   SettingsStepProps,
   TimelineStepProps,
   VehicleStepProps,
+  WelcomeStepProps,
   WorkspaceStepProps,
 } from './onboarding.types';

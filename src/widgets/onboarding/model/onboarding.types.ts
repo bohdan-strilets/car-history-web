@@ -1,6 +1,6 @@
 // Types
 
-export type OnboardingStep = 'workspace' | 'vehicle' | 'settings' | 'timeline';
+export type OnboardingStep = 'welcome' | 'workspace' | 'vehicle' | 'settings' | 'timeline';
 
 // State
 
@@ -21,8 +21,13 @@ export interface OnboardingStore extends OnboardingState {
 
 // Props
 
+export interface WelcomeStepProps {
+  onNext: () => void;
+}
+
 export interface WorkspaceStepProps {
   onNext: () => void;
+  onSkip: () => void;
 }
 
 export interface VehicleStepProps {
