@@ -5,3 +5,4 @@ export * from './form-error';
 export * from './form-field';
 export * from './modal';
 export * from './nav-item';
+export * from './select';
