@@ -11,6 +11,7 @@ export const ROUTES = {
   },
 
   DASHBOARD: '/dashboard',
+  ONBOARDING: '/onboarding',
 
   WORKSPACES: {
     ROOT: '/workspaces',

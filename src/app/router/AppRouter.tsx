@@ -8,6 +8,7 @@ import {
   ResetPasswordPage,
 } from '@pages/auth';
 import { DashboardPage } from '@pages/dashboard';
+import { OnboardingPage } from '@pages/onboarding';
 import { ROUTES } from '@shared/config';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
   {
     element: <ProtectedRoute />,
     children: [
+      { path: ROUTES.ONBOARDING, element: <OnboardingPage /> },
       {
         element: <AppLayout />,
         children: [
