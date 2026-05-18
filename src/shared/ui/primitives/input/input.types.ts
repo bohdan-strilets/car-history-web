@@ -20,3 +20,9 @@ export interface InputOwnProps {
 
 export type InputProps = InputOwnProps &
   Omit<ComponentPropsWithoutRef<'input'>, keyof InputOwnProps>;
+
+export interface InputClassesParams {
+  size?: ResponsiveValue<InputSize>;
+  state?: InputState;
+  disabled?: boolean;
+}
