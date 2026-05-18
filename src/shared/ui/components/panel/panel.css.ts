@@ -1,19 +1,35 @@
 import { vars } from '@shared/styles';
-import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 const { duration, easing } = vars.transition;
 const baseInOut = `${duration.base} ${easing.inOut}`;
 
-export const hoverableStyles = style({
-  cursor: 'pointer',
-  transition: `box-shadow ${baseInOut}, transform ${baseInOut}`,
+export const root = recipe({
+  base: {},
 
-  ':hover': {
-    boxShadow: vars.shadow.neu.raisedLg,
-    transform: 'translateY(-1px)',
-  },
+  variants: {
+    hoverable: {
+      true: {
+        cursor: 'pointer',
+        transition: `box-shadow ${baseInOut}, transform ${baseInOut}`,
 
-  ':active': {
-    transform: 'translateY(0)',
+        ':hover': {
+          boxShadow: vars.shadow.neu.raisedLg,
+          transform: 'translateY(-1px)',
+        },
+
+        ':active': {
+          transform: 'translateY(0)',
+        },
+      },
+    },
+
+    disabled: {
+      true: {
+        opacity: 0.5,
+        cursor: 'not-allowed',
+        pointerEvents: 'none',
+      },
+    },
   },
 });

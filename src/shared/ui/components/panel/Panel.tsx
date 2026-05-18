@@ -1,7 +1,7 @@
 import { Box, Stack, Surface } from '@shared/ui/primitives';
 import clsx from 'clsx';
 
-import { hoverableStyles } from './panel.css';
+import { root } from './panel.css';
 import type { PanelOwnProps } from './panel.types';
 
 export const Panel = ({
@@ -30,6 +30,7 @@ export const Panel = ({
   inline,
   hoverable,
   onClick,
+  disabled,
   ...rest
 }: PanelOwnProps) => {
   return (
@@ -42,7 +43,7 @@ export const Panel = ({
       border={border}
       shadow={shadow}
       radius={radius}
-      className={clsx(hoverable && hoverableStyles, className)}
+      className={clsx(root({ hoverable, disabled }), className)}
       onClick={onClick}
       {...rest}
     >
