@@ -2,15 +2,25 @@ import { vars } from '@shared/styles';
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-export const root = style({
-  position: 'relative',
-  display: 'inline-flex',
+export const root = recipe({
+  base: {
+    position: 'relative',
+    display: 'inline-flex',
+  },
+
+  variants: {
+    fullWidth: {
+      true: {
+        width: '100%',
+      },
+    },
+  },
 });
 
 export const content = recipe({
   base: {
     position: 'absolute',
-    top: `calc(100% + ${vars.spacing.xs})`,
+    top: `calc(100% + ${vars.spacing.sm})`,
     zIndex: vars.zIndex.dropdown,
 
     minWidth: '180px',
@@ -25,12 +35,11 @@ export const content = recipe({
 
   variants: {
     align: {
-      start: {
-        left: 0,
-      },
-      end: {
-        right: 0,
-      },
+      start: { left: 0 },
+      end: { right: 0 },
+    },
+    fullWidth: {
+      true: { width: '100%' },
     },
   },
 });
