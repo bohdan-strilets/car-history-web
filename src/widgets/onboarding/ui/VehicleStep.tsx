@@ -4,23 +4,16 @@ import { VehicleForm } from '@features/vehicle';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { StepSuccess } from './StepSuccess';
+import type { VehicleStepProps } from '../model';
 
-interface VehicleStepProps {
-  onNext: () => void;
-  onSkip?: () => void;
-}
+import { StepSuccess } from './StepSuccess';
 
 export const VehicleStep = ({ onNext, onSkip }: VehicleStepProps) => {
   const { t } = useTranslation();
-  const { activeWorkspace } = useWorkspace();
+  const { activeWorkspaceId } = useWorkspace();
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const workspaceId = activeWorkspace?.id;
-
-  if (!workspaceId) {
-    throw new Error('Workspace ID is required to render VehicleStep component.');
-  }
+  if (!activeWorkspaceId) throw new Error('Active workspace ID is required');
 
   const handleSuccess = (_vehicle: Vehicle) => {
     setIsSuccess(true);
@@ -36,5 +29,5 @@ export const VehicleStep = ({ onNext, onSkip }: VehicleStepProps) => {
     );
   }
 
-  return <VehicleForm workspaceId={workspaceId} onSuccess={handleSuccess} onSkip={onSkip} />;
+  return <VehicleForm workspaceId={activeWorkspaceId} onSuccess={handleSuccess} onSkip={onSkip} />;
 };

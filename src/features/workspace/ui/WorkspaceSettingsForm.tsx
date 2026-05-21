@@ -11,7 +11,11 @@ import { useTranslation } from 'react-i18next';
 
 import { useWorkspaceSettingsForm, type WorkspaceSettingsFormProps } from '../model';
 
-export const WorkspaceSettingsForm = ({ workspaceId, onSuccess }: WorkspaceSettingsFormProps) => {
+export const WorkspaceSettingsForm = ({
+  workspaceId,
+  onSuccess,
+  onSkip,
+}: WorkspaceSettingsFormProps) => {
   const { t } = useTranslation();
   const { control, handleSubmit, isPending, errorMessage } = useWorkspaceSettingsForm({
     workspaceId,
@@ -24,6 +28,7 @@ export const WorkspaceSettingsForm = ({ workspaceId, onSuccess }: WorkspaceSetti
       submitLabel={t('common.next')}
       isLoading={isPending}
       error={errorMessage}
+      onSkip={onSkip}
     >
       <FormFieldCombobox
         control={control}

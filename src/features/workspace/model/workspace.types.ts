@@ -26,11 +26,10 @@ export interface WorkspaceFormParams {
   onSuccess: (workspace: Workspace) => void;
 }
 
-export interface WorkspaceSettingsFormParams {
-  workspaceId: string;
-  onSuccess: (settings: WorkspaceSettings) => void;
-  onSkip?: () => void;
-}
+export type WorkspaceSettingsFormParams = Pick<
+  WorkspaceSettingsFormProps,
+  'onSuccess' | 'onSkip' | 'workspaceId'
+>;
 
 // Props
 

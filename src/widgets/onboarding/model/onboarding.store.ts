@@ -5,15 +5,12 @@ import type { OnboardingStore } from './onboarding.types';
 
 export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
   currentStep: 'welcome',
-  workspaceId: null,
   completedSteps: [],
 
-  setWorkspaceId: (id) => set({ workspaceId: id }),
-
   canGoNext: () => {
-    const { currentStep, workspaceId } = get();
+    const { currentStep } = get();
     if (currentStep === 'workspace') return false;
-    if (currentStep === 'vehicle' && !workspaceId) return false;
+    if (currentStep === 'vehicle') return false;
     return true;
   },
 
@@ -25,6 +22,14 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
         currentStep: ONBOARDING_STEPS[currentIndex + 1],
         completedSteps: [...completedSteps, currentStep],
       });
+    }
+  },
+
+  goBack: () => {
+    const { currentStep } = get();
+    const currentIndex = ONBOARDING_STEPS.indexOf(currentStep);
+    if (currentIndex > 0) {
+      set({ currentStep: ONBOARDING_STEPS[currentIndex - 1] });
     }
   },
 

@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { BasicInfoStep } from './BasicInfoStep';
 import { MileageStep } from './MileageStep';
 
-export const VehicleForm = ({ workspaceId, onSuccess }: VehicleFormProps) => {
+export const VehicleForm = ({ workspaceId, onSuccess, onSkip }: VehicleFormProps) => {
   const { t } = useTranslation();
 
   const {
@@ -41,21 +41,18 @@ export const VehicleForm = ({ workspaceId, onSuccess }: VehicleFormProps) => {
     }
   };
 
+  const showBack = currentStep > 1 ? handleBack : undefined;
+  const showSkip = currentStep === 1 ? onSkip : undefined;
+
   return (
     <Stack gap="xl">
       <Stepper currentStep={currentStep} totalSteps={VEHICLE_FORM_TOTAL_STEPS} color="gray" />
 
       <Form
-        onSubmit={
-          isLastStep
-            ? handleSubmit
-            : (e) => {
-                e.preventDefault();
-                handleNext();
-              }
-        }
+        onSubmit={isLastStep ? handleSubmit : handleNext}
         submitLabel={isLastStep ? t('common.save') : t('common.next')}
-        onBack={currentStep > 1 ? handleBack : undefined}
+        onBack={showBack}
+        onSkip={showSkip}
         isLoading={isPending}
         error={errorMessage}
       >

@@ -4,23 +4,16 @@ import { WorkspaceSettingsForm } from '@features/workspace';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { StepSuccess } from './StepSuccess';
+import type { SettingsStepProps } from '../model';
 
-interface SettingsStepProps {
-  onNext: () => void;
-  onSkip?: () => void;
-}
+import { StepSuccess } from './StepSuccess';
 
 export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
   const { t } = useTranslation();
-  const { activeWorkspace } = useWorkspace();
+  const { activeWorkspaceId } = useWorkspace();
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const workspaceId = activeWorkspace?.id;
-
-  if (!workspaceId) {
-    throw new Error('Workspace ID is required to render SettingsStep component.');
-  }
+  if (!activeWorkspaceId) throw new Error('Active workspace ID is required');
 
   const handleSuccess = (_settings: WorkspaceSettings) => {
     setIsSuccess(true);
@@ -37,6 +30,10 @@ export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
   }
 
   return (
-    <WorkspaceSettingsForm workspaceId={workspaceId} onSuccess={handleSuccess} onSkip={onSkip} />
+    <WorkspaceSettingsForm
+      workspaceId={activeWorkspaceId}
+      onSuccess={handleSuccess}
+      onSkip={onSkip}
+    />
   );
 };

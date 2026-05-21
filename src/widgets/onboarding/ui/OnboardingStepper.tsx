@@ -37,14 +37,18 @@ export const OnboardingStepper = () => {
     switch (currentStep) {
       case 'welcome':
         return <WelcomeStep onNext={goNext} />;
+
       case 'workspace':
-        return <WorkspaceStep onNext={goNext} onSkip={skip} />;
+        return <WorkspaceStep onNext={goNext} />;
+
       case 'vehicle':
         return <VehicleStep onNext={goNext} onSkip={skip} />;
+
       case 'settings':
         return <SettingsStep onNext={goNext} onSkip={skip} />;
+
       case 'timeline':
-        return <TimelineStep onNext={handleFinish} onSkip={handleFinish} />;
+        return <TimelineStep onNext={handleFinish} />;
     }
   };
 

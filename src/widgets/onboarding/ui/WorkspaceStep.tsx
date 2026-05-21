@@ -3,19 +3,17 @@ import { WorkspaceForm } from '@features/workspace';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { StepSuccess } from './StepSuccess';
+import type { WorkspaceStepProps } from '../model';
 
-interface WorkspaceStepProps {
-  onNext: () => void;
-}
+import { StepSuccess } from './StepSuccess';
 
 export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
   const { t } = useTranslation();
-  const { setActiveWorkspace } = useWorkspace();
+  const { setActiveWorkspaceId } = useWorkspace();
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSuccess = (workspace: Workspace) => {
-    setActiveWorkspace(workspace);
+    setActiveWorkspaceId(workspace.id);
     setIsSuccess(true);
   };
 

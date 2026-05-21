@@ -1,12 +1,9 @@
 import { Button, Heading, IconBox, Stack, Text } from '@shared/ui/primitives';
 import { useTranslation } from 'react-i18next';
 
-interface TimelineStepProps {
-  onNext: () => void;
-  onSkip?: () => void;
-}
+import type { TimelineStepProps } from '../model';
 
-export const TimelineStep = ({ onNext, onSkip }: TimelineStepProps) => {
+export const TimelineStep = ({ onNext }: TimelineStepProps) => {
   const { t } = useTranslation();
 
   return (
@@ -26,11 +23,6 @@ export const TimelineStep = ({ onNext, onSkip }: TimelineStepProps) => {
         <Button size="lg" onClick={onNext} fullWidth>
           {t('onboarding.timeline.placeholder.add')}
         </Button>
-        {onSkip && (
-          <Button variant="ghost" color="gray" size="lg" onClick={onSkip} fullWidth>
-            {t('common.skip')}
-          </Button>
-        )}
       </Stack>
     </Stack>
   );

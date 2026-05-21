@@ -61,6 +61,10 @@ export interface Workspace {
 
 export interface WorkspaceStore {
   activeWorkspace: Workspace | null;
+  activeWorkspaceId: string | null;
+
   setActiveWorkspace: (workspace: Workspace) => void;
+  setActiveWorkspaceId: (workspaceId: string) => void;
   clearActiveWorkspace: () => void;
+  clearActiveWorkspaceId: () => void;
 }
