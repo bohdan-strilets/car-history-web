@@ -36,6 +36,7 @@ export const Panel = ({
   return (
     <Surface
       as={onClick ? 'button' : as}
+      type={onClick ? 'button' : undefined}
       variant={variant}
       soft={soft}
       solid={solid}
