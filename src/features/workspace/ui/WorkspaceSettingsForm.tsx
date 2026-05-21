@@ -5,46 +5,18 @@ import {
   FUEL_UNIT_CONFIG,
   TIMEZONE_CONFIG,
 } from '@entities/workspace';
-import { useUpdateWorkspaceSettingsMutation } from '@features/workspace';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, FormFieldCardSelect, FormFieldCombobox } from '@shared/ui/components';
+import { Form, FormFieldCardSelect, FormFieldCombobox } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
-import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import {
-  createWorkspaceSettingsSchema,
-  type WorkspaceSettingsFormProps,
-  type WorkspaceSettingsValues,
-} from '../model';
+import { useWorkspaceSettingsForm, type WorkspaceSettingsFormProps } from '../model';
 
-export const WorkspaceSettingsForm = ({
-  workspaceId,
-  onSuccess,
-  onSkip,
-}: WorkspaceSettingsFormProps) => {
+export const WorkspaceSettingsForm = ({ workspaceId, onSuccess }: WorkspaceSettingsFormProps) => {
   const { t } = useTranslation();
-  const resolver = zodResolver(createWorkspaceSettingsSchema(t));
-
-  const { control, handleSubmit, setError } = useForm<WorkspaceSettingsValues>({
-    resolver,
-    defaultValues: {
-      currency: 'PLN',
-      timezone: 'Europe/Warsaw',
-      distanceUnit: 'KM',
-      fuelUnit: 'L',
-      dateFormat: 'DD_MM_YYYY',
-    },
-  });
-
-  const { mutate: update, isPending, error } = useUpdateWorkspaceSettingsMutation();
-
-  const onSubmit = (data: WorkspaceSettingsValues) => {
-    update({ id: workspaceId, dto: data }, { onSuccess: (settings) => onSuccess(settings.data) });
-  };
+  const { control, handleSubmit, isPending } = useWorkspaceSettingsForm({ workspaceId, onSuccess });
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)} submitLabel={t('common.next')} isLoading={isPending}>
+    <Form onSubmit={handleSubmit} submitLabel={t('common.next')} isLoading={isPending}>
       <FormFieldCombobox
         control={control}
         name="timezone"

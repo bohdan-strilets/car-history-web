@@ -1,69 +1,22 @@
-import type { Vehicle } from '@entities/vehicle';
 import {
   AppearanceStep,
-  createVehicleFormSchema,
   RegistrationStep,
   TypeStep,
-  useCreateVehicleMutation,
+  useVehicleForm,
   VEHICLE_FORM_TOTAL_STEPS,
-  VEHICLE_STEP_FIELDS,
-  type VehicleFormValues,
+  type VehicleFormProps,
 } from '@features/vehicle';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, Stack, Stepper } from '@shared/ui';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { BasicInfoStep } from './BasicInfoStep';
 import { MileageStep } from './MileageStep';
 
-interface VehicleFormProps {
-  workspaceId: string;
-  onSuccess: (vehicle: Vehicle) => void;
-  onSkip?: () => void;
-}
-
-export const VehicleForm = ({ workspaceId, onSuccess, onSkip }: VehicleFormProps) => {
+export const VehicleForm = ({ workspaceId, onSuccess }: VehicleFormProps) => {
   const { t } = useTranslation();
-  const [currentStep, setCurrentStep] = useState(1);
 
-  const { control, handleSubmit, trigger } = useForm<VehicleFormValues>({
-    resolver: zodResolver(createVehicleFormSchema(t)),
-    defaultValues: {
-      brand: '',
-      model: '',
-      year: undefined,
-      generation: '',
-      nickname: '',
-      fuelType: [],
-      bodyType: undefined,
-      transmission: undefined,
-      driveType: undefined,
-      plateNumber: '',
-      vin: '',
-      countryOfOrigin: '',
-      currentMileage: undefined,
-      color: '',
-      description: '',
-    },
-  });
-
-  const { mutate: create, isPending } = useCreateVehicleMutation();
-
-  const handleNext = async () => {
-    const fields = VEHICLE_STEP_FIELDS[currentStep];
-    const valid = await trigger(fields);
-    if (valid) setCurrentStep((prev) => prev + 1);
-  };
-
-  const handleBack = () => {
-    setCurrentStep((prev) => prev - 1);
-  };
-
-  const onSubmit = (data: VehicleFormValues) => {
-    create({ workspaceId, dto: data }, { onSuccess: (vehicle) => onSuccess(vehicle.data) });
-  };
+  const { control, currentStep, isLastStep, isPending, handleNext, handleBack, handleSubmit } =
+    useVehicleForm({ workspaceId, onSuccess });
 
   const renderFields = () => {
     switch (currentStep) {
@@ -80,8 +33,6 @@ export const VehicleForm = ({ workspaceId, onSuccess, onSkip }: VehicleFormProps
     }
   };
 
-  const isLastStep = currentStep === VEHICLE_FORM_TOTAL_STEPS;
-
   return (
     <Stack gap="xl">
       <Stepper currentStep={currentStep} totalSteps={VEHICLE_FORM_TOTAL_STEPS} color="gray" />
@@ -89,7 +40,7 @@ export const VehicleForm = ({ workspaceId, onSuccess, onSkip }: VehicleFormProps
       <Form
         onSubmit={
           isLastStep
-            ? handleSubmit(onSubmit)
+            ? handleSubmit
             : (e) => {
                 e.preventDefault();
                 handleNext();

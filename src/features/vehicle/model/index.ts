@@ -1,4 +1,5 @@
 export { VEHICLE_FORM_TOTAL_STEPS, VEHICLE_STEP_FIELDS } from './vehicle-form.config';
+export { useVehicleForm } from './vehicle.form';
 export {
   createVehicleFormSchema,
   createVehicleStep1Schema,
@@ -16,6 +17,7 @@ export {
 export type {
   CreateVehicleDto,
   CreateVehicleParams,
+  VehicleFormProps,
   VehicleFormState,
   VehicleStepProps,
 } from './vehicle.types';

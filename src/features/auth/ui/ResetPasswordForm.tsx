@@ -1,41 +1,18 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormErrors } from '@shared/lib/form';
 import { Form, FormFieldPasswordInput } from '@shared/ui';
-import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { useResetPasswordMutation } from '../api';
-import {
-  createResetPasswordSchema,
-  type ResetPasswordFormProps,
-  type ResetPasswordValues,
-} from '../model';
+import { useResetPasswordForm, type ResetPasswordFormProps } from '../model';
 
 export const ResetPasswordForm = ({ token, onSuccess }: ResetPasswordFormProps) => {
   const { t } = useTranslation();
-  const resolver = zodResolver(createResetPasswordSchema(t));
-  const defaultValues: ResetPasswordValues = {
-    password: '',
-    confirmPassword: '',
-  };
-
-  const {
-    control,
-    handleSubmit,
-    setError,
-    formState: { errors },
-  } = useForm<ResetPasswordValues>({ resolver, defaultValues });
-
-  const { mutate: resetPassword, isPending, error } = useResetPasswordMutation({ onSuccess });
-  const errorMessage = useFormErrors({ error, setError, t });
-
-  const onSubmit = (data: ResetPasswordValues) => {
-    resetPassword({ token, password: data.password });
-  };
+  const { control, errorMessage, handleSubmit, isPending } = useResetPasswordForm({
+    token,
+    onSuccess,
+  });
 
   return (
     <Form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit}
       submitLabel={t('auth.resetPassword.form.submit')}
       isLoading={isPending}
       error={errorMessage}

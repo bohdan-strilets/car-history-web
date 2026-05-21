@@ -46,11 +46,12 @@ export interface ResetPasswordFormProps {
 }
 
 // Params
-
-export interface ResetPasswordParams {
-  onSuccess?: () => void;
-}
-
 export interface ResendConfirmationParams {
   onSuccess?: () => void;
 }
+
+export type ResetPasswordParams = Pick<ResetPasswordFormProps, 'onSuccess'>;
+
+export type ForgotPasswordFormParams = Pick<ForgotPasswordFormProps, 'onSuccess'>;
+
+export type ResetPasswordFormParams = Pick<ResetPasswordFormProps, 'onSuccess' | 'token'>;

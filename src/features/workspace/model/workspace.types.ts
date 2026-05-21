@@ -1,6 +1,6 @@
 // DTOs
 
-import type { WorkspaceSettings } from '@entities/workspace';
+import type { Workspace, WorkspaceSettings } from '@entities/workspace';
 
 export interface CreateWorkspaceDto {
   name: string;
@@ -20,6 +20,16 @@ export interface UpdateWorkspaceSettingsDto {
 export interface UpdateWorkspaceSettingsParams {
   id: string;
   dto: UpdateWorkspaceSettingsDto;
+}
+
+export interface WorkspaceFormParams {
+  onSuccess: (workspace: Workspace) => void;
+}
+
+export interface WorkspaceSettingsFormParams {
+  workspaceId: string;
+  onSuccess: (settings: WorkspaceSettings) => void;
+  onSkip?: () => void;
 }
 
 // Props

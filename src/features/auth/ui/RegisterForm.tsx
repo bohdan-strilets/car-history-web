@@ -1,47 +1,15 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormErrors } from '@shared/lib/form';
 import { Form, FormFieldInput, FormFieldPasswordInput } from '@shared/ui';
-import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { useRegisterMutation } from '../api';
-import { createRegisterSchema, type RegisterDto, type RegisterValues } from '../model';
+import { useRegisterForm } from '../model';
 
 export const RegisterForm = () => {
   const { t } = useTranslation();
-  const resolver = zodResolver(createRegisterSchema(t));
-  const defaultValues: RegisterValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  };
-
-  const {
-    control,
-    handleSubmit,
-    setError,
-    formState: { errors },
-  } = useForm<RegisterValues>({ resolver, defaultValues });
-
-  const { mutate: register, isPending, error } = useRegisterMutation();
-  const errorMessage = useFormErrors({ error, setError, t });
-
-  const onSubmit = (data: RegisterValues) => {
-    const dto: RegisterDto = {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      password: data.password,
-    };
-
-    register(dto);
-  };
+  const { control, errorMessage, handleSubmit, isPending } = useRegisterForm();
 
   return (
     <Form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit}
       submitLabel={t('auth.register.form.submit')}
       isLoading={isPending}
       error={errorMessage}

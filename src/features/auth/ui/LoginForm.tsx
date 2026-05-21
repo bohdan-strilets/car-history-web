@@ -1,37 +1,15 @@
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormErrors } from '@shared/lib/form';
 import { Form, FormFieldInput, FormFieldPasswordInput } from '@shared/ui';
-import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { useLoginMutation } from '../api';
-import { createLoginSchema, type LoginValues } from '../model';
+import { useLoginForm } from '../model';
 
 export const LoginForm = () => {
   const { t } = useTranslation();
-  const resolver = zodResolver(createLoginSchema(t));
-  const defaultValues: LoginValues = {
-    email: '',
-    password: '',
-  };
-
-  const {
-    control,
-    handleSubmit,
-    setError,
-    formState: { errors },
-  } = useForm<LoginValues>({ resolver, defaultValues });
-
-  const { mutate: login, isPending, error } = useLoginMutation();
-  const errorMessage = useFormErrors({ error, setError, t });
-
-  const onSubmit = (data: LoginValues) => {
-    login(data);
-  };
+  const { control, errorMessage, handleSubmit, isPending } = useLoginForm();
 
   return (
     <Form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit}
       submitLabel={t('auth.login.form.submit')}
       isLoading={isPending}
       error={errorMessage}

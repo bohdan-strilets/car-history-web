@@ -1,3 +1,4 @@
+import type { Vehicle } from '@entities/vehicle';
 import type { Control } from 'react-hook-form';
 
 import type { VehicleFormValues } from './vehicle.schema';
@@ -39,4 +40,10 @@ export interface VehicleStepProps {
 export interface VehicleFormState {
   currentStep: number;
   values: Partial<VehicleFormValues>;
+}
+
+export interface VehicleFormProps {
+  workspaceId: string;
+  onSuccess: (vehicle: Vehicle) => void;
+  onSkip?: () => void;
 }
