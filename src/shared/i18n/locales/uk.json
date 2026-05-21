@@ -4,30 +4,74 @@
     "showPassword": "Показати пароль",
     "close": "Закрити",
     "back": "Назад",
+    "next": "Далі",
     "confirm": "Підтвердити",
     "cancel": "Скасувати",
-    "step": "Крок {{current}} з {{total}}"
+    "step": "Крок {{current}} з {{total}}",
+    "continue": "Продовжити",
+    "noOptions": "Немає результатів",
+    "skip": "Пропустити",
+    "save": "Зберегти"
+  },
+
+  "units": {
+    "kilometers": "кілометрів",
+    "engineVolume": "см³",
+    "KM": "Кілометри (км)",
+    "MI": "Милі (миль)",
+    "L": "Літри (л)",
+    "GAL": "Галони (гал)"
   },
 
   "onboarding": {
     "welcome": {
       "title": "Ласкаво просимо до Arvino",
-      "subtitle": "Ваш цифровий паспорт автомобіля",
+      "subtitle": "Почнімо налаштовувати ваш цифровий паспорт автомобіля.",
       "description": "Керуйте витратами, сервісом, документами та історією вашого авто в одному місці.",
-      "start": "Почати"
+      "start": "Почати",
+      "emailNotVerified": "Ми надіслали посилання на {{email}}. Підтвердіть email, щоб продовжити."
     },
     "workspace": {
-      "title": "Створіть свій workspace"
+      "title": "Створіть свій workspace",
+      "subtitle": "Workspace — це простір для ваших авто. Можна мати кілька — особистий, сімейний або бізнесовий.",
+      "success": {
+        "title": "Workspace створено!",
+        "description": "Чудово, можемо продовжувати."
+      }
     },
     "vehicle": {
-      "title": "Додайте перший автомобіль"
+      "title": "Додайте перший автомобіль",
+      "subtitle": "Додайте перший автомобіль. Деталі можна заповнити пізніше.",
+      "success": {
+        "title": "Автомобіль додано!",
+        "description": "Чудово, ваш автомобіль додано."
+      }
     },
     "settings": {
-      "title": "Налаштуйте параметри"
+      "title": "Налаштуйте параметри",
+      "subtitle": "Налаштуйте валюту, одиниці виміру та формат дати.",
+      "success": {
+        "title": "Налаштування збережено!",
+        "description": "Ви можете змінити їх у будь-який момент."
+      }
     },
     "timeline": {
-      "title": "Додайте першу подію"
+      "title": "Додайте першу подію",
+      "subtitle": "Додайте першу подію — коли і за скільки ви купили авто.",
+      "placeholder": {
+        "title": "Додайте першу транзакцію",
+        "description": "Коли і за скільки ви купили своє авто? Можете пропустити цей крок і додати пізніше.",
+        "add": "Додати покупку"
+      }
     }
+  },
+
+  "emailVerification": {
+    "title": "Підтвердіть свою електронну адресу",
+    "description": "Ми надіслали посилання для підтвердження на {{email}}. Перевірте свою скриньку.",
+    "resend": "Надіслати знову",
+    "resendIn": "Надіслати знову за {{seconds}}с",
+    "checkSpam": "Не бачите листа? Перевірте папку спам."
   },
 
   "auth": {
@@ -132,6 +176,139 @@
       "ariaLabel": "Бічна навігація",
       "collapse": "Згорнути",
       "expand": "Розгорнути"
+    }
+  },
+
+  "workspace": {
+    "types": {
+      "PERSONAL": {
+        "label": "Особистий",
+        "description": "Тільки для вас"
+      },
+      "FAMILY": {
+        "label": "Сімейний",
+        "description": "Для всієї родини"
+      },
+      "BUSINESS": {
+        "label": "Бізнесовий",
+        "description": "Для компанії або майстерні"
+      }
+    },
+
+    "fields": {
+      "name": {
+        "label": "Назва workspace",
+        "placeholder": "Назва вашого workspace"
+      },
+      "currency": "Валюта",
+      "distanceUnit": "Одиниця відстані",
+      "fuelUnit": "Одиниця палива",
+      "dateFormat": "Формат дати",
+      "timezonePlaceholder": "Виберіть часовий пояс"
+    },
+
+    "currency": {
+      "PLN": "Злотий (PLN)",
+      "EUR": "Євро (EUR)",
+      "USD": "Долар (USD)",
+      "UAH": "Гривня (UAH)"
+    },
+
+    "dateFormat": {
+      "DD_MM_YYYY": "31.12.2024",
+      "YYYY_MM_DD": "2024.12.31",
+      "DD_MONTH_YYYY": "31 грудня 2024"
+    },
+
+    "timezone": "Часовий пояс"
+  },
+
+  "vehicle": {
+    "form": {
+      "popularBrands": "Популярні марки",
+      "brand": "Марка",
+      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
+      "model": "Модель",
+      "modelPlaceholder": "Model 3, X5, E-Class...",
+      "year": "Рік виробництва",
+      "yearPlaceholder": "наприклад, 2020",
+      "generation": "Покоління",
+      "generationPlaceholder": "наприклад, B8, Mk7",
+      "nickname": "Власна назва",
+      "nicknamePlaceholder": "наприклад, Мій срібний",
+      "fuelType": "Тип палива",
+      "bodyType": "Тип кузова",
+      "transmission": "Коробка передач",
+      "driveType": "Привід",
+      "plateNumber": "Номер реєстраційний",
+      "plateNumberPlaceholder": "наприклад, WA 12345",
+      "vin": "Номер VIN",
+      "vinPlaceholder": "17 символів",
+      "countryOfOrigin": "Країна походження",
+      "countryOfOriginPlaceholder": "наприклад, Німеччина",
+      "currentMileage": "Поточний пробіг",
+      "currentMileageHint": "Допоможе нам точно відстежувати витрати та інтервали обслуговування",
+      "engineDisplacementCc": "Об'єм двигуна",
+      "color": "Колір",
+      "description": "Опис",
+      "descriptionPlaceholder": "Додаткова інформація про автомобіль..."
+    },
+
+    "fuelType": {
+      "PETROL": "Бензин",
+      "DIESEL": "Дизель",
+      "HYBRID": "Гібрид",
+      "ELECTRIC": "Електричний",
+      "LPG": "LPG"
+    },
+
+    "bodyType": {
+      "SEDAN": "Седан",
+      "HATCHBACK": "Хетчбек",
+      "WAGON": "Універсал",
+      "SUV": "Позашляховик",
+      "CROSSOVER": "Кросовер",
+      "COUPE": "Купе",
+      "CONVERTIBLE": "Кабріолет",
+      "MINIVAN": "Мінівен",
+      "PICKUP": "Пікап",
+      "VAN": "Фургон",
+      "OTHER": "Інше"
+    },
+
+    "transmission": {
+      "MANUAL": "Механічна",
+      "AUTOMATIC": "Автоматична",
+      "ROBOTIC": "Роботизована"
+    },
+
+    "driveType": {
+      "FWD": "Передній (FWD)",
+      "RWD": "Задній (RWD)",
+      "AWD": "Повний привід (4x4)"
+    },
+
+    "colors": {
+      "BLACK": "Чорний",
+      "WHITE": "Білий",
+      "SILVER": "Сріблястий",
+      "GRAY": "Сірий",
+      "DARK_GRAY": "Темно-сірий",
+      "RED": "Червоний",
+      "DARK_RED": "Темно-червоний",
+      "BLUE": "Синій",
+      "LIGHT_BLUE": "Світло-синій",
+      "NAVY": "Темно-синій",
+      "GREEN": "Зелений",
+      "OLIVE": "Оливковий",
+      "BROWN": "Коричневий",
+      "BEIGE": "Бежевий",
+      "CHAMPAGNE": "Шампанське",
+      "GOLD": "Золотий",
+      "ORANGE": "Помаранчевий",
+      "YELLOW": "Жовтий",
+      "PURPLE": "Фіолетовий",
+      "OTHER": "Інше"
     }
   },
 

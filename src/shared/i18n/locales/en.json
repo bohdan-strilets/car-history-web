@@ -4,30 +4,74 @@
     "showPassword": "Show Password",
     "close": "Close",
     "back": "Back",
+    "next": "Next",
     "confirm": "Confirm",
     "cancel": "Cancel",
-    "step": "Step {{current}} of {{total}}"
+    "step": "Step {{current}} of {{total}}",
+    "continue": "Continue",
+    "noOptions": "No options found",
+    "skip": "Skip",
+    "save": "Save"
+  },
+
+  "units": {
+    "kilometers": "kilometers",
+    "engineVolume": "cc",
+    "KM": "Kilometers (km)",
+    "MI": "Miles (mi)",
+    "L": "Liters (l)",
+    "GAL": "Gallons (gal)"
   },
 
   "onboarding": {
     "welcome": {
       "title": "Welcome to Arvino",
-      "subtitle": "Your digital car passport",
+      "subtitle": "Let's set up your digital car passport.",
       "description": "Manage your expenses, service, documents, and car history in one place.",
-      "start": "Get Started"
+      "start": "Get Started",
+      "emailNotVerified": "We sent a link to {{email}}. Confirm your email to continue."
     },
     "workspace": {
-      "title": "Create your workspace"
+      "title": "Create your workspace",
+      "subtitle": "A workspace is a space for your vehicles. You can have multiple — personal, family or business.",
+      "success": {
+        "title": "Workspace created!",
+        "description": "Great, we can continue."
+      }
     },
     "vehicle": {
-      "title": "Add your first vehicle"
+      "title": "Add your first vehicle",
+      "subtitle": "Add your first vehicle. You can fill in the details later.",
+      "success": {
+        "title": "Vehicle added!",
+        "description": "Great, your vehicle has been added."
+      }
     },
     "settings": {
-      "title": "Customize settings"
+      "title": "Customize settings",
+      "subtitle": "Set your currency, units and date format.",
+      "success": {
+        "title": "Settings saved!",
+        "description": "You can change them at any time."
+      }
     },
     "timeline": {
-      "title": "Add your first event"
+      "title": "Add your first event",
+      "subtitle": "Add your first event — when and how much you paid for your car.",
+      "placeholder": {
+        "title": "Add your first transaction",
+        "description": "When and how much did you pay for your car? You can skip this step and add it later.",
+        "add": "Add purchase"
+      }
     }
+  },
+
+  "emailVerification": {
+    "title": "Confirm your email address",
+    "description": "We sent a confirmation link to {{email}}. Check your inbox.",
+    "resend": "Resend email",
+    "resendIn": "Resend in {{seconds}}s",
+    "checkSpam": "Can't find the email? Check your spam folder."
   },
 
   "auth": {
@@ -132,6 +176,139 @@
       "ariaLabel": "Side navigation",
       "collapse": "Collapse",
       "expand": "Expand"
+    }
+  },
+
+  "workspace": {
+    "types": {
+      "PERSONAL": {
+        "label": "Personal",
+        "description": "Just for you"
+      },
+      "FAMILY": {
+        "label": "Family",
+        "description": "For the whole family"
+      },
+      "BUSINESS": {
+        "label": "Business",
+        "description": "For a company or workshop"
+      }
+    },
+
+    "fields": {
+      "name": {
+        "label": "Workspace name",
+        "placeholder": "Your workspace name"
+      },
+      "currency": "Currency",
+      "distanceUnit": "Distance unit",
+      "fuelUnit": "Fuel unit",
+      "dateFormat": "Date format",
+      "timezonePlaceholder": "Select time zone"
+    },
+
+    "currency": {
+      "PLN": "Zloty (PLN)",
+      "EUR": "Euro (EUR)",
+      "USD": "Dollar (USD)",
+      "UAH": "Hryvnia (UAH)"
+    },
+
+    "dateFormat": {
+      "DD_MM_YYYY": "31.12.2024",
+      "YYYY_MM_DD": "2024.12.31",
+      "DD_MONTH_YYYY": "31 December 2024"
+    },
+
+    "timezone": "Time zone"
+  },
+
+  "vehicle": {
+    "form": {
+      "popularBrands": "Popular brands",
+      "brand": "Brand",
+      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
+      "model": "Model",
+      "modelPlaceholder": "Model 3, X5, E-Class...",
+      "year": "Year of manufacture",
+      "yearPlaceholder": "e.g., 2020",
+      "generation": "Generation",
+      "generationPlaceholder": "e.g., B8, Mk7",
+      "nickname": "Custom name",
+      "nicknamePlaceholder": "e.g., My Silver",
+      "fuelType": "Fuel type",
+      "bodyType": "Body type",
+      "transmission": "Transmission",
+      "driveType": "Drive type",
+      "plateNumber": "Registration number",
+      "plateNumberPlaceholder": "e.g., WA 12345",
+      "vin": "VIN number",
+      "vinPlaceholder": "17 characters",
+      "countryOfOrigin": "Country of origin",
+      "countryOfOriginPlaceholder": "e.g., Germany",
+      "currentMileage": "Current mileage",
+      "currentMileageHint": "Helps us accurately track expenses and service intervals",
+      "engineDisplacementCc": "Engine displacement",
+      "color": "Color",
+      "description": "Description",
+      "descriptionPlaceholder": "Additional information about the vehicle..."
+    },
+
+    "fuelType": {
+      "PETROL": "Petrol",
+      "DIESEL": "Diesel",
+      "HYBRID": "Hybrid",
+      "ELECTRIC": "Electric",
+      "LPG": "LPG"
+    },
+
+    "bodyType": {
+      "SEDAN": "Sedan",
+      "HATCHBACK": "Hatchback",
+      "WAGON": "Wagon",
+      "SUV": "SUV",
+      "CROSSOVER": "Crossover",
+      "COUPE": "Coupe",
+      "CONVERTIBLE": "Convertible",
+      "MINIVAN": "Minivan",
+      "PICKUP": "Pickup",
+      "VAN": "Van",
+      "OTHER": "Other"
+    },
+
+    "transmission": {
+      "MANUAL": "Manual",
+      "AUTOMATIC": "Automatic",
+      "ROBOTIC": "Robotic"
+    },
+
+    "driveType": {
+      "FWD": "Front (FWD)",
+      "RWD": "Rear (RWD)",
+      "AWD": "All-wheel drive (4x4)"
+    },
+
+    "colors": {
+      "BLACK": "Black",
+      "WHITE": "White",
+      "SILVER": "Silver",
+      "GRAY": "Gray",
+      "DARK_GRAY": "Dark Gray",
+      "RED": "Red",
+      "DARK_RED": "Dark Red",
+      "BLUE": "Blue",
+      "LIGHT_BLUE": "Light Blue",
+      "NAVY": "Navy",
+      "GREEN": "Green",
+      "OLIVE": "Olive",
+      "BROWN": "Brown",
+      "BEIGE": "Beige",
+      "CHAMPAGNE": "Champagne",
+      "GOLD": "Gold",
+      "ORANGE": "Orange",
+      "YELLOW": "Yellow",
+      "PURPLE": "Purple",
+      "OTHER": "Other"
     }
   },
 

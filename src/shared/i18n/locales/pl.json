@@ -4,30 +4,74 @@
     "showPassword": "Pokaż hasło",
     "close": "Zamknij",
     "back": "Wróć",
+    "next": "Dalej",
     "confirm": "Potwierdź",
     "cancel": "Anuluj",
-    "step": "Krok {{current}} z {{total}}"
+    "step": "Krok {{current}} z {{total}}",
+    "continue": "Kontynuuj",
+    "noOptions": "Brak wyników",
+    "skip": "Pomiń",
+    "save": "Zapisz"
+  },
+
+  "units": {
+    "kilometers": "kilometrów",
+    "engineVolume": "cm³",
+    "KM": "Kilometry (km)",
+    "MI": "Mile (mi)",
+    "L": "Litry (l)",
+    "GAL": "Galony (gal)"
   },
 
   "onboarding": {
     "welcome": {
       "title": "Witaj w Arvino",
-      "subtitle": "Twój cyfrowy paszport samochodu",
+      "subtitle": "Zacznijmy konfigurować Twój cyfrowy paszport samochodu.",
       "description": "Zarządzaj wydatkami, serwisem, dokumentami i historią swojego auta w jednym miejscu.",
-      "start": "Zaczynamy"
+      "start": "Zaczynamy",
+      "emailNotVerified": "Wysłaliśmy link na {{email}}. Potwierdź email, aby kontynuować."
     },
     "workspace": {
-      "title": "Utwórz swój workspace"
+      "title": "Utwórz swój workspace",
+      "subtitle": "Workspace to przestrzeń dla Twoich aut. Możesz mieć kilka — osobisty, rodzinny lub firmowy.",
+      "success": {
+        "title": "Workspace utworzony!",
+        "description": "Świetnie, możemy przejść dalej."
+      }
     },
     "vehicle": {
-      "title": "Dodaj swój pierwszy pojazd"
+      "title": "Dodaj swój pierwszy pojazd",
+      "subtitle": "Dodaj swój pierwszy pojazd. Możesz uzupełnić szczegóły później.",
+      "success": {
+        "title": "Pojazd dodany!",
+        "description": "Świetnie, Twój pojazd został dodany."
+      }
     },
     "settings": {
-      "title": "Dostosuj ustawienia"
+      "title": "Dostosuj ustawienia",
+      "subtitle": "Dostosuj walutę, jednostki i format daty do swoich potrzeb.",
+      "success": {
+        "title": "Ustawienia zapisane!",
+        "description": "Możesz je zmienić w dowolnym momencie."
+      }
     },
     "timeline": {
-      "title": "Dodaj pierwsze zdarzenie"
+      "title": "Dodaj pierwsze zdarzenie",
+      "subtitle": "Dodaj pierwsze zdarzenie — kiedy i za ile kupiłeś swoje auto.",
+      "placeholder": {
+        "title": "Dodaj pierwszą transakcję",
+        "description": "Kiedy i za ile kupiłeś swoje auto? Możesz pominąć ten krok i dodać później.",
+        "add": "Dodaj zakup"
+      }
     }
+  },
+
+  "emailVerification": {
+    "title": "Potwierdź swój adres email",
+    "description": "Wysłaliśmy link potwierdzający na {{email}}. Sprawdź swoją skrzynkę.",
+    "resend": "Wyślij ponownie",
+    "resendIn": "Wyślij ponownie za {{seconds}}s",
+    "checkSpam": "Nie widzisz emaila? Sprawdź folder spam."
   },
 
   "auth": {
@@ -132,6 +176,139 @@
       "ariaLabel": "Nawigacja boczna",
       "collapse": "Zwiń",
       "expand": "Rozwiń"
+    }
+  },
+
+  "workspace": {
+    "types": {
+      "PERSONAL": {
+        "label": "Osobiste",
+        "description": "Tylko dla Ciebie"
+      },
+      "FAMILY": {
+        "label": "Rodzinne",
+        "description": "Dla całej rodziny"
+      },
+      "BUSINESS": {
+        "label": "Biznesowe",
+        "description": "Dla firmy lub warsztatu"
+      }
+    },
+
+    "fields": {
+      "name": {
+        "label": "Nazwa workspace",
+        "placeholder": "Nazwa Twojego workspace"
+      },
+      "currency": "Waluta",
+      "distanceUnit": "Jednostka odległości",
+      "fuelUnit": "Jednostka paliwa",
+      "dateFormat": "Format daty",
+      "timezonePlaceholder": "Wybierz strefę czasową"
+    },
+
+    "currency": {
+      "PLN": "Złoty (PLN)",
+      "EUR": "Euro (EUR)",
+      "USD": "Dolar (USD)",
+      "UAH": "Hrywna (UAH)"
+    },
+
+    "dateFormat": {
+      "DD_MM_YYYY": "31.12.2024",
+      "YYYY_MM_DD": "2024.12.31",
+      "DD_MONTH_YYYY": "31 grudnia 2024"
+    },
+
+    "timezone": "Strefa czasowa"
+  },
+
+  "vehicle": {
+    "form": {
+      "popularBrands": "Popularne marki",
+      "brand": "Marka",
+      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
+      "model": "Model",
+      "modelPlaceholder": "Model 3, X5, E-Class...",
+      "year": "Rok produkcji",
+      "yearPlaceholder": "np. 2020",
+      "generation": "Generacja",
+      "generationPlaceholder": "np. B8, Mk7",
+      "nickname": "Nazwa własna",
+      "nicknamePlaceholder": "np. Mój srebrny",
+      "fuelType": "Rodzaj paliwa",
+      "bodyType": "Typ nadwozia",
+      "transmission": "Skrzynia biegów",
+      "driveType": "Napęd",
+      "plateNumber": "Numer rejestracyjny",
+      "plateNumberPlaceholder": "np. WA 12345",
+      "vin": "Numer VIN",
+      "vinPlaceholder": "17 znaków",
+      "countryOfOrigin": "Kraj pochodzenia",
+      "countryOfOriginPlaceholder": "np. Niemcy",
+      "currentMileage": "Aktualny przebieg",
+      "currentMileageHint": "Pomoże nam dokładnie śledzić wydatki i interwały serwisowe",
+      "engineDisplacementCc": "Pojemność silnika",
+      "color": "Kolor",
+      "description": "Opis",
+      "descriptionPlaceholder": "Dodatkowe informacje o pojeździe..."
+    },
+
+    "fuelType": {
+      "PETROL": "Benzyna",
+      "DIESEL": "Diesel",
+      "HYBRID": "Hybryda",
+      "ELECTRIC": "Elektryczny",
+      "LPG": "LPG"
+    },
+
+    "bodyType": {
+      "SEDAN": "Sedan",
+      "HATCHBACK": "Hatchback",
+      "WAGON": "Kombi",
+      "SUV": "SUV",
+      "CROSSOVER": "Crossover",
+      "COUPE": "Coupe",
+      "CONVERTIBLE": "Kabriolet",
+      "MINIVAN": "Minivan",
+      "PICKUP": "Pickup",
+      "VAN": "Van",
+      "OTHER": "Inne"
+    },
+
+    "transmission": {
+      "MANUAL": "Manualna",
+      "AUTOMATIC": "Automatyczna",
+      "ROBOTIC": "Robotyczna"
+    },
+
+    "driveType": {
+      "FWD": "Przedni (FWD)",
+      "RWD": "Tylny (RWD)",
+      "AWD": "Napęd 4x4"
+    },
+
+    "colors": {
+      "BLACK": "Czarny",
+      "WHITE": "Biały",
+      "SILVER": "Srebrny",
+      "GRAY": "Szary",
+      "DARK_GRAY": "Ciemnoszary",
+      "RED": "Czerwony",
+      "DARK_RED": "Bordowy",
+      "BLUE": "Niebieski",
+      "LIGHT_BLUE": "Jasnoniebieski",
+      "NAVY": "Granatowy",
+      "GREEN": "Zielony",
+      "OLIVE": "Oliwkowy",
+      "BROWN": "Brązowy",
+      "BEIGE": "Beżowy",
+      "CHAMPAGNE": "Szampański",
+      "GOLD": "Złoty",
+      "ORANGE": "Pomarańczowy",
+      "YELLOW": "Żółty",
+      "PURPLE": "Fioletowy",
+      "OTHER": "Inny"
     }
   },
 
