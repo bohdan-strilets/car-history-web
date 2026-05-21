@@ -1,5 +1,6 @@
-import { Button } from '@shared/ui';
+import { Button, Stack } from '@shared/ui';
 import { clsx } from 'clsx';
+import { useTranslation } from 'react-i18next';
 
 import { FormError } from '../form-error';
 
@@ -13,8 +14,11 @@ export const Form = ({
   error,
   submitLabel,
   submitIcon,
+  onBack,
   className,
 }: FormProps) => {
+  const { t } = useTranslation();
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmit(e);
@@ -26,17 +30,33 @@ export const Form = ({
 
       {error && <FormError message={error} />}
 
-      <Button
-        type="submit"
-        variant="solid"
-        color="accent"
-        size={{ mobile: 'lg', tablet: 'xl' }}
-        loading={isLoading}
-        leftIcon={submitIcon}
-        fullWidth
-      >
-        {submitLabel}
-      </Button>
+      <Stack direction="row" gap="md">
+        {onBack && (
+          <Button
+            type="button"
+            variant="soft"
+            color="gray"
+            size={{ mobile: 'lg', tablet: 'xl' }}
+            onClick={onBack}
+            style={{ width: '39%' }}
+          >
+            {t('common.back')}
+          </Button>
+        )}
+
+        <Button
+          type="submit"
+          variant="solid"
+          color="accent"
+          size={{ mobile: 'lg', tablet: 'xl' }}
+          loading={isLoading}
+          leftIcon={submitIcon}
+          fullWidth={!onBack}
+          style={{ width: onBack ? '59%' : '100%' }}
+        >
+          {submitLabel}
+        </Button>
+      </Stack>
     </form>
   );
 };
