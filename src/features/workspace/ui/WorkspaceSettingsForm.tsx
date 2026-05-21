@@ -7,7 +7,7 @@ import {
 } from '@entities/workspace';
 import { useUpdateWorkspaceSettingsMutation } from '@features/workspace';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { CardSelect, Combobox, Form, FormField } from '@shared/ui/components';
+import { Form, FormFieldCardSelect, FormFieldCombobox } from '@shared/ui/components';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -45,75 +45,41 @@ export const WorkspaceSettingsForm = ({
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)} submitLabel={t('common.next')} isLoading={isPending}>
-      <FormField
+      <FormFieldCombobox
         control={control}
         name="timezone"
         label={t('workspace.timezone')}
-        render={(field) => (
-          <Combobox
-            options={TIMEZONE_CONFIG}
-            value={field.value}
-            onChange={field.onChange}
-            placeholder={t('workspace.fields.timezonePlaceholder')}
-            size="lg"
-          />
-        )}
+        options={TIMEZONE_CONFIG}
+        placeholder={t('workspace.fields.timezonePlaceholder')}
+        size="lg"
       />
 
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="currency"
         label={t('workspace.fields.currency')}
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, CURRENCY_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={translateCardSelectOptions(t, CURRENCY_CONFIG)}
       />
 
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="distanceUnit"
         label={t('workspace.fields.distanceUnit')}
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, DISTANCE_UNIT_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={translateCardSelectOptions(t, DISTANCE_UNIT_CONFIG)}
       />
 
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="fuelUnit"
         label={t('workspace.fields.fuelUnit')}
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, FUEL_UNIT_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={translateCardSelectOptions(t, FUEL_UNIT_CONFIG)}
       />
 
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="dateFormat"
         label={t('workspace.fields.dateFormat')}
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, DATE_FORMAT_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={translateCardSelectOptions(t, DATE_FORMAT_CONFIG)}
       />
     </Form>
   );
