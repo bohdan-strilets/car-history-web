@@ -13,4 +13,6 @@ export const authService = {
 
   getAccessToken: () => useAuthStore.getState().accessToken,
   setAccessToken: (token: string) => useAuthStore.getState().setAccessToken(token),
+
+  updateUser: (partial: Partial<User>) => useAuthStore.getState().updateUser(partial),
 };

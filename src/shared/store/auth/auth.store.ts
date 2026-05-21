@@ -12,4 +12,9 @@ export const useAuthStore = create<AuthState>((set) => ({
   setAccessToken: (token) => set({ accessToken: token }),
   setLoading: (isLoading) => set({ isLoading }),
   clearAuth: () => set({ user: null, accessToken: null, isAuthenticated: false }),
+
+  updateUser: (partial) =>
+    set((state) => ({
+      user: state.user ? { ...state.user, ...partial } : null,
+    })),
 }));

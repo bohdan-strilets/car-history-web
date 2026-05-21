@@ -10,4 +10,6 @@ export interface AuthState {
   setAccessToken: (token: string) => void;
   clearAuth: () => void;
   setLoading: (loading: boolean) => void;
+
+  updateUser: (partial: Partial<User>) => void;
 }
