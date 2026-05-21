@@ -12,26 +12,28 @@ export const Dropdown = ({
   align = 'start',
   disabled,
   fullWidth,
+  open: controlledOpen,
   onOpenChange,
 }: DropdownProps) => {
-  const [open, setOpen] = useState(false);
+  const [internalOpen, setInternalOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
+
+  const isControlled = controlledOpen !== undefined;
+  const open = isControlled ? controlledOpen : internalOpen;
+
+  const setOpen = (val: boolean) => {
+    if (!isControlled) setInternalOpen(val);
+    onOpenChange?.(val);
+  };
 
   useDismiss({
     enabled: open,
-    onDismiss: () => {
-      setOpen(false);
-      onOpenChange?.(false);
-    },
+    onDismiss: () => setOpen(false),
     ref: rootRef,
   });
 
   const handleTriggerClick = () => {
-    if (!disabled) {
-      const next = !open;
-      setOpen(next);
-      onOpenChange?.(next);
-    }
+    if (!disabled) setOpen(!open);
   };
 
   return (

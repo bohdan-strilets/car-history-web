@@ -1,5 +1,4 @@
 import { vars } from '@shared/styles';
-import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const root = recipe({
@@ -24,6 +23,7 @@ export const content = recipe({
     zIndex: vars.zIndex.dropdown,
 
     minWidth: '180px',
+    maxHeight: '300px',
     padding: vars.spacing.xs,
 
     backgroundColor: vars.color.bg.elevated,
@@ -31,6 +31,8 @@ export const content = recipe({
     borderRadius: vars.radius.md,
     boxShadow: vars.shadow.lg,
     outline: 'none',
+
+    overflowY: 'auto',
   },
 
   variants: {
@@ -44,9 +46,20 @@ export const content = recipe({
   },
 });
 
-export const item = style({
-  ':hover': {
-    color: vars.color.text.primary,
-    backgroundColor: vars.color.bg.surface,
+export const item = recipe({
+  base: {
+    ':hover': {
+      color: vars.color.text.primary,
+      backgroundColor: vars.color.bg.surface,
+    },
+  },
+
+  variants: {
+    selected: {
+      true: {
+        color: vars.color.accent.solid,
+        backgroundColor: vars.color.accent.soft,
+      },
+    },
   },
 });

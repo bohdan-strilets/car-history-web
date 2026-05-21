@@ -11,12 +11,13 @@ export const DropdownItem = ({
   onClick,
   danger,
   disabled,
+  selected,
   className,
 }: DropdownItemProps) => {
   return (
     <Button
       variant="ghost"
-      className={clsx(item, className)}
+      className={clsx(item({ selected }), className)}
       color={danger ? 'danger' : 'gray'}
       disabled={disabled}
       onClick={onClick}
@@ -28,7 +29,10 @@ export const DropdownItem = ({
             {leftIcon && <Icon name={leftIcon} size="sm" color="inherit" />}
             {label}
           </Stack>
-          {rightIcon && <Icon name={rightIcon} size="sm" color="inherit" />}
+          <Stack direction="row" align="center" gap="sm">
+            {rightIcon && <Icon name={rightIcon} size="sm" color="inherit" />}
+            {selected && <Icon name="check" size="sm" color="inherit" />}
+          </Stack>
         </Stack>
       </Box>
     </Button>
