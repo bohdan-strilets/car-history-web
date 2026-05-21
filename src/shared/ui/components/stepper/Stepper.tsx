@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { segment, segmentFill, segments } from './stepper.css';
 import type { StepperProps } from './stepper.types';
 
-export const Stepper = ({ currentStep, totalSteps }: StepperProps) => {
+export const Stepper = ({ currentStep, totalSteps, size, color }: StepperProps) => {
   const { t } = useTranslation();
 
   return (
@@ -15,8 +15,8 @@ export const Stepper = ({ currentStep, totalSteps }: StepperProps) => {
           const isCurrent = index === currentStep - 1;
 
           return (
-            <div key={index} className={segment}>
-              <div className={segmentFill({ active: isActive, current: isCurrent })} />
+            <div key={index} className={segment({ size })}>
+              <div className={segmentFill({ active: isActive, current: isCurrent, color })} />
             </div>
           );
         })}

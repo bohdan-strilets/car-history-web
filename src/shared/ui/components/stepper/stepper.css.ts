@@ -1,4 +1,4 @@
-import { media, vars } from '@shared/styles';
+import { vars } from '@shared/styles';
 import { keyframes, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
@@ -22,39 +22,55 @@ export const segments = style({
   width: '100%',
 });
 
-export const segment = style({
-  flex: 1,
-
-  overflow: 'hidden',
-  height: '4px',
-
-  borderRadius: vars.radius.pill,
-  backgroundColor: vars.color.border.base,
-
-  '@media': {
-    [media.tablet]: {
-      height: '6px',
+export const segment = recipe({
+  base: {
+    flex: 1,
+    borderRadius: vars.radius.pill,
+    backgroundColor: vars.color.border.base,
+    overflow: 'hidden',
+  },
+  variants: {
+    size: {
+      sm: { height: '3px' },
+      md: { height: '5px' },
+      lg: { height: '8px' },
     },
-    [media.laptop]: {
-      height: '8px',
-    },
+  },
+  defaultVariants: {
+    size: 'sm',
   },
 });
 
 export const segmentFill = recipe({
   base: {
-    borderRadius: vars.radius.pill,
-    backgroundColor: vars.color.accent.solid,
-
     height: '100%',
     width: '0%',
 
+    borderRadius: vars.radius.pill,
     transition: `width ${slowInOut}`,
   },
 
   variants: {
     active: {
       true: { width: '100%' },
+    },
+    color: {
+      accent: { backgroundColor: vars.color.accent.solid },
+      amber: { backgroundColor: vars.color.palette.amber.solid },
+      blue: { backgroundColor: vars.color.palette.blue.solid },
+      cyan: { backgroundColor: vars.color.palette.cyan.solid },
+      gray: { backgroundColor: vars.color.palette.gray.solid },
+      green: { backgroundColor: vars.color.palette.green.solid },
+      indigo: { backgroundColor: vars.color.palette.indigo.solid },
+      lime: { backgroundColor: vars.color.palette.lime.solid },
+      orange: { backgroundColor: vars.color.palette.orange.solid },
+      pink: { backgroundColor: vars.color.palette.pink.solid },
+      purple: { backgroundColor: vars.color.palette.purple.solid },
+      rose: { backgroundColor: vars.color.palette.rose.solid },
+      sky: { backgroundColor: vars.color.palette.sky.solid },
+      teal: { backgroundColor: vars.color.palette.teal.solid },
+      violet: { backgroundColor: vars.color.palette.violet.solid },
+      yellow: { backgroundColor: vars.color.palette.yellow.solid },
     },
     current: {
       true: {
@@ -72,5 +88,9 @@ export const segmentFill = recipe({
         },
       },
     },
+  },
+
+  defaultVariants: {
+    color: 'accent',
   },
 });
