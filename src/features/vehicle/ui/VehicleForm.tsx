@@ -15,8 +15,16 @@ import { MileageStep } from './MileageStep';
 export const VehicleForm = ({ workspaceId, onSuccess }: VehicleFormProps) => {
   const { t } = useTranslation();
 
-  const { control, currentStep, isLastStep, isPending, handleNext, handleBack, handleSubmit } =
-    useVehicleForm({ workspaceId, onSuccess });
+  const {
+    control,
+    currentStep,
+    isLastStep,
+    isPending,
+    handleNext,
+    handleBack,
+    handleSubmit,
+    errorMessage,
+  } = useVehicleForm({ workspaceId, onSuccess });
 
   const renderFields = () => {
     switch (currentStep) {
@@ -49,6 +57,7 @@ export const VehicleForm = ({ workspaceId, onSuccess }: VehicleFormProps) => {
         submitLabel={isLastStep ? t('common.save') : t('common.next')}
         onBack={currentStep > 1 ? handleBack : undefined}
         isLoading={isPending}
+        error={errorMessage}
       >
         {renderFields()}
       </Form>

@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useFormErrors } from '@shared/lib/form';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -16,7 +17,7 @@ export const useWorkspaceSettingsForm = ({
 }: WorkspaceSettingsFormParams) => {
   const { t } = useTranslation();
 
-  const { control, handleSubmit } = useForm<WorkspaceSettingsValues>({
+  const { control, handleSubmit, setError } = useForm<WorkspaceSettingsValues>({
     resolver: zodResolver(createWorkspaceSettingsSchema(t)),
     defaultValues: {
       currency: 'PLN',
@@ -27,7 +28,8 @@ export const useWorkspaceSettingsForm = ({
     },
   });
 
-  const { mutate: update, isPending } = useUpdateWorkspaceSettingsMutation();
+  const { mutate: update, isPending, error } = useUpdateWorkspaceSettingsMutation();
+  const errorMessage = useFormErrors({ error, setError, t });
 
   const onSubmit = (data: WorkspaceSettingsValues) => {
     update({ id: workspaceId, dto: data }, { onSuccess: (settings) => onSuccess(settings.data) });
@@ -37,5 +39,6 @@ export const useWorkspaceSettingsForm = ({
     control,
     handleSubmit: handleSubmit(onSubmit),
     isPending,
+    errorMessage,
   };
 };

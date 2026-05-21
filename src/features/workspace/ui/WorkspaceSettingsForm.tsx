@@ -13,10 +13,18 @@ import { useWorkspaceSettingsForm, type WorkspaceSettingsFormProps } from '../mo
 
 export const WorkspaceSettingsForm = ({ workspaceId, onSuccess }: WorkspaceSettingsFormProps) => {
   const { t } = useTranslation();
-  const { control, handleSubmit, isPending } = useWorkspaceSettingsForm({ workspaceId, onSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = useWorkspaceSettingsForm({
+    workspaceId,
+    onSuccess,
+  });
 
   return (
-    <Form onSubmit={handleSubmit} submitLabel={t('common.next')} isLoading={isPending}>
+    <Form
+      onSubmit={handleSubmit}
+      submitLabel={t('common.next')}
+      isLoading={isPending}
+      error={errorMessage}
+    >
       <FormFieldCombobox
         control={control}
         name="timezone"

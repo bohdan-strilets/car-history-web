@@ -5,6 +5,7 @@ import {
   VEHICLE_STEP_FIELDS,
 } from '@features/vehicle';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useFormErrors } from '@shared/lib/form';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -20,7 +21,7 @@ export const useVehicleForm = ({ workspaceId, onSuccess }: UseVehicleFormProps) 
   const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(1);
 
-  const { control, handleSubmit, trigger } = useForm<VehicleFormValues>({
+  const { control, handleSubmit, trigger, setError } = useForm<VehicleFormValues>({
     resolver: zodResolver(createVehicleFormSchema(t)),
     defaultValues: {
       brand: '',
@@ -41,7 +42,8 @@ export const useVehicleForm = ({ workspaceId, onSuccess }: UseVehicleFormProps) 
     },
   });
 
-  const { mutate: create, isPending } = useCreateVehicleMutation();
+  const { mutate: create, isPending, error } = useCreateVehicleMutation();
+  const errorMessage = useFormErrors({ error, setError, t });
 
   const handleNext = async () => {
     const fields = VEHICLE_STEP_FIELDS[currentStep];
@@ -67,5 +69,6 @@ export const useVehicleForm = ({ workspaceId, onSuccess }: UseVehicleFormProps) 
     handleNext,
     handleBack,
     handleSubmit: handleSubmit(onSubmit),
+    errorMessage,
   };
 };
