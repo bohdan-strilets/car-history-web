@@ -14,7 +14,7 @@ export interface CreateVehicleDto {
   plateNumber: string;
   engineDisplacementCc: number;
   bodyType: string;
-  fuelType: string;
+  fuelType: string[];
   transmission: string;
   driveType: string;
   color: string;

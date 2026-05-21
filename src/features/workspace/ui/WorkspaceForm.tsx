@@ -2,8 +2,7 @@ import { WORKSPACE_TYPE, WORKSPACE_TYPE_CONFIG, type Workspace } from '@entities
 import { useCreateWorkspaceMutation } from '@features/workspace';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
-import { CardSelect, Form, FormField } from '@shared/ui/components';
-import { Input } from '@shared/ui/primitives';
+import { Form, FormFieldCardSelect, FormFieldInput } from '@shared/ui/components';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -41,26 +40,18 @@ export const WorkspaceForm = ({ onSuccess }: WorkspaceFormProps) => {
       isLoading={isPending}
       error={errorMessage}
     >
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="type"
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, WORKSPACE_TYPE_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={translateCardSelectOptions(t, WORKSPACE_TYPE_CONFIG)}
       />
 
-      <FormField
+      <FormFieldInput
         control={control}
         name="name"
         label={t('workspace.fields.name.label')}
-        render={(field) => (
-          <Input size="lg" placeholder={t('workspace.fields.name.placeholder')} {...field} />
-        )}
+        size="lg"
+        placeholder={t('workspace.fields.name.placeholder')}
       />
     </Form>
   );

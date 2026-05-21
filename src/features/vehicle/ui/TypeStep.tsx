@@ -4,7 +4,7 @@ import {
   FUEL_TYPE_CONFIG,
   TRANSMISSION_CONFIG,
 } from '@entities/vehicle';
-import { CardSelect, FormField } from '@shared/ui/components';
+import { FormFieldCardSelect } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -15,64 +15,41 @@ export const TypeStep = ({ control }: VehicleStepProps) => {
 
   return (
     <>
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="fuelType"
         label={t('vehicle.form.fuelType')}
         required
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, FUEL_TYPE_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={2}
-          />
-        )}
+        options={translateCardSelectOptions(t, FUEL_TYPE_CONFIG)}
+        maxSelect={2}
+        multi
       />
 
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="bodyType"
         label={t('vehicle.form.bodyType')}
         required
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, BODY_TYPE_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={translateCardSelectOptions(t, BODY_TYPE_CONFIG)}
+        maxSelect={1}
       />
 
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="transmission"
         label={t('vehicle.form.transmission')}
         required
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, TRANSMISSION_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={translateCardSelectOptions(t, TRANSMISSION_CONFIG)}
+        maxSelect={1}
       />
 
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="driveType"
         label={t('vehicle.form.driveType')}
         required
-        render={(field) => (
-          <CardSelect
-            options={translateCardSelectOptions(t, DRIVE_TYPE_CONFIG)}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={translateCardSelectOptions(t, DRIVE_TYPE_CONFIG)}
+        maxSelect={1}
       />
     </>
   );

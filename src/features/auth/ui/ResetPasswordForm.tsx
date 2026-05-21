@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
-import { Form, FormField, PasswordInput } from '@shared/ui';
+import { Form, FormFieldPasswordInput } from '@shared/ui';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -40,18 +40,20 @@ export const ResetPasswordForm = ({ token, onSuccess }: ResetPasswordFormProps) 
       isLoading={isPending}
       error={errorMessage}
     >
-      <FormField
+      <FormFieldPasswordInput
         control={control}
         name="password"
         label={t('auth.common.fields.password')}
-        render={(field) => <PasswordInput placeholder="••••••••" size="lg" {...field} />}
+        placeholder="••••••••"
+        size="lg"
       />
 
-      <FormField
+      <FormFieldPasswordInput
         control={control}
         name="confirmPassword"
         label={t('auth.common.fields.confirmPassword')}
-        render={(field) => <PasswordInput placeholder="••••••••" size="lg" {...field} />}
+        placeholder="••••••••"
+        size="lg"
       />
     </Form>
   );

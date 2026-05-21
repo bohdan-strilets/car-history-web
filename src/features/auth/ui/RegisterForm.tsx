@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
-import { Form, FormField, Input, PasswordInput } from '@shared/ui';
+import { Form, FormFieldInput, FormFieldPasswordInput } from '@shared/ui';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -46,41 +46,43 @@ export const RegisterForm = () => {
       isLoading={isPending}
       error={errorMessage}
     >
-      <FormField
+      <FormFieldInput
         control={control}
         name="firstName"
         label={t('auth.common.fields.firstName')}
-        render={(field) => <Input size="lg" {...field} />}
+        size="lg"
       />
 
-      <FormField
+      <FormFieldInput
         control={control}
         name="lastName"
         label={t('auth.common.fields.lastName')}
-        render={(field) => <Input size="lg" {...field} />}
+        size="lg"
       />
 
-      <FormField
+      <FormFieldInput
         control={control}
         name="email"
         label={t('auth.common.fields.email')}
-        render={(field) => (
-          <Input type="email" placeholder="email@example.com" size="lg" {...field} />
-        )}
+        type="email"
+        placeholder="email@example.com"
+        size="lg"
       />
 
-      <FormField
+      <FormFieldPasswordInput
         control={control}
         name="password"
         label={t('auth.common.fields.password')}
-        render={(field) => <PasswordInput placeholder="••••••••" size="lg" {...field} />}
+        placeholder="••••••••"
+        size="lg"
       />
 
-      <FormField
+      <FormFieldPasswordInput
         control={control}
         name="confirmPassword"
         label={t('auth.common.fields.confirmPassword')}
-        render={(field) => <PasswordInput placeholder="••••••••" size="lg" {...field} />}
+        placeholder="••••••••"
+        size="lg"
       />
     </Form>
   );

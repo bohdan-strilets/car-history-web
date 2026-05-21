@@ -36,7 +36,7 @@ export const VehicleForm = ({ workspaceId, onSuccess, onSkip }: VehicleFormProps
       year: undefined,
       generation: '',
       nickname: '',
-      fuelType: undefined,
+      fuelType: [],
       bodyType: undefined,
       transmission: undefined,
       driveType: undefined,
@@ -95,7 +95,7 @@ export const VehicleForm = ({ workspaceId, onSuccess, onSkip }: VehicleFormProps
                 handleNext();
               }
         }
-        submitLabel={isLastStep ? t('common.next') : t('common.next')}
+        submitLabel={isLastStep ? t('common.save') : t('common.next')}
         onBack={currentStep > 1 ? handleBack : undefined}
         isLoading={isPending}
       >

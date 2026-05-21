@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
-import { Form, FormField, Input } from '@shared/ui';
+import { Form, FormFieldInput } from '@shared/ui';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -37,13 +37,13 @@ export const ForgotPasswordForm = ({ onSuccess }: ForgotPasswordFormProps) => {
       isLoading={isPending}
       error={errorMessage}
     >
-      <FormField
+      <FormFieldInput
         control={control}
         name="email"
         label={t('auth.common.fields.email')}
-        render={(field) => (
-          <Input type="email" placeholder="email@example.com" size="lg" {...field} />
-        )}
+        type="email"
+        placeholder="email@example.com"
+        size="lg"
       />
     </Form>
   );

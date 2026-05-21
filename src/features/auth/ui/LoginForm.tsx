@@ -1,6 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
-import { Form, FormField, Input, PasswordInput } from '@shared/ui';
+import { Form, FormFieldInput, FormFieldPasswordInput } from '@shared/ui';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -36,20 +36,21 @@ export const LoginForm = () => {
       isLoading={isPending}
       error={errorMessage}
     >
-      <FormField
+      <FormFieldInput
         control={control}
         name="email"
         label={t('auth.common.fields.email')}
-        render={(field) => (
-          <Input type="email" placeholder="email@example.com" size="lg" {...field} />
-        )}
+        type="email"
+        placeholder="email@example.com"
+        size="lg"
       />
 
-      <FormField
+      <FormFieldPasswordInput
         control={control}
         name="password"
         label={t('auth.common.fields.password')}
-        render={(field) => <PasswordInput placeholder="••••••••" size="lg" {...field} />}
+        placeholder="••••••••"
+        size="lg"
       />
     </Form>
   );

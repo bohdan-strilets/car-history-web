@@ -1,6 +1,10 @@
 import { getBrandOptions, getModelOptions, VEHICLE_POPULAR_BRANDS_CONFIG } from '@entities/vehicle';
-import { CardSelect, Combobox, FormField, YearPicker } from '@shared/ui/components';
-import { Input } from '@shared/ui/primitives';
+import {
+  FormFieldCardSelect,
+  FormFieldCombobox,
+  FormFieldInput,
+  FormFieldYearPicker,
+} from '@shared/ui';
 import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -15,79 +19,56 @@ export const BasicInfoStep = ({ control }: VehicleStepProps) => {
 
   return (
     <>
-      <FormField
+      <FormFieldCardSelect
         control={control}
         name="brand"
         label={t('vehicle.form.popularBrands')}
-        render={(field) => (
-          <CardSelect
-            options={VEHICLE_POPULAR_BRANDS_CONFIG}
-            value={field.value ? [field.value] : []}
-            onChange={(val) => field.onChange(val[0] ?? '')}
-            maxSelect={1}
-          />
-        )}
+        options={VEHICLE_POPULAR_BRANDS_CONFIG}
       />
 
-      <FormField
+      <FormFieldCombobox
         control={control}
         name="brand"
         label={t('vehicle.form.brand')}
         required
-        render={(field) => (
-          <Combobox
-            options={brandOptions}
-            value={field.value}
-            onChange={field.onChange}
-            placeholder={t('vehicle.form.brandPlaceholder')}
-            size="lg"
-          />
-        )}
+        options={brandOptions}
+        placeholder={t('vehicle.form.brandPlaceholder')}
+        size="lg"
       />
 
-      <FormField
+      <FormFieldCombobox
         control={control}
         name="model"
         label={t('vehicle.form.model')}
         required
-        render={(field) => (
-          <Combobox
-            options={modelOptions}
-            value={field.value}
-            onChange={field.onChange}
-            placeholder={t('vehicle.form.modelPlaceholder')}
-            disabled={!selectedBrand}
-            size="lg"
-          />
-        )}
+        options={modelOptions}
+        placeholder={t('vehicle.form.modelPlaceholder')}
+        disabled={!selectedBrand}
+        size="lg"
       />
 
-      <FormField
+      <FormFieldYearPicker
         control={control}
         name="year"
         label={t('vehicle.form.year')}
         required
-        render={(field) => (
-          <YearPicker value={field.value ?? null} onChange={field.onChange} min={1990} />
-        )}
+        min={1990}
       />
 
-      <FormField
+      <FormFieldInput
         control={control}
         name="generation"
         label={t('vehicle.form.generation')}
-        render={(field) => (
-          <Input size="lg" placeholder={t('vehicle.form.generationPlaceholder')} {...field} />
-        )}
+        size="lg"
+        placeholder={t('vehicle.form.generationPlaceholder')}
       />
 
-      <FormField
+      <FormFieldInput
         control={control}
         name="nickname"
         label={t('vehicle.form.nickname')}
-        render={(field) => (
-          <Input size="lg" placeholder={t('vehicle.form.nicknamePlaceholder')} {...field} />
-        )}
+        size="lg"
+        placeholder={t('vehicle.form.nicknamePlaceholder')}
       />
     </>
   );

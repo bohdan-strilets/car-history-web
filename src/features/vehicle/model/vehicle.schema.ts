@@ -36,7 +36,7 @@ export const createVehicleStep1Schema = (t: TFunction) =>
 
 export const createVehicleStep2Schema = (t: TFunction) =>
   z.object({
-    fuelType: z.enum(FUEL_TYPE, t('validation.REQUIRED')),
+    fuelType: z.array(z.enum(FUEL_TYPE, t('validation.REQUIRED'))).min(1, t('validation.REQUIRED')),
     bodyType: z.enum(BODY_TYPE, t('validation.REQUIRED')),
     transmission: z.enum(TRANSMISSION, t('validation.REQUIRED')),
     driveType: z.enum(DRIVE_TYPE, t('validation.REQUIRED')),
