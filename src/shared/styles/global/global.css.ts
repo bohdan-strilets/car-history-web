@@ -96,3 +96,17 @@ globalStyle('code', {
   padding: `2px 6px`,
   color: vars.color.accent.solid,
 });
+
+// Form elements
+
+globalStyle('input[type="number"]', {
+  MozAppearance: 'textfield',
+});
+
+globalStyle(
+  'input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button',
+  {
+    WebkitAppearance: 'none',
+    margin: 0,
+  },
+);
