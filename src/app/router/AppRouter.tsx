@@ -1,4 +1,4 @@
-import { AppLayout, AuthLayout } from '@app/layouts';
+import { AppLayout, AuthLayout, OnboardingLayout } from '@app/layouts';
 import {
   ConfirmEmailPage,
   ForgotPasswordPage,
@@ -15,10 +15,13 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { GuestRoute, ProtectedRoute } from './guards';
 
 const router = createBrowserRouter([
+  { path: ROUTES.ROOT, element: <Navigate to={ROUTES.AUTH.LOGIN} replace /> },
+
   {
-    path: ROUTES.ROOT,
-    element: <Navigate to={ROUTES.AUTH.LOGIN} replace />,
+    element: <AuthLayout />,
+    children: [{ path: ROUTES.AUTH.CONFIRM_EMAIL, element: <ConfirmEmailPage /> }],
   },
+
   {
     element: <GuestRoute />,
     children: [
@@ -30,15 +33,18 @@ const router = createBrowserRouter([
           { path: ROUTES.AUTH.GOOGLE_CALLBACK, element: <GoogleCallbackPage /> },
           { path: ROUTES.AUTH.FORGOT_PASSWORD, element: <ForgotPasswordPage /> },
           { path: ROUTES.AUTH.RESET_PASSWORD, element: <ResetPasswordPage /> },
-          { path: ROUTES.AUTH.CONFIRM_EMAIL, element: <ConfirmEmailPage /> },
         ],
       },
     ],
   },
+
   {
     element: <ProtectedRoute />,
     children: [
-      { path: ROUTES.ONBOARDING, element: <OnboardingPage /> },
+      {
+        element: <OnboardingLayout />,
+        children: [{ path: ROUTES.ONBOARDING, element: <OnboardingPage /> }],
+      },
       {
         element: <AppLayout />,
         children: [
