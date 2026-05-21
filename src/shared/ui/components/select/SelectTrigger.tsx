@@ -1,7 +1,6 @@
-import { Box, Icon, Stack, Text, useInputClasses } from '@shared/ui/primitives';
+import { Box, Chevron, Icon, Stack, Text, useInputClasses } from '@shared/ui/primitives';
 import clsx from 'clsx';
 
-import { chevron } from './select.css';
 import type { SelectTriggerProps } from './select.types';
 
 export const SelectTrigger = ({
@@ -25,7 +24,7 @@ export const SelectTrigger = ({
             {selected ? selected.label : placeholder}
           </Text>
 
-          <Icon name="chevronDown" className={chevron({ open })} />
+          <Chevron open={open} />
         </Stack>
       </Box>
     </div>

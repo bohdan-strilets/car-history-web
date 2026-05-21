@@ -1,7 +1,6 @@
 import { Dropdown, DropdownItem } from '@shared/ui/components/dropdown';
 import { useState } from 'react';
 
-import { selectedValue } from './select.css';
 import type { SelectProps } from './select.types';
 import { SelectTrigger } from './SelectTrigger';
 
@@ -45,8 +44,7 @@ export const Select = ({
             label={option.label}
             disabled={option.disabled}
             onClick={handleSelect}
-            rightIcon={isSelected ? 'check' : undefined}
-            className={isSelected ? selectedValue : undefined}
+            selected={isSelected}
           />
         );
       })}
