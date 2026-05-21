@@ -9,5 +9,6 @@ export interface FormProps {
   submitLabel: string;
   submitIcon?: IconName;
   onBack?: () => void;
+  onSkip?: () => void;
   className?: string;
 }

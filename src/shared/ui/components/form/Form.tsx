@@ -15,6 +15,7 @@ export const Form = ({
   submitLabel,
   submitIcon,
   onBack,
+  onSkip,
   className,
 }: FormProps) => {
   const { t } = useTranslation();
@@ -57,6 +58,19 @@ export const Form = ({
           {submitLabel}
         </Button>
       </Stack>
+
+      {onSkip && (
+        <Button
+          type="button"
+          variant="ghost"
+          color="gray"
+          size={{ mobile: 'md', tablet: 'lg' }}
+          onClick={onSkip}
+          fullWidth
+        >
+          {t('common.skip')}
+        </Button>
+      )}
     </form>
   );
 };
