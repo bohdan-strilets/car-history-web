@@ -3,7 +3,7 @@ import { Grid } from '@shared/ui/primitives';
 import type { CardSelectProps } from './card-select.types';
 import { CardSelectItem } from './CardSelectItem';
 
-export const CardSelect = ({ options, value, onChange, maxSelect }: CardSelectProps) => {
+export const CardSelect = ({ options, value, onChange, maxSelect = 1 }: CardSelectProps) => {
   const handleSelect = (val: string) => {
     if (maxSelect === 1) {
       onChange(value[0] === val ? [] : [val]);
