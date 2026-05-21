@@ -1,3 +1,7 @@
+import type { Control } from 'react-hook-form';
+
+import type { VehicleFormValues } from './vehicle.schema';
+
 // DTOs
 
 export interface CreateVehicleDto {
@@ -24,4 +28,15 @@ export interface CreateVehicleDto {
 export interface CreateVehicleParams {
   workspaceId: string;
   dto: CreateVehicleDto;
+}
+
+// Props
+
+export interface VehicleStepProps {
+  control: Control<VehicleFormValues>;
+}
+
+export interface VehicleFormState {
+  currentStep: number;
+  values: Partial<VehicleFormValues>;
 }
