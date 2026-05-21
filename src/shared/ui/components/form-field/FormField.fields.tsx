@@ -148,8 +148,9 @@ export const FormFieldCardSelect = <T extends FieldValues>({
   label,
   hint,
   required,
+  multi = false,
   ...props
-}: BaseProps<T> & Omit<CardSelectProps, 'value' | 'onChange'>) => (
+}: BaseProps<T> & Omit<CardSelectProps, 'value' | 'onChange'> & { multi?: boolean }) => (
   <FormField
     control={control}
     name={name}
@@ -158,8 +159,8 @@ export const FormFieldCardSelect = <T extends FieldValues>({
     required={required}
     render={(field) => (
       <CardSelect
-        value={field.value ? [field.value] : []}
-        onChange={(val) => field.onChange(val[0] ?? '')}
+        value={multi ? (field.value ?? []) : field.value ? [field.value] : []}
+        onChange={(val) => (multi ? field.onChange(val) : field.onChange(val[0] ?? ''))}
         {...props}
       />
     )}
