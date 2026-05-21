@@ -1,6 +1,6 @@
 // Constants
 
-export const BodyType = {
+export const BODY_TYPE = {
   SEDAN: 'SEDAN',
   HATCHBACK: 'HATCHBACK',
   WAGON: 'WAGON',
@@ -14,9 +14,9 @@ export const BodyType = {
   OTHER: 'OTHER',
 } as const;
 
-export type BodyType = (typeof BodyType)[keyof typeof BodyType];
+export type BodyType = (typeof BODY_TYPE)[keyof typeof BODY_TYPE];
 
-export const FuelType = {
+export const FUEL_TYPE = {
   PETROL: 'PETROL',
   DIESEL: 'DIESEL',
   HYBRID: 'HYBRID',
@@ -24,31 +24,31 @@ export const FuelType = {
   LPG: 'LPG',
 } as const;
 
-export type FuelType = (typeof FuelType)[keyof typeof FuelType];
+export type FuelType = (typeof FUEL_TYPE)[keyof typeof FUEL_TYPE];
 
-export const Transmission = {
+export const TRANSMISSION = {
   MANUAL: 'MANUAL',
   AUTOMATIC: 'AUTOMATIC',
   ROBOTIC: 'ROBOTIC',
 } as const;
 
-export type Transmission = (typeof Transmission)[keyof typeof Transmission];
+export type Transmission = (typeof TRANSMISSION)[keyof typeof TRANSMISSION];
 
-export const DriveType = {
+export const DRIVE_TYPE = {
   FWD: 'FWD',
   RWD: 'RWD',
   AWD: 'AWD',
 } as const;
 
-export type DriveType = (typeof DriveType)[keyof typeof DriveType];
+export type DriveType = (typeof DRIVE_TYPE)[keyof typeof DRIVE_TYPE];
 
-export const VehicleStatus = {
+export const VEHICLE_STATUS = {
   ACTIVE: 'ACTIVE',
   ARCHIVE: 'ARCHIVE',
   DELETED: 'DELETED',
 } as const;
 
-export type VehicleStatus = (typeof VehicleStatus)[keyof typeof VehicleStatus];
+export type VehicleStatus = (typeof VEHICLE_STATUS)[keyof typeof VEHICLE_STATUS];
 
 // Types
 
