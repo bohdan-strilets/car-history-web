@@ -1,11 +1,12 @@
 import { ROUTES } from '@shared/config';
 import { Stepper } from '@shared/ui/components/stepper';
-import { Heading, Stack } from '@shared/ui/primitives';
+import { Heading, Stack, Text } from '@shared/ui/primitives';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import {
   ONBOARDING_STEP_INDEX,
+  ONBOARDING_STEP_SUBTITLE_KEYS,
   ONBOARDING_STEP_TITLE_KEYS,
   TOTAL_STEPS,
   useOnboardingStore,
@@ -28,6 +29,9 @@ export const OnboardingStepper = () => {
 
   const stepIndex = ONBOARDING_STEP_INDEX[currentStep];
   const stepTitle = t(ONBOARDING_STEP_TITLE_KEYS[currentStep]);
+  const stepSubtitle = t(ONBOARDING_STEP_SUBTITLE_KEYS[currentStep]);
+
+  const isWelcomeStep = currentStep === 'welcome';
 
   const renderStep = () => {
     switch (currentStep) {
@@ -45,12 +49,15 @@ export const OnboardingStepper = () => {
   };
 
   return (
-    <Stack gap="2xl">
-      <Stack gap="lg">
-        <Stepper currentStep={stepIndex} totalSteps={TOTAL_STEPS} />
-        <Heading as="h1" size="2xl">
-          {stepTitle}
-        </Heading>
+    <Stack gap="3xl">
+      <Stack gap="3xl">
+        <Stepper currentStep={stepIndex} totalSteps={TOTAL_STEPS} size="md" />
+        <Stack gap="xs">
+          <Heading as="h1" size="2xl">
+            {stepTitle}
+          </Heading>
+          {!isWelcomeStep && <Text color="secondary">{stepSubtitle}</Text>}
+        </Stack>
       </Stack>
 
       {renderStep()}

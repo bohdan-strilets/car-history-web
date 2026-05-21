@@ -44,3 +44,10 @@ export interface TimelineStepProps {
   onNext: () => void;
   onSkip: () => void;
 }
+
+export interface StepSuccessProps {
+  title: string;
+  description?: string;
+  onDone: () => void;
+  delay?: number;
+}

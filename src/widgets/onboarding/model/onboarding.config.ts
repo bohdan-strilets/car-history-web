@@ -27,3 +27,11 @@ export const ONBOARDING_STEP_TITLE_KEYS: Record<OnboardingStep, ParseKeys> = {
   settings: 'onboarding.settings.title',
   timeline: 'onboarding.timeline.title',
 };
+
+export const ONBOARDING_STEP_SUBTITLE_KEYS: Record<OnboardingStep, ParseKeys> = {
+  welcome: 'onboarding.welcome.subtitle',
+  workspace: 'onboarding.workspace.subtitle',
+  vehicle: 'onboarding.vehicle.subtitle',
+  settings: 'onboarding.settings.subtitle',
+  timeline: 'onboarding.timeline.subtitle',
+};
