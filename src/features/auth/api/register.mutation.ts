@@ -15,7 +15,7 @@ export const useRegisterMutation = () => {
     onSuccess: (response) => {
       authService.setUser(response.data.user);
       authService.setAccessToken(response.data.accessToken);
-      navigate(ROUTES.DASHBOARD);
+      navigate(ROUTES.ONBOARDING);
     },
   });
 };
