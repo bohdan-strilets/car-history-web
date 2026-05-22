@@ -1,4 +1,4 @@
-import { OnboardingStepper } from '@widgets/onboarding';
+import { OnboardingStepper } from '@features/onboarding';
 
 export const OnboardingPage = () => {
   return <OnboardingStepper />;
