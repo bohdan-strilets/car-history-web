@@ -1,6 +1,8 @@
+import { useCompleteOnboardingMutation } from '@entities/user';
 import { ROUTES } from '@shared/config';
 import { Stepper } from '@shared/ui/components/stepper';
 import { Heading, Stack, Text } from '@shared/ui/primitives';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,19 +15,27 @@ import {
 } from '../model';
 
 import { SettingsStep } from './SettingsStep';
+import { StepSuccess } from './StepSuccess';
 import { TimelineStep } from './TimelineStep';
 import { VehicleStep } from './VehicleStep';
 import { WelcomeStep } from './WelcomeStep';
 import { WorkspaceStep } from './WorkspaceStep';
 
 export const OnboardingStepper = () => {
+  const [isFinished, setIsFinished] = useState(false);
+
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { currentStep, goNext, skip } = useOnboardingStore();
+  const { mutate: completeOnboarding } = useCompleteOnboardingMutation();
 
   const handleFinish = () => {
-    navigate(ROUTES.DASHBOARD);
+    completeOnboarding(undefined, {
+      onSuccess: () => setIsFinished(true),
+    });
   };
+
+  const toDashboard = () => navigate(ROUTES.DASHBOARD);
 
   const stepIndex = ONBOARDING_STEP_INDEX[currentStep];
   const stepTitle = t(ONBOARDING_STEP_TITLE_KEYS[currentStep]);
@@ -51,6 +61,17 @@ export const OnboardingStepper = () => {
         return <TimelineStep onNext={handleFinish} />;
     }
   };
+
+  if (isFinished) {
+    return (
+      <StepSuccess
+        title={t('onboarding.success.title')}
+        description={t('onboarding.success.description')}
+        onDone={toDashboard}
+        delay={2000}
+      />
+    );
+  }
 
   return (
     <Stack gap="3xl">

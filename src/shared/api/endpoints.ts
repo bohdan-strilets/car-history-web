@@ -18,6 +18,7 @@ export const ENDPOINTS = {
     ME_PASSWORD: '/users/me/password',
     ME_CHANGE_EMAIL: '/users/me/change-email',
     ME_SETTINGS: '/users/me/settings',
+    ME_ONBOARDING: '/users/me/onboarding',
   },
 
   WORKSPACES: {

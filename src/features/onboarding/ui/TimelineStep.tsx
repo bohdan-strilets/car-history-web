@@ -1,4 +1,4 @@
-import { Button, Heading, IconBox, Stack, Text } from '@shared/ui/primitives';
+import { Button, Heading, IconBox, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 
 import type { TimelineStepProps } from '../model';
@@ -20,7 +20,7 @@ export const TimelineStep = ({ onNext }: TimelineStepProps) => {
       </Stack>
 
       <Stack gap="sm" align="center" style={{ width: '100%' }}>
-        <Button size="lg" onClick={onNext} fullWidth>
+        <Button size="xl" onClick={onNext} fullWidth>
           {t('onboarding.timeline.placeholder.add')}
         </Button>
       </Stack>

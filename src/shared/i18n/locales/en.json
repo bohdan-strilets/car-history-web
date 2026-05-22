@@ -24,6 +24,10 @@
   },
 
   "onboarding": {
+    "success": {
+      "title": "Arvino ready!",
+      "description": "Your digital car passport is ready."
+    },
     "welcome": {
       "title": "Welcome to Arvino",
       "subtitle": "Let's set up your digital car passport.",
