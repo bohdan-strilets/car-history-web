@@ -7,13 +7,6 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
   currentStep: 'welcome',
   completedSteps: [],
 
-  canGoNext: () => {
-    const { currentStep } = get();
-    if (currentStep === 'workspace') return false;
-    if (currentStep === 'vehicle') return false;
-    return true;
-  },
-
   goNext: () => {
     const { currentStep, completedSteps } = get();
     const currentIndex = ONBOARDING_STEPS.indexOf(currentStep);
@@ -25,15 +18,14 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
     }
   },
 
-  goBack: () => {
-    const { currentStep } = get();
-    const currentIndex = ONBOARDING_STEPS.indexOf(currentStep);
-    if (currentIndex > 0) {
-      set({ currentStep: ONBOARDING_STEPS[currentIndex - 1] });
-    }
-  },
-
   skip: () => {
     get().goNext();
+  },
+
+  resetStore: () => {
+    set({
+      currentStep: 'welcome',
+      completedSteps: [],
+    });
   },
 }));

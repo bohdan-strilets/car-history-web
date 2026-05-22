@@ -7,7 +7,6 @@ export {
 } from './onboarding.config';
 export { useOnboardingStore } from './onboarding.store';
 export type {
-  OnboardingState,
   OnboardingStep,
   OnboardingStore,
   SettingsStepProps,

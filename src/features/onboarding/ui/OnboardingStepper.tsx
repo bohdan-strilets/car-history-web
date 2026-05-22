@@ -27,11 +27,12 @@ export const OnboardingStepper = () => {
 
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { currentStep, goNext, skip } = useOnboardingStore();
+  const { currentStep, goNext, skip, resetStore } = useOnboardingStore();
   const { mutate: completeOnboarding } = useCompleteOnboardingMutation();
 
   const toDashboard = () => {
     authService.updateUser({ onboardingCompleted: true });
+    resetStore();
     navigate(ROUTES.DASHBOARD);
   };
 

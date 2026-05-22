@@ -9,9 +9,8 @@ export interface OnboardingStore {
   completedSteps: OnboardingStep[];
 
   goNext: () => void;
-  goBack: () => void;
   skip: () => void;
-  canGoNext: () => boolean;
+  resetStore: () => void;
 }
 
 // Props
