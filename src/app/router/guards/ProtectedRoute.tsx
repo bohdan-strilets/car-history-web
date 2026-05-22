@@ -17,5 +17,9 @@ export const ProtectedRoute = () => {
     return <Navigate to={ROUTES.ONBOARDING} replace />;
   }
 
+  if (user && isOnboardingCompleted && isOnboardingRoute) {
+    return <Navigate to={ROUTES.DASHBOARD} replace />;
+  }
+
   return <Outlet />;
 };

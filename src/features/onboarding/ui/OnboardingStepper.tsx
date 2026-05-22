@@ -1,5 +1,6 @@
 import { useCompleteOnboardingMutation } from '@entities/user';
 import { ROUTES } from '@shared/config';
+import { authService } from '@shared/store/auth';
 import { Stepper } from '@shared/ui/components/stepper';
 import { Heading, Stack, Text } from '@shared/ui/primitives';
 import { useState } from 'react';
@@ -29,13 +30,16 @@ export const OnboardingStepper = () => {
   const { currentStep, goNext, skip } = useOnboardingStore();
   const { mutate: completeOnboarding } = useCompleteOnboardingMutation();
 
+  const toDashboard = () => {
+    authService.updateUser({ onboardingCompleted: true });
+    navigate(ROUTES.DASHBOARD);
+  };
+
   const handleFinish = () => {
     completeOnboarding(undefined, {
       onSuccess: () => setIsFinished(true),
     });
   };
-
-  const toDashboard = () => navigate(ROUTES.DASHBOARD);
 
   const stepIndex = ONBOARDING_STEP_INDEX[currentStep];
   const stepTitle = t(ONBOARDING_STEP_TITLE_KEYS[currentStep]);
