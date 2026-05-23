@@ -25,4 +25,6 @@ export interface InputClassesParams {
   size?: ResponsiveValue<InputSize>;
   state?: InputState;
   disabled?: boolean;
+  hasLeftIcon?: boolean;
+  hasRightIcon?: boolean;
 }

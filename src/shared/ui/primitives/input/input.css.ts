@@ -38,24 +38,30 @@ export const root = recipe({
     size: {
       sm: {
         height: vars.layout.controllerSize.sm,
-        paddingInline: vars.spacing.md,
         fontSize: vars.typography.size.sm,
       },
       md: {
         height: vars.layout.controllerSize.md,
-        paddingInline: vars.spacing.lg,
         fontSize: vars.typography.size.md,
       },
       lg: {
         height: vars.layout.controllerSize.lg,
-        paddingInline: vars.spacing.xl,
         fontSize: vars.typography.size.lg,
       },
       xl: {
         height: vars.layout.controllerSize.xl,
-        paddingInline: vars.spacing.xl,
         fontSize: vars.typography.size.xl,
       },
+    },
+
+    hasLeftIcon: {
+      true: { paddingInlineStart: vars.spacing.sm },
+      false: {},
+    },
+
+    hasRightIcon: {
+      true: { paddingInlineEnd: vars.spacing.sm },
+      false: {},
     },
 
     state: {
@@ -91,12 +97,15 @@ export const root = recipe({
   defaultVariants: {
     size: 'md',
     state: 'default',
+    hasLeftIcon: false,
+    hasRightIcon: false,
   },
 });
 
 export const nativeInput = recipe({
   base: {
     flex: 1,
+    alignSelf: 'stretch',
     minWidth: 0,
 
     background: 'none',
@@ -117,6 +126,29 @@ export const nativeInput = recipe({
         cursor: 'not-allowed',
       },
     },
+  },
+
+  variants: {
+    size: {
+      sm: { paddingInline: vars.spacing.md },
+      md: { paddingInline: vars.spacing.lg },
+      lg: { paddingInline: vars.spacing.xl },
+      xl: { paddingInline: vars.spacing.xl },
+    },
+    hasLeftIcon: {
+      true: { paddingInlineStart: 0 },
+      false: {},
+    },
+    hasRightIcon: {
+      true: { paddingInlineEnd: 0 },
+      false: {},
+    },
+  },
+
+  defaultVariants: {
+    size: 'md',
+    hasLeftIcon: false,
+    hasRightIcon: false,
   },
 });
 
