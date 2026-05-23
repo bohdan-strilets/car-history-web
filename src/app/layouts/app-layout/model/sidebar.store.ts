@@ -1,4 +1,4 @@
-import { APP_CONSTANTS } from '@shared/config';
+import { STORAGE_KEYS } from '@shared/lib/storage';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -12,7 +12,7 @@ export const useSidebarStore = create<SidebarStore>()(
       setExpanded: (expanded) => set({ expanded }),
     }),
     {
-      name: APP_CONSTANTS.SIDEBAR_STORAGE_KEY,
+      name: STORAGE_KEYS.SIDEBAR_STORAGE_KEY,
     },
   ),
 );

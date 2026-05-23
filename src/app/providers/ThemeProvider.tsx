@@ -1,3 +1,4 @@
+import { THEME } from '@entities/user';
 import { darkTheme, lightTheme, useTheme } from '@shared/styles';
 import { useEffect, type PropsWithChildren } from 'react';
 
@@ -6,18 +7,18 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {
     const applyTheme = (dark: boolean) => {
-      setResolvedTheme(dark ? 'dark' : 'light');
+      setResolvedTheme(dark ? THEME.DARK : THEME.LIGHT);
       document.documentElement.className = dark ? darkTheme : lightTheme;
     };
 
-    if (theme === 'system') {
+    if (theme === THEME.SYSTEM) {
       const media = window.matchMedia('(prefers-color-scheme: dark)');
       applyTheme(media.matches);
       media.addEventListener('change', (e) => applyTheme(e.matches));
       return () => media.removeEventListener('change', (e) => applyTheme(e.matches));
     }
 
-    applyTheme(theme === 'dark');
+    applyTheme(theme === THEME.DARK);
   }, [theme, setResolvedTheme]);
 
   return <>{children}</>;
