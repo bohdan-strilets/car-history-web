@@ -69,36 +69,40 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
 
       <Divider />
 
-      <Stack gap="md" style={{ width: '100%' }}>
-        <Stack direction="row" align="center" gap="sm">
-          <Text size="sm" color="secondary">
-            {t('onboarding.welcome.language')}
-          </Text>
-          {isUpdatingLanguage && <Spinner size="xs" />}
-        </Stack>
-        <CardSelect
-          options={LANGUAGE_CONFIG}
-          value={[currentLanguage]}
-          onChange={handleLanguage}
-          maxSelect={1}
-        />
-      </Stack>
+      {isEmailVerified && (
+        <>
+          <Stack gap="md" style={{ width: '100%' }}>
+            <Stack direction="row" align="center" gap="sm">
+              <Text size="sm" color="secondary">
+                {t('onboarding.welcome.language')}
+              </Text>
+              {isUpdatingLanguage && <Spinner size="xs" />}
+            </Stack>
+            <CardSelect
+              options={LANGUAGE_CONFIG}
+              value={[currentLanguage]}
+              onChange={handleLanguage}
+              maxSelect={1}
+            />
+          </Stack>
 
-      <Stack gap="md" style={{ width: '100%' }}>
-        <Stack direction="row" align="center" gap="sm">
-          <Text size="sm" color="secondary">
-            {t('onboarding.welcome.theme')}
-          </Text>
-          {isUpdatingTheme && <Spinner size="xs" />}
-        </Stack>
+          <Stack gap="md" style={{ width: '100%' }}>
+            <Stack direction="row" align="center" gap="sm">
+              <Text size="sm" color="secondary">
+                {t('onboarding.welcome.theme')}
+              </Text>
+              {isUpdatingTheme && <Spinner size="xs" />}
+            </Stack>
 
-        <CardSelect
-          options={translateCardSelectOptions(t, THEME_CONFIG)}
-          value={[theme]}
-          onChange={handleTheme}
-          maxSelect={1}
-        />
-      </Stack>
+            <CardSelect
+              options={translateCardSelectOptions(t, THEME_CONFIG)}
+              value={[theme]}
+              onChange={handleTheme}
+              maxSelect={1}
+            />
+          </Stack>
+        </>
+      )}
 
       {!isEmailVerified && (
         <Stack gap="md" align="center">
