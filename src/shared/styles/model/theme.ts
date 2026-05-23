@@ -1,12 +1,14 @@
+import { THEME } from '@entities/user';
+
 import { useThemeStore } from './theme.store';
 
 export const useTheme = () => {
   const theme = useThemeStore((state) => state.theme);
   const resolvedTheme = useThemeStore((state) => state.resolvedTheme);
 
-  const isDark = resolvedTheme === 'dark';
-  const isLight = resolvedTheme === 'light';
-  const isSystem = theme === 'system';
+  const isDark = resolvedTheme === THEME.DARK;
+  const isLight = resolvedTheme === THEME.LIGHT;
+  const isSystem = theme === THEME.SYSTEM;
 
   const setTheme = useThemeStore((state) => state.setTheme);
   const setResolvedTheme = useThemeStore((state) => state.setResolvedTheme);

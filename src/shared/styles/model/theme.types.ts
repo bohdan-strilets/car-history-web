@@ -1,8 +1,9 @@
+import type { Theme } from '@entities/user';
+
 import type { vars } from '../contract';
 
 // Themes
-export type Theme = 'light' | 'dark' | 'system';
-export type ResolvedTheme = 'light' | 'dark';
+export type ResolvedTheme = 'LIGHT' | 'DARK';
 
 // Store
 export interface ThemeStore {
