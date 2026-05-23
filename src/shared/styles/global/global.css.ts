@@ -110,3 +110,14 @@ globalStyle(
     margin: 0,
   },
 );
+
+// Autofill
+
+globalStyle('input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus', {
+  WebkitBoxShadow: `0 0 0px 1000px ${vars.color.bg.sunken} inset`,
+  boxShadow: vars.shadow.neu.inset,
+  borderRadius: vars.radius.md,
+  WebkitTextFillColor: vars.color.text.primary,
+  caretColor: vars.color.text.primary,
+  transition: 'background-color 5000s ease-in-out 0s',
+});
