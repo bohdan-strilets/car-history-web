@@ -23,6 +23,12 @@
     "GAL": "Galony (gal)"
   },
 
+  "themes": {
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "system": "System"
+  },
+
   "onboarding": {
     "success": {
       "title": "Arvino gotowe!",
@@ -33,7 +39,9 @@
       "subtitle": "Zacznijmy konfigurować Twój cyfrowy paszport samochodu.",
       "description": "Zarządzaj wydatkami, serwisem, dokumentami i historią swojego auta w jednym miejscu.",
       "start": "Zaczynamy",
-      "emailNotVerified": "Wysłaliśmy link na {{email}}. Potwierdź email, aby kontynuować."
+      "emailNotVerified": "Wysłaliśmy link na {{email}}. Potwierdź email, aby kontynuować.",
+      "language": "Wybierz język interfejsu",
+      "theme": "Wybierz motyw"
     },
     "workspace": {
       "title": "Utwórz swój workspace",

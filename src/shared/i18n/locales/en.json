@@ -23,6 +23,12 @@
     "GAL": "Gallons (gal)"
   },
 
+  "themes": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+
   "onboarding": {
     "success": {
       "title": "Arvino ready!",
@@ -33,7 +39,9 @@
       "subtitle": "Let's set up your digital car passport.",
       "description": "Manage your expenses, service, documents, and car history in one place.",
       "start": "Get Started",
-      "emailNotVerified": "We sent a link to {{email}}. Confirm your email to continue."
+      "emailNotVerified": "We sent a link to {{email}}. Confirm your email to continue.",
+      "language": "Choose interface language",
+      "theme": "Choose theme"
     },
     "workspace": {
       "title": "Create your workspace",
