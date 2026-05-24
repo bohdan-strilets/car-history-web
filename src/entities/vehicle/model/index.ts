@@ -1,3 +1,5 @@
+export { useActiveVehicle } from './use-active-vehicle';
+export { useVehicle } from './use-vehicle';
 export {
   VEHICLE_BRANDS,
   VEHICLE_MODELS,
