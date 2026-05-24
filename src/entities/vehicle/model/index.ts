@@ -14,6 +14,7 @@ export {
 } from './vehicle.config';
 export { VehicleConstraints } from './vehicle.constraints';
 export { getBrandOptions, getModelOptions } from './vehicle.optins';
+export { useVehicleStore } from './vehicle.store';
 export {
   BODY_TYPE,
   DRIVE_TYPE,
@@ -26,4 +27,4 @@ export {
   type Transmission,
   type VehicleStatus,
 } from './vehicle.types';
-export type { Vehicle } from './vehicle.types';
+export type { Vehicle, VehicleStore } from './vehicle.types';

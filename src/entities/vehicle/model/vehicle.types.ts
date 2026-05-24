@@ -75,3 +75,11 @@ export interface Vehicle {
   status: VehicleStatus;
   createdAt: Date;
 }
+
+// Store
+
+export interface VehicleStore {
+  activeVehicleId: string | null;
+  setActiveVehicleId: (id: string) => void;
+  clearActiveVehicleId: () => void;
+}
