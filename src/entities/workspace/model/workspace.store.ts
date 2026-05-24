@@ -1,3 +1,4 @@
+import { STORAGE_KEYS } from '@shared/lib/storage';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
@@ -14,6 +15,6 @@ export const useWorkspaceStore = create<WorkspaceStore>()(
       setActiveWorkspaceId: (workspaceId) => set({ activeWorkspaceId: workspaceId }),
       clearActiveWorkspaceId: () => set({ activeWorkspaceId: null }),
     }),
-    { name: 'workspace' },
+    { name: STORAGE_KEYS.WORKSPACE_STORAGE_KEY },
   ),
 );
