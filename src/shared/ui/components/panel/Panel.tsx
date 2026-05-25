@@ -34,40 +34,34 @@ export const Panel = ({
   ...rest
 }: PanelOwnProps) => {
   return (
-    <Surface
-      as={onClick ? 'button' : as}
-      type={onClick ? 'button' : undefined}
-      variant={variant}
-      soft={soft}
-      solid={solid}
-      gradient={gradient}
-      border={border}
-      shadow={shadow}
-      radius={radius}
-      className={clsx(root({ hoverable, disabled }), className)}
-      onClick={onClick}
-      {...rest}
-    >
-      <Box
-        p={p}
-        px={px}
-        py={py}
-        width={width}
-        height={height}
-        overflow={overflow}
-        position={position}
+    <Box width={width} height={height} position={position} overflow={overflow}>
+      <Surface
+        as={onClick ? 'button' : as}
+        type={onClick ? 'button' : undefined}
+        variant={variant}
+        soft={soft}
+        solid={solid}
+        gradient={gradient}
+        border={border}
+        shadow={shadow}
+        radius={radius}
+        className={clsx(root({ hoverable, disabled }), className)}
+        onClick={onClick}
+        {...rest}
       >
-        <Stack
-          direction={direction}
-          gap={gap}
-          align={align}
-          justify={justify}
-          wrap={wrap}
-          inline={inline}
-        >
-          {children}
-        </Stack>
-      </Box>
-    </Surface>
+        <Box p={p} px={px} py={py}>
+          <Stack
+            direction={direction}
+            gap={gap}
+            align={align}
+            justify={justify}
+            wrap={wrap}
+            inline={inline}
+          >
+            {children}
+          </Stack>
+        </Box>
+      </Surface>
+    </Box>
   );
 };

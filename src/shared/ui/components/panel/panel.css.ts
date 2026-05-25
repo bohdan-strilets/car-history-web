@@ -5,7 +5,10 @@ const { duration, easing } = vars.transition;
 const baseInOut = `${duration.base} ${easing.inOut}`;
 
 export const root = recipe({
-  base: {},
+  base: {
+    width: '100%',
+    height: '100%',
+  },
 
   variants: {
     hoverable: {
