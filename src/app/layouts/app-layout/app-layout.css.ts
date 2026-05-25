@@ -24,11 +24,13 @@ export const main = style({
   flex: 1,
   overflowY: 'auto',
   overflowX: 'hidden',
+  padding: vars.spacing.md,
   paddingBottom: '64px',
 
   '@media': {
     [media.laptop]: {
       paddingBottom: 0,
+      padding: vars.spacing['2xl'],
     },
   },
 });
