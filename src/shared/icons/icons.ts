@@ -135,6 +135,7 @@ import {
   Share2,
   Shield,
   SlidersHorizontal,
+  SlidersVertical,
   Smartphone,
   SortAsc,
   SortDesc,
@@ -192,6 +193,7 @@ export const Icons = {
   arrowRight: ArrowRight,
   arrowUp: ArrowUp,
   arrowDown: ArrowDown,
+  slidersVertical: SlidersVertical,
 
   // Actions
   plus: Plus,

@@ -333,6 +333,11 @@
     }
   },
 
+  "user": {
+    "profile": "Профіль",
+    "logout": "Вийти"
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Невірний email або пароль",
     "ACCOUNT_LOCKED": "Акаунт тимчасово заблоковано",

@@ -331,6 +331,11 @@
     }
   },
 
+  "user": {
+    "profile": "Profil",
+    "logout": "Wyloguj się"
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Nieprawidłowy email lub hasło",
     "ACCOUNT_LOCKED": "Konto zostało tymczasowo zablokowane",

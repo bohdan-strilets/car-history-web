@@ -332,6 +332,11 @@
     }
   },
 
+  "user": {
+    "profile": "Profile",
+    "logout": "Logout"
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Invalid email or password",
     "ACCOUNT_LOCKED": "Account has been temporarily locked",
