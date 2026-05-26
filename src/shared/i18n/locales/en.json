@@ -342,7 +342,8 @@
 
   "user": {
     "profile": "Profile",
-    "logout": "Logout"
+    "logout": "Logout",
+    "logoutConfirm": "Are you sure you want to logout?"
   },
 
   "errors": {

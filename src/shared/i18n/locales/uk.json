@@ -343,7 +343,8 @@
 
   "user": {
     "profile": "Профіль",
-    "logout": "Вийти"
+    "logout": "Вийти",
+    "logoutConfirm": "Ви впевнені, що хочете вийти?"
   },
 
   "errors": {
