@@ -32,5 +32,8 @@ export const main = style({
       paddingBottom: 0,
       padding: vars.spacing['2xl'],
     },
+    [media.wideDesktop]: {
+      paddingInline: `max(${vars.spacing['2xl']}, calc((100% - 1400px) / 2))`,
+    },
   },
 });
