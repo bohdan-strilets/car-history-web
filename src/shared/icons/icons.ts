@@ -39,6 +39,7 @@ import {
   CircleAlert,
   // Tires & Service
   CircleDot,
+  CircleQuestionMark,
   Clock,
   Cog,
   Copy,
@@ -224,6 +225,7 @@ export const Icons = {
   circleAlert: CircleAlert,
   badgeCheck: BadgeCheck,
   mailWarning: MailWarning,
+  circleQuestionMark: CircleQuestionMark,
 
   // Auth & User
   logIn: LogIn,
