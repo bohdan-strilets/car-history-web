@@ -1,3 +1,4 @@
+import { ModalProvider } from '@app/providers';
 import { Outlet } from 'react-router-dom';
 
 import { contentWrapper, main, root } from './app-layout.css';
@@ -8,18 +9,20 @@ export const AppLayout = () => {
   const { expanded, toggle } = useSidebar();
 
   return (
-    <div className={root}>
-      <Sidebar expanded={expanded} onToggle={toggle} />
+    <ModalProvider>
+      <div className={root}>
+        <Sidebar expanded={expanded} onToggle={toggle} />
 
-      <div className={contentWrapper}>
-        <Header />
+        <div className={contentWrapper}>
+          <Header />
 
-        <main className={main}>
-          <Outlet />
-        </main>
+          <main className={main}>
+            <Outlet />
+          </main>
 
-        <BottomBar />
+          <BottomBar />
+        </div>
       </div>
-    </div>
+    </ModalProvider>
   );
 };
