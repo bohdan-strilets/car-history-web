@@ -1,5 +1,17 @@
 import { NAV_ITEMS } from '@shared/config';
-import { Button, Divider, Icon, Logo, NavItem, Spacer, Stack } from '@shared/ui';
+import {
+  Box,
+  Button,
+  Divider,
+  Icon,
+  Logo,
+  NavItem,
+  Spacer,
+  Stack,
+  Text,
+  Tooltip,
+} from '@shared/ui';
+import { ThemeToggle } from '@widgets/theme-toggle';
 import { UserBar } from '@widgets/user-bar';
 import { WorkspaceSwitcher } from '@widgets/workspace-switcher';
 import { clsx } from 'clsx';
@@ -35,16 +47,31 @@ export const Sidebar = ({ expanded, onToggle }: SidebarProps) => {
 
       <Divider />
 
-      <Button
-        variant="ghost"
-        onClick={onToggle}
-        iconOnly
-        aria-label={expanded ? t('nav.sidebar.collapse') : t('nav.sidebar.expand')}
-      >
-        <Icon name={expanded ? 'panelLeft' : 'panelRight'} size="md" />
-      </Button>
+      <Box width="full">
+        <Stack direction="row" justify="between" align="center" gap="md">
+          {expanded && <Text>{t('nav.sidebar.collapse')}:</Text>}
+          <Tooltip
+            label={t(expanded ? 'nav.sidebar.collapse' : 'nav.sidebar.expand')}
+            placement={expanded ? 'top' : 'right'}
+          >
+            <Button
+              variant="ghost"
+              onClick={onToggle}
+              iconOnly
+              aria-label={expanded ? t('nav.sidebar.collapse') : t('nav.sidebar.expand')}
+            >
+              <Icon name={expanded ? 'panelLeft' : 'panelRight'} size="md" />
+            </Button>
+          </Tooltip>
+        </Stack>
 
-      <Divider />
+        <Stack direction="row" justify="between" align="center" gap="md">
+          {expanded && <Text>{t('nav.sidebar.theme')}:</Text>}
+          <ThemeToggle collapsed={!expanded} />
+        </Stack>
+      </Box>
+
+      <Spacer size="xs" />
 
       <UserBar expanded={expanded} direction={expanded ? undefined : 'right'} />
     </Stack>

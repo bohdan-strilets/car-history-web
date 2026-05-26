@@ -1,20 +1,41 @@
-import { useTheme, type Theme } from '@shared/styles';
+import { useTheme } from '@shared/styles';
+import { Button, Icon, SegmentControl, Tooltip } from '@shared/ui';
+import { useTranslation } from 'react-i18next';
 
-export const ThemeToggle = () => {
+import { THEME_CYCLE, THEME_ICON, THEME_OPTIONS } from './theme-toggle.config';
+import type { ThemeToggleProps } from './theme-toggle.types';
+
+export const ThemeToggle = ({ size, className, collapsed }: ThemeToggleProps) => {
   const { theme, setTheme } = useTheme();
-  const opacity = (currentTheme: Theme) => (theme === currentTheme ? 1 : 0.4);
+  const { t } = useTranslation();
+
+  if (collapsed) {
+    const handleCycle = () => {
+      const currentIndex = THEME_CYCLE.indexOf(theme);
+      const nextTheme = THEME_CYCLE[(currentIndex + 1) % THEME_CYCLE.length];
+      setTheme(nextTheme);
+    };
+
+    return (
+      <Tooltip
+        label={t(`themes.${theme.toLowerCase() as 'dark' | 'light' | 'system'}`)}
+        placement="right"
+      >
+        <Button variant="ghost" iconOnly onClick={handleCycle} className={className}>
+          <Icon name={THEME_ICON[theme]} size="md" />
+        </Button>
+      </Tooltip>
+    );
+  }
 
   return (
-    <div style={{ position: 'fixed', top: 16, right: 16, zIndex: 9999, display: 'flex', gap: 8 }}>
-      <button onClick={() => setTheme('light')} style={{ opacity: opacity('light') }}>
-        ☀️ Light
-      </button>
-      <button onClick={() => setTheme('dark')} style={{ opacity: opacity('dark') }}>
-        🌑 Dark
-      </button>
-      <button onClick={() => setTheme('system')} style={{ opacity: opacity('system') }}>
-        💻 System
-      </button>
-    </div>
+    <SegmentControl
+      value={theme}
+      onChange={setTheme}
+      options={THEME_OPTIONS}
+      size={size}
+      withTooltip
+      className={className}
+    />
   );
 };
