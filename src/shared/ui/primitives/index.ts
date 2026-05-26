@@ -15,6 +15,7 @@ export * from './number-input';
 export * from './overlay';
 export * from './password-input';
 export * from './portal';
+export * from './segment-control';
 export * from './skeleton';
 export * from './spacer';
 export * from './spinner';

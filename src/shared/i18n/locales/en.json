@@ -188,7 +188,8 @@
     "sidebar": {
       "ariaLabel": "Side navigation",
       "collapse": "Collapse",
-      "expand": "Expand"
+      "expand": "Expand",
+      "theme": "Theme"
     }
   },
 

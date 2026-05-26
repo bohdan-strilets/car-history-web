@@ -187,7 +187,8 @@
     "sidebar": {
       "ariaLabel": "Nawigacja boczna",
       "collapse": "Zwiń",
-      "expand": "Rozwiń"
+      "expand": "Rozwiń",
+      "theme": "Motyw"
     }
   },
 
