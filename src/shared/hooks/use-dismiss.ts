@@ -4,9 +4,10 @@ interface DismissParams {
   enabled: boolean;
   onDismiss: () => void;
   ref: RefObject<HTMLElement | null>;
+  portalRef?: RefObject<HTMLElement | null>;
 }
 
-export const useDismiss = ({ enabled, onDismiss, ref }: DismissParams) => {
+export const useDismiss = ({ enabled, onDismiss, ref, portalRef }: DismissParams) => {
   useEffect(() => {
     if (!enabled) return;
 
@@ -15,7 +16,11 @@ export const useDismiss = ({ enabled, onDismiss, ref }: DismissParams) => {
     };
 
     const handleClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const insideRoot = ref.current?.contains(target);
+      const insidePortal = portalRef?.current?.contains(target);
+
+      if (!insideRoot && !insidePortal) {
         onDismiss();
       }
     };
@@ -27,5 +32,5 @@ export const useDismiss = ({ enabled, onDismiss, ref }: DismissParams) => {
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [enabled, onDismiss, ref]);
+  }, [enabled, onDismiss, ref, portalRef]);
 };
