@@ -18,11 +18,7 @@ export const root = recipe({
 
 export const content = recipe({
   base: {
-    position: 'absolute',
-    top: `calc(100% + ${vars.spacing.sm})`,
-    zIndex: vars.zIndex.dropdown,
-
-    minWidth: '180px',
+    minWidth: '220px',
     maxHeight: '300px',
     padding: vars.spacing.xs,
 
@@ -30,16 +26,12 @@ export const content = recipe({
     border: `1px solid ${vars.color.border.base}`,
     borderRadius: vars.radius.md,
     boxShadow: vars.shadow.lg,
-    outline: 'none',
 
+    outline: 'none',
     overflowY: 'auto',
   },
 
   variants: {
-    align: {
-      start: { left: 0 },
-      end: { right: 0 },
-    },
     fullWidth: {
       true: { width: '100%' },
     },

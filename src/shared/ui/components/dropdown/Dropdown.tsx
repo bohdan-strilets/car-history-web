@@ -1,22 +1,26 @@
 import { useDismiss } from '@shared/hooks';
 import { Box } from '@shared/ui/primitives';
+import { Portal } from '@shared/ui/primitives/portal';
 import { clsx } from 'clsx';
 import { useRef, useState } from 'react';
 
 import { content, root } from './dropdown.css';
 import type { DropdownProps } from './dropdown.types';
+import { useDropdown } from './use-dropdown';
 
 export const Dropdown = ({
   trigger,
   children,
   align = 'start',
+  direction = 'bottom',
   disabled,
   fullWidth,
   open: controlledOpen,
   onOpenChange,
+  className,
 }: DropdownProps) => {
   const [internalOpen, setInternalOpen] = useState(false);
-  const rootRef = useRef<HTMLDivElement>(null);
+  const portalRef = useRef<HTMLDivElement>(null);
 
   const isControlled = controlledOpen !== undefined;
   const open = isControlled ? controlledOpen : internalOpen;
@@ -26,10 +30,13 @@ export const Dropdown = ({
     onOpenChange?.(val);
   };
 
+  const { rootRef, getPortalStyle } = useDropdown({ open, align, direction, fullWidth });
+
   useDismiss({
     enabled: open,
     onDismiss: () => setOpen(false),
     ref: rootRef,
+    portalRef,
   });
 
   const handleTriggerClick = () => {
@@ -37,15 +44,22 @@ export const Dropdown = ({
   };
 
   return (
-    <div className={root({ fullWidth })} ref={rootRef}>
+    <div className={clsx(root({ fullWidth }), className)} ref={rootRef}>
       <Box onClick={handleTriggerClick} width={fullWidth ? 'full' : 'auto'}>
         {trigger}
       </Box>
 
       {open && (
-        <div className={clsx(content({ align, fullWidth }))} role="menu">
-          {children}
-        </div>
+        <Portal>
+          <div
+            ref={portalRef}
+            style={getPortalStyle()}
+            className={content({ fullWidth: fullWidth && direction === 'bottom' })}
+            role="menu"
+          >
+            {children}
+          </div>
+        </Portal>
       )}
     </div>
   );
