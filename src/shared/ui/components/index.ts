@@ -1,3 +1,4 @@
+export * from './avatar';
 export * from './card-select';
 export * from './combobox';
 export * from './dropdown';
