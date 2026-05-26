@@ -6,6 +6,5 @@ import { getPortalRoot } from './portal.utils';
 
 export const Portal = ({ children, portalId }: PortalProps) => {
   const [el] = useState<HTMLElement>(() => getPortalRoot(portalId));
-
   return createPortal(children, el);
 };
