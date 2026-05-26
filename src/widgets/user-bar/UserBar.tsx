@@ -1,5 +1,6 @@
+import { useLogout } from '@features/auth';
 import { ROUTES } from '@shared/config';
-import { authService, useAuth } from '@shared/store/auth';
+import { useAuth } from '@shared/store/auth';
 import { Avatar, Panel, Stack, Text } from '@shared/ui';
 import { Dropdown, DropdownItem } from '@shared/ui/components/dropdown';
 import { useState } from 'react';
@@ -10,9 +11,11 @@ import type { UserBarProps } from './user-bar.types';
 
 export const UserBar = ({ expanded = true, direction }: UserBarProps) => {
   const [open, setOpen] = useState(false);
+
   const { t } = useTranslation();
   const { user } = useAuth();
   const navigate = useNavigate();
+  const { logout, isPending } = useLogout();
 
   const userName = `${user?.firstName} ${user?.lastName}`;
   const userEmail = user?.email ?? '';
@@ -23,8 +26,7 @@ export const UserBar = ({ expanded = true, direction }: UserBarProps) => {
   };
 
   const handleLogout = () => {
-    authService.clearAuth();
-    navigate(ROUTES.AUTH.LOGIN);
+    logout();
     setOpen(false);
   };
 
@@ -38,8 +40,19 @@ export const UserBar = ({ expanded = true, direction }: UserBarProps) => {
 
   const dropdownContent = (
     <>
-      <DropdownItem label={t('user.profile')} leftIcon="user" onClick={handleProfile} />
-      <DropdownItem label={t('user.logout')} leftIcon="logOut" danger onClick={handleLogout} />
+      <DropdownItem
+        label={t('user.profile')}
+        leftIcon="user"
+        onClick={handleProfile}
+        disabled={isPending}
+      />
+      <DropdownItem
+        label={t('user.logout')}
+        leftIcon="logOut"
+        danger
+        onClick={handleLogout}
+        disabled={isPending}
+      />
     </>
   );
 
