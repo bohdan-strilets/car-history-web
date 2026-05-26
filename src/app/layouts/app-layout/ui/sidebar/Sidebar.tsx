@@ -1,5 +1,6 @@
 import { NAV_ITEMS } from '@shared/config';
-import { Button, Divider, Icon, Logo, NavItem, Stack } from '@shared/ui';
+import { Button, Divider, Icon, Logo, NavItem, Spacer, Stack } from '@shared/ui';
+import { WorkspaceSwitcher } from '@widgets/workspace-switcher';
 import { clsx } from 'clsx';
 import { useTranslation } from 'react-i18next';
 
@@ -13,11 +14,9 @@ export const Sidebar = ({ expanded, onToggle }: SidebarProps) => {
     <Stack as="aside" align="center" gap="lg" className={clsx(root({ expanded }))}>
       <Logo size="lg" variant={!expanded ? 'icon' : 'full'} />
 
-      <Divider />
+      <WorkspaceSwitcher expanded={expanded} onExpand={onToggle} />
 
-      {/* Workspace switcher — placeholder until WorkspaceStore */}
-
-      <Divider />
+      <Spacer size="xs" />
 
       <Stack as="nav" gap="md" aria-label={t('nav.sidebar.ariaLabel')}>
         {NAV_ITEMS.map((item) => (

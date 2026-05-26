@@ -232,7 +232,16 @@
       "DD_MONTH_YYYY": "31 грудня 2024"
     },
 
-    "timezone": "Часовий пояс"
+    "timezone": "Часовий пояс",
+
+    "actions": {
+      "new": "Новий workspace"
+    },
+
+    "count_one": "{{count}} workspace",
+    "count_few": "{{count}} workspace'и",
+    "count_many": "{{count}} workspace'ів",
+    "count_other": "{{count}} workspace'ів"
   },
 
   "vehicle": {

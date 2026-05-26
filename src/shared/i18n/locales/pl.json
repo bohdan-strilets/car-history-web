@@ -232,7 +232,14 @@
       "DD_MONTH_YYYY": "31 grudnia 2024"
     },
 
-    "timezone": "Strefa czasowa"
+    "timezone": "Strefa czasowa",
+
+    "actions": {
+      "new": "Nowy workspace"
+    },
+
+    "count_one": "{{count}} workspace",
+    "count_other": "{{count}} workspace'ów"
   },
 
   "vehicle": {

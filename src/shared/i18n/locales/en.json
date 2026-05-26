@@ -49,7 +49,8 @@
       "success": {
         "title": "Workspace created!",
         "description": "Great, we can continue."
-      }
+      },
+      "new": "Create new workspace"
     },
     "vehicle": {
       "title": "Add your first vehicle",
@@ -232,7 +233,14 @@
       "DD_MONTH_YYYY": "31 December 2024"
     },
 
-    "timezone": "Time zone"
+    "timezone": "Time zone",
+
+    "actions": {
+      "new": "New workspace"
+    },
+
+    "count_one": "{{count}} workspace",
+    "count_other": "{{count}} workspaces"
   },
 
   "vehicle": {
