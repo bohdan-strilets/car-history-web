@@ -23,3 +23,4 @@ export { useRegisterForm } from './register.form';
 export { createRegisterSchema, type RegisterValues } from './register.schema';
 export { useResetPasswordForm } from './reset-password.form';
 export { createResetPasswordSchema, type ResetPasswordValues } from './reset-password.schema';
+export { useLogout } from './use-logout';
