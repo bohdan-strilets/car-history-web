@@ -16,6 +16,7 @@ export * from './overlay';
 export * from './password-input';
 export * from './portal';
 export * from './skeleton';
+export * from './spacer';
 export * from './spinner';
 export * from './stack';
 export * from './success-state';
