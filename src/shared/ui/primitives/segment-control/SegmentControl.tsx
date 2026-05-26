@@ -26,7 +26,11 @@ export const SegmentControl = <T extends string>({
             aria-label={opt.label ?? opt.value}
             aria-pressed={value === opt.value}
           >
-            <Icon name={opt.icon} size="sm" color="inherit" />
+            {opt.icon ? (
+              <Icon name={opt.icon} size="sm" color="inherit" />
+            ) : (
+              <span>{opt.displayLabel ?? opt.value}</span>
+            )}
           </button>
         );
 

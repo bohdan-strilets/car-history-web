@@ -29,6 +29,12 @@
     "system": "System"
   },
 
+  "languages": {
+    "pl": "Polski",
+    "uk": "Українська",
+    "en": "English"
+  },
+
   "onboarding": {
     "success": {
       "title": "Arvino gotowe!",
@@ -188,7 +194,8 @@
       "ariaLabel": "Nawigacja boczna",
       "collapse": "Zwiń",
       "expand": "Rozwiń",
-      "theme": "Motyw"
+      "theme": "Motyw",
+      "language": "Język"
     }
   },
 

@@ -29,6 +29,12 @@
     "system": "Системна"
   },
 
+  "languages": {
+    "pl": "Polski",
+    "uk": "Українська",
+    "en": "English"
+  },
+
   "onboarding": {
     "success": {
       "title": "Arvino готово!",
@@ -188,7 +194,8 @@
       "ariaLabel": "Бічна навігація",
       "collapse": "Згорнути",
       "expand": "Розгорнути",
-      "theme": "Тема"
+      "theme": "Тема",
+      "language": "Мова"
     }
   },
 

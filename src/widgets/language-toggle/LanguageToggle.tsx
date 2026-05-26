@@ -1,40 +1,48 @@
+import { useLanguage } from '@shared/i18n';
+import { SegmentControl } from '@shared/ui';
+import { Tooltip } from '@shared/ui/components';
+import { option } from '@shared/ui/primitives/segment-control/segment-control.css';
 import { useTranslation } from 'react-i18next';
 
-export const LanguageToggle = () => {
-  const { i18n } = useTranslation();
+import { LANGUAGE_CYCLE, LANGUAGE_OPTIONS } from './language-toggle.config';
+import type { LanguageToggleProps } from './language-toggle.types';
+
+export const LanguageToggle = ({ collapsed, size = 'md', className }: LanguageToggleProps) => {
+  const { currentLanguage, setLanguage } = useLanguage();
+  const { t } = useTranslation();
+
+  if (collapsed) {
+    const handleCycle = () => {
+      const next =
+        LANGUAGE_CYCLE[(LANGUAGE_CYCLE.indexOf(currentLanguage) + 1) % LANGUAGE_CYCLE.length];
+      setLanguage(next);
+    };
+
+    return (
+      <Tooltip
+        label={t(`languages.${currentLanguage.toLowerCase() as 'pl' | 'uk' | 'en'}`)}
+        placement="right"
+      >
+        <button
+          type="button"
+          className={option({ size, active: false })}
+          onClick={handleCycle}
+          aria-label={currentLanguage}
+        >
+          <span>{currentLanguage}</span>
+        </button>
+      </Tooltip>
+    );
+  }
 
   return (
-    <div
-      style={{
-        position: 'fixed',
-        bottom: 16,
-        right: 16,
-        zIndex: 9999,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 8,
-      }}
-    >
-      <div style={{ display: 'flex', gap: 8 }}>
-        <button
-          onClick={() => i18n.changeLanguage('pl')}
-          style={{ opacity: i18n.language === 'pl' ? 1 : 0.4 }}
-        >
-          🇵🇱 PL
-        </button>
-        <button
-          onClick={() => i18n.changeLanguage('uk')}
-          style={{ opacity: i18n.language === 'uk' ? 1 : 0.4 }}
-        >
-          🇺🇦 UK
-        </button>
-        <button
-          onClick={() => i18n.changeLanguage('en')}
-          style={{ opacity: i18n.language === 'en' ? 1 : 0.4 }}
-        >
-          🇬🇧 EN
-        </button>
-      </div>
-    </div>
+    <SegmentControl
+      value={currentLanguage}
+      onChange={setLanguage}
+      options={LANGUAGE_OPTIONS}
+      size={size}
+      withTooltip
+      className={className}
+    />
   );
 };

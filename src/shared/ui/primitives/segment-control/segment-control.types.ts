@@ -6,6 +6,7 @@ export interface SegmentControlOption<T extends string> {
   value: T;
   icon: IconName;
   label?: string;
+  displayLabel?: string;
 }
 
 export interface SegmentControlProps<T extends string> {

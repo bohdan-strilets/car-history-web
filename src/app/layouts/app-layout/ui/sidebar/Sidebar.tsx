@@ -11,6 +11,7 @@ import {
   Text,
   Tooltip,
 } from '@shared/ui';
+import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { UserBar } from '@widgets/user-bar';
 import { WorkspaceSwitcher } from '@widgets/workspace-switcher';
@@ -48,26 +49,35 @@ export const Sidebar = ({ expanded, onToggle }: SidebarProps) => {
       <Divider />
 
       <Box width="full">
-        <Stack direction="row" justify="between" align="center" gap="md">
-          {expanded && <Text>{t('nav.sidebar.collapse')}:</Text>}
-          <Tooltip
-            label={t(expanded ? 'nav.sidebar.collapse' : 'nav.sidebar.expand')}
-            placement={expanded ? 'top' : 'right'}
-          >
-            <Button
-              variant="ghost"
-              onClick={onToggle}
-              iconOnly
-              aria-label={expanded ? t('nav.sidebar.collapse') : t('nav.sidebar.expand')}
+        <Stack gap="sm">
+          <Stack direction="row" justify="between" align="center" gap="md">
+            {expanded && <Text>{t('nav.sidebar.collapse')}:</Text>}
+            <Tooltip
+              label={t(expanded ? 'nav.sidebar.collapse' : 'nav.sidebar.expand')}
+              placement={expanded ? 'top' : 'right'}
             >
-              <Icon name={expanded ? 'panelLeft' : 'panelRight'} size="md" />
-            </Button>
-          </Tooltip>
-        </Stack>
+              <Button
+                variant="ghost"
+                onClick={onToggle}
+                iconOnly
+                aria-label={expanded ? t('nav.sidebar.collapse') : t('nav.sidebar.expand')}
+              >
+                <Icon name={expanded ? 'panelLeft' : 'panelRight'} size="md" />
+              </Button>
+            </Tooltip>
+          </Stack>
 
-        <Stack direction="row" justify="between" align="center" gap="md">
-          {expanded && <Text>{t('nav.sidebar.theme')}:</Text>}
-          <ThemeToggle collapsed={!expanded} />
+          <Stack direction="row" justify="between" align="center" gap="md">
+            {expanded && <Text>{t('nav.sidebar.theme')}:</Text>}
+            <ThemeToggle collapsed={!expanded} />
+          </Stack>
+
+          <Stack direction="row" justify="between" align="center" gap="md">
+            {expanded && <Text>{t('nav.sidebar.language')}:</Text>}
+            <Stack direction="row" gap="sm">
+              <LanguageToggle collapsed={!expanded} />
+            </Stack>
+          </Stack>
         </Stack>
       </Box>
 
