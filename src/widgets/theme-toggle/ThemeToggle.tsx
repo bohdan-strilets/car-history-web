@@ -1,5 +1,6 @@
 import { useTheme } from '@shared/styles';
 import { Button, Icon, SegmentControl, Tooltip } from '@shared/ui';
+import { translateSegmentControlOptions } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 
 import { THEME_CYCLE, THEME_ICON, THEME_OPTIONS } from './theme-toggle.config';
@@ -32,7 +33,7 @@ export const ThemeToggle = ({ size, className, collapsed }: ThemeToggleProps) =>
     <SegmentControl
       value={theme}
       onChange={setTheme}
-      options={THEME_OPTIONS}
+      options={translateSegmentControlOptions(t, THEME_OPTIONS)}
       size={size}
       withTooltip
       className={className}

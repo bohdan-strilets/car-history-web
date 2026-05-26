@@ -6,17 +6,17 @@ export const THEME_OPTIONS: SegmentControlOption<Theme>[] = [
   {
     value: THEME.LIGHT,
     icon: 'sun',
-    label: 'Light',
+    label: 'themes.light',
   },
   {
     value: THEME.DARK,
     icon: 'moon',
-    label: 'Dark',
+    label: 'themes.dark',
   },
   {
     value: THEME.SYSTEM,
     icon: 'monitor',
-    label: 'System',
+    label: 'themes.system',
   },
 ];
 
