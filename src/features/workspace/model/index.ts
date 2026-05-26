@@ -6,7 +6,10 @@ export {
 export { useWorkspaceForm } from './workspace.form';
 export { createWorkspaceSchema, type WorkspaceValues } from './workspace.schema';
 export type {
+  CreateInviteDto,
   CreateWorkspaceDto,
+  UpdateMemberRoleDto,
+  UpdateWorkspaceDto,
   UpdateWorkspaceSettingsDto,
   UpdateWorkspaceSettingsParams,
   WorkspaceFormParams,

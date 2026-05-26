@@ -39,6 +39,23 @@ export const DATE_FORMAT = {
 
 export type DateFormat = (typeof DATE_FORMAT)[keyof typeof DATE_FORMAT];
 
+export const ROLE = {
+  OWNER: 'OWNER',
+  ADMIN: 'ADMIN',
+  MEMBER: 'MEMBER',
+} as const;
+
+export type Role = (typeof ROLE)[keyof typeof ROLE];
+
+export const INVITE_STATUS = {
+  PENDING: 'PENDING',
+  ACCEPTED: 'ACCEPTED',
+  REJECTED: 'REJECTED',
+  EXPIRED: 'EXPIRED',
+} as const;
+
+export type InviteStatus = (typeof INVITE_STATUS)[keyof typeof INVITE_STATUS];
+
 // Types
 
 export interface WorkspaceSettings {
@@ -55,6 +72,38 @@ export interface Workspace {
   name: string;
   type: WorkspaceType;
   createdAt: Date;
+}
+
+export interface WorkspaceMember {
+  id: string;
+  workspaceId: string;
+  userId: string;
+  role: Role;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface WorkspaceInvite {
+  id: string;
+  workspaceId: string;
+  invitedById: string;
+  email: string;
+  role: Role;
+  status: InviteStatus;
+  expiresAt: Date;
+  createdAt: Date;
+}
+
+export interface WorkspaceOwner {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  avatarUrl: string | null;
+}
+
+export interface WorkspaceWithOwner extends Workspace {
+  owner: WorkspaceOwner;
 }
 
 // Store

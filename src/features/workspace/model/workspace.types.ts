@@ -1,10 +1,14 @@
+import type { Role, Workspace, WorkspaceSettings, WorkspaceType } from '@entities/workspace';
+
 // DTOs
-
-import type { Workspace, WorkspaceSettings } from '@entities/workspace';
-
 export interface CreateWorkspaceDto {
   name: string;
-  type: string;
+  type: WorkspaceType;
+}
+
+export interface UpdateWorkspaceDto {
+  name?: string;
+  type?: WorkspaceType;
 }
 
 export interface UpdateWorkspaceSettingsDto {
@@ -13,6 +17,15 @@ export interface UpdateWorkspaceSettingsDto {
   distanceUnit?: string;
   fuelUnit?: string;
   dateFormat?: string;
+}
+
+export interface UpdateMemberRoleDto {
+  role: Role;
+}
+
+export interface CreateInviteDto {
+  email: string;
+  role?: Role;
 }
 
 // Params
