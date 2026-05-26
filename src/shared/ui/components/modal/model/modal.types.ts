@@ -25,11 +25,12 @@ export interface ModalItem {
 }
 
 export interface ConfirmOptions {
-  title: string;
+  title?: string;
   description?: string;
   confirmLabel?: string;
   cancelLabel?: string;
   danger?: boolean;
+  isLoading?: boolean;
 }
 
 // Store
