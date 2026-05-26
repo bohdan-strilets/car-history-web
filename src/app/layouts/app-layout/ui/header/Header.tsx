@@ -1,4 +1,5 @@
-import { IconBox, Logo, Stack } from '@shared/ui';
+import { Logo, Stack } from '@shared/ui';
+import { UserBar } from '@widgets/user-bar';
 import { WorkspaceSwitcher } from '@widgets/workspace-switcher';
 
 import { expandedSwitcher, root } from './header.css';
@@ -8,7 +9,7 @@ export const Header = () => {
     <Stack as="header" direction="row" align="center" gap="xl" className={root}>
       <Logo variant="icon" size="xl" />
       <WorkspaceSwitcher className={expandedSwitcher} />
-      <IconBox name="user" />
+      <UserBar expanded={false} />
     </Stack>
   );
 };

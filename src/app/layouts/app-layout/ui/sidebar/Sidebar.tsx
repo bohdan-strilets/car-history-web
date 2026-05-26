@@ -1,5 +1,6 @@
 import { NAV_ITEMS } from '@shared/config';
 import { Button, Divider, Icon, Logo, NavItem, Spacer, Stack } from '@shared/ui';
+import { UserBar } from '@widgets/user-bar';
 import { WorkspaceSwitcher } from '@widgets/workspace-switcher';
 import { clsx } from 'clsx';
 import { useTranslation } from 'react-i18next';
@@ -45,7 +46,7 @@ export const Sidebar = ({ expanded, onToggle }: SidebarProps) => {
 
       <Divider />
 
-      {/* User — placeholder until UserStore */}
+      <UserBar expanded={expanded} direction={expanded ? undefined : 'right'} />
     </Stack>
   );
 };
