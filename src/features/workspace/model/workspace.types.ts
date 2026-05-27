@@ -1,4 +1,9 @@
-import type { Role, Workspace, WorkspaceSettings, WorkspaceType } from '@entities/workspace';
+import type {
+  Workspace,
+  WorkspaceRole,
+  WorkspaceSettings,
+  WorkspaceType,
+} from '@entities/workspace';
 
 // DTOs
 export interface CreateWorkspaceDto {
@@ -20,12 +25,12 @@ export interface UpdateWorkspaceSettingsDto {
 }
 
 export interface UpdateMemberRoleDto {
-  role: Role;
+  role: WorkspaceRole;
 }
 
 export interface CreateInviteDto {
   email: string;
-  role?: Role;
+  role?: WorkspaceRole;
 }
 
 // Params
@@ -45,6 +50,11 @@ export type WorkspaceSettingsFormParams = Pick<
 >;
 
 // Props
+
+export interface WorkspaceFormProps {
+  onSuccess: (workspace: Workspace) => void;
+  submitLabel: string;
+}
 
 export interface WorkspaceSettingsFormProps {
   workspaceId: string;

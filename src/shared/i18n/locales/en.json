@@ -14,7 +14,8 @@
     "save": "Save",
     "createdAt": "Created at:",
     "active": "Active",
-    "retry": "Retry"
+    "retry": "Retry",
+    "create": "Create"
   },
 
   "units": {

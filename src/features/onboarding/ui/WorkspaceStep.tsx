@@ -28,5 +28,5 @@ export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
     );
   }
 
-  return <WorkspaceForm onSuccess={handleSuccess} />;
+  return <WorkspaceForm onSuccess={handleSuccess} submitLabel={t('common.next')} />;
 };

@@ -78,6 +78,8 @@ export interface Workspace {
   updatedAt: string;
 }
 
+export type WorkspaceId = { id: string };
+
 export interface WorkspaceMember {
   id: string;
   workspaceId: string;

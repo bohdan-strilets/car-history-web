@@ -28,6 +28,7 @@ export {
 } from './workspace.types';
 export type {
   Workspace,
+  WorkspaceId,
   WorkspaceInvite,
   WorkspaceMember,
   WorkspaceOwner,

@@ -1,0 +1,1 @@
+export { NewWorkspacePage } from './NewWorkspacePage';

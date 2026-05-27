@@ -13,6 +13,7 @@ export type {
   UpdateWorkspaceSettingsDto,
   UpdateWorkspaceSettingsParams,
   WorkspaceFormParams,
+  WorkspaceFormProps,
   WorkspaceSettingsFormParams,
   WorkspaceSettingsFormProps,
 } from './workspace.types';

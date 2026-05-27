@@ -1,22 +1,18 @@
-import { WORKSPACE_TYPE_CONFIG, type Workspace } from '@entities/workspace';
+import { WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
 import { Form, FormFieldCardSelect, FormFieldInput } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 
-import { useWorkspaceForm } from '../model';
+import { useWorkspaceForm, type WorkspaceFormProps } from '../model';
 
-interface WorkspaceFormProps {
-  onSuccess: (workspace: Workspace) => void;
-}
-
-export const WorkspaceForm = ({ onSuccess }: WorkspaceFormProps) => {
+export const WorkspaceForm = ({ onSuccess, submitLabel }: WorkspaceFormProps) => {
   const { t } = useTranslation();
   const { control, handleSubmit, isPending, errorMessage } = useWorkspaceForm({ onSuccess });
 
   return (
     <Form
       onSubmit={handleSubmit}
-      submitLabel={t('common.next')}
+      submitLabel={submitLabel}
       isLoading={isPending}
       error={errorMessage}
     >

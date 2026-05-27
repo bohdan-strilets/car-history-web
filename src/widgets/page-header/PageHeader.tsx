@@ -2,7 +2,13 @@ import { Box, Button, Heading, Stack, Text } from '@shared/ui';
 
 import type { PageHeaderProps } from './page-header.types';
 
-export const PageHeader = ({ title, onCreate, buttonLabel, description }: PageHeaderProps) => {
+export const PageHeader = ({
+  title,
+  onCreate,
+  buttonLabel,
+  buttonIcon,
+  description,
+}: PageHeaderProps) => {
   return (
     <Box p="lg">
       <Stack gap="md">
@@ -15,7 +21,7 @@ export const PageHeader = ({ title, onCreate, buttonLabel, description }: PageHe
           <Heading size={{ mobile: '2xl', tablet: '4xl' }} weight="extraBold">
             {title}
           </Heading>
-          <Button leftIcon="plus" onClick={onCreate} size={{ mobile: 'md', tablet: 'lg' }}>
+          <Button leftIcon={buttonIcon} onClick={onCreate} size={{ mobile: 'md', tablet: 'lg' }}>
             {buttonLabel}
           </Button>
         </Stack>

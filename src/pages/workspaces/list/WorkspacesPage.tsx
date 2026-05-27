@@ -31,7 +31,8 @@ export const WorkspacesPage = () => {
         title={t('workspace.list.title')}
         onCreate={() => navigate(ROUTES.WORKSPACES.NEW)}
         buttonLabel={t('workspace.list.create')}
-        description={t('workspace.list.count', { count: workspaceCount })}
+        buttonIcon="plus"
+        description={t('workspace.count', { count: workspaceCount })}
       />
 
       <WorkspacesList workspaces={workspaceList} />
