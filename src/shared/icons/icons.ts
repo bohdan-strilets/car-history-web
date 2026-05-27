@@ -19,6 +19,7 @@ import {
   BellRing,
   Bookmark,
   Bot,
+  Boxes,
   Briefcase,
   Building2,
   // Time & Calendar
@@ -164,6 +165,7 @@ import {
   Users,
   Video,
   Wallet,
+  WifiOff,
   Wind,
   Wrench,
   X,
@@ -228,6 +230,7 @@ export const Icons = {
   badgeCheck: BadgeCheck,
   mailWarning: MailWarning,
   circleQuestionMark: CircleQuestionMark,
+  wifiOff: WifiOff,
 
   // Auth & User
   logIn: LogIn,
@@ -317,6 +320,7 @@ export const Icons = {
   building: Building2,
   briefcase: Briefcase,
   crown: Crown,
+  boxes: Boxes,
 
   // Tires & Service
   tireDot: CircleDot,
