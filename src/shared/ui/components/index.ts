@@ -11,6 +11,7 @@ export * from './modal';
 export * from './nav-item';
 export * from './panel';
 export * from './select';
+export * from './state-view';
 export * from './stepper';
 export * from './tooltip';
 export * from './year-picker';
