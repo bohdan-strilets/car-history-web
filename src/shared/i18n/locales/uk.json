@@ -11,7 +11,10 @@
     "continue": "Продовжити",
     "noOptions": "Немає результатів",
     "skip": "Пропустити",
-    "save": "Зберегти"
+    "save": "Зберегти",
+    "createdAt": "Створено:",
+    "active": "Активний",
+    "retry": "Спробуйте ще раз"
   },
 
   "units": {
@@ -249,7 +252,65 @@
     "count_one": "{{count}} workspace",
     "count_few": "{{count}} workspace'и",
     "count_many": "{{count}} workspace'ів",
-    "count_other": "{{count}} workspace'ів"
+    "count_other": "{{count}} workspace'ів",
+
+    "list": {
+      "title": "Ваші workspace'и",
+      "create": "Новий workspace",
+      "count_one": "{{count}} workspace",
+      "count_other": "{{count}} workspace'ів",
+      "empty": {
+        "title": "Немає workspace'ів",
+        "description": "Створіть свій перший workspace, щоб почати."
+      }
+    },
+
+    "detail": {
+      "vehicles": "Транспортні засоби",
+      "members": "Учасники",
+      "settings": "Налаштування",
+      "delete": "Видалити workspace",
+      "deleteConfirm": "Ви впевнені, що хочете видалити цей workspace? Ця дія незворотна."
+    },
+
+    "members": {
+      "title": "Учасники",
+      "invite": "Запросити",
+      "count": "{{count}} учасників",
+      "role": {
+        "OWNER": "Власник",
+        "ADMIN": "Адміністратор",
+        "MEMBER": "Учасник"
+      },
+      "remove": "Видалити учасника",
+      "removeConfirm": "Ви впевнені, що хочете видалити цього учасника?"
+    },
+
+    "invite": {
+      "title": "Запрошення до workspace",
+      "description": "Вас запросили до workspace {{name}}",
+      "accept": "Прийняти",
+      "reject": "Відхилити",
+      "expired": "Запрошення закінчилося",
+      "fields": {
+        "email": "Email",
+        "role": "Роль"
+      }
+    },
+
+    "new": {
+      "title": "Новий workspace",
+      "submit": "Створити workspace"
+    },
+
+    "settings": {
+      "title": "Налаштування workspace",
+      "save": "Зберегти налаштування",
+      "danger": {
+        "title": "Небезпечна зона",
+        "delete": "Видалити workspace"
+      }
+    }
   },
 
   "vehicle": {

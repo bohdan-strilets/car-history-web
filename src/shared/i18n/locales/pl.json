@@ -11,7 +11,10 @@
     "continue": "Kontynuuj",
     "noOptions": "Brak wyników",
     "skip": "Pomiń",
-    "save": "Zapisz"
+    "save": "Zapisz",
+    "createdAt": "Utworzono:",
+    "active": "Aktywny",
+    "retry": "Spróbuj ponownie"
   },
 
   "units": {
@@ -247,7 +250,65 @@
     },
 
     "count_one": "{{count}} workspace",
-    "count_other": "{{count}} workspace'ów"
+    "count_other": "{{count}} workspace'ów",
+
+    "list": {
+      "title": "Twoje workspace'y",
+      "create": "Nowy workspace",
+      "count_one": "{{count}} workspace",
+      "count_other": "{{count}} workspace'ów",
+      "empty": {
+        "title": "Brak workspace'ów",
+        "description": "Utwórz swój pierwszy workspace, aby zacząć."
+      }
+    },
+
+    "detail": {
+      "vehicles": "Pojazdy",
+      "members": "Członkowie",
+      "settings": "Ustawienia",
+      "delete": "Usuń workspace",
+      "deleteConfirm": "Czy na pewno chcesz usunąć workspace? Ta operacja jest nieodwracalna."
+    },
+
+    "members": {
+      "title": "Członkowie",
+      "invite": "Zaproś",
+      "count": "{{count}} członków",
+      "role": {
+        "OWNER": "Właściciel",
+        "ADMIN": "Administrator",
+        "MEMBER": "Członek"
+      },
+      "remove": "Usuń członka",
+      "removeConfirm": "Czy na pewno chcesz usunąć tego członka?"
+    },
+
+    "invite": {
+      "title": "Zaproszenie do workspace",
+      "description": "Zostałeś zaproszony do workspace {{name}}",
+      "accept": "Akceptuj",
+      "reject": "Odrzuć",
+      "expired": "Zaproszenie wygasło",
+      "fields": {
+        "email": "Email",
+        "role": "Rola"
+      }
+    },
+
+    "new": {
+      "title": "Nowy workspace",
+      "submit": "Utwórz workspace"
+    },
+
+    "settings": {
+      "title": "Ustawienia workspace",
+      "save": "Zapisz ustawienia",
+      "danger": {
+        "title": "Strefa niebezpieczna",
+        "delete": "Usuń workspace"
+      }
+    }
   },
 
   "vehicle": {

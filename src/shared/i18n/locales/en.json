@@ -11,7 +11,10 @@
     "continue": "Continue",
     "noOptions": "No options found",
     "skip": "Skip",
-    "save": "Save"
+    "save": "Save",
+    "createdAt": "Created at:",
+    "active": "Active",
+    "retry": "Retry"
   },
 
   "units": {
@@ -248,7 +251,65 @@
     },
 
     "count_one": "{{count}} workspace",
-    "count_other": "{{count}} workspaces"
+    "count_other": "{{count}} workspaces",
+
+    "list": {
+      "title": "Your workspaces",
+      "create": "New workspace",
+      "count_one": "{{count}} workspace",
+      "count_other": "{{count}} workspaces",
+      "empty": {
+        "title": "No workspaces",
+        "description": "Create your first workspace to get started."
+      }
+    },
+
+    "detail": {
+      "vehicles": "Vehicles",
+      "members": "Members",
+      "settings": "Settings",
+      "delete": "Delete workspace",
+      "deleteConfirm": "Are you sure you want to delete this workspace? This action is irreversible."
+    },
+
+    "members": {
+      "title": "Members",
+      "invite": "Invite",
+      "count": "{{count}} members",
+      "role": {
+        "OWNER": "Owner",
+        "ADMIN": "Admin",
+        "MEMBER": "Member"
+      },
+      "remove": "Remove member",
+      "removeConfirm": "Are you sure you want to remove this member?"
+    },
+
+    "invite": {
+      "title": "Workspace invitation",
+      "description": "You have been invited to the workspace {{name}}",
+      "accept": "Accept",
+      "reject": "Reject",
+      "expired": "Invitation expired",
+      "fields": {
+        "email": "Email",
+        "role": "Role"
+      }
+    },
+
+    "new": {
+      "title": "New workspace",
+      "submit": "Create workspace"
+    },
+
+    "settings": {
+      "title": "Workspace settings",
+      "save": "Save settings",
+      "danger": {
+        "title": "Danger zone",
+        "delete": "Delete workspace"
+      }
+    }
   },
 
   "vehicle": {
