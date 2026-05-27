@@ -1,7 +1,14 @@
 import type { ComboboxOption } from '@shared/ui';
 import type { CardSelectOption } from '@shared/ui/components/card-select';
 
-import { CURRENCY, DATE_FORMAT, DISTANCE_UNIT, FUEL_UNIT, WORKSPACE_TYPE } from './workspace.types';
+import {
+  CURRENCY,
+  DATE_FORMAT,
+  DISTANCE_UNIT,
+  FUEL_UNIT,
+  WORKSPACE_ROLE,
+  WORKSPACE_TYPE,
+} from './workspace.types';
 
 export const WORKSPACE_TYPE_CONFIG: CardSelectOption[] = [
   {
@@ -27,6 +34,27 @@ export const WORKSPACE_TYPE_CONFIG: CardSelectOption[] = [
     icon: 'briefcase',
     color: 'violet',
     description: `workspace.types.${WORKSPACE_TYPE.BUSINESS}.description`,
+  },
+];
+
+export const WORKSPACE_ROLE_CONFIG: CardSelectOption[] = [
+  {
+    id: 'owner',
+    label: `workspace.members.role.${WORKSPACE_ROLE.OWNER}`,
+    value: WORKSPACE_ROLE.OWNER,
+    color: 'indigo',
+  },
+  {
+    id: 'admin',
+    label: `workspace.members.role.${WORKSPACE_ROLE.ADMIN}`,
+    value: WORKSPACE_ROLE.ADMIN,
+    color: 'blue',
+  },
+  {
+    id: 'member',
+    label: `workspace.members.role.${WORKSPACE_ROLE.MEMBER}`,
+    value: WORKSPACE_ROLE.MEMBER,
+    color: 'rose',
   },
 ];
 

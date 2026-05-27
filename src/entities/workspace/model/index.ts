@@ -5,6 +5,7 @@ export {
   DISTANCE_UNIT_CONFIG,
   FUEL_UNIT_CONFIG,
   TIMEZONE_CONFIG,
+  WORKSPACE_ROLE_CONFIG,
   WORKSPACE_TYPE_CONFIG,
 } from './workspace.config';
 export { WorkspaceConstraints } from './workspace.constraints';
@@ -14,15 +15,15 @@ export {
   DATE_FORMAT,
   DISTANCE_UNIT,
   FUEL_UNIT,
-  INVITE_STATUS,
-  ROLE,
+  WORKSPACE_INVITE_STATUS,
+  WORKSPACE_ROLE,
   WORKSPACE_TYPE,
   type Currency,
   type DateFormat,
   type DistanceUnit,
   type FuelUnit,
-  type InviteStatus,
-  type Role,
+  type WorkspaceInviteStatus,
+  type WorkspaceRole,
   type WorkspaceType,
 } from './workspace.types';
 export type {
