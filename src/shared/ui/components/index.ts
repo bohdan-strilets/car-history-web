@@ -13,5 +13,6 @@ export * from './panel';
 export * from './select';
 export * from './state-view';
 export * from './stepper';
+export * from './tabs';
 export * from './tooltip';
 export * from './year-picker';
