@@ -6,21 +6,21 @@ export const THEME_OPTIONS: SegmentControlOption<Theme>[] = [
   {
     value: THEME.LIGHT,
     icon: 'sun',
-    label: 'themes.light',
+    label: `themes.${THEME.LIGHT}`,
   },
   {
     value: THEME.DARK,
     icon: 'moon',
-    label: 'themes.dark',
+    label: `themes.${THEME.DARK}`,
   },
   {
     value: THEME.SYSTEM,
     icon: 'monitor',
-    label: 'themes.system',
+    label: `themes.${THEME.SYSTEM}`,
   },
 ];
 
-export const THEME_CYCLE: Theme[] = [THEME.LIGHT, THEME.DARK, THEME.SYSTEM];
+export const THEME_CYCLE: Theme[] = Object.values(THEME);
 
 export const THEME_ICON: Record<Theme, IconName> = {
   [THEME.LIGHT]: 'sun',

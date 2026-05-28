@@ -1,22 +1,22 @@
-import type { Language } from '@entities/user';
+import { LANGUAGE, type Language } from '@entities/user';
 import type { SegmentControlOption } from '@shared/ui';
 
-export const LANGUAGE_CYCLE: Language[] = ['PL', 'UK', 'EN'];
+export const LANGUAGE_CYCLE: Language[] = Object.values(LANGUAGE);
 
 export const LANGUAGE_OPTIONS: SegmentControlOption<Language>[] = [
   {
-    value: 'PL',
-    displayLabel: 'PL',
-    label: 'Polski',
+    value: LANGUAGE.PL,
+    displayLabel: LANGUAGE.PL,
+    label: `languages.${LANGUAGE.PL}`,
   },
   {
-    value: 'UK',
-    displayLabel: 'UK',
-    label: 'Українська',
+    value: LANGUAGE.UK,
+    displayLabel: LANGUAGE.UK,
+    label: `languages.${LANGUAGE.UK}`,
   },
   {
-    value: 'EN',
-    displayLabel: 'EN',
-    label: 'English',
+    value: LANGUAGE.EN,
+    displayLabel: LANGUAGE.EN,
+    label: `languages.${LANGUAGE.EN}`,
   },
 ];
