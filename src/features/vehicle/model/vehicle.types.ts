@@ -31,15 +31,15 @@ export interface CreateVehicleParams {
   dto: CreateVehicleDto;
 }
 
+export interface VehicleFormParams {
+  workspaceId: string;
+  onSuccess: (vehicle: Vehicle) => void;
+}
+
 // Props
 
 export interface VehicleStepProps {
   control: Control<VehicleFormValues>;
-}
-
-export interface VehicleFormState {
-  currentStep: number;
-  values: Partial<VehicleFormValues>;
 }
 
 export interface VehicleFormProps {

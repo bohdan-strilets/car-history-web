@@ -780,3 +780,5 @@ export const VEHICLE_POPULAR_BRANDS = [
 ] as const;
 
 export type VehicleBrand = keyof typeof VEHICLE_MODELS;
+
+export type VehiclePopularBrand = (typeof VEHICLE_POPULAR_BRANDS)[number];

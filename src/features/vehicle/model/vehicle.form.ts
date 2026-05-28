@@ -1,4 +1,3 @@
-import type { Vehicle } from '@entities/vehicle';
 import {
   useCreateVehicleMutation,
   VEHICLE_FORM_TOTAL_STEPS,
@@ -11,13 +10,9 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { createVehicleFormSchema, type VehicleFormValues } from './vehicle.schema';
+import type { VehicleFormParams } from './vehicle.types';
 
-interface UseVehicleFormProps {
-  workspaceId: string;
-  onSuccess: (vehicle: Vehicle) => void;
-}
-
-export const useVehicleForm = ({ workspaceId, onSuccess }: UseVehicleFormProps) => {
+export const useVehicleForm = ({ workspaceId, onSuccess }: VehicleFormParams) => {
   const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(1);
 

@@ -1,6 +1,5 @@
+import { VEHICLE_MODELS } from '@entities/vehicle';
 import type { ComboboxOption } from '@shared/ui';
-
-import { VEHICLE_MODELS } from './vehicle-data';
 
 export const getBrandOptions = (): ComboboxOption[] =>
   Object.keys(VEHICLE_MODELS).map((brand) => ({

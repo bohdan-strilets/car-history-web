@@ -1,4 +1,4 @@
-import { getBrandOptions, getModelOptions, VEHICLE_POPULAR_BRANDS_CONFIG } from '@entities/vehicle';
+import { VEHICLE_POPULAR_BRANDS_CONFIG } from '@entities/vehicle';
 import {
   FormFieldCardSelect,
   FormFieldCombobox,
@@ -8,7 +8,7 @@ import {
 import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { type VehicleStepProps } from '../model';
+import { getBrandOptions, getModelOptions, type VehicleStepProps } from '../model';
 
 export const BasicInfoStep = ({ control }: VehicleStepProps) => {
   const { t } = useTranslation();

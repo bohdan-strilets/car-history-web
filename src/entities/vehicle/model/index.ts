@@ -1,12 +1,6 @@
 export { useActiveVehicle } from './use-active-vehicle';
 export { useVehicle } from './use-vehicle';
 export {
-  VEHICLE_BRANDS,
-  VEHICLE_MODELS,
-  VEHICLE_POPULAR_BRANDS,
-  type VehicleBrand,
-} from './vehicle-data';
-export {
   BODY_TYPE_CONFIG,
   DRIVE_TYPE_CONFIG,
   FUEL_TYPE_CONFIG,
@@ -14,9 +8,6 @@ export {
   VEHICLE_COLORS_CONFIG,
   VEHICLE_POPULAR_BRANDS_CONFIG,
 } from './vehicle.config';
-export { VehicleConstraints } from './vehicle.constraints';
-export { getBrandOptions, getModelOptions } from './vehicle.optins';
-export { useVehicleStore } from './vehicle.store';
 export {
   BODY_TYPE,
   DRIVE_TYPE,
@@ -28,5 +19,14 @@ export {
   type FuelType,
   type Transmission,
   type VehicleStatus,
-} from './vehicle.types';
+} from './vehicle.constants';
+export { VehicleConstraints } from './vehicle.constraints';
+export {
+  VEHICLE_BRANDS,
+  VEHICLE_MODELS,
+  VEHICLE_POPULAR_BRANDS,
+  type VehicleBrand,
+  type VehiclePopularBrand,
+} from './vehicle.data';
+export { useVehicleStore } from './vehicle.store';
 export type { Vehicle, VehicleStore } from './vehicle.types';
