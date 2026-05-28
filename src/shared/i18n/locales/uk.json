@@ -15,7 +15,8 @@
     "createdAt": "Створено:",
     "active": "Активний",
     "retry": "Спробуйте ще раз",
-    "create": "Створити"
+    "create": "Створити",
+    "you": "ви"
   },
 
   "units": {
@@ -28,15 +29,15 @@
   },
 
   "themes": {
-    "light": "Світла",
-    "dark": "Темна",
-    "system": "Системна"
+    "LIGHT": "Світла",
+    "DARK": "Темна",
+    "SYSTEM": "Системна"
   },
 
   "languages": {
-    "pl": "Polski",
-    "uk": "Українська",
-    "en": "English"
+    "PL": "Polski",
+    "UK": "Українська",
+    "EN": "English"
   },
 
   "onboarding": {

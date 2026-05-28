@@ -15,7 +15,8 @@
     "createdAt": "Created at:",
     "active": "Active",
     "retry": "Retry",
-    "create": "Create"
+    "create": "Create",
+    "you": "you"
   },
 
   "units": {
@@ -28,15 +29,15 @@
   },
 
   "themes": {
-    "light": "Light",
-    "dark": "Dark",
-    "system": "System"
+    "LIGHT": "Light",
+    "DARK": "Dark",
+    "SYSTEM": "System"
   },
 
   "languages": {
-    "pl": "Polski",
-    "uk": "Українська",
-    "en": "English"
+    "PL": "Polski",
+    "UK": "Українська",
+    "EN": "English"
   },
 
   "onboarding": {
