@@ -1,13 +1,13 @@
 import type { IconName } from '@shared/icons';
 
-export type SegmentControlSize = 'sm' | 'md' | 'lg';
-
 export interface SegmentControlOption<T extends string> {
   value: T;
-  icon: IconName;
+  icon?: IconName;
   label?: string;
   displayLabel?: string;
 }
+
+export type SegmentControlSize = 'sm' | 'md' | 'lg';
 
 export interface SegmentControlProps<T extends string> {
   value: T;
@@ -16,4 +16,5 @@ export interface SegmentControlProps<T extends string> {
   size?: SegmentControlSize;
   className?: string;
   withTooltip?: boolean;
+  withLabel?: boolean;
 }

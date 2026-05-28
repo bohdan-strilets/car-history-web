@@ -1,9 +1,9 @@
-import { Tooltip } from '@shared/ui/components';
-import { clsx } from 'clsx';
+import { Panel, Tooltip } from '@shared/ui/components';
 
 import { Icon } from '../icon';
+import { Stack } from '../stack';
+import { Text } from '../text';
 
-import { option, root } from './segment-control.css';
 import type { SegmentControlProps } from './segment-control.types';
 
 export const SegmentControl = <T extends string>({
@@ -11,39 +11,54 @@ export const SegmentControl = <T extends string>({
   onChange,
   options,
   size = 'md',
-  className,
   withTooltip,
+  withLabel,
+  className,
 }: SegmentControlProps<T>) => {
   return (
-    <div className={clsx(root, className)} role="group">
+    <Panel direction="row" variant="neuInsetSm" p={size} radius="md" className={className}>
       {options.map((opt) => {
-        const button = (
-          <button
+        const displayLabel = opt.displayLabel ?? opt.value;
+        const ariaLabel = withLabel ? undefined : (opt.label ?? opt.value);
+        const isActive = value === opt.value;
+        const tooltipLabel = withLabel && opt.label ? opt.label : undefined;
+
+        const control = (
+          <Panel
             key={opt.value}
-            type="button"
-            className={option({ size, active: value === opt.value })}
+            variant={isActive ? 'neuRaised' : 'base'}
+            p={'sm'}
+            radius="sm"
+            hoverable
             onClick={() => onChange(opt.value)}
-            aria-label={opt.label ?? opt.value}
-            aria-pressed={value === opt.value}
+            aria-label={ariaLabel}
+            aria-pressed={isActive}
           >
             {opt.icon ? (
-              <Icon name={opt.icon} size="sm" color="inherit" />
+              <Stack direction="row" gap="md" align="center">
+                <Icon name={opt.icon} size="sm" color="inherit" />
+                {withLabel && opt.label && (
+                  <Text transform="uppercase" letterSpacing="wider" size="xs">
+                    {opt.label}
+                  </Text>
+                )}
+              </Stack>
             ) : (
-              <span>{opt.displayLabel ?? opt.value}</span>
+              <Text>{displayLabel}</Text>
             )}
-          </button>
+          </Panel>
         );
 
-        if (withTooltip && opt.label) {
+        if (withTooltip && tooltipLabel) {
           return (
-            <Tooltip key={opt.value} label={opt.label} placement="top">
-              {button}
+            <Tooltip key={opt.value} label={tooltipLabel} placement="top">
+              {control}
             </Tooltip>
           );
         }
 
-        return button;
+        return control;
       })}
-    </div>
+    </Panel>
   );
 };
