@@ -49,7 +49,7 @@ export const modal = recipe({
   variants: {
     centered: {
       true: {
-        maxWidth: '560px',
+        maxWidth: vars.layout.contentWidth.page,
         maxHeight: '90vh',
 
         borderRadius: vars.radius.lg,
@@ -57,7 +57,7 @@ export const modal = recipe({
     },
     bottom: {
       true: {
-        maxWidth: '640px',
+        maxWidth: vars.layout.contentWidth.page,
         maxHeight: '92dvh',
 
         borderBottom: 'none',
