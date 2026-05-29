@@ -12,7 +12,7 @@ export const wrapper = style({
   gap: vars.spacing['3xl'],
 
   width: '100%',
-  maxWidth: '400px',
+  maxWidth: vars.layout.contentWidth.form,
   marginBlock: 'auto',
 });
 
