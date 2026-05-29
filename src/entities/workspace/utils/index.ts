@@ -1,1 +1,7 @@
-export { canDeleteWorkspace, canEditMember, canEditWorkspace } from './can-edit-member';
+export {
+  canDeleteWorkspace,
+  canEditMember,
+  canEditWorkspace,
+  canInviteMembers,
+  canRemoveMember,
+} from './can-edit-member';

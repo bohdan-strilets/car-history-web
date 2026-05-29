@@ -1,6 +1,7 @@
 import {
   canDeleteWorkspace,
   canEditWorkspace,
+  canInviteMembers,
   useWorkspaceMembersQuery,
   useWorkspaceQuery,
   useWorkspaceSettingsQuery,
@@ -102,17 +103,19 @@ export const WorkspaceDetailPage = () => {
             <Text weight="semibold" size="lg">
               {t('workspace.members.title')}
             </Text>
-            <Button
-              leftIcon="userPlus"
-              onClick={() =>
-                modal.open(
-                  <InviteForm workspaceId={id ?? ''} onSuccess={() => modal.closeLast()} />,
-                  { title: t('workspace.invite.title') },
-                )
-              }
-            >
-              {t('workspace.members.invite')}
-            </Button>
+            {canInviteMembers(workspace.role) && (
+              <Button
+                leftIcon="userPlus"
+                onClick={() =>
+                  modal.open(
+                    <InviteForm workspaceId={id ?? ''} onSuccess={() => modal.closeLast()} />,
+                    { title: t('workspace.invite.title') },
+                  )
+                }
+              >
+                {t('workspace.members.invite')}
+              </Button>
+            )}
           </Stack>
 
           <MembersList
