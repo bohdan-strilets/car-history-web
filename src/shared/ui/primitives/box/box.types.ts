@@ -9,6 +9,7 @@ export type BoxVariants = NonNullable<RecipeVariants<typeof root>>;
 export type PaddingToken = NonNullable<BoxVariants['p']>;
 export type RadiusToken = NonNullable<BoxVariants['radius']>;
 export type WidthToken = NonNullable<BoxVariants['width']>;
+export type MaxWidthToken = NonNullable<BoxVariants['maxWidth']>;
 export type HeightToken = NonNullable<BoxVariants['height']>;
 export type OverflowToken = NonNullable<BoxVariants['overflow']>;
 export type PositionToken = NonNullable<BoxVariants['position']>;
@@ -19,6 +20,7 @@ export interface BoxOwnProps {
   py?: ResponsiveValue<PaddingToken>;
   radius?: ResponsiveValue<RadiusToken>;
   width?: ResponsiveValue<WidthToken>;
+  maxWidth?: MaxWidthToken;
   height?: ResponsiveValue<HeightToken>;
   overflow?: ResponsiveValue<OverflowToken>;
   position?: ResponsiveValue<PositionToken>;

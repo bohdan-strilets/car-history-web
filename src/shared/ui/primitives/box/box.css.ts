@@ -75,6 +75,12 @@ export const root = recipe({
       max: { width: 'max-content' },
     },
 
+    maxWidth: {
+      none: { maxWidth: 'none' },
+      full: { maxWidth: '100%' },
+      page: { maxWidth: vars.layout.contentWidth.page },
+    },
+
     height: {
       auto: { height: 'auto' },
       full: { height: '100%' },
