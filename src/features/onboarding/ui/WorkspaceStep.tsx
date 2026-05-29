@@ -1,5 +1,5 @@
 import { useWorkspace, type Workspace } from '@entities/workspace';
-import { WorkspaceForm } from '@features/workspace';
+import { useWorkspaceForm, WorkspaceForm } from '@features/workspace';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -18,6 +18,10 @@ export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
     setIsSuccess(true);
   };
 
+  const { control, handleSubmit, isPending, errorMessage } = useWorkspaceForm({
+    onSuccess: handleSuccess,
+  });
+
   if (isSuccess) {
     return (
       <StepSuccess
@@ -28,5 +32,13 @@ export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
     );
   }
 
-  return <WorkspaceForm onSuccess={handleSuccess} submitLabel={t('common.next')} />;
+  return (
+    <WorkspaceForm
+      control={control}
+      handleSubmit={handleSubmit}
+      isPending={isPending}
+      errorMessage={errorMessage}
+      submitLabel={t('common.next')}
+    />
+  );
 };
