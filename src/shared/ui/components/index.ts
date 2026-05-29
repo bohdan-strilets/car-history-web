@@ -7,6 +7,7 @@ export * from './form';
 export * from './form-error';
 export * from './form-field';
 export * from './hint';
+export * from './info-row';
 export * from './modal';
 export * from './nav-item';
 export * from './panel';
