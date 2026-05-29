@@ -42,7 +42,7 @@ export const wrapper = style({
 });
 
 export const content = style({
-  maxWidth: '580px',
+  maxWidth: vars.layout.contentWidth.page,
   width: '100%',
   margin: '0 auto',
 });
@@ -91,6 +91,16 @@ export const iconWrapper = recipe({
         '::after': {
           ...afterBase,
           background: `rgba(${vars.color.semantic.danger.rgb}, 0.4)`,
+        },
+      },
+      success: {
+        '::before': {
+          ...beforeBase,
+          background: `rgba(${vars.color.semantic.success.rgb}, 0.5)`,
+        },
+        '::after': {
+          ...afterBase,
+          background: `rgba(${vars.color.semantic.success.rgb}, 0.4)`,
         },
       },
     },

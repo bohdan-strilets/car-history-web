@@ -1,8 +1,10 @@
 import type { IconName } from '@shared/icons';
 
+export type StateViewVariant = 'default' | 'error' | 'success';
+
 export interface StateViewProps {
   icon: IconName;
-  variant?: 'default' | 'error';
+  variant?: StateViewVariant;
   title: string;
   description?: string;
   actionLabel?: string;

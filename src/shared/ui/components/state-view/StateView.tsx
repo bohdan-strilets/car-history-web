@@ -2,6 +2,7 @@ import { Button, Heading, IconBox, Panel, Spacer, Stack, Text } from '@shared/ui
 
 import { content, iconWrapper, wrapper } from './state-view.css';
 import type { StateViewProps } from './state-view.types';
+import { resolvedIcon, resolvedVariant } from './state-view.utils';
 
 export const StateView = ({
   icon,
@@ -11,13 +12,11 @@ export const StateView = ({
   actionLabel,
   onAction,
 }: StateViewProps) => {
-  const isDefault = variant === 'default';
-
   return (
     <div className={wrapper}>
       <Panel align="center" justify="center" gap="xl" p="5xl" className={content} width="full">
-        <Panel soft={isDefault ? 'accent' : 'danger'} p="lg" className={iconWrapper({ variant })}>
-          <IconBox name={icon} size="4xl" solid={isDefault ? 'accent' : 'danger'} />
+        <Panel soft={resolvedVariant(variant)} p="lg" className={iconWrapper({ variant })}>
+          <IconBox name={icon} size="4xl" solid={resolvedVariant(variant)} />
         </Panel>
 
         <Stack align="center" gap="sm">
@@ -33,9 +32,9 @@ export const StateView = ({
 
         {actionLabel && onAction && (
           <Button
-            leftIcon={isDefault ? 'plus' : 'refresh'}
+            leftIcon={resolvedIcon(variant)}
             onClick={onAction}
-            color={isDefault ? 'accent' : 'danger'}
+            color={resolvedVariant(variant)}
             size="xl"
             fullWidth
           >
