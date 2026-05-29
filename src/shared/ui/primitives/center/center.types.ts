@@ -7,6 +7,8 @@ export type CenterVariants = NonNullable<RecipeVariants<typeof root>>;
 
 export interface CenterOwnProps {
   inline?: boolean;
+  fullHeight?: boolean;
+  fullWidth?: boolean;
 }
 
 export type CenterProps<T extends ElementType = 'div'> = CenterOwnProps & {

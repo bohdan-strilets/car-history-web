@@ -11,5 +11,11 @@ export const root = recipe({
     inline: {
       true: { display: 'inline-flex' },
     },
+    fullHeight: {
+      true: { height: '100%' },
+    },
+    fullWidth: {
+      true: { width: '100%' },
+    },
   },
 });
