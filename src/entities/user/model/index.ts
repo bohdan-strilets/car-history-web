@@ -1,4 +1,3 @@
-export { UserConstraints } from './user.constraints';
 export {
   LANGUAGE,
   THEME,
@@ -6,5 +5,6 @@ export {
   type Language,
   type Theme,
   type UserStatus,
-} from './user.types';
+} from './user.constants';
+export { UserConstraints } from './user.constraints';
 export type { User, UserSettings } from './user.types';
