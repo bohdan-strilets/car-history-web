@@ -1,20 +1,19 @@
-import { WORKSPACE_TYPE } from '@entities/workspace';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
-import { useCreateWorkspaceMutation } from '../api';
+import { useUpdateWorkspaceMutation } from '../api';
 
 import { createWorkspaceSchema, type WorkspaceValues } from './workspace.schema';
-import type { WorkspaceFormParams } from './workspace.types';
+import type { EditWorkspaceFormParams } from './workspace.types';
 
-export const useWorkspaceForm = ({ onSuccess }: WorkspaceFormParams) => {
+export const useEditWorkspaceForm = ({ workspace, onSuccess }: EditWorkspaceFormParams) => {
   const { t } = useTranslation();
   const resolver = zodResolver(createWorkspaceSchema(t));
   const defaultValues: WorkspaceValues = {
-    name: '',
-    type: WORKSPACE_TYPE.PERSONAL,
+    name: workspace.name,
+    type: workspace.type,
   };
 
   const { control, handleSubmit, setError } = useForm<WorkspaceValues>({
@@ -22,11 +21,13 @@ export const useWorkspaceForm = ({ onSuccess }: WorkspaceFormParams) => {
     defaultValues,
   });
 
-  const { mutate: create, isPending, error } = useCreateWorkspaceMutation();
+  const mutation = useUpdateWorkspaceMutation(workspace.id);
+  const { mutate: update, isPending, error } = mutation;
+
   const errorMessage = useFormErrors({ error, setError, t });
 
   const onSubmit = (data: WorkspaceValues) => {
-    create(data, { onSuccess: (workspace) => onSuccess(workspace.data) });
+    update(data, { onSuccess });
   };
 
   return {
