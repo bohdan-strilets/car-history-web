@@ -1,5 +1,5 @@
 import type { Workspace } from '@entities/workspace';
-import { WorkspaceForm } from '@features/workspace';
+import { useWorkspaceForm, WorkspaceForm } from '@features/workspace';
 import { ROUTES } from '@shared/config';
 import { Stack } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
@@ -14,6 +14,10 @@ export const NewWorkspacePage = () => {
     navigate(ROUTES.WORKSPACES.DETAIL(workspace.id));
   };
 
+  const { control, handleSubmit, isPending, errorMessage } = useWorkspaceForm({
+    onSuccess: handleSuccess,
+  });
+
   return (
     <Stack gap="3xl">
       <PageHeader
@@ -23,7 +27,13 @@ export const NewWorkspacePage = () => {
         onCreate={() => navigate(ROUTES.WORKSPACES.ROOT)}
       />
 
-      <WorkspaceForm onSuccess={handleSuccess} submitLabel={t('common.create')} />
+      <WorkspaceForm
+        control={control}
+        handleSubmit={handleSubmit}
+        isPending={isPending}
+        errorMessage={errorMessage}
+        submitLabel={t('common.create')}
+      />
     </Stack>
   );
 };
