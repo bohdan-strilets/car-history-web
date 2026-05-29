@@ -16,7 +16,6 @@ export const InfoRow = ({
 }: InfoRowProps) => {
   const isClickable = !!onClick;
   const hasIcon = !!icon && !!iconColor;
-  const hasValue = !!value;
   const hasDescription = !!description;
 
   return (
@@ -29,10 +28,17 @@ export const InfoRow = ({
         justify="between"
         gap="md"
         onClick={onClick}
-        hoverable
+        hoverable={isClickable}
       >
         <Stack direction="row" align="center" gap="md">
-          {hasIcon && <IconBox name={icon} gradient={iconColor} size="md" radius="sm" />}
+          {hasIcon && (
+            <IconBox
+              name={icon ?? 'circleQuestionMark'}
+              gradient={iconColor ?? 'gray'}
+              size="md"
+              radius="sm"
+            />
+          )}
           <Stack direction="column" align="start" gap="none">
             <Text color="secondary" weight="semibold">
               {label}
@@ -46,7 +52,7 @@ export const InfoRow = ({
         </Stack>
 
         <Stack direction="row" align="center" gap="xs">
-          {hasValue && <Text>{value}</Text>}
+          <Text>{value ?? '—'}</Text>
           {isClickable && <Icon name="chevronRight" strokeWidth="medium" />}
         </Stack>
       </Panel>
