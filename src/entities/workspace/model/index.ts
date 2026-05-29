@@ -31,9 +31,11 @@ export { useWorkspaceStore } from './workspace.store';
 export type {
   Workspace,
   WorkspaceId,
+  WorkspaceInfo,
   WorkspaceInvite,
   WorkspaceMember,
   WorkspaceSettings,
+  WorkspaceSettingsInfoProps,
   WorkspaceStore,
   WorkspaceUser,
   WorkspaceWithOwner,

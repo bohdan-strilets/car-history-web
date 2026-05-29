@@ -89,3 +89,12 @@ export interface WorkspaceStore {
   clearActiveWorkspace: () => void;
   clearActiveWorkspaceId: () => void;
 }
+
+// Props
+
+export interface WorkspaceSettingsInfoProps {
+  workspace: Workspace;
+  settings: WorkspaceSettings | null;
+  onEditWorkspace?: () => void;
+  onEditSettings?: () => void;
+}
