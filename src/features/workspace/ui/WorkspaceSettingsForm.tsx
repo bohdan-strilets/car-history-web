@@ -5,27 +5,25 @@ import {
   FUEL_UNIT_CONFIG,
   TIMEZONE_CONFIG,
 } from '@entities/workspace';
+import type { WorkspaceSettingsFormProps } from '@features/workspace/model';
 import { Form, FormFieldCardSelect, FormFieldCombobox } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 
-import { useWorkspaceSettingsForm, type WorkspaceSettingsFormProps } from '../model';
-
 export const WorkspaceSettingsForm = ({
-  workspaceId,
-  onSuccess,
+  control,
+  handleSubmit,
+  isPending,
+  errorMessage,
+  submitLabel,
   onSkip,
 }: WorkspaceSettingsFormProps) => {
   const { t } = useTranslation();
-  const { control, handleSubmit, isPending, errorMessage } = useWorkspaceSettingsForm({
-    workspaceId,
-    onSuccess,
-  });
 
   return (
     <Form
       onSubmit={handleSubmit}
-      submitLabel={t('common.next')}
+      submitLabel={submitLabel}
       isLoading={isPending}
       error={errorMessage}
       onSkip={onSkip}
@@ -38,28 +36,24 @@ export const WorkspaceSettingsForm = ({
         placeholder={t('workspace.fields.timezonePlaceholder')}
         size="lg"
       />
-
       <FormFieldCardSelect
         control={control}
         name="currency"
         label={t('workspace.fields.currency')}
         options={translateCardSelectOptions(t, CURRENCY_CONFIG)}
       />
-
       <FormFieldCardSelect
         control={control}
         name="distanceUnit"
         label={t('workspace.fields.distanceUnit')}
         options={translateCardSelectOptions(t, DISTANCE_UNIT_CONFIG)}
       />
-
       <FormFieldCardSelect
         control={control}
         name="fuelUnit"
         label={t('workspace.fields.fuelUnit')}
         options={translateCardSelectOptions(t, FUEL_UNIT_CONFIG)}
       />
-
       <FormFieldCardSelect
         control={control}
         name="dateFormat"

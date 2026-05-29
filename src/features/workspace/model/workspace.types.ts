@@ -6,6 +6,7 @@ import type {
 } from '@entities/workspace';
 import type { Control } from 'react-hook-form';
 
+import type { WorkspaceSettingsValues } from './workspace-settings.schema';
 import type { WorkspaceValues } from './workspace.schema';
 
 // DTOs
@@ -52,10 +53,11 @@ export interface EditWorkspaceFormParams {
   onSuccess: () => void;
 }
 
-export type WorkspaceSettingsFormParams = Pick<
-  WorkspaceSettingsFormProps,
-  'onSuccess' | 'onSkip' | 'workspaceId'
->;
+export interface WorkspaceSettingsFormParams {
+  workspaceId: string;
+  settings?: WorkspaceSettings | null;
+  onSuccess: (settings: WorkspaceSettings) => void;
+}
 
 export interface InviteFormParams {
   workspaceId: string;
@@ -73,8 +75,11 @@ export interface WorkspaceFormProps {
 }
 
 export interface WorkspaceSettingsFormProps {
-  workspaceId: string;
-  onSuccess: (settings: WorkspaceSettings) => void;
+  control: Control<WorkspaceSettingsValues>;
+  handleSubmit: () => void;
+  isPending: boolean;
+  errorMessage?: string;
+  submitLabel: string;
   onSkip?: () => void;
 }
 

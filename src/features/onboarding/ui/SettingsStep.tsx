@@ -1,6 +1,6 @@
 import type { WorkspaceSettings } from '@entities/workspace';
 import { useWorkspace } from '@entities/workspace';
-import { WorkspaceSettingsForm } from '@features/workspace';
+import { useWorkspaceSettingsForm, WorkspaceSettingsForm } from '@features/workspace';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -19,6 +19,11 @@ export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
     setIsSuccess(true);
   };
 
+  const { control, handleSubmit, isPending, errorMessage } = useWorkspaceSettingsForm({
+    workspaceId: activeWorkspaceId,
+    onSuccess: handleSuccess,
+  });
+
   if (isSuccess) {
     return (
       <StepSuccess
@@ -31,8 +36,11 @@ export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
 
   return (
     <WorkspaceSettingsForm
-      workspaceId={activeWorkspaceId}
-      onSuccess={handleSuccess}
+      control={control}
+      handleSubmit={handleSubmit}
+      isPending={isPending}
+      errorMessage={errorMessage}
+      submitLabel={t('common.next')}
       onSkip={onSkip}
     />
   );

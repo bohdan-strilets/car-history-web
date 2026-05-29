@@ -13,26 +13,31 @@ import type { WorkspaceSettingsFormParams } from './workspace.types';
 
 export const useWorkspaceSettingsForm = ({
   workspaceId,
+  settings,
   onSuccess,
 }: WorkspaceSettingsFormParams) => {
   const { t } = useTranslation();
+  const resolver = zodResolver(createWorkspaceSettingsSchema(t));
+  const defaultValues: WorkspaceSettingsValues = {
+    currency: settings?.currency ?? 'PLN',
+    timezone: settings?.timezone ?? 'Europe/Warsaw',
+    distanceUnit: settings?.distanceUnit ?? 'KM',
+    fuelUnit: settings?.fuelUnit ?? 'L',
+    dateFormat: settings?.dateFormat ?? 'DD_MM_YYYY',
+  };
 
   const { control, handleSubmit, setError } = useForm<WorkspaceSettingsValues>({
-    resolver: zodResolver(createWorkspaceSettingsSchema(t)),
-    defaultValues: {
-      currency: 'PLN',
-      timezone: 'Europe/Warsaw',
-      distanceUnit: 'KM',
-      fuelUnit: 'L',
-      dateFormat: 'DD_MM_YYYY',
-    },
+    resolver,
+    defaultValues,
   });
 
-  const { mutate: update, isPending, error } = useUpdateWorkspaceSettingsMutation();
+  const mutation = useUpdateWorkspaceSettingsMutation();
+  const { mutate: update, isPending, error } = mutation;
+
   const errorMessage = useFormErrors({ error, setError, t });
 
   const onSubmit = (data: WorkspaceSettingsValues) => {
-    update({ id: workspaceId, dto: data }, { onSuccess: (settings) => onSuccess(settings.data) });
+    update({ id: workspaceId, dto: data }, { onSuccess: (res) => onSuccess(res.data) });
   };
 
   return {

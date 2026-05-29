@@ -2,12 +2,18 @@ import {
   canManageWorkspace,
   useWorkspaceMembersQuery,
   useWorkspaceQuery,
+  useWorkspaceSettingsQuery,
   useWorkspaceTab,
   WORKSPACE_TABS,
 } from '@entities/workspace';
 import { MembersList } from '@entities/workspace/ui/members-list';
-import { EditWorkspaceModal, InviteForm } from '@features/workspace';
-import { useDeleteWorkspaceMutation } from '@features/workspace/api';
+import {
+  EditWorkspaceModal,
+  InviteForm,
+  useDeleteWorkspaceMutation,
+  useWorkspaceSettingsForm,
+  WorkspaceSettingsForm,
+} from '@features/workspace';
 import { ROUTES } from '@shared/config';
 import { useConfirmModal } from '@shared/lib/modal';
 import { useAuth } from '@shared/store/auth';
@@ -34,15 +40,25 @@ export const WorkspaceDetailPage = () => {
 
   const { data: membersData } = useWorkspaceMembersQuery(id ?? '');
 
+  const { data: settingsData, isPending: isSettingsPending } = useWorkspaceSettingsQuery(id ?? '');
+
   const { mutate: deleteWorkspace } = useDeleteWorkspaceMutation();
 
   const workspace = workspaceData?.data ?? null;
   const members = membersData?.data ?? [];
+  const settings = settingsData?.data ?? null;
+
+  const settingsForm = useWorkspaceSettingsForm({
+    workspaceId: id ?? '',
+    settings,
+    onSuccess: () => {},
+  });
 
   if (isWorkspacePending) return null;
   if (isWorkspaceError || !workspace) return null;
 
   const tabs = translateSegmentControlOptions(t, WORKSPACE_TABS);
+  const canManage = canManageWorkspace(workspace.role);
 
   const handleEdit = () => {
     modal.open(<EditWorkspaceModal workspace={workspace} onSuccess={() => modal.closeLast()} />, {
@@ -62,8 +78,6 @@ export const WorkspaceDetailPage = () => {
       });
     }
   };
-
-  const canManage = canManageWorkspace(workspace.role);
 
   return (
     <Stack gap="2xl">
@@ -117,7 +131,7 @@ export const WorkspaceDetailPage = () => {
 
       {activeTab === 'settings' && (
         <Stack gap="3xl">
-          {canManage && (
+          {canManage ? (
             <>
               <Stack gap="md">
                 <Text weight="semibold" size="lg">
@@ -128,6 +142,16 @@ export const WorkspaceDetailPage = () => {
                 </Button>
               </Stack>
 
+              {!isSettingsPending && (
+                <WorkspaceSettingsForm
+                  control={settingsForm.control}
+                  handleSubmit={settingsForm.handleSubmit}
+                  isPending={settingsForm.isPending}
+                  errorMessage={settingsForm.errorMessage}
+                  submitLabel={t('common.save')}
+                />
+              )}
+
               <Stack gap="md">
                 <Text weight="semibold" size="lg">
                   {t('workspace.settings.danger.title')}
@@ -137,9 +161,9 @@ export const WorkspaceDetailPage = () => {
                 </Button>
               </Stack>
             </>
+          ) : (
+            <Text color="secondary">{t('workspace.settings.noPermissions')}</Text>
           )}
-
-          {!canManage && <Text color="secondary">{t('workspace.settings.noPermissions')}</Text>}
         </Stack>
       )}
     </Stack>
