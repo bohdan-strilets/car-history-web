@@ -128,5 +128,9 @@ export const baseTheme = {
         expandedWidth: '280px',
       },
     },
+    contentWidth: {
+      form: '500px',
+      page: '580px',
+    },
   },
 } as const;

@@ -342,5 +342,9 @@ export const vars = createThemeContract({
         expandedWidth: null,
       },
     },
+    contentWidth: {
+      form: null,
+      page: null,
+    },
   },
 });
