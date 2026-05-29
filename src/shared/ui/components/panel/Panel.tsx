@@ -31,10 +31,11 @@ export const Panel = ({
   hoverable,
   onClick,
   disabled,
+  maxWidth,
   ...rest
 }: PanelOwnProps) => {
   return (
-    <Box width={width} height={height} position={position} overflow={overflow}>
+    <Box width={width} height={height} position={position} overflow={overflow} maxWidth={maxWidth}>
       <Surface
         as={onClick ? 'button' : as}
         type={onClick ? 'button' : undefined}
