@@ -1,5 +1,4 @@
-import type { ComboboxOption } from '@shared/ui';
-import type { CardSelectOption } from '@shared/ui/components/card-select';
+import type { EntityOption } from '@shared/types';
 
 import {
   CURRENCY,
@@ -8,11 +7,19 @@ import {
   FUEL_UNIT,
   WORKSPACE_ROLE,
   WORKSPACE_TYPE,
-} from './workspace.types';
+  type Currency,
+  type DateFormat,
+  type DistanceUnit,
+  type FuelUnit,
+  type WorkspaceRole,
+  type WorkspaceType,
+} from './workspace.constants';
 
-export const WORKSPACE_TYPE_CONFIG: CardSelectOption[] = [
+// Workspace
+
+export const WORKSPACE_TYPE_CONFIG: EntityOption<WorkspaceType>[] = [
   {
-    id: 'personal',
+    id: '1',
     label: `workspace.types.${WORKSPACE_TYPE.PERSONAL}.label`,
     value: WORKSPACE_TYPE.PERSONAL,
     icon: 'user',
@@ -20,7 +27,7 @@ export const WORKSPACE_TYPE_CONFIG: CardSelectOption[] = [
     description: `workspace.types.${WORKSPACE_TYPE.PERSONAL}.description`,
   },
   {
-    id: 'family',
+    id: '2',
     label: `workspace.types.${WORKSPACE_TYPE.FAMILY}.label`,
     value: WORKSPACE_TYPE.FAMILY,
     icon: 'users',
@@ -28,7 +35,7 @@ export const WORKSPACE_TYPE_CONFIG: CardSelectOption[] = [
     description: `workspace.types.${WORKSPACE_TYPE.FAMILY}.description`,
   },
   {
-    id: 'business',
+    id: '3',
     label: `workspace.types.${WORKSPACE_TYPE.BUSINESS}.label`,
     value: WORKSPACE_TYPE.BUSINESS,
     icon: 'briefcase',
@@ -37,59 +44,61 @@ export const WORKSPACE_TYPE_CONFIG: CardSelectOption[] = [
   },
 ];
 
-export const WORKSPACE_ROLE_CONFIG: CardSelectOption[] = [
+export const WORKSPACE_ROLE_CONFIG: EntityOption<WorkspaceRole>[] = [
   {
-    id: 'owner',
+    id: '1',
     label: `workspace.members.role.${WORKSPACE_ROLE.OWNER}`,
     value: WORKSPACE_ROLE.OWNER,
     color: 'indigo',
   },
   {
-    id: 'admin',
+    id: '2',
     label: `workspace.members.role.${WORKSPACE_ROLE.ADMIN}`,
     value: WORKSPACE_ROLE.ADMIN,
     color: 'blue',
   },
   {
-    id: 'member',
+    id: '3',
     label: `workspace.members.role.${WORKSPACE_ROLE.MEMBER}`,
     value: WORKSPACE_ROLE.MEMBER,
     color: 'rose',
   },
 ];
 
-export const CURRENCY_CONFIG: CardSelectOption[] = [
+// Settings
+
+export const CURRENCY_CONFIG: EntityOption<Currency>[] = [
   {
-    id: 'pln',
+    id: '1',
     value: CURRENCY.PLN,
-    label: 'workspace.currency.PLN',
+    label: `workspace.currency.${CURRENCY.PLN}`,
     icon: 'wallet',
     color: 'green',
   },
   {
-    id: 'eur',
+    id: '2',
     value: CURRENCY.EUR,
-    label: 'workspace.currency.EUR',
+    label: `workspace.currency.${CURRENCY.EUR}`,
     icon: 'wallet',
     color: 'blue',
   },
   {
-    id: 'usd',
+    id: '3',
     value: CURRENCY.USD,
-    label: 'workspace.currency.USD',
+    label: `workspace.currency.${CURRENCY.USD}`,
     icon: 'wallet',
     color: 'teal',
   },
   {
-    id: 'uah',
+    id: '4',
     value: CURRENCY.UAH,
-    label: 'workspace.currency.UAH',
+    label: `workspace.currency.${CURRENCY.UAH}`,
     icon: 'wallet',
     color: 'yellow',
   },
 ];
 
-export const DISTANCE_UNIT_CONFIG: CardSelectOption[] = [
+export const DISTANCE_UNIT_CONFIG: EntityOption<DistanceUnit>[] = [
   {
     id: 'km',
     value: DISTANCE_UNIT.KM,
@@ -106,155 +115,155 @@ export const DISTANCE_UNIT_CONFIG: CardSelectOption[] = [
   },
 ];
 
-export const FUEL_UNIT_CONFIG: CardSelectOption[] = [
+export const FUEL_UNIT_CONFIG: EntityOption<FuelUnit>[] = [
   {
-    id: 'l',
+    id: '1',
     value: FUEL_UNIT.L,
-    label: 'units.L',
+    label: `units.${FUEL_UNIT.L}`,
     icon: 'droplets',
     color: 'teal',
   },
   {
-    id: 'gal',
+    id: '2',
     value: FUEL_UNIT.GAL,
-    label: 'units.GAL',
+    label: `units.${FUEL_UNIT.GAL}`,
     icon: 'droplets',
     color: 'blue',
   },
 ];
 
-export const DATE_FORMAT_CONFIG: CardSelectOption[] = [
+export const DATE_FORMAT_CONFIG: EntityOption<DateFormat>[] = [
   {
-    id: 'dd_mm_yyyy',
+    id: '1',
     value: DATE_FORMAT.DD_MM_YYYY,
-    label: 'workspace.dateFormat.DD_MM_YYYY',
+    label: `workspace.dateFormat.${DATE_FORMAT.DD_MM_YYYY}`,
     icon: 'calendar',
     color: 'violet',
   },
   {
-    id: 'yyyy_mm_dd',
+    id: '2',
     value: DATE_FORMAT.YYYY_MM_DD,
-    label: 'workspace.dateFormat.YYYY_MM_DD',
+    label: `workspace.dateFormat.${DATE_FORMAT.YYYY_MM_DD}`,
     icon: 'calendar',
     color: 'violet',
   },
   {
-    id: 'dd_month_yyyy',
+    id: '3',
     value: DATE_FORMAT.DD_MONTH_YYYY,
-    label: 'workspace.dateFormat.DD_MONTH_YYYY',
+    label: `workspace.dateFormat.${DATE_FORMAT.DD_MONTH_YYYY}`,
     icon: 'calendar',
     color: 'violet',
   },
 ];
 
-export const TIMEZONE_CONFIG: ComboboxOption[] = [
+export const TIMEZONE_CONFIG: EntityOption<string>[] = [
   {
-    id: 'europe_warsaw',
+    id: '1',
     value: 'Europe/Warsaw',
     label: 'Europe/Warsaw (UTC+1/+2)',
   },
   {
-    id: 'europe_kyiv',
+    id: '2',
     value: 'Europe/Kyiv',
     label: 'Europe/Kyiv (UTC+2/+3)',
   },
   {
-    id: 'europe_london',
+    id: '3',
     value: 'Europe/London',
     label: 'Europe/London (UTC+0/+1)',
   },
   {
-    id: 'europe_berlin',
+    id: '4',
     value: 'Europe/Berlin',
     label: 'Europe/Berlin (UTC+1/+2)',
   },
   {
-    id: 'europe_paris',
+    id: '5',
     value: 'Europe/Paris',
     label: 'Europe/Paris (UTC+1/+2)',
   },
   {
-    id: 'europe_rome',
+    id: '6',
     value: 'Europe/Rome',
     label: 'Europe/Rome (UTC+1/+2)',
   },
   {
-    id: 'europe_madrid',
+    id: '7',
     value: 'Europe/Madrid',
     label: 'Europe/Madrid (UTC+1/+2)',
   },
   {
-    id: 'europe_amsterdam',
+    id: '8',
     value: 'Europe/Amsterdam',
     label: 'Europe/Amsterdam (UTC+1/+2)',
   },
   {
-    id: 'europe_prague',
+    id: '9',
     value: 'Europe/Prague',
     label: 'Europe/Prague (UTC+1/+2)',
   },
   {
-    id: 'europe_vienna',
+    id: '10',
     value: 'Europe/Vienna',
     label: 'Europe/Vienna (UTC+1/+2)',
   },
   {
-    id: 'europe_budapest',
+    id: '11',
     value: 'Europe/Budapest',
     label: 'Europe/Budapest (UTC+1/+2)',
   },
   {
-    id: 'europe_bucharest',
+    id: '12',
     value: 'Europe/Bucharest',
     label: 'Europe/Bucharest (UTC+2/+3)',
   },
   {
-    id: 'europe_sofia',
+    id: '13',
     value: 'Europe/Sofia',
     label: 'Europe/Sofia (UTC+2/+3)',
   },
   {
-    id: 'europe_helsinki',
+    id: '14',
     value: 'Europe/Helsinki',
     label: 'Europe/Helsinki (UTC+2/+3)',
   },
   {
-    id: 'europe_stockholm',
+    id: '15',
     value: 'Europe/Stockholm',
     label: 'Europe/Stockholm (UTC+1/+2)',
   },
   {
-    id: 'europe_oslo',
+    id: '16',
     value: 'Europe/Oslo',
     label: 'Europe/Oslo (UTC+1/+2)',
   },
   {
-    id: 'europe_copenhagen',
+    id: '17',
     value: 'Europe/Copenhagen',
     label: 'Europe/Copenhagen (UTC+1/+2)',
   },
   {
-    id: 'europe_zurich',
+    id: '18',
     value: 'Europe/Zurich',
     label: 'Europe/Zurich (UTC+1/+2)',
   },
   {
-    id: 'america_new_york',
+    id: '19',
     value: 'America/New_York',
     label: 'America/New_York (UTC-5/-4)',
   },
   {
-    id: 'america_chicago',
+    id: '20',
     value: 'America/Chicago',
     label: 'America/Chicago (UTC-6/-5)',
   },
   {
-    id: 'america_los_angeles',
+    id: '21',
     value: 'America/Los_Angeles',
     label: 'America/Los_Angeles (UTC-8/-7)',
   },
   {
-    id: 'utc',
+    id: '22',
     value: 'UTC',
     label: 'UTC (UTC+0)',
   },

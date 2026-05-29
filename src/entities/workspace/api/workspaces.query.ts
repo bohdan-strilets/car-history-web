@@ -25,19 +25,3 @@ export const useWorkspaceSettingsQuery = (id: string) => {
     enabled: !!id,
   });
 };
-
-export const useWorkspaceMembersQuery = (id: string) => {
-  return useQuery({
-    queryKey: queryKeys.workspaces.members(id),
-    queryFn: () => workspaceApi.getMembers(id),
-    enabled: !!id,
-  });
-};
-
-export const useInviteQuery = (token: string) => {
-  return useQuery({
-    queryKey: queryKeys.invites.detail(token),
-    queryFn: () => workspaceApi.getInvite(token),
-    enabled: !!token,
-  });
-};
