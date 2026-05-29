@@ -283,18 +283,37 @@
         "MEMBER": "Członek"
       },
       "remove": "Usuń członka",
+      "editRole": "Edytuj rolę",
       "removeConfirm": "Czy na pewno chcesz usunąć tego członka?"
     },
 
     "invite": {
+      "send": "Wyślij zaproszenie",
       "title": "Zaproszenie do workspace",
       "description": "Zostałeś zaproszony do workspace {{name}}",
       "accept": "Akceptuj",
       "reject": "Odrzuć",
-      "expired": "Zaproszenie wygasło",
       "fields": {
         "email": "Email",
         "role": "Rola"
+      },
+      "alreadyAccepted": {
+        "title": "Zaproszenie już zaakceptowane",
+        "description": "Już jesteś członkiem tego workspace.",
+        "action": "Przejdź do workspace'ów"
+      },
+      "expired": {
+        "title": "Zaproszenie wygasło",
+        "description": "To zaproszenie wygasło lub zostało odrzucone.",
+        "action": "Przejdź do workspace'ów"
+      },
+      "loading": {
+        "title": "Ładowanie zaproszenia..."
+      },
+      "notFound": {
+        "title": "Zaproszenie nie zostało znalezione",
+        "description": "Link jest nieprawidłowy lub wygasł.",
+        "action": "Przejdź do workspace'ów"
       }
     },
 
@@ -309,7 +328,8 @@
       "danger": {
         "title": "Strefa niebezpieczna",
         "delete": "Usuń workspace"
-      }
+      },
+      "noPermissions": "Tylko właściciel może zarządzać ustawieniami workspace."
     }
   },
 

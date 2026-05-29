@@ -285,18 +285,37 @@
         "MEMBER": "Учасник"
       },
       "remove": "Видалити учасника",
+      "editRole": "Редагувати роль",
       "removeConfirm": "Ви впевнені, що хочете видалити цього учасника?"
     },
 
     "invite": {
+      "send": "Надіслати запрошення",
       "title": "Запрошення до workspace",
       "description": "Вас запросили до workspace {{name}}",
       "accept": "Прийняти",
       "reject": "Відхилити",
-      "expired": "Запрошення закінчилося",
       "fields": {
         "email": "Email",
         "role": "Роль"
+      },
+      "alreadyAccepted": {
+        "title": "Запрошення вже прийнято",
+        "description": "Ви вже є учасником цього workspace.",
+        "action": "Перейти до workspace'ів"
+      },
+      "expired": {
+        "title": "Запрошення закінчилося",
+        "description": "Це запрошення закінчилося або було відхилено.",
+        "action": "Перейти до workspace'ів"
+      },
+      "loading": {
+        "title": "Завантаження запрошення..."
+      },
+      "notFound": {
+        "title": "Запрошення не знайдено",
+        "description": "Посилання недійсне або закінчилось.",
+        "action": "Перейти до workspace'ів"
       }
     },
 
@@ -311,7 +330,8 @@
       "danger": {
         "title": "Небезпечна зона",
         "delete": "Видалити workspace"
-      }
+      },
+      "noPermissions": "Тільки власник може керувати налаштуваннями workspace."
     }
   },
 

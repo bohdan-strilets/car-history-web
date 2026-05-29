@@ -284,18 +284,37 @@
         "MEMBER": "Member"
       },
       "remove": "Remove member",
+      "editRole": "Edit role",
       "removeConfirm": "Are you sure you want to remove this member?"
     },
 
     "invite": {
+      "send": "Send invitation",
       "title": "Workspace invitation",
       "description": "You have been invited to the workspace {{name}}",
       "accept": "Accept",
       "reject": "Reject",
-      "expired": "Invitation expired",
       "fields": {
         "email": "Email",
         "role": "Role"
+      },
+      "alreadyAccepted": {
+        "title": "Invitation already accepted",
+        "description": "You are already a member of this workspace.",
+        "action": "Go to workspaces"
+      },
+      "expired": {
+        "title": "Invitation expired",
+        "description": "This invitation has expired or has been rejected.",
+        "action": "Go to workspaces"
+      },
+      "loading": {
+        "title": "Loading invitation..."
+      },
+      "notFound": {
+        "title": "Invitation not found",
+        "description": "Link is invalid or has expired.",
+        "action": "Go to workspaces"
       }
     },
 
@@ -310,7 +329,8 @@
       "danger": {
         "title": "Danger zone",
         "delete": "Delete workspace"
-      }
+      },
+      "noPermissions": "Only the owner can manage workspace settings."
     }
   },
 
