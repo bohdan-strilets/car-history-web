@@ -1,19 +1,16 @@
 import {
-  canManageWorkspace,
+  canDeleteWorkspace,
+  canEditWorkspace,
   useWorkspaceMembersQuery,
   useWorkspaceQuery,
   useWorkspaceSettingsQuery,
   useWorkspaceTab,
   WORKSPACE_TABS,
 } from '@entities/workspace';
+import { WorkspaceSettingsInfo } from '@entities/workspace/ui';
 import { MembersList } from '@entities/workspace/ui/members-list';
-import {
-  EditWorkspaceModal,
-  InviteForm,
-  useDeleteWorkspaceMutation,
-  useWorkspaceSettingsForm,
-  WorkspaceSettingsForm,
-} from '@features/workspace';
+import { EditWorkspaceModal, EditWorkspaceSettingsModal, InviteForm } from '@features/workspace';
+import { useDeleteWorkspaceMutation } from '@features/workspace/api';
 import { ROUTES } from '@shared/config';
 import { useConfirmModal } from '@shared/lib/modal';
 import { useAuth } from '@shared/store/auth';
@@ -39,8 +36,7 @@ export const WorkspaceDetailPage = () => {
   } = useWorkspaceQuery(id ?? '');
 
   const { data: membersData } = useWorkspaceMembersQuery(id ?? '');
-
-  const { data: settingsData, isPending: isSettingsPending } = useWorkspaceSettingsQuery(id ?? '');
+  const { data: settingsData } = useWorkspaceSettingsQuery(id ?? '');
 
   const { mutate: deleteWorkspace } = useDeleteWorkspaceMutation();
 
@@ -48,28 +44,36 @@ export const WorkspaceDetailPage = () => {
   const members = membersData?.data ?? [];
   const settings = settingsData?.data ?? null;
 
-  const settingsForm = useWorkspaceSettingsForm({
-    workspaceId: id ?? '',
-    settings,
-    onSuccess: () => {},
-  });
-
   if (isWorkspacePending) return null;
   if (isWorkspaceError || !workspace) return null;
 
   const tabs = translateSegmentControlOptions(t, WORKSPACE_TABS);
-  const canManage = canManageWorkspace(workspace.role);
 
-  const handleEdit = () => {
+  const canEdit = canEditWorkspace(workspace.role);
+  const canDelete = canDeleteWorkspace(workspace.role);
+
+  const handleEditWorkspace = () => {
     modal.open(<EditWorkspaceModal workspace={workspace} onSuccess={() => modal.closeLast()} />, {
       title: t('workspace.settings.title'),
     });
+  };
+
+  const handleEditSettings = () => {
+    modal.open(
+      <EditWorkspaceSettingsModal
+        workspaceId={workspace.id}
+        settings={settings}
+        onSuccess={() => modal.closeLast()}
+      />,
+      { title: t('workspace.settings.title') },
+    );
   };
 
   const handleDelete = async () => {
     const confirmed = await confirm({
       title: t('workspace.detail.delete'),
       description: t('workspace.detail.deleteConfirm'),
+      danger: true,
     });
 
     if (confirmed) {
@@ -131,38 +135,28 @@ export const WorkspaceDetailPage = () => {
 
       {activeTab === 'settings' && (
         <Stack gap="3xl">
-          {canManage ? (
-            <>
-              <Stack gap="md">
-                <Text weight="semibold" size="lg">
-                  {t('workspace.settings.title')}
-                </Text>
-                <Button leftIcon="edit" onClick={handleEdit}>
-                  {t('workspace.settings.title')}
-                </Button>
-              </Stack>
+          <WorkspaceSettingsInfo
+            workspace={workspace}
+            settings={settings}
+            onEditWorkspace={canEdit ? handleEditWorkspace : undefined}
+            onEditSettings={canEdit ? handleEditSettings : undefined}
+          />
 
-              {!isSettingsPending && (
-                <WorkspaceSettingsForm
-                  control={settingsForm.control}
-                  handleSubmit={settingsForm.handleSubmit}
-                  isPending={settingsForm.isPending}
-                  errorMessage={settingsForm.errorMessage}
-                  submitLabel={t('common.save')}
-                />
-              )}
-
-              <Stack gap="md">
-                <Text weight="semibold" size="lg">
-                  {t('workspace.settings.danger.title')}
-                </Text>
-                <Button variant="solid" leftIcon="trash" onClick={handleDelete}>
-                  {t('workspace.settings.danger.delete')}
-                </Button>
-              </Stack>
-            </>
-          ) : (
-            <Text color="secondary">{t('workspace.settings.noPermissions')}</Text>
+          {canDelete && (
+            <Stack gap="md">
+              <Text weight="semibold" size="lg">
+                {t('workspace.settings.danger.title')}
+              </Text>
+              <Button
+                variant="soft"
+                leftIcon="trash"
+                onClick={handleDelete}
+                color="danger"
+                size="lg"
+              >
+                {t('workspace.settings.danger.delete')}
+              </Button>
+            </Stack>
           )}
         </Stack>
       )}
