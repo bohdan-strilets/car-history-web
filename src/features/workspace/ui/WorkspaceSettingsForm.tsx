@@ -3,9 +3,8 @@ import {
   DATE_FORMAT_CONFIG,
   DISTANCE_UNIT_CONFIG,
   FUEL_UNIT_CONFIG,
-  TIMEZONE_CONFIG,
 } from '@entities/workspace';
-import type { WorkspaceSettingsFormProps } from '@features/workspace/model';
+import { TIMEZONE_OPTIONS, type WorkspaceSettingsFormProps } from '@features/workspace/model';
 import { Form, FormFieldCardSelect, FormFieldCombobox } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
@@ -32,7 +31,7 @@ export const WorkspaceSettingsForm = ({
         control={control}
         name="timezone"
         label={t('workspace.timezone')}
-        options={TIMEZONE_CONFIG}
+        options={TIMEZONE_OPTIONS}
         placeholder={t('workspace.fields.timezonePlaceholder')}
         size="lg"
       />

@@ -1,4 +1,4 @@
-import { WORKSPACE_ROLE } from '@entities/workspace/model';
+import { WORKSPACE_MEMBER_ROLE } from '@entities/workspace/model';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormErrors } from '@shared/lib/form';
 import { useForm } from 'react-hook-form';
@@ -11,19 +11,19 @@ import type { InviteFormParams } from './workspace.types';
 
 export const useInviteForm = ({ workspaceId, onSuccess }: InviteFormParams) => {
   const { t } = useTranslation();
-
   const resolver = zodResolver(createInviteSchema(t));
+
   const defaultValues: InviteValues = {
     email: '',
-    role: WORKSPACE_ROLE.MEMBER,
+    role: WORKSPACE_MEMBER_ROLE.MEMBER,
   };
 
-  const { control, handleSubmit, setError } = useForm<InviteValues>({
-    resolver,
-    defaultValues,
-  });
+  const form = useForm<InviteValues>({ resolver, defaultValues });
+  const { control, handleSubmit, setError } = form;
 
-  const { mutate: createInvite, isPending, error } = useCreateInviteMutation(workspaceId);
+  const mutation = useCreateInviteMutation(workspaceId);
+  const { mutate: createInvite, isPending, error } = mutation;
+
   const errorMessage = useFormErrors({ error, setError, t });
 
   const onSubmit = (data: InviteValues) => {

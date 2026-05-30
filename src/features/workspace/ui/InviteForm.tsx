@@ -1,4 +1,4 @@
-import { WORKSPACE_ROLE_CONFIG } from '@entities/workspace';
+import { WORKSPACE_MEMBER_ROLE_CONFIG } from '@entities/workspace';
 import { Form, FormFieldCardSelect, FormFieldInput } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
@@ -38,7 +38,7 @@ export const InviteForm = ({ workspaceId, onSuccess }: InviteFormProps) => {
         name="role"
         label={t('workspace.invite.fields.role')}
         required
-        options={translateCardSelectOptions(t, WORKSPACE_ROLE_CONFIG)}
+        options={translateCardSelectOptions(t, WORKSPACE_MEMBER_ROLE_CONFIG)}
       />
     </Form>
   );

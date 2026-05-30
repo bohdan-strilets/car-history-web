@@ -12,15 +12,14 @@ import type { WorkspaceFormParams } from './workspace.types';
 export const useWorkspaceForm = ({ onSuccess }: WorkspaceFormParams) => {
   const { t } = useTranslation();
   const resolver = zodResolver(createWorkspaceSchema(t));
+
   const defaultValues: WorkspaceValues = {
     name: '',
     type: WORKSPACE_TYPE.PERSONAL,
   };
 
-  const { control, handleSubmit, setError } = useForm<WorkspaceValues>({
-    resolver,
-    defaultValues,
-  });
+  const form = useForm<WorkspaceValues>({ resolver, defaultValues });
+  const { control, handleSubmit, setError } = form;
 
   const { mutate: create, isPending, error } = useCreateWorkspaceMutation();
   const errorMessage = useFormErrors({ error, setError, t });

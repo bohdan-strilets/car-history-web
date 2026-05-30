@@ -1,3 +1,4 @@
+export { EditMemberRoleModal } from './EditMemberRoleModal';
 export { EditWorkspaceModal } from './EditWorkspaceModal';
 export { EditWorkspaceSettingsModal } from './EditWorkspaceSettingsModal';
 export { InviteForm } from './InviteForm';

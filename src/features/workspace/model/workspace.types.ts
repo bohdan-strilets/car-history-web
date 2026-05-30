@@ -1,5 +1,6 @@
 import type {
   Workspace,
+  WorkspaceMember,
   WorkspaceRole,
   WorkspaceSettings,
   WorkspaceType,
@@ -64,6 +65,12 @@ export interface InviteFormParams {
   onSuccess: () => void;
 }
 
+export interface EditMemberRoleFormParams {
+  workspaceId: string;
+  member: WorkspaceMember;
+  onSuccess: () => void;
+}
+
 // Props
 
 export interface WorkspaceFormProps {
@@ -85,5 +92,11 @@ export interface WorkspaceSettingsFormProps {
 
 export interface EditWorkspaceModalProps {
   workspace: Workspace;
+  onSuccess: () => void;
+}
+
+export interface EditMemberRoleModalProps {
+  workspaceId: string;
+  member: WorkspaceMember;
   onSuccess: () => void;
 }

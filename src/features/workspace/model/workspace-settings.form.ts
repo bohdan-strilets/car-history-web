@@ -18,6 +18,7 @@ export const useWorkspaceSettingsForm = ({
 }: WorkspaceSettingsFormParams) => {
   const { t } = useTranslation();
   const resolver = zodResolver(createWorkspaceSettingsSchema(t));
+
   const defaultValues: WorkspaceSettingsValues = {
     currency: settings?.currency ?? 'PLN',
     timezone: settings?.timezone ?? 'Europe/Warsaw',
@@ -26,10 +27,8 @@ export const useWorkspaceSettingsForm = ({
     dateFormat: settings?.dateFormat ?? 'DD_MM_YYYY',
   };
 
-  const { control, handleSubmit, setError } = useForm<WorkspaceSettingsValues>({
-    resolver,
-    defaultValues,
-  });
+  const form = useForm<WorkspaceSettingsValues>({ resolver, defaultValues });
+  const { control, handleSubmit, setError } = form;
 
   const mutation = useUpdateWorkspaceSettingsMutation();
   const { mutate: update, isPending, error } = mutation;
