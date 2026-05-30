@@ -7,13 +7,27 @@ import {
 import { useAcceptInviteMutation, useRejectInviteMutation } from '@features/workspace';
 import { ROUTES } from '@shared/config';
 import type { TokenParams } from '@shared/types';
-import { Button, Center, Heading, IconBox, Panel, Spinner, Stack, Text } from '@shared/ui';
+import {
+  Button,
+  Center,
+  Heading,
+  IconBox,
+  Panel,
+  Spinner,
+  Stack,
+  SuccessState,
+  Text,
+} from '@shared/ui';
 import { StateView } from '@shared/ui/components/state-view';
 import { getConfigOption } from '@shared/utils';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export const InvitePage = () => {
+  const [isAcceptedSuccess, setIsAcceptedSuccess] = useState(false);
+  const [redirectWorkspaceId, setRedirectWorkspaceId] = useState<string | null>(null);
+
   const { t } = useTranslation();
   const { token } = useParams<TokenParams>();
   const { setActiveWorkspace, setActiveWorkspaceId } = useWorkspace();
@@ -22,6 +36,16 @@ export const InvitePage = () => {
   const { data, isPending, isError } = useInviteQuery(token ?? '');
   const { mutate: accept, isPending: isAccepting } = useAcceptInviteMutation();
   const { mutate: reject, isPending: isRejecting } = useRejectInviteMutation();
+
+  useEffect(() => {
+    if (!isAcceptedSuccess || !redirectWorkspaceId) return;
+
+    const timer = setTimeout(() => {
+      navigate(ROUTES.WORKSPACES.DETAIL(redirectWorkspaceId));
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [isAcceptedSuccess, redirectWorkspaceId, navigate]);
 
   const invite = data?.data;
 
@@ -47,13 +71,29 @@ export const InvitePage = () => {
       />
     );
 
+  if (isAcceptedSuccess) {
+    return (
+      <Center fullHeight fullWidth>
+        <Panel gap="xl" p="3xl" align="center" maxWidth="page" width="full">
+          <SuccessState />
+          <Stack align="center" gap="sm">
+            <Heading size="2xl">{t('workspace.invite.acceptSuccess')}</Heading>
+            <Text color="secondary" align="center">
+              {t('workspace.invite.redirecting')}
+            </Text>
+          </Stack>
+        </Panel>
+      </Center>
+    );
+  }
+
   const typeConfig = getConfigOption(t, WORKSPACE_TYPE_CONFIG, invite.workspace.type);
 
-  const isAccepted = invite.status === WORKSPACE_INVITE_STATUS.ACCEPTED;
+  const isAlreadyAccepted = invite.status === WORKSPACE_INVITE_STATUS.ACCEPTED;
   const isRejected = invite.status === WORKSPACE_INVITE_STATUS.REJECTED;
   const isExpired = invite.status === WORKSPACE_INVITE_STATUS.EXPIRED;
 
-  if (isAccepted) {
+  if (isAlreadyAccepted) {
     return (
       <StateView
         icon="checkCircle"
@@ -86,19 +126,17 @@ export const InvitePage = () => {
       onSuccess: (response) => {
         setActiveWorkspaceId(response.data.id);
         setActiveWorkspace(response.data);
-        navigate(ROUTES.WORKSPACES.DETAIL(response.data.id));
+        setRedirectWorkspaceId(response.data.id);
+        setIsAcceptedSuccess(true);
       },
     });
   };
 
   const handleReject = () => {
     if (!token) return;
-
-    const onSuccess = () => {
-      navigate(ROUTES.WORKSPACES.ROOT);
-    };
-
-    reject(token, { onSuccess });
+    reject(token, {
+      onSuccess: () => navigate(ROUTES.WORKSPACES.ROOT),
+    });
   };
 
   return (

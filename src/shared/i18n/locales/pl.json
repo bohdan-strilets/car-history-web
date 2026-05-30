@@ -323,6 +323,7 @@
       },
       "success": "Zaproszenie zostało wysłane",
       "acceptSuccess": "Dołączyłeś do workspace",
+      "redirecting": "Przekierowujemy Cię...",
       "rejectSuccess": "Zaproszenie zostało odrzucone"
     },
 

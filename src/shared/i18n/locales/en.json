@@ -324,6 +324,7 @@
       },
       "success": "Invitation has been sent",
       "acceptSuccess": "You have joined the workspace",
+      "redirecting": "Redirecting...",
       "rejectSuccess": "Invitation has been rejected"
     },
 
