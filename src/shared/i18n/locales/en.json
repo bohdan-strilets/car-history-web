@@ -242,9 +242,9 @@
     },
 
     "dateFormat": {
-      "DD_MM_YYYY": "31.12.2024",
-      "YYYY_MM_DD": "2024.12.31",
-      "DD_MONTH_YYYY": "31 December 2024"
+      "DD_MM_YYYY": "DD.MM.YYYY",
+      "YYYY_MM_DD": "YYYY.MM.DD",
+      "DD_MONTH_YYYY": "DD Month YYYY"
     },
 
     "timezone": "Time zone",

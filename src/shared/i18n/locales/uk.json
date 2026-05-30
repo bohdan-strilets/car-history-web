@@ -241,9 +241,9 @@
     },
 
     "dateFormat": {
-      "DD_MM_YYYY": "31.12.2024",
-      "YYYY_MM_DD": "2024.12.31",
-      "DD_MONTH_YYYY": "31 грудня 2024"
+      "DD_MM_YYYY": "ДД.ММ.РРРР",
+      "YYYY_MM_DD": "РРРР.MM.ДД",
+      "DD_MONTH_YYYY": "ДД Місяця РРРР"
     },
 
     "timezone": "Часовий пояс",
