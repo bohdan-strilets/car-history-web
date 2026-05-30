@@ -2,51 +2,84 @@ import {
   canDeleteWorkspace,
   canEditWorkspace,
   canInviteMembers,
+  useWorkspace,
   useWorkspaceMembersQuery,
   useWorkspaceQuery,
   useWorkspaceSettingsQuery,
+  useWorkspacesQuery,
   useWorkspaceTab,
   WORKSPACE_TABS,
+  WorkspaceDetailSkeleton,
+  WorkspaceSettingsInfo,
+  type WorkspaceMember,
 } from '@entities/workspace';
-import { WorkspaceSettingsInfo } from '@entities/workspace/ui';
 import { MembersList } from '@entities/workspace/ui/members-list';
-import { EditWorkspaceModal, EditWorkspaceSettingsModal, InviteForm } from '@features/workspace';
-import { useDeleteWorkspaceMutation } from '@features/workspace/api';
+import {
+  EditMemberRoleModal,
+  EditWorkspaceModal,
+  EditWorkspaceSettingsModal,
+  InviteForm,
+} from '@features/workspace';
+import { useDeleteWorkspaceMutation, useRemoveMemberMutation } from '@features/workspace/api';
 import { ROUTES } from '@shared/config';
 import { useConfirmModal } from '@shared/lib/modal';
 import { useAuth } from '@shared/store/auth';
-import { Button, Stack, Tabs, Text, useModal } from '@shared/ui';
+import { Button, Stack, StateView, Tabs, Text, useModal } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useParams } from 'react-router-dom';
 
 export const WorkspaceDetailPage = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const { user } = useAuth();
   const { activeTab, setTab } = useWorkspaceTab();
-  const modal = useModal();
   const { confirm } = useConfirmModal();
+  const { setActiveWorkspace, setActiveWorkspaceId, clearActiveWorkspace, clearActiveWorkspaceId } =
+    useWorkspace();
+
+  const navigate = useNavigate();
+  const modal = useModal();
 
   const {
     data: workspaceData,
     isPending: isWorkspacePending,
     isError: isWorkspaceError,
   } = useWorkspaceQuery(id ?? '');
+  const { data: workspacesListData } = useWorkspacesQuery();
 
   const { data: membersData } = useWorkspaceMembersQuery(id ?? '');
   const { data: settingsData } = useWorkspaceSettingsQuery(id ?? '');
 
   const { mutate: deleteWorkspace } = useDeleteWorkspaceMutation();
+  const { mutate: removeMember } = useRemoveMemberMutation(id ?? '');
 
   const workspace = workspaceData?.data ?? null;
+  const workspaceList = workspacesListData?.data ?? [];
   const members = membersData?.data ?? [];
   const settings = settingsData?.data ?? null;
 
-  if (isWorkspacePending) return null;
-  if (isWorkspaceError || !workspace) return null;
+  useEffect(() => {
+    if (!workspace) return;
+    setActiveWorkspaceId(workspace.id);
+    setActiveWorkspace(workspace);
+  }, [workspace?.id, setActiveWorkspaceId, setActiveWorkspace, workspace]);
+
+  if (isWorkspacePending) return <WorkspaceDetailSkeleton />;
+
+  if (isWorkspaceError || !workspace)
+    return (
+      <StateView
+        icon="alertCircle"
+        variant="error"
+        title={t('workspace.notFound.title')}
+        description={t('workspace.notFound.description')}
+        actionLabel={t('workspace.notFound.action')}
+        onAction={() => navigate(ROUTES.WORKSPACES.ROOT)}
+      />
+    );
 
   const tabs = translateSegmentControlOptions(t, WORKSPACE_TABS);
 
@@ -70,18 +103,56 @@ export const WorkspaceDetailPage = () => {
     );
   };
 
-  const handleDelete = async () => {
-    const confirmed = await confirm({
-      title: t('workspace.detail.delete'),
-      description: t('workspace.detail.deleteConfirm'),
-      danger: true,
-    });
+  const handleDelete = () => {
+    confirm(
+      {
+        title: t('workspace.detail.delete'),
+        description: t('workspace.detail.deleteConfirm'),
+        danger: true,
+      },
+      {
+        onConfirm: (close) => {
+          deleteWorkspace(workspace.id, {
+            onSuccess: () => {
+              close();
 
-    if (confirmed) {
-      deleteWorkspace(workspace.id, {
-        onSuccess: () => navigate(ROUTES.WORKSPACES.ROOT),
-      });
-    }
+              const next = workspaceList.find((w) => w.id !== workspace.id);
+
+              if (next) {
+                setActiveWorkspaceId(next.id);
+                setActiveWorkspace(next);
+              } else {
+                clearActiveWorkspace();
+                clearActiveWorkspaceId();
+              }
+
+              navigate(ROUTES.WORKSPACES.ROOT);
+            },
+          });
+        },
+      },
+    );
+  };
+
+  const handleRemoveMember = (member: WorkspaceMember) => {
+    confirm(
+      {
+        title: t('workspace.members.remove'),
+        description: t('workspace.members.removeConfirm'),
+        danger: true,
+      },
+      {
+        onConfirm: (close) => {
+          removeMember(member.id, {
+            onSuccess: () => {
+              close();
+              modal.closeAll();
+            },
+            onError: () => close(),
+          });
+        },
+      },
+    );
   };
 
   return (
@@ -123,15 +194,16 @@ export const WorkspaceDetailPage = () => {
             currentUserId={user?.id ?? ''}
             currentUserRole={workspace.role}
             onEdit={(member) =>
-              modal.open(<div>edit {member.id}</div>, {
-                title: t('workspace.members.editRole'),
-              })
+              modal.open(
+                <EditMemberRoleModal
+                  workspaceId={id ?? ''}
+                  member={member}
+                  onSuccess={() => modal.closeLast()}
+                />,
+                { title: t('workspace.members.editRole') },
+              )
             }
-            onRemove={(member) =>
-              modal.open(<div>remove {member.id}</div>, {
-                title: t('workspace.members.remove'),
-              })
-            }
+            onRemove={(member) => handleRemoveMember(member)}
           />
         </Stack>
       )}
