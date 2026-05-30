@@ -276,7 +276,10 @@
       "deleteConfirm": "Ви впевнені, що хочете видалити цей workspace? Ця дія незворотна.",
       "deleteSuccess": "Workspace було видалено",
       "updateSuccess": "Workspace було оновлено",
-      "info": "Загальна інформація"
+      "info": "Загальна інформація",
+      "leave": "Покинути workspace",
+      "leaveConfirm": "Ви впевнені, що хочете покинути цей workspace?",
+      "leaveSuccess": "Ви покинули workspace"
     },
 
     "members": {

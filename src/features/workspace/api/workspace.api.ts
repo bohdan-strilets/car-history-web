@@ -53,4 +53,8 @@ export const workspaceApi = {
   removeMember: (workspaceId: string, memberId: string) => {
     return apiClient.delete<void>(ENDPOINTS.WORKSPACES.MEMBER(workspaceId, memberId));
   },
+
+  leave: (workspaceId: string) => {
+    return apiClient.delete<void>(ENDPOINTS.WORKSPACES.LEAVE(workspaceId));
+  },
 };

@@ -20,7 +20,11 @@ import {
   EditWorkspaceSettingsModal,
   InviteForm,
 } from '@features/workspace';
-import { useDeleteWorkspaceMutation, useRemoveMemberMutation } from '@features/workspace/api';
+import {
+  useDeleteWorkspaceMutation,
+  useLeaveWorkspaceMutation,
+  useRemoveMemberMutation,
+} from '@features/workspace/api';
 import { ROUTES } from '@shared/config';
 import { useConfirmModal } from '@shared/lib/modal';
 import { useAuth } from '@shared/store/auth';
@@ -55,6 +59,7 @@ export const WorkspaceDetailPage = () => {
 
   const { mutate: deleteWorkspace } = useDeleteWorkspaceMutation();
   const { mutate: removeMember } = useRemoveMemberMutation(id ?? '');
+  const { mutate: leaveWorkspace } = useLeaveWorkspaceMutation();
 
   const workspace = workspaceData?.data ?? null;
   const workspaceList = workspacesListData?.data ?? [];
@@ -85,6 +90,18 @@ export const WorkspaceDetailPage = () => {
 
   const canEdit = canEditWorkspace(workspace.role);
   const canDelete = canDeleteWorkspace(workspace.role);
+  const canLeave = !canDelete;
+
+  const switchToNextWorkspace = () => {
+    const next = workspaceList.find((w) => w.id !== workspace.id);
+    if (next) {
+      setActiveWorkspaceId(next.id);
+      setActiveWorkspace(next);
+    } else {
+      clearActiveWorkspace();
+      clearActiveWorkspaceId();
+    }
+  };
 
   const handleEditWorkspace = () => {
     modal.open(<EditWorkspaceModal workspace={workspace} onSuccess={() => modal.closeLast()} />, {
@@ -115,17 +132,28 @@ export const WorkspaceDetailPage = () => {
           deleteWorkspace(workspace.id, {
             onSuccess: () => {
               close();
+              switchToNextWorkspace();
+              navigate(ROUTES.WORKSPACES.ROOT);
+            },
+          });
+        },
+      },
+    );
+  };
 
-              const next = workspaceList.find((w) => w.id !== workspace.id);
-
-              if (next) {
-                setActiveWorkspaceId(next.id);
-                setActiveWorkspace(next);
-              } else {
-                clearActiveWorkspace();
-                clearActiveWorkspaceId();
-              }
-
+  const handleLeave = () => {
+    confirm(
+      {
+        title: t('workspace.detail.leave'),
+        description: t('workspace.detail.leaveConfirm'),
+        danger: true,
+      },
+      {
+        onConfirm: (close) => {
+          leaveWorkspace(workspace.id, {
+            onSuccess: () => {
+              close();
+              switchToNextWorkspace();
               navigate(ROUTES.WORKSPACES.ROOT);
             },
           });
@@ -217,20 +245,35 @@ export const WorkspaceDetailPage = () => {
             onEditSettings={canEdit ? handleEditSettings : undefined}
           />
 
-          {canDelete && (
+          {(canDelete || canLeave) && (
             <Stack gap="md">
               <Text weight="semibold" size="lg">
                 {t('workspace.settings.danger.title')}
               </Text>
-              <Button
-                variant="soft"
-                leftIcon="trash"
-                onClick={handleDelete}
-                color="danger"
-                size="lg"
-              >
-                {t('workspace.settings.danger.delete')}
-              </Button>
+
+              {canLeave && (
+                <Button
+                  variant="soft"
+                  leftIcon="logOut"
+                  onClick={handleLeave}
+                  color="danger"
+                  size="lg"
+                >
+                  {t('workspace.detail.leave')}
+                </Button>
+              )}
+
+              {canDelete && (
+                <Button
+                  variant="soft"
+                  leftIcon="trash"
+                  onClick={handleDelete}
+                  color="danger"
+                  size="lg"
+                >
+                  {t('workspace.settings.danger.delete')}
+                </Button>
+              )}
             </Stack>
           )}
         </Stack>

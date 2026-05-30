@@ -275,7 +275,10 @@
       "deleteConfirm": "Are you sure you want to delete this workspace? This action is irreversible.",
       "deleteSuccess": "Workspace has been deleted",
       "updateSuccess": "Workspace has been updated",
-      "info": "General information"
+      "info": "General information",
+      "leave": "Leave workspace",
+      "leaveConfirm": "Are you sure you want to leave this workspace?",
+      "leaveSuccess": "You have left the workspace"
     },
 
     "members": {

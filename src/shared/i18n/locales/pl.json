@@ -274,7 +274,10 @@
       "deleteConfirm": "Czy na pewno chcesz usunąć workspace? Ta operacja jest nieodwracalna.",
       "deleteSuccess": "Workspace został usunięty",
       "updateSuccess": "Workspace został zaktualizowany",
-      "info": "Informacje ogólne"
+      "info": "Informacje ogólne",
+      "leave": "Opuść workspace",
+      "leaveConfirm": "Czy na pewno chcesz opuścić ten workspace?",
+      "leaveSuccess": "Opuściłeś workspace"
     },
 
     "members": {

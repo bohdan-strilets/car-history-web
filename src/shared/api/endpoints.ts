@@ -27,6 +27,7 @@ export const ENDPOINTS = {
     DETAIL: (id: string) => `/workspaces/${id}`,
     UPDATE: (id: string) => `/workspaces/${id}`,
     DELETE: (id: string) => `/workspaces/${id}`,
+    LEAVE: (id: string) => `/workspaces/${id}/members/me`,
     MEMBERS: (id: string) => `/workspaces/${id}/members`,
     MEMBER: (id: string, memberId: string) => `/workspaces/${id}/members/${memberId}`,
     INVITES: (id: string) => `/workspaces/${id}/invites`,

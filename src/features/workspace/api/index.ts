@@ -2,6 +2,7 @@ export { useAcceptInviteMutation } from './accept-invite.mutation';
 export { useCreateInviteMutation } from './create-invite.mutation';
 export { useCreateWorkspaceMutation } from './create-workspace.mutation';
 export { useDeleteWorkspaceMutation } from './delete-workspace.mutation';
+export { useLeaveWorkspaceMutation } from './leave-workspace.mutation';
 export { useRejectInviteMutation } from './reject-invite.mutation';
 export { useRemoveMemberMutation } from './remove-member.mutation';
 export { useUpdateMemberRoleMutation } from './update-member-role.mutation';
