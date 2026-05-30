@@ -7,6 +7,7 @@ export {
   DISTANCE_UNIT_CONFIG,
   FUEL_UNIT_CONFIG,
   TIMEZONE_CONFIG,
+  WORKSPACE_MEMBER_ROLE_CONFIG,
   WORKSPACE_ROLE_CONFIG,
   WORKSPACE_TYPE_CONFIG,
 } from './workspace.config';
@@ -16,6 +17,7 @@ export {
   DISTANCE_UNIT,
   FUEL_UNIT,
   WORKSPACE_INVITE_STATUS,
+  WORKSPACE_MEMBER_ROLE,
   WORKSPACE_ROLE,
   WORKSPACE_TYPE,
   type Currency,
@@ -23,6 +25,7 @@ export {
   type DistanceUnit,
   type FuelUnit,
   type WorkspaceInviteStatus,
+  type WorkspaceMemberRole,
   type WorkspaceRole,
   type WorkspaceType,
 } from './workspace.constants';

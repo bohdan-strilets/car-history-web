@@ -3,10 +3,11 @@ import { useQuery } from '@tanstack/react-query';
 
 import { workspaceApi } from './workspace.api';
 
-export const useWorkspacesQuery = () => {
+export const useWorkspacesQuery = (enabled = true) => {
   return useQuery({
     queryKey: queryKeys.workspaces.all(),
     queryFn: () => workspaceApi.getAll(),
+    enabled,
   });
 };
 

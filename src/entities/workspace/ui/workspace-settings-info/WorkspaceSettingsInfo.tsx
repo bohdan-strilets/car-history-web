@@ -44,7 +44,7 @@ export const WorkspaceSettingsInfo = ({
   return (
     <>
       <Stack gap="xl">
-        <Heading size={'xl'}>{t('workspace.settings.title')}</Heading>
+        <Heading size="xl">{t('workspace.detail.info')}</Heading>
         <Panel gap="xs">
           <InfoRow
             label={t('workspace.fields.name.label')}
@@ -55,7 +55,7 @@ export const WorkspaceSettingsInfo = ({
             bottomDivider
           />
           <InfoRow
-            label={t('workspace.detail.vehicles')}
+            label={t('workspace.fields.type')}
             value={typeConfig?.label}
             onClick={onEditWorkspace}
             icon={typeConfig?.icon ?? 'circleQuestionMark'}
@@ -65,7 +65,7 @@ export const WorkspaceSettingsInfo = ({
       </Stack>
 
       <Stack gap="xl">
-        <Heading size={'xl'}>{t('workspace.settings.title')}</Heading>
+        <Heading size="xl">{t('workspace.settings.title')}</Heading>
         <Panel gap="xs">
           <InfoRow
             label={t('workspace.fields.currency')}

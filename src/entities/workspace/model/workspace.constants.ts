@@ -18,6 +18,14 @@ export const WORKSPACE_ROLE = {
 
 export type WorkspaceRole = (typeof WORKSPACE_ROLE)[keyof typeof WORKSPACE_ROLE];
 
+export const WORKSPACE_MEMBER_ROLE = {
+  ADMIN: 'ADMIN',
+  MEMBER: 'MEMBER',
+} as const;
+
+export type WorkspaceMemberRole =
+  (typeof WORKSPACE_MEMBER_ROLE)[keyof typeof WORKSPACE_MEMBER_ROLE];
+
 // Workspace settings, currency
 
 export const CURRENCY = {

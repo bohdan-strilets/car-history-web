@@ -11,6 +11,7 @@ import {
   type DateFormat,
   type DistanceUnit,
   type FuelUnit,
+  type WorkspaceMemberRole,
   type WorkspaceRole,
   type WorkspaceType,
 } from './workspace.constants';
@@ -59,6 +60,21 @@ export const WORKSPACE_ROLE_CONFIG: EntityOption<WorkspaceRole>[] = [
   },
   {
     id: '3',
+    label: `workspace.members.role.${WORKSPACE_ROLE.MEMBER}`,
+    value: WORKSPACE_ROLE.MEMBER,
+    color: 'rose',
+  },
+];
+
+export const WORKSPACE_MEMBER_ROLE_CONFIG: EntityOption<WorkspaceMemberRole>[] = [
+  {
+    id: '1',
+    label: `workspace.members.role.${WORKSPACE_ROLE.ADMIN}`,
+    value: WORKSPACE_ROLE.ADMIN,
+    color: 'blue',
+  },
+  {
+    id: '2',
     label: `workspace.members.role.${WORKSPACE_ROLE.MEMBER}`,
     value: WORKSPACE_ROLE.MEMBER,
     color: 'rose',

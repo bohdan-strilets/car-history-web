@@ -6,7 +6,7 @@ export const MemberRowSkeleton = () => {
       <Stack direction="row" align="center" gap="md">
         <Skeleton width="40px" height="40px" radius="pill" />
 
-        <Stack gap="none">
+        <Stack gap="xs">
           <Stack direction="row" align="center" gap="sm">
             <Skeleton width="120px" height="16px" />
           </Stack>
