@@ -1,25 +1,26 @@
 import { queryKeys } from '@shared/config';
+import { useErrorHandler } from '@shared/lib/form';
 import { showToast } from '@shared/lib/toast';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
-import type { CreateInviteDto } from '../model';
-
 import { workspaceApi } from './workspace.api';
 
-export const useCreateInviteMutation = (workspaceId: string) => {
+export const useCancelInviteMutation = (workspaceId: string) => {
   const queryClient = useQueryClient();
   const { t } = useTranslation();
+  const handleError = useErrorHandler();
 
   return useMutation({
-    mutationFn: (dto: CreateInviteDto) => {
-      return workspaceApi.createInvite(workspaceId, dto);
+    mutationFn: (inviteId: string) => {
+      return workspaceApi.cancelInvite(workspaceId, inviteId);
     },
 
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.workspaces.members(workspaceId) });
       queryClient.invalidateQueries({ queryKey: queryKeys.workspaces.invites(workspaceId) });
-      showToast.success(t('workspace.invite.success'));
+      showToast.success(t('workspace.invite.cancelSuccess'));
     },
+
+    onError: handleError,
   });
 };

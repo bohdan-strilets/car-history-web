@@ -28,4 +28,8 @@ export const workspaceApi = {
   getInvite: (token: string) => {
     return apiClient.get<WorkspaceInvite>(ENDPOINTS.INVITES.DETAIL(token));
   },
+
+  getPendingInvites: (workspaceId: string) => {
+    return apiClient.get<WorkspaceInvite[]>(ENDPOINTS.WORKSPACES.PENDING_INVITES(workspaceId));
+  },
 };

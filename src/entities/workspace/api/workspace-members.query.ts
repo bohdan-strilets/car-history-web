@@ -10,3 +10,11 @@ export const useWorkspaceMembersQuery = (id: string) => {
     enabled: !!id,
   });
 };
+
+export const useWorkspacePendingInvitesQuery = (id: string) => {
+  return useQuery({
+    queryKey: queryKeys.workspaces.invites(id),
+    queryFn: () => workspaceApi.getPendingInvites(id),
+    enabled: !!id,
+  });
+};

@@ -16,7 +16,8 @@
     "active": "Active",
     "retry": "Retry",
     "create": "Create",
-    "you": "you"
+    "you": "you",
+    "pending": "Pending"
   },
 
   "units": {
@@ -294,7 +295,8 @@
       "editRole": "Edit role",
       "removeConfirm": "Are you sure you want to remove this member?",
       "updateRoleSuccess": "Member role has been updated",
-      "removeSuccess": "Member has been removed"
+      "removeSuccess": "Member has been removed",
+      "pendingInvites": "Pending invitations"
     },
 
     "invite": {
@@ -328,7 +330,10 @@
       "success": "Invitation has been sent",
       "acceptSuccess": "You have joined the workspace",
       "redirecting": "Redirecting...",
-      "rejectSuccess": "Invitation has been rejected"
+      "rejectSuccess": "Invitation has been rejected",
+      "cancelSuccess": "Invitation has been canceled",
+      "cancel": "Cancel invitation",
+      "cancelConfirm": "Are you sure you want to cancel this invitation?"
     },
 
     "new": {

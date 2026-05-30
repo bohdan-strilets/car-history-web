@@ -32,6 +32,8 @@ export const ENDPOINTS = {
     MEMBER: (id: string, memberId: string) => `/workspaces/${id}/members/${memberId}`,
     INVITES: (id: string) => `/workspaces/${id}/invites`,
     SETTINGS: (id: string) => `/workspaces/${id}/settings`,
+    PENDING_INVITES: (id: string) => `/workspaces/${id}/invites`,
+    CANCEL_INVITE: (id: string, inviteId: string) => `/workspaces/${id}/invites/${inviteId}`,
   },
 
   INVITES: {

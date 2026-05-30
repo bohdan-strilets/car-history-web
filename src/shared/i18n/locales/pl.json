@@ -16,7 +16,8 @@
     "active": "Aktywny",
     "retry": "Spróbuj ponownie",
     "create": "Utwórz",
-    "you": "ty"
+    "you": "ty",
+    "pending": "Oczekuje"
   },
 
   "units": {
@@ -293,7 +294,8 @@
       "editRole": "Edytuj rolę",
       "removeConfirm": "Czy na pewno chcesz usunąć tego członka?",
       "updateRoleSuccess": "Rola członka została zaktualizowana",
-      "removeSuccess": "Członek został usunięty"
+      "removeSuccess": "Członek został usunięty",
+      "pendingInvites": "Oczekujące zaproszenia"
     },
 
     "invite": {
@@ -327,7 +329,10 @@
       "success": "Zaproszenie zostało wysłane",
       "acceptSuccess": "Dołączyłeś do workspace",
       "redirecting": "Przekierowujemy Cię...",
-      "rejectSuccess": "Zaproszenie zostało odrzucone"
+      "rejectSuccess": "Zaproszenie zostało odrzucone",
+      "cancelSuccess": "Zaproszenie zostało anulowane",
+      "cancel": "Anuluj zaproszenie",
+      "cancelConfirm": "Czy na pewno chcesz anulować to zaproszenie?"
     },
 
     "new": {

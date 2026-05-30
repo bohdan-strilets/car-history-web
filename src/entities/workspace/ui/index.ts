@@ -1,3 +1,4 @@
+export * from './invite-row';
 export * from './member-row';
 export * from './members-list';
 export * from './workspace-card';

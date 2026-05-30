@@ -1,4 +1,5 @@
 export { useAcceptInviteMutation } from './accept-invite.mutation';
+export { useCancelInviteMutation } from './cancel-invite.mutation';
 export { useCreateInviteMutation } from './create-invite.mutation';
 export { useCreateWorkspaceMutation } from './create-workspace.mutation';
 export { useDeleteWorkspaceMutation } from './delete-workspace.mutation';

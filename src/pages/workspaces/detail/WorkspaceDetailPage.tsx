@@ -4,6 +4,7 @@ import {
   canInviteMembers,
   useWorkspace,
   useWorkspaceMembersQuery,
+  useWorkspacePendingInvitesQuery,
   useWorkspaceQuery,
   useWorkspaceSettingsQuery,
   useWorkspacesQuery,
@@ -11,6 +12,7 @@ import {
   WORKSPACE_TABS,
   WorkspaceDetailSkeleton,
   WorkspaceSettingsInfo,
+  type WorkspaceInvite,
   type WorkspaceMember,
 } from '@entities/workspace';
 import { MembersList } from '@entities/workspace/ui/members-list';
@@ -21,6 +23,7 @@ import {
   InviteForm,
 } from '@features/workspace';
 import {
+  useCancelInviteMutation,
   useDeleteWorkspaceMutation,
   useLeaveWorkspaceMutation,
   useRemoveMemberMutation,
@@ -53,17 +56,19 @@ export const WorkspaceDetailPage = () => {
     isError: isWorkspaceError,
   } = useWorkspaceQuery(id ?? '');
   const { data: workspacesListData } = useWorkspacesQuery();
-
   const { data: membersData } = useWorkspaceMembersQuery(id ?? '');
+  const { data: pendingInvitesData } = useWorkspacePendingInvitesQuery(id ?? '');
   const { data: settingsData } = useWorkspaceSettingsQuery(id ?? '');
 
   const { mutate: deleteWorkspace } = useDeleteWorkspaceMutation();
   const { mutate: removeMember } = useRemoveMemberMutation(id ?? '');
   const { mutate: leaveWorkspace } = useLeaveWorkspaceMutation();
+  const { mutate: cancelInvite } = useCancelInviteMutation(id ?? '');
 
   const workspace = workspaceData?.data ?? null;
   const workspaceList = workspacesListData?.data ?? [];
   const members = membersData?.data ?? [];
+  const pendingInvites = pendingInvitesData?.data ?? [];
   const settings = settingsData?.data ?? null;
 
   useEffect(() => {
@@ -183,6 +188,24 @@ export const WorkspaceDetailPage = () => {
     );
   };
 
+  const handleCancelInvite = (invite: WorkspaceInvite) => {
+    confirm(
+      {
+        title: t('workspace.invite.cancel'),
+        description: t('workspace.invite.cancelConfirm'),
+        danger: true,
+      },
+      {
+        onConfirm: (close) => {
+          cancelInvite(invite.id, {
+            onSuccess: () => close(),
+            onError: () => close(),
+          });
+        },
+      },
+    );
+  };
+
   return (
     <Stack gap="2xl">
       <PageHeader
@@ -219,6 +242,7 @@ export const WorkspaceDetailPage = () => {
 
           <MembersList
             members={members}
+            invites={pendingInvites}
             currentUserId={user?.id ?? ''}
             currentUserRole={workspace.role}
             onEdit={(member) =>
@@ -232,6 +256,7 @@ export const WorkspaceDetailPage = () => {
               )
             }
             onRemove={(member) => handleRemoveMember(member)}
+            onCancelInvite={handleCancelInvite}
           />
         </Stack>
       )}

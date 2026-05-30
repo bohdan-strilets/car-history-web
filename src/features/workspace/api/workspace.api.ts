@@ -57,4 +57,8 @@ export const workspaceApi = {
   leave: (workspaceId: string) => {
     return apiClient.delete<void>(ENDPOINTS.WORKSPACES.LEAVE(workspaceId));
   },
+
+  cancelInvite: (workspaceId: string, inviteId: string) => {
+    return apiClient.delete<void>(ENDPOINTS.WORKSPACES.CANCEL_INVITE(workspaceId, inviteId));
+  },
 };
