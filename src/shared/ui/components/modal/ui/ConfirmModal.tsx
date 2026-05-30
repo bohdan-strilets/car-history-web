@@ -19,9 +19,11 @@ export const ConfirmModal = ({
       {description && <Text color="secondary">{description}</Text>}
 
       <Stack direction="row" justify="end" gap="sm">
-        <Button variant="ghost" onClick={onCancel} color="gray">
-          {cancelLabel ?? t('common.cancel')}
-        </Button>
+        {!isLoading && onCancel && (
+          <Button variant="ghost" onClick={onCancel} color="gray">
+            {cancelLabel ?? t('common.cancel')}
+          </Button>
+        )}
         <Button
           variant="solid"
           color={danger ? 'danger' : 'gray'}

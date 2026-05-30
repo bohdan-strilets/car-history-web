@@ -71,5 +71,5 @@ export interface BaseBottomSheetProps {
 
 export interface ConfirmModalProps extends ConfirmOptions {
   onConfirm: () => void;
-  onCancel: () => void;
+  onCancel?: () => void;
 }
