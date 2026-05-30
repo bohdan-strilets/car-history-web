@@ -131,6 +131,7 @@ export const baseTheme = {
     contentWidth: {
       form: '500px',
       page: '580px',
+      modal: '680px',
     },
   },
 } as const;

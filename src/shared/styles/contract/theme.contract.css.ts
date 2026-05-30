@@ -345,6 +345,7 @@ export const vars = createThemeContract({
     contentWidth: {
       form: null,
       page: null,
+      modal: null,
     },
   },
 });
