@@ -3,6 +3,7 @@ import { Toaster } from 'sonner';
 
 export const ToastProvider = () => {
   const { resolvedTheme } = useTheme();
+  const theme = resolvedTheme.toLowerCase() as 'light' | 'dark';
 
   return (
     <Toaster
@@ -10,7 +11,7 @@ export const ToastProvider = () => {
       richColors
       closeButton
       duration={4000}
-      theme={resolvedTheme}
+      theme={theme}
       expand={false}
       visibleToasts={3}
     />
