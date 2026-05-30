@@ -1,3 +1,4 @@
+import { useVehiclesQuery, VehiclesList } from '@entities/vehicle';
 import {
   canDeleteWorkspace,
   canEditWorkspace,
@@ -59,6 +60,7 @@ export const WorkspaceDetailPage = () => {
   const { data: membersData } = useWorkspaceMembersQuery(id ?? '');
   const { data: pendingInvitesData } = useWorkspacePendingInvitesQuery(id ?? '');
   const { data: settingsData } = useWorkspaceSettingsQuery(id ?? '');
+  const { data: vehiclesData } = useVehiclesQuery(id ?? '');
 
   const { mutate: deleteWorkspace } = useDeleteWorkspaceMutation();
   const { mutate: removeMember } = useRemoveMemberMutation(id ?? '');
@@ -70,6 +72,7 @@ export const WorkspaceDetailPage = () => {
   const members = membersData?.data ?? [];
   const pendingInvites = pendingInvitesData?.data ?? [];
   const settings = settingsData?.data ?? null;
+  const vehicles = vehiclesData?.data ?? [];
 
   useEffect(() => {
     if (!workspace) return;
@@ -217,7 +220,12 @@ export const WorkspaceDetailPage = () => {
 
       <Tabs tabs={tabs} activeTab={activeTab} onChange={setTab} />
 
-      {activeTab === 'vehicles' && <div>{t('workspace.detail.vehicles')}</div>}
+      {activeTab === 'vehicles' && (
+        <VehiclesList
+          vehicles={vehicles}
+          onSelect={(vehicle) => navigate(ROUTES.WORKSPACES.VEHICLES.DETAIL(id ?? '', vehicle.id))}
+        />
+      )}
 
       {activeTab === 'members' && (
         <Stack gap="xl">

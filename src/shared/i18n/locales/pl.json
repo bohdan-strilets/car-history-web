@@ -445,6 +445,40 @@
       "YELLOW": "Żółty",
       "PURPLE": "Fioletowy",
       "OTHER": "Inny"
+    },
+
+    "list": {
+      "title": "Pojazdy",
+      "add": "Dodaj pojazd",
+      "empty": {
+        "title": "Brak pojazdów",
+        "description": "Dodaj swój pierwszy pojazd do tego workspace'u."
+      }
+    },
+
+    "new": {
+      "title": "Nowy pojazd"
+    },
+
+    "detail": {
+      "tabs": {
+        "overview": "Przegląd",
+        "timeline": "Historia",
+        "reminders": "Przypomnienia",
+        "maintenance": "Serwis",
+        "stats": "Statystyki",
+        "gallery": "Galeria",
+        "tires": "Opony"
+      },
+      "delete": "Usuń pojazd",
+      "deleteConfirm": "Czy na pewno chcesz usunąć ten pojazd?",
+      "deleteSuccess": "Pojazd został usunięty",
+      "edit": "Edytuj pojazd"
+    },
+
+    "error": {
+      "title": "Błąd",
+      "description": "Nie udało się załadować pojazdów."
     }
   },
 

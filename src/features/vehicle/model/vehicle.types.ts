@@ -24,11 +24,19 @@ export interface CreateVehicleDto {
   countryOfOrigin?: string;
 }
 
+export type UpdateVehicleDto = Partial<CreateVehicleDto>;
+
 // Params
 
 export interface CreateVehicleParams {
   workspaceId: string;
   dto: CreateVehicleDto;
+}
+
+export interface UpdateVehicleParams {
+  id: string;
+  workspaceId: string;
+  dto: UpdateVehicleDto;
 }
 
 export interface VehicleFormParams {

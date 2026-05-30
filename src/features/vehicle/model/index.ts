@@ -18,6 +18,9 @@ export {
 export type {
   CreateVehicleDto,
   CreateVehicleParams,
+  UpdateVehicleDto,
+  UpdateVehicleParams,
+  VehicleFormParams,
   VehicleFormProps,
   VehicleStepProps,
 } from './vehicle.types';
