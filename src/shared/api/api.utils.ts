@@ -19,3 +19,8 @@ export const parseApiError = (data: ApiError | ApiValidationError): HttpError =>
 
   return new HttpError(data.statusCode, data.errorCode, data.details);
 };
+
+export const getErrorCode = (error: unknown): string => {
+  if (isHttpError(error)) return error.errorCode;
+  return ERROR_CODES.General.UNKNOWN_ERROR;
+};

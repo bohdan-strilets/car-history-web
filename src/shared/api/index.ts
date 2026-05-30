@@ -7,7 +7,7 @@ export type {
   ApiResponse,
   ApiValidationError,
 } from './api.types';
-export { isHttpError, isValidationError, parseApiError } from './api.utils';
+export { getErrorCode, isHttpError, isValidationError, parseApiError } from './api.utils';
 export { axiosInstance } from './axios-instance';
 export { ENDPOINTS } from './endpoints';
 export { setupRequestInterceptor, setupResponseInterceptor } from './interceptors';
