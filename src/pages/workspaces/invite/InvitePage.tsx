@@ -1,11 +1,10 @@
 import { useInviteQuery } from '@entities/workspace';
 import {
+  useWorkspace,
   WORKSPACE_INVITE_STATUS,
   WORKSPACE_TYPE_CONFIG,
-  type Workspace,
 } from '@entities/workspace/model';
 import { useAcceptInviteMutation, useRejectInviteMutation } from '@features/workspace';
-import type { ApiResponse } from '@shared/api';
 import { ROUTES } from '@shared/config';
 import type { TokenParams } from '@shared/types';
 import { Button, Center, Heading, IconBox, Panel, Spinner, Stack, Text } from '@shared/ui';
@@ -16,8 +15,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 export const InvitePage = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const { token } = useParams<TokenParams>();
+  const { setActiveWorkspace, setActiveWorkspaceId } = useWorkspace();
+  const navigate = useNavigate();
 
   const { data, isPending, isError } = useInviteQuery(token ?? '');
   const { mutate: accept, isPending: isAccepting } = useAcceptInviteMutation();
@@ -82,11 +82,13 @@ export const InvitePage = () => {
   const handleAccept = () => {
     if (!token) return;
 
-    const onSuccess = (response: ApiResponse<Workspace>) => {
-      navigate(ROUTES.WORKSPACES.DETAIL(response.data.id));
-    };
-
-    accept(token, { onSuccess });
+    accept(token, {
+      onSuccess: (response) => {
+        setActiveWorkspaceId(response.data.id);
+        setActiveWorkspace(response.data);
+        navigate(ROUTES.WORKSPACES.DETAIL(response.data.id));
+      },
+    });
   };
 
   const handleReject = () => {
