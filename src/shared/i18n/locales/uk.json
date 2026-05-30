@@ -229,7 +229,8 @@
       "distanceUnit": "Одиниця відстані",
       "fuelUnit": "Одиниця палива",
       "dateFormat": "Формат дати",
-      "timezonePlaceholder": "Виберіть часовий пояс"
+      "timezonePlaceholder": "Виберіть часовий пояс",
+      "type": "Тип workspace"
     },
 
     "currency": {
@@ -272,7 +273,10 @@
       "members": "Учасники",
       "settings": "Налаштування",
       "delete": "Видалити workspace",
-      "deleteConfirm": "Ви впевнені, що хочете видалити цей workspace? Ця дія незворотна."
+      "deleteConfirm": "Ви впевнені, що хочете видалити цей workspace? Ця дія незворотна.",
+      "deleteSuccess": "Workspace було видалено",
+      "updateSuccess": "Workspace було оновлено",
+      "info": "Загальна інформація"
     },
 
     "members": {
@@ -286,7 +290,9 @@
       },
       "remove": "Видалити учасника",
       "editRole": "Редагувати роль",
-      "removeConfirm": "Ви впевнені, що хочете видалити цього учасника?"
+      "removeConfirm": "Ви впевнені, що хочете видалити цього учасника?",
+      "updateRoleSuccess": "Роль учасника була оновлена",
+      "removeSuccess": "Учасник був видалений"
     },
 
     "invite": {
@@ -316,22 +322,33 @@
         "title": "Запрошення не знайдено",
         "description": "Посилання недійсне або закінчилось.",
         "action": "Перейти до workspace'ів"
-      }
+      },
+      "success": "Запрошення було надіслано",
+      "acceptSuccess": "Ви приєдналися до workspace",
+      "rejectSuccess": "Запрошення було відхилено"
     },
 
     "new": {
       "title": "Новий workspace",
-      "submit": "Створити workspace"
+      "submit": "Створити workspace",
+      "success": "Workspace було створено"
     },
 
     "settings": {
       "title": "Налаштування workspace",
       "save": "Зберегти налаштування",
       "danger": {
-        "title": "Небезпечна зона",
+        "title": "Керування workspace",
         "delete": "Видалити workspace"
       },
-      "noPermissions": "Тільки власник може керувати налаштуваннями workspace."
+      "noPermissions": "Тільки власник може керувати налаштуваннями workspace.",
+      "updateSuccess": "Налаштування workspace було збережено"
+    },
+
+    "notFound": {
+      "title": "Workspace не знайдено",
+      "description": "Workspace не існує або у вас немає доступу до нього.",
+      "action": "Повернутися до workspace'ів"
     }
   },
 

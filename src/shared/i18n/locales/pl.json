@@ -229,7 +229,8 @@
       "distanceUnit": "Jednostka odległości",
       "fuelUnit": "Jednostka paliwa",
       "dateFormat": "Format daty",
-      "timezonePlaceholder": "Wybierz strefę czasową"
+      "timezonePlaceholder": "Wybierz strefę czasową",
+      "type": "Typ workspace"
     },
 
     "currency": {
@@ -270,7 +271,10 @@
       "members": "Członkowie",
       "settings": "Ustawienia",
       "delete": "Usuń workspace",
-      "deleteConfirm": "Czy na pewno chcesz usunąć workspace? Ta operacja jest nieodwracalna."
+      "deleteConfirm": "Czy na pewno chcesz usunąć workspace? Ta operacja jest nieodwracalna.",
+      "deleteSuccess": "Workspace został usunięty",
+      "updateSuccess": "Workspace został zaktualizowany",
+      "info": "Informacje ogólne"
     },
 
     "members": {
@@ -284,7 +288,9 @@
       },
       "remove": "Usuń członka",
       "editRole": "Edytuj rolę",
-      "removeConfirm": "Czy na pewno chcesz usunąć tego członka?"
+      "removeConfirm": "Czy na pewno chcesz usunąć tego członka?",
+      "updateRoleSuccess": "Rola członka została zaktualizowana",
+      "removeSuccess": "Członek został usunięty"
     },
 
     "invite": {
@@ -314,22 +320,33 @@
         "title": "Zaproszenie nie zostało znalezione",
         "description": "Link jest nieprawidłowy lub wygasł.",
         "action": "Przejdź do workspace'ów"
-      }
+      },
+      "success": "Zaproszenie zostało wysłane",
+      "acceptSuccess": "Dołączyłeś do workspace",
+      "rejectSuccess": "Zaproszenie zostało odrzucone"
     },
 
     "new": {
       "title": "Nowy workspace",
-      "submit": "Utwórz workspace"
+      "submit": "Utwórz workspace",
+      "success": "Workspace został utworzony"
     },
 
     "settings": {
       "title": "Ustawienia workspace",
       "save": "Zapisz ustawienia",
       "danger": {
-        "title": "Strefa niebezpieczna",
+        "title": "Zarządzanie workspace",
         "delete": "Usuń workspace"
       },
-      "noPermissions": "Tylko właściciel może zarządzać ustawieniami workspace."
+      "noPermissions": "Tylko właściciel może zarządzać ustawieniami workspace.",
+      "updateSuccess": "Ustawienia workspace zostały zapisane"
+    },
+
+    "notFound": {
+      "title": "Workspace nie został znaleziony",
+      "description": "Workspace nie istnieje lub nie masz do niego dostępu.",
+      "action": "Wróć do workspace'ów"
     }
   },
 

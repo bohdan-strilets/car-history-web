@@ -230,7 +230,8 @@
       "distanceUnit": "Distance unit",
       "fuelUnit": "Fuel unit",
       "dateFormat": "Date format",
-      "timezonePlaceholder": "Select time zone"
+      "timezonePlaceholder": "Select time zone",
+      "type": "Workspace type"
     },
 
     "currency": {
@@ -271,7 +272,10 @@
       "members": "Members",
       "settings": "Settings",
       "delete": "Delete workspace",
-      "deleteConfirm": "Are you sure you want to delete this workspace? This action is irreversible."
+      "deleteConfirm": "Are you sure you want to delete this workspace? This action is irreversible.",
+      "deleteSuccess": "Workspace has been deleted",
+      "updateSuccess": "Workspace has been updated",
+      "info": "General information"
     },
 
     "members": {
@@ -285,7 +289,9 @@
       },
       "remove": "Remove member",
       "editRole": "Edit role",
-      "removeConfirm": "Are you sure you want to remove this member?"
+      "removeConfirm": "Are you sure you want to remove this member?",
+      "updateRoleSuccess": "Member role has been updated",
+      "removeSuccess": "Member has been removed"
     },
 
     "invite": {
@@ -315,22 +321,33 @@
         "title": "Invitation not found",
         "description": "Link is invalid or has expired.",
         "action": "Go to workspaces"
-      }
+      },
+      "success": "Invitation has been sent",
+      "acceptSuccess": "You have joined the workspace",
+      "rejectSuccess": "Invitation has been rejected"
     },
 
     "new": {
       "title": "New workspace",
-      "submit": "Create workspace"
+      "submit": "Create workspace",
+      "success": "Workspace has been created"
     },
 
     "settings": {
       "title": "Workspace settings",
       "save": "Save settings",
       "danger": {
-        "title": "Danger zone",
+        "title": "Manage workspace",
         "delete": "Delete workspace"
       },
-      "noPermissions": "Only the owner can manage workspace settings."
+      "noPermissions": "Only the owner can manage workspace settings.",
+      "updateSuccess": "Workspace settings have been saved"
+    },
+
+    "notFound": {
+      "title": "Workspace not found",
+      "description": "The workspace does not exist or you do not have access to it.",
+      "action": "Return to workspaces"
     }
   },
 
