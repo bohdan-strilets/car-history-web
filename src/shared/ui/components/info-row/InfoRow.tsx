@@ -29,6 +29,7 @@ export const InfoRow = ({
         gap="md"
         onClick={onClick}
         hoverable={isClickable}
+        p={{ mobile: 'md', tablet: 'xl' }}
       >
         <Stack direction="row" align="center" gap="md">
           {hasIcon && (
@@ -40,7 +41,7 @@ export const InfoRow = ({
             />
           )}
           <Stack direction="column" align="start" gap="none">
-            <Text color="secondary" weight="semibold">
+            <Text color="secondary" weight="semibold" size={{ mobile: 'sm', tablet: 'md' }}>
               {label}
             </Text>
             {hasDescription && (
@@ -51,8 +52,10 @@ export const InfoRow = ({
           </Stack>
         </Stack>
 
-        <Stack direction="row" align="center" gap="xs">
-          <Text>{value ?? '—'}</Text>
+        <Stack direction="row" align="center" gap="xs" style={{ maxWidth: '40%' }}>
+          <Text size={{ mobile: 'sm', tablet: 'md' }} truncate>
+            {value ?? '—'}
+          </Text>
           {isClickable && <Icon name="chevronRight" strokeWidth="medium" />}
         </Stack>
       </Panel>

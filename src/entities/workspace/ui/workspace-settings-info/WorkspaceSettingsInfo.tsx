@@ -45,7 +45,7 @@ export const WorkspaceSettingsInfo = ({
     <>
       <Stack gap="xl">
         <Heading size="xl">{t('workspace.detail.info')}</Heading>
-        <Panel gap="xs">
+        <Panel gap="xs" p={{ mobile: 'sm', tablet: 'xl' }}>
           <InfoRow
             label={t('workspace.fields.name.label')}
             value={workspace.name}
@@ -66,7 +66,7 @@ export const WorkspaceSettingsInfo = ({
 
       <Stack gap="xl">
         <Heading size="xl">{t('workspace.settings.title')}</Heading>
-        <Panel gap="xs">
+        <Panel gap="xs" p={{ mobile: 'sm', tablet: 'xl' }}>
           <InfoRow
             label={t('workspace.fields.currency')}
             value={currencyConfig?.label}
