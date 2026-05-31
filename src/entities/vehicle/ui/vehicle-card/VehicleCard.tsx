@@ -4,7 +4,8 @@ import {
   FuelLabels,
   TRANSMISSION_CONFIG,
 } from '@entities/vehicle';
-import { Badge, Box, Icon, Panel, Stack, Surface, Text } from '@shared/ui';
+import { useAuth } from '@shared/store/auth';
+import { Avatar, Badge, Box, Icon, Panel, Stack, Surface, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 
@@ -12,6 +13,9 @@ import type { VehicleCardProps } from './vehicle-card.types';
 
 export const VehicleCard = ({ vehicle, onClick }: VehicleCardProps) => {
   const { t } = useTranslation();
+
+  const { user } = useAuth();
+  const currentUserId = user?.id;
 
   const bodyType = getConfigOption(t, BODY_TYPE_CONFIG, vehicle.bodyType);
   const driveType = getConfigOption(t, DRIVE_TYPE_CONFIG, vehicle.driveType);
@@ -21,6 +25,7 @@ export const VehicleCard = ({ vehicle, onClick }: VehicleCardProps) => {
 
   const isGeneration = Boolean(vehicle.generation);
   const isNickname = Boolean(vehicle.nickname);
+  const isOwnedByOther = currentUserId && vehicle.ownerId !== currentUserId;
   const mileageFormatted = vehicle.currentMileage.toLocaleString();
 
   return (
@@ -51,6 +56,20 @@ export const VehicleCard = ({ vehicle, onClick }: VehicleCardProps) => {
               </Text>
             )}
           </Stack>
+
+          {isOwnedByOther && (
+            <Panel variant="glass" direction="row" align="center" gap="xs" p="sm">
+              <Avatar
+                avatarUrl={vehicle.owner.avatarUrl}
+                firstName={vehicle.owner.firstName}
+                lastName={vehicle.owner.lastName}
+                size="sm"
+              />
+              <Text color="onColor" size="xs">
+                {vehicle.owner.firstName} {vehicle.owner.lastName}
+              </Text>
+            </Panel>
+          )}
         </Box>
       </Surface>
 

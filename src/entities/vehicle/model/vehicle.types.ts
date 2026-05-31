@@ -8,6 +8,13 @@ import type {
 
 // Vehicle entity
 
+export interface VehicleOwner {
+  id: string;
+  firstName: string;
+  lastName: string;
+  avatarUrl: string | null;
+}
+
 export interface Vehicle {
   id: string;
   ownerId: string;
@@ -29,6 +36,7 @@ export interface Vehicle {
   description: string | null;
   countryOfOrigin: string | null;
   status: VehicleStatus;
+  owner: VehicleOwner;
   createdAt: Date;
 }
 
