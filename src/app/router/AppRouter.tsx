@@ -9,6 +9,7 @@ import {
 } from '@pages/auth';
 import { DashboardPage } from '@pages/dashboard';
 import { OnboardingPage } from '@pages/onboarding';
+import { NewVehiclePage } from '@pages/vehicles/new';
 import { WorkspaceDetailPage } from '@pages/workspaces/detail';
 import { InvitePage } from '@pages/workspaces/invite';
 import { WorkspacesPage } from '@pages/workspaces/list';
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
           { path: ROUTES.WORKSPACES.NEW, element: <NewWorkspacePage /> },
           { path: ROUTES.WORKSPACES.DETAIL(':id'), element: <WorkspaceDetailPage /> },
           { path: ROUTES.INVITE(':token'), element: <InvitePage /> },
+          { path: ROUTES.WORKSPACES.VEHICLES.NEW(':workspaceId'), element: <NewVehiclePage /> },
+          {
+            path: ROUTES.WORKSPACES.VEHICLES.DETAIL(':workspaceId', ':vehicleId'),
+            element: <div>Vehicle Detail</div>,
+          },
           { path: ROUTES.SERVICE_STATIONS.ROOT, element: <div>Service Stations</div> },
           { path: ROUTES.AI.ROOT, element: <div>AI</div> },
           { path: ROUTES.PROFILE.ROOT, element: <div>Profile</div> },

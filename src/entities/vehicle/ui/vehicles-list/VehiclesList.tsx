@@ -1,12 +1,8 @@
 import { Grid } from '@shared/ui';
 
-import type { Vehicle } from '../../model/vehicle.types';
 import { VehicleCard } from '../vehicle-card';
 
-interface VehiclesListProps {
-  vehicles: Vehicle[];
-  onSelect?: (vehicle: Vehicle) => void;
-}
+import type { VehiclesListProps } from './vehicles-list.types';
 
 export const VehiclesList = ({ vehicles, onSelect }: VehiclesListProps) => {
   return (

@@ -283,6 +283,10 @@
       "leaveSuccess": "Ви покинули workspace"
     },
 
+    "vehicles": {
+      "title": "Транспортні засоби"
+    },
+
     "members": {
       "title": "Учасники",
       "invite": "Запросити",
@@ -421,9 +425,9 @@
     },
 
     "driveType": {
-      "FWD": "Передній (FWD)",
-      "RWD": "Задній (RWD)",
-      "AWD": "Повний привід (4x4)"
+      "FWD": "FWD",
+      "RWD": "RWD",
+      "AWD": "AWD"
     },
 
     "colors": {

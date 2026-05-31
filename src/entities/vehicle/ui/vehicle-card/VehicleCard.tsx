@@ -1,40 +1,120 @@
-import { type Vehicle } from '@entities/vehicle';
-import { Badge, Stack, Surface, Text } from '@shared/ui';
+import {
+  BODY_TYPE_CONFIG,
+  DRIVE_TYPE_CONFIG,
+  FuelLabels,
+  TRANSMISSION_CONFIG,
+} from '@entities/vehicle';
+import { Badge, Box, Icon, Panel, Stack, Surface, Text } from '@shared/ui';
+import { getConfigOption } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 
-interface VehicleCardProps {
-  vehicle: Vehicle;
-  onClick?: () => void;
-}
+import type { VehicleCardProps } from './vehicle-card.types';
 
 export const VehicleCard = ({ vehicle, onClick }: VehicleCardProps) => {
   const { t } = useTranslation();
 
+  const bodyType = getConfigOption(t, BODY_TYPE_CONFIG, vehicle.bodyType);
+  const driveType = getConfigOption(t, DRIVE_TYPE_CONFIG, vehicle.driveType);
+  const transmission = getConfigOption(t, TRANSMISSION_CONFIG, vehicle.transmission);
+
+  const vehicleName = `${vehicle.brand} ${vehicle.model}`;
+
+  const isGeneration = Boolean(vehicle.generation);
+  const isNickname = Boolean(vehicle.nickname);
+  const mileageFormatted = vehicle.currentMileage.toLocaleString();
+
   return (
-    <Surface onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
-      <Stack gap="sm">
-        <Stack direction="row" justify="between" align="center">
-          <Stack gap="xs">
-            <Text weight="semibold" size="lg">
-              {vehicle.brand} {vehicle.model}
+    <Panel p="none" onClick={onClick} hoverable>
+      <Surface gradient="accentSolid" radius="md">
+        <Box p="lg">
+          <Stack align="end">
+            <Badge gradient="gray">{vehicle.year}</Badge>
+          </Stack>
+
+          <Stack
+            direction="column"
+            align="start"
+            justify="end"
+            gap="xs"
+            style={{ height: '165px' }}
+          >
+            <Text size="3xl" weight="extraBold" color="onColor">
+              {vehicleName}
             </Text>
-            <Text size="sm" color="tertiary">
-              {vehicle.year} · {vehicle.plateNumber}
+            <Text color="onColor" size="sm">
+              {isGeneration && `${vehicle.generation} · `}
+              {mileageFormatted} km
+            </Text>
+            {isNickname && (
+              <Text color="onColor" size="xs" style={{ opacity: 0.7 }}>
+                {vehicle.nickname}
+              </Text>
+            )}
+          </Stack>
+        </Box>
+      </Surface>
+
+      <Box p="lg">
+        <Stack gap="xl">
+          <Stack direction="row" align="center" justify="between">
+            <FuelLabels fuels={vehicle.fuelType} />
+            <Text weight="bold" transform="uppercase">
+              {vehicle.plateNumber}
             </Text>
           </Stack>
-          {vehicle.nickname && <Badge>{vehicle.nickname}</Badge>}
+
+          <Stack direction={{ mobile: 'column', tablet: 'row' }} gap="sm">
+            <Panel
+              width="full"
+              direction="row"
+              align="center"
+              justify="center"
+              gap={{ mobile: 'xs', laptop: 'sm' }}
+              variant="neuInsetSm"
+              p={{ mobile: 'sm', tablet: 'lg' }}
+            >
+              <Icon
+                name={bodyType?.icon ?? 'circleQuestionMark'}
+                size="sm"
+                color={bodyType?.color}
+              />
+              <Text size="sm">{bodyType?.label}</Text>
+            </Panel>
+            <Panel
+              width="full"
+              direction="row"
+              align="center"
+              justify="center"
+              gap={{ mobile: 'xs', laptop: 'sm' }}
+              variant="neuInsetSm"
+              p={{ mobile: 'sm', tablet: 'lg' }}
+            >
+              <Icon
+                name={transmission?.icon ?? 'circleQuestionMark'}
+                size="sm"
+                color={transmission?.color}
+              />
+              <Text size="sm">{transmission?.label}</Text>
+            </Panel>
+            <Panel
+              width="full"
+              direction="row"
+              align="center"
+              justify="center"
+              gap={{ mobile: 'xs', laptop: 'sm' }}
+              variant="neuInsetSm"
+              p={{ mobile: 'sm', tablet: 'lg' }}
+            >
+              <Icon
+                name={driveType?.icon ?? 'circleQuestionMark'}
+                size="sm"
+                color={driveType?.color}
+              />
+              <Text size="sm">{driveType?.label}</Text>
+            </Panel>
+          </Stack>
         </Stack>
-        <Stack direction="row" gap="sm">
-          {vehicle.fuelType.map((ft) => (
-            <Badge key={ft} soft="accent">
-              {t(`vehicle.fuelType.${ft}`)}
-            </Badge>
-          ))}
-          <Text size="sm" color="tertiary">
-            {vehicle.currentMileage.toLocaleString()} km
-          </Text>
-        </Stack>
-      </Stack>
-    </Surface>
+      </Box>
+    </Panel>
   );
 };

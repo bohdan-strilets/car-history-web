@@ -281,6 +281,10 @@
       "leaveSuccess": "Opuściłeś workspace"
     },
 
+    "vehicles": {
+      "title": "Pojazdy"
+    },
+
     "members": {
       "title": "Członkowie",
       "invite": "Zaproś",
@@ -419,9 +423,9 @@
     },
 
     "driveType": {
-      "FWD": "Przedni (FWD)",
-      "RWD": "Tylny (RWD)",
-      "AWD": "Napęd 4x4"
+      "FWD": "FWD",
+      "RWD": "RWD",
+      "AWD": "AWD"
     },
 
     "colors": {

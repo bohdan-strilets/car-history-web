@@ -282,6 +282,10 @@
       "leaveSuccess": "You have left the workspace"
     },
 
+    "vehicles": {
+      "title": "Vehicles"
+    },
+
     "members": {
       "title": "Members",
       "invite": "Invite",
@@ -420,9 +424,9 @@
     },
 
     "driveType": {
-      "FWD": "Front (FWD)",
-      "RWD": "Rear (RWD)",
-      "AWD": "All-wheel drive (4x4)"
+      "FWD": "FWD",
+      "RWD": "RWD",
+      "AWD": "AWD"
     },
 
     "colors": {

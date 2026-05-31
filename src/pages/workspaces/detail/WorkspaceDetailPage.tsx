@@ -1,4 +1,4 @@
-import { useVehiclesQuery, VehiclesList } from '@entities/vehicle';
+import { useVehiclesQuery, VehiclesList, VehiclesListSkeleton } from '@entities/vehicle';
 import {
   canDeleteWorkspace,
   canEditWorkspace,
@@ -60,7 +60,7 @@ export const WorkspaceDetailPage = () => {
   const { data: membersData } = useWorkspaceMembersQuery(id ?? '');
   const { data: pendingInvitesData } = useWorkspacePendingInvitesQuery(id ?? '');
   const { data: settingsData } = useWorkspaceSettingsQuery(id ?? '');
-  const { data: vehiclesData } = useVehiclesQuery(id ?? '');
+  const { data: vehiclesData, isPending: isVehiclesPending } = useVehiclesQuery(id ?? '');
 
   const { mutate: deleteWorkspace } = useDeleteWorkspaceMutation();
   const { mutate: removeMember } = useRemoveMemberMutation(id ?? '');
@@ -73,6 +73,8 @@ export const WorkspaceDetailPage = () => {
   const pendingInvites = pendingInvitesData?.data ?? [];
   const settings = settingsData?.data ?? null;
   const vehicles = vehiclesData?.data ?? [];
+
+  const isEmptyVehicles = !isVehiclesPending && vehicles.length === 0;
 
   useEffect(() => {
     if (!workspace) return;
@@ -221,10 +223,40 @@ export const WorkspaceDetailPage = () => {
       <Tabs tabs={tabs} activeTab={activeTab} onChange={setTab} />
 
       {activeTab === 'vehicles' && (
-        <VehiclesList
-          vehicles={vehicles}
-          onSelect={(vehicle) => navigate(ROUTES.WORKSPACES.VEHICLES.DETAIL(id ?? '', vehicle.id))}
-        />
+        <Stack gap="xl">
+          <Stack direction="row" justify="between" align="center">
+            <Text weight="semibold" size="lg">
+              {t('workspace.vehicles.title')}
+            </Text>
+            <Button
+              leftIcon="plus"
+              onClick={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(id ?? ''))}
+            >
+              {t('vehicle.list.add')}
+            </Button>
+          </Stack>
+
+          {isVehiclesPending && <VehiclesListSkeleton />}
+
+          {isEmptyVehicles && (
+            <StateView
+              icon="car"
+              title={t('vehicle.list.empty.title')}
+              description={t('vehicle.list.empty.description')}
+              actionLabel={t('vehicle.list.add')}
+              onAction={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(id ?? ''))}
+            />
+          )}
+
+          {!isVehiclesPending && !isEmptyVehicles && (
+            <VehiclesList
+              vehicles={vehicles}
+              onSelect={(vehicle) =>
+                navigate(ROUTES.WORKSPACES.VEHICLES.DETAIL(id ?? '', vehicle.id))
+              }
+            />
+          )}
+        </Stack>
       )}
 
       {activeTab === 'members' && (
