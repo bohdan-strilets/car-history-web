@@ -15,10 +15,10 @@ export const useVehiclesQuery = (workspaceId: string) => {
 
 // Get a single vehicle by ID
 
-export const useVehicleQuery = (id: string) => {
+export const useVehicleQuery = (workspaceId: string, vehicleId: string) => {
   return useQuery({
-    queryKey: queryKeys.vehicles.detail(id),
-    queryFn: () => vehicleApi.getById(id),
-    enabled: !!id,
+    queryKey: queryKeys.vehicles.detail(vehicleId),
+    queryFn: () => vehicleApi.getById(workspaceId, vehicleId),
+    enabled: !!workspaceId && !!vehicleId,
   });
 };

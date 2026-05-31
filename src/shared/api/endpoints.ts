@@ -45,15 +45,19 @@ export const ENDPOINTS = {
   VEHICLES: {
     LIST: (workspaceId: string) => `/workspaces/${workspaceId}/vehicles`,
     CREATE: (workspaceId: string) => `/workspaces/${workspaceId}/vehicles`,
-    DETAIL: (id: string) => `/vehicles/${id}`,
-    UPDATE: (id: string) => `/vehicles/${id}`,
-    DELETE: (id: string) => `/vehicles/${id}`,
-    STATS: (id: string) => `/vehicles/${id}/stats`,
-    GALLERY: (id: string) => `/vehicles/${id}/gallery`,
-    TIMELINE: (id: string) => `/vehicles/${id}/timeline`,
-    REMINDERS: (id: string) => `/vehicles/${id}/reminders`,
-    MAINTENANCE: (id: string) => `/vehicles/${id}/maintenance`,
-    TIRES: (id: string) => `/vehicles/${id}/tires`,
+    DETAIL: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}`,
+    UPDATE: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}`,
+    DELETE: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}`,
+    STATS: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}/stats`,
+    GALLERY: (workspaceId: string, id: string) =>
+      `/workspaces/${workspaceId}/vehicles/${id}/gallery`,
+    TIMELINE: (workspaceId: string, id: string) =>
+      `/workspaces/${workspaceId}/vehicles/${id}/timeline`,
+    REMINDERS: (workspaceId: string, id: string) =>
+      `/workspaces/${workspaceId}/vehicles/${id}/reminders`,
+    MAINTENANCE: (workspaceId: string, id: string) =>
+      `/workspaces/${workspaceId}/vehicles/${id}/maintenance`,
+    TIRES: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}/tires`,
   },
 
   TIMELINE: {

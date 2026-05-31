@@ -29,6 +29,7 @@ import {
   CalendarX,
   Camera,
   Car,
+  CarFront,
   // Status & Feedback
   Check,
   CheckCircle,
@@ -255,6 +256,7 @@ export const Icons = {
   barChart: BarChart2,
   trendingUp: TrendingUp,
   trendingDown: TrendingDown,
+  carFront: CarFront,
 
   // Documents & Files
   fileText: FileText,

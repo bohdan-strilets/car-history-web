@@ -1,5 +1,7 @@
 export { useActiveVehicle } from './use-active-vehicle';
 export { useVehicle } from './use-vehicle';
+export { useVehicleTab } from './use-vehicle-tab';
+export { DEFAULT_VEHICLE_TAB, VEHICLE_TABS, type VehicleTab } from './vehicle-tabs.config';
 export {
   BODY_TYPE_CONFIG,
   DRIVE_TYPE_CONFIG,
