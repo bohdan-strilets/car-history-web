@@ -2,7 +2,6 @@ import { useVehiclesQuery, VehiclesList, VehiclesListSkeleton } from '@entities/
 import {
   canDeleteWorkspace,
   canEditWorkspace,
-  canInviteMembers,
   useWorkspace,
   useWorkspaceMembersQuery,
   useWorkspacePendingInvitesQuery,
@@ -224,17 +223,12 @@ export const WorkspaceDetailPage = () => {
 
       {activeTab === 'vehicles' && (
         <Stack gap="xl">
-          <Stack direction="row" justify="between" align="center">
-            <Text weight="semibold" size="lg">
-              {t('workspace.vehicles.title')}
-            </Text>
-            <Button
-              leftIcon="plus"
-              onClick={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(id ?? ''))}
-            >
-              {t('vehicle.list.add')}
-            </Button>
-          </Stack>
+          <PageHeader
+            title={t('workspace.vehicles.title')}
+            buttonLabel={t('vehicle.list.add')}
+            buttonIcon="plus"
+            onCreate={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(id ?? ''))}
+          />
 
           {isVehiclesPending && <VehiclesListSkeleton />}
 
@@ -261,24 +255,17 @@ export const WorkspaceDetailPage = () => {
 
       {activeTab === 'members' && (
         <Stack gap="xl">
-          <Stack direction="row" justify="between" align="center">
-            <Text weight="semibold" size="lg">
-              {t('workspace.members.title')}
-            </Text>
-            {canInviteMembers(workspace.role) && (
-              <Button
-                leftIcon="userPlus"
-                onClick={() =>
-                  modal.open(
-                    <InviteForm workspaceId={id ?? ''} onSuccess={() => modal.closeLast()} />,
-                    { title: t('workspace.invite.title') },
-                  )
-                }
-              >
-                {t('workspace.members.invite')}
-              </Button>
-            )}
-          </Stack>
+          <PageHeader
+            title={t('workspace.members.title')}
+            buttonLabel={t('workspace.members.invite')}
+            buttonIcon="userPlus"
+            onCreate={() =>
+              modal.open(
+                <InviteForm workspaceId={id ?? ''} onSuccess={() => modal.closeLast()} />,
+                { title: t('workspace.invite.title') },
+              )
+            }
+          />
 
           <MembersList
             members={members}
