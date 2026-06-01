@@ -478,12 +478,37 @@
       "delete": "Delete vehicle",
       "deleteConfirm": "Are you sure you want to delete this vehicle?",
       "deleteSuccess": "Vehicle has been deleted",
-      "edit": "Edit vehicle"
+      "edit": "Edit vehicle",
+      "years": "years",
+      "engine": "engine",
+      "kmPerYear": "km / year",
+      "oilChanges": "oil changes",
+      "earthCircumferences": "Earth circumferences",
+      "toMoon": "to the Moon",
+      "vsPoland": "vs. average PL",
+      "daysOwned": "days owned",
+      "monthsOwned": "months owned",
+      "fuelCostEstimate": "est. fuel cost (PLN)",
+      "funFacts": "Fun facts"
     },
 
     "error": {
       "title": "Error",
       "description": "Failed to load vehicles."
+    },
+
+    "overview": {
+      "basicInfo": "Basic information",
+      "specs": "Technical specifications",
+      "appearance": "Appearance",
+      "description": "Description",
+      "purchaseSale": "Purchase / Sale",
+      "purchaseDate": "Purchase date",
+      "purchasePrice": "Purchase price",
+      "purchaseMileage": "Mileage at purchase",
+      "saleDate": "Sale date",
+      "salePrice": "Sale price",
+      "saleMileage": "Mileage at sale"
     }
   },
 

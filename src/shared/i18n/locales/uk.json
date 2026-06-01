@@ -479,12 +479,37 @@
       "delete": "Видалити автомобіль",
       "deleteConfirm": "Ви впевнені, що хочете видалити цей автомобіль?",
       "deleteSuccess": "Автомобіль було видалено",
-      "edit": "Редагувати автомобіль"
+      "edit": "Редагувати автомобіль",
+      "years": "років",
+      "engine": "двигун",
+      "kmPerYear": "км / рік",
+      "oilChanges": "заміни олії",
+      "earthCircumferences": "обертів Землі",
+      "toMoon": "дорога до Місяця",
+      "vsPoland": "vs. середнє PL",
+      "daysOwned": "днів власності",
+      "monthsOwned": "місяців власності",
+      "fuelCostEstimate": "оцінка вартості палива (PLN)",
+      "funFacts": "Цікаві факти"
     },
 
     "error": {
       "title": "Помилка",
       "description": "Не вдалося завантажити автомобілі."
+    },
+
+    "overview": {
+      "basicInfo": "Основна інформація",
+      "specs": "Технічні характеристики",
+      "appearance": "Зовнішній вигляд",
+      "description": "Опис",
+      "purchaseSale": "Закупівля / Продаж",
+      "purchaseDate": "Дата закупівлі",
+      "purchasePrice": "Ціна закупівлі",
+      "purchaseMileage": "Пробіг при закупівлі",
+      "saleDate": "Дата продажу",
+      "salePrice": "Ціна продажу",
+      "saleMileage": "Пробіг при продажу"
     }
   },
 

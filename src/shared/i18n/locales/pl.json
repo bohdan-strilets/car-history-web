@@ -477,12 +477,37 @@
       "delete": "Usuń pojazd",
       "deleteConfirm": "Czy na pewno chcesz usunąć ten pojazd?",
       "deleteSuccess": "Pojazd został usunięty",
-      "edit": "Edytuj pojazd"
+      "edit": "Edytuj pojazd",
+      "years": "lat",
+      "engine": "silnik",
+      "kmPerYear": "km / rok",
+      "oilChanges": "wymian oleju",
+      "earthCircumferences": "okrążeń Ziemi",
+      "toMoon": "drogi na Księżyc",
+      "vsPoland": "vs. średnia PL",
+      "daysOwned": "dni własności",
+      "monthsOwned": "miesięcy własności",
+      "fuelCostEstimate": "est. koszt paliwa (PLN)",
+      "funFacts": "Ciekawostki"
     },
 
     "error": {
       "title": "Błąd",
       "description": "Nie udało się załadować pojazdów."
+    },
+
+    "overview": {
+      "basicInfo": "Podstawowe informacje",
+      "specs": "Dane techniczne",
+      "appearance": "Wygląd",
+      "description": "Opis",
+      "purchaseSale": "Zakup / Sprzedaż",
+      "purchaseDate": "Data zakupu",
+      "purchasePrice": "Cena zakupu",
+      "purchaseMileage": "Przebieg przy zakupie",
+      "saleDate": "Data sprzedaży",
+      "salePrice": "Cena sprzedaży",
+      "saleMileage": "Przebieg przy sprzedaży"
     }
   },
 
