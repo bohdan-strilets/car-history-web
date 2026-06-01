@@ -20,7 +20,13 @@ export const MemberRow = ({
   const canRemove = canRemoveMember(currentUserRole, member.role, isCurrentUser);
 
   return (
-    <Panel direction="row" align="center" justify="between" gap="lg">
+    <Panel
+      direction="row"
+      align="center"
+      justify="between"
+      gap="lg"
+      p={{ mobile: 'sm', tablet: 'md' }}
+    >
       <Stack direction="row" align="center" gap="md">
         <Avatar
           firstName={member.user.firstName}
@@ -38,7 +44,7 @@ export const MemberRow = ({
               </Text>
             )}
           </Stack>
-          <Text size="sm" color="tertiary">
+          <Text size={{ mobile: 'xs', tablet: 'sm' }} color="tertiary">
             {member.user.email}
           </Text>
         </Stack>
