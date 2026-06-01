@@ -22,6 +22,7 @@ export const WorkspacesList = ({ workspaces }: WorkspacesListProps) => {
             role={workspace.role}
             isCurrent={isCurrent}
             countMembers={workspace.membersCount}
+            countCars={workspace.vehiclesCount}
             createdAt={workspace.createdAt}
           />
         );

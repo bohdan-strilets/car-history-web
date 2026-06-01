@@ -7,5 +7,6 @@ export interface WorkspaceCardProps {
   role: WorkspaceRole;
   isCurrent: boolean;
   countMembers: number;
+  countCars: number;
   createdAt: string;
 }

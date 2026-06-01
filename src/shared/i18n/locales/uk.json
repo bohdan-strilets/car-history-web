@@ -258,6 +258,13 @@
     "count_many": "{{count}} workspace'ів",
     "count_other": "{{count}} workspace'ів",
 
+    "cars": {
+      "count_one": "{{count}} транспортний засіб",
+      "count_few": "{{count}} транспортні засоби",
+      "count_many": "{{count}} транспортних засобів",
+      "count_other": "{{count}} транспортних засобів"
+    },
+
     "list": {
       "title": "Ваші workspace'и",
       "create": "Новий workspace",

@@ -15,6 +15,7 @@ export const WorkspaceCard = ({
   role,
   isCurrent,
   countMembers,
+  countCars,
   createdAt,
 }: WorkspaceCardProps) => {
   const { t } = useTranslation();
@@ -46,21 +47,32 @@ export const WorkspaceCard = ({
           {isCurrent && <Badge soft="green">{t('common.active')}</Badge>}
         </Stack>
       </Stack>
-
       <Stack gap="md" align="center">
         <IconBox
           name={typeConfig?.icon ?? 'circleQuestionMark'}
           size="2xl"
           soft={typeConfig?.color}
         />
-        <Heading size="2xl">{name}</Heading>
+        <Stack gap="xs">
+          <Heading size="2xl">{name}</Heading>
+          <Text size="sm" color="tertiary">
+            {typeConfig?.label}
+          </Text>
+        </Stack>
       </Stack>
-
-      <Stack direction="row" align="center" gap="sm">
-        <Icon name="users" size="sm" />
-        <Text color="tertiary" size="sm">
-          {t('workspace.members.count', { count: countMembers })}
-        </Text>
+      <Stack direction="row" align="center" justify="between">
+        <Stack direction="row" align="center" gap="sm">
+          <Icon name="users" size="sm" />
+          <Text color="tertiary" size="sm">
+            {t('workspace.members.count', { count: countMembers })}
+          </Text>
+        </Stack>
+        <Stack direction="row" align="center" gap="sm">
+          <Icon name="car" size="sm" />
+          <Text color="tertiary" size="sm">
+            {t('workspace.cars.count', { count: countCars })}
+          </Text>
+        </Stack>
       </Stack>
     </Panel>
   );

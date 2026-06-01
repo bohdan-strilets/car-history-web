@@ -17,6 +17,7 @@ export interface Workspace {
   type: WorkspaceType;
   role: WorkspaceRole;
   membersCount: number;
+  vehiclesCount: number;
   createdAt: string;
   updatedAt: string;
 }

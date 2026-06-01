@@ -257,6 +257,13 @@
     "count_few": "{{count}} workspace'y",
     "count_other": "{{count}} workspace'ów",
 
+    "cars": {
+      "count_one": "{{count}} pojazd",
+      "count_few": "{{count}} pojazdy",
+      "count_many": "{{count}} pojazdów",
+      "count_other": "{{count}} pojazdów"
+    },
+
     "list": {
       "title": "Twoje workspace'y",
       "create": "Nowy workspace",
