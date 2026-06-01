@@ -1,15 +1,15 @@
 import { Logo, Stack } from '@shared/ui';
-import { UserBar } from '@widgets/user-bar';
-import { WorkspaceSwitcher } from '@widgets/workspace-switcher';
+import { HeaderBar } from '@widgets/header-bar';
 
-import { expandedSwitcher, root } from './header.css';
+import { root } from './header.css';
 
 export const Header = () => {
   return (
-    <Stack as="header" direction="row" align="center" gap="xl" className={root}>
+    <Stack as="header" direction="row" align="center" justify="between" gap="xl" className={root}>
       <Logo variant="icon" size="xl" />
-      <WorkspaceSwitcher className={expandedSwitcher} />
-      <UserBar expanded={false} />
+      {/* <WorkspaceSwitcher className={expandedSwitcher} />
+      <UserBar expanded={false} /> */}
+      <HeaderBar />
     </Stack>
   );
 };

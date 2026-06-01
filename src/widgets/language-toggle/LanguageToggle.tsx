@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { LANGUAGE_CYCLE, LANGUAGE_OPTIONS } from './language-toggle.config';
 import type { LanguageToggleProps } from './language-toggle.types';
 
-export const LanguageToggle = ({ collapsed, className }: LanguageToggleProps) => {
+export const LanguageToggle = ({ collapsed, className, tooltipPlacement }: LanguageToggleProps) => {
   const { currentLanguage, setLanguage } = useLanguage();
   const { t } = useTranslation();
 
@@ -17,7 +17,7 @@ export const LanguageToggle = ({ collapsed, className }: LanguageToggleProps) =>
     };
 
     return (
-      <Tooltip label={t(`languages.${currentLanguage}`)} placement="right">
+      <Tooltip label={t(`languages.${currentLanguage}`)} placement={tooltipPlacement}>
         <Button
           type="button"
           onClick={handleCycle}

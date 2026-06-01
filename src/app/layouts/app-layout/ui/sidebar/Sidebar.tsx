@@ -69,13 +69,13 @@ export const Sidebar = ({ expanded, onToggle }: SidebarProps) => {
 
           <Stack direction="row" justify="between" align="center" gap="md">
             {expanded && <Text>{t('nav.sidebar.theme')}:</Text>}
-            <ThemeToggle collapsed={!expanded} />
+            <ThemeToggle collapsed={!expanded} tooltipPlacement="right" />
           </Stack>
 
           <Stack direction="row" justify="between" align="center" gap="md">
             {expanded && <Text>{t('nav.sidebar.language')}:</Text>}
             <Stack direction="row" gap="sm">
-              <LanguageToggle collapsed={!expanded} />
+              <LanguageToggle collapsed={!expanded} tooltipPlacement="right" />
             </Stack>
           </Stack>
         </Stack>

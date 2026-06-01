@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { THEME_CYCLE, THEME_ICON, THEME_OPTIONS } from './theme-toggle.config';
 import type { ThemeToggleProps } from './theme-toggle.types';
 
-export const ThemeToggle = ({ className, collapsed }: ThemeToggleProps) => {
+export const ThemeToggle = ({ className, collapsed, tooltipPlacement }: ThemeToggleProps) => {
   const { theme, setTheme } = useTheme();
   const { t } = useTranslation();
 
@@ -16,7 +16,7 @@ export const ThemeToggle = ({ className, collapsed }: ThemeToggleProps) => {
     };
 
     return (
-      <Tooltip label={t(`themes.${theme}`)} placement="right">
+      <Tooltip label={t(`themes.${theme}`)} placement={tooltipPlacement}>
         <Button
           type="button"
           onClick={handleCycle}

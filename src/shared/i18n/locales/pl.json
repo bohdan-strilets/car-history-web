@@ -254,6 +254,7 @@
     },
 
     "count_one": "{{count}} workspace",
+    "count_few": "{{count}} workspace'y",
     "count_other": "{{count}} workspace'ów",
 
     "list": {
