@@ -1,4 +1,5 @@
-import { Box, Button, Heading, Stack, Text } from '@shared/ui';
+import { useMediaQuery } from '@shared/hooks';
+import { Box, Button, Heading, Stack, Text, Tooltip } from '@shared/ui';
 
 import type { PageHeaderProps } from './page-header.types';
 
@@ -9,21 +10,39 @@ export const PageHeader = ({
   buttonIcon,
   description,
 }: PageHeaderProps) => {
+  const isTablet = useMediaQuery('tablet', 'up');
+
   return (
-    <Box p="lg">
+    <Box p={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}>
       <Stack gap="md">
         <Stack
-          direction={{ mobile: 'column', tablet: 'row' }}
+          direction={{ mobile: 'row', tablet: 'row' }}
           justify="between"
           align="center"
           gap="md"
         >
-          <Heading size={{ mobile: '2xl', tablet: '4xl' }} weight="extraBold">
+          <Heading size={{ mobile: 'xl', tablet: '2xl', desktop: '4xl' }} weight="bold">
             {title}
           </Heading>
-          <Button leftIcon={buttonIcon} onClick={onCreate} size={{ mobile: 'md', tablet: 'lg' }}>
-            {buttonLabel}
-          </Button>
+
+          {isTablet ? (
+            <Button
+              leftIcon={buttonIcon}
+              onClick={onCreate}
+              size={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}
+            >
+              {buttonLabel}
+            </Button>
+          ) : (
+            <Tooltip label={buttonLabel} placement="left">
+              <Button
+                leftIcon={buttonIcon}
+                onClick={onCreate}
+                size={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}
+                iconOnly
+              />
+            </Tooltip>
+          )}
         </Stack>
 
         {description && (
