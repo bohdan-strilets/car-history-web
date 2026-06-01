@@ -20,6 +20,7 @@ export const FuelLabels = ({ fuels, labelsType = 'soft' }: FuelLabelsProps) => {
           key={fuel.id}
           soft={isSoft ? fuel.color : undefined}
           solid={isSolid ? fuel.color : undefined}
+          size={{ mobile: 'sm', tablet: 'md' }}
         >
           <Icon name={fuel.icon ?? 'circleQuestionMark'} size="sm" color="inherit" />
           {fuel.label}
