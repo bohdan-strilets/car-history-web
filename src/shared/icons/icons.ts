@@ -9,6 +9,7 @@ import {
   ArrowUp,
   BadgeCheck,
   BadgePercent,
+  Banknote,
   BarChart2,
   Battery,
   BatteryCharging,
@@ -22,7 +23,6 @@ import {
   Boxes,
   Briefcase,
   Building2,
-  // Time & Calendar
   Calendar,
   CalendarCheck,
   CalendarPlus,
@@ -30,7 +30,7 @@ import {
   Camera,
   Car,
   CarFront,
-  // Status & Feedback
+  CaseSensitive,
   Check,
   CheckCircle,
   ChevronDown,
@@ -39,7 +39,6 @@ import {
   ChevronUp,
   Circle,
   CircleAlert,
-  // Tires & Service
   CircleDot,
   CircleQuestionMark,
   Clock,
@@ -49,7 +48,6 @@ import {
   CreditCard,
   Crosshair,
   Crown,
-  // Finance & Stats
   DollarSign,
   Dot,
   Download,
@@ -61,7 +59,6 @@ import {
   File,
   FileCheck,
   FilePlus,
-  // Documents & Files
   FileText,
   FileX,
   Filter,
@@ -69,18 +66,16 @@ import {
   Flame,
   Folder,
   FolderOpen,
-  // Vehicle
   Fuel,
   Gauge,
   Gift,
   Globe,
   Hammer,
+  Hash,
   Heart,
   HeartOff,
   HelpCircle,
-  // Navigation
   Home,
-  // Media
   Image,
   Images,
   Inbox,
@@ -88,18 +83,15 @@ import {
   KeyRound,
   Laptop,
   Layers,
-  // UI & Layout
   LayoutGrid,
   Link,
   List,
   Loader2,
   Lock,
-  // Auth & User
   LogIn,
   LogOut,
   Mail,
   MailWarning,
-  // Location & Map
   Map,
   MapPin,
   Maximize2,
@@ -115,15 +107,14 @@ import {
   MoreVertical,
   Navigation,
   Navigation2,
+  Palette,
   PanelLeft,
   PanelRight,
   Paperclip,
   Phone,
   PiggyBank,
-  // Actions
   Plus,
   Power,
-  // Misc
   QrCode,
   Receipt,
   RefreshCw,
@@ -136,6 +127,7 @@ import {
   Settings,
   Share2,
   Shield,
+  ShoppingCart,
   SlidersHorizontal,
   SlidersVertical,
   Smartphone,
@@ -162,7 +154,6 @@ import {
   UserCheck,
   UserMinus,
   UserPlus,
-  // Workspace & Team
   Users,
   Video,
   Wallet,
@@ -257,6 +248,7 @@ export const Icons = {
   trendingUp: TrendingUp,
   trendingDown: TrendingDown,
   carFront: CarFront,
+  palette: Palette,
 
   // Documents & Files
   fileText: FileText,
@@ -275,6 +267,8 @@ export const Icons = {
   wallet: Wallet,
   piggyBank: PiggyBank,
   percent: BadgePercent,
+  banknote: Banknote,
+  shoppingCart: ShoppingCart,
 
   // Time & Calendar
   calendar: Calendar,
@@ -315,6 +309,7 @@ export const Icons = {
   flag: Flag,
   circle: Circle,
   dot: Dot,
+  hash: Hash,
 
   // Workspace & Team
   users: Users,
@@ -367,6 +362,7 @@ export const Icons = {
   monitor: Monitor,
   smartphone: Smartphone,
   laptop: Laptop,
+  caseSensitive: CaseSensitive,
 } as const;
 
 export type IconName = keyof typeof Icons;
