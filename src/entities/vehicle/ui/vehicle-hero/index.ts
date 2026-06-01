@@ -1,0 +1,1 @@
+export { VehicleHero } from './VehicleHero';

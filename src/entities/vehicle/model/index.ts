@@ -31,4 +31,11 @@ export {
   type VehiclePopularBrand,
 } from './vehicle.data';
 export { useVehicleStore } from './vehicle.store';
-export type { Vehicle, VehicleStore } from './vehicle.types';
+export type {
+  Vehicle,
+  VehicleOwner,
+  VehiclePurchaseInfo,
+  VehicleSaleInfo,
+  VehicleSpecs,
+  VehicleStore,
+} from './vehicle.types';
