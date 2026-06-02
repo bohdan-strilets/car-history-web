@@ -183,6 +183,208 @@ export const VehicleOverview = ({ vehicle }: VehicleOverviewProps) => {
         </InfoSection>
       )}
 
+      {vehicle.specs && Object.values(vehicle.specs).some(Boolean) && (
+        <InfoSection title={t('vehicle.overview.technicalSpecs')}>
+          {vehicle.specs.engineCode && (
+            <InfoRow
+              label={t('vehicle.specs.engineCode')}
+              value={vehicle.specs.engineCode}
+              icon="hash"
+              iconColor="violet"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.enginePowerHp && (
+            <InfoRow
+              label={t('vehicle.specs.enginePowerHp')}
+              value={`${vehicle.specs.enginePowerHp} HP`}
+              icon="zap"
+              iconColor="violet"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.enginePowerKw && (
+            <InfoRow
+              label={t('vehicle.specs.enginePowerKw')}
+              value={`${vehicle.specs.enginePowerKw} kW`}
+              icon="zap"
+              iconColor="violet"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.torqueNm && (
+            <InfoRow
+              label={t('vehicle.specs.torqueNm')}
+              value={`${vehicle.specs.torqueNm} Nm`}
+              icon="gauge"
+              iconColor="violet"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.cylindersCount && (
+            <InfoRow
+              label={t('vehicle.specs.cylindersCount')}
+              value={String(vehicle.specs.cylindersCount)}
+              icon="grid"
+              iconColor="violet"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.gearsCount && (
+            <InfoRow
+              label={t('vehicle.specs.gearsCount')}
+              value={String(vehicle.specs.gearsCount)}
+              icon="cog"
+              iconColor="violet"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.turbo !== undefined && (
+            <InfoRow
+              label={t('vehicle.specs.turbo')}
+              value={vehicle.specs.turbo ? t('common.yes') : t('common.no')}
+              icon="wind"
+              iconColor="violet"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.combinedConsumption && (
+            <InfoRow
+              label={t('vehicle.specs.combinedConsumption')}
+              value={`${vehicle.specs.combinedConsumption} l/100km`}
+              icon="fuel"
+              iconColor="amber"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.cityConsumption && (
+            <InfoRow
+              label={t('vehicle.specs.cityConsumption')}
+              value={`${vehicle.specs.cityConsumption} l/100km`}
+              icon="fuel"
+              iconColor="amber"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.highwayConsumption && (
+            <InfoRow
+              label={t('vehicle.specs.highwayConsumption')}
+              value={`${vehicle.specs.highwayConsumption} l/100km`}
+              icon="fuel"
+              iconColor="amber"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.fuelTankCapacity && (
+            <InfoRow
+              label={t('vehicle.specs.fuelTankCapacity')}
+              value={`${vehicle.specs.fuelTankCapacity} l`}
+              icon="droplets"
+              iconColor="amber"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.co2EmissionGKm && (
+            <InfoRow
+              label={t('vehicle.specs.co2EmissionGKm')}
+              value={`${vehicle.specs.co2EmissionGKm} g/km`}
+              icon="cloud"
+              iconColor="green"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.euroStandard && (
+            <InfoRow
+              label={t('vehicle.specs.euroStandard')}
+              value={vehicle.specs.euroStandard}
+              icon="shield"
+              iconColor="green"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.accelerationSec && (
+            <InfoRow
+              label={t('vehicle.specs.accelerationSec')}
+              value={`${vehicle.specs.accelerationSec}s`}
+              icon="timer"
+              iconColor="orange"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.topSpeedKmh && (
+            <InfoRow
+              label={t('vehicle.specs.topSpeedKmh')}
+              value={`${vehicle.specs.topSpeedKmh} km/h`}
+              icon="gauge"
+              iconColor="orange"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.weightKg && (
+            <InfoRow
+              label={t('vehicle.specs.weightKg')}
+              value={`${vehicle.specs.weightKg} kg`}
+              icon="package"
+              iconColor="gray"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.numberOfSeats && (
+            <InfoRow
+              label={t('vehicle.specs.numberOfSeats')}
+              value={String(vehicle.specs.numberOfSeats)}
+              icon="users"
+              iconColor="gray"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.numberOfDoors && (
+            <InfoRow
+              label={t('vehicle.specs.numberOfDoors')}
+              value={String(vehicle.specs.numberOfDoors)}
+              icon="doorClosed"
+              iconColor="gray"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.ncapRating && (
+            <InfoRow
+              label={t('vehicle.specs.ncapRating')}
+              value={`${vehicle.specs.ncapRating}/5`}
+              icon="star"
+              iconColor="amber"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.airbagsCount && (
+            <InfoRow
+              label={t('vehicle.specs.airbagsCount')}
+              value={String(vehicle.specs.airbagsCount)}
+              icon="shield"
+              iconColor="amber"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.tireSizeFront && (
+            <InfoRow
+              label={t('vehicle.specs.tireSizeFront')}
+              value={vehicle.specs.tireSizeFront}
+              icon="circle"
+              iconColor="gray"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.tireSizeRear && (
+            <InfoRow
+              label={t('vehicle.specs.tireSizeRear')}
+              value={vehicle.specs.tireSizeRear}
+              icon="circle"
+              iconColor="gray"
+            />
+          )}
+        </InfoSection>
+      )}
+
       {vehicle.description && (
         <InfoSection title={t('vehicle.overview.description')}>
           <Text size="lg" letterSpacing="wide">

@@ -17,7 +17,9 @@
     "retry": "Спробуйте ще раз",
     "create": "Створити",
     "you": "ви",
-    "pending": "Очікує"
+    "pending": "Очікує",
+    "yes": "Так",
+    "no": "Ні"
   },
 
   "units": {
@@ -516,7 +518,33 @@
       "purchaseMileage": "Пробіг при закупівлі",
       "saleDate": "Дата продажу",
       "salePrice": "Ціна продажу",
-      "saleMileage": "Пробіг при продажу"
+      "saleMileage": "Пробіг при продажу",
+      "technicalSpecs": "Технічні характеристики"
+    },
+
+    "specs": {
+      "engineCode": "Код двигуна",
+      "enginePowerHp": "Потужність (HP)",
+      "enginePowerKw": "Потужність (kW)",
+      "torqueNm": "Крутний момент",
+      "cylindersCount": "Кількість циліндрів",
+      "gearsCount": "Кількість передач",
+      "turbo": "Турбо",
+      "combinedConsumption": "Середнє споживання",
+      "cityConsumption": "Споживання в місті",
+      "highwayConsumption": "Споживання на трасі",
+      "fuelTankCapacity": "Об'єм бака",
+      "co2EmissionGKm": "Викиди CO2",
+      "euroStandard": "Стандарт Євро",
+      "accelerationSec": "Прискорення 0-100",
+      "topSpeedKmh": "Максимальна швидкість",
+      "weightKg": "Власна маса",
+      "numberOfSeats": "Кількість місць",
+      "numberOfDoors": "Кількість дверей",
+      "ncapRating": "Оцінка NCAP",
+      "airbagsCount": "Кількість подушок",
+      "tireSizeFront": "Розмір шин спереду",
+      "tireSizeRear": "Розмір шин ззаду"
     }
   },
 

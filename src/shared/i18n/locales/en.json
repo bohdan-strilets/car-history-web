@@ -17,7 +17,9 @@
     "retry": "Retry",
     "create": "Create",
     "you": "you",
-    "pending": "Pending"
+    "pending": "Pending",
+    "yes": "Yes",
+    "no": "No"
   },
 
   "units": {
@@ -515,7 +517,33 @@
       "purchaseMileage": "Mileage at purchase",
       "saleDate": "Sale date",
       "salePrice": "Sale price",
-      "saleMileage": "Mileage at sale"
+      "saleMileage": "Mileage at sale",
+      "technicalSpecs": "Technical specifications"
+    },
+
+    "specs": {
+      "engineCode": "Engine code",
+      "enginePowerHp": "Power (HP)",
+      "enginePowerKw": "Power (kW)",
+      "torqueNm": "Torque",
+      "cylindersCount": "Number of cylinders",
+      "gearsCount": "Number of gears",
+      "turbo": "Turbo",
+      "combinedConsumption": "Combined consumption",
+      "cityConsumption": "City consumption",
+      "highwayConsumption": "Highway consumption",
+      "fuelTankCapacity": "Fuel tank capacity",
+      "co2EmissionGKm": "CO2 emission",
+      "euroStandard": "Euro standard",
+      "accelerationSec": "Acceleration 0-100",
+      "topSpeedKmh": "Top speed",
+      "weightKg": "Weight",
+      "numberOfSeats": "Number of seats",
+      "numberOfDoors": "Number of doors",
+      "ncapRating": "NCAP rating",
+      "airbagsCount": "Number of airbags",
+      "tireSizeFront": "Front tire size",
+      "tireSizeRear": "Rear tire size"
     }
   },
 

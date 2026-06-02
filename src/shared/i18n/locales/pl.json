@@ -17,7 +17,9 @@
     "retry": "Spróbuj ponownie",
     "create": "Utwórz",
     "you": "ty",
-    "pending": "Oczekuje"
+    "pending": "Oczekuje",
+    "yes": "Tak",
+    "no": "Nie"
   },
 
   "units": {
@@ -515,7 +517,33 @@
       "purchaseMileage": "Przebieg przy zakupie",
       "saleDate": "Data sprzedaży",
       "salePrice": "Cena sprzedaży",
-      "saleMileage": "Przebieg przy sprzedaży"
+      "saleMileage": "Przebieg przy sprzedaży",
+      "technicalSpecs": "Dane techniczne"
+    },
+
+    "specs": {
+      "engineCode": "Kod silnika",
+      "enginePowerHp": "Moc (HP)",
+      "enginePowerKw": "Moc (kW)",
+      "torqueNm": "Moment obrotowy",
+      "cylindersCount": "Liczba cylindrów",
+      "gearsCount": "Liczba biegów",
+      "turbo": "Turbo",
+      "combinedConsumption": "Spalanie mieszane",
+      "cityConsumption": "Spalanie w mieście",
+      "highwayConsumption": "Spalanie na trasie",
+      "fuelTankCapacity": "Pojemność baku",
+      "co2EmissionGKm": "Emisja CO2",
+      "euroStandard": "Norma Euro",
+      "accelerationSec": "Przyspieszenie 0-100",
+      "topSpeedKmh": "Prędkość maksymalna",
+      "weightKg": "Masa własna",
+      "numberOfSeats": "Liczba miejsc",
+      "numberOfDoors": "Liczba drzwi",
+      "ncapRating": "Ocena NCAP",
+      "airbagsCount": "Liczba poduszek",
+      "tireSizeFront": "Rozmiar opon przód",
+      "tireSizeRear": "Rozmiar opon tył"
     }
   },
 
