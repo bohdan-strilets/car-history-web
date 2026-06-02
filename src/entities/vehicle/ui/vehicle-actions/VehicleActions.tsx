@@ -8,7 +8,12 @@ import { useNavigate } from 'react-router-dom';
 
 import type { VehicleActionsProps } from './vehicle-actions.types';
 
-export const VehicleActions = ({ vehicleId, workspaceId }: VehicleActionsProps) => {
+export const VehicleActions = ({
+  vehicleId,
+  workspaceId,
+  canDelete,
+  canEdit,
+}: VehicleActionsProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { confirm } = useConfirmModal();
@@ -37,6 +42,8 @@ export const VehicleActions = ({ vehicleId, workspaceId }: VehicleActionsProps) 
     );
   };
 
+  if (!canEdit && !canDelete) return null;
+
   return (
     <Dropdown
       direction="bottom"
@@ -47,17 +54,21 @@ export const VehicleActions = ({ vehicleId, workspaceId }: VehicleActionsProps) 
         </Button>
       }
     >
-      <DropdownItem
-        label={t('vehicle.detail.edit')}
-        leftIcon="edit"
-        onClick={() => navigate(ROUTES.WORKSPACES.VEHICLES.EDIT(workspaceId, vehicleId))}
-      />
-      <DropdownItem
-        label={t('vehicle.detail.delete')}
-        leftIcon="trash"
-        danger
-        onClick={handleDelete}
-      />
+      {canEdit && (
+        <DropdownItem
+          label={t('vehicle.detail.edit')}
+          leftIcon="edit"
+          onClick={() => navigate(ROUTES.WORKSPACES.VEHICLES.EDIT(workspaceId, vehicleId))}
+        />
+      )}
+      {canDelete && (
+        <DropdownItem
+          label={t('vehicle.detail.delete')}
+          leftIcon="trash"
+          danger
+          onClick={handleDelete}
+        />
+      )}
     </Dropdown>
   );
 };

@@ -1,11 +1,15 @@
 import {
+  canDeleteVehicle,
+  canEditVehicle,
   useVehicleQuery,
   useVehicleTab,
   VEHICLE_TABS,
   VehicleActions,
   VehicleOverview,
 } from '@entities/vehicle';
+import { useWorkspace } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
+import { useAuth } from '@shared/store/auth';
 import { Stack, StateView, Tabs } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
@@ -22,6 +26,16 @@ export const VehicleDetailPage = () => {
   const vehicle = data?.data ?? null;
 
   const tabs = translateSegmentControlOptions(t, VEHICLE_TABS);
+
+  const { user } = useAuth();
+  const { activeWorkspace } = useWorkspace();
+
+  const role = activeWorkspace?.role ?? 'MEMBER';
+  const userId = user?.id ?? '';
+  const ownerId = vehicle?.ownerId ?? '';
+
+  const canEdit = canEditVehicle(role, ownerId, userId);
+  const canDelete = canDeleteVehicle(role, ownerId, userId);
 
   if (isError || (!isPending && !vehicle)) {
     return (
@@ -50,7 +64,14 @@ export const VehicleDetailPage = () => {
       {activeTab === 'overview' && vehicle && (
         <VehicleOverview
           vehicle={vehicle}
-          actions={<VehicleActions vehicleId={vehicleId ?? ''} workspaceId={workspaceId ?? ''} />}
+          actions={
+            <VehicleActions
+              vehicleId={vehicleId ?? ''}
+              workspaceId={workspaceId ?? ''}
+              canEdit={canEdit}
+              canDelete={canDelete}
+            />
+          }
         />
       )}
 
