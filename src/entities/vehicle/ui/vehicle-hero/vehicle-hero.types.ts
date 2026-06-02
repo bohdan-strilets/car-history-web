@@ -1,6 +1,6 @@
 import type { Vehicle } from '@entities/vehicle/model';
 
-export interface VehicleOverviewProps {
+export interface VehicleHeroProps {
   vehicle: Vehicle;
   actions?: React.ReactNode;
 }

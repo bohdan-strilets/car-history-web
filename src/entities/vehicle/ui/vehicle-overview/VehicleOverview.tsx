@@ -9,7 +9,7 @@ import { VehicleHero } from '../vehicle-hero';
 
 import type { VehicleOverviewProps } from './vehicle-overview.types';
 
-export const VehicleOverview = ({ vehicle }: VehicleOverviewProps) => {
+export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
   const { t } = useTranslation();
 
   const bodyType = getConfigOption(t, BODY_TYPE_CONFIG, vehicle.bodyType);
@@ -18,7 +18,7 @@ export const VehicleOverview = ({ vehicle }: VehicleOverviewProps) => {
 
   return (
     <>
-      <VehicleHero vehicle={vehicle} />
+      <VehicleHero vehicle={vehicle} actions={actions} />
       <VehicleFunFacts vehicle={vehicle} />
 
       <InfoSection title={t('vehicle.overview.basicInfo')}>

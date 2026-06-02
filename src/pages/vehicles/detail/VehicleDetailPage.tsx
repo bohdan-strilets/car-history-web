@@ -1,4 +1,10 @@
-import { useVehicleQuery, useVehicleTab, VEHICLE_TABS, VehicleOverview } from '@entities/vehicle';
+import {
+  useVehicleQuery,
+  useVehicleTab,
+  VEHICLE_TABS,
+  VehicleActions,
+  VehicleOverview,
+} from '@entities/vehicle';
 import { ROUTES } from '@shared/config';
 import { Stack, StateView, Tabs } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
@@ -41,7 +47,12 @@ export const VehicleDetailPage = () => {
 
       <Tabs tabs={tabs} activeTab={activeTab} onChange={setTab} />
 
-      {activeTab === 'overview' && vehicle && <VehicleOverview vehicle={vehicle} />}
+      {activeTab === 'overview' && vehicle && (
+        <VehicleOverview
+          vehicle={vehicle}
+          actions={<VehicleActions vehicleId={vehicleId ?? ''} workspaceId={workspaceId ?? ''} />}
+        />
+      )}
 
       {activeTab === 'timeline' && <div>Timeline</div>}
       {activeTab === 'reminders' && <div>Reminders</div>}

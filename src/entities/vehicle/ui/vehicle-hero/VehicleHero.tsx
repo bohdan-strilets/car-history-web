@@ -2,13 +2,9 @@ import { FuelLabels } from '@entities/vehicle';
 import { Badge, Grid, Heading, Panel, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 
-import type { Vehicle } from '../../model/vehicle.types';
+import type { VehicleHeroProps } from './vehicle-hero.types';
 
-interface VehicleHeroProps {
-  vehicle: Vehicle;
-}
-
-export const VehicleHero = ({ vehicle }: VehicleHeroProps) => {
+export const VehicleHero = ({ vehicle, actions }: VehicleHeroProps) => {
   const { t } = useTranslation();
 
   const today = new Date();
@@ -19,11 +15,14 @@ export const VehicleHero = ({ vehicle }: VehicleHeroProps) => {
   const engineLiters = (vehicle.engineDisplacementCc / 1000).toFixed(1);
 
   return (
-    <Panel gradient="accentSolid">
+    <Panel gradient="accentSolid" p={{ mobile: 'md', tablet: 'lg' }}>
       <Stack gap="xl">
         <Stack direction="row" justify="between" align="start">
           <FuelLabels fuels={vehicle.fuelType} labelsType="solid" />
-          <Badge gradient="gray">{vehicle.year}</Badge>
+          <Stack direction="row" gap="xs" align="center">
+            <Badge gradient="gray">{vehicle.year}</Badge>
+            {actions}
+          </Stack>
         </Stack>
 
         <Stack gap="xs">

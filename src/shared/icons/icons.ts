@@ -55,6 +55,7 @@ import {
   Download,
   Droplets,
   Edit,
+  EllipsisVertical,
   ExternalLink,
   Eye,
   EyeOff,
@@ -212,6 +213,7 @@ export const Icons = {
   moreVertical: MoreVertical,
   externalLink: ExternalLink,
   link: Link,
+  dots: EllipsisVertical,
 
   // Status & Feedback
   check: Check,
