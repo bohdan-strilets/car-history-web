@@ -499,7 +499,8 @@
       "daysOwned": "днів власності",
       "monthsOwned": "місяців власності",
       "fuelCostEstimate": "оцінка вартості палива (PLN)",
-      "funFacts": "Цікаві факти"
+      "funFacts": "Цікаві факти",
+      "editSuccess": "Автомобіль було оновлено"
     },
 
     "error": {

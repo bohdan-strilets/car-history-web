@@ -9,8 +9,8 @@ export const useUpdateVehicleMutation = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ id, dto }: UpdateVehicleParams) => {
-      return vehicleApi.update(id, dto);
+    mutationFn: ({ id, workspaceId, dto }: UpdateVehicleParams) => {
+      return vehicleApi.update(workspaceId, id, dto);
     },
 
     onSuccess: (_, { id, workspaceId }) => {

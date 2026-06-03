@@ -44,6 +44,17 @@ export interface VehicleFormParams {
   onSuccess: (vehicle: Vehicle) => void;
 }
 
+export interface EditVehicleFormParams {
+  vehicle: Vehicle;
+  workspaceId: string;
+  onSuccess?: () => void;
+}
+
+export interface DeleteVehicleParams {
+  id: string;
+  workspaceId: string;
+}
+
 // Props
 
 export interface VehicleStepProps {
@@ -54,4 +65,10 @@ export interface VehicleFormProps {
   workspaceId: string;
   onSuccess: (vehicle: Vehicle) => void;
   onSkip?: () => void;
+}
+
+export interface VehicleEditFormProps {
+  vehicle: Vehicle;
+  workspaceId: string;
+  vehicleId: string;
 }

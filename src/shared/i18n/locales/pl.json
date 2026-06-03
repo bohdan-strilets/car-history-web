@@ -498,7 +498,8 @@
       "daysOwned": "dni własności",
       "monthsOwned": "miesięcy własności",
       "fuelCostEstimate": "est. koszt paliwa (PLN)",
-      "funFacts": "Ciekawostki"
+      "funFacts": "Ciekawostki",
+      "editSuccess": "Pojazd został zaktualizowany"
     },
 
     "error": {

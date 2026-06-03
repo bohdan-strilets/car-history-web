@@ -7,10 +7,10 @@ export const vehicleApi = {
   create: (workspaceId: string, dto: CreateVehicleDto) => {
     return apiClient.post<Vehicle>(ENDPOINTS.VEHICLES.CREATE(workspaceId), dto);
   },
-  update: (id: string, dto: UpdateVehicleDto) => {
-    return apiClient.patch<Vehicle>(ENDPOINTS.VEHICLES.UPDATE(id), dto);
+  update: (workspaceId: string, id: string, dto: UpdateVehicleDto) => {
+    return apiClient.patch<Vehicle>(ENDPOINTS.VEHICLES.UPDATE(workspaceId, id), dto);
   },
-  delete: (id: string) => {
-    return apiClient.delete<void>(ENDPOINTS.VEHICLES.DELETE(id));
+  delete: (workspaceId: string, id: string) => {
+    return apiClient.delete<void>(ENDPOINTS.VEHICLES.DELETE(workspaceId, id));
   },
 };
