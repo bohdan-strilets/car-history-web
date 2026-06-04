@@ -34,8 +34,8 @@ export const ForgotPasswordPage = () => {
           onClick={handleResend}
         >
           {cooldown > 0
-            ? t('auth.forgotPassword.success.resendIn', { seconds: cooldown })
-            : t('auth.forgotPassword.success.resend')}
+            ? t('common.actions.resendIn', { seconds: cooldown })
+            : t('common.actions.resend')}
         </Button>
 
         <TextLink

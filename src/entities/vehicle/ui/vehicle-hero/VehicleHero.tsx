@@ -47,7 +47,7 @@ export const VehicleHero = ({ vehicle, actions }: VehicleHeroProps) => {
               {vehicle.currentMileage.toLocaleString()}
             </Text>
             <Text color="secondary" size="xs">
-              {t('units.kilometers')}
+              km
             </Text>
           </Panel>
 
@@ -56,7 +56,7 @@ export const VehicleHero = ({ vehicle, actions }: VehicleHeroProps) => {
               {vehicleAge}
             </Text>
             <Text color="secondary" size="xs">
-              {t('vehicle.detail.years')}
+              {t('vehicle.detail.funFacts.years')}
             </Text>
           </Panel>
 
@@ -65,7 +65,7 @@ export const VehicleHero = ({ vehicle, actions }: VehicleHeroProps) => {
               {engineLiters}L
             </Text>
             <Text color="secondary" size="xs">
-              {t('vehicle.detail.engine')}
+              {t('vehicle.detail.funFacts.engine')}
             </Text>
           </Panel>
 
@@ -74,7 +74,7 @@ export const VehicleHero = ({ vehicle, actions }: VehicleHeroProps) => {
               ~{avgMileagePerYear.toLocaleString()}
             </Text>
             <Text color="secondary" size="xs">
-              {t('vehicle.detail.kmPerYear')}
+              {t('vehicle.detail.funFacts.kmPerYear')}
             </Text>
           </Panel>
         </Grid>

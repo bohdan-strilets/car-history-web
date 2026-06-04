@@ -12,7 +12,7 @@ export const WorkspaceError = ({ retry }: WorkspaceErrorProps) => {
       variant="error"
       title={t('errors.UNKNOWN_ERROR')}
       description={t('errors.INTERNAL_SERVER_ERROR')}
-      actionLabel={t('common.retry')}
+      actionLabel={t('common.actions.retry')}
       onAction={retry}
     />
   );

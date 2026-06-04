@@ -17,7 +17,7 @@ export const LanguageToggle = ({ collapsed, className, tooltipPlacement }: Langu
     };
 
     return (
-      <Tooltip label={t(`languages.${currentLanguage}`)} placement={tooltipPlacement}>
+      <Tooltip label={t(`enums.language.${currentLanguage}`)} placement={tooltipPlacement}>
         <Button
           type="button"
           onClick={handleCycle}

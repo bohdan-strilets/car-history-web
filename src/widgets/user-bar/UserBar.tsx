@@ -15,7 +15,7 @@ export const UserBar = ({ expanded = true, direction }: UserBarProps) => {
   const { t } = useTranslation();
   const { user } = useAuth();
   const navigate = useNavigate();
-  const { logout, isPending } = useLogout();
+  const { logout } = useLogout();
 
   const userName = `${user?.firstName} ${user?.lastName}`;
   const userEmail = user?.email ?? '';
@@ -40,18 +40,12 @@ export const UserBar = ({ expanded = true, direction }: UserBarProps) => {
 
   const dropdownContent = (
     <>
+      <DropdownItem label={t('user.profile.title')} leftIcon="user" onClick={handleProfile} />
       <DropdownItem
-        label={t('user.profile')}
-        leftIcon="user"
-        onClick={handleProfile}
-        disabled={isPending}
-      />
-      <DropdownItem
-        label={t('user.logout')}
+        label={t('user.logout.action')}
         leftIcon="logOut"
         danger
         onClick={handleLogout}
-        disabled={isPending}
       />
     </>
   );

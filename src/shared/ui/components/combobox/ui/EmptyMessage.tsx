@@ -8,7 +8,7 @@ export const EmptyMessage = ({ emptyMessage }: EmptyMessageProps) => {
 
   return (
     <Text size="sm" color="tertiary" align="center">
-      {emptyMessage ?? t('common.noOptions')}
+      {emptyMessage ?? t('common.labels.noOptions')}
     </Text>
   );
 };

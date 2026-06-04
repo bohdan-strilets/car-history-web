@@ -21,7 +21,7 @@ export const ConfirmModal = ({
       <Stack direction="row" justify="end" gap="sm">
         {!isLoading && onCancel && (
           <Button variant="ghost" onClick={onCancel} color="gray">
-            {cancelLabel ?? t('common.cancel')}
+            {cancelLabel ?? t('common.actions.cancel')}
           </Button>
         )}
         <Button
@@ -30,7 +30,7 @@ export const ConfirmModal = ({
           onClick={onConfirm}
           loading={isLoading}
         >
-          {confirmLabel ?? t('common.confirm')}
+          {confirmLabel ?? t('common.actions.confirm')}
         </Button>
       </Stack>
     </Stack>

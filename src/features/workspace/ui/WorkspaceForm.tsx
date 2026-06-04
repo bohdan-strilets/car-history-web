@@ -28,9 +28,9 @@ export const WorkspaceForm = ({
       <FormFieldInput
         control={control}
         name="name"
-        label={t('workspace.fields.name.label')}
+        label={t('workspace.fields.name')}
         size="lg"
-        placeholder={t('workspace.fields.name.placeholder')}
+        placeholder={t('workspace.fields.namePlaceholder')}
       />
     </Form>
   );

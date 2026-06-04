@@ -28,7 +28,7 @@ export const VehicleEditForm = ({ vehicle, workspaceId, vehicleId }: VehicleEdit
   return (
     <Form
       onSubmit={handleSubmit}
-      submitLabel={t('common.save')}
+      submitLabel={t('common.actions.save')}
       isLoading={isPending}
       error={errorMessage}
     >

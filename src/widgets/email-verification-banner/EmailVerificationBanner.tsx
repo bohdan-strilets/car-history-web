@@ -32,8 +32,8 @@ export const EmailVerificationBanner = () => {
             onClick={() => resend()}
           >
             {isActive
-              ? t('auth.confirmEmail.error.resendIn', { seconds: cooldown })
-              : t('auth.confirmEmail.error.resend')}
+              ? t('common.actions.resendIn', { seconds: cooldown })
+              : t('common.actions.resend')}
           </Button>
         </Stack>
       </Box>

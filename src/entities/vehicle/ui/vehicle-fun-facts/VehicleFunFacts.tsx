@@ -33,21 +33,21 @@ export const VehicleFunFacts = ({ vehicle }: VehicleFunFactsProps) => {
     : null;
 
   const facts = [
-    { value: `${oilChanges}×`, label: t('vehicle.detail.oilChanges') },
-    { value: `${earthCircumferences}×`, label: t('vehicle.detail.earthCircumferences') },
-    { value: `${moonProgress}%`, label: t('vehicle.detail.toMoon') },
-    { value: `${vsPoland}%`, label: t('vehicle.detail.vsPoland') },
+    { value: `${oilChanges}×`, label: t('vehicle.detail.funFacts.oilChanges') },
+    { value: `${earthCircumferences}×`, label: t('vehicle.detail.funFacts.earthCircumferences') },
+    { value: `${moonProgress}%`, label: t('vehicle.detail.funFacts.toMoon') },
+    { value: `${vsPoland}%`, label: t('vehicle.detail.funFacts.vsPoland') },
     ...(daysOwned !== null
-      ? [{ value: String(daysOwned), label: t('vehicle.detail.daysOwned') }]
+      ? [{ value: String(daysOwned), label: t('vehicle.detail.funFacts.daysOwned') }]
       : []),
     ...(monthsOwned !== null
-      ? [{ value: String(monthsOwned), label: t('vehicle.detail.monthsOwned') }]
+      ? [{ value: String(monthsOwned), label: t('vehicle.detail.funFacts.monthsOwned') }]
       : []),
     ...(fuelCostEstimate !== null
       ? [
           {
             value: `~${fuelCostEstimate.toLocaleString()}`,
-            label: t('vehicle.detail.fuelCostEstimate'),
+            label: t('vehicle.detail.funFacts.fuelCostEstimate'),
           },
         ]
       : []),
@@ -55,7 +55,7 @@ export const VehicleFunFacts = ({ vehicle }: VehicleFunFactsProps) => {
 
   return (
     <Stack gap="xl">
-      <Heading size="xl">{t('vehicle.detail.funFacts')}</Heading>
+      <Heading size="xl">{t('vehicle.detail.funFacts.title')}</Heading>
       <Grid columns={{ mobile: '2', tablet: '4' }} gap="md">
         {facts.map((fact) => (
           <Panel key={fact.label} gap="none" justify="center" align="center" p="lg">

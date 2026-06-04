@@ -15,16 +15,16 @@ export const EditVehicleDescriptionModal = ({
   return (
     <Form
       onSubmit={handleSubmit}
-      submitLabel={t('common.save')}
+      submitLabel={t('common.actions.save')}
       isLoading={isPending}
       error={errorMessage}
     >
       <FormFieldTextarea
         control={control}
         name="description"
-        label={t('vehicle.form.description')}
+        label={t('vehicle.fields.description')}
         size="lg"
-        placeholder={t('vehicle.form.descriptionPlaceholder')}
+        placeholder={t('vehicle.fields.descriptionPlaceholder')}
         rows={4}
         maxRows={10}
       />

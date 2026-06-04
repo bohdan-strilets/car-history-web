@@ -40,7 +40,7 @@ export const MemberRow = ({
             <Text weight="medium">{`${member.user.firstName} ${member.user.lastName}`}</Text>
             {isCurrentUser && (
               <Text size="xs" color="tertiary">
-                ({t('common.you')})
+                ({t('common.labels.you')})
               </Text>
             )}
           </Stack>

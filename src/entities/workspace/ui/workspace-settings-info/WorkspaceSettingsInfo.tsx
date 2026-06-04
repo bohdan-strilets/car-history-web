@@ -46,7 +46,7 @@ export const WorkspaceSettingsInfo = ({
     <>
       <InfoSection title={t('workspace.detail.info')}>
         <InfoRow
-          label={t('workspace.fields.name.label')}
+          label={t('workspace.fields.name')}
           value={workspace.name}
           onClick={onEditWorkspace}
           icon="boxes"
@@ -96,7 +96,7 @@ export const WorkspaceSettingsInfo = ({
           bottomDivider
         />
         <InfoRow
-          label={t('workspace.timezone')}
+          label={t('workspace.fields.timezone')}
           value={timezoneConfig?.label}
           onClick={onEditSettings}
           icon="timer"

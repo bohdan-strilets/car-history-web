@@ -25,19 +25,19 @@ export const ONBOARDING_STEP_INDEX: Record<OnboardingStep, number> = {
 };
 
 export const ONBOARDING_STEP_TITLE_KEYS: Record<OnboardingStep, ParseKeys> = {
-  welcome: 'onboarding.welcome.title',
-  workspace: 'onboarding.workspace.title',
-  vehicle: 'onboarding.vehicle.title',
-  settings: 'onboarding.settings.title',
-  timeline: 'onboarding.timeline.title',
+  welcome: 'onboarding.steps.welcome.title',
+  workspace: 'onboarding.steps.workspace.title',
+  vehicle: 'onboarding.steps.vehicle.title',
+  settings: 'onboarding.steps.settings.title',
+  timeline: 'onboarding.steps.timeline.title',
 };
 
 export const ONBOARDING_STEP_SUBTITLE_KEYS: Record<OnboardingStep, ParseKeys> = {
-  welcome: 'onboarding.welcome.subtitle',
-  workspace: 'onboarding.workspace.subtitle',
-  vehicle: 'onboarding.vehicle.subtitle',
-  settings: 'onboarding.settings.subtitle',
-  timeline: 'onboarding.timeline.subtitle',
+  welcome: 'onboarding.steps.welcome.subtitle',
+  workspace: 'onboarding.steps.workspace.subtitle',
+  vehicle: 'onboarding.steps.vehicle.subtitle',
+  settings: 'onboarding.steps.settings.subtitle',
+  timeline: 'onboarding.steps.timeline.subtitle',
 };
 
 // Language and Theme options

@@ -1,7 +1,6 @@
-import type { TFunction } from 'i18next';
 import z from 'zod';
 
-export const createVehicleSpecsSchema = (t: TFunction) =>
+export const createVehicleSpecsSchema = () =>
   z.object({
     engineCode: z.string().optional(),
     enginePowerHp: z.number().int().positive().optional(),

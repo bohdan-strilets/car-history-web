@@ -22,8 +22,8 @@ export const VehicleStep = ({ onNext, onSkip }: VehicleStepProps) => {
   if (isSuccess) {
     return (
       <StepSuccess
-        title={t('onboarding.vehicle.success.title')}
-        description={t('onboarding.vehicle.success.description')}
+        title={t('onboarding.steps.vehicle.success.title')}
+        description={t('onboarding.steps.vehicle.success.description')}
         onDone={onNext}
       />
     );

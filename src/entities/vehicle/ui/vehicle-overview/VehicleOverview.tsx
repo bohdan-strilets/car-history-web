@@ -33,104 +33,104 @@ export const VehicleOverview = ({
       <VehicleHero vehicle={vehicle} actions={actions} />
       <VehicleFunFacts vehicle={vehicle} />
 
-      <InfoSection title={t('vehicle.overview.basicInfo')}>
+      <InfoSection title={t('vehicle.overview.sections.basicInfo')}>
         <InfoRow
-          label={t('vehicle.form.brand')}
+          label={t('vehicle.fields.brand')}
           value={vehicle.brand}
           icon="car"
           iconColor="blue"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.model')}
+          label={t('vehicle.fields.model')}
           value={vehicle.model}
           icon="car"
           iconColor="blue"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.year')}
+          label={t('vehicle.fields.year')}
           value={String(vehicle.year)}
           icon="calendar"
           iconColor="blue"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.generation')}
+          label={t('vehicle.fields.generation')}
           value={vehicle.generation}
           icon="tag"
           iconColor="blue"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.plateNumber')}
+          label={t('vehicle.fields.plateNumber')}
           value={vehicle.plateNumber}
           icon="creditCard"
           iconColor="blue"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.vin')}
+          label={t('vehicle.fields.vin')}
           value={vehicle.vin}
           icon="hash"
           iconColor="blue"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.currentMileage')}
+          label={t('vehicle.fields.currentMileage')}
           value={`${vehicle.currentMileage.toLocaleString()} km`}
           icon="gauge"
           iconColor="blue"
         />
       </InfoSection>
 
-      <InfoSection title={t('vehicle.overview.specs')}>
+      <InfoSection title={t('vehicle.overview.sections.specs')}>
         <InfoRow
-          label={t('vehicle.form.engineDisplacementCc')}
+          label={t('vehicle.fields.engineDisplacementCc')}
           value={`${vehicle.engineDisplacementCc} cm³`}
           icon="zap"
           iconColor="violet"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.bodyType')}
+          label={t('vehicle.fields.bodyType')}
           value={bodyType?.label}
           icon="layoutGrid"
           iconColor="violet"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.transmission')}
+          label={t('vehicle.fields.transmission')}
           value={transmission?.label}
           icon="cog"
           iconColor="violet"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.driveType')}
+          label={t('vehicle.fields.driveType')}
           value={driveType?.label}
           icon="navigation"
           iconColor="violet"
         />
       </InfoSection>
 
-      <InfoSection title={t('vehicle.overview.appearance')}>
+      <InfoSection title={t('vehicle.overview.sections.appearance')}>
         <InfoRow
-          label={t('vehicle.form.color')}
+          label={t('vehicle.fields.color')}
           value={vehicle.color}
           icon="palette"
           iconColor="teal"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.nickname')}
+          label={t('vehicle.fields.nickname')}
           value={vehicle.nickname}
           icon="caseSensitive"
           iconColor="teal"
           bottomDivider
         />
         <InfoRow
-          label={t('vehicle.form.countryOfOrigin')}
+          label={t('vehicle.fields.countryOfOrigin')}
           value={vehicle.countryOfOrigin}
           icon="globe"
           iconColor="teal"
@@ -138,20 +138,20 @@ export const VehicleOverview = ({
       </InfoSection>
 
       {!vehicle.purchaseInfo ? (
-        <InfoSection title={t('vehicle.overview.purchaseSale')}>
+        <InfoSection title={t('vehicle.overview.sections.purchaseSale')}>
           <VehicleEmptySection
             icon="shoppingCart"
-            title={t('vehicle.overview.purchaseEmpty.title')}
-            description={t('vehicle.overview.purchaseEmpty.description')}
-            actionLabel={t('vehicle.overview.purchaseEmpty.action')}
+            title={t('vehicle.overview.empty.purchase.title')}
+            description={t('vehicle.overview.empty.purchase.description')}
+            actionLabel={t('vehicle.overview.empty.purchase.action')}
             onAction={onAddPurchase}
           />
         </InfoSection>
       ) : (
-        <InfoSection title={t('vehicle.overview.purchaseSale')}>
+        <InfoSection title={t('vehicle.overview.sections.purchaseSale')}>
           {vehicle.purchaseInfo.date && (
             <InfoRow
-              label={t('vehicle.overview.purchaseDate')}
+              label={t('vehicle.overview.fields.purchaseDate')}
               value={vehicle.purchaseInfo.date}
               icon="shoppingCart"
               iconColor="green"
@@ -160,7 +160,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.purchaseInfo.price && (
             <InfoRow
-              label={t('vehicle.overview.purchasePrice')}
+              label={t('vehicle.overview.fields.purchasePrice')}
               value={`${vehicle.purchaseInfo.price.toLocaleString()} PLN`}
               icon="banknote"
               iconColor="green"
@@ -169,7 +169,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.purchaseInfo.mileage && (
             <InfoRow
-              label={t('vehicle.overview.purchaseMileage')}
+              label={t('vehicle.overview.fields.purchaseMileage')}
               value={`${vehicle.purchaseInfo.mileage.toLocaleString()} km`}
               icon="gauge"
               iconColor="green"
@@ -180,7 +180,7 @@ export const VehicleOverview = ({
             <>
               {vehicle.saleInfo.date && (
                 <InfoRow
-                  label={t('vehicle.overview.saleDate')}
+                  label={t('vehicle.overview.fields.saleDate')}
                   value={vehicle.saleInfo.date}
                   icon="tag"
                   iconColor="orange"
@@ -189,7 +189,7 @@ export const VehicleOverview = ({
               )}
               {vehicle.saleInfo.price && (
                 <InfoRow
-                  label={t('vehicle.overview.salePrice')}
+                  label={t('vehicle.overview.fields.salePrice')}
                   value={`${vehicle.saleInfo.price.toLocaleString()} PLN`}
                   icon="banknote"
                   iconColor="orange"
@@ -198,7 +198,7 @@ export const VehicleOverview = ({
               )}
               {vehicle.saleInfo.mileage && (
                 <InfoRow
-                  label={t('vehicle.overview.saleMileage')}
+                  label={t('vehicle.overview.fields.saleMileage')}
                   value={`${vehicle.saleInfo.mileage.toLocaleString()} km`}
                   icon="gauge"
                   iconColor="orange"
@@ -208,9 +208,9 @@ export const VehicleOverview = ({
           ) : (
             <VehicleEmptySection
               icon="car"
-              title={t('vehicle.overview.saleEmpty.title')}
-              description={t('vehicle.overview.saleEmpty.description')}
-              actionLabel={t('vehicle.overview.saleEmpty.action')}
+              title={t('vehicle.overview.empty.sale.title')}
+              description={t('vehicle.overview.empty.sale.description')}
+              actionLabel={t('vehicle.overview.empty.sale.action')}
               onAction={onAddSale}
             />
           )}
@@ -218,7 +218,7 @@ export const VehicleOverview = ({
       )}
 
       {!vehicle.specs || !Object.values(vehicle.specs).some(Boolean) ? (
-        <InfoSection title={t('vehicle.overview.technicalSpecs')}>
+        <InfoSection title={t('vehicle.overview.sections.specs')}>
           <VehicleAiFill
             vehicleId={vehicle.id}
             workspaceId={vehicle.workspaceId}
@@ -226,10 +226,10 @@ export const VehicleOverview = ({
           />
         </InfoSection>
       ) : (
-        <InfoSection title={t('vehicle.overview.technicalSpecs')}>
+        <InfoSection title={t('vehicle.overview.sections.specs')}>
           {vehicle.specs.engineCode && (
             <InfoRow
-              label={t('vehicle.specs.engineCode')}
+              label={t('vehicle.specs.fields.engineCode')}
               value={vehicle.specs.engineCode}
               icon="hash"
               iconColor="sky"
@@ -238,7 +238,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.enginePowerHp && (
             <InfoRow
-              label={t('vehicle.specs.enginePowerHp')}
+              label={t('vehicle.specs.fields.enginePowerHp')}
               value={`${vehicle.specs.enginePowerHp} HP`}
               icon="zap"
               iconColor="sky"
@@ -247,7 +247,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.enginePowerKw && (
             <InfoRow
-              label={t('vehicle.specs.enginePowerKw')}
+              label={t('vehicle.specs.fields.enginePowerKw')}
               value={`${vehicle.specs.enginePowerKw} kW`}
               icon="zap"
               iconColor="sky"
@@ -256,7 +256,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.torqueNm && (
             <InfoRow
-              label={t('vehicle.specs.torqueNm')}
+              label={t('vehicle.specs.fields.torqueNm')}
               value={`${vehicle.specs.torqueNm} Nm`}
               icon="gauge"
               iconColor="sky"
@@ -265,7 +265,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.cylindersCount && (
             <InfoRow
-              label={t('vehicle.specs.cylindersCount')}
+              label={t('vehicle.specs.fields.cylindersCount')}
               value={String(vehicle.specs.cylindersCount)}
               icon="grid"
               iconColor="sky"
@@ -274,7 +274,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.gearsCount && (
             <InfoRow
-              label={t('vehicle.specs.gearsCount')}
+              label={t('vehicle.specs.fields.gearsCount')}
               value={String(vehicle.specs.gearsCount)}
               icon="cog"
               iconColor="sky"
@@ -283,8 +283,8 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.turbo !== undefined && (
             <InfoRow
-              label={t('vehicle.specs.turbo')}
-              value={vehicle.specs.turbo ? t('common.yes') : t('common.no')}
+              label={t('vehicle.specs.fields.turbo')}
+              value={vehicle.specs.turbo ? t('common.state.yes') : t('common.state.no')}
               icon="wind"
               iconColor="sky"
               bottomDivider
@@ -292,7 +292,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.fuelTankCapacity && (
             <InfoRow
-              label={t('vehicle.specs.fuelTankCapacity')}
+              label={t('vehicle.specs.fields.fuelTankCapacity')}
               value={`${vehicle.specs.fuelTankCapacity} l`}
               icon="droplets"
               iconColor="sky"
@@ -301,7 +301,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.combinedConsumption && (
             <InfoRow
-              label={t('vehicle.specs.combinedConsumption')}
+              label={t('vehicle.specs.fields.combinedConsumption')}
               value={`${vehicle.specs.combinedConsumption} l/100km`}
               icon="fuel"
               iconColor="sky"
@@ -310,7 +310,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.cityConsumption && (
             <InfoRow
-              label={t('vehicle.specs.cityConsumption')}
+              label={t('vehicle.specs.fields.cityConsumption')}
               value={`${vehicle.specs.cityConsumption} l/100km`}
               icon="fuel"
               iconColor="sky"
@@ -319,7 +319,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.highwayConsumption && (
             <InfoRow
-              label={t('vehicle.specs.highwayConsumption')}
+              label={t('vehicle.specs.fields.highwayConsumption')}
               value={`${vehicle.specs.highwayConsumption} l/100km`}
               icon="fuel"
               iconColor="sky"
@@ -328,7 +328,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.batteryCapacityKwh && (
             <InfoRow
-              label={t('vehicle.specs.batteryCapacityKwh')}
+              label={t('vehicle.specs.fields.batteryCapacityKwh')}
               value={`${vehicle.specs.batteryCapacityKwh} kWh`}
               icon="batteryCharging"
               iconColor="sky"
@@ -337,7 +337,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.electricRangeKm && (
             <InfoRow
-              label={t('vehicle.specs.electricRangeKm')}
+              label={t('vehicle.specs.fields.electricRangeKm')}
               value={`${vehicle.specs.electricRangeKm} km`}
               icon="zap"
               iconColor="sky"
@@ -346,7 +346,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.co2EmissionGKm && (
             <InfoRow
-              label={t('vehicle.specs.co2EmissionGKm')}
+              label={t('vehicle.specs.fields.co2EmissionGKm')}
               value={`${vehicle.specs.co2EmissionGKm} g/km`}
               icon="cloud"
               iconColor="sky"
@@ -355,7 +355,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.euroStandard && (
             <InfoRow
-              label={t('vehicle.specs.euroStandard')}
+              label={t('vehicle.specs.fields.euroStandard')}
               value={vehicle.specs.euroStandard}
               icon="shield"
               iconColor="sky"
@@ -364,7 +364,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.accelerationSec && (
             <InfoRow
-              label={t('vehicle.specs.accelerationSec')}
+              label={t('vehicle.specs.fields.accelerationSec')}
               value={`${vehicle.specs.accelerationSec}s`}
               icon="timer"
               iconColor="sky"
@@ -373,7 +373,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.topSpeedKmh && (
             <InfoRow
-              label={t('vehicle.specs.topSpeedKmh')}
+              label={t('vehicle.specs.fields.topSpeedKmh')}
               value={`${vehicle.specs.topSpeedKmh} km/h`}
               icon="gauge"
               iconColor="sky"
@@ -382,7 +382,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.weightKg && (
             <InfoRow
-              label={t('vehicle.specs.weightKg')}
+              label={t('vehicle.specs.fields.weightKg')}
               value={`${vehicle.specs.weightKg} kg`}
               icon="package"
               iconColor="sky"
@@ -391,7 +391,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.lengthMm && (
             <InfoRow
-              label={t('vehicle.specs.lengthMm')}
+              label={t('vehicle.specs.fields.lengthMm')}
               value={`${vehicle.specs.lengthMm} mm`}
               icon="ruler"
               iconColor="sky"
@@ -400,7 +400,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.widthMm && (
             <InfoRow
-              label={t('vehicle.specs.widthMm')}
+              label={t('vehicle.specs.fields.widthMm')}
               value={`${vehicle.specs.widthMm} mm`}
               icon="ruler"
               iconColor="sky"
@@ -409,7 +409,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.heightMm && (
             <InfoRow
-              label={t('vehicle.specs.heightMm')}
+              label={t('vehicle.specs.fields.heightMm')}
               value={`${vehicle.specs.heightMm} mm`}
               icon="ruler"
               iconColor="sky"
@@ -418,7 +418,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.wheelbaseMm && (
             <InfoRow
-              label={t('vehicle.specs.wheelbaseMm')}
+              label={t('vehicle.specs.fields.wheelbaseMm')}
               value={`${vehicle.specs.wheelbaseMm} mm`}
               icon="ruler"
               iconColor="sky"
@@ -427,7 +427,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.groundClearanceMm && (
             <InfoRow
-              label={t('vehicle.specs.groundClearanceMm')}
+              label={t('vehicle.specs.fields.groundClearanceMm')}
               value={`${vehicle.specs.groundClearanceMm} mm`}
               icon="ruler"
               iconColor="sky"
@@ -436,7 +436,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.trunkVolumeLiters && (
             <InfoRow
-              label={t('vehicle.specs.trunkVolumeLiters')}
+              label={t('vehicle.specs.fields.trunkVolumeLiters')}
               value={`${vehicle.specs.trunkVolumeLiters} l`}
               icon="package"
               iconColor="sky"
@@ -445,7 +445,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.numberOfSeats && (
             <InfoRow
-              label={t('vehicle.specs.numberOfSeats')}
+              label={t('vehicle.specs.fields.numberOfSeats')}
               value={String(vehicle.specs.numberOfSeats)}
               icon="users"
               iconColor="sky"
@@ -454,7 +454,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.numberOfDoors && (
             <InfoRow
-              label={t('vehicle.specs.numberOfDoors')}
+              label={t('vehicle.specs.fields.numberOfDoors')}
               value={String(vehicle.specs.numberOfDoors)}
               icon="doorClosed"
               iconColor="sky"
@@ -463,7 +463,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.airbagsCount && (
             <InfoRow
-              label={t('vehicle.specs.airbagsCount')}
+              label={t('vehicle.specs.fields.airbagsCount')}
               value={String(vehicle.specs.airbagsCount)}
               icon="shield"
               iconColor="sky"
@@ -472,7 +472,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.ncapRating && (
             <InfoRow
-              label={t('vehicle.specs.ncapRating')}
+              label={t('vehicle.specs.fields.ncapRating')}
               value={`${vehicle.specs.ncapRating}/5`}
               icon="star"
               iconColor="sky"
@@ -481,7 +481,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.tireSizeFront && (
             <InfoRow
-              label={t('vehicle.specs.tireSizeFront')}
+              label={t('vehicle.specs.fields.tireSizeFront')}
               value={vehicle.specs.tireSizeFront}
               icon="circle"
               iconColor="sky"
@@ -490,7 +490,7 @@ export const VehicleOverview = ({
           )}
           {vehicle.specs.tireSizeRear && (
             <InfoRow
-              label={t('vehicle.specs.tireSizeRear')}
+              label={t('vehicle.specs.fields.tireSizeRear')}
               value={vehicle.specs.tireSizeRear}
               icon="circle"
               iconColor="sky"
@@ -500,18 +500,18 @@ export const VehicleOverview = ({
       )}
 
       {vehicle.description ? (
-        <InfoSection title={t('vehicle.overview.description')}>
+        <InfoSection title={t('vehicle.overview.sections.description')}>
           <Text size="lg" letterSpacing="wide">
             {vehicle.description}
           </Text>
         </InfoSection>
       ) : (
-        <InfoSection title={t('vehicle.overview.description')}>
+        <InfoSection title={t('vehicle.overview.sections.description')}>
           <VehicleEmptySection
             icon="note"
-            title={t('vehicle.overview.descriptionEmpty.title')}
-            description={t('vehicle.overview.descriptionEmpty.description')}
-            actionLabel={t('vehicle.overview.descriptionEmpty.action')}
+            title={t('vehicle.overview.empty.description.title')}
+            description={t('vehicle.overview.empty.description.description')}
+            actionLabel={t('vehicle.overview.empty.description.action')}
             onAction={onEditDescription}
           />
         </InfoSection>

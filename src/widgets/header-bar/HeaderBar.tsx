@@ -43,7 +43,7 @@ export const HeaderBar = () => {
                 {activeWorkspace?.name ?? '—'}
               </Text>
               <Text size="xs" color="tertiary">
-                {t('workspace.count', { count: workspaces.length })}
+                {t('workspace.counts.workspaces', { count: workspaces.length })}
               </Text>
             </Stack>
             <IconBox
@@ -71,7 +71,7 @@ export const HeaderBar = () => {
             );
           })}
           <DropdownItem
-            label={t('workspace.actions.new')}
+            label={t('workspace.list.create')}
             leftIcon="plus"
             onClick={() => {
               setWorkspaceOpen(false);
@@ -97,7 +97,7 @@ export const HeaderBar = () => {
         }
       >
         <DropdownItem
-          label={t('user.profile')}
+          label={t('user.profile.title')}
           leftIcon="user"
           onClick={() => {
             navigate(ROUTES.PROFILE.ROOT);
@@ -105,7 +105,7 @@ export const HeaderBar = () => {
           }}
         />
         <DropdownItem
-          label={t('user.logout')}
+          label={t('user.logout.action')}
           leftIcon="logOut"
           danger
           onClick={() => {

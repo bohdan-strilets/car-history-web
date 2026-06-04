@@ -132,8 +132,8 @@ export const WorkspaceDetailPage = () => {
   const handleDelete = () => {
     confirm(
       {
-        title: t('workspace.detail.delete'),
-        description: t('workspace.detail.deleteConfirm'),
+        title: t('workspace.settings.danger.delete'),
+        description: t('workspace.settings.danger.deleteConfirm'),
         danger: true,
       },
       {
@@ -214,7 +214,7 @@ export const WorkspaceDetailPage = () => {
     <Stack gap="2xl">
       <PageHeader
         title={workspace.name}
-        buttonLabel={t('common.back')}
+        buttonLabel={t('common.actions.back')}
         buttonIcon="arrowLeft"
         onCreate={() => navigate(ROUTES.WORKSPACES.ROOT)}
       />
@@ -224,7 +224,7 @@ export const WorkspaceDetailPage = () => {
       {activeTab === 'vehicles' && (
         <Stack gap="xl">
           <PageHeader
-            title={t('workspace.vehicles.title')}
+            title={t('vehicle.list.title')}
             buttonLabel={t('vehicle.list.add')}
             buttonIcon="plus"
             onCreate={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(id ?? ''))}

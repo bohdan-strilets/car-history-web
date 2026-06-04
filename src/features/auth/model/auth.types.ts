@@ -42,7 +42,7 @@ export interface ForgotPasswordFormProps {
 
 export interface ResetPasswordFormProps {
   token: string;
-  onSuccess: () => void;
+  onSuccess?: () => void;
 }
 
 // Params

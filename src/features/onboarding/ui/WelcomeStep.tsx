@@ -60,10 +60,10 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
 
       <Stack gap="md" align="center">
         <Heading as="h2" size="xl" style={{ textAlign: 'center' }}>
-          {t('onboarding.welcome.subtitle')}
+          {t('onboarding.steps.welcome.subtitle')}
         </Heading>
         <Text color="secondary" style={{ textAlign: 'center' }}>
-          {t('onboarding.welcome.description')}
+          {t('onboarding.steps.welcome.description')}
         </Text>
       </Stack>
 
@@ -74,7 +74,7 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
           <Stack gap="md" style={{ width: '100%' }}>
             <Stack direction="row" align="center" gap="sm">
               <Text size="sm" color="secondary">
-                {t('onboarding.welcome.language')}
+                {t('onboarding.steps.welcome.language')}
               </Text>
               {isUpdatingLanguage && <Spinner size="xs" />}
             </Stack>
@@ -89,7 +89,7 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
           <Stack gap="md" style={{ width: '100%' }}>
             <Stack direction="row" align="center" gap="sm">
               <Text size="sm" color="secondary">
-                {t('onboarding.welcome.theme')}
+                {t('onboarding.steps.welcome.theme')}
               </Text>
               {isUpdatingTheme && <Spinner size="xs" />}
             </Stack>
@@ -109,7 +109,7 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
           <Stack direction="row" align="center" gap="sm">
             <Icon name="mail" size="sm" color="secondary" />
             <Text size="sm" color="secondary" style={{ textAlign: 'center' }}>
-              {t('onboarding.welcome.emailNotVerified', { email: user?.email })}
+              {t('onboarding.steps.welcome.emailNotVerified', { email: user?.email })}
             </Text>
           </Stack>
 
@@ -121,14 +121,14 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
             loading={isPending}
           >
             {isActive
-              ? t('emailVerification.resendIn', { seconds: cooldown })
-              : t('emailVerification.resend')}
+              ? t('common.actions.resendIn', { seconds: cooldown })
+              : t('common.actions.resend')}
           </Button>
         </Stack>
       )}
 
       <Button size="xl" onClick={onNext} disabled={!isEmailVerified} rightIcon="chevronRight">
-        {t('onboarding.welcome.start')}
+        {t('onboarding.steps.welcome.start')}
       </Button>
     </Stack>
   );

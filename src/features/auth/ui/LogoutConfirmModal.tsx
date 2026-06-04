@@ -14,9 +14,9 @@ export const LogoutConfirmModal = () => {
 
   return (
     <ConfirmModal
-      description={t('user.logoutConfirm')}
-      confirmLabel={t('user.logout')}
-      cancelLabel={t('common.cancel')}
+      description={t('user.logout.confirm')}
+      confirmLabel={t('user.logout.action')}
+      cancelLabel={t('common.actions.cancel')}
       danger
       isLoading={isPending}
       onConfirm={async () => {

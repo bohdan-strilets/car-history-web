@@ -41,7 +41,7 @@ export const Form = ({
             onClick={onBack}
             style={{ width: '39%' }}
           >
-            {t('common.back')}
+            {t('common.actions.back')}
           </Button>
         )}
 
@@ -68,7 +68,7 @@ export const Form = ({
           onClick={onSkip}
           fullWidth
         >
-          {t('common.skip')}
+          {t('common.actions.skip')}
         </Button>
       )}
     </form>

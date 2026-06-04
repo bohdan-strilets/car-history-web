@@ -1,13 +1,11 @@
 import { Hint } from '@shared/ui';
 import { IconBox, Stack, Text } from '@shared/ui/primitives';
 import { useRef } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { card, nativeInput, valueText } from './mileage-input.css';
 import type { MileageInputProps } from './mileage-input.types';
 
 export const MileageInput = ({ value, onChange, hint }: MileageInputProps) => {
-  const { t } = useTranslation();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleCardClick = () => {
@@ -38,7 +36,7 @@ export const MileageInput = ({ value, onChange, hint }: MileageInputProps) => {
         <Text className={valueText}>{numericValue?.toLocaleString() ?? '0'}</Text>
 
         <Text size="md" weight="medium" color="tertiary">
-          {t('units.kilometers')}
+          km
         </Text>
       </div>
 

@@ -1,214 +1,95 @@
 {
   "common": {
-    "hidePassword": "Ukryj hasło",
-    "showPassword": "Pokaż hasło",
-    "close": "Zamknij",
-    "back": "Wróć",
-    "next": "Dalej",
-    "confirm": "Potwierdź",
-    "cancel": "Anuluj",
-    "step": "Krok {{current}} z {{total}}",
-    "continue": "Kontynuuj",
-    "noOptions": "Brak wyników",
-    "skip": "Pomiń",
-    "save": "Zapisz",
-    "createdAt": "Utworzono:",
-    "active": "Aktywny",
-    "retry": "Spróbuj ponownie",
-    "create": "Utwórz",
-    "you": "ty",
-    "pending": "Oczekuje",
-    "yes": "Tak",
-    "no": "Nie"
-  },
-
-  "units": {
-    "kilometers": "kilometrów",
-    "engineVolume": "cm³",
-    "KM": "Kilometry (km)",
-    "MI": "Mile (mi)",
-    "L": "Litry (l)",
-    "GAL": "Galony (gal)"
-  },
-
-  "themes": {
-    "LIGHT": "Jasny",
-    "DARK": "Ciemny",
-    "SYSTEM": "System"
-  },
-
-  "languages": {
-    "PL": "Polski",
-    "UK": "Українська",
-    "EN": "English"
-  },
-
-  "onboarding": {
-    "success": {
-      "title": "Arvino gotowe!",
-      "description": "Twój cyfrowy paszport samochodu jest gotowy."
+    "actions": {
+      "save": "Zapisz",
+      "cancel": "Anuluj",
+      "delete": "Usuń",
+      "edit": "Edytuj",
+      "add": "Dodaj",
+      "create": "Utwórz",
+      "confirm": "Potwierdź",
+      "continue": "Kontynuuj",
+      "back": "Wróć",
+      "next": "Dalej",
+      "skip": "Pomiń",
+      "retry": "Spróbuj ponownie",
+      "close": "Zamknij",
+      "send": "Wyślij",
+      "resend": "Wyślij ponownie",
+      "resendIn": "Wyślij ponownie za {{seconds}}s",
+      "upload": "Prześlij",
+      "download": "Pobierz",
+      "search": "Szukaj",
+      "filter": "Filtruj",
+      "refresh": "Odśwież"
     },
-    "welcome": {
-      "title": "Witaj w Arvino",
-      "subtitle": "Zacznijmy konfigurować Twój cyfrowy paszport samochodu.",
-      "description": "Zarządzaj wydatkami, serwisem, dokumentami i historią swojego auta w jednym miejscu.",
-      "start": "Zaczynamy",
-      "emailNotVerified": "Wysłaliśmy link na {{email}}. Potwierdź email, aby kontynuować.",
-      "language": "Wybierz język interfejsu",
-      "theme": "Wybierz motyw"
+    "state": {
+      "loading": "Ładowanie...",
+      "active": "Aktywny",
+      "inactive": "Nieaktywny",
+      "pending": "Oczekuje",
+      "completed": "Ukończono",
+      "dismissed": "Odrzucono",
+      "yes": "Tak",
+      "no": "Nie"
     },
-    "workspace": {
-      "title": "Utwórz swój workspace",
-      "subtitle": "Workspace to przestrzeń dla Twoich aut. Możesz mieć kilka — osobisty, rodzinny lub firmowy.",
-      "success": {
-        "title": "Workspace utworzony!",
-        "description": "Świetnie, możemy przejść dalej."
-      }
+    "labels": {
+      "you": "ty",
+      "createdAt": "Utworzono:",
+      "updatedAt": "Zaktualizowano:",
+      "optional": "(opcjonalne)",
+      "step": "Krok {{current}} z {{total}}",
+      "noOptions": "Brak wyników",
+      "cannotBeUndone": "Tej operacji nie można cofnąć.",
+      "learnMore": "Dowiedz się więcej",
+      "seeAll": "Zobacz wszystkie"
     },
-    "vehicle": {
-      "title": "Dodaj swój pierwszy pojazd",
-      "subtitle": "Dodaj swój pierwszy pojazd. Możesz uzupełnić szczegóły później.",
-      "success": {
-        "title": "Pojazd dodany!",
-        "description": "Świetnie, Twój pojazd został dodany."
-      }
+    "password": {
+      "show": "Pokaż hasło",
+      "hide": "Ukryj hasło"
     },
-    "settings": {
-      "title": "Dostosuj ustawienia",
-      "subtitle": "Dostosuj walutę, jednostki i format daty do swoich potrzeb.",
-      "success": {
-        "title": "Ustawienia zapisane!",
-        "description": "Możesz je zmienić w dowolnym momencie."
-      }
+    "empty": {
+      "title": "Brak danych",
+      "description": "Nie ma tu jeszcze żadnych danych."
     },
-    "timeline": {
-      "title": "Dodaj pierwsze zdarzenie",
-      "subtitle": "Dodaj pierwsze zdarzenie — kiedy i za ile kupiłeś swoje auto.",
-      "placeholder": {
-        "title": "Dodaj pierwszą transakcję",
-        "description": "Kiedy i za ile kupiłeś swoje auto? Możesz pominąć ten krok i dodać później.",
-        "add": "Dodaj zakup"
-      }
+    "error": {
+      "title": "Coś poszło nie tak",
+      "description": "Spróbuj odświeżyć stronę.",
+      "retry": "Spróbuj ponownie"
     }
   },
 
-  "emailVerification": {
-    "title": "Potwierdź swój adres email",
-    "description": "Wysłaliśmy link potwierdzający na {{email}}. Sprawdź swoją skrzynkę.",
-    "resend": "Wyślij ponownie",
-    "resendIn": "Wyślij ponownie za {{seconds}}s",
-    "checkSpam": "Nie widzisz emaila? Sprawdź folder spam."
-  },
-
-  "auth": {
-    "common": {
-      "orContinueWith": "lub kontynuuj z",
-      "googleButton": "Google",
-      "fields": {
-        "email": "Email",
-        "password": "Hasło",
-        "confirmPassword": "Potwierdź hasło",
-        "firstName": "Imię",
-        "lastName": "Nazwisko"
-      }
+  "enums": {
+    "theme": {
+      "LIGHT": "Jasny",
+      "DARK": "Ciemny",
+      "SYSTEM": "Systemowy"
     },
-
-    "panel": {
-      "title": "Twój cyfrowy paszport samochodu",
-      "subtitle": "Wydatki, serwis, dokumenty i AI asystent w jednym miejscu.",
-      "features": [
-        { "icon": "gauge", "text": "Pełna historia przebiegu i serwisu" },
-        { "icon": "fileText", "text": "Dokumenty z przypomnieniami OC i przegląd" },
-        { "icon": "barChart", "text": "Statystyki wydatków w czasie rzeczywistym" },
-        { "icon": "bot", "text": "AI asystent znający Twój samochód" }
-      ]
+    "language": {
+      "PL": "Polski",
+      "UK": "Українська",
+      "EN": "English"
     },
-
-    "login": {
-      "title": "Witaj z powrotem",
-      "subtitle": "Zaloguj się do swojego konta",
-      "form": {
-        "submit": "Zaloguj się",
-        "forgotPassword": "Nie pamiętasz hasła?",
-        "noAccount": "Nie masz konta?",
-        "register": "Zarejestruj się"
-      }
+    "currency": {
+      "PLN": "Złoty (PLN)",
+      "EUR": "Euro (EUR)",
+      "USD": "Dolar (USD)",
+      "UAH": "Hrywna (UAH)"
     },
-
-    "register": {
-      "title": "Utwórz konto",
-      "subtitle": "Dołącz do Arvino już dziś",
-      "form": {
-        "submit": "Zarejestruj się",
-        "hasAccount": "Masz już konto?",
-        "login": "Zaloguj się"
-      }
+    "distanceUnit": {
+      "KM": "Kilometry (km)",
+      "MI": "Mile (mi)"
     },
-
-    "forgotPassword": {
-      "title": "Nie pamiętasz hasła?",
-      "subtitle": "Wyślemy Ci link do resetowania hasła",
-      "form": {
-        "submit": "Wyślij link"
-      },
-      "backToLogin": "Wróć do logowania",
-      "success": {
-        "title": "Sprawdź swoją skrzynkę",
-        "subtitle": "Wysłaliśmy link na {{email}}",
-        "resend": "Wyślij ponownie",
-        "resendIn": "Wyślij ponownie za {{seconds}}s"
-      }
+    "fuelUnit": {
+      "L": "Litry (l)",
+      "GAL": "Galony (gal)"
     },
-
-    "resetPassword": {
-      "title": "Ustaw nowe hasło",
-      "subtitle": "Wprowadź nowe hasło dla swojego konta",
-      "form": {
-        "submit": "Zapisz hasło"
-      },
-      "success": "Hasło zostało zmienione. Możesz się zalogować."
+    "dateFormat": {
+      "DD_MM_YYYY": "DD.MM.YYYY",
+      "YYYY_MM_DD": "YYYY.MM.DD",
+      "DD_MONTH_YYYY": "DD Miesiąca YYYY"
     },
-
-    "confirmEmail": {
-      "verifying": "Weryfikacja adresu email...",
-      "success": {
-        "title": "Email potwierdzony!",
-        "subtitle": "Twój adres email został pomyślnie potwierdzony.",
-        "login": "Zaloguj się"
-      },
-      "error": {
-        "title": "Link jest nieprawidłowy",
-        "subtitle": "Link wygasł lub został już użyty.",
-        "resend": "Wyślij ponownie",
-        "resendIn": "Wyślij ponownie za {{seconds}}s"
-      }
-    },
-
-    "emailVerification": {
-      "banner": "Potwierdź swój adres email, aby uzyskać pełny dostęp."
-    }
-  },
-
-  "nav": {
-    "home": "Strona główna",
-    "garage": "Garaż",
-    "stations": "Stacje",
-    "ai": "AI",
-    "profile": "Profil",
-    "bottomBar": {
-      "ariaLabel": "Nawigacja główna"
-    },
-    "sidebar": {
-      "ariaLabel": "Nawigacja boczna",
-      "collapse": "Zwiń",
-      "expand": "Rozwiń",
-      "theme": "Motyw",
-      "language": "Język"
-    }
-  },
-
-  "workspace": {
-    "types": {
+    "workspaceType": {
       "PERSONAL": {
         "label": "Osobiste",
         "description": "Tylko dla Ciebie"
@@ -222,188 +103,11 @@
         "description": "Dla firmy lub warsztatu"
       }
     },
-
-    "fields": {
-      "name": {
-        "label": "Nazwa workspace",
-        "placeholder": "Nazwa Twojego workspace"
-      },
-      "currency": "Waluta",
-      "distanceUnit": "Jednostka odległości",
-      "fuelUnit": "Jednostka paliwa",
-      "dateFormat": "Format daty",
-      "timezonePlaceholder": "Wybierz strefę czasową",
-      "type": "Typ workspace"
+    "role": {
+      "OWNER": "Właściciel",
+      "ADMIN": "Administrator",
+      "MEMBER": "Członek"
     },
-
-    "currency": {
-      "PLN": "Złoty (PLN)",
-      "EUR": "Euro (EUR)",
-      "USD": "Dolar (USD)",
-      "UAH": "Hrywna (UAH)"
-    },
-
-    "dateFormat": {
-      "DD_MM_YYYY": "DD.MM.YYYY",
-      "YYYY_MM_DD": "YYYY.MM.DD",
-      "DD_MONTH_YYYY": "DD Miesiąca YYYY"
-    },
-
-    "timezone": "Strefa czasowa",
-
-    "actions": {
-      "new": "Nowy workspace"
-    },
-
-    "count_one": "{{count}} workspace",
-    "count_few": "{{count}} workspace'y",
-    "count_other": "{{count}} workspace'ów",
-
-    "cars": {
-      "count_one": "{{count}} pojazd",
-      "count_few": "{{count}} pojazdy",
-      "count_many": "{{count}} pojazdów",
-      "count_other": "{{count}} pojazdów"
-    },
-
-    "list": {
-      "title": "Twoje workspace'y",
-      "create": "Nowy workspace",
-      "count_one": "{{count}} workspace",
-      "count_other": "{{count}} workspace'ów",
-      "empty": {
-        "title": "Brak workspace'ów",
-        "description": "Utwórz swój pierwszy workspace, aby zacząć."
-      }
-    },
-
-    "detail": {
-      "vehicles": "Pojazdy",
-      "members": "Członkowie",
-      "settings": "Ustawienia",
-      "delete": "Usuń workspace",
-      "deleteConfirm": "Czy na pewno chcesz usunąć workspace? Ta operacja jest nieodwracalna.",
-      "deleteSuccess": "Workspace został usunięty",
-      "updateSuccess": "Workspace został zaktualizowany",
-      "info": "Informacje ogólne",
-      "leave": "Opuść workspace",
-      "leaveConfirm": "Czy na pewno chcesz opuścić ten workspace?",
-      "leaveSuccess": "Opuściłeś workspace"
-    },
-
-    "vehicles": {
-      "title": "Pojazdy"
-    },
-
-    "members": {
-      "title": "Członkowie",
-      "invite": "Zaproś",
-      "count": "{{count}} członków",
-      "role": {
-        "OWNER": "Właściciel",
-        "ADMIN": "Administrator",
-        "MEMBER": "Członek"
-      },
-      "remove": "Usuń członka",
-      "editRole": "Edytuj rolę",
-      "removeConfirm": "Czy na pewno chcesz usunąć tego członka?",
-      "updateRoleSuccess": "Rola członka została zaktualizowana",
-      "removeSuccess": "Członek został usunięty",
-      "pendingInvites": "Oczekujące zaproszenia"
-    },
-
-    "invite": {
-      "send": "Wyślij zaproszenie",
-      "title": "Zaproszenie do workspace",
-      "description": "Zostałeś zaproszony do workspace {{name}}",
-      "accept": "Akceptuj",
-      "reject": "Odrzuć",
-      "fields": {
-        "email": "Email",
-        "role": "Rola"
-      },
-      "alreadyAccepted": {
-        "title": "Zaproszenie już zaakceptowane",
-        "description": "Już jesteś członkiem tego workspace.",
-        "action": "Przejdź do workspace'ów"
-      },
-      "expired": {
-        "title": "Zaproszenie wygasło",
-        "description": "To zaproszenie wygasło lub zostało odrzucone.",
-        "action": "Przejdź do workspace'ów"
-      },
-      "loading": {
-        "title": "Ładowanie zaproszenia..."
-      },
-      "notFound": {
-        "title": "Zaproszenie nie zostało znalezione",
-        "description": "Link jest nieprawidłowy lub wygasł.",
-        "action": "Przejdź do workspace'ów"
-      },
-      "success": "Zaproszenie zostało wysłane",
-      "acceptSuccess": "Dołączyłeś do workspace",
-      "redirecting": "Przekierowujemy Cię...",
-      "rejectSuccess": "Zaproszenie zostało odrzucone",
-      "cancelSuccess": "Zaproszenie zostało anulowane",
-      "cancel": "Anuluj zaproszenie",
-      "cancelConfirm": "Czy na pewno chcesz anulować to zaproszenie?"
-    },
-
-    "new": {
-      "title": "Nowy workspace",
-      "submit": "Utwórz workspace",
-      "success": "Workspace został utworzony"
-    },
-
-    "settings": {
-      "title": "Ustawienia workspace",
-      "save": "Zapisz ustawienia",
-      "danger": {
-        "title": "Zarządzanie workspace",
-        "delete": "Usuń workspace"
-      },
-      "noPermissions": "Tylko właściciel może zarządzać ustawieniami workspace.",
-      "updateSuccess": "Ustawienia workspace zostały zapisane"
-    },
-
-    "notFound": {
-      "title": "Workspace nie został znaleziony",
-      "description": "Workspace nie istnieje lub nie masz do niego dostępu.",
-      "action": "Wróć do workspace'ów"
-    }
-  },
-
-  "vehicle": {
-    "form": {
-      "popularBrands": "Popularne marki",
-      "brand": "Marka",
-      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
-      "model": "Model",
-      "modelPlaceholder": "Model 3, X5, E-Class...",
-      "year": "Rok produkcji",
-      "yearPlaceholder": "np. 2020",
-      "generation": "Generacja",
-      "generationPlaceholder": "np. B8, Mk7",
-      "nickname": "Nazwa własna",
-      "nicknamePlaceholder": "np. Mój srebrny",
-      "fuelType": "Rodzaj paliwa",
-      "bodyType": "Typ nadwozia",
-      "transmission": "Skrzynia biegów",
-      "driveType": "Napęd",
-      "plateNumber": "Numer rejestracyjny",
-      "plateNumberPlaceholder": "np. WA 12345",
-      "vin": "Numer VIN",
-      "vinPlaceholder": "17 znaków",
-      "countryOfOrigin": "Kraj pochodzenia",
-      "countryOfOriginPlaceholder": "np. Niemcy",
-      "currentMileage": "Aktualny przebieg",
-      "currentMileageHint": "Pomoże nam dokładnie śledzić wydatki i interwały serwisowe",
-      "engineDisplacementCc": "Pojemność silnika",
-      "color": "Kolor",
-      "description": "Opis",
-      "descriptionPlaceholder": "Dodatkowe informacje o pojeździe..."
-    },
-
     "fuelType": {
       "PETROL": "Benzyna",
       "DIESEL": "Diesel",
@@ -411,7 +115,6 @@
       "ELECTRIC": "Elektryczny",
       "LPG": "LPG"
     },
-
     "bodyType": {
       "SEDAN": "Sedan",
       "HATCHBACK": "Hatchback",
@@ -425,20 +128,17 @@
       "VAN": "Van",
       "OTHER": "Inne"
     },
-
     "transmission": {
       "MANUAL": "Manualna",
       "AUTOMATIC": "Automatyczna",
       "ROBOTIC": "Robotyczna"
     },
-
     "driveType": {
-      "FWD": "FWD",
-      "RWD": "RWD",
-      "AWD": "AWD"
+      "FWD": "Przedni (FWD)",
+      "RWD": "Tylny (RWD)",
+      "AWD": "Pełny (AWD)"
     },
-
-    "colors": {
+    "color": {
       "BLACK": "Czarny",
       "WHITE": "Biały",
       "SILVER": "Srebrny",
@@ -460,7 +160,437 @@
       "PURPLE": "Fioletowy",
       "OTHER": "Inny"
     },
+    "serviceStationType": {
+      "MECHANIC": "Warsztat",
+      "TIRE_SHOP": "Wulkanizacja",
+      "CAR_WASH": "Myjnia",
+      "FUEL_STATION": "Stacja paliw",
+      "DEALERSHIP": "Salon samochodowy",
+      "OTHER": "Inne"
+    },
+    "reminderType": {
+      "INSURANCE": "Ubezpieczenie",
+      "TECHNICAL_INSPECTION": "Przegląd techniczny",
+      "OIL_CHANGE": "Wymiana oleju",
+      "FILTER_CHANGE": "Wymiana filtra",
+      "TIRE_CHANGE": "Zmiana opon",
+      "CUSTOM": "Własne"
+    },
+    "maintenanceType": {
+      "OIL_CHANGE": "Wymiana oleju",
+      "BRAKE_PADS": "Klocki hamulcowe",
+      "BRAKE_DISCS": "Tarcze hamulcowe",
+      "TIMING_BELT": "Pasek rozrządu",
+      "AIR_FILTER": "Filtr powietrza",
+      "FUEL_FILTER": "Filtr paliwa",
+      "CABIN_FILTER": "Filtr kabinowy",
+      "SPARK_PLUGS": "Świece zapłonowe",
+      "COOLANT": "Płyn chłodniczy",
+      "TRANSMISSION_OIL": "Olej skrzyni biegów",
+      "CUSTOM": "Własny interwał"
+    },
+    "tireType": {
+      "ALL_SEASON": "Całoroczne",
+      "SUMMER": "Letnie",
+      "WINTER": "Zimowe"
+    },
+    "tireStatus": {
+      "MOUNTED": "Zamontowane",
+      "STORED": "W przechowalni",
+      "RETIRED": "Wycofane"
+    },
+    "timelineType": {
+      "PURCHASE": "Zakup",
+      "SALE": "Sprzedaż",
+      "REFUEL": "Tankowanie",
+      "CHARGE": "Ładowanie",
+      "SERVICE": "Serwis",
+      "DOCUMENT": "Dokument",
+      "EXPENSE": "Wydatek",
+      "TIRE_CHANGE": "Zmiana opon",
+      "TRIP": "Trasa"
+    },
+    "documentType": {
+      "INSURANCE_OC": "Ubezpieczenie OC",
+      "INSURANCE_AC": "Ubezpieczenie AC",
+      "TECHNICAL_INSPECTION": "Przegląd techniczny",
+      "LOAN": "Kredyt",
+      "LEASING": "Leasing",
+      "VIGNETTE": "Winieta",
+      "OTHER": "Inne"
+    },
+    "expenseCategory": {
+      "ACCESSORIES": "Akcesoria",
+      "CARE": "Pielęgnacja",
+      "PARKING": "Parking",
+      "FINE": "Mandat",
+      "REGISTRATION": "Rejestracja",
+      "RENTAL": "Wynajem",
+      "OTHER": "Inne"
+    },
+    "serviceCategory": {
+      "MAINTENANCE": "Przegląd",
+      "REPAIR": "Naprawa",
+      "OTHER": "Inne"
+    },
+    "purchaseFrom": {
+      "SALON": "Salon",
+      "PRIVATE": "Osoba prywatna",
+      "AUCTION": "Aukcja",
+      "ABROAD": "Zagranica"
+    },
+    "tripPurpose": {
+      "PERSONAL": "Prywatna",
+      "WORK": "Służbowa",
+      "OTHER": "Inna"
+    }
+  },
 
+  "units": {
+    "cc": "cm³",
+    "kwh": "kWh",
+    "nm": "Nm",
+    "hp": "HP",
+    "kw": "kW",
+    "percent": "%",
+    "gkm": "g/km",
+    "lper100km": "l/100km",
+    "mm": "mm",
+    "kg": "kg",
+    "kmh": "km/h",
+    "sec": "s",
+    "liters": "l"
+  },
+
+  "fields": {
+    "date": "Data",
+    "startDate": "Data rozpoczęcia",
+    "endDate": "Data zakończenia",
+    "issueDate": "Data wystawienia",
+    "expireDate": "Data ważności",
+    "price": "Cena",
+    "cost": "Koszt",
+    "amount": "Kwota",
+    "mileage": "Przebieg",
+    "mileagePlaceholder": "np. 85 000",
+    "description": "Opis",
+    "descriptionPlaceholder": "Dodaj opis...",
+    "notes": "Notatki",
+    "notesPlaceholder": "Dodaj notatki...",
+    "title": "Tytuł",
+    "name": "Nazwa",
+    "namePlaceholder": "Wpisz nazwę...",
+    "phone": "Numer telefonu",
+    "phonePlaceholder": "np. +48 123 456 789",
+    "website": "Strona internetowa",
+    "websitePlaceholder": "np. https://example.com",
+    "address": "Adres",
+    "email": "Email",
+    "rating": "Ocena",
+    "category": "Kategoria",
+    "type": "Typ",
+    "status": "Status"
+  },
+
+  "nav": {
+    "items": {
+      "home": "Strona główna",
+      "garage": "Garaż",
+      "stations": "Stacje",
+      "ai": "AI",
+      "profile": "Profil"
+    },
+    "bottomBar": {
+      "ariaLabel": "Nawigacja główna"
+    },
+    "sidebar": {
+      "ariaLabel": "Nawigacja boczna",
+      "collapse": "Zwiń menu",
+      "expand": "Rozwiń menu",
+      "theme": "Motyw",
+      "language": "Język"
+    }
+  },
+
+  "auth": {
+    "common": {
+      "orContinueWith": "lub kontynuuj przez",
+      "googleButton": "Zaloguj się przez Google",
+      "fields": {
+        "email": "Email",
+        "password": "Hasło",
+        "confirmPassword": "Powtórz hasło",
+        "firstName": "Imię",
+        "lastName": "Nazwisko"
+      }
+    },
+    "panel": {
+      "title": "Twój cyfrowy paszport samochodu",
+      "subtitle": "Wydatki, serwis, dokumenty i asystent AI — wszystko w jednym miejscu.",
+      "features": [
+        { "icon": "gauge", "text": "Pełna historia przebiegu i serwisu" },
+        { "icon": "fileText", "text": "Dokumenty z przypomnieniami OC i przeglądu" },
+        { "icon": "barChart", "text": "Statystyki wydatków na bieżąco" },
+        { "icon": "bot", "text": "Asystent AI, który zna Twój samochód" }
+      ]
+    },
+    "login": {
+      "title": "Witaj z powrotem",
+      "subtitle": "Zaloguj się, żeby wrócić do swojego garażu",
+      "form": {
+        "submit": "Zaloguj się",
+        "forgotPassword": "Nie pamiętasz hasła?",
+        "noAccount": "Nie masz jeszcze konta?",
+        "register": "Zarejestruj się"
+      }
+    },
+    "register": {
+      "title": "Utwórz konto",
+      "subtitle": "Dołącz do Arvino i zacznij kontrolować swoje auto",
+      "form": {
+        "submit": "Zarejestruj się",
+        "hasAccount": "Masz już konto?",
+        "login": "Zaloguj się"
+      }
+    },
+    "forgotPassword": {
+      "title": "Zapomniane hasło?",
+      "subtitle": "Podaj swój email — wyślemy Ci link do ustawienia nowego hasła",
+      "form": {
+        "submit": "Wyślij link"
+      },
+      "backToLogin": "Wróć do logowania",
+      "success": {
+        "title": "Sprawdź swoją skrzynkę",
+        "subtitle": "Wysłaliśmy link na {{email}}"
+      }
+    },
+    "resetPassword": {
+      "title": "Nowe hasło",
+      "subtitle": "Ustaw nowe hasło dla swojego konta",
+      "form": {
+        "submit": "Zapisz hasło"
+      },
+      "success": "Hasło zostało zmienione — możesz się teraz zalogować"
+    },
+    "confirmEmail": {
+      "verifying": "Weryfikujemy Twój adres email...",
+      "success": {
+        "title": "Email potwierdzony!",
+        "subtitle": "Twój adres email został pomyślnie zweryfikowany.",
+        "action": "Przejdź do logowania"
+      },
+      "error": {
+        "title": "Link jest nieprawidłowy lub wygasł",
+        "subtitle": "Możesz poprosić o nowy link poniżej."
+      }
+    },
+    "emailVerification": {
+      "banner": "Potwierdź swój adres email, aby odblokować pełny dostęp.",
+      "title": "Potwierdź swój adres email",
+      "description": "Wysłaliśmy link weryfikacyjny na {{email}}. Sprawdź swoją skrzynkę.",
+      "checkSpam": "Nie widzisz wiadomości? Sprawdź folder spam."
+    }
+  },
+
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "Witaj w Arvino",
+        "subtitle": "Skonfigurujmy Twój cyfrowy paszport samochodu.",
+        "description": "Zarządzaj wydatkami, serwisem, dokumentami i historią swojego auta — wszystko w jednym miejscu.",
+        "start": "Zaczynamy",
+        "emailNotVerified": "Wysłaliśmy link weryfikacyjny na {{email}}. Potwierdź email, żeby kontynuować.",
+        "language": "Wybierz język interfejsu",
+        "theme": "Wybierz motyw"
+      },
+      "workspace": {
+        "title": "Utwórz swój workspace",
+        "subtitle": "Workspace to przestrzeń dla Twoich aut. Możesz mieć kilka — osobisty, rodzinny lub firmowy.",
+        "success": {
+          "title": "Workspace utworzony!",
+          "description": "Świetnie, idziemy dalej."
+        }
+      },
+      "vehicle": {
+        "title": "Dodaj swój pierwszy pojazd",
+        "subtitle": "Szczegóły możesz uzupełnić później — teraz wystarczą podstawowe dane.",
+        "success": {
+          "title": "Pojazd dodany!",
+          "description": "Twój pojazd jest już w garażu."
+        }
+      },
+      "settings": {
+        "title": "Dostosuj ustawienia",
+        "subtitle": "Ustaw walutę, jednostki i format daty — możesz to zmienić w dowolnym momencie.",
+        "success": {
+          "title": "Ustawienia zapisane!",
+          "description": "Wszystko gotowe."
+        }
+      },
+      "timeline": {
+        "title": "Dodaj pierwsze zdarzenie",
+        "subtitle": "Kiedy i za ile kupiłeś swoje auto? To świetny punkt startowy historii pojazdu.",
+        "empty": {
+          "title": "Zacznij od zakupu",
+          "description": "Dodaj kiedy i za ile kupiłeś auto — możesz też pominąć ten krok i wrócić później.",
+          "action": "Dodaj zakup"
+        }
+      }
+    },
+    "success": {
+      "title": "Arvino gotowe do działania!",
+      "description": "Twój cyfrowy paszport samochodu jest skonfigurowany."
+    }
+  },
+
+  "workspace": {
+    "fields": {
+      "name": "Nazwa workspace",
+      "namePlaceholder": "np. Mój garaż",
+      "type": "Typ workspace",
+      "timezone": "Strefa czasowa",
+      "timezonePlaceholder": "Wybierz strefę czasową",
+      "currency": "Waluta",
+      "distanceUnit": "Jednostka odległości",
+      "fuelUnit": "Jednostka paliwa",
+      "dateFormat": "Format daty"
+    },
+    "counts": {
+      "workspaces_one": "{{count}} workspace",
+      "workspaces_few": "{{count}} workspace'y",
+      "workspaces_other": "{{count}} workspace'ów",
+      "vehicles_one": "{{count}} pojazd",
+      "vehicles_few": "{{count}} pojazdy",
+      "vehicles_many": "{{count}} pojazdów",
+      "vehicles_other": "{{count}} pojazdów",
+      "members_one": "{{count}} członek",
+      "members_few": "{{count}} członków",
+      "members_other": "{{count}} członków"
+    },
+    "list": {
+      "title": "Twoje workspace'y",
+      "create": "Nowy workspace",
+      "empty": {
+        "title": "Brak workspace'ów",
+        "description": "Utwórz swój pierwszy workspace, żeby zacząć."
+      }
+    },
+    "new": {
+      "title": "Nowy workspace",
+      "submit": "Utwórz workspace",
+      "success": "Workspace został utworzony"
+    },
+    "detail": {
+      "info": "Informacje ogólne",
+      "vehicles": "Pojazdy",
+      "members": "Członkowie",
+      "settings": "Ustawienia",
+      "updateSuccess": "Zmiany zostały zapisane",
+      "leave": "Opuść workspace",
+      "leaveConfirm": "Czy na pewno chcesz opuścić ten workspace?",
+      "leaveSuccess": "Opuściłeś workspace"
+    },
+    "members": {
+      "title": "Członkowie",
+      "invite": "Zaproś osobę",
+      "remove": "Usuń z workspace",
+      "editRole": "Zmień rolę",
+      "removeConfirm": "Czy na pewno chcesz usunąć tę osobę z workspace?",
+      "updateRoleSuccess": "Rola została zmieniona",
+      "removeSuccess": "Osoba została usunięta z workspace",
+      "pendingInvites": "Oczekujące zaproszenia"
+    },
+    "invite": {
+      "send": "Wyślij zaproszenie",
+      "title": "Zaproszenie do workspace",
+      "description": "Zostałeś zaproszony do workspace {{name}}",
+      "accept": "Dołącz",
+      "reject": "Odrzuć",
+      "cancel": "Anuluj zaproszenie",
+      "cancelConfirm": "Czy na pewno chcesz anulować to zaproszenie?",
+      "fields": {
+        "email": "Email",
+        "role": "Rola"
+      },
+      "states": {
+        "alreadyAccepted": {
+          "title": "Już jesteś członkiem",
+          "description": "To zaproszenie zostało już zaakceptowane.",
+          "action": "Przejdź do workspace'ów"
+        },
+        "expired": {
+          "title": "Zaproszenie wygasło",
+          "description": "Ten link nie jest już aktywny.",
+          "action": "Przejdź do workspace'ów"
+        },
+        "loading": {
+          "title": "Ładowanie zaproszenia..."
+        },
+        "notFound": {
+          "title": "Nie znaleziono zaproszenia",
+          "description": "Link jest nieprawidłowy lub wygasł.",
+          "action": "Przejdź do workspace'ów"
+        }
+      },
+      "success": "Zaproszenie zostało wysłane",
+      "acceptSuccess": "Dołączyłeś do workspace — witaj!",
+      "rejectSuccess": "Zaproszenie zostało odrzucone",
+      "cancelSuccess": "Zaproszenie zostało anulowane",
+      "redirecting": "Przekierowujemy Cię..."
+    },
+    "settings": {
+      "title": "Ustawienia workspace",
+      "save": "Zapisz ustawienia",
+      "updateSuccess": "Ustawienia zostały zapisane",
+      "noPermissions": "Tylko właściciel workspace może zmieniać ustawienia.",
+      "danger": {
+        "title": "Strefa niebezpieczna",
+        "delete": "Usuń workspace",
+        "deleteConfirm": "Czy na pewno chcesz usunąć workspace? Tej operacji nie można cofnąć.",
+        "deleteSuccess": "Workspace został usunięty"
+      }
+    },
+    "notFound": {
+      "title": "Workspace nie istnieje",
+      "description": "Nie masz dostępu do tego workspace lub został usunięty.",
+      "action": "Wróć do listy workspace'ów"
+    }
+  },
+
+  "vehicle": {
+    "fields": {
+      "brand": "Marka",
+      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
+      "model": "Model",
+      "modelPlaceholder": "Model 3, X5, E-Class...",
+      "year": "Rok produkcji",
+      "yearPlaceholder": "np. 2020",
+      "generation": "Generacja",
+      "generationPlaceholder": "np. B8, Mk7",
+      "nickname": "Nazwa własna",
+      "nicknamePlaceholder": "np. Mój srebrny",
+      "fuelType": "Rodzaj paliwa",
+      "bodyType": "Typ nadwozia",
+      "transmission": "Skrzynia biegów",
+      "driveType": "Napęd",
+      "plateNumber": "Numer rejestracyjny",
+      "plateNumberPlaceholder": "np. WA 12345",
+      "vin": "Numer VIN",
+      "vinPlaceholder": "17 znaków alfanumerycznych",
+      "countryOfOrigin": "Kraj pochodzenia",
+      "countryOfOriginPlaceholder": "np. Niemcy",
+      "currentMileage": "Aktualny przebieg",
+      "currentMileagePlaceholder": "np. 85 000",
+      "currentMileageHint": "Przyda się do śledzenia interwałów serwisowych",
+      "engineDisplacementCc": "Pojemność silnika",
+      "color": "Kolor",
+      "description": "Opis",
+      "descriptionPlaceholder": "Dodatkowe informacje o pojeździe..."
+    },
+    "form": {
+      "popularBrands": "Popularne marki"
+    },
     "list": {
       "title": "Pojazdy",
       "add": "Dodaj pojazd",
@@ -469,11 +599,9 @@
         "description": "Dodaj swój pierwszy pojazd do tego workspace'u."
       }
     },
-
     "new": {
       "title": "Nowy pojazd"
     },
-
     "detail": {
       "tabs": {
         "overview": "Przegląd",
@@ -484,93 +612,94 @@
         "gallery": "Galeria",
         "tires": "Opony"
       },
-      "delete": "Usuń pojazd",
-      "deleteConfirm": "Czy na pewno chcesz usunąć ten pojazd?",
-      "deleteSuccess": "Pojazd został usunięty",
       "edit": "Edytuj pojazd",
-      "years": "lat",
-      "engine": "silnik",
-      "kmPerYear": "km / rok",
-      "oilChanges": "wymian oleju",
-      "earthCircumferences": "okrążeń Ziemi",
-      "toMoon": "drogi na Księżyc",
-      "vsPoland": "vs. średnia PL",
-      "daysOwned": "dni własności",
-      "monthsOwned": "miesięcy własności",
-      "fuelCostEstimate": "est. koszt paliwa (PLN)",
-      "funFacts": "Ciekawostki",
-      "editSuccess": "Pojazd został zaktualizowany",
-      "editSpecs": "Edytuj specyfikację"
-    },
-
-    "error": {
-      "title": "Błąd",
-      "description": "Nie udało się załadować pojazdów."
-    },
-
-    "overview": {
-      "basicInfo": "Podstawowe informacje",
-      "specs": "Dane techniczne",
-      "appearance": "Wygląd",
-      "description": "Opis",
-      "purchaseSale": "Zakup / Sprzedaż",
-      "purchaseDate": "Data zakupu",
-      "purchasePrice": "Cena zakupu",
-      "purchaseMileage": "Przebieg przy zakupie",
-      "saleDate": "Data sprzedaży",
-      "salePrice": "Cena sprzedaży",
-      "saleMileage": "Przebieg przy sprzedaży",
-      "technicalSpecs": "Dane techniczne",
-
-      "descriptionEmpty": {
-        "title": "Brak opisu",
-        "description": "Dodaj krótki opis swojego pojazdu",
-        "action": "Dodaj opis"
-      },
-      "purchaseEmpty": {
-        "title": "Brak informacji o zakupie",
-        "description": "Dodaj wydarzenie zakupu do osi czasu",
-        "action": "Dodaj zakup"
-      },
-      "saleEmpty": {
-        "title": "Pojazd nadal z Tobą 🚗",
-        "description": "Gdy zdecydujesz się sprzedać — dodaj wydarzenie sprzedaży do osi czasu",
-        "action": "Sprzedaj pojazd"
+      "editSuccess": "Dane pojazdu zostały zaktualizowane",
+      "editSpecs": "Edytuj specyfikację",
+      "delete": "Usuń pojazd",
+      "deleteConfirm": "Czy na pewno chcesz usunąć ten pojazd? Tej operacji nie można cofnąć.",
+      "deleteSuccess": "Pojazd został usunięty",
+      "funFacts": {
+        "title": "Ciekawostki",
+        "years": "lat posiadania",
+        "engine": "silnik",
+        "kmPerYear": "km / rok",
+        "oilChanges": "wymian oleju",
+        "earthCircumferences": "okrążeń Ziemi",
+        "toMoon": "drogi na Księżyc",
+        "vsPoland": "vs. średnia PL",
+        "daysOwned": "dni posiadania",
+        "monthsOwned": "miesięcy posiadania",
+        "fuelCostEstimate": "szac. koszt paliwa (PLN)"
       }
     },
-
+    "overview": {
+      "sections": {
+        "basicInfo": "Podstawowe informacje",
+        "specs": "Dane techniczne",
+        "appearance": "Wygląd",
+        "description": "Opis",
+        "purchaseSale": "Zakup / Sprzedaż"
+      },
+      "fields": {
+        "purchaseDate": "Data zakupu",
+        "purchasePrice": "Cena zakupu",
+        "purchaseMileage": "Przebieg przy zakupie",
+        "saleDate": "Data sprzedaży",
+        "salePrice": "Cena sprzedaży",
+        "saleMileage": "Przebieg przy sprzedaży"
+      },
+      "empty": {
+        "description": {
+          "title": "Brak opisu",
+          "description": "Dodaj krótki opis swojego pojazdu",
+          "action": "Dodaj opis"
+        },
+        "purchase": {
+          "title": "Brak informacji o zakupie",
+          "description": "Dodaj zdarzenie zakupu do historii pojazdu",
+          "action": "Dodaj zakup"
+        },
+        "sale": {
+          "title": "Pojazd nadal z Tobą",
+          "description": "Gdy zdecydujesz się sprzedać — dodaj zdarzenie sprzedaży do historii",
+          "action": "Dodaj sprzedaż"
+        }
+      }
+    },
     "specs": {
-      "engineCode": "Kod silnika",
-      "enginePowerHp": "Moc (HP)",
-      "enginePowerKw": "Moc (kW)",
-      "torqueNm": "Moment obrotowy",
-      "cylindersCount": "Liczba cylindrów",
-      "gearsCount": "Liczba biegów",
-      "turbo": "Turbo",
-      "combinedConsumption": "Spalanie mieszane",
-      "cityConsumption": "Spalanie w mieście",
-      "highwayConsumption": "Spalanie na trasie",
-      "fuelTankCapacity": "Pojemność baku",
-      "co2EmissionGKm": "Emisja CO2",
-      "euroStandard": "Norma Euro",
-      "accelerationSec": "Przyspieszenie 0-100",
-      "topSpeedKmh": "Prędkość maksymalna",
-      "weightKg": "Masa własna",
-      "numberOfSeats": "Liczba miejsc",
-      "numberOfDoors": "Liczba drzwi",
-      "ncapRating": "Ocena NCAP",
-      "airbagsCount": "Liczba poduszek",
-      "tireSizeFront": "Rozmiar opon przód",
-      "tireSizeRear": "Rozmiar opon tył",
-      "batteryCapacityKwh": "Pojemność baterii",
-      "electricRangeKm": "Zasięg elektryczny",
-      "lengthMm": "Długość",
-      "widthMm": "Szerokość",
-      "heightMm": "Wysokość",
-      "wheelbaseMm": "Rozstaw osi",
-      "groundClearanceMm": "Prześwit",
-      "trunkVolumeLiters": "Objętość bagażnika",
-      "engineLayout": "Układ silnika",
+      "fields": {
+        "engineCode": "Kod silnika",
+        "enginePowerHp": "Moc (HP)",
+        "enginePowerKw": "Moc (kW)",
+        "torqueNm": "Moment obrotowy (Nm)",
+        "cylindersCount": "Liczba cylindrów",
+        "gearsCount": "Liczba biegów",
+        "turbo": "Doładowanie",
+        "combinedConsumption": "Spalanie mieszane",
+        "cityConsumption": "Spalanie w mieście",
+        "highwayConsumption": "Spalanie poza miastem",
+        "fuelTankCapacity": "Pojemność baku",
+        "co2EmissionGKm": "Emisja CO₂ (g/km)",
+        "euroStandard": "Norma emisji Euro",
+        "accelerationSec": "Przyspieszenie 0–100 km/h (s)",
+        "topSpeedKmh": "Prędkość maksymalna (km/h)",
+        "weightKg": "Masa własna (kg)",
+        "numberOfSeats": "Liczba miejsc",
+        "numberOfDoors": "Liczba drzwi",
+        "ncapRating": "Ocena bezpieczeństwa Euro NCAP",
+        "airbagsCount": "Liczba poduszek powietrznych",
+        "tireSizeFront": "Rozmiar opon — przód",
+        "tireSizeRear": "Rozmiar opon — tył",
+        "batteryCapacityKwh": "Pojemność baterii (kWh)",
+        "electricRangeKm": "Zasięg elektryczny (km)",
+        "lengthMm": "Długość (mm)",
+        "widthMm": "Szerokość (mm)",
+        "heightMm": "Wysokość (mm)",
+        "wheelbaseMm": "Rozstaw osi (mm)",
+        "groundClearanceMm": "Prześwit (mm)",
+        "trunkVolumeLiters": "Pojemność bagażnika (l)",
+        "engineLayout": "Układ silnika"
+      },
       "sections": {
         "engine": "Silnik",
         "consumption": "Zużycie paliwa",
@@ -581,114 +710,119 @@
         "tires": "Opony"
       }
     },
-
     "ai": {
-      "title": "Wypełnij specyfikację z AI",
-      "description": "AI automatycznie uzupełni dane techniczne na podstawie marki, modelu i roku produkcji.",
-      "action": "Wypełnij z AI",
+      "title": "Uzupełnij specyfikację z AI",
+      "description": "Asystent AI automatycznie wypełni dane techniczne na podstawie marki, modelu i roku produkcji.",
+      "action": "Uzupełnij z AI",
       "loading": "AI analizuje pojazd..."
     }
   },
 
   "user": {
-    "profile": "Profil",
-    "logout": "Wyloguj się",
-    "logoutConfirm": "Czy na pewno chcesz się wylogować?"
+    "profile": {
+      "title": "Profil",
+      "edit": "Edytuj profil",
+      "updateSuccess": "Profil został zaktualizowany"
+    },
+    "logout": {
+      "action": "Wyloguj się",
+      "confirm": "Czy na pewno chcesz się wylogować?"
+    }
   },
 
   "errors": {
     "INVALID_CREDENTIALS": "Nieprawidłowy email lub hasło",
-    "ACCOUNT_LOCKED": "Konto zostało tymczasowo zablokowane",
-    "ACCOUNT_SUSPENDED": "Konto zostało zawieszone",
-    "ACCOUNT_DELETED": "To konto nie istnieje",
-    "ACCESS_TOKEN_INVALID": "Sesja jest nieprawidłowa",
-    "ACCESS_TOKEN_EXPIRED": "Sesja wygasła",
-    "REFRESH_TOKEN_INVALID": "Sesja jest nieprawidłowa",
-    "REFRESH_TOKEN_EXPIRED": "Sesja wygasła",
-    "REFRESH_TOKEN_REUSE": "Wykryto podejrzaną aktywność, zaloguj się ponownie",
+    "ACCOUNT_LOCKED": "Konto zostało tymczasowo zablokowane z powodu zbyt wielu nieudanych prób logowania",
+    "ACCOUNT_SUSPENDED": "Konto zostało zawieszone — skontaktuj się z pomocą techniczną",
+    "ACCOUNT_DELETED": "Konto nie istnieje lub zostało usunięte",
+    "ACCESS_TOKEN_INVALID": "Sesja jest nieprawidłowa — zaloguj się ponownie",
+    "ACCESS_TOKEN_EXPIRED": "Sesja wygasła — zaloguj się ponownie",
+    "REFRESH_TOKEN_INVALID": "Sesja jest nieprawidłowa — zaloguj się ponownie",
+    "REFRESH_TOKEN_EXPIRED": "Sesja wygasła — zaloguj się ponownie",
+    "REFRESH_TOKEN_REUSE": "Wykryto podejrzaną aktywność — zaloguj się ponownie",
     "SESSION_NOT_FOUND": "Sesja nie została znaleziona",
-    "SESSION_EXPIRED": "Sesja wygasła, zaloguj się ponownie",
-    "SESSION_REVOKED": "Sesja została odwołana",
-    "GOOGLE_AUTH_FAILED": "Logowanie przez Google nie powiodło się",
-    "GOOGLE_EMAIL_MISSING": "Nie można pobrać adresu email z Google",
-    "EMAIL_ALREADY_EXISTS": "Ten adres email jest już zajęty",
-    "EMAIL_NOT_VERIFIED": "Potwierdź swój adres email",
-    "EMAIL_ALREADY_VERIFIED": "Adres email został już potwierdzony",
+    "SESSION_EXPIRED": "Sesja wygasła — zaloguj się ponownie",
+    "SESSION_REVOKED": "Sesja została zakończona",
+    "GOOGLE_AUTH_FAILED": "Logowanie przez Google nie powiodło się — spróbuj ponownie",
+    "GOOGLE_EMAIL_MISSING": "Nie udało się pobrać adresu email z konta Google",
+    "EMAIL_ALREADY_EXISTS": "Konto z tym adresem email już istnieje",
+    "EMAIL_NOT_VERIFIED": "Potwierdź swój adres email, żeby kontynuować",
+    "EMAIL_ALREADY_VERIFIED": "Ten adres email został już potwierdzony",
     "EMAIL_CHANGE_PENDING": "Zmiana adresu email oczekuje na potwierdzenie",
     "TOKEN_INVALID": "Link jest nieprawidłowy",
-    "TOKEN_EXPIRED": "Link wygasł",
-    "TOKEN_ALREADY_USED": "Link został już użyty",
+    "TOKEN_EXPIRED": "Link wygasł — możesz poprosić o nowy",
+    "TOKEN_ALREADY_USED": "Link został już wykorzystany",
     "TOKEN_NOT_FOUND": "Link nie został znaleziony",
-    "USER_NOT_FOUND": "Użytkownik nie został znaleziony",
+    "USER_NOT_FOUND": "Nie znaleziono użytkownika",
     "PASSWORD_INCORRECT": "Nieprawidłowe hasło",
-    "PASSWORD_SAME": "Nowe hasło musi się różnić od poprzedniego",
+    "PASSWORD_SAME": "Nowe hasło musi być inne niż obecne",
     "WORKSPACE_NOT_FOUND": "Workspace nie został znaleziony",
-    "WORKSPACE_ACCESS_DENIED": "Brak dostępu do workspace",
-    "WORKSPACE_INSUFFICIENT_ROLE": "Niewystarczające uprawnienia",
+    "WORKSPACE_ACCESS_DENIED": "Nie masz dostępu do tego workspace",
+    "WORKSPACE_INSUFFICIENT_ROLE": "Nie masz wystarczających uprawnień",
     "WORKSPACE_OWNER_CANNOT_LEAVE": "Właściciel nie może opuścić workspace",
-    "WORKSPACE_ALREADY_MEMBER": "Użytkownik jest już członkiem workspace",
+    "WORKSPACE_ALREADY_MEMBER": "Ta osoba jest już członkiem workspace",
     "INVITE_NOT_FOUND": "Zaproszenie nie zostało znalezione",
     "INVITE_EXPIRED": "Zaproszenie wygasło",
-    "INVITE_ALREADY_USED": "Zaproszenie zostało już użyte",
-    "INVITE_EMAIL_MISMATCH": "Email nie zgadza się z zaproszeniem",
+    "INVITE_ALREADY_USED": "To zaproszenie zostało już wykorzystane",
+    "INVITE_EMAIL_MISMATCH": "Adres email nie zgadza się z zaproszeniem",
     "VEHICLE_NOT_FOUND": "Pojazd nie został znaleziony",
-    "VEHICLE_ACCESS_DENIED": "Brak dostępu do pojazdu",
-    "VEHICLE_INVALID_MILEAGE": "Nieprawidłowy przebieg",
+    "VEHICLE_ACCESS_DENIED": "Nie masz dostępu do tego pojazdu",
+    "VEHICLE_INVALID_MILEAGE": "Podany przebieg jest nieprawidłowy",
     "TIMELINE_EVENT_NOT_FOUND": "Zdarzenie nie zostało znalezione",
-    "TIMELINE_INVALID_MILEAGE": "Nieprawidłowy przebieg",
-    "TIMELINE_INVALID_EVENT_TYPE": "Nieprawidłowy typ zdarzenia",
+    "TIMELINE_INVALID_MILEAGE": "Podany przebieg jest nieprawidłowy",
+    "TIMELINE_INVALID_EVENT_TYPE": "Nieznany typ zdarzenia",
     "REMINDER_NOT_FOUND": "Przypomnienie nie zostało znalezione",
-    "REMINDER_ALREADY_COMPLETED": "Przypomnienie zostało już ukończone",
-    "REMINDER_ALREADY_DISMISSED": "Przypomnienie zostało już odrzucone",
+    "REMINDER_ALREADY_COMPLETED": "To przypomnienie zostało już oznaczone jako wykonane",
+    "REMINDER_ALREADY_DISMISSED": "To przypomnienie zostało już odrzucone",
     "MAINTENANCE_INTERVAL_NOT_FOUND": "Interwał serwisowy nie został znaleziony",
-    "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Interwał serwisowy jest już wyłączony",
+    "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Ten interwał serwisowy jest już wyłączony",
     "TIRE_NOT_FOUND": "Opona nie została znaleziona",
-    "TIRE_ALREADY_MOUNTED": "Opona jest już zamontowana",
-    "TIRE_ALREADY_RETIRED": "Opona jest już wycofana",
+    "TIRE_ALREADY_MOUNTED": "Ta opona jest już zamontowana",
+    "TIRE_ALREADY_RETIRED": "Ta opona została już wycofana z użycia",
     "SERVICE_STATION_NOT_FOUND": "Stacja serwisowa nie została znaleziona",
-    "SERVICE_STATION_ACCESS_DENIED": "Brak dostępu do stacji serwisowej",
+    "SERVICE_STATION_ACCESS_DENIED": "Nie masz dostępu do tej stacji serwisowej",
     "MEDIA_NOT_FOUND": "Plik nie został znaleziony",
-    "MEDIA_UPLOAD_FAILED": "Nie udało się przesłać pliku",
-    "MEDIA_INVALID_FILE_TYPE": "Nieprawidłowy typ pliku",
+    "MEDIA_UPLOAD_FAILED": "Nie udało się przesłać pliku — spróbuj ponownie",
+    "MEDIA_INVALID_FILE_TYPE": "Ten format pliku nie jest obsługiwany",
     "MEDIA_FILE_TOO_LARGE": "Plik jest zbyt duży",
-    "MEDIA_ACCESS_DENIED": "Brak dostępu do pliku",
+    "MEDIA_ACCESS_DENIED": "Nie masz dostępu do tego pliku",
     "AI_CONVERSATION_NOT_FOUND": "Rozmowa nie została znaleziona",
-    "AI_MESSAGE_FAILED": "Nie udało się wysłać wiadomości",
-    "AI_SERVICE_UNAVAILABLE": "Usługa AI jest niedostępna",
-    "VALIDATION_ERROR": "Sprawdź poprawność danych",
+    "AI_MESSAGE_FAILED": "Nie udało się wysłać wiadomości — spróbuj ponownie",
+    "AI_SERVICE_UNAVAILABLE": "Asystent AI jest chwilowo niedostępny",
+    "VALIDATION_ERROR": "Sprawdź poprawność wprowadzonych danych",
     "BAD_REQUEST": "Nieprawidłowe żądanie",
     "NOT_FOUND": "Nie znaleziono",
     "FORBIDDEN": "Brak dostępu",
-    "UNAUTHORIZED": "Wymagane logowanie",
-    "CONFLICT": "Konflikt danych",
-    "INTERNAL_SERVER_ERROR": "Błąd serwera, spróbuj ponownie",
-    "TOO_MANY_REQUESTS": "Zbyt wiele żądań, spróbuj za chwilę",
-    "UNKNOWN_ERROR": "Wystąpił nieznany błąd"
+    "UNAUTHORIZED": "Wymagane zalogowanie",
+    "CONFLICT": "Wystąpił konflikt danych",
+    "INTERNAL_SERVER_ERROR": "Coś poszło nie tak po naszej stronie — spróbuj ponownie",
+    "TOO_MANY_REQUESTS": "Zbyt wiele prób — poczekaj chwilę i spróbuj ponownie",
+    "UNKNOWN_ERROR": "Wystąpił nieoczekiwany błąd"
   },
 
   "validation": {
     "REQUIRED": "To pole jest wymagane",
     "NOT_ALLOWED": "Ta wartość nie jest dozwolona",
     "INVALID_FORMAT": "Nieprawidłowy format",
-    "INVALID_EMAIL": "Nieprawidłowy adres email",
-    "INVALID_URL": "Nieprawidłowy adres URL",
-    "INVALID_DATE": "Nieprawidłowa data",
-    "INVALID_ENUM": "Nieprawidłowa wartość",
+    "INVALID_EMAIL": "Podaj prawidłowy adres email",
+    "INVALID_URL": "Podaj prawidłowy adres URL",
+    "INVALID_DATE": "Podaj prawidłową datę",
+    "INVALID_ENUM": "Wybierz jedną z dostępnych opcji",
     "INVALID_UUID": "Nieprawidłowy identyfikator",
-    "INVALID_PHONE": "Nieprawidłowy numer telefonu",
-    "INVALID_PLATE_NUMBER": "Nieprawidłowy numer rejestracyjny",
-    "INVALID_VIN": "Nieprawidłowy numer VIN",
-    "INVALID_COLOR": "Nieprawidłowy kolor",
+    "INVALID_PHONE": "Podaj prawidłowy numer telefonu",
+    "INVALID_PLATE_NUMBER": "Podaj prawidłowy numer rejestracyjny",
+    "INVALID_VIN": "Numer VIN musi mieć 17 znaków",
+    "INVALID_COLOR": "Wybierz prawidłowy kolor",
     "TOO_SHORT": "Wartość jest zbyt krótka",
     "TOO_LONG": "Wartość jest zbyt długa",
     "TOO_SMALL": "Wartość jest zbyt mała",
     "TOO_LARGE": "Wartość jest zbyt duża",
-    "MUST_BE_POSITIVE": "Wartość musi być dodatnia",
-    "MUST_BE_INTEGER": "Wartość musi być liczbą całkowitą",
-    "ALREADY_EXISTS": "Ta wartość już istnieje",
-    "MUST_MATCH": "Wartości muszą być zgodne",
+    "MUST_BE_POSITIVE": "Wartość musi być większa od zera",
+    "MUST_BE_INTEGER": "Podaj liczbę całkowitą",
+    "ALREADY_EXISTS": "Ta wartość jest już zajęta",
+    "MUST_MATCH": "Wartości muszą być identyczne",
     "MUST_BE_FUTURE": "Data musi być w przyszłości",
     "MUST_BE_PAST": "Data musi być w przeszłości",
-    "MUST_BE_AFTER": "Data musi być późniejsza"
+    "MUST_BE_AFTER": "Data musi być późniejsza niż podana"
   }
 }

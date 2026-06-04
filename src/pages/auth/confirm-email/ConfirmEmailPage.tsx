@@ -37,8 +37,8 @@ export const ConfirmEmailPage = () => {
           onClick={handleResend}
         >
           {isActive
-            ? t('auth.confirmEmail.error.resendIn', { seconds: cooldown })
-            : t('auth.confirmEmail.error.resend')}
+            ? t('common.actions.resendIn', { seconds: cooldown })
+            : t('common.actions.resend')}
         </Button>
 
         <TextLink

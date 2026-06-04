@@ -31,9 +31,9 @@ export const VehicleEditSpecsPage = () => {
       <StateView
         icon="alertCircle"
         variant="error"
-        title={t('vehicle.error.title')}
-        description={t('vehicle.error.description')}
-        actionLabel={t('common.back')}
+        title={t('common.error.title')}
+        description={t('common.error.description')}
+        actionLabel={t('common.actions.back')}
         onAction={() =>
           navigate(ROUTES.WORKSPACES.VEHICLES.DETAIL(workspaceId ?? '', vehicleId ?? ''))
         }
@@ -46,8 +46,8 @@ export const VehicleEditSpecsPage = () => {
   return (
     <Stack gap="2xl">
       <PageHeader
-        title={t('vehicle.overview.technicalSpecs')}
-        buttonLabel={t('common.back')}
+        title={t('vehicle.overview.sections.specs')}
+        buttonLabel={t('common.actions.back')}
         buttonIcon="arrowLeft"
         onCreate={() =>
           navigate(ROUTES.WORKSPACES.VEHICLES.DETAIL(workspaceId ?? '', vehicleId ?? ''))

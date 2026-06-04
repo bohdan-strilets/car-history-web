@@ -18,7 +18,7 @@ export const TypeStep = ({ control }: VehicleStepProps) => {
       <FormFieldCardSelect
         control={control}
         name="fuelType"
-        label={t('vehicle.form.fuelType')}
+        label={t('vehicle.fields.fuelType')}
         required
         options={translateCardSelectOptions(t, FUEL_TYPE_CONFIG)}
         maxSelect={2}
@@ -28,7 +28,7 @@ export const TypeStep = ({ control }: VehicleStepProps) => {
       <FormFieldCardSelect
         control={control}
         name="bodyType"
-        label={t('vehicle.form.bodyType')}
+        label={t('vehicle.fields.bodyType')}
         required
         options={translateCardSelectOptions(t, BODY_TYPE_CONFIG)}
         maxSelect={1}
@@ -37,7 +37,7 @@ export const TypeStep = ({ control }: VehicleStepProps) => {
       <FormFieldCardSelect
         control={control}
         name="transmission"
-        label={t('vehicle.form.transmission')}
+        label={t('vehicle.fields.transmission')}
         required
         options={translateCardSelectOptions(t, TRANSMISSION_CONFIG)}
         maxSelect={1}
@@ -46,7 +46,7 @@ export const TypeStep = ({ control }: VehicleStepProps) => {
       <FormFieldCardSelect
         control={control}
         name="driveType"
-        label={t('vehicle.form.driveType')}
+        label={t('vehicle.fields.driveType')}
         required
         options={translateCardSelectOptions(t, DRIVE_TYPE_CONFIG)}
         maxSelect={1}

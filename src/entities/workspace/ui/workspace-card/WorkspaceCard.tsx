@@ -36,7 +36,7 @@ export const WorkspaceCard = ({
       <Stack direction="row" align="center" justify="between">
         <Stack direction="row" align="center" gap="xs">
           <Text weight="medium" size="sm">
-            {t('common.createdAt')}
+            {t('common.labels.createdAt')}
           </Text>
           <Text color="tertiary" size="xs">
             {createdAtDate}
@@ -44,7 +44,7 @@ export const WorkspaceCard = ({
         </Stack>
         <Stack direction="row" align="center" gap="xs">
           <Badge soft={roleConfig?.color}>{roleConfig?.label}</Badge>
-          {isCurrent && <Badge soft="green">{t('common.active')}</Badge>}
+          {isCurrent && <Badge soft="green">{t('common.state.active')}</Badge>}
         </Stack>
       </Stack>
       <Stack gap="md" align="center">
@@ -64,13 +64,13 @@ export const WorkspaceCard = ({
         <Stack direction="row" align="center" gap="sm">
           <Icon name="users" size="sm" />
           <Text color="tertiary" size="sm">
-            {t('workspace.members.count', { count: countMembers })}
+            {t('workspace.counts.members', { count: countMembers })}
           </Text>
         </Stack>
         <Stack direction="row" align="center" gap="sm">
           <Icon name="car" size="sm" />
           <Text color="tertiary" size="sm">
-            {t('workspace.cars.count', { count: countCars })}
+            {t('workspace.counts.vehicles', { count: countCars })}
           </Text>
         </Stack>
       </Stack>

@@ -54,7 +54,7 @@ export const InvitePage = () => {
       <Center fullHeight fullWidth>
         <Panel gap="xl" p="3xl" align="center" maxWidth="page" width="full">
           <Spinner size="xl" />
-          <Text>{t('workspace.invite.loading.title')}</Text>
+          <Text>{t('workspace.invite.states.loading.title')}</Text>
         </Panel>
       </Center>
     );
@@ -64,9 +64,9 @@ export const InvitePage = () => {
       <StateView
         icon="alertCircle"
         variant="error"
-        title={t('workspace.invite.notFound.title')}
-        description={t('workspace.invite.notFound.description')}
-        actionLabel={t('workspace.invite.notFound.action')}
+        title={t('workspace.invite.states.notFound.title')}
+        description={t('workspace.invite.states.notFound.description')}
+        actionLabel={t('workspace.invite.states.notFound.action')}
         onAction={() => navigate(ROUTES.WORKSPACES.ROOT)}
       />
     );
@@ -98,9 +98,9 @@ export const InvitePage = () => {
       <StateView
         icon="checkCircle"
         variant="success"
-        title={t('workspace.invite.alreadyAccepted.title')}
-        description={t('workspace.invite.alreadyAccepted.description')}
-        actionLabel={t('workspace.invite.alreadyAccepted.action')}
+        title={t('workspace.invite.states.alreadyAccepted.title')}
+        description={t('workspace.invite.states.alreadyAccepted.description')}
+        actionLabel={t('workspace.invite.states.alreadyAccepted.action')}
         onAction={() => navigate(ROUTES.WORKSPACES.ROOT)}
       />
     );
@@ -111,9 +111,9 @@ export const InvitePage = () => {
       <StateView
         icon="calendarX"
         variant="error"
-        title={t('workspace.invite.expired.title')}
-        description={t('workspace.invite.expired.description')}
-        actionLabel={t('workspace.invite.expired.action')}
+        title={t('workspace.invite.states.expired.title')}
+        description={t('workspace.invite.states.expired.description')}
+        actionLabel={t('workspace.invite.states.expired.action')}
         onAction={() => navigate(ROUTES.WORKSPACES.ROOT)}
       />
     );

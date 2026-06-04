@@ -25,7 +25,7 @@ export const BaseModal = ({
                 size="sm"
                 variant="ghost"
                 iconOnly
-                aria-label={t('common.back')}
+                aria-label={t('common.actions.back')}
               >
                 <Icon name="arrowLeft" size="md" />
               </Button>
@@ -43,7 +43,7 @@ export const BaseModal = ({
               size="sm"
               variant="ghost"
               iconOnly
-              aria-label={t('common.close')}
+              aria-label={t('common.actions.close')}
             >
               <Icon name="close" size="md" />
             </Button>

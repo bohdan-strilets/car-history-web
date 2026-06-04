@@ -10,7 +10,7 @@ import type { EditVehicleSpecsFormParams } from './vehicle.types';
 
 export const useEditVehicleSpecsForm = ({ vehicle, onSuccess }: EditVehicleSpecsFormParams) => {
   const { t } = useTranslation();
-  const resolver = zodResolver(createVehicleSpecsSchema(t));
+  const resolver = zodResolver(createVehicleSpecsSchema());
 
   const defaultValues: VehicleSpecsValues = {
     engineCode: vehicle.specs?.engineCode ?? '',

@@ -16,7 +16,7 @@ export const ThemeToggle = ({ className, collapsed, tooltipPlacement }: ThemeTog
     };
 
     return (
-      <Tooltip label={t(`themes.${theme}`)} placement={tooltipPlacement}>
+      <Tooltip label={t(`enums.theme.${theme}`)} placement={tooltipPlacement}>
         <Button
           type="button"
           onClick={handleCycle}

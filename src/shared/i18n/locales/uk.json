@@ -1,214 +1,95 @@
 {
   "common": {
-    "hidePassword": "Сховати пароль",
-    "showPassword": "Показати пароль",
-    "close": "Закрити",
-    "back": "Назад",
-    "next": "Далі",
-    "confirm": "Підтвердити",
-    "cancel": "Скасувати",
-    "step": "Крок {{current}} з {{total}}",
-    "continue": "Продовжити",
-    "noOptions": "Немає результатів",
-    "skip": "Пропустити",
-    "save": "Зберегти",
-    "createdAt": "Створено:",
-    "active": "Активний",
-    "retry": "Спробуйте ще раз",
-    "create": "Створити",
-    "you": "ви",
-    "pending": "Очікує",
-    "yes": "Так",
-    "no": "Ні"
-  },
-
-  "units": {
-    "kilometers": "кілометрів",
-    "engineVolume": "см³",
-    "KM": "Кілометри (км)",
-    "MI": "Милі (миль)",
-    "L": "Літри (л)",
-    "GAL": "Галони (гал)"
-  },
-
-  "themes": {
-    "LIGHT": "Світла",
-    "DARK": "Темна",
-    "SYSTEM": "Системна"
-  },
-
-  "languages": {
-    "PL": "Polski",
-    "UK": "Українська",
-    "EN": "English"
-  },
-
-  "onboarding": {
-    "success": {
-      "title": "Arvino готово!",
-      "description": "Ваш цифровий паспорт автомобіля готовий."
+    "actions": {
+      "save": "Зберегти",
+      "cancel": "Скасувати",
+      "delete": "Видалити",
+      "edit": "Редагувати",
+      "add": "Додати",
+      "create": "Створити",
+      "confirm": "Підтвердити",
+      "continue": "Продовжити",
+      "back": "Назад",
+      "next": "Далі",
+      "skip": "Пропустити",
+      "retry": "Спробувати ще раз",
+      "close": "Закрити",
+      "send": "Надіслати",
+      "resend": "Надіслати повторно",
+      "resendIn": "Надіслати повторно за {{seconds}}с",
+      "upload": "Завантажити",
+      "download": "Скачати",
+      "search": "Пошук",
+      "filter": "Фільтр",
+      "refresh": "Оновити"
     },
-    "welcome": {
-      "title": "Ласкаво просимо до Arvino",
-      "subtitle": "Почнімо налаштовувати ваш цифровий паспорт автомобіля.",
-      "description": "Керуйте витратами, сервісом, документами та історією вашого авто в одному місці.",
-      "start": "Почати",
-      "emailNotVerified": "Ми надіслали посилання на {{email}}. Підтвердіть email, щоб продовжити.",
-      "language": "Виберіть мову інтерфейсу",
-      "theme": "Виберіть тему"
+    "state": {
+      "loading": "Завантаження...",
+      "active": "Активний",
+      "inactive": "Неактивний",
+      "pending": "Очікує",
+      "completed": "Виконано",
+      "dismissed": "Відхилено",
+      "yes": "Так",
+      "no": "Ні"
     },
-    "workspace": {
-      "title": "Створіть свій workspace",
-      "subtitle": "Workspace — це простір для ваших авто. Можна мати кілька — особистий, сімейний або бізнесовий.",
-      "success": {
-        "title": "Workspace створено!",
-        "description": "Чудово, можемо продовжувати."
-      }
+    "labels": {
+      "you": "ви",
+      "createdAt": "Створено:",
+      "updatedAt": "Оновлено:",
+      "optional": "(необов'язково)",
+      "step": "Крок {{current}} з {{total}}",
+      "noOptions": "Немає результатів",
+      "cannotBeUndone": "Цю дію не можна скасувати.",
+      "learnMore": "Дізнатись більше",
+      "seeAll": "Переглянути всі"
     },
-    "vehicle": {
-      "title": "Додайте перший автомобіль",
-      "subtitle": "Додайте перший автомобіль. Деталі можна заповнити пізніше.",
-      "success": {
-        "title": "Автомобіль додано!",
-        "description": "Чудово, ваш автомобіль додано."
-      }
+    "password": {
+      "show": "Показати пароль",
+      "hide": "Сховати пароль"
     },
-    "settings": {
-      "title": "Налаштуйте параметри",
-      "subtitle": "Налаштуйте валюту, одиниці виміру та формат дати.",
-      "success": {
-        "title": "Налаштування збережено!",
-        "description": "Ви можете змінити їх у будь-який момент."
-      }
+    "empty": {
+      "title": "Немає даних",
+      "description": "Тут ще нічого немає."
     },
-    "timeline": {
-      "title": "Додайте першу подію",
-      "subtitle": "Додайте першу подію — коли і за скільки ви купили авто.",
-      "placeholder": {
-        "title": "Додайте першу транзакцію",
-        "description": "Коли і за скільки ви купили своє авто? Можете пропустити цей крок і додати пізніше.",
-        "add": "Додати покупку"
-      }
+    "error": {
+      "title": "Щось пішло не так",
+      "description": "Спробуйте оновити сторінку.",
+      "retry": "Спробувати ще раз"
     }
   },
 
-  "emailVerification": {
-    "title": "Підтвердіть свою електронну адресу",
-    "description": "Ми надіслали посилання для підтвердження на {{email}}. Перевірте свою скриньку.",
-    "resend": "Надіслати знову",
-    "resendIn": "Надіслати знову за {{seconds}}с",
-    "checkSpam": "Не бачите листа? Перевірте папку спам."
-  },
-
-  "auth": {
-    "common": {
-      "orContinueWith": "або продовжити з",
-      "googleButton": "Google",
-      "fields": {
-        "email": "Email",
-        "password": "Пароль",
-        "confirmPassword": "Підтвердіть пароль",
-        "firstName": "Ім'я",
-        "lastName": "Прізвище"
-      }
+  "enums": {
+    "theme": {
+      "LIGHT": "Світла",
+      "DARK": "Темна",
+      "SYSTEM": "Системна"
     },
-
-    "panel": {
-      "title": "Твій цифровий паспорт автомобіля",
-      "subtitle": "Витрати, сервіс, документи та AI асистент в одному місці.",
-      "features": [
-        { "icon": "gauge", "text": "Повна історія пробігу та сервісу" },
-        { "icon": "fileText", "text": "Документи з нагадуваннями OC та огляд" },
-        { "icon": "barChart", "text": "Статистика витрат у реальному часі" },
-        { "icon": "bot", "text": "AI асистент що знає твоє авто" }
-      ]
+    "language": {
+      "PL": "Polski",
+      "UK": "Українська",
+      "EN": "English"
     },
-
-    "login": {
-      "title": "Ласкаво просимо",
-      "subtitle": "Увійдіть у свій акаунт",
-      "form": {
-        "submit": "Увійти",
-        "forgotPassword": "Забули пароль?",
-        "noAccount": "Немає акаунту?",
-        "register": "Зареєструватись"
-      }
+    "currency": {
+      "PLN": "Злотий (PLN)",
+      "EUR": "Євро (EUR)",
+      "USD": "Долар (USD)",
+      "UAH": "Гривня (UAH)"
     },
-
-    "register": {
-      "title": "Створити акаунт",
-      "subtitle": "Приєднуйся до Arvino вже сьогодні",
-      "form": {
-        "submit": "Зареєструватись",
-        "hasAccount": "Вже є акаунт?",
-        "login": "Увійти"
-      }
+    "distanceUnit": {
+      "KM": "Кілометри (км)",
+      "MI": "Милі (миль)"
     },
-
-    "forgotPassword": {
-      "title": "Забули пароль?",
-      "subtitle": "Надішлемо вам посилання для скидання пароля",
-      "form": {
-        "submit": "Надіслати посилання"
-      },
-      "backToLogin": "Повернутись до входу",
-      "success": {
-        "title": "Перевірте пошту",
-        "subtitle": "Ми надіслали посилання на {{email}}",
-        "resend": "Надіслати ще раз",
-        "resendIn": "Надіслати ще раз за {{seconds}}с"
-      }
+    "fuelUnit": {
+      "L": "Літри (л)",
+      "GAL": "Галони (гал)"
     },
-
-    "resetPassword": {
-      "title": "Встановити новий пароль",
-      "subtitle": "Введіть новий пароль для вашого акаунту",
-      "form": {
-        "submit": "Зберегти пароль"
-      },
-      "success": "Пароль змінено. Можете увійти."
+    "dateFormat": {
+      "DD_MM_YYYY": "ДД.ММ.РРРР",
+      "YYYY_MM_DD": "РРРР.ММ.ДД",
+      "DD_MONTH_YYYY": "ДД Місяця РРРР"
     },
-
-    "confirmEmail": {
-      "verifying": "Перевірка адреси email...",
-      "success": {
-        "title": "Email підтверджено!",
-        "subtitle": "Вашу адресу email успішно підтверджено.",
-        "login": "Увійти"
-      },
-      "error": {
-        "title": "Посилання недійсне",
-        "subtitle": "Посилання застаріло або вже було використано.",
-        "resend": "Надіслати ще раз",
-        "resendIn": "Надіслати ще раз за {{seconds}}с"
-      }
-    },
-
-    "emailVerification": {
-      "banner": "Підтвердіть свою адресу email для повного доступу."
-    }
-  },
-
-  "nav": {
-    "home": "Головна",
-    "garage": "Гараж",
-    "stations": "Станції",
-    "ai": "AI",
-    "profile": "Профіль",
-    "bottomBar": {
-      "ariaLabel": "Головна навігація"
-    },
-    "sidebar": {
-      "ariaLabel": "Бічна навігація",
-      "collapse": "Згорнути",
-      "expand": "Розгорнути",
-      "theme": "Тема",
-      "language": "Мова"
-    }
-  },
-
-  "workspace": {
-    "types": {
+    "workspaceType": {
       "PERSONAL": {
         "label": "Особистий",
         "description": "Тільки для вас"
@@ -222,189 +103,11 @@
         "description": "Для компанії або майстерні"
       }
     },
-
-    "fields": {
-      "name": {
-        "label": "Назва workspace",
-        "placeholder": "Назва вашого workspace"
-      },
-      "currency": "Валюта",
-      "distanceUnit": "Одиниця відстані",
-      "fuelUnit": "Одиниця палива",
-      "dateFormat": "Формат дати",
-      "timezonePlaceholder": "Виберіть часовий пояс",
-      "type": "Тип workspace"
+    "role": {
+      "OWNER": "Власник",
+      "ADMIN": "Адміністратор",
+      "MEMBER": "Учасник"
     },
-
-    "currency": {
-      "PLN": "Злотий (PLN)",
-      "EUR": "Євро (EUR)",
-      "USD": "Долар (USD)",
-      "UAH": "Гривня (UAH)"
-    },
-
-    "dateFormat": {
-      "DD_MM_YYYY": "ДД.ММ.РРРР",
-      "YYYY_MM_DD": "РРРР.MM.ДД",
-      "DD_MONTH_YYYY": "ДД Місяця РРРР"
-    },
-
-    "timezone": "Часовий пояс",
-
-    "actions": {
-      "new": "Новий workspace"
-    },
-
-    "count_one": "{{count}} workspace",
-    "count_few": "{{count}} workspace'и",
-    "count_many": "{{count}} workspace'ів",
-    "count_other": "{{count}} workspace'ів",
-
-    "cars": {
-      "count_one": "{{count}} транспортний засіб",
-      "count_few": "{{count}} транспортні засоби",
-      "count_many": "{{count}} транспортних засобів",
-      "count_other": "{{count}} транспортних засобів"
-    },
-
-    "list": {
-      "title": "Ваші workspace'и",
-      "create": "Новий workspace",
-      "count_one": "{{count}} workspace",
-      "count_other": "{{count}} workspace'ів",
-      "empty": {
-        "title": "Немає workspace'ів",
-        "description": "Створіть свій перший workspace, щоб почати."
-      }
-    },
-
-    "detail": {
-      "vehicles": "Транспортні засоби",
-      "members": "Учасники",
-      "settings": "Налаштування",
-      "delete": "Видалити workspace",
-      "deleteConfirm": "Ви впевнені, що хочете видалити цей workspace? Ця дія незворотна.",
-      "deleteSuccess": "Workspace було видалено",
-      "updateSuccess": "Workspace було оновлено",
-      "info": "Загальна інформація",
-      "leave": "Покинути workspace",
-      "leaveConfirm": "Ви впевнені, що хочете покинути цей workspace?",
-      "leaveSuccess": "Ви покинули workspace"
-    },
-
-    "vehicles": {
-      "title": "Транспортні засоби"
-    },
-
-    "members": {
-      "title": "Учасники",
-      "invite": "Запросити",
-      "count": "{{count}} учасників",
-      "role": {
-        "OWNER": "Власник",
-        "ADMIN": "Адміністратор",
-        "MEMBER": "Учасник"
-      },
-      "remove": "Видалити учасника",
-      "editRole": "Редагувати роль",
-      "removeConfirm": "Ви впевнені, що хочете видалити цього учасника?",
-      "updateRoleSuccess": "Роль учасника була оновлена",
-      "removeSuccess": "Учасник був видалений",
-      "pendingInvites": "Очікуючі запрошення"
-    },
-
-    "invite": {
-      "send": "Надіслати запрошення",
-      "title": "Запрошення до workspace",
-      "description": "Вас запросили до workspace {{name}}",
-      "accept": "Прийняти",
-      "reject": "Відхилити",
-      "fields": {
-        "email": "Email",
-        "role": "Роль"
-      },
-      "alreadyAccepted": {
-        "title": "Запрошення вже прийнято",
-        "description": "Ви вже є учасником цього workspace.",
-        "action": "Перейти до workspace'ів"
-      },
-      "expired": {
-        "title": "Запрошення закінчилося",
-        "description": "Це запрошення закінчилося або було відхилено.",
-        "action": "Перейти до workspace'ів"
-      },
-      "loading": {
-        "title": "Завантаження запрошення..."
-      },
-      "notFound": {
-        "title": "Запрошення не знайдено",
-        "description": "Посилання недійсне або закінчилось.",
-        "action": "Перейти до workspace'ів"
-      },
-      "success": "Запрошення було надіслано",
-      "acceptSuccess": "Ви приєдналися до workspace",
-      "redirecting": "Перенаправлення...",
-      "rejectSuccess": "Запрошення було відхилено",
-      "cancelSuccess": "Запрошення було скасовано",
-      "cancel": "Скасувати запрошення",
-      "cancelConfirm": "Ви впевнені, що хочете скасувати це запрошення?"
-    },
-
-    "new": {
-      "title": "Новий workspace",
-      "submit": "Створити workspace",
-      "success": "Workspace було створено"
-    },
-
-    "settings": {
-      "title": "Налаштування workspace",
-      "save": "Зберегти налаштування",
-      "danger": {
-        "title": "Керування workspace",
-        "delete": "Видалити workspace"
-      },
-      "noPermissions": "Тільки власник може керувати налаштуваннями workspace.",
-      "updateSuccess": "Налаштування workspace було збережено"
-    },
-
-    "notFound": {
-      "title": "Workspace не знайдено",
-      "description": "Workspace не існує або у вас немає доступу до нього.",
-      "action": "Повернутися до workspace'ів"
-    }
-  },
-
-  "vehicle": {
-    "form": {
-      "popularBrands": "Популярні марки",
-      "brand": "Марка",
-      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
-      "model": "Модель",
-      "modelPlaceholder": "Model 3, X5, E-Class...",
-      "year": "Рік виробництва",
-      "yearPlaceholder": "наприклад, 2020",
-      "generation": "Покоління",
-      "generationPlaceholder": "наприклад, B8, Mk7",
-      "nickname": "Власна назва",
-      "nicknamePlaceholder": "наприклад, Мій срібний",
-      "fuelType": "Тип палива",
-      "bodyType": "Тип кузова",
-      "transmission": "Коробка передач",
-      "driveType": "Привід",
-      "plateNumber": "Номер реєстраційний",
-      "plateNumberPlaceholder": "наприклад, WA 12345",
-      "vin": "Номер VIN",
-      "vinPlaceholder": "17 символів",
-      "countryOfOrigin": "Країна походження",
-      "countryOfOriginPlaceholder": "наприклад, Німеччина",
-      "currentMileage": "Поточний пробіг",
-      "currentMileageHint": "Допоможе нам точно відстежувати витрати та інтервали обслуговування",
-      "engineDisplacementCc": "Об'єм двигуна",
-      "color": "Колір",
-      "description": "Опис",
-      "descriptionPlaceholder": "Додаткова інформація про автомобіль..."
-    },
-
     "fuelType": {
       "PETROL": "Бензин",
       "DIESEL": "Дизель",
@@ -412,7 +115,6 @@
       "ELECTRIC": "Електричний",
       "LPG": "LPG"
     },
-
     "bodyType": {
       "SEDAN": "Седан",
       "HATCHBACK": "Хетчбек",
@@ -426,55 +128,482 @@
       "VAN": "Фургон",
       "OTHER": "Інше"
     },
-
     "transmission": {
       "MANUAL": "Механічна",
       "AUTOMATIC": "Автоматична",
       "ROBOTIC": "Роботизована"
     },
-
     "driveType": {
-      "FWD": "FWD",
-      "RWD": "RWD",
-      "AWD": "AWD"
+      "FWD": "Передній (FWD)",
+      "RWD": "Задній (RWD)",
+      "AWD": "Повний (AWD)"
     },
-
-    "colors": {
+    "color": {
       "BLACK": "Чорний",
       "WHITE": "Білий",
       "SILVER": "Сріблястий",
       "GRAY": "Сірий",
       "DARK_GRAY": "Темно-сірий",
       "RED": "Червоний",
-      "DARK_RED": "Темно-червоний",
+      "DARK_RED": "Бордовий",
       "BLUE": "Синій",
-      "LIGHT_BLUE": "Світло-синій",
+      "LIGHT_BLUE": "Блакитний",
       "NAVY": "Темно-синій",
       "GREEN": "Зелений",
       "OLIVE": "Оливковий",
       "BROWN": "Коричневий",
       "BEIGE": "Бежевий",
-      "CHAMPAGNE": "Шампанське",
+      "CHAMPAGNE": "Шампань",
       "GOLD": "Золотий",
       "ORANGE": "Помаранчевий",
       "YELLOW": "Жовтий",
       "PURPLE": "Фіолетовий",
+      "OTHER": "Інший"
+    },
+    "serviceStationType": {
+      "MECHANIC": "СТО / Майстерня",
+      "TIRE_SHOP": "Шиномонтаж",
+      "CAR_WASH": "Автомийка",
+      "FUEL_STATION": "Автозаправна станція",
+      "DEALERSHIP": "Автосалон",
       "OTHER": "Інше"
     },
+    "reminderType": {
+      "INSURANCE": "Страхування",
+      "TECHNICAL_INSPECTION": "Технічний огляд",
+      "OIL_CHANGE": "Заміна оливи",
+      "FILTER_CHANGE": "Заміна фільтра",
+      "TIRE_CHANGE": "Заміна шин",
+      "CUSTOM": "Власне"
+    },
+    "maintenanceType": {
+      "OIL_CHANGE": "Заміна оливи",
+      "BRAKE_PADS": "Гальмівні колодки",
+      "BRAKE_DISCS": "Гальмівні диски",
+      "TIMING_BELT": "Ремінь ГРМ",
+      "AIR_FILTER": "Повітряний фільтр",
+      "FUEL_FILTER": "Паливний фільтр",
+      "CABIN_FILTER": "Салонний фільтр",
+      "SPARK_PLUGS": "Свічки запалювання",
+      "COOLANT": "Охолоджувальна рідина",
+      "TRANSMISSION_OIL": "Олива в КПП",
+      "CUSTOM": "Власний інтервал"
+    },
+    "tireType": {
+      "ALL_SEASON": "Всесезонні",
+      "SUMMER": "Літні",
+      "WINTER": "Зимові"
+    },
+    "tireStatus": {
+      "MOUNTED": "Встановлені",
+      "STORED": "На зберіганні",
+      "RETIRED": "Списані"
+    },
+    "timelineType": {
+      "PURCHASE": "Купівля",
+      "SALE": "Продаж",
+      "REFUEL": "Заправка",
+      "CHARGE": "Зарядка",
+      "SERVICE": "Сервіс",
+      "DOCUMENT": "Документ",
+      "EXPENSE": "Витрата",
+      "TIRE_CHANGE": "Заміна шин",
+      "TRIP": "Поїздка"
+    },
+    "documentType": {
+      "INSURANCE_OC": "Страхування OC",
+      "INSURANCE_AC": "Страхування AC",
+      "TECHNICAL_INSPECTION": "Технічний огляд",
+      "LOAN": "Кредит",
+      "LEASING": "Лізинг",
+      "VIGNETTE": "Віньєтка",
+      "OTHER": "Інше"
+    },
+    "expenseCategory": {
+      "ACCESSORIES": "Аксесуари",
+      "CARE": "Догляд",
+      "PARKING": "Паркування",
+      "FINE": "Штраф",
+      "REGISTRATION": "Реєстрація",
+      "RENTAL": "Оренда",
+      "OTHER": "Інше"
+    },
+    "serviceCategory": {
+      "MAINTENANCE": "Технічне обслуговування",
+      "REPAIR": "Ремонт",
+      "OTHER": "Інше"
+    },
+    "purchaseFrom": {
+      "SALON": "Салон",
+      "PRIVATE": "Приватна особа",
+      "AUCTION": "Аукціон",
+      "ABROAD": "З-за кордону"
+    },
+    "tripPurpose": {
+      "PERSONAL": "Особиста",
+      "WORK": "Службова",
+      "OTHER": "Інша"
+    }
+  },
 
+  "units": {
+    "cc": "см³",
+    "kwh": "кВт·год",
+    "nm": "Нм",
+    "hp": "к.с.",
+    "kw": "кВт",
+    "percent": "%",
+    "gkm": "г/км",
+    "lper100km": "л/100км",
+    "mm": "мм",
+    "kg": "кг",
+    "kmh": "км/год",
+    "sec": "с",
+    "liters": "л"
+  },
+
+  "fields": {
+    "date": "Дата",
+    "startDate": "Дата початку",
+    "endDate": "Дата закінчення",
+    "issueDate": "Дата видачі",
+    "expireDate": "Дійсний до",
+    "price": "Ціна",
+    "cost": "Вартість",
+    "amount": "Сума",
+    "mileage": "Пробіг",
+    "mileagePlaceholder": "наприклад, 85 000",
+    "description": "Опис",
+    "descriptionPlaceholder": "Додайте опис...",
+    "notes": "Нотатки",
+    "notesPlaceholder": "Додайте нотатки...",
+    "title": "Назва",
+    "name": "Ім'я",
+    "namePlaceholder": "Введіть назву...",
+    "phone": "Номер телефону",
+    "phonePlaceholder": "наприклад, +380 12 345 6789",
+    "website": "Вебсайт",
+    "websitePlaceholder": "наприклад, https://example.com",
+    "address": "Адреса",
+    "email": "Email",
+    "rating": "Оцінка",
+    "category": "Категорія",
+    "type": "Тип",
+    "status": "Статус"
+  },
+
+  "nav": {
+    "items": {
+      "home": "Головна",
+      "garage": "Гараж",
+      "stations": "Станції",
+      "ai": "AI",
+      "profile": "Профіль"
+    },
+    "bottomBar": {
+      "ariaLabel": "Головна навігація"
+    },
+    "sidebar": {
+      "ariaLabel": "Бічна навігація",
+      "collapse": "Згорнути меню",
+      "expand": "Розгорнути меню",
+      "theme": "Тема",
+      "language": "Мова"
+    }
+  },
+
+  "auth": {
+    "common": {
+      "orContinueWith": "або продовжити через",
+      "googleButton": "Увійти через Google",
+      "fields": {
+        "email": "Email",
+        "password": "Пароль",
+        "confirmPassword": "Повторіть пароль",
+        "firstName": "Ім'я",
+        "lastName": "Прізвище"
+      }
+    },
+    "panel": {
+      "title": "Ваш цифровий паспорт автомобіля",
+      "subtitle": "Витрати, сервіс, документи та асистент AI — все в одному місці.",
+      "features": [
+        { "icon": "gauge", "text": "Повна історія пробігу та обслуговування" },
+        { "icon": "fileText", "text": "Документи з нагадуваннями про OC та огляд" },
+        { "icon": "barChart", "text": "Статистика витрат у реальному часі" },
+        { "icon": "bot", "text": "Асистент AI, який знає ваше авто" }
+      ]
+    },
+    "login": {
+      "title": "З поверненням",
+      "subtitle": "Увійдіть, щоб повернутись до свого гаражу",
+      "form": {
+        "submit": "Увійти",
+        "forgotPassword": "Забули пароль?",
+        "noAccount": "Ще немає акаунту?",
+        "register": "Зареєструватись"
+      }
+    },
+    "register": {
+      "title": "Створити акаунт",
+      "subtitle": "Приєднуйтесь до Arvino і почніть контролювати своє авто",
+      "form": {
+        "submit": "Зареєструватись",
+        "hasAccount": "Вже є акаунт?",
+        "login": "Увійти"
+      }
+    },
+    "forgotPassword": {
+      "title": "Забули пароль?",
+      "subtitle": "Вкажіть ваш email — надішлемо посилання для встановлення нового пароля",
+      "form": {
+        "submit": "Надіслати посилання"
+      },
+      "backToLogin": "Повернутись до входу",
+      "success": {
+        "title": "Перевірте пошту",
+        "subtitle": "Ми надіслали посилання на {{email}}"
+      }
+    },
+    "resetPassword": {
+      "title": "Новий пароль",
+      "subtitle": "Встановіть новий пароль для вашого акаунту",
+      "form": {
+        "submit": "Зберегти пароль"
+      },
+      "success": "Пароль змінено — тепер можете увійти"
+    },
+    "confirmEmail": {
+      "verifying": "Перевіряємо вашу адресу email...",
+      "success": {
+        "title": "Email підтверджено!",
+        "subtitle": "Вашу адресу email успішно верифіковано.",
+        "action": "Перейти до входу"
+      },
+      "error": {
+        "title": "Посилання недійсне або застаріло",
+        "subtitle": "Можете запросити нове посилання нижче."
+      }
+    },
+    "emailVerification": {
+      "banner": "Підтвердіть адресу email, щоб розблокувати повний доступ.",
+      "title": "Підтвердіть адресу email",
+      "description": "Ми надіслали верифікаційне посилання на {{email}}. Перевірте пошту.",
+      "checkSpam": "Не бачите листа? Перевірте папку «Спам»."
+    }
+  },
+
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "Ласкаво просимо до Arvino",
+        "subtitle": "Налаштуємо ваш цифровий паспорт автомобіля.",
+        "description": "Керуйте витратами, сервісом, документами та історією авто — все в одному місці.",
+        "start": "Починаємо",
+        "emailNotVerified": "Ми надіслали верифікаційне посилання на {{email}}. Підтвердіть email, щоб продовжити.",
+        "language": "Виберіть мову інтерфейсу",
+        "theme": "Виберіть тему"
+      },
+      "workspace": {
+        "title": "Створіть свій workspace",
+        "subtitle": "Workspace — це простір для ваших авто. Можна мати кілька — особистий, сімейний або бізнесовий.",
+        "success": {
+          "title": "Workspace створено!",
+          "description": "Чудово, рухаємось далі."
+        }
+      },
+      "vehicle": {
+        "title": "Додайте перший автомобіль",
+        "subtitle": "Деталі можна заповнити пізніше — зараз достатньо основних даних.",
+        "success": {
+          "title": "Автомобіль додано!",
+          "description": "Ваше авто вже в гаражі."
+        }
+      },
+      "settings": {
+        "title": "Налаштуйте параметри",
+        "subtitle": "Встановіть валюту, одиниці виміру та формат дати — змінити можна в будь-який момент.",
+        "success": {
+          "title": "Налаштування збережено!",
+          "description": "Все готово."
+        }
+      },
+      "timeline": {
+        "title": "Додайте першу подію",
+        "subtitle": "Коли і за скільки ви купили авто? Це відмінна відправна точка для його історії.",
+        "empty": {
+          "title": "Почніть з купівлі",
+          "description": "Додайте коли і за скільки купили авто — або пропустіть і поверніться пізніше.",
+          "action": "Додати купівлю"
+        }
+      }
+    },
+    "success": {
+      "title": "Arvino готове до роботи!",
+      "description": "Ваш цифровий паспорт автомобіля налаштовано."
+    }
+  },
+
+  "workspace": {
+    "fields": {
+      "name": "Назва workspace",
+      "namePlaceholder": "наприклад, Мій гараж",
+      "type": "Тип workspace",
+      "timezone": "Часовий пояс",
+      "timezonePlaceholder": "Виберіть часовий пояс",
+      "currency": "Валюта",
+      "distanceUnit": "Одиниця відстані",
+      "fuelUnit": "Одиниця палива",
+      "dateFormat": "Формат дати"
+    },
+    "counts": {
+      "workspaces_one": "{{count}} workspace",
+      "workspaces_few": "{{count}} workspace'и",
+      "workspaces_many": "{{count}} workspace'ів",
+      "workspaces_other": "{{count}} workspace'ів",
+      "vehicles_one": "{{count}} автомобіль",
+      "vehicles_few": "{{count}} автомобілі",
+      "vehicles_many": "{{count}} автомобілів",
+      "vehicles_other": "{{count}} автомобілів",
+      "members_one": "{{count}} учасник",
+      "members_few": "{{count}} учасники",
+      "members_many": "{{count}} учасників",
+      "members_other": "{{count}} учасників"
+    },
+    "list": {
+      "title": "Ваші workspace'и",
+      "create": "Новий workspace",
+      "empty": {
+        "title": "Немає workspace'ів",
+        "description": "Створіть перший workspace, щоб розпочати."
+      }
+    },
+    "new": {
+      "title": "Новий workspace",
+      "submit": "Створити workspace",
+      "success": "Workspace створено"
+    },
+    "detail": {
+      "info": "Загальна інформація",
+      "vehicles": "Автомобілі",
+      "members": "Учасники",
+      "settings": "Налаштування",
+      "updateSuccess": "Зміни збережено",
+      "leave": "Покинути workspace",
+      "leaveConfirm": "Ви впевнені, що хочете покинути цей workspace?",
+      "leaveSuccess": "Ви покинули workspace"
+    },
+    "members": {
+      "title": "Учасники",
+      "invite": "Запросити учасника",
+      "remove": "Видалити з workspace",
+      "editRole": "Змінити роль",
+      "removeConfirm": "Ви впевнені, що хочете видалити цього учасника з workspace?",
+      "updateRoleSuccess": "Роль змінено",
+      "removeSuccess": "Учасника видалено з workspace",
+      "pendingInvites": "Очікуючі запрошення"
+    },
+    "invite": {
+      "send": "Надіслати запрошення",
+      "title": "Запрошення до workspace",
+      "description": "Вас запросили до workspace {{name}}",
+      "accept": "Приєднатись",
+      "reject": "Відхилити",
+      "cancel": "Скасувати запрошення",
+      "cancelConfirm": "Ви впевнені, що хочете скасувати це запрошення?",
+      "fields": {
+        "email": "Email",
+        "role": "Роль"
+      },
+      "states": {
+        "alreadyAccepted": {
+          "title": "Ви вже учасник",
+          "description": "Це запрошення вже було прийнято.",
+          "action": "Перейти до workspace'ів"
+        },
+        "expired": {
+          "title": "Запрошення застаріло",
+          "description": "Це посилання вже не активне.",
+          "action": "Перейти до workspace'ів"
+        },
+        "loading": {
+          "title": "Завантаження запрошення..."
+        },
+        "notFound": {
+          "title": "Запрошення не знайдено",
+          "description": "Посилання недійсне або застаріло.",
+          "action": "Перейти до workspace'ів"
+        }
+      },
+      "success": "Запрошення надіслано",
+      "acceptSuccess": "Ви приєднались до workspace — вітаємо!",
+      "rejectSuccess": "Запрошення відхилено",
+      "cancelSuccess": "Запрошення скасовано",
+      "redirecting": "Перенаправляємо вас..."
+    },
+    "settings": {
+      "title": "Налаштування workspace",
+      "save": "Зберегти налаштування",
+      "updateSuccess": "Налаштування збережено",
+      "noPermissions": "Тільки власник workspace може змінювати налаштування.",
+      "danger": {
+        "title": "Небезпечна зона",
+        "delete": "Видалити workspace",
+        "deleteConfirm": "Ви впевнені, що хочете видалити workspace? Цю дію не можна скасувати.",
+        "deleteSuccess": "Workspace видалено"
+      }
+    },
+    "notFound": {
+      "title": "Workspace не існує",
+      "description": "У вас немає доступу до цього workspace або його було видалено.",
+      "action": "Повернутись до списку workspace'ів"
+    }
+  },
+
+  "vehicle": {
+    "fields": {
+      "brand": "Марка",
+      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
+      "model": "Модель",
+      "modelPlaceholder": "Model 3, X5, E-Class...",
+      "year": "Рік випуску",
+      "yearPlaceholder": "наприклад, 2020",
+      "generation": "Покоління",
+      "generationPlaceholder": "наприклад, B8, Mk7",
+      "nickname": "Власна назва",
+      "nicknamePlaceholder": "наприклад, Мій сріблястий",
+      "fuelType": "Тип палива",
+      "bodyType": "Тип кузова",
+      "transmission": "Коробка передач",
+      "driveType": "Привід",
+      "plateNumber": "Реєстраційний номер",
+      "plateNumberPlaceholder": "наприклад, WA 12345",
+      "vin": "Номер VIN",
+      "vinPlaceholder": "17 буквено-цифрових символів",
+      "countryOfOrigin": "Країна походження",
+      "countryOfOriginPlaceholder": "наприклад, Німеччина",
+      "currentMileage": "Поточний пробіг",
+      "currentMileagePlaceholder": "наприклад, 85 000",
+      "currentMileageHint": "Допоможе відстежувати інтервали технічного обслуговування",
+      "engineDisplacementCc": "Об'єм двигуна",
+      "color": "Колір",
+      "description": "Опис",
+      "descriptionPlaceholder": "Додаткова інформація про автомобіль..."
+    },
+    "form": {
+      "popularBrands": "Популярні марки"
+    },
     "list": {
       "title": "Автомобілі",
       "add": "Додати автомобіль",
       "empty": {
         "title": "Немає автомобілів",
-        "description": "Додайте свій перший автомобіль до цього workspace'у."
+        "description": "Додайте перший автомобіль до цього workspace'у."
       }
     },
-
     "new": {
       "title": "Новий автомобіль"
     },
-
     "detail": {
       "tabs": {
         "overview": "Огляд",
@@ -485,211 +614,217 @@
         "gallery": "Галерея",
         "tires": "Шини"
       },
-      "delete": "Видалити автомобіль",
-      "deleteConfirm": "Ви впевнені, що хочете видалити цей автомобіль?",
-      "deleteSuccess": "Автомобіль було видалено",
       "edit": "Редагувати автомобіль",
-      "years": "років",
-      "engine": "двигун",
-      "kmPerYear": "км / рік",
-      "oilChanges": "заміни олії",
-      "earthCircumferences": "обертів Землі",
-      "toMoon": "дорога до Місяця",
-      "vsPoland": "vs. середнє PL",
-      "daysOwned": "днів власності",
-      "monthsOwned": "місяців власності",
-      "fuelCostEstimate": "оцінка вартості палива (PLN)",
-      "funFacts": "Цікаві факти",
-      "editSuccess": "Автомобіль було оновлено",
-      "editSpecs": "Редагувати специфікацію"
-    },
-
-    "error": {
-      "title": "Помилка",
-      "description": "Не вдалося завантажити автомобілі."
-    },
-
-    "overview": {
-      "basicInfo": "Основна інформація",
-      "specs": "Технічні характеристики",
-      "appearance": "Зовнішній вигляд",
-      "description": "Опис",
-      "purchaseSale": "Закупівля / Продаж",
-      "purchaseDate": "Дата закупівлі",
-      "purchasePrice": "Ціна закупівлі",
-      "purchaseMileage": "Пробіг при закупівлі",
-      "saleDate": "Дата продажу",
-      "salePrice": "Ціна продажу",
-      "saleMileage": "Пробіг при продажу",
-      "technicalSpecs": "Технічні характеристики",
-
-      "descriptionEmpty": {
-        "title": "Немає опису",
-        "description": "Додай короткий опис свого автомобіля",
-        "action": "Додати опис"
-      },
-      "purchaseEmpty": {
-        "title": "Немає інформації про купівлю",
-        "description": "Додай подію купівлі в стрічку подій",
-        "action": "Додати купівлю"
-      },
-      "saleEmpty": {
-        "title": "Автомобіль ще з вами 🚗",
-        "description": "Коли вирішите продати — додайте подію продажу в стрічку",
-        "action": "Продати авто"
+      "editSuccess": "Дані автомобіля оновлено",
+      "editSpecs": "Редагувати характеристики",
+      "delete": "Видалити автомобіль",
+      "deleteConfirm": "Ви впевнені, що хочете видалити цей автомобіль? Цю дію не можна скасувати.",
+      "deleteSuccess": "Автомобіль видалено",
+      "funFacts": {
+        "title": "Цікаві факти",
+        "years": "років у власності",
+        "engine": "двигун",
+        "kmPerYear": "км / рік",
+        "oilChanges": "замін оливи",
+        "earthCircumferences": "обертів навколо Землі",
+        "toMoon": "дорога до Місяця",
+        "vsPoland": "vs. середнє PL",
+        "daysOwned": "днів у власності",
+        "monthsOwned": "місяців у власності",
+        "fuelCostEstimate": "орієнт. вартість палива (PLN)"
       }
     },
-
+    "overview": {
+      "sections": {
+        "basicInfo": "Основна інформація",
+        "specs": "Технічні характеристики",
+        "appearance": "Зовнішній вигляд",
+        "description": "Опис",
+        "purchaseSale": "Купівля / Продаж"
+      },
+      "fields": {
+        "purchaseDate": "Дата купівлі",
+        "purchasePrice": "Ціна купівлі",
+        "purchaseMileage": "Пробіг при купівлі",
+        "saleDate": "Дата продажу",
+        "salePrice": "Ціна продажу",
+        "saleMileage": "Пробіг при продажу"
+      },
+      "empty": {
+        "description": {
+          "title": "Немає опису",
+          "description": "Додайте короткий опис свого автомобіля",
+          "action": "Додати опис"
+        },
+        "purchase": {
+          "title": "Немає інформації про купівлю",
+          "description": "Додайте подію купівлі до історії автомобіля",
+          "action": "Додати купівлю"
+        },
+        "sale": {
+          "title": "Автомобіль ще з вами",
+          "description": "Коли вирішите продати — додайте подію продажу до історії",
+          "action": "Додати продаж"
+        }
+      }
+    },
     "specs": {
-      "engineCode": "Код двигуна",
-      "enginePowerHp": "Потужність (HP)",
-      "enginePowerKw": "Потужність (kW)",
-      "torqueNm": "Крутний момент",
-      "cylindersCount": "Кількість циліндрів",
-      "gearsCount": "Кількість передач",
-      "turbo": "Турбо",
-      "combinedConsumption": "Середнє споживання",
-      "cityConsumption": "Споживання в місті",
-      "highwayConsumption": "Споживання на трасі",
-      "fuelTankCapacity": "Об'єм бака",
-      "co2EmissionGKm": "Викиди CO2",
-      "euroStandard": "Стандарт Євро",
-      "accelerationSec": "Прискорення 0-100",
-      "topSpeedKmh": "Максимальна швидкість",
-      "weightKg": "Власна маса",
-      "numberOfSeats": "Кількість місць",
-      "numberOfDoors": "Кількість дверей",
-      "ncapRating": "Оцінка NCAP",
-      "airbagsCount": "Кількість подушок",
-      "tireSizeFront": "Розмір шин спереду",
-      "tireSizeRear": "Розмір шин ззаду",
-      "batteryCapacityKwh": "Потужність батареї",
-      "electricRangeKm": "Електричний запас ходу",
-      "lengthMm": "Довжина",
-      "widthMm": "Ширина",
-      "heightMm": "Висота",
-      "wheelbaseMm": "Розстав осі",
-      "groundClearanceMm": "Кліренс",
-      "trunkVolumeLiters": "Об'єм багажника",
-      "engineLayout": "Розташування двигуна",
+      "fields": {
+        "engineCode": "Код двигуна",
+        "enginePowerHp": "Потужність (к.с.)",
+        "enginePowerKw": "Потужність (кВт)",
+        "torqueNm": "Крутний момент (Нм)",
+        "cylindersCount": "Кількість циліндрів",
+        "gearsCount": "Кількість передач",
+        "turbo": "Турбонаддув",
+        "combinedConsumption": "Змішане споживання",
+        "cityConsumption": "Споживання в місті",
+        "highwayConsumption": "Споживання на трасі",
+        "fuelTankCapacity": "Об'єм паливного бака",
+        "co2EmissionGKm": "Викиди CO₂ (г/км)",
+        "euroStandard": "Екологічний стандарт Євро",
+        "accelerationSec": "Прискорення 0–100 км/год (с)",
+        "topSpeedKmh": "Максимальна швидкість (км/год)",
+        "weightKg": "Власна маса (кг)",
+        "numberOfSeats": "Кількість місць",
+        "numberOfDoors": "Кількість дверей",
+        "ncapRating": "Оцінка безпеки Euro NCAP",
+        "airbagsCount": "Кількість подушок безпеки",
+        "tireSizeFront": "Розмір шин — перед",
+        "tireSizeRear": "Розмір шин — зад",
+        "batteryCapacityKwh": "Ємність батареї (кВт·год)",
+        "electricRangeKm": "Електричний запас ходу (км)",
+        "lengthMm": "Довжина (мм)",
+        "widthMm": "Ширина (мм)",
+        "heightMm": "Висота (мм)",
+        "wheelbaseMm": "Колісна база (мм)",
+        "groundClearanceMm": "Кліренс (мм)",
+        "trunkVolumeLiters": "Об'єм багажника (л)",
+        "engineLayout": "Розташування двигуна"
+      },
       "sections": {
         "engine": "Двигун",
         "consumption": "Споживання палива",
-        "performance": "Оси́г",
-        "dimensions": "Розміри",
-        "interior": "Інтер'єр",
+        "performance": "Динамічні характеристики",
+        "dimensions": "Габарити",
+        "interior": "Салон",
         "safetyEco": "Безпека та екологія",
         "tires": "Шини"
       }
     },
-
     "ai": {
-      "title": "Заповнити специфікацію за допомогою AI",
-      "description": "AI автоматично заповнить технічні дані на основі марки, моделі та року випуску.",
-      "action": "Заповнити за допомогою AI",
+      "title": "Заповнити характеристики за допомогою AI",
+      "description": "Асистент AI автоматично заповнить технічні дані на основі марки, моделі та року випуску.",
+      "action": "Заповнити з AI",
       "loading": "AI аналізує автомобіль..."
     }
   },
 
   "user": {
-    "profile": "Профіль",
-    "logout": "Вийти",
-    "logoutConfirm": "Ви впевнені, що хочете вийти?"
+    "profile": {
+      "title": "Профіль",
+      "edit": "Редагувати профіль",
+      "updateSuccess": "Профіль оновлено"
+    },
+    "logout": {
+      "action": "Вийти",
+      "confirm": "Ви впевнені, що хочете вийти?"
+    }
   },
 
   "errors": {
     "INVALID_CREDENTIALS": "Невірний email або пароль",
-    "ACCOUNT_LOCKED": "Акаунт тимчасово заблоковано",
-    "ACCOUNT_SUSPENDED": "Акаунт призупинено",
-    "ACCOUNT_DELETED": "Цей акаунт не існує",
-    "ACCESS_TOKEN_INVALID": "Сесія недійсна",
-    "ACCESS_TOKEN_EXPIRED": "Сесія закінчилась",
-    "REFRESH_TOKEN_INVALID": "Сесія недійсна",
-    "REFRESH_TOKEN_EXPIRED": "Сесія закінчилась",
-    "REFRESH_TOKEN_REUSE": "Виявлено підозрілу активність, увійдіть знову",
+    "ACCOUNT_LOCKED": "Акаунт тимчасово заблоковано через занадто багато невдалих спроб входу",
+    "ACCOUNT_SUSPENDED": "Акаунт заблоковано — зверніться до служби підтримки",
+    "ACCOUNT_DELETED": "Акаунт не існує або був видалений",
+    "ACCESS_TOKEN_INVALID": "Сесія недійсна — увійдіть повторно",
+    "ACCESS_TOKEN_EXPIRED": "Сесія закінчилась — увійдіть повторно",
+    "REFRESH_TOKEN_INVALID": "Сесія недійсна — увійдіть повторно",
+    "REFRESH_TOKEN_EXPIRED": "Сесія закінчилась — увійдіть повторно",
+    "REFRESH_TOKEN_REUSE": "Виявлено підозрілу активність — увійдіть повторно",
     "SESSION_NOT_FOUND": "Сесію не знайдено",
-    "SESSION_EXPIRED": "Сесія закінчилась, увійдіть знову",
-    "SESSION_REVOKED": "Сесію відкликано",
-    "GOOGLE_AUTH_FAILED": "Вхід через Google не вдався",
-    "GOOGLE_EMAIL_MISSING": "Не вдалося отримати email з Google",
-    "EMAIL_ALREADY_EXISTS": "Цей email вже зайнятий",
-    "EMAIL_NOT_VERIFIED": "Підтвердіть свій email",
-    "EMAIL_ALREADY_VERIFIED": "Email вже підтверджено",
-    "EMAIL_CHANGE_PENDING": "Зміна email очікує підтвердження",
+    "SESSION_EXPIRED": "Сесія закінчилась — увійдіть повторно",
+    "SESSION_REVOKED": "Сесію завершено",
+    "GOOGLE_AUTH_FAILED": "Вхід через Google не вдався — спробуйте ще раз",
+    "GOOGLE_EMAIL_MISSING": "Не вдалося отримати адресу email з акаунту Google",
+    "EMAIL_ALREADY_EXISTS": "Акаунт з такою адресою email вже існує",
+    "EMAIL_NOT_VERIFIED": "Підтвердіть адресу email, щоб продовжити",
+    "EMAIL_ALREADY_VERIFIED": "Ця адреса email вже підтверджена",
+    "EMAIL_CHANGE_PENDING": "Зміна адреси email очікує підтвердження",
     "TOKEN_INVALID": "Посилання недійсне",
-    "TOKEN_EXPIRED": "Посилання застаріло",
-    "TOKEN_ALREADY_USED": "Посилання вже використано",
+    "TOKEN_EXPIRED": "Посилання застаріло — можна запросити нове",
+    "TOKEN_ALREADY_USED": "Посилання вже було використано",
     "TOKEN_NOT_FOUND": "Посилання не знайдено",
     "USER_NOT_FOUND": "Користувача не знайдено",
     "PASSWORD_INCORRECT": "Невірний пароль",
-    "PASSWORD_SAME": "Новий пароль має відрізнятись від попереднього",
+    "PASSWORD_SAME": "Новий пароль має відрізнятись від поточного",
     "WORKSPACE_NOT_FOUND": "Workspace не знайдено",
-    "WORKSPACE_ACCESS_DENIED": "Немає доступу до workspace",
-    "WORKSPACE_INSUFFICIENT_ROLE": "Недостатньо прав",
+    "WORKSPACE_ACCESS_DENIED": "У вас немає доступу до цього workspace",
+    "WORKSPACE_INSUFFICIENT_ROLE": "У вас недостатньо прав для цієї дії",
     "WORKSPACE_OWNER_CANNOT_LEAVE": "Власник не може покинути workspace",
-    "WORKSPACE_ALREADY_MEMBER": "Користувач вже є членом workspace",
+    "WORKSPACE_ALREADY_MEMBER": "Ця особа вже є учасником workspace",
     "INVITE_NOT_FOUND": "Запрошення не знайдено",
     "INVITE_EXPIRED": "Запрошення застаріло",
-    "INVITE_ALREADY_USED": "Запрошення вже використано",
-    "INVITE_EMAIL_MISMATCH": "Email не збігається із запрошенням",
+    "INVITE_ALREADY_USED": "Це запрошення вже було використано",
+    "INVITE_EMAIL_MISMATCH": "Адреса email не збігається із запрошенням",
     "VEHICLE_NOT_FOUND": "Автомобіль не знайдено",
-    "VEHICLE_ACCESS_DENIED": "Немає доступу до автомобіля",
-    "VEHICLE_INVALID_MILEAGE": "Невірний пробіг",
+    "VEHICLE_ACCESS_DENIED": "У вас немає доступу до цього автомобіля",
+    "VEHICLE_INVALID_MILEAGE": "Вказаний пробіг некоректний",
     "TIMELINE_EVENT_NOT_FOUND": "Подію не знайдено",
-    "TIMELINE_INVALID_MILEAGE": "Невірний пробіг",
-    "TIMELINE_INVALID_EVENT_TYPE": "Невірний тип події",
+    "TIMELINE_INVALID_MILEAGE": "Вказаний пробіг некоректний",
+    "TIMELINE_INVALID_EVENT_TYPE": "Невідомий тип події",
     "REMINDER_NOT_FOUND": "Нагадування не знайдено",
-    "REMINDER_ALREADY_COMPLETED": "Нагадування вже виконано",
-    "REMINDER_ALREADY_DISMISSED": "Нагадування вже відхилено",
+    "REMINDER_ALREADY_COMPLETED": "Це нагадування вже позначено як виконане",
+    "REMINDER_ALREADY_DISMISSED": "Це нагадування вже відхилено",
     "MAINTENANCE_INTERVAL_NOT_FOUND": "Інтервал обслуговування не знайдено",
-    "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Інтервал обслуговування вже вимкнено",
+    "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Цей інтервал обслуговування вже вимкнено",
     "TIRE_NOT_FOUND": "Шину не знайдено",
-    "TIRE_ALREADY_MOUNTED": "Шина вже встановлена",
-    "TIRE_ALREADY_RETIRED": "Шина вже списана",
+    "TIRE_ALREADY_MOUNTED": "Ця шина вже встановлена",
+    "TIRE_ALREADY_RETIRED": "Цю шину вже списано",
     "SERVICE_STATION_NOT_FOUND": "Сервісну станцію не знайдено",
-    "SERVICE_STATION_ACCESS_DENIED": "Немає доступу до сервісної станції",
+    "SERVICE_STATION_ACCESS_DENIED": "У вас немає доступу до цієї сервісної станції",
     "MEDIA_NOT_FOUND": "Файл не знайдено",
-    "MEDIA_UPLOAD_FAILED": "Не вдалося завантажити файл",
-    "MEDIA_INVALID_FILE_TYPE": "Невірний тип файлу",
+    "MEDIA_UPLOAD_FAILED": "Не вдалося завантажити файл — спробуйте ще раз",
+    "MEDIA_INVALID_FILE_TYPE": "Цей формат файлу не підтримується",
     "MEDIA_FILE_TOO_LARGE": "Файл занадто великий",
-    "MEDIA_ACCESS_DENIED": "Немає доступу до файлу",
+    "MEDIA_ACCESS_DENIED": "У вас немає доступу до цього файлу",
     "AI_CONVERSATION_NOT_FOUND": "Розмову не знайдено",
-    "AI_MESSAGE_FAILED": "Не вдалося надіслати повідомлення",
-    "AI_SERVICE_UNAVAILABLE": "Сервіс AI недоступний",
-    "VALIDATION_ERROR": "Перевірте правильність даних",
-    "BAD_REQUEST": "Невірний запит",
+    "AI_MESSAGE_FAILED": "Не вдалося надіслати повідомлення — спробуйте ще раз",
+    "AI_SERVICE_UNAVAILABLE": "Асистент AI тимчасово недоступний",
+    "VALIDATION_ERROR": "Перевірте правильність введених даних",
+    "BAD_REQUEST": "Некоректний запит",
     "NOT_FOUND": "Не знайдено",
     "FORBIDDEN": "Немає доступу",
-    "UNAUTHORIZED": "Потрібна авторизація",
-    "CONFLICT": "Конфлікт даних",
-    "INTERNAL_SERVER_ERROR": "Помилка сервера, спробуйте ще раз",
-    "TOO_MANY_REQUESTS": "Забагато запитів, спробуйте за мить",
-    "UNKNOWN_ERROR": "Виникла невідома помилка"
+    "UNAUTHORIZED": "Необхідна авторизація",
+    "CONFLICT": "Виник конфлікт даних",
+    "INTERNAL_SERVER_ERROR": "Щось пішло не так з нашого боку — спробуйте ще раз",
+    "TOO_MANY_REQUESTS": "Забагато спроб — зачекайте хвилину і спробуйте знову",
+    "UNKNOWN_ERROR": "Виникла непередбачена помилка"
   },
 
   "validation": {
     "REQUIRED": "Це поле обов'язкове",
     "NOT_ALLOWED": "Це значення не дозволено",
-    "INVALID_FORMAT": "Невірний формат",
-    "INVALID_EMAIL": "Невірна адреса email",
-    "INVALID_URL": "Невірна адреса URL",
-    "INVALID_DATE": "Невірна дата",
-    "INVALID_ENUM": "Невірне значення",
-    "INVALID_UUID": "Невірний ідентифікатор",
-    "INVALID_PHONE": "Невірний номер телефону",
-    "INVALID_PLATE_NUMBER": "Невірний номерний знак",
-    "INVALID_VIN": "Невірний номер VIN",
-    "INVALID_COLOR": "Невірний колір",
+    "INVALID_FORMAT": "Некоректний формат",
+    "INVALID_EMAIL": "Вкажіть коректну адресу email",
+    "INVALID_URL": "Вкажіть коректну адресу URL",
+    "INVALID_DATE": "Вкажіть коректну дату",
+    "INVALID_ENUM": "Виберіть один із доступних варіантів",
+    "INVALID_UUID": "Некоректний ідентифікатор",
+    "INVALID_PHONE": "Вкажіть коректний номер телефону",
+    "INVALID_PLATE_NUMBER": "Вкажіть коректний реєстраційний номер",
+    "INVALID_VIN": "Номер VIN має містити 17 символів",
+    "INVALID_COLOR": "Виберіть коректний колір",
     "TOO_SHORT": "Значення занадто коротке",
     "TOO_LONG": "Значення занадто довге",
     "TOO_SMALL": "Значення занадто мале",
     "TOO_LARGE": "Значення занадто велике",
-    "MUST_BE_POSITIVE": "Значення має бути додатнім",
-    "MUST_BE_INTEGER": "Значення має бути цілим числом",
-    "ALREADY_EXISTS": "Це значення вже існує",
-    "MUST_MATCH": "Значення мають збігатись",
+    "MUST_BE_POSITIVE": "Значення має бути більше нуля",
+    "MUST_BE_INTEGER": "Вкажіть ціле число",
+    "ALREADY_EXISTS": "Це значення вже зайнято",
+    "MUST_MATCH": "Значення мають бути однаковими",
     "MUST_BE_FUTURE": "Дата має бути в майбутньому",
     "MUST_BE_PAST": "Дата має бути в минулому",
-    "MUST_BE_AFTER": "Дата має бути пізнішою"
+    "MUST_BE_AFTER": "Дата має бути пізнішою за вказану"
   }
 }

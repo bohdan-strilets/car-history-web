@@ -27,8 +27,8 @@ export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
   if (isSuccess) {
     return (
       <StepSuccess
-        title={t('onboarding.settings.success.title')}
-        description={t('onboarding.settings.success.description')}
+        title={t('onboarding.steps.settings.success.title')}
+        description={t('onboarding.steps.settings.success.description')}
         onDone={onNext}
       />
     );
@@ -40,7 +40,7 @@ export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
       handleSubmit={handleSubmit}
       isPending={isPending}
       errorMessage={errorMessage}
-      submitLabel={t('common.next')}
+      submitLabel={t('common.actions.next')}
       onSkip={onSkip}
     />
   );

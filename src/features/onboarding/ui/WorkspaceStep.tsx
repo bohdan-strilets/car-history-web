@@ -25,8 +25,8 @@ export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
   if (isSuccess) {
     return (
       <StepSuccess
-        title={t('onboarding.workspace.success.title')}
-        description={t('onboarding.workspace.success.description')}
+        title={t('onboarding.steps.workspace.success.title')}
+        description={t('onboarding.steps.workspace.success.description')}
         onDone={onNext}
       />
     );
@@ -38,7 +38,7 @@ export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
       handleSubmit={handleSubmit}
       isPending={isPending}
       errorMessage={errorMessage}
-      submitLabel={t('common.next')}
+      submitLabel={t('common.actions.next')}
     />
   );
 };

@@ -1,10 +1,10 @@
-import type pl from './locales/pl.json';
+import 'i18next';
 
 declare module 'i18next' {
   interface CustomTypeOptions {
     defaultNS: 'translation';
     resources: {
-      translation: typeof pl;
+      translation: typeof import('./locales/pl.json');
     };
   }
 }

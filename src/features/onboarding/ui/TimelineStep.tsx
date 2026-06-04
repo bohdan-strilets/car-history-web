@@ -12,16 +12,16 @@ export const TimelineStep = ({ onNext }: TimelineStepProps) => {
 
       <Stack gap="md" align="center">
         <Heading as="h3" size="xl" style={{ textAlign: 'center' }}>
-          {t('onboarding.timeline.placeholder.title')}
+          {t('onboarding.steps.timeline.empty.title')}
         </Heading>
         <Text color="secondary" style={{ textAlign: 'center' }}>
-          {t('onboarding.timeline.placeholder.description')}
+          {t('onboarding.steps.timeline.empty.description')}
         </Text>
       </Stack>
 
       <Stack gap="sm" align="center" style={{ width: '100%' }}>
         <Button size="xl" onClick={onNext} fullWidth>
-          {t('onboarding.timeline.placeholder.add')}
+          {t('onboarding.steps.timeline.empty.action')}
         </Button>
       </Stack>
     </Stack>

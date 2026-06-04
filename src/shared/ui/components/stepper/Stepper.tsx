@@ -23,7 +23,7 @@ export const Stepper = ({ currentStep, totalSteps, size, color }: StepperProps) 
       </div>
 
       <Text as="span" size="sm" color="secondary" weight="semibold">
-        {t('common.step', { current: currentStep, total: totalSteps })}
+        {t('common.labels.step', { current: currentStep, total: totalSteps })}
       </Text>
     </Stack>
   );

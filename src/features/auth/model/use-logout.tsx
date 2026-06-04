@@ -8,7 +8,7 @@ export const useLogout = () => {
   const { t } = useTranslation();
 
   const logout = () => {
-    open(<LogoutConfirmModal />, { title: t('user.logout') });
+    open(<LogoutConfirmModal />, { title: t('user.logout.action') });
   };
 
   return { logout };

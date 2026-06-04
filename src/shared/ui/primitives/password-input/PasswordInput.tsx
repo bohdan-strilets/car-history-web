@@ -19,7 +19,7 @@ export const PasswordInput = ({ ...rest }: PasswordInputProps) => {
         <button
           type="button"
           onClick={() => setVisible((v) => !v)}
-          aria-label={visible ? t('common.hidePassword') : t('common.showPassword')}
+          aria-label={visible ? t('common.password.hide') : t('common.password.show')}
           className={button}
         >
           <Icon name={visible ? 'eyeOff' : 'eye'} color="tertiary" />

@@ -50,7 +50,7 @@ export const WorkspaceSwitcher = ({ expanded = true, className }: WorkspaceSwitc
         );
       })}
       <DropdownItem
-        label={t('workspace.actions.new')}
+        label={t('workspace.list.create')}
         leftIcon="plus"
         onClick={() => {
           setOpen(false);
@@ -105,7 +105,7 @@ export const WorkspaceSwitcher = ({ expanded = true, className }: WorkspaceSwitc
               {activeWorkspaceName}
             </Text>
             <Text size="xs" color="tertiary">
-              {t('workspace.count', { count: workspaceCount })}
+              {t('workspace.counts.workspaces', { count: workspaceCount })}
             </Text>
           </Stack>
         </Panel>

@@ -50,7 +50,7 @@ export const VehicleForm = ({ workspaceId, onSuccess, onSkip }: VehicleFormProps
 
       <Form
         onSubmit={isLastStep ? handleSubmit : handleNext}
-        submitLabel={isLastStep ? t('common.save') : t('common.next')}
+        submitLabel={isLastStep ? t('common.actions.save') : t('common.actions.next')}
         onBack={showBack}
         onSkip={showSkip}
         isLoading={isPending}

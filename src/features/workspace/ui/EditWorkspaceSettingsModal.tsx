@@ -27,7 +27,7 @@ export const EditWorkspaceSettingsModal = ({
       handleSubmit={handleSubmit}
       isPending={isPending}
       errorMessage={errorMessage}
-      submitLabel={t('common.save')}
+      submitLabel={t('common.actions.save')}
     />
   );
 };

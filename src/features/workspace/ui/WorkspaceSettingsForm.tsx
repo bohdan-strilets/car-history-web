@@ -30,7 +30,7 @@ export const WorkspaceSettingsForm = ({
       <FormFieldCombobox
         control={control}
         name="timezone"
-        label={t('workspace.timezone')}
+        label={t('workspace.fields.timezone')}
         options={TIMEZONE_OPTIONS}
         placeholder={t('workspace.fields.timezonePlaceholder')}
         size="lg"

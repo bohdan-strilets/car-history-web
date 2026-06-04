@@ -26,7 +26,7 @@ export const NewWorkspacePage = () => {
     <Stack gap="3xl">
       <PageHeader
         title={t('workspace.new.title')}
-        buttonLabel={t('common.back')}
+        buttonLabel={t('common.actions.back')}
         buttonIcon="arrowLeft"
         onCreate={() => navigate(ROUTES.WORKSPACES.ROOT)}
       />
@@ -36,7 +36,7 @@ export const NewWorkspacePage = () => {
         handleSubmit={handleSubmit}
         isPending={isPending}
         errorMessage={errorMessage}
-        submitLabel={t('common.create')}
+        submitLabel={t('common.actions.create')}
       />
     </Stack>
   );

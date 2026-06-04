@@ -11,19 +11,19 @@ export const MileageStep = ({ control }: VehicleStepProps) => {
       <FormFieldMileageInput
         control={control}
         name="currentMileage"
-        label={t('vehicle.form.currentMileage')}
+        label={t('vehicle.fields.currentMileage')}
         required
-        hint={t('vehicle.form.currentMileageHint')}
+        hint={t('vehicle.fields.currentMileageHint')}
       />
 
       <FormFieldNumberInput
         control={control}
         name="engineDisplacementCc"
-        label={t('vehicle.form.engineDisplacementCc')}
+        label={t('vehicle.fields.engineDisplacementCc')}
         size="lg"
         min={0}
         placeholder="1600"
-        unit={t('units.engineVolume')}
+        unit={t('units.cc')}
       />
     </>
   );

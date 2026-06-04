@@ -29,20 +29,20 @@ export const BasicInfoStep = ({ control }: VehicleStepProps) => {
       <FormFieldCombobox
         control={control}
         name="brand"
-        label={t('vehicle.form.brand')}
+        label={t('vehicle.fields.brand')}
         required
         options={brandOptions}
-        placeholder={t('vehicle.form.brandPlaceholder')}
+        placeholder={t('vehicle.fields.brandPlaceholder')}
         size="lg"
       />
 
       <FormFieldCombobox
         control={control}
         name="model"
-        label={t('vehicle.form.model')}
+        label={t('vehicle.fields.model')}
         required
         options={modelOptions}
-        placeholder={t('vehicle.form.modelPlaceholder')}
+        placeholder={t('vehicle.fields.modelPlaceholder')}
         disabled={!selectedBrand}
         size="lg"
       />
@@ -50,7 +50,7 @@ export const BasicInfoStep = ({ control }: VehicleStepProps) => {
       <FormFieldYearPicker
         control={control}
         name="year"
-        label={t('vehicle.form.year')}
+        label={t('vehicle.fields.year')}
         required
         min={1990}
       />
@@ -58,17 +58,17 @@ export const BasicInfoStep = ({ control }: VehicleStepProps) => {
       <FormFieldInput
         control={control}
         name="generation"
-        label={t('vehicle.form.generation')}
+        label={t('vehicle.fields.generation')}
         size="lg"
-        placeholder={t('vehicle.form.generationPlaceholder')}
+        placeholder={t('vehicle.fields.generationPlaceholder')}
       />
 
       <FormFieldInput
         control={control}
         name="nickname"
-        label={t('vehicle.form.nickname')}
+        label={t('vehicle.fields.nickname')}
         size="lg"
-        placeholder={t('vehicle.form.nicknamePlaceholder')}
+        placeholder={t('vehicle.fields.nicknamePlaceholder')}
       />
     </>
   );

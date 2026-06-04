@@ -11,26 +11,26 @@ export const RegistrationStep = ({ control }: VehicleStepProps) => {
       <FormFieldInput
         control={control}
         name="plateNumber"
-        label={t('vehicle.form.plateNumber')}
+        label={t('vehicle.fields.plateNumber')}
         required
         size="lg"
-        placeholder={t('vehicle.form.plateNumberPlaceholder')}
+        placeholder={t('vehicle.fields.plateNumberPlaceholder')}
       />
 
       <FormFieldInput
         control={control}
         name="vin"
-        label={t('vehicle.form.vin')}
+        label={t('vehicle.fields.vin')}
         size="lg"
-        placeholder={t('vehicle.form.vinPlaceholder')}
+        placeholder={t('vehicle.fields.vinPlaceholder')}
       />
 
       <FormFieldInput
         control={control}
         name="countryOfOrigin"
-        label={t('vehicle.form.countryOfOrigin')}
+        label={t('vehicle.fields.countryOfOrigin')}
         size="lg"
-        placeholder={t('vehicle.form.countryOfOriginPlaceholder')}
+        placeholder={t('vehicle.fields.countryOfOriginPlaceholder')}
       />
     </>
   );

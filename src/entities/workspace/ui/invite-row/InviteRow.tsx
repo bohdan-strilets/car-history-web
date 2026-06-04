@@ -27,7 +27,7 @@ export const InviteRow = ({ invite, onCancel }: InviteRowProps) => {
       </Stack>
 
       <Stack direction="row" align="center" gap="md">
-        <Badge soft="gray">{t('common.pending')}</Badge>
+        <Badge soft="gray">{t('common.state.pending')}</Badge>
         <Button
           variant="ghost"
           color="danger"

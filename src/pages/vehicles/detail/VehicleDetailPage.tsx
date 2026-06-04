@@ -44,9 +44,9 @@ export const VehicleDetailPage = () => {
       <StateView
         icon="alertCircle"
         variant="error"
-        title={t('vehicle.error.title')}
-        description={t('vehicle.error.description')}
-        actionLabel={t('common.back')}
+        title={t('common.error.title')}
+        description={t('common.error.description')}
+        actionLabel={t('common.actions.back')}
         onAction={() => navigate(ROUTES.WORKSPACES.DETAIL(workspaceId ?? ''))}
       />
     );
@@ -56,7 +56,7 @@ export const VehicleDetailPage = () => {
     <Stack gap="2xl">
       <PageHeader
         title={isPending ? '...' : `${vehicle?.brand} ${vehicle?.model}`}
-        buttonLabel={t('common.back')}
+        buttonLabel={t('common.actions.back')}
         buttonIcon="arrowLeft"
         onCreate={() => navigate(ROUTES.WORKSPACES.DETAIL(workspaceId ?? ''))}
       />
@@ -77,7 +77,7 @@ export const VehicleDetailPage = () => {
           onEditDescription={() =>
             modal.open(
               <EditVehicleDescriptionModal vehicle={vehicle} onSuccess={() => modal.closeLast()} />,
-              { title: t('vehicle.overview.description') },
+              { title: t('vehicle.overview.sections.description') },
             )
           }
           onAddPurchase={() =>

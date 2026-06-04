@@ -1,215 +1,95 @@
 {
   "common": {
-    "hidePassword": "Hide Password",
-    "showPassword": "Show Password",
-    "close": "Close",
-    "back": "Back",
-    "next": "Next",
-    "confirm": "Confirm",
-    "cancel": "Cancel",
-    "step": "Step {{current}} of {{total}}",
-    "continue": "Continue",
-    "noOptions": "No options found",
-    "skip": "Skip",
-    "save": "Save",
-    "createdAt": "Created at:",
-    "active": "Active",
-    "retry": "Retry",
-    "create": "Create",
-    "you": "you",
-    "pending": "Pending",
-    "yes": "Yes",
-    "no": "No"
-  },
-
-  "units": {
-    "kilometers": "kilometers",
-    "engineVolume": "cc",
-    "KM": "Kilometers (km)",
-    "MI": "Miles (mi)",
-    "L": "Liters (l)",
-    "GAL": "Gallons (gal)"
-  },
-
-  "themes": {
-    "LIGHT": "Light",
-    "DARK": "Dark",
-    "SYSTEM": "System"
-  },
-
-  "languages": {
-    "PL": "Polski",
-    "UK": "Українська",
-    "EN": "English"
-  },
-
-  "onboarding": {
-    "success": {
-      "title": "Arvino ready!",
-      "description": "Your digital car passport is ready."
+    "actions": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "add": "Add",
+      "create": "Create",
+      "confirm": "Confirm",
+      "continue": "Continue",
+      "back": "Back",
+      "next": "Next",
+      "skip": "Skip",
+      "retry": "Try again",
+      "close": "Close",
+      "send": "Send",
+      "resend": "Resend",
+      "resendIn": "Resend in {{seconds}}s",
+      "upload": "Upload",
+      "download": "Download",
+      "search": "Search",
+      "filter": "Filter",
+      "refresh": "Refresh"
     },
-    "welcome": {
-      "title": "Welcome to Arvino",
-      "subtitle": "Let's set up your digital car passport.",
-      "description": "Manage your expenses, service, documents, and car history in one place.",
-      "start": "Get Started",
-      "emailNotVerified": "We sent a link to {{email}}. Confirm your email to continue.",
-      "language": "Choose interface language",
-      "theme": "Choose theme"
+    "state": {
+      "loading": "Loading...",
+      "active": "Active",
+      "inactive": "Inactive",
+      "pending": "Pending",
+      "completed": "Completed",
+      "dismissed": "Dismissed",
+      "yes": "Yes",
+      "no": "No"
     },
-    "workspace": {
-      "title": "Create your workspace",
-      "subtitle": "A workspace is a space for your vehicles. You can have multiple — personal, family or business.",
-      "success": {
-        "title": "Workspace created!",
-        "description": "Great, we can continue."
-      },
-      "new": "Create new workspace"
+    "labels": {
+      "you": "you",
+      "createdAt": "Created:",
+      "updatedAt": "Updated:",
+      "optional": "(optional)",
+      "step": "Step {{current}} of {{total}}",
+      "noOptions": "No options found",
+      "cannotBeUndone": "This action cannot be undone.",
+      "learnMore": "Learn more",
+      "seeAll": "See all"
     },
-    "vehicle": {
-      "title": "Add your first vehicle",
-      "subtitle": "Add your first vehicle. You can fill in the details later.",
-      "success": {
-        "title": "Vehicle added!",
-        "description": "Great, your vehicle has been added."
-      }
+    "password": {
+      "show": "Show password",
+      "hide": "Hide password"
     },
-    "settings": {
-      "title": "Customize settings",
-      "subtitle": "Set your currency, units and date format.",
-      "success": {
-        "title": "Settings saved!",
-        "description": "You can change them at any time."
-      }
+    "empty": {
+      "title": "Nothing here yet",
+      "description": "There's no data to show here."
     },
-    "timeline": {
-      "title": "Add your first event",
-      "subtitle": "Add your first event — when and how much you paid for your car.",
-      "placeholder": {
-        "title": "Add your first transaction",
-        "description": "When and how much did you pay for your car? You can skip this step and add it later.",
-        "add": "Add purchase"
-      }
+    "error": {
+      "title": "Something went wrong",
+      "description": "Try refreshing the page.",
+      "retry": "Try again"
     }
   },
 
-  "emailVerification": {
-    "title": "Confirm your email address",
-    "description": "We sent a confirmation link to {{email}}. Check your inbox.",
-    "resend": "Resend email",
-    "resendIn": "Resend in {{seconds}}s",
-    "checkSpam": "Can't find the email? Check your spam folder."
-  },
-
-  "auth": {
-    "common": {
-      "orContinueWith": "or continue with",
-      "googleButton": "Google",
-      "fields": {
-        "email": "Email",
-        "password": "Password",
-        "confirmPassword": "Confirm password",
-        "firstName": "First name",
-        "lastName": "Last name"
-      }
+  "enums": {
+    "theme": {
+      "LIGHT": "Light",
+      "DARK": "Dark",
+      "SYSTEM": "System"
     },
-
-    "panel": {
-      "title": "Your digital car passport",
-      "subtitle": "Expenses, service, documents and AI assistant in one place.",
-      "features": [
-        { "icon": "gauge", "text": "Full mileage and service history" },
-        { "icon": "fileText", "text": "Documents with OC and inspection reminders" },
-        { "icon": "barChart", "text": "Real-time expense statistics" },
-        { "icon": "bot", "text": "AI assistant that knows your car" }
-      ]
+    "language": {
+      "PL": "Polski",
+      "UK": "Українська",
+      "EN": "English"
     },
-
-    "login": {
-      "title": "Welcome back",
-      "subtitle": "Sign in to your account",
-      "form": {
-        "submit": "Sign in",
-        "forgotPassword": "Forgot password?",
-        "noAccount": "Don't have an account?",
-        "register": "Sign up"
-      }
+    "currency": {
+      "PLN": "Zloty (PLN)",
+      "EUR": "Euro (EUR)",
+      "USD": "Dollar (USD)",
+      "UAH": "Hryvnia (UAH)"
     },
-
-    "register": {
-      "title": "Create an account",
-      "subtitle": "Join Arvino today",
-      "form": {
-        "submit": "Sign up",
-        "hasAccount": "Already have an account?",
-        "login": "Sign in"
-      }
+    "distanceUnit": {
+      "KM": "Kilometers (km)",
+      "MI": "Miles (mi)"
     },
-
-    "forgotPassword": {
-      "title": "Forgot password?",
-      "subtitle": "We'll send you a link to reset your password",
-      "form": {
-        "submit": "Send reset link"
-      },
-      "backToLogin": "Back to sign in",
-      "success": {
-        "title": "Check your inbox",
-        "subtitle": "We sent a reset link to {{email}}",
-        "resend": "Resend email",
-        "resendIn": "Resend in {{seconds}}s"
-      }
+    "fuelUnit": {
+      "L": "Liters (l)",
+      "GAL": "Gallons (gal)"
     },
-
-    "resetPassword": {
-      "title": "Set new password",
-      "subtitle": "Enter a new password for your account",
-      "form": {
-        "submit": "Save password"
-      },
-      "success": "Password changed. You can now sign in."
+    "dateFormat": {
+      "DD_MM_YYYY": "DD.MM.YYYY",
+      "YYYY_MM_DD": "YYYY.MM.DD",
+      "DD_MONTH_YYYY": "DD Month YYYY"
     },
-
-    "confirmEmail": {
-      "verifying": "Verifying email address...",
-      "success": {
-        "title": "Email confirmed!",
-        "subtitle": "Your email address has been successfully confirmed.",
-        "login": "Sign in"
-      },
-      "error": {
-        "title": "Link is invalid",
-        "subtitle": "The link has expired or has already been used.",
-        "resend": "Resend email",
-        "resendIn": "Resend in {{seconds}}s"
-      }
-    },
-
-    "emailVerification": {
-      "banner": "Please verify your email address to get full access."
-    }
-  },
-
-  "nav": {
-    "home": "Home",
-    "garage": "Garage",
-    "stations": "Stations",
-    "ai": "AI",
-    "profile": "Profile",
-    "bottomBar": {
-      "ariaLabel": "Main navigation"
-    },
-    "sidebar": {
-      "ariaLabel": "Side navigation",
-      "collapse": "Collapse",
-      "expand": "Expand",
-      "theme": "Theme",
-      "language": "Language"
-    }
-  },
-
-  "workspace": {
-    "types": {
+    "workspaceType": {
       "PERSONAL": {
         "label": "Personal",
         "description": "Just for you"
@@ -223,187 +103,11 @@
         "description": "For a company or workshop"
       }
     },
-
-    "fields": {
-      "name": {
-        "label": "Workspace name",
-        "placeholder": "Your workspace name"
-      },
-      "currency": "Currency",
-      "distanceUnit": "Distance unit",
-      "fuelUnit": "Fuel unit",
-      "dateFormat": "Date format",
-      "timezonePlaceholder": "Select time zone",
-      "type": "Workspace type"
+    "role": {
+      "OWNER": "Owner",
+      "ADMIN": "Admin",
+      "MEMBER": "Member"
     },
-
-    "currency": {
-      "PLN": "Zloty (PLN)",
-      "EUR": "Euro (EUR)",
-      "USD": "Dollar (USD)",
-      "UAH": "Hryvnia (UAH)"
-    },
-
-    "dateFormat": {
-      "DD_MM_YYYY": "DD.MM.YYYY",
-      "YYYY_MM_DD": "YYYY.MM.DD",
-      "DD_MONTH_YYYY": "DD Month YYYY"
-    },
-
-    "timezone": "Time zone",
-
-    "actions": {
-      "new": "New workspace"
-    },
-
-    "count_one": "{{count}} workspace",
-    "count_other": "{{count}} workspaces",
-
-    "cars": {
-      "count_one": "{{count}} vehicle",
-      "count_few": "{{count}} vehicles",
-      "count_many": "{{count}} vehicles",
-      "count_other": "{{count}} vehicles"
-    },
-
-    "list": {
-      "title": "Your workspaces",
-      "create": "New workspace",
-      "count_one": "{{count}} workspace",
-      "count_other": "{{count}} workspaces",
-      "empty": {
-        "title": "No workspaces",
-        "description": "Create your first workspace to get started."
-      }
-    },
-
-    "detail": {
-      "vehicles": "Vehicles",
-      "members": "Members",
-      "settings": "Settings",
-      "delete": "Delete workspace",
-      "deleteConfirm": "Are you sure you want to delete this workspace? This action is irreversible.",
-      "deleteSuccess": "Workspace has been deleted",
-      "updateSuccess": "Workspace has been updated",
-      "info": "General information",
-      "leave": "Leave workspace",
-      "leaveConfirm": "Are you sure you want to leave this workspace?",
-      "leaveSuccess": "You have left the workspace"
-    },
-
-    "vehicles": {
-      "title": "Vehicles"
-    },
-
-    "members": {
-      "title": "Members",
-      "invite": "Invite",
-      "count": "{{count}} members",
-      "role": {
-        "OWNER": "Owner",
-        "ADMIN": "Admin",
-        "MEMBER": "Member"
-      },
-      "remove": "Remove member",
-      "editRole": "Edit role",
-      "removeConfirm": "Are you sure you want to remove this member?",
-      "updateRoleSuccess": "Member role has been updated",
-      "removeSuccess": "Member has been removed",
-      "pendingInvites": "Pending invitations"
-    },
-
-    "invite": {
-      "send": "Send invitation",
-      "title": "Workspace invitation",
-      "description": "You have been invited to the workspace {{name}}",
-      "accept": "Accept",
-      "reject": "Reject",
-      "fields": {
-        "email": "Email",
-        "role": "Role"
-      },
-      "alreadyAccepted": {
-        "title": "Invitation already accepted",
-        "description": "You are already a member of this workspace.",
-        "action": "Go to workspaces"
-      },
-      "expired": {
-        "title": "Invitation expired",
-        "description": "This invitation has expired or has been rejected.",
-        "action": "Go to workspaces"
-      },
-      "loading": {
-        "title": "Loading invitation..."
-      },
-      "notFound": {
-        "title": "Invitation not found",
-        "description": "Link is invalid or has expired.",
-        "action": "Go to workspaces"
-      },
-      "success": "Invitation has been sent",
-      "acceptSuccess": "You have joined the workspace",
-      "redirecting": "Redirecting...",
-      "rejectSuccess": "Invitation has been rejected",
-      "cancelSuccess": "Invitation has been canceled",
-      "cancel": "Cancel invitation",
-      "cancelConfirm": "Are you sure you want to cancel this invitation?"
-    },
-
-    "new": {
-      "title": "New workspace",
-      "submit": "Create workspace",
-      "success": "Workspace has been created"
-    },
-
-    "settings": {
-      "title": "Workspace settings",
-      "save": "Save settings",
-      "danger": {
-        "title": "Manage workspace",
-        "delete": "Delete workspace"
-      },
-      "noPermissions": "Only the owner can manage workspace settings.",
-      "updateSuccess": "Workspace settings have been saved"
-    },
-
-    "notFound": {
-      "title": "Workspace not found",
-      "description": "The workspace does not exist or you do not have access to it.",
-      "action": "Return to workspaces"
-    }
-  },
-
-  "vehicle": {
-    "form": {
-      "popularBrands": "Popular brands",
-      "brand": "Brand",
-      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
-      "model": "Model",
-      "modelPlaceholder": "Model 3, X5, E-Class...",
-      "year": "Year of manufacture",
-      "yearPlaceholder": "e.g., 2020",
-      "generation": "Generation",
-      "generationPlaceholder": "e.g., B8, Mk7",
-      "nickname": "Custom name",
-      "nicknamePlaceholder": "e.g., My Silver",
-      "fuelType": "Fuel type",
-      "bodyType": "Body type",
-      "transmission": "Transmission",
-      "driveType": "Drive type",
-      "plateNumber": "Registration number",
-      "plateNumberPlaceholder": "e.g., WA 12345",
-      "vin": "VIN number",
-      "vinPlaceholder": "17 characters",
-      "countryOfOrigin": "Country of origin",
-      "countryOfOriginPlaceholder": "e.g., Germany",
-      "currentMileage": "Current mileage",
-      "currentMileageHint": "Helps us accurately track expenses and service intervals",
-      "engineDisplacementCc": "Engine displacement",
-      "color": "Color",
-      "description": "Description",
-      "descriptionPlaceholder": "Additional information about the vehicle..."
-    },
-
     "fuelType": {
       "PETROL": "Petrol",
       "DIESEL": "Diesel",
@@ -411,7 +115,6 @@
       "ELECTRIC": "Electric",
       "LPG": "LPG"
     },
-
     "bodyType": {
       "SEDAN": "Sedan",
       "HATCHBACK": "Hatchback",
@@ -425,20 +128,17 @@
       "VAN": "Van",
       "OTHER": "Other"
     },
-
     "transmission": {
       "MANUAL": "Manual",
       "AUTOMATIC": "Automatic",
       "ROBOTIC": "Robotic"
     },
-
     "driveType": {
-      "FWD": "FWD",
-      "RWD": "RWD",
-      "AWD": "AWD"
+      "FWD": "Front-wheel (FWD)",
+      "RWD": "Rear-wheel (RWD)",
+      "AWD": "All-wheel (AWD)"
     },
-
-    "colors": {
+    "color": {
       "BLACK": "Black",
       "WHITE": "White",
       "SILVER": "Silver",
@@ -460,235 +160,665 @@
       "PURPLE": "Purple",
       "OTHER": "Other"
     },
+    "serviceStationType": {
+      "MECHANIC": "Mechanic",
+      "TIRE_SHOP": "Tire Shop",
+      "CAR_WASH": "Car Wash",
+      "FUEL_STATION": "Fuel Station",
+      "DEALERSHIP": "Dealership",
+      "OTHER": "Other"
+    },
+    "reminderType": {
+      "INSURANCE": "Insurance",
+      "TECHNICAL_INSPECTION": "Technical Inspection",
+      "OIL_CHANGE": "Oil Change",
+      "FILTER_CHANGE": "Filter Change",
+      "TIRE_CHANGE": "Tire Change",
+      "CUSTOM": "Custom"
+    },
+    "maintenanceType": {
+      "OIL_CHANGE": "Oil Change",
+      "BRAKE_PADS": "Brake Pads",
+      "BRAKE_DISCS": "Brake Discs",
+      "TIMING_BELT": "Timing Belt",
+      "AIR_FILTER": "Air Filter",
+      "FUEL_FILTER": "Fuel Filter",
+      "CABIN_FILTER": "Cabin Filter",
+      "SPARK_PLUGS": "Spark Plugs",
+      "COOLANT": "Coolant",
+      "TRANSMISSION_OIL": "Transmission Oil",
+      "CUSTOM": "Custom interval"
+    },
+    "tireType": {
+      "ALL_SEASON": "All-season",
+      "SUMMER": "Summer",
+      "WINTER": "Winter"
+    },
+    "tireStatus": {
+      "MOUNTED": "Mounted",
+      "STORED": "In storage",
+      "RETIRED": "Retired"
+    },
+    "timelineType": {
+      "PURCHASE": "Purchase",
+      "SALE": "Sale",
+      "REFUEL": "Refuel",
+      "CHARGE": "Charge",
+      "SERVICE": "Service",
+      "DOCUMENT": "Document",
+      "EXPENSE": "Expense",
+      "TIRE_CHANGE": "Tire Change",
+      "TRIP": "Trip"
+    },
+    "documentType": {
+      "INSURANCE_OC": "Third-party Insurance (OC)",
+      "INSURANCE_AC": "Comprehensive Insurance (AC)",
+      "TECHNICAL_INSPECTION": "Technical Inspection",
+      "LOAN": "Loan",
+      "LEASING": "Leasing",
+      "VIGNETTE": "Vignette",
+      "OTHER": "Other"
+    },
+    "expenseCategory": {
+      "ACCESSORIES": "Accessories",
+      "CARE": "Car Care",
+      "PARKING": "Parking",
+      "FINE": "Fine",
+      "REGISTRATION": "Registration",
+      "RENTAL": "Rental",
+      "OTHER": "Other"
+    },
+    "serviceCategory": {
+      "MAINTENANCE": "Maintenance",
+      "REPAIR": "Repair",
+      "OTHER": "Other"
+    },
+    "purchaseFrom": {
+      "SALON": "Dealership",
+      "PRIVATE": "Private seller",
+      "AUCTION": "Auction",
+      "ABROAD": "Abroad"
+    },
+    "tripPurpose": {
+      "PERSONAL": "Personal",
+      "WORK": "Business",
+      "OTHER": "Other"
+    }
+  },
 
+  "units": {
+    "cc": "cc",
+    "kwh": "kWh",
+    "nm": "Nm",
+    "hp": "HP",
+    "kw": "kW",
+    "percent": "%",
+    "gkm": "g/km",
+    "lper100km": "l/100km",
+    "mm": "mm",
+    "kg": "kg",
+    "kmh": "km/h",
+    "sec": "s",
+    "liters": "l"
+  },
+
+  "fields": {
+    "date": "Date",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "issueDate": "Issue date",
+    "expireDate": "Expiry date",
+    "price": "Price",
+    "cost": "Cost",
+    "amount": "Amount",
+    "mileage": "Mileage",
+    "mileagePlaceholder": "e.g. 85,000",
+    "description": "Description",
+    "descriptionPlaceholder": "Add a description...",
+    "notes": "Notes",
+    "notesPlaceholder": "Add notes...",
+    "title": "Title",
+    "name": "Name",
+    "namePlaceholder": "Enter a name...",
+    "phone": "Phone number",
+    "phonePlaceholder": "e.g. +1 234 567 890",
+    "website": "Website",
+    "websitePlaceholder": "e.g. https://example.com",
+    "address": "Address",
+    "email": "Email",
+    "rating": "Rating",
+    "category": "Category",
+    "type": "Type",
+    "status": "Status"
+  },
+
+  "nav": {
+    "items": {
+      "home": "Home",
+      "garage": "Garage",
+      "stations": "Stations",
+      "ai": "AI",
+      "profile": "Profile"
+    },
+    "bottomBar": {
+      "ariaLabel": "Main navigation"
+    },
+    "sidebar": {
+      "ariaLabel": "Side navigation",
+      "collapse": "Collapse menu",
+      "expand": "Expand menu",
+      "theme": "Theme",
+      "language": "Language"
+    }
+  },
+
+  "auth": {
+    "common": {
+      "orContinueWith": "or continue with",
+      "googleButton": "Sign in with Google",
+      "fields": {
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Repeat password",
+        "firstName": "First name",
+        "lastName": "Last name"
+      }
+    },
+    "panel": {
+      "title": "Your digital car passport",
+      "subtitle": "Expenses, service, documents and AI assistant — all in one place.",
+      "features": [
+        { "icon": "gauge", "text": "Full mileage and service history" },
+        { "icon": "fileText", "text": "Documents with insurance and inspection reminders" },
+        { "icon": "barChart", "text": "Real-time expense tracking" },
+        { "icon": "bot", "text": "AI assistant that knows your car" }
+      ]
+    },
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to return to your garage",
+      "form": {
+        "submit": "Sign in",
+        "forgotPassword": "Forgot your password?",
+        "noAccount": "Don't have an account yet?",
+        "register": "Sign up"
+      }
+    },
+    "register": {
+      "title": "Create an account",
+      "subtitle": "Join Arvino and take control of your car",
+      "form": {
+        "submit": "Sign up",
+        "hasAccount": "Already have an account?",
+        "login": "Sign in"
+      }
+    },
+    "forgotPassword": {
+      "title": "Forgot your password?",
+      "subtitle": "Enter your email — we'll send you a link to set a new password",
+      "form": {
+        "submit": "Send link"
+      },
+      "backToLogin": "Back to sign in",
+      "success": {
+        "title": "Check your inbox",
+        "subtitle": "We sent a reset link to {{email}}"
+      }
+    },
+    "resetPassword": {
+      "title": "New password",
+      "subtitle": "Set a new password for your account",
+      "form": {
+        "submit": "Save password"
+      },
+      "success": "Password changed — you can now sign in"
+    },
+    "confirmEmail": {
+      "verifying": "Verifying your email address...",
+      "success": {
+        "title": "Email confirmed!",
+        "subtitle": "Your email address has been successfully verified.",
+        "action": "Go to sign in"
+      },
+      "error": {
+        "title": "Link is invalid or has expired",
+        "subtitle": "You can request a new link below."
+      }
+    },
+    "emailVerification": {
+      "banner": "Please confirm your email address to unlock full access.",
+      "title": "Confirm your email address",
+      "description": "We sent a verification link to {{email}}. Check your inbox.",
+      "checkSpam": "Can't find it? Check your spam folder."
+    }
+  },
+
+  "onboarding": {
+    "steps": {
+      "welcome": {
+        "title": "Welcome to Arvino",
+        "subtitle": "Let's set up your digital car passport.",
+        "description": "Manage your expenses, service, documents and car history — all in one place.",
+        "start": "Get started",
+        "emailNotVerified": "We sent a verification link to {{email}}. Confirm your email to continue.",
+        "language": "Choose interface language",
+        "theme": "Choose theme"
+      },
+      "workspace": {
+        "title": "Create your workspace",
+        "subtitle": "A workspace is a space for your vehicles. You can have multiple — personal, family or business.",
+        "success": {
+          "title": "Workspace created!",
+          "description": "Great, let's keep going."
+        }
+      },
+      "vehicle": {
+        "title": "Add your first vehicle",
+        "subtitle": "You can fill in the details later — just the basics for now.",
+        "success": {
+          "title": "Vehicle added!",
+          "description": "Your vehicle is now in the garage."
+        }
+      },
+      "settings": {
+        "title": "Customize your settings",
+        "subtitle": "Set your currency, units and date format — you can change these anytime.",
+        "success": {
+          "title": "Settings saved!",
+          "description": "All set."
+        }
+      },
+      "timeline": {
+        "title": "Add your first event",
+        "subtitle": "When and how much did you pay for your car? It's a great starting point for its history.",
+        "empty": {
+          "title": "Start with the purchase",
+          "description": "Add when and how much you paid — or skip this step and come back later.",
+          "action": "Add purchase"
+        }
+      }
+    },
+    "success": {
+      "title": "Arvino is ready!",
+      "description": "Your digital car passport has been set up."
+    }
+  },
+
+  "workspace": {
+    "fields": {
+      "name": "Workspace name",
+      "namePlaceholder": "e.g. My Garage",
+      "type": "Workspace type",
+      "timezone": "Time zone",
+      "timezonePlaceholder": "Select time zone",
+      "currency": "Currency",
+      "distanceUnit": "Distance unit",
+      "fuelUnit": "Fuel unit",
+      "dateFormat": "Date format"
+    },
+    "counts": {
+      "workspaces_one": "{{count}} workspace",
+      "workspaces_other": "{{count}} workspaces",
+      "vehicles_one": "{{count}} vehicle",
+      "vehicles_other": "{{count}} vehicles",
+      "members_one": "{{count}} member",
+      "members_other": "{{count}} members"
+    },
+    "list": {
+      "title": "Your workspaces",
+      "create": "New workspace",
+      "empty": {
+        "title": "No workspaces yet",
+        "description": "Create your first workspace to get started."
+      }
+    },
+    "new": {
+      "title": "New workspace",
+      "submit": "Create workspace",
+      "success": "Workspace created"
+    },
+    "detail": {
+      "info": "General information",
+      "vehicles": "Vehicles",
+      "members": "Members",
+      "settings": "Settings",
+      "updateSuccess": "Changes saved",
+      "leave": "Leave workspace",
+      "leaveConfirm": "Are you sure you want to leave this workspace?",
+      "leaveSuccess": "You have left the workspace"
+    },
+    "members": {
+      "title": "Members",
+      "invite": "Invite someone",
+      "remove": "Remove from workspace",
+      "editRole": "Change role",
+      "removeConfirm": "Are you sure you want to remove this person from the workspace?",
+      "updateRoleSuccess": "Role has been updated",
+      "removeSuccess": "Person has been removed from the workspace",
+      "pendingInvites": "Pending invitations"
+    },
+    "invite": {
+      "send": "Send invitation",
+      "title": "Workspace invitation",
+      "description": "You've been invited to the workspace {{name}}",
+      "accept": "Join",
+      "reject": "Decline",
+      "cancel": "Cancel invitation",
+      "cancelConfirm": "Are you sure you want to cancel this invitation?",
+      "fields": {
+        "email": "Email",
+        "role": "Role"
+      },
+      "states": {
+        "alreadyAccepted": {
+          "title": "Already a member",
+          "description": "This invitation has already been accepted.",
+          "action": "Go to workspaces"
+        },
+        "expired": {
+          "title": "Invitation expired",
+          "description": "This link is no longer active.",
+          "action": "Go to workspaces"
+        },
+        "loading": {
+          "title": "Loading invitation..."
+        },
+        "notFound": {
+          "title": "Invitation not found",
+          "description": "The link is invalid or has expired.",
+          "action": "Go to workspaces"
+        }
+      },
+      "success": "Invitation sent",
+      "acceptSuccess": "You've joined the workspace — welcome!",
+      "rejectSuccess": "Invitation declined",
+      "cancelSuccess": "Invitation cancelled",
+      "redirecting": "Redirecting you..."
+    },
+    "settings": {
+      "title": "Workspace settings",
+      "save": "Save settings",
+      "updateSuccess": "Settings saved",
+      "noPermissions": "Only the workspace owner can change settings.",
+      "danger": {
+        "title": "Danger zone",
+        "delete": "Delete workspace",
+        "deleteConfirm": "Are you sure you want to delete this workspace? This action cannot be undone.",
+        "deleteSuccess": "Workspace deleted"
+      }
+    },
+    "notFound": {
+      "title": "Workspace doesn't exist",
+      "description": "You don't have access to this workspace or it has been deleted.",
+      "action": "Back to workspaces"
+    }
+  },
+
+  "vehicle": {
+    "fields": {
+      "brand": "Brand",
+      "brandPlaceholder": "Tesla, BMW, Mercedes-Benz...",
+      "model": "Model",
+      "modelPlaceholder": "Model 3, X5, E-Class...",
+      "year": "Year of manufacture",
+      "yearPlaceholder": "e.g. 2020",
+      "generation": "Generation",
+      "generationPlaceholder": "e.g. B8, Mk7",
+      "nickname": "Custom name",
+      "nicknamePlaceholder": "e.g. My Silver",
+      "fuelType": "Fuel type",
+      "bodyType": "Body type",
+      "transmission": "Transmission",
+      "driveType": "Drive type",
+      "plateNumber": "Registration number",
+      "plateNumberPlaceholder": "e.g. WA 12345",
+      "vin": "VIN number",
+      "vinPlaceholder": "17 alphanumeric characters",
+      "countryOfOrigin": "Country of origin",
+      "countryOfOriginPlaceholder": "e.g. Germany",
+      "currentMileage": "Current mileage",
+      "currentMileagePlaceholder": "e.g. 85,000",
+      "currentMileageHint": "Helps track service intervals accurately",
+      "engineDisplacementCc": "Engine displacement",
+      "color": "Color",
+      "description": "Description",
+      "descriptionPlaceholder": "Additional information about the vehicle..."
+    },
+    "form": {
+      "popularBrands": "Popular brands"
+    },
     "list": {
       "title": "Vehicles",
       "add": "Add vehicle",
       "empty": {
-        "title": "No vehicles",
+        "title": "No vehicles yet",
         "description": "Add your first vehicle to this workspace."
       }
     },
-
     "new": {
       "title": "New vehicle"
     },
-
     "detail": {
       "tabs": {
         "overview": "Overview",
-        "timeline": "Timeline",
+        "timeline": "History",
         "reminders": "Reminders",
         "maintenance": "Maintenance",
         "stats": "Stats",
         "gallery": "Gallery",
         "tires": "Tires"
       },
-      "delete": "Delete vehicle",
-      "deleteConfirm": "Are you sure you want to delete this vehicle?",
-      "deleteSuccess": "Vehicle has been deleted",
       "edit": "Edit vehicle",
-      "years": "years",
-      "engine": "engine",
-      "kmPerYear": "km / year",
-      "oilChanges": "oil changes",
-      "earthCircumferences": "Earth circumferences",
-      "toMoon": "to the Moon",
-      "vsPoland": "vs. average PL",
-      "daysOwned": "days owned",
-      "monthsOwned": "months owned",
-      "fuelCostEstimate": "est. fuel cost (PLN)",
-      "funFacts": "Fun facts",
-      "editSuccess": "Vehicle has been updated",
-      "editSpecs": "Edit specifications"
-    },
-
-    "error": {
-      "title": "Error",
-      "description": "Failed to load vehicles."
-    },
-
-    "overview": {
-      "basicInfo": "Basic information",
-      "specs": "Technical specifications",
-      "appearance": "Appearance",
-      "description": "Description",
-      "purchaseSale": "Purchase / Sale",
-      "purchaseDate": "Purchase date",
-      "purchasePrice": "Purchase price",
-      "purchaseMileage": "Mileage at purchase",
-      "saleDate": "Sale date",
-      "salePrice": "Sale price",
-      "saleMileage": "Mileage at sale",
-      "technicalSpecs": "Technical specifications",
-
-      "descriptionEmpty": {
-        "title": "No description",
-        "description": "Add a short description of your vehicle",
-        "action": "Add description"
-      },
-      "purchaseEmpty": {
-        "title": "No purchase information",
-        "description": "Add a purchase event to the timeline",
-        "action": "Add purchase"
-      },
-      "saleEmpty": {
-        "title": "Vehicle still with you 🚗",
-        "description": "When you decide to sell — add a sale event to the timeline",
-        "action": "Sell vehicle"
+      "editSuccess": "Vehicle details updated",
+      "editSpecs": "Edit specifications",
+      "delete": "Delete vehicle",
+      "deleteConfirm": "Are you sure you want to delete this vehicle? This action cannot be undone.",
+      "deleteSuccess": "Vehicle deleted",
+      "funFacts": {
+        "title": "Fun facts",
+        "years": "years owned",
+        "engine": "engine",
+        "kmPerYear": "km / year",
+        "oilChanges": "oil changes",
+        "earthCircumferences": "Earth circumferences",
+        "toMoon": "trips to the Moon",
+        "vsPoland": "vs. average PL",
+        "daysOwned": "days owned",
+        "monthsOwned": "months owned",
+        "fuelCostEstimate": "est. fuel cost (PLN)"
       }
     },
-
+    "overview": {
+      "sections": {
+        "basicInfo": "Basic information",
+        "specs": "Technical specifications",
+        "appearance": "Appearance",
+        "description": "Description",
+        "purchaseSale": "Purchase / Sale"
+      },
+      "fields": {
+        "purchaseDate": "Purchase date",
+        "purchasePrice": "Purchase price",
+        "purchaseMileage": "Mileage at purchase",
+        "saleDate": "Sale date",
+        "salePrice": "Sale price",
+        "saleMileage": "Mileage at sale"
+      },
+      "empty": {
+        "description": {
+          "title": "No description",
+          "description": "Add a short description of your vehicle",
+          "action": "Add description"
+        },
+        "purchase": {
+          "title": "No purchase info",
+          "description": "Add a purchase event to the vehicle history",
+          "action": "Add purchase"
+        },
+        "sale": {
+          "title": "Still yours",
+          "description": "When you decide to sell — add a sale event to the history",
+          "action": "Add sale"
+        }
+      }
+    },
     "specs": {
-      "engineCode": "Engine code",
-      "enginePowerHp": "Power (HP)",
-      "enginePowerKw": "Power (kW)",
-      "torqueNm": "Torque",
-      "cylindersCount": "Number of cylinders",
-      "gearsCount": "Number of gears",
-      "turbo": "Turbo",
-      "combinedConsumption": "Combined consumption",
-      "cityConsumption": "City consumption",
-      "highwayConsumption": "Highway consumption",
-      "fuelTankCapacity": "Fuel tank capacity",
-      "co2EmissionGKm": "CO2 emission",
-      "euroStandard": "Euro standard",
-      "accelerationSec": "Acceleration 0-100",
-      "topSpeedKmh": "Top speed",
-      "weightKg": "Weight",
-      "numberOfSeats": "Number of seats",
-      "numberOfDoors": "Number of doors",
-      "ncapRating": "NCAP rating",
-      "airbagsCount": "Number of airbags",
-      "tireSizeFront": "Front tire size",
-      "tireSizeRear": "Rear tire size",
-      "batteryCapacityKwh": "Battery capacity",
-      "electricRangeKm": "Electric range",
-      "lengthMm": "Length",
-      "widthMm": "Width",
-      "heightMm": "Height",
-      "wheelbaseMm": "Wheelbase",
-      "groundClearanceMm": "Ground clearance",
-      "trunkVolumeLiters": "Trunk volume",
-      "engineLayout": "Engine layout",
+      "fields": {
+        "engineCode": "Engine code",
+        "enginePowerHp": "Power (HP)",
+        "enginePowerKw": "Power (kW)",
+        "torqueNm": "Torque (Nm)",
+        "cylindersCount": "Cylinders",
+        "gearsCount": "Gears",
+        "turbo": "Forced induction",
+        "combinedConsumption": "Combined consumption",
+        "cityConsumption": "City consumption",
+        "highwayConsumption": "Highway consumption",
+        "fuelTankCapacity": "Fuel tank capacity",
+        "co2EmissionGKm": "CO₂ emissions (g/km)",
+        "euroStandard": "Euro emission standard",
+        "accelerationSec": "0–100 km/h acceleration (s)",
+        "topSpeedKmh": "Top speed (km/h)",
+        "weightKg": "Curb weight (kg)",
+        "numberOfSeats": "Seats",
+        "numberOfDoors": "Doors",
+        "ncapRating": "Euro NCAP safety rating",
+        "airbagsCount": "Airbags",
+        "tireSizeFront": "Tire size — front",
+        "tireSizeRear": "Tire size — rear",
+        "batteryCapacityKwh": "Battery capacity (kWh)",
+        "electricRangeKm": "Electric range (km)",
+        "lengthMm": "Length (mm)",
+        "widthMm": "Width (mm)",
+        "heightMm": "Height (mm)",
+        "wheelbaseMm": "Wheelbase (mm)",
+        "groundClearanceMm": "Ground clearance (mm)",
+        "trunkVolumeLiters": "Trunk volume (l)",
+        "engineLayout": "Engine layout"
+      },
       "sections": {
         "engine": "Engine",
         "consumption": "Fuel consumption",
         "performance": "Performance",
         "dimensions": "Dimensions",
         "interior": "Interior",
-        "safetyEco": "Safety and ecology",
+        "safetyEco": "Safety & ecology",
         "tires": "Tires"
       }
     },
-
     "ai": {
-      "title": "Fill specification with AI",
-      "description": "AI will automatically fill in technical data based on the make, model, and year of manufacture.",
+      "title": "Fill specifications with AI",
+      "description": "The AI assistant will automatically fill in technical data based on the make, model and year.",
       "action": "Fill with AI",
-      "loading": "AI is analyzing the vehicle..."
+      "loading": "AI is analysing the vehicle..."
     }
   },
 
   "user": {
-    "profile": "Profile",
-    "logout": "Logout",
-    "logoutConfirm": "Are you sure you want to logout?"
+    "profile": {
+      "title": "Profile",
+      "edit": "Edit profile",
+      "updateSuccess": "Profile updated"
+    },
+    "logout": {
+      "action": "Sign out",
+      "confirm": "Are you sure you want to sign out?"
+    }
   },
 
   "errors": {
     "INVALID_CREDENTIALS": "Invalid email or password",
-    "ACCOUNT_LOCKED": "Account has been temporarily locked",
-    "ACCOUNT_SUSPENDED": "Account has been suspended",
-    "ACCOUNT_DELETED": "This account does not exist",
-    "ACCESS_TOKEN_INVALID": "Session is invalid",
-    "ACCESS_TOKEN_EXPIRED": "Session has expired",
-    "REFRESH_TOKEN_INVALID": "Session is invalid",
-    "REFRESH_TOKEN_EXPIRED": "Session has expired",
-    "REFRESH_TOKEN_REUSE": "Suspicious activity detected, please sign in again",
+    "ACCOUNT_LOCKED": "Account temporarily locked due to too many failed login attempts",
+    "ACCOUNT_SUSPENDED": "Account suspended — please contact support",
+    "ACCOUNT_DELETED": "Account does not exist or has been deleted",
+    "ACCESS_TOKEN_INVALID": "Session is invalid — please sign in again",
+    "ACCESS_TOKEN_EXPIRED": "Session has expired — please sign in again",
+    "REFRESH_TOKEN_INVALID": "Session is invalid — please sign in again",
+    "REFRESH_TOKEN_EXPIRED": "Session has expired — please sign in again",
+    "REFRESH_TOKEN_REUSE": "Suspicious activity detected — please sign in again",
     "SESSION_NOT_FOUND": "Session not found",
-    "SESSION_EXPIRED": "Session expired, please sign in again",
-    "SESSION_REVOKED": "Session has been revoked",
-    "GOOGLE_AUTH_FAILED": "Google sign in failed",
-    "GOOGLE_EMAIL_MISSING": "Could not retrieve email from Google",
-    "EMAIL_ALREADY_EXISTS": "This email is already taken",
-    "EMAIL_NOT_VERIFIED": "Please verify your email address",
-    "EMAIL_ALREADY_VERIFIED": "Email has already been verified",
-    "EMAIL_CHANGE_PENDING": "Email change is pending confirmation",
+    "SESSION_EXPIRED": "Session expired — please sign in again",
+    "SESSION_REVOKED": "Session has been terminated",
+    "GOOGLE_AUTH_FAILED": "Google sign-in failed — please try again",
+    "GOOGLE_EMAIL_MISSING": "Could not retrieve email from your Google account",
+    "EMAIL_ALREADY_EXISTS": "An account with this email already exists",
+    "EMAIL_NOT_VERIFIED": "Please verify your email address to continue",
+    "EMAIL_ALREADY_VERIFIED": "This email address has already been verified",
+    "EMAIL_CHANGE_PENDING": "Email change is awaiting confirmation",
     "TOKEN_INVALID": "Link is invalid",
-    "TOKEN_EXPIRED": "Link has expired",
+    "TOKEN_EXPIRED": "Link has expired — you can request a new one",
     "TOKEN_ALREADY_USED": "Link has already been used",
     "TOKEN_NOT_FOUND": "Link not found",
     "USER_NOT_FOUND": "User not found",
     "PASSWORD_INCORRECT": "Incorrect password",
-    "PASSWORD_SAME": "New password must differ from the previous one",
+    "PASSWORD_SAME": "New password must be different from the current one",
     "WORKSPACE_NOT_FOUND": "Workspace not found",
-    "WORKSPACE_ACCESS_DENIED": "Access to workspace denied",
-    "WORKSPACE_INSUFFICIENT_ROLE": "Insufficient permissions",
-    "WORKSPACE_OWNER_CANNOT_LEAVE": "Owner cannot leave the workspace",
-    "WORKSPACE_ALREADY_MEMBER": "User is already a member of this workspace",
+    "WORKSPACE_ACCESS_DENIED": "You don't have access to this workspace",
+    "WORKSPACE_INSUFFICIENT_ROLE": "You don't have sufficient permissions",
+    "WORKSPACE_OWNER_CANNOT_LEAVE": "The owner cannot leave the workspace",
+    "WORKSPACE_ALREADY_MEMBER": "This person is already a member of the workspace",
     "INVITE_NOT_FOUND": "Invitation not found",
     "INVITE_EXPIRED": "Invitation has expired",
-    "INVITE_ALREADY_USED": "Invitation has already been used",
-    "INVITE_EMAIL_MISMATCH": "Email does not match the invitation",
+    "INVITE_ALREADY_USED": "This invitation has already been used",
+    "INVITE_EMAIL_MISMATCH": "Email doesn't match the invitation",
     "VEHICLE_NOT_FOUND": "Vehicle not found",
-    "VEHICLE_ACCESS_DENIED": "Access to vehicle denied",
-    "VEHICLE_INVALID_MILEAGE": "Invalid mileage",
+    "VEHICLE_ACCESS_DENIED": "You don't have access to this vehicle",
+    "VEHICLE_INVALID_MILEAGE": "The mileage provided is invalid",
     "TIMELINE_EVENT_NOT_FOUND": "Event not found",
-    "TIMELINE_INVALID_MILEAGE": "Invalid mileage",
-    "TIMELINE_INVALID_EVENT_TYPE": "Invalid event type",
+    "TIMELINE_INVALID_MILEAGE": "The mileage provided is invalid",
+    "TIMELINE_INVALID_EVENT_TYPE": "Unknown event type",
     "REMINDER_NOT_FOUND": "Reminder not found",
-    "REMINDER_ALREADY_COMPLETED": "Reminder has already been completed",
-    "REMINDER_ALREADY_DISMISSED": "Reminder has already been dismissed",
+    "REMINDER_ALREADY_COMPLETED": "This reminder has already been marked as done",
+    "REMINDER_ALREADY_DISMISSED": "This reminder has already been dismissed",
     "MAINTENANCE_INTERVAL_NOT_FOUND": "Maintenance interval not found",
-    "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "Maintenance interval is already disabled",
+    "MAINTENANCE_INTERVAL_ALREADY_DISABLED": "This maintenance interval is already disabled",
     "TIRE_NOT_FOUND": "Tire not found",
-    "TIRE_ALREADY_MOUNTED": "Tire is already mounted",
-    "TIRE_ALREADY_RETIRED": "Tire is already retired",
+    "TIRE_ALREADY_MOUNTED": "This tire is already mounted",
+    "TIRE_ALREADY_RETIRED": "This tire has already been retired",
     "SERVICE_STATION_NOT_FOUND": "Service station not found",
-    "SERVICE_STATION_ACCESS_DENIED": "Access to service station denied",
+    "SERVICE_STATION_ACCESS_DENIED": "You don't have access to this service station",
     "MEDIA_NOT_FOUND": "File not found",
-    "MEDIA_UPLOAD_FAILED": "Failed to upload file",
-    "MEDIA_INVALID_FILE_TYPE": "Invalid file type",
+    "MEDIA_UPLOAD_FAILED": "Failed to upload file — please try again",
+    "MEDIA_INVALID_FILE_TYPE": "This file format is not supported",
     "MEDIA_FILE_TOO_LARGE": "File is too large",
-    "MEDIA_ACCESS_DENIED": "Access to file denied",
+    "MEDIA_ACCESS_DENIED": "You don't have access to this file",
     "AI_CONVERSATION_NOT_FOUND": "Conversation not found",
-    "AI_MESSAGE_FAILED": "Failed to send message",
-    "AI_SERVICE_UNAVAILABLE": "AI service is unavailable",
-    "VALIDATION_ERROR": "Please check your input",
-    "BAD_REQUEST": "Bad request",
+    "AI_MESSAGE_FAILED": "Failed to send message — please try again",
+    "AI_SERVICE_UNAVAILABLE": "AI assistant is temporarily unavailable",
+    "VALIDATION_ERROR": "Please check the information you entered",
+    "BAD_REQUEST": "Invalid request",
     "NOT_FOUND": "Not found",
     "FORBIDDEN": "Access denied",
     "UNAUTHORIZED": "Authentication required",
-    "CONFLICT": "Data conflict",
-    "INTERNAL_SERVER_ERROR": "Server error, please try again",
-    "TOO_MANY_REQUESTS": "Too many requests, please try again shortly",
-    "UNKNOWN_ERROR": "An unknown error occurred"
+    "CONFLICT": "Data conflict occurred",
+    "INTERNAL_SERVER_ERROR": "Something went wrong on our end — please try again",
+    "TOO_MANY_REQUESTS": "Too many attempts — please wait a moment and try again",
+    "UNKNOWN_ERROR": "An unexpected error occurred"
   },
 
   "validation": {
     "REQUIRED": "This field is required",
     "NOT_ALLOWED": "This value is not allowed",
     "INVALID_FORMAT": "Invalid format",
-    "INVALID_EMAIL": "Invalid email address",
-    "INVALID_URL": "Invalid URL",
-    "INVALID_DATE": "Invalid date",
-    "INVALID_ENUM": "Invalid value",
+    "INVALID_EMAIL": "Please enter a valid email address",
+    "INVALID_URL": "Please enter a valid URL",
+    "INVALID_DATE": "Please enter a valid date",
+    "INVALID_ENUM": "Please select one of the available options",
     "INVALID_UUID": "Invalid identifier",
-    "INVALID_PHONE": "Invalid phone number",
-    "INVALID_PLATE_NUMBER": "Invalid plate number",
-    "INVALID_VIN": "Invalid VIN number",
-    "INVALID_COLOR": "Invalid color",
+    "INVALID_PHONE": "Please enter a valid phone number",
+    "INVALID_PLATE_NUMBER": "Please enter a valid registration number",
+    "INVALID_VIN": "VIN must be 17 characters",
+    "INVALID_COLOR": "Please select a valid color",
     "TOO_SHORT": "Value is too short",
     "TOO_LONG": "Value is too long",
     "TOO_SMALL": "Value is too small",
     "TOO_LARGE": "Value is too large",
-    "MUST_BE_POSITIVE": "Value must be positive",
-    "MUST_BE_INTEGER": "Value must be an integer",
-    "ALREADY_EXISTS": "This value already exists",
+    "MUST_BE_POSITIVE": "Value must be greater than zero",
+    "MUST_BE_INTEGER": "Please enter a whole number",
+    "ALREADY_EXISTS": "This value is already taken",
     "MUST_MATCH": "Values must match",
     "MUST_BE_FUTURE": "Date must be in the future",
     "MUST_BE_PAST": "Date must be in the past",
-    "MUST_BE_AFTER": "Date must be after"
+    "MUST_BE_AFTER": "Date must be after the specified date"
   }
 }

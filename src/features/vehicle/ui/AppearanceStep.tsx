@@ -12,7 +12,7 @@ export const AppearanceStep = ({ control }: VehicleStepProps) => {
       <FormFieldColorPicker
         control={control}
         name="color"
-        label={t('vehicle.form.color')}
+        label={t('vehicle.fields.color')}
         required
         options={VEHICLE_COLORS_CONFIG}
       />
@@ -20,9 +20,9 @@ export const AppearanceStep = ({ control }: VehicleStepProps) => {
       <FormFieldTextarea
         control={control}
         name="description"
-        label={t('vehicle.form.description')}
+        label={t('vehicle.fields.description')}
         size="lg"
-        placeholder={t('vehicle.form.descriptionPlaceholder')}
+        placeholder={t('vehicle.fields.descriptionPlaceholder')}
         rows={4}
         maxRows={10}
       />

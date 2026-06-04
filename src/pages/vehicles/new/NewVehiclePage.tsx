@@ -14,7 +14,7 @@ export const NewVehiclePage = () => {
     <Stack gap="2xl">
       <PageHeader
         title={t('vehicle.new.title')}
-        buttonLabel={t('common.back')}
+        buttonLabel={t('common.actions.back')}
         buttonIcon="arrowLeft"
         onCreate={() => navigate(ROUTES.WORKSPACES.DETAIL(workspaceId ?? ''))}
       />

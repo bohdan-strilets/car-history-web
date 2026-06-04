@@ -1,12 +1,8 @@
 import { useActiveVehicle } from '@entities/vehicle';
 import { useAuth } from '@shared/store/auth';
 import { Badge, Button, Heading, IconBox, Panel, Stack, Text } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 export const DashboardPage = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
   const { user } = useAuth();
   const { activeVehicle, isLoading } = useActiveVehicle();
 
