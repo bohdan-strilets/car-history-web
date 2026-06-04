@@ -60,6 +60,11 @@ export interface EditVehicleDescriptionParams {
   onSuccess: () => void;
 }
 
+export interface FillSpecsAiParams {
+  workspaceId: string;
+  vehicleId: string;
+}
+
 // Props
 
 export interface VehicleStepProps {

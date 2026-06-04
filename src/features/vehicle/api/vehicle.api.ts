@@ -13,4 +13,7 @@ export const vehicleApi = {
   delete: (workspaceId: string, id: string) => {
     return apiClient.delete<void>(ENDPOINTS.VEHICLES.DELETE(workspaceId, id));
   },
+  fillSpecsAi: (workspaceId: string, vehicleId: string) => {
+    return apiClient.post<Vehicle>(ENDPOINTS.VEHICLES.FILL_SPECS_AI(workspaceId, vehicleId), {});
+  },
 };

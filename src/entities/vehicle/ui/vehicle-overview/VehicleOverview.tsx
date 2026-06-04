@@ -220,7 +220,11 @@ export const VehicleOverview = ({
 
       {!vehicle.specs || !Object.values(vehicle.specs).some(Boolean) ? (
         <InfoSection title={t('vehicle.overview.technicalSpecs')}>
-          <VehicleAiFill onFill={() => null} />
+          <VehicleAiFill
+            vehicleId={vehicle.id}
+            workspaceId={vehicle.workspaceId}
+            onFill={() => null}
+          />
         </InfoSection>
       ) : (
         <InfoSection title={t('vehicle.overview.technicalSpecs')}>

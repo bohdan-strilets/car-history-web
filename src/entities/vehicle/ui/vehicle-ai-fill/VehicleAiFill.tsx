@@ -1,18 +1,23 @@
+import { useFillSpecsAiMutation } from '@features/vehicle/api';
 import { Button, Heading, IconBox, Panel, Stack, Text } from '@shared/ui';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { pulseButton } from './vehicle-ai-fill.css';
 import type { VehicleAiFillProps } from './vehicle-ai-fill.types';
 
-export const VehicleAiFill = ({ onFill }: VehicleAiFillProps) => {
+export const VehicleAiFill = ({ vehicleId, workspaceId, onFill }: VehicleAiFillProps) => {
   const { t } = useTranslation();
-  const [isLoading, setIsLoading] = useState(false);
+  const { mutate: fillSpecs, isPending } = useFillSpecsAiMutation();
 
   const handleFill = () => {
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 3000);
-    onFill?.();
+    fillSpecs(
+      { vehicleId, workspaceId },
+      {
+        onSuccess: () => {
+          onFill?.();
+        },
+      },
+    );
   };
 
   return (
@@ -31,13 +36,13 @@ export const VehicleAiFill = ({ onFill }: VehicleAiFillProps) => {
 
         <Button
           onClick={handleFill}
-          loading={isLoading}
+          loading={isPending}
           leftIcon="sparkles"
           size="lg"
           color="accent"
-          className={isLoading ? undefined : pulseButton}
+          className={isPending ? undefined : pulseButton}
         >
-          {isLoading ? t('vehicle.ai.loading') : t('vehicle.ai.action')}
+          {isPending ? t('vehicle.ai.loading') : t('vehicle.ai.action')}
         </Button>
       </Stack>
     </Panel>
