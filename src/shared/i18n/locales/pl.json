@@ -545,6 +545,13 @@
       "airbagsCount": "Liczba poduszek",
       "tireSizeFront": "Rozmiar opon przód",
       "tireSizeRear": "Rozmiar opon tył"
+    },
+
+    "ai": {
+      "title": "Wypełnij specyfikację z AI",
+      "description": "AI automatycznie uzupełni dane techniczne na podstawie marki, modelu i roku produkcji.",
+      "action": "Wypełnij z AI",
+      "loading": "AI analizuje pojazd..."
     }
   },
 

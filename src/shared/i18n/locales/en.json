@@ -545,6 +545,13 @@
       "airbagsCount": "Number of airbags",
       "tireSizeFront": "Front tire size",
       "tireSizeRear": "Rear tire size"
+    },
+
+    "ai": {
+      "title": "Fill specification with AI",
+      "description": "AI will automatically fill in technical data based on the make, model, and year of manufacture.",
+      "action": "Fill with AI",
+      "loading": "AI is analyzing the vehicle..."
     }
   },
 

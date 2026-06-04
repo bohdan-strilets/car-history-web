@@ -1,4 +1,9 @@
-import { BODY_TYPE_CONFIG, DRIVE_TYPE_CONFIG, TRANSMISSION_CONFIG } from '@entities/vehicle';
+import {
+  BODY_TYPE_CONFIG,
+  DRIVE_TYPE_CONFIG,
+  TRANSMISSION_CONFIG,
+  VehicleAiFill,
+} from '@entities/vehicle';
 import { InfoRow, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section/InfoSection';
@@ -15,6 +20,10 @@ export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
   const bodyType = getConfigOption(t, BODY_TYPE_CONFIG, vehicle.bodyType);
   const transmission = getConfigOption(t, TRANSMISSION_CONFIG, vehicle.transmission);
   const driveType = getConfigOption(t, DRIVE_TYPE_CONFIG, vehicle.driveType);
+
+  const isDescription = Boolean(vehicle.description?.trim());
+  const isSpecs = Boolean(vehicle.specs && Object.values(vehicle.specs).some(Boolean));
+  const isPurchaseSaleInfo = Boolean(vehicle.purchaseInfo || vehicle.saleInfo);
 
   return (
     <>
@@ -125,7 +134,7 @@ export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
         />
       </InfoSection>
 
-      {(vehicle.purchaseInfo || vehicle.saleInfo) && (
+      {isPurchaseSaleInfo && (
         <InfoSection title={t('vehicle.overview.purchaseSale')}>
           {vehicle.purchaseInfo?.date && (
             <InfoRow
@@ -183,7 +192,11 @@ export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
         </InfoSection>
       )}
 
-      {vehicle.specs && Object.values(vehicle.specs).some(Boolean) && (
+      {!vehicle.specs || !Object.values(vehicle.specs).some(Boolean) ? (
+        <InfoSection title={t('vehicle.overview.technicalSpecs')}>
+          <VehicleAiFill onFill={() => null} />
+        </InfoSection>
+      ) : (
         <InfoSection title={t('vehicle.overview.technicalSpecs')}>
           {vehicle.specs.engineCode && (
             <InfoRow
@@ -385,7 +398,7 @@ export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
         </InfoSection>
       )}
 
-      {vehicle.description && (
+      {isDescription && (
         <InfoSection title={t('vehicle.overview.description')}>
           <Text size="lg" letterSpacing="wide">
             {vehicle.description}
