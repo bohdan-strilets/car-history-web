@@ -560,7 +560,15 @@
       "ncapRating": "NCAP rating",
       "airbagsCount": "Number of airbags",
       "tireSizeFront": "Front tire size",
-      "tireSizeRear": "Rear tire size"
+      "tireSizeRear": "Rear tire size",
+      "batteryCapacityKwh": "Battery capacity",
+      "electricRangeKm": "Electric range",
+      "lengthMm": "Length",
+      "widthMm": "Width",
+      "heightMm": "Height",
+      "wheelbaseMm": "Wheelbase",
+      "groundClearanceMm": "Ground clearance",
+      "trunkVolumeLiters": "Trunk volume"
     },
 
     "ai": {

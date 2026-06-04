@@ -176,7 +176,6 @@ export const VehicleOverview = ({
               bottomDivider={Boolean(vehicle.saleInfo)}
             />
           )}
-
           {vehicle.saleInfo ? (
             <>
               {vehicle.saleInfo.date && (
@@ -233,7 +232,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.engineCode')}
               value={vehicle.specs.engineCode}
               icon="hash"
-              iconColor="violet"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -242,7 +241,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.enginePowerHp')}
               value={`${vehicle.specs.enginePowerHp} HP`}
               icon="zap"
-              iconColor="violet"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -251,7 +250,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.enginePowerKw')}
               value={`${vehicle.specs.enginePowerKw} kW`}
               icon="zap"
-              iconColor="violet"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -260,7 +259,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.torqueNm')}
               value={`${vehicle.specs.torqueNm} Nm`}
               icon="gauge"
-              iconColor="violet"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -269,7 +268,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.cylindersCount')}
               value={String(vehicle.specs.cylindersCount)}
               icon="grid"
-              iconColor="violet"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -278,7 +277,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.gearsCount')}
               value={String(vehicle.specs.gearsCount)}
               icon="cog"
-              iconColor="violet"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -287,34 +286,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.turbo')}
               value={vehicle.specs.turbo ? t('common.yes') : t('common.no')}
               icon="wind"
-              iconColor="violet"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.combinedConsumption && (
-            <InfoRow
-              label={t('vehicle.specs.combinedConsumption')}
-              value={`${vehicle.specs.combinedConsumption} l/100km`}
-              icon="fuel"
-              iconColor="amber"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.cityConsumption && (
-            <InfoRow
-              label={t('vehicle.specs.cityConsumption')}
-              value={`${vehicle.specs.cityConsumption} l/100km`}
-              icon="fuel"
-              iconColor="amber"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.highwayConsumption && (
-            <InfoRow
-              label={t('vehicle.specs.highwayConsumption')}
-              value={`${vehicle.specs.highwayConsumption} l/100km`}
-              icon="fuel"
-              iconColor="amber"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -323,7 +295,52 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.fuelTankCapacity')}
               value={`${vehicle.specs.fuelTankCapacity} l`}
               icon="droplets"
-              iconColor="amber"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.combinedConsumption && (
+            <InfoRow
+              label={t('vehicle.specs.combinedConsumption')}
+              value={`${vehicle.specs.combinedConsumption} l/100km`}
+              icon="fuel"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.cityConsumption && (
+            <InfoRow
+              label={t('vehicle.specs.cityConsumption')}
+              value={`${vehicle.specs.cityConsumption} l/100km`}
+              icon="fuel"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.highwayConsumption && (
+            <InfoRow
+              label={t('vehicle.specs.highwayConsumption')}
+              value={`${vehicle.specs.highwayConsumption} l/100km`}
+              icon="fuel"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.batteryCapacityKwh && (
+            <InfoRow
+              label={t('vehicle.specs.batteryCapacityKwh')}
+              value={`${vehicle.specs.batteryCapacityKwh} kWh`}
+              icon="batteryCharging"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.electricRangeKm && (
+            <InfoRow
+              label={t('vehicle.specs.electricRangeKm')}
+              value={`${vehicle.specs.electricRangeKm} km`}
+              icon="zap"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -332,7 +349,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.co2EmissionGKm')}
               value={`${vehicle.specs.co2EmissionGKm} g/km`}
               icon="cloud"
-              iconColor="green"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -341,7 +358,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.euroStandard')}
               value={vehicle.specs.euroStandard}
               icon="shield"
-              iconColor="green"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -350,7 +367,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.accelerationSec')}
               value={`${vehicle.specs.accelerationSec}s`}
               icon="timer"
-              iconColor="orange"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -359,7 +376,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.topSpeedKmh')}
               value={`${vehicle.specs.topSpeedKmh} km/h`}
               icon="gauge"
-              iconColor="orange"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -368,7 +385,61 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.weightKg')}
               value={`${vehicle.specs.weightKg} kg`}
               icon="package"
-              iconColor="gray"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.lengthMm && (
+            <InfoRow
+              label={t('vehicle.specs.lengthMm')}
+              value={`${vehicle.specs.lengthMm} mm`}
+              icon="ruler"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.widthMm && (
+            <InfoRow
+              label={t('vehicle.specs.widthMm')}
+              value={`${vehicle.specs.widthMm} mm`}
+              icon="ruler"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.heightMm && (
+            <InfoRow
+              label={t('vehicle.specs.heightMm')}
+              value={`${vehicle.specs.heightMm} mm`}
+              icon="ruler"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.wheelbaseMm && (
+            <InfoRow
+              label={t('vehicle.specs.wheelbaseMm')}
+              value={`${vehicle.specs.wheelbaseMm} mm`}
+              icon="ruler"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.groundClearanceMm && (
+            <InfoRow
+              label={t('vehicle.specs.groundClearanceMm')}
+              value={`${vehicle.specs.groundClearanceMm} mm`}
+              icon="ruler"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.trunkVolumeLiters && (
+            <InfoRow
+              label={t('vehicle.specs.trunkVolumeLiters')}
+              value={`${vehicle.specs.trunkVolumeLiters} l`}
+              icon="package"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -377,7 +448,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.numberOfSeats')}
               value={String(vehicle.specs.numberOfSeats)}
               icon="users"
-              iconColor="gray"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -386,16 +457,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.numberOfDoors')}
               value={String(vehicle.specs.numberOfDoors)}
               icon="doorClosed"
-              iconColor="gray"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.ncapRating && (
-            <InfoRow
-              label={t('vehicle.specs.ncapRating')}
-              value={`${vehicle.specs.ncapRating}/5`}
-              icon="star"
-              iconColor="amber"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -404,7 +466,16 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.airbagsCount')}
               value={String(vehicle.specs.airbagsCount)}
               icon="shield"
-              iconColor="amber"
+              iconColor="sky"
+              bottomDivider
+            />
+          )}
+          {vehicle.specs.ncapRating && (
+            <InfoRow
+              label={t('vehicle.specs.ncapRating')}
+              value={`${vehicle.specs.ncapRating}/5`}
+              icon="star"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -413,7 +484,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.tireSizeFront')}
               value={vehicle.specs.tireSizeFront}
               icon="circle"
-              iconColor="gray"
+              iconColor="sky"
               bottomDivider
             />
           )}
@@ -422,7 +493,7 @@ export const VehicleOverview = ({
               label={t('vehicle.specs.tireSizeRear')}
               value={vehicle.specs.tireSizeRear}
               icon="circle"
-              iconColor="gray"
+              iconColor="sky"
             />
           )}
         </InfoSection>

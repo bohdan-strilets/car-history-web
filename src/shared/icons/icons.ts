@@ -126,6 +126,7 @@ import {
   RefreshCw,
   RotateCcw,
   RotateCw,
+  Ruler,
   Save,
   ScanLine,
   Search,
@@ -261,6 +262,7 @@ export const Icons = {
   cloud: Cloud,
   grid: Grid2x2,
   note: NotebookText,
+  ruler: Ruler,
 
   // Documents & Files
   fileText: FileText,

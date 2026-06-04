@@ -561,7 +561,15 @@
       "ncapRating": "Оцінка NCAP",
       "airbagsCount": "Кількість подушок",
       "tireSizeFront": "Розмір шин спереду",
-      "tireSizeRear": "Розмір шин ззаду"
+      "tireSizeRear": "Розмір шин ззаду",
+      "batteryCapacityKwh": "Потужність батареї",
+      "electricRangeKm": "Електричний запас ходу",
+      "lengthMm": "Довжина",
+      "widthMm": "Ширина",
+      "heightMm": "Висота",
+      "wheelbaseMm": "Розстав осі",
+      "groundClearanceMm": "Кліренс",
+      "trunkVolumeLiters": "Об'єм багажника"
     },
 
     "ai": {

@@ -560,7 +560,15 @@
       "ncapRating": "Ocena NCAP",
       "airbagsCount": "Liczba poduszek",
       "tireSizeFront": "Rozmiar opon przód",
-      "tireSizeRear": "Rozmiar opon tył"
+      "tireSizeRear": "Rozmiar opon tył",
+      "batteryCapacityKwh": "Pojemność baterii",
+      "electricRangeKm": "Zasięg elektryczny",
+      "lengthMm": "Długość",
+      "widthMm": "Szerokość",
+      "heightMm": "Wysokość",
+      "wheelbaseMm": "Rozstaw osi",
+      "groundClearanceMm": "Prześwit",
+      "trunkVolumeLiters": "Objętość bagażnika"
     },
 
     "ai": {
