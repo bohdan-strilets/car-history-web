@@ -26,6 +26,8 @@ export const ROUTES = {
         `/workspace/${workspaceId}/vehicles/${vehicleId}`,
       EDIT: (workspaceId: string, vehicleId: string) =>
         `/workspace/${workspaceId}/vehicles/${vehicleId}/edit`,
+      EDIT_SPECS: (workspaceId: string, vehicleId: string) =>
+        `/workspace/${workspaceId}/vehicles/${vehicleId}/specs/edit`,
     },
   },
 

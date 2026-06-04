@@ -1,3 +1,4 @@
+export { useEditVehicleSpecsForm } from './edit-vehicle-specs.form';
 export { useEditVehicleForm } from './edit-vehicle.form';
 export { useEditVehicleDescriptionForm } from './vehicle-description.form';
 export {
@@ -6,6 +7,7 @@ export {
 } from './vehicle-description.schema';
 export { VEHICLE_FORM_TOTAL_STEPS, VEHICLE_STEP_FIELDS } from './vehicle-form.configs';
 export { getBrandOptions, getModelOptions } from './vehicle-form.options';
+export { createVehicleSpecsSchema, type VehicleSpecsValues } from './vehicle-specs.schema';
 export { useVehicleForm } from './vehicle.form';
 export {
   createVehicleFormSchema,
@@ -28,11 +30,14 @@ export type {
   EditVehicleDescriptionModalProps,
   EditVehicleDescriptionParams,
   EditVehicleFormParams,
+  EditVehicleSpecsFormParams,
   FillSpecsAiParams,
   UpdateVehicleDto,
   UpdateVehicleParams,
+  UpdateVehicleSpecsParams,
   VehicleEditFormProps,
   VehicleFormParams,
   VehicleFormProps,
+  VehicleSpecsFormProps,
   VehicleStepProps,
 } from './vehicle.types';

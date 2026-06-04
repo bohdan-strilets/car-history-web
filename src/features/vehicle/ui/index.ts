@@ -6,3 +6,4 @@ export { RegistrationStep } from './RegistrationStep';
 export { TypeStep } from './TypeStep';
 export { VehicleEditForm } from './VehicleEditForm';
 export { VehicleForm } from './VehicleForm';
+export { VehicleSpecsForm } from './VehicleSpecsForm';

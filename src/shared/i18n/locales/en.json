@@ -499,7 +499,8 @@
       "monthsOwned": "months owned",
       "fuelCostEstimate": "est. fuel cost (PLN)",
       "funFacts": "Fun facts",
-      "editSuccess": "Vehicle has been updated"
+      "editSuccess": "Vehicle has been updated",
+      "editSpecs": "Edit specifications"
     },
 
     "error": {
@@ -568,7 +569,17 @@
       "heightMm": "Height",
       "wheelbaseMm": "Wheelbase",
       "groundClearanceMm": "Ground clearance",
-      "trunkVolumeLiters": "Trunk volume"
+      "trunkVolumeLiters": "Trunk volume",
+      "engineLayout": "Engine layout",
+      "sections": {
+        "engine": "Engine",
+        "consumption": "Fuel consumption",
+        "performance": "Performance",
+        "dimensions": "Dimensions",
+        "interior": "Interior",
+        "safetyEco": "Safety and ecology",
+        "tires": "Tires"
+      }
     },
 
     "ai": {

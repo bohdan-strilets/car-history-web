@@ -61,6 +61,13 @@ export const VehicleActions = ({
           onClick={() => navigate(ROUTES.WORKSPACES.VEHICLES.EDIT(workspaceId, vehicleId))}
         />
       )}
+      {canEdit && (
+        <DropdownItem
+          label={t('vehicle.detail.editSpecs')}
+          leftIcon="settings"
+          onClick={() => navigate(ROUTES.WORKSPACES.VEHICLES.EDIT_SPECS(workspaceId, vehicleId))}
+        />
+      )}
       {canDelete && (
         <DropdownItem
           label={t('vehicle.detail.delete')}

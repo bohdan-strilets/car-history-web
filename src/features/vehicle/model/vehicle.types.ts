@@ -1,6 +1,7 @@
 import type { Vehicle } from '@entities/vehicle';
 import type { Control } from 'react-hook-form';
 
+import type { VehicleSpecsValues } from './vehicle-specs.schema';
 import type { VehicleFormValues } from './vehicle.schema';
 
 // DTOs
@@ -65,6 +66,17 @@ export interface FillSpecsAiParams {
   vehicleId: string;
 }
 
+export interface UpdateVehicleSpecsParams {
+  vehicleId: string;
+  workspaceId: string;
+  dto: VehicleSpecsValues;
+}
+
+export interface EditVehicleSpecsFormParams {
+  vehicle: Vehicle;
+  onSuccess?: () => void;
+}
+
 // Props
 
 export interface VehicleStepProps {
@@ -86,4 +98,11 @@ export interface VehicleEditFormProps {
 export interface EditVehicleDescriptionModalProps {
   vehicle: Vehicle;
   onSuccess: () => void;
+}
+
+export interface VehicleSpecsFormProps {
+  control: Control<VehicleSpecsValues>;
+  handleSubmit: () => void;
+  isPending: boolean;
+  errorMessage?: string;
 }

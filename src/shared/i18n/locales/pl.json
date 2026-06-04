@@ -499,7 +499,8 @@
       "monthsOwned": "miesięcy własności",
       "fuelCostEstimate": "est. koszt paliwa (PLN)",
       "funFacts": "Ciekawostki",
-      "editSuccess": "Pojazd został zaktualizowany"
+      "editSuccess": "Pojazd został zaktualizowany",
+      "editSpecs": "Edytuj specyfikację"
     },
 
     "error": {
@@ -568,7 +569,17 @@
       "heightMm": "Wysokość",
       "wheelbaseMm": "Rozstaw osi",
       "groundClearanceMm": "Prześwit",
-      "trunkVolumeLiters": "Objętość bagażnika"
+      "trunkVolumeLiters": "Objętość bagażnika",
+      "engineLayout": "Układ silnika",
+      "sections": {
+        "engine": "Silnik",
+        "consumption": "Zużycie paliwa",
+        "performance": "Osiągi",
+        "dimensions": "Wymiary",
+        "interior": "Wnętrze",
+        "safetyEco": "Bezpieczeństwo i ekologia",
+        "tires": "Opony"
+      }
     },
 
     "ai": {

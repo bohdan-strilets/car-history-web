@@ -60,6 +60,8 @@ export const ENDPOINTS = {
     TIRES: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}/tires`,
     FILL_SPECS_AI: (workspaceId: string, id: string) =>
       `/workspaces/${workspaceId}/vehicles/${id}/specs/ai`,
+    UPDATE_SPECS: (workspaceId: string, id: string) =>
+      `/workspaces/${workspaceId}/vehicles/${id}/specs`,
   },
 
   TIMELINE: {

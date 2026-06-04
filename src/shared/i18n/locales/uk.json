@@ -500,7 +500,8 @@
       "monthsOwned": "місяців власності",
       "fuelCostEstimate": "оцінка вартості палива (PLN)",
       "funFacts": "Цікаві факти",
-      "editSuccess": "Автомобіль було оновлено"
+      "editSuccess": "Автомобіль було оновлено",
+      "editSpecs": "Редагувати специфікацію"
     },
 
     "error": {
@@ -569,7 +570,17 @@
       "heightMm": "Висота",
       "wheelbaseMm": "Розстав осі",
       "groundClearanceMm": "Кліренс",
-      "trunkVolumeLiters": "Об'єм багажника"
+      "trunkVolumeLiters": "Об'єм багажника",
+      "engineLayout": "Розташування двигуна",
+      "sections": {
+        "engine": "Двигун",
+        "consumption": "Споживання палива",
+        "performance": "Оси́г",
+        "dimensions": "Розміри",
+        "interior": "Інтер'єр",
+        "safetyEco": "Безпека та екологія",
+        "tires": "Шини"
+      }
     },
 
     "ai": {

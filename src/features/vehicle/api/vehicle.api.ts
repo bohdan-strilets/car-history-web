@@ -1,7 +1,7 @@
 import type { Vehicle } from '@entities/vehicle';
 import { apiClient, ENDPOINTS } from '@shared/api';
 
-import type { CreateVehicleDto, UpdateVehicleDto } from '../model';
+import type { CreateVehicleDto, UpdateVehicleDto, VehicleSpecsValues } from '../model';
 
 export const vehicleApi = {
   create: (workspaceId: string, dto: CreateVehicleDto) => {
@@ -9,6 +9,9 @@ export const vehicleApi = {
   },
   update: (workspaceId: string, id: string, dto: UpdateVehicleDto) => {
     return apiClient.patch<Vehicle>(ENDPOINTS.VEHICLES.UPDATE(workspaceId, id), dto);
+  },
+  updateSpecs: (workspaceId: string, vehicleId: string, dto: VehicleSpecsValues) => {
+    return apiClient.patch<Vehicle>(ENDPOINTS.VEHICLES.UPDATE_SPECS(workspaceId, vehicleId), dto);
   },
   delete: (workspaceId: string, id: string) => {
     return apiClient.delete<void>(ENDPOINTS.VEHICLES.DELETE(workspaceId, id));
