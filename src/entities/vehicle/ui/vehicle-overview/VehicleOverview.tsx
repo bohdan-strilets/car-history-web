@@ -3,6 +3,7 @@ import {
   DRIVE_TYPE_CONFIG,
   TRANSMISSION_CONFIG,
   VehicleAiFill,
+  VehicleEmptySection,
 } from '@entities/vehicle';
 import { InfoRow, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
@@ -14,16 +15,18 @@ import { VehicleHero } from '../vehicle-hero';
 
 import type { VehicleOverviewProps } from './vehicle-overview.types';
 
-export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
+export const VehicleOverview = ({
+  vehicle,
+  actions,
+  onAddPurchase,
+  onAddSale,
+  onEditDescription,
+}: VehicleOverviewProps) => {
   const { t } = useTranslation();
 
   const bodyType = getConfigOption(t, BODY_TYPE_CONFIG, vehicle.bodyType);
   const transmission = getConfigOption(t, TRANSMISSION_CONFIG, vehicle.transmission);
   const driveType = getConfigOption(t, DRIVE_TYPE_CONFIG, vehicle.driveType);
-
-  const isDescription = Boolean(vehicle.description?.trim());
-  const isSpecs = Boolean(vehicle.specs && Object.values(vehicle.specs).some(Boolean));
-  const isPurchaseSaleInfo = Boolean(vehicle.purchaseInfo || vehicle.saleInfo);
 
   return (
     <>
@@ -134,9 +137,19 @@ export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
         />
       </InfoSection>
 
-      {isPurchaseSaleInfo && (
+      {!vehicle.purchaseInfo ? (
         <InfoSection title={t('vehicle.overview.purchaseSale')}>
-          {vehicle.purchaseInfo?.date && (
+          <VehicleEmptySection
+            icon="shoppingCart"
+            title={t('vehicle.overview.purchaseEmpty.title')}
+            description={t('vehicle.overview.purchaseEmpty.description')}
+            actionLabel={t('vehicle.overview.purchaseEmpty.action')}
+            onAction={onAddPurchase}
+          />
+        </InfoSection>
+      ) : (
+        <InfoSection title={t('vehicle.overview.purchaseSale')}>
+          {vehicle.purchaseInfo.date && (
             <InfoRow
               label={t('vehicle.overview.purchaseDate')}
               value={vehicle.purchaseInfo.date}
@@ -145,7 +158,7 @@ export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
               bottomDivider
             />
           )}
-          {vehicle.purchaseInfo?.price && (
+          {vehicle.purchaseInfo.price && (
             <InfoRow
               label={t('vehicle.overview.purchasePrice')}
               value={`${vehicle.purchaseInfo.price.toLocaleString()} PLN`}
@@ -154,39 +167,52 @@ export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
               bottomDivider
             />
           )}
-          {vehicle.purchaseInfo?.mileage && (
+          {vehicle.purchaseInfo.mileage && (
             <InfoRow
               label={t('vehicle.overview.purchaseMileage')}
               value={`${vehicle.purchaseInfo.mileage.toLocaleString()} km`}
               icon="gauge"
               iconColor="green"
-              bottomDivider
+              bottomDivider={Boolean(vehicle.saleInfo)}
             />
           )}
-          {vehicle.saleInfo?.date && (
-            <InfoRow
-              label={t('vehicle.overview.saleDate')}
-              value={vehicle.saleInfo.date}
-              icon="tag"
-              iconColor="orange"
-              bottomDivider
-            />
-          )}
-          {vehicle.saleInfo?.price && (
-            <InfoRow
-              label={t('vehicle.overview.salePrice')}
-              value={`${vehicle.saleInfo.price.toLocaleString()} PLN`}
-              icon="banknote"
-              iconColor="orange"
-              bottomDivider
-            />
-          )}
-          {vehicle.saleInfo?.mileage && (
-            <InfoRow
-              label={t('vehicle.overview.saleMileage')}
-              value={`${vehicle.saleInfo.mileage.toLocaleString()} km`}
-              icon="gauge"
-              iconColor="orange"
+
+          {vehicle.saleInfo ? (
+            <>
+              {vehicle.saleInfo.date && (
+                <InfoRow
+                  label={t('vehicle.overview.saleDate')}
+                  value={vehicle.saleInfo.date}
+                  icon="tag"
+                  iconColor="orange"
+                  bottomDivider
+                />
+              )}
+              {vehicle.saleInfo.price && (
+                <InfoRow
+                  label={t('vehicle.overview.salePrice')}
+                  value={`${vehicle.saleInfo.price.toLocaleString()} PLN`}
+                  icon="banknote"
+                  iconColor="orange"
+                  bottomDivider
+                />
+              )}
+              {vehicle.saleInfo.mileage && (
+                <InfoRow
+                  label={t('vehicle.overview.saleMileage')}
+                  value={`${vehicle.saleInfo.mileage.toLocaleString()} km`}
+                  icon="gauge"
+                  iconColor="orange"
+                />
+              )}
+            </>
+          ) : (
+            <VehicleEmptySection
+              icon="car"
+              title={t('vehicle.overview.saleEmpty.title')}
+              description={t('vehicle.overview.saleEmpty.description')}
+              actionLabel={t('vehicle.overview.saleEmpty.action')}
+              onAction={onAddSale}
             />
           )}
         </InfoSection>
@@ -398,11 +424,21 @@ export const VehicleOverview = ({ vehicle, actions }: VehicleOverviewProps) => {
         </InfoSection>
       )}
 
-      {isDescription && (
+      {vehicle.description ? (
         <InfoSection title={t('vehicle.overview.description')}>
           <Text size="lg" letterSpacing="wide">
             {vehicle.description}
           </Text>
+        </InfoSection>
+      ) : (
+        <InfoSection title={t('vehicle.overview.description')}>
+          <VehicleEmptySection
+            icon="note"
+            title={t('vehicle.overview.descriptionEmpty.title')}
+            description={t('vehicle.overview.descriptionEmpty.description')}
+            actionLabel={t('vehicle.overview.descriptionEmpty.action')}
+            onAction={onEditDescription}
+          />
         </InfoSection>
       )}
     </>

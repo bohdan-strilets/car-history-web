@@ -111,6 +111,7 @@ import {
   MoreVertical,
   Navigation,
   Navigation2,
+  NotebookText,
   Package,
   Palette,
   PanelLeft,
@@ -259,6 +260,7 @@ export const Icons = {
   package: Package,
   cloud: Cloud,
   grid: Grid2x2,
+  note: NotebookText,
 
   // Documents & Files
   fileText: FileText,

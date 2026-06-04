@@ -519,7 +519,23 @@
       "saleDate": "Sale date",
       "salePrice": "Sale price",
       "saleMileage": "Mileage at sale",
-      "technicalSpecs": "Technical specifications"
+      "technicalSpecs": "Technical specifications",
+
+      "descriptionEmpty": {
+        "title": "No description",
+        "description": "Add a short description of your vehicle",
+        "action": "Add description"
+      },
+      "purchaseEmpty": {
+        "title": "No purchase information",
+        "description": "Add a purchase event to the timeline",
+        "action": "Add purchase"
+      },
+      "saleEmpty": {
+        "title": "Vehicle still with you 🚗",
+        "description": "When you decide to sell — add a sale event to the timeline",
+        "action": "Sell vehicle"
+      }
     },
 
     "specs": {

@@ -1,5 +1,6 @@
 export { AppearanceStep } from './AppearanceStep';
 export { BasicInfoStep } from './BasicInfoStep';
+export { EditVehicleDescriptionModal } from './EditVehicleDescriptionModal';
 export { MileageStep } from './MileageStep';
 export { RegistrationStep } from './RegistrationStep';
 export { TypeStep } from './TypeStep';

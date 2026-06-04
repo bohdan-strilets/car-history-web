@@ -4,5 +4,6 @@ export * from './mileage-input';
 export * from './vehicle-actions';
 export * from './vehicle-ai-fill';
 export * from './vehicle-card';
+export * from './vehicle-empty-state';
 export * from './vehicle-overview';
 export * from './vehicles-list';

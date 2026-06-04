@@ -55,6 +55,11 @@ export interface DeleteVehicleParams {
   workspaceId: string;
 }
 
+export interface EditVehicleDescriptionParams {
+  vehicle: Vehicle;
+  onSuccess: () => void;
+}
+
 // Props
 
 export interface VehicleStepProps {
@@ -71,4 +76,9 @@ export interface VehicleEditFormProps {
   vehicle: Vehicle;
   workspaceId: string;
   vehicleId: string;
+}
+
+export interface EditVehicleDescriptionModalProps {
+  vehicle: Vehicle;
+  onSuccess: () => void;
 }

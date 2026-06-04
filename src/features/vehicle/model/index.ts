@@ -1,4 +1,9 @@
 export { useEditVehicleForm } from './edit-vehicle.form';
+export { useEditVehicleDescriptionForm } from './vehicle-description.form';
+export {
+  createVehicleDescriptionSchema,
+  type DescriptionValues,
+} from './vehicle-description.schema';
 export { VEHICLE_FORM_TOTAL_STEPS, VEHICLE_STEP_FIELDS } from './vehicle-form.configs';
 export { getBrandOptions, getModelOptions } from './vehicle-form.options';
 export { useVehicleForm } from './vehicle.form';
@@ -20,6 +25,7 @@ export type {
   CreateVehicleDto,
   CreateVehicleParams,
   DeleteVehicleParams,
+  EditVehicleDescriptionModalProps,
   EditVehicleFormParams,
   UpdateVehicleDto,
   UpdateVehicleParams,

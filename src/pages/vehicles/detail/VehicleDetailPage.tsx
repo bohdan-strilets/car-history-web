@@ -8,9 +8,10 @@ import {
   VehicleOverview,
 } from '@entities/vehicle';
 import { useWorkspace } from '@entities/workspace';
+import { EditVehicleDescriptionModal } from '@features/vehicle';
 import { ROUTES } from '@shared/config';
 import { useAuth } from '@shared/store/auth';
-import { Stack, StateView, Tabs } from '@shared/ui';
+import { Stack, StateView, Tabs, useModal } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +22,7 @@ export const VehicleDetailPage = () => {
   const { workspaceId, vehicleId } = useParams<{ workspaceId: string; vehicleId: string }>();
   const navigate = useNavigate();
   const { activeTab, setTab } = useVehicleTab();
+  const modal = useModal();
 
   const { data, isPending, isError } = useVehicleQuery(workspaceId ?? '', vehicleId ?? '');
   const vehicle = data?.data ?? null;
@@ -71,6 +73,22 @@ export const VehicleDetailPage = () => {
               canEdit={canEdit}
               canDelete={canDelete}
             />
+          }
+          onEditDescription={() =>
+            modal.open(
+              <EditVehicleDescriptionModal vehicle={vehicle} onSuccess={() => modal.closeLast()} />,
+              { title: t('vehicle.overview.description') },
+            )
+          }
+          onAddPurchase={() =>
+            navigate(
+              `${ROUTES.WORKSPACES.VEHICLES.DETAIL(workspaceId ?? '', vehicleId ?? '')}?tab=timeline&action=purchase`,
+            )
+          }
+          onAddSale={() =>
+            navigate(
+              `${ROUTES.WORKSPACES.VEHICLES.DETAIL(workspaceId ?? '', vehicleId ?? '')}?tab=timeline&action=sale`,
+            )
           }
         />
       )}

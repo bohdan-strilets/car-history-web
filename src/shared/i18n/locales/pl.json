@@ -519,7 +519,23 @@
       "saleDate": "Data sprzedaży",
       "salePrice": "Cena sprzedaży",
       "saleMileage": "Przebieg przy sprzedaży",
-      "technicalSpecs": "Dane techniczne"
+      "technicalSpecs": "Dane techniczne",
+
+      "descriptionEmpty": {
+        "title": "Brak opisu",
+        "description": "Dodaj krótki opis swojego pojazdu",
+        "action": "Dodaj opis"
+      },
+      "purchaseEmpty": {
+        "title": "Brak informacji o zakupie",
+        "description": "Dodaj wydarzenie zakupu do osi czasu",
+        "action": "Dodaj zakup"
+      },
+      "saleEmpty": {
+        "title": "Pojazd nadal z Tobą 🚗",
+        "description": "Gdy zdecydujesz się sprzedać — dodaj wydarzenie sprzedaży do osi czasu",
+        "action": "Sprzedaj pojazd"
+      }
     },
 
     "specs": {
