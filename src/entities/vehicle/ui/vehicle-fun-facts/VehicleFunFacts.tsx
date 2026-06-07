@@ -1,11 +1,7 @@
 import { Grid, Heading, Panel, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 
-import type { Vehicle } from '../../model/vehicle.types';
-
-interface VehicleFunFactsProps {
-  vehicle: Vehicle;
-}
+import type { VehicleFunFactsProps } from './vehicle-fun-facts.types';
 
 export const VehicleFunFacts = ({ vehicle }: VehicleFunFactsProps) => {
   const { t } = useTranslation();

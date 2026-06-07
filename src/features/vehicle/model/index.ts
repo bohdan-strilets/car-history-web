@@ -1,43 +1,9 @@
-export { useEditVehicleSpecsForm } from './edit-vehicle-specs.form';
-export { useEditVehicleForm } from './edit-vehicle.form';
-export { useEditVehicleDescriptionForm } from './vehicle-description.form';
-export {
-  createVehicleDescriptionSchema,
-  type DescriptionValues,
-} from './vehicle-description.schema';
+export * from './default-values';
+export * from './forms';
+export * from './schemes';
+export * from './types';
+
+export { useEditVehicleDescription } from './use-edit-vehicle-description';
+
 export { VEHICLE_FORM_TOTAL_STEPS, VEHICLE_STEP_FIELDS } from './vehicle-form.configs';
 export { getBrandOptions, getModelOptions } from './vehicle-form.options';
-export { createVehicleSpecsSchema, type VehicleSpecsValues } from './vehicle-specs.schema';
-export { useVehicleForm } from './vehicle.form';
-export {
-  createVehicleFormSchema,
-  createVehicleStep1Schema,
-  createVehicleStep2Schema,
-  createVehicleStep3Schema,
-  createVehicleStep4Schema,
-  createVehicleStep5Schema,
-  type VehicleFormValues,
-  type VehicleStep1Values,
-  type VehicleStep2Values,
-  type VehicleStep3Values,
-  type VehicleStep4Values,
-  type VehicleStep5Values,
-} from './vehicle.schema';
-export type {
-  CreateVehicleDto,
-  CreateVehicleParams,
-  DeleteVehicleParams,
-  EditVehicleDescriptionModalProps,
-  EditVehicleDescriptionParams,
-  EditVehicleFormParams,
-  EditVehicleSpecsFormParams,
-  FillSpecsAiParams,
-  UpdateVehicleDto,
-  UpdateVehicleParams,
-  UpdateVehicleSpecsParams,
-  VehicleEditFormProps,
-  VehicleFormParams,
-  VehicleFormProps,
-  VehicleSpecsFormProps,
-  VehicleStepProps,
-} from './vehicle.types';

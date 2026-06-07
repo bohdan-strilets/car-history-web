@@ -7,10 +7,8 @@ import { WorkspaceForm } from './WorkspaceForm';
 export const EditWorkspaceModal = ({ workspace, onSuccess }: EditWorkspaceModalProps) => {
   const { t } = useTranslation();
 
-  const { control, handleSubmit, isPending, errorMessage } = useEditWorkspaceForm({
-    workspace,
-    onSuccess,
-  });
+  const form = useEditWorkspaceForm({ workspace, onSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   return (
     <WorkspaceForm

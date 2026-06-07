@@ -1,5 +1,8 @@
 import type {
+  InviteToken,
+  MemberId,
   Workspace,
+  WorkspaceId,
   WorkspaceInvite,
   WorkspaceMember,
   WorkspaceSettings,
@@ -8,28 +11,42 @@ import { apiClient, ENDPOINTS } from '@shared/api';
 
 export const workspaceApi = {
   getAll: () => {
-    return apiClient.get<Workspace[]>(ENDPOINTS.WORKSPACES.LIST);
-  },
-  getById: (id: string) => {
-    return apiClient.get<Workspace>(ENDPOINTS.WORKSPACES.DETAIL(id));
-  },
-  getSettings: (id: string) => {
-    return apiClient.get<WorkspaceSettings>(ENDPOINTS.WORKSPACES.SETTINGS(id));
-  },
-  getMembers: (id: string) => {
-    return apiClient.get<WorkspaceMember[]>(ENDPOINTS.WORKSPACES.MEMBERS(id));
-  },
-  delete: (id: string) => {
-    return apiClient.delete<void>(ENDPOINTS.WORKSPACES.DELETE(id));
-  },
-  removeMember: (workspaceId: string, memberId: string) => {
-    return apiClient.delete<void>(ENDPOINTS.WORKSPACES.MEMBER(workspaceId, memberId));
-  },
-  getInvite: (token: string) => {
-    return apiClient.get<WorkspaceInvite>(ENDPOINTS.INVITES.DETAIL(token));
+    const path = ENDPOINTS.WORKSPACES.LIST;
+    return apiClient.get<Workspace[]>(path);
   },
 
-  getPendingInvites: (workspaceId: string) => {
-    return apiClient.get<WorkspaceInvite[]>(ENDPOINTS.WORKSPACES.PENDING_INVITES(workspaceId));
+  getById: (workspaceId: WorkspaceId) => {
+    const path = ENDPOINTS.WORKSPACES.DETAIL(workspaceId);
+    return apiClient.get<Workspace>(path);
+  },
+
+  getSettings: (workspaceId: WorkspaceId) => {
+    const path = ENDPOINTS.WORKSPACES.SETTINGS(workspaceId);
+    return apiClient.get<WorkspaceSettings>(path);
+  },
+
+  getMembers: (workspaceId: WorkspaceId) => {
+    const path = ENDPOINTS.WORKSPACES.MEMBERS(workspaceId);
+    return apiClient.get<WorkspaceMember[]>(path);
+  },
+
+  delete: (workspaceId: WorkspaceId) => {
+    const path = ENDPOINTS.WORKSPACES.DELETE(workspaceId);
+    return apiClient.delete<void>(path);
+  },
+
+  removeMember: (workspaceId: WorkspaceId, memberId: MemberId) => {
+    const path = ENDPOINTS.WORKSPACES.MEMBER(workspaceId, memberId);
+    return apiClient.delete<void>(path);
+  },
+
+  getInvite: (token: InviteToken) => {
+    const path = ENDPOINTS.INVITES.DETAIL(token);
+    return apiClient.get<WorkspaceInvite>(path);
+  },
+
+  getPendingInvites: (workspaceId: WorkspaceId) => {
+    const path = ENDPOINTS.WORKSPACES.PENDING_INVITES(workspaceId);
+    return apiClient.get<WorkspaceInvite[]>(path);
   },
 };

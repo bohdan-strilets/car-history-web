@@ -3,6 +3,7 @@ import { apiClient, ENDPOINTS } from '@shared/api';
 
 export const userApi = {
   updateSettings: (dto: Partial<UserSettings>) => {
-    return apiClient.patch<UserSettings>(ENDPOINTS.USERS.ME_SETTINGS, dto);
+    const path = ENDPOINTS.USERS.ME_SETTINGS;
+    return apiClient.patch<UserSettings>(path, dto);
   },
 };

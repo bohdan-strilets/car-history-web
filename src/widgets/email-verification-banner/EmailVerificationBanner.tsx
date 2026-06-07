@@ -7,11 +7,12 @@ import { useTranslation } from 'react-i18next';
 export const EmailVerificationBanner = () => {
   const { t } = useTranslation();
   const { showBanner } = useEmailVerified();
-  const { cooldown, start, isActive } = useCooldown(APP_CONSTANTS.RESEND_COOLDOWN);
 
-  const { mutate: resend, isPending } = useResendConfirmationMutation({
-    onSuccess: start,
-  });
+  const coldown = APP_CONSTANTS.RESEND_COOLDOWN;
+  const { cooldown, start, isActive } = useCooldown(coldown);
+
+  const mutation = useResendConfirmationMutation({ onSuccess: start });
+  const { mutate: resend, isPending } = mutation;
 
   if (!showBanner) return null;
 

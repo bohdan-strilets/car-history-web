@@ -1,12 +1,9 @@
-import type { WorkspaceSettings } from '@entities/workspace';
-import { useWorkspaceSettingsForm, WorkspaceSettingsForm } from '@features/workspace';
+import {
+  useWorkspaceSettingsForm,
+  WorkspaceSettingsForm,
+  type EditWorkspaceSettingsModalProps,
+} from '@features/workspace';
 import { useTranslation } from 'react-i18next';
-
-interface EditWorkspaceSettingsModalProps {
-  workspaceId: string;
-  settings?: WorkspaceSettings | null;
-  onSuccess: () => void;
-}
 
 export const EditWorkspaceSettingsModal = ({
   workspaceId,
@@ -15,11 +12,8 @@ export const EditWorkspaceSettingsModal = ({
 }: EditWorkspaceSettingsModalProps) => {
   const { t } = useTranslation();
 
-  const { control, handleSubmit, isPending, errorMessage } = useWorkspaceSettingsForm({
-    workspaceId,
-    settings,
-    onSuccess: () => onSuccess(),
-  });
+  const form = useWorkspaceSettingsForm({ workspaceId, settings, onSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   return (
     <WorkspaceSettingsForm

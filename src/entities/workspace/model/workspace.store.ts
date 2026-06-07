@@ -10,9 +10,9 @@ export const useWorkspaceStore = create<WorkspaceStore>()(
       activeWorkspace: null,
       activeWorkspaceId: null,
 
-      setActiveWorkspace: (workspace) => set({ activeWorkspace: workspace }),
+      setActiveWorkspace: (wk) => set({ activeWorkspace: wk }),
       clearActiveWorkspace: () => set({ activeWorkspace: null }),
-      setActiveWorkspaceId: (workspaceId) => set({ activeWorkspaceId: workspaceId }),
+      setActiveWorkspaceId: (id) => set({ activeWorkspaceId: id }),
       clearActiveWorkspaceId: () => set({ activeWorkspaceId: null }),
     }),
     { name: STORAGE_KEYS.WORKSPACE_STORAGE_KEY },

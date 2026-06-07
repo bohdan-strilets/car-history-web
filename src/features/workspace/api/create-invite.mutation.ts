@@ -1,3 +1,4 @@
+import type { WorkspaceId } from '@entities/workspace';
 import { queryKeys } from '@shared/config';
 import { showToast } from '@shared/lib/toast';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -7,7 +8,7 @@ import type { CreateInviteDto } from '../model';
 
 import { workspaceApi } from './workspace.api';
 
-export const useCreateInviteMutation = (workspaceId: string) => {
+export const useCreateInviteMutation = (workspaceId: WorkspaceId) => {
   const queryClient = useQueryClient();
   const { t } = useTranslation();
 
@@ -17,8 +18,12 @@ export const useCreateInviteMutation = (workspaceId: string) => {
     },
 
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.workspaces.members(workspaceId) });
-      queryClient.invalidateQueries({ queryKey: queryKeys.workspaces.invites(workspaceId) });
+      const memberKeys = queryKeys.workspaces.members(workspaceId);
+      queryClient.invalidateQueries({ queryKey: memberKeys });
+
+      const inviteKeys = queryKeys.workspaces.invites(workspaceId);
+      queryClient.invalidateQueries({ queryKey: inviteKeys });
+
       showToast.success(t('workspace.invite.success'));
     },
   });

@@ -1,91 +1,54 @@
-import { useInviteQuery } from '@entities/workspace';
+import { useInviteQuery, useInviteToken } from '@entities/workspace';
 import {
   useWorkspace,
   WORKSPACE_INVITE_STATUS,
   WORKSPACE_TYPE_CONFIG,
 } from '@entities/workspace/model';
-import { useAcceptInviteMutation, useRejectInviteMutation } from '@features/workspace';
-import { ROUTES } from '@shared/config';
-import type { TokenParams } from '@shared/types';
 import {
-  Button,
-  Center,
-  Heading,
-  IconBox,
-  Panel,
-  Spinner,
-  Stack,
-  SuccessState,
-  Text,
-} from '@shared/ui';
-import { StateView } from '@shared/ui/components/state-view';
+  InviteAcceptedState,
+  InviteAlreadyAcceptedState,
+  InviteLoadingState,
+  InviteNotFoundState,
+  InviteRejectedOrExpiredState,
+  useAcceptInviteMutation,
+  useRejectInviteMutation,
+} from '@features/workspace';
+import { ROUTES } from '@shared/config';
+import { Button, Center, Heading, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const InvitePage = () => {
   const [isAcceptedSuccess, setIsAcceptedSuccess] = useState(false);
   const [redirectWorkspaceId, setRedirectWorkspaceId] = useState<string | null>(null);
 
   const { t } = useTranslation();
-  const { token } = useParams<TokenParams>();
   const { setActiveWorkspace, setActiveWorkspaceId } = useWorkspace();
   const navigate = useNavigate();
+  const token = useInviteToken();
 
   const { data, isPending, isError } = useInviteQuery(token ?? '');
   const { mutate: accept, isPending: isAccepting } = useAcceptInviteMutation();
   const { mutate: reject, isPending: isRejecting } = useRejectInviteMutation();
+
+  const invite = data?.data;
+  const REDIRECT_DELAY = 2000;
 
   useEffect(() => {
     if (!isAcceptedSuccess || !redirectWorkspaceId) return;
 
     const timer = setTimeout(() => {
       navigate(ROUTES.WORKSPACES.DETAIL(redirectWorkspaceId));
-    }, 2000);
+    }, REDIRECT_DELAY);
 
     return () => clearTimeout(timer);
   }, [isAcceptedSuccess, redirectWorkspaceId, navigate]);
 
-  const invite = data?.data;
-
-  if (isPending)
-    return (
-      <Center fullHeight fullWidth>
-        <Panel gap="xl" p="3xl" align="center" maxWidth="page" width="full">
-          <Spinner size="xl" />
-          <Text>{t('workspace.invite.states.loading.title')}</Text>
-        </Panel>
-      </Center>
-    );
-
-  if (isError || !invite)
-    return (
-      <StateView
-        icon="alertCircle"
-        variant="error"
-        title={t('workspace.invite.states.notFound.title')}
-        description={t('workspace.invite.states.notFound.description')}
-        actionLabel={t('workspace.invite.states.notFound.action')}
-        onAction={() => navigate(ROUTES.WORKSPACES.ROOT)}
-      />
-    );
-
-  if (isAcceptedSuccess) {
-    return (
-      <Center fullHeight fullWidth>
-        <Panel gap="xl" p="3xl" align="center" maxWidth="page" width="full">
-          <SuccessState />
-          <Stack align="center" gap="sm">
-            <Heading size="2xl">{t('workspace.invite.acceptSuccess')}</Heading>
-            <Text color="secondary" align="center">
-              {t('workspace.invite.redirecting')}
-            </Text>
-          </Stack>
-        </Panel>
-      </Center>
-    );
-  }
+  if (isPending) return <InviteLoadingState />;
+  if (isError || !invite) return <InviteNotFoundState />;
+  if (isAcceptedSuccess) return <InviteAcceptedState />;
 
   const typeConfig = getConfigOption(t, WORKSPACE_TYPE_CONFIG, invite.workspace.type);
 
@@ -93,31 +56,8 @@ export const InvitePage = () => {
   const isRejected = invite.status === WORKSPACE_INVITE_STATUS.REJECTED;
   const isExpired = invite.status === WORKSPACE_INVITE_STATUS.EXPIRED;
 
-  if (isAlreadyAccepted) {
-    return (
-      <StateView
-        icon="checkCircle"
-        variant="success"
-        title={t('workspace.invite.states.alreadyAccepted.title')}
-        description={t('workspace.invite.states.alreadyAccepted.description')}
-        actionLabel={t('workspace.invite.states.alreadyAccepted.action')}
-        onAction={() => navigate(ROUTES.WORKSPACES.ROOT)}
-      />
-    );
-  }
-
-  if (isRejected || isExpired) {
-    return (
-      <StateView
-        icon="calendarX"
-        variant="error"
-        title={t('workspace.invite.states.expired.title')}
-        description={t('workspace.invite.states.expired.description')}
-        actionLabel={t('workspace.invite.states.expired.action')}
-        onAction={() => navigate(ROUTES.WORKSPACES.ROOT)}
-      />
-    );
-  }
+  if (isAlreadyAccepted) return <InviteAlreadyAcceptedState />;
+  if (isRejected || isExpired) return <InviteRejectedOrExpiredState />;
 
   const handleAccept = () => {
     if (!token) return;

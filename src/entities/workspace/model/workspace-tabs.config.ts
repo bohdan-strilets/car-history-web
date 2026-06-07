@@ -1,8 +1,6 @@
 import type { SegmentControlOption } from '@shared/ui';
 
-// Workspace tabs configuration
-
-export const WORKSPACE_TABS: SegmentControlOption<WorkspaceTab>[] = [
+export const WORKSPACE_TABS = [
   {
     label: 'workspace.detail.vehicles',
     icon: 'car',
@@ -18,12 +16,8 @@ export const WORKSPACE_TABS: SegmentControlOption<WorkspaceTab>[] = [
     icon: 'settings',
     value: 'settings',
   },
-];
+] as const satisfies SegmentControlOption<string>[];
 
-// Default tab
+export type WorkspaceTab = (typeof WORKSPACE_TABS)[number]['value'];
 
 export const DEFAULT_WORKSPACE_TAB: WorkspaceTab = 'vehicles';
-
-// Types
-
-export type WorkspaceTab = 'vehicles' | 'members' | 'settings';

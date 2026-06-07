@@ -19,10 +19,11 @@ export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
     setIsSuccess(true);
   };
 
-  const { control, handleSubmit, isPending, errorMessage } = useWorkspaceSettingsForm({
+  const form = useWorkspaceSettingsForm({
     workspaceId: activeWorkspaceId,
     onSuccess: handleSuccess,
   });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   if (isSuccess) {
     return (

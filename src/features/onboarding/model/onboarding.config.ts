@@ -44,23 +44,23 @@ export const ONBOARDING_STEP_SUBTITLE_KEYS: Record<OnboardingStep, ParseKeys> = 
 
 export const LANGUAGE_CONFIG: CardSelectOption[] = [
   {
-    id: 'pl',
+    id: '1',
     value: LANGUAGE.PL,
-    label: 'Polski',
+    label: `enums.language.${LANGUAGE.PL}`,
     description: '🇵🇱',
     color: 'rose',
   },
   {
-    id: 'uk',
+    id: '2',
     value: LANGUAGE.UK,
-    label: 'Українська',
+    label: `enums.language.${LANGUAGE.UK}`,
     description: '🇺🇦',
     color: 'blue',
   },
   {
-    id: 'en',
+    id: '3',
     value: LANGUAGE.EN,
-    label: 'English',
+    label: `enums.language.${LANGUAGE.EN}`,
     description: '🇬🇧',
     color: 'green',
   },
@@ -68,24 +68,24 @@ export const LANGUAGE_CONFIG: CardSelectOption[] = [
 
 export const THEME_CONFIG: CardSelectOption[] = [
   {
-    id: 'light',
+    id: '1',
     value: THEME.LIGHT,
-    label: 'themes.light',
-    icon: 'sun' as const,
+    label: `enums.theme.${THEME.LIGHT}`,
+    icon: 'sun',
     color: 'orange',
   },
   {
-    id: 'dark',
+    id: '2',
     value: THEME.DARK,
-    label: 'themes.dark',
-    icon: 'moon' as const,
+    label: `enums.theme.${THEME.DARK}`,
+    icon: 'moon',
     color: 'purple',
   },
   {
-    id: 'system',
+    id: '3',
     value: THEME.SYSTEM,
-    label: 'themes.system',
-    icon: 'monitor' as const,
+    label: `enums.theme.${THEME.SYSTEM}`,
+    icon: 'monitor',
     color: 'sky',
   },
 ];

@@ -58,7 +58,7 @@ const router = createBrowserRouter([
           { path: ROUTES.DASHBOARD, element: <DashboardPage /> },
           { path: ROUTES.WORKSPACES.ROOT, element: <WorkspacesPage /> },
           { path: ROUTES.WORKSPACES.NEW, element: <NewWorkspacePage /> },
-          { path: ROUTES.WORKSPACES.DETAIL(':id'), element: <WorkspaceDetailPage /> },
+          { path: ROUTES.WORKSPACES.DETAIL(':workspaceId'), element: <WorkspaceDetailPage /> },
           { path: ROUTES.INVITE(':token'), element: <InvitePage /> },
           { path: ROUTES.WORKSPACES.VEHICLES.NEW(':workspaceId'), element: <NewVehiclePage /> },
           {

@@ -7,7 +7,7 @@ export const StepSuccess = ({ title, description, onDone, delay = 1500 }: StepSu
   useEffect(() => {
     const timer = setTimeout(onDone, delay);
     return () => clearTimeout(timer);
-  }, []);
+  }, [delay, onDone]);
 
   return (
     <Stack align="center" justify="center" gap="lg">

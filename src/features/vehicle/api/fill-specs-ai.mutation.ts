@@ -14,7 +14,8 @@ export const useFillSpecsAiMutation = () => {
     },
 
     onSuccess: (_, { vehicleId }) => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.vehicles.detail(vehicleId) });
+      const keys = queryKeys.vehicles.detail(vehicleId);
+      queryClient.invalidateQueries({ queryKey: keys });
     },
   });
 };

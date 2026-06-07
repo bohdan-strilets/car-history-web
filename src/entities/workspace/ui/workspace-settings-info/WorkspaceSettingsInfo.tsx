@@ -1,4 +1,3 @@
-import type { WorkspaceSettingsInfoProps } from '@entities/workspace/model';
 import {
   CURRENCY_CONFIG,
   DATE_FORMAT_CONFIG,
@@ -11,6 +10,8 @@ import { InfoRow } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section/InfoSection';
 import { useTranslation } from 'react-i18next';
+
+import type { WorkspaceSettingsInfoProps } from './workspace-settings-info.types';
 
 export const WorkspaceSettingsInfo = ({
   workspace,

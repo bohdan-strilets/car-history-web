@@ -1,6 +1,10 @@
 export { useWorkspace } from './use-workspace';
 export { useWorkspaceTab } from './use-workspace-tabs';
+export { WorkspaceConstraints } from './workspace.constraints';
+export { useWorkspaceStore } from './workspace.store';
+
 export { DEFAULT_WORKSPACE_TAB, WORKSPACE_TABS, type WorkspaceTab } from './workspace-tabs.config';
+
 export {
   CURRENCY_CONFIG,
   DATE_FORMAT_CONFIG,
@@ -11,6 +15,7 @@ export {
   WORKSPACE_ROLE_CONFIG,
   WORKSPACE_TYPE_CONFIG,
 } from './workspace.config';
+
 export {
   CURRENCY,
   DATE_FORMAT,
@@ -29,17 +34,19 @@ export {
   type WorkspaceRole,
   type WorkspaceType,
 } from './workspace.constants';
-export { WorkspaceConstraints } from './workspace.constraints';
-export { useWorkspaceStore } from './workspace.store';
+
 export type {
+  InviteId,
+  InviteToken,
+  MemberId,
   Workspace,
   WorkspaceId,
   WorkspaceInfo,
   WorkspaceInvite,
   WorkspaceMember,
+  WorkspaceOwner,
   WorkspaceSettings,
-  WorkspaceSettingsInfoProps,
+  WorkspaceSettingsId,
   WorkspaceStore,
-  WorkspaceUser,
   WorkspaceWithOwner,
 } from './workspace.types';

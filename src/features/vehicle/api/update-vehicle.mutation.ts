@@ -9,13 +9,13 @@ export const useUpdateVehicleMutation = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ id, workspaceId, dto }: UpdateVehicleParams) => {
-      return vehicleApi.update(workspaceId, id, dto);
+    mutationFn: ({ vehicleId, workspaceId, dto }: UpdateVehicleParams) => {
+      return vehicleApi.update(workspaceId, vehicleId, dto);
     },
 
-    onSuccess: (_, { id, workspaceId }) => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.vehicles.detail(id) });
-      queryClient.invalidateQueries({ queryKey: queryKeys.vehicles.all(workspaceId) });
+    onSuccess: (_, { workspaceId }) => {
+      const keys = queryKeys.vehicles.all(workspaceId);
+      queryClient.invalidateQueries({ queryKey: keys });
     },
   });
 };

@@ -1,3 +1,5 @@
+import type { User, UserId } from '@entities/user';
+
 import type {
   Currency,
   DateFormat,
@@ -8,11 +10,19 @@ import type {
   WorkspaceType,
 } from './workspace.constants';
 
-// Workspace types
+// Types
+
+export type WorkspaceId = string;
+export type WorkspaceSettingsId = string;
+export type MemberId = string;
+export type InviteId = string;
+export type InviteToken = string;
+
+// Workspace
 
 export interface Workspace {
-  id: string;
-  ownerId: string;
+  id: WorkspaceId;
+  ownerId: UserId;
   name: string;
   type: WorkspaceType;
   role: WorkspaceRole;
@@ -22,12 +32,10 @@ export interface Workspace {
   updatedAt: string;
 }
 
-export interface WorkspaceWithOwner extends Workspace {
-  owner: WorkspaceUser;
-}
+export type WorkspaceOwner = Pick<User, 'id' | 'firstName' | 'lastName' | 'email' | 'avatarUrl'>;
 
-export interface WorkspaceId {
-  id: string;
+export interface WorkspaceWithOwner extends Workspace {
+  owner: WorkspaceOwner;
 }
 
 // Workspace settings
@@ -42,36 +50,22 @@ export interface WorkspaceSettings {
 
 // Workspace members
 
-export interface WorkspaceUser {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  avatarUrl: string | null;
-}
-
-export interface WorkspaceInfo {
-  id: string;
-  name: string;
-  type: WorkspaceType;
-}
-
 export interface WorkspaceMember {
-  id: string;
-  workspaceId: string;
-  userId: string;
+  id: MemberId;
+  workspaceId: WorkspaceId;
+  userId: UserId;
   role: WorkspaceRole;
+  user: WorkspaceOwner;
   createdAt: string;
   updatedAt: string;
-  user: WorkspaceUser;
 }
 
-// Workspace invites
+export type WorkspaceInfo = Pick<Workspace, 'id' | 'name' | 'type'>;
 
 export interface WorkspaceInvite {
-  id: string;
-  workspaceId: string;
-  invitedById: string;
+  id: InviteId;
+  workspaceId: WorkspaceId;
+  invitedById: UserId;
   email: string;
   role: WorkspaceRole;
   status: WorkspaceInviteStatus;
@@ -84,18 +78,9 @@ export interface WorkspaceInvite {
 
 export interface WorkspaceStore {
   activeWorkspace: Workspace | null;
-  activeWorkspaceId: string | null;
+  activeWorkspaceId: WorkspaceId | null;
   setActiveWorkspace: (workspace: Workspace) => void;
-  setActiveWorkspaceId: (workspaceId: string) => void;
+  setActiveWorkspaceId: (workspaceId: WorkspaceId) => void;
   clearActiveWorkspace: () => void;
   clearActiveWorkspaceId: () => void;
-}
-
-// Props
-
-export interface WorkspaceSettingsInfoProps {
-  workspace: Workspace;
-  settings: WorkspaceSettings | null;
-  onEditWorkspace?: () => void;
-  onEditSettings?: () => void;
 }

@@ -42,25 +42,28 @@ export const VehicleSpecsForm = ({
               name="enginePowerHp"
               label={t('vehicle.specs.fields.enginePowerHp')}
               size="lg"
-              unit="hp"
+              unit={t('units.hp')}
             />
             <FormFieldNumberInput
               control={control}
               name="enginePowerKw"
               label={t('vehicle.specs.fields.enginePowerKw')}
               size="lg"
+              unit={t('units.kw')}
             />
             <FormFieldNumberInput
               control={control}
               name="torqueNm"
               label={t('vehicle.specs.fields.torqueNm')}
               size="lg"
+              unit={t('units.nm')}
             />
             <FormFieldNumberInput
               control={control}
               name="cylindersCount"
               label={t('vehicle.specs.fields.cylindersCount')}
               size="lg"
+              unit={t('units.pcs')}
             />
             <FormFieldInput
               control={control}
@@ -78,6 +81,7 @@ export const VehicleSpecsForm = ({
               name="gearsCount"
               label={t('vehicle.specs.fields.gearsCount')}
               size="lg"
+              unit={t('units.pcs')}
             />
           </Stack>
         </Stack>
@@ -92,36 +96,42 @@ export const VehicleSpecsForm = ({
               name="fuelTankCapacity"
               label={t('vehicle.specs.fields.fuelTankCapacity')}
               size="lg"
+              unit={t('units.liters')}
             />
             <FormFieldNumberInput
               control={control}
               name="cityConsumption"
               label={t('vehicle.specs.fields.cityConsumption')}
               size="lg"
+              unit={t('units.lper100km')}
             />
             <FormFieldNumberInput
               control={control}
               name="highwayConsumption"
               label={t('vehicle.specs.fields.highwayConsumption')}
               size="lg"
+              unit={t('units.lper100km')}
             />
             <FormFieldNumberInput
               control={control}
               name="combinedConsumption"
               label={t('vehicle.specs.fields.combinedConsumption')}
               size="lg"
+              unit={t('units.lper100km')}
             />
             <FormFieldNumberInput
               control={control}
               name="batteryCapacityKwh"
               label={t('vehicle.specs.fields.batteryCapacityKwh')}
               size="lg"
+              unit={t('units.kwh')}
             />
             <FormFieldNumberInput
               control={control}
               name="electricRangeKm"
               label={t('vehicle.specs.fields.electricRangeKm')}
               size="lg"
+              unit={t('units.km')}
             />
           </Stack>
         </Stack>
@@ -136,12 +146,14 @@ export const VehicleSpecsForm = ({
               name="accelerationSec"
               label={t('vehicle.specs.fields.accelerationSec')}
               size="lg"
+              unit={t('units.sec')}
             />
             <FormFieldNumberInput
               control={control}
               name="topSpeedKmh"
               label={t('vehicle.specs.fields.topSpeedKmh')}
               size="lg"
+              unit={t('units.kmh')}
             />
           </Stack>
         </Stack>
@@ -156,42 +168,49 @@ export const VehicleSpecsForm = ({
               name="lengthMm"
               label={t('vehicle.specs.fields.lengthMm')}
               size="lg"
+              unit={t('units.mm')}
             />
             <FormFieldNumberInput
               control={control}
               name="widthMm"
               label={t('vehicle.specs.fields.widthMm')}
               size="lg"
+              unit={t('units.mm')}
             />
             <FormFieldNumberInput
               control={control}
               name="heightMm"
               label={t('vehicle.specs.fields.heightMm')}
               size="lg"
+              unit={t('units.mm')}
             />
             <FormFieldNumberInput
               control={control}
               name="weightKg"
               label={t('vehicle.specs.fields.weightKg')}
               size="lg"
+              unit={t('units.kg')}
             />
             <FormFieldNumberInput
               control={control}
               name="wheelbaseMm"
               label={t('vehicle.specs.fields.wheelbaseMm')}
               size="lg"
+              unit={t('units.mm')}
             />
             <FormFieldNumberInput
               control={control}
               name="groundClearanceMm"
               label={t('vehicle.specs.fields.groundClearanceMm')}
               size="lg"
+              unit={t('units.mm')}
             />
             <FormFieldNumberInput
               control={control}
               name="trunkVolumeLiters"
               label={t('vehicle.specs.fields.trunkVolumeLiters')}
               size="lg"
+              unit={t('units.liters')}
             />
           </Stack>
         </Stack>
@@ -218,6 +237,7 @@ export const VehicleSpecsForm = ({
               name="airbagsCount"
               label={t('vehicle.specs.fields.airbagsCount')}
               size="lg"
+              unit={t('units.pcs')}
             />
           </Stack>
         </Stack>

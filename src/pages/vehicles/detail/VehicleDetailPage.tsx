@@ -1,30 +1,29 @@
 import {
   canDeleteVehicle,
   canEditVehicle,
+  OverviewTab,
+  useVehicleParams,
   useVehicleQuery,
   useVehicleTab,
   VEHICLE_TABS,
-  VehicleActions,
-  VehicleOverview,
+  VehicleDetailSkeleton,
 } from '@entities/vehicle';
 import { useWorkspace } from '@entities/workspace';
-import { EditVehicleDescriptionModal } from '@features/vehicle';
 import { ROUTES } from '@shared/config';
 import { useAuth } from '@shared/store/auth';
-import { Stack, StateView, Tabs, useModal } from '@shared/ui';
+import { Stack, StateView, Tabs } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const VehicleDetailPage = () => {
   const { t } = useTranslation();
-  const { workspaceId, vehicleId } = useParams<{ workspaceId: string; vehicleId: string }>();
-  const navigate = useNavigate();
   const { activeTab, setTab } = useVehicleTab();
-  const modal = useModal();
+  const { workspaceId, vehicleId } = useVehicleParams();
+  const navigate = useNavigate();
 
-  const { data, isPending, isError } = useVehicleQuery(workspaceId ?? '', vehicleId ?? '');
+  const { data, isPending, isError } = useVehicleQuery(workspaceId, vehicleId);
   const vehicle = data?.data ?? null;
 
   const tabs = translateSegmentControlOptions(t, VEHICLE_TABS);
@@ -39,7 +38,8 @@ export const VehicleDetailPage = () => {
   const canEdit = canEditVehicle(role, ownerId, userId);
   const canDelete = canDeleteVehicle(role, ownerId, userId);
 
-  if (isError || (!isPending && !vehicle)) {
+  if (isPending) return <VehicleDetailSkeleton />;
+  if (isError || !vehicle) {
     return (
       <StateView
         icon="alertCircle"
@@ -47,7 +47,7 @@ export const VehicleDetailPage = () => {
         title={t('common.error.title')}
         description={t('common.error.description')}
         actionLabel={t('common.actions.back')}
-        onAction={() => navigate(ROUTES.WORKSPACES.DETAIL(workspaceId ?? ''))}
+        onAction={() => navigate(ROUTES.WORKSPACES.DETAIL(workspaceId))}
       />
     );
   }
@@ -55,41 +55,21 @@ export const VehicleDetailPage = () => {
   return (
     <Stack gap="2xl">
       <PageHeader
-        title={isPending ? '...' : `${vehicle?.brand} ${vehicle?.model}`}
+        title={`${vehicle?.brand} ${vehicle?.model}`}
         buttonLabel={t('common.actions.back')}
         buttonIcon="arrowLeft"
-        onCreate={() => navigate(ROUTES.WORKSPACES.DETAIL(workspaceId ?? ''))}
+        onCreate={() => navigate(ROUTES.WORKSPACES.DETAIL(workspaceId))}
       />
 
       <Tabs tabs={tabs} activeTab={activeTab} onChange={setTab} />
 
       {activeTab === 'overview' && vehicle && (
-        <VehicleOverview
+        <OverviewTab
           vehicle={vehicle}
-          actions={
-            <VehicleActions
-              vehicleId={vehicleId ?? ''}
-              workspaceId={workspaceId ?? ''}
-              canEdit={canEdit}
-              canDelete={canDelete}
-            />
-          }
-          onEditDescription={() =>
-            modal.open(
-              <EditVehicleDescriptionModal vehicle={vehicle} onSuccess={() => modal.closeLast()} />,
-              { title: t('vehicle.overview.sections.description') },
-            )
-          }
-          onAddPurchase={() =>
-            navigate(
-              `${ROUTES.WORKSPACES.VEHICLES.DETAIL(workspaceId ?? '', vehicleId ?? '')}?tab=timeline&action=purchase`,
-            )
-          }
-          onAddSale={() =>
-            navigate(
-              `${ROUTES.WORKSPACES.VEHICLES.DETAIL(workspaceId ?? '', vehicleId ?? '')}?tab=timeline&action=sale`,
-            )
-          }
+          workspaceId={workspaceId}
+          vehicleId={vehicleId}
+          canEdit={canEdit}
+          canDelete={canDelete}
         />
       )}
 

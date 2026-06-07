@@ -12,12 +12,13 @@ export const useUpdateWorkspaceSettingsMutation = () => {
   const { t } = useTranslation();
 
   return useMutation({
-    mutationFn: ({ id, dto }: UpdateWorkspaceSettingsParams) => {
-      return workspaceApi.updateSettings(id, dto);
+    mutationFn: ({ workspaceId, dto }: UpdateWorkspaceSettingsParams) => {
+      return workspaceApi.updateSettings(workspaceId, dto);
     },
 
-    onSuccess: (_, { id }) => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.workspaces.settings(id) });
+    onSuccess: (_, { workspaceId }) => {
+      const keys = queryKeys.workspaces.settings(workspaceId);
+      queryClient.invalidateQueries({ queryKey: keys });
       showToast.success(t('workspace.settings.updateSuccess'));
     },
   });

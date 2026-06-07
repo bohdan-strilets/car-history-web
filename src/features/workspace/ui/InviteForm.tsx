@@ -3,19 +3,13 @@ import { Form, FormFieldCardSelect, FormFieldInput } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 
-import { useInviteForm } from '../model/invite.form';
-
-interface InviteFormProps {
-  workspaceId: string;
-  onSuccess: () => void;
-}
+import { useInviteForm, type InviteFormProps } from '../model';
 
 export const InviteForm = ({ workspaceId, onSuccess }: InviteFormProps) => {
   const { t } = useTranslation();
-  const { control, handleSubmit, isPending, errorMessage } = useInviteForm({
-    workspaceId,
-    onSuccess,
-  });
+
+  const form = useInviteForm({ workspaceId, onSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   return (
     <Form

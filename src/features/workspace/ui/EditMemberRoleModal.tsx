@@ -12,11 +12,8 @@ export const EditMemberRoleModal = ({
 }: EditMemberRoleModalProps) => {
   const { t } = useTranslation();
 
-  const { control, handleSubmit, isPending, errorMessage } = useEditMemberRoleForm({
-    workspaceId,
-    member,
-    onSuccess,
-  });
+  const form = useEditMemberRoleForm({ workspaceId, member, onSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   return (
     <Form

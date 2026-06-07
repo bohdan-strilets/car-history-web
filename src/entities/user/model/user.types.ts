@@ -1,7 +1,10 @@
 import type { Language, Theme, UserStatus } from './user.constants';
 
+export type UserId = string;
+export type UserSettingsId = string;
+
 export interface User {
-  id: string;
+  id: UserId;
   email: string;
   emailVerified: boolean;
   firstName: string;
@@ -9,12 +12,12 @@ export interface User {
   avatarUrl: string | null;
   status: UserStatus;
   onboardingCompleted: boolean;
-  createdAt: Date;
+  createdAt: string;
 }
 
 export interface UserSettings {
-  id: string;
-  userId: string;
+  id: UserSettingsId;
+  userId: UserId;
   language: Language;
   theme: Theme;
   notificationsEmail: boolean;

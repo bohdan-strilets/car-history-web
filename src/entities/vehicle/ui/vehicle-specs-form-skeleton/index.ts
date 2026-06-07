@@ -1,0 +1,1 @@
+export { VehicleSpecsFormSkeleton } from './VehicleSpecsFormSkeleton';

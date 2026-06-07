@@ -2,6 +2,7 @@ import { apiClient, ENDPOINTS } from '@shared/api';
 
 export const userApi = {
   completeOnboarding: () => {
-    return apiClient.patch<void>(ENDPOINTS.USERS.ME_ONBOARDING);
+    const path = ENDPOINTS.USERS.ME_ONBOARDING;
+    return apiClient.patch<void>(path);
   },
 };

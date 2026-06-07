@@ -8,7 +8,7 @@ import { container, content, glow } from './decorative-panel.css';
 export const DecorativePanel = () => {
   const { t } = useTranslation();
 
-  const features = t('auth.panel.features', { returnObjects: true }) as Array<Feature>;
+  const features = t('auth.panel.features', { returnObjects: true }) as Feature[];
 
   return (
     <div className={container}>

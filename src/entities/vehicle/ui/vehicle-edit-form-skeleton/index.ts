@@ -1,0 +1,1 @@
+export { VehicleEditFormSkeleton } from './VehicleEditFormSkeleton';

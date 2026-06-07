@@ -259,7 +259,9 @@
     "kg": "kg",
     "kmh": "km/h",
     "sec": "s",
-    "liters": "l"
+    "liters": "l",
+    "pcs": "szt",
+    "km": "km"
   },
 
   "fields": {

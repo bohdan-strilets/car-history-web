@@ -5,7 +5,9 @@ import { useForgotPasswordForm, type ForgotPasswordFormProps } from '../model';
 
 export const ForgotPasswordForm = ({ onSuccess }: ForgotPasswordFormProps) => {
   const { t } = useTranslation();
-  const { control, errorMessage, handleSubmit, isPending } = useForgotPasswordForm({ onSuccess });
+
+  const form = useForgotPasswordForm({ onSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   return (
     <Form

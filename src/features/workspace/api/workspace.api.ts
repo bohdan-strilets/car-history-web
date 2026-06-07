@@ -1,5 +1,9 @@
 import type {
+  InviteId,
+  InviteToken,
+  MemberId,
   Workspace,
+  WorkspaceId,
   WorkspaceInvite,
   WorkspaceMember,
   WorkspaceSettings,
@@ -16,49 +20,57 @@ import type {
 
 export const workspaceApi = {
   create: (dto: CreateWorkspaceDto) => {
-    return apiClient.post<Workspace>(ENDPOINTS.WORKSPACES.CREATE, dto);
+    const path = ENDPOINTS.WORKSPACES.CREATE;
+    return apiClient.post<Workspace>(path, dto);
   },
 
-  update: (id: string, dto: UpdateWorkspaceDto) => {
-    return apiClient.patch<Workspace>(ENDPOINTS.WORKSPACES.UPDATE(id), dto);
+  update: (workspaceId: WorkspaceId, dto: UpdateWorkspaceDto) => {
+    const path = ENDPOINTS.WORKSPACES.UPDATE(workspaceId);
+    return apiClient.patch<Workspace>(path, dto);
   },
 
-  updateSettings: (id: string, dto: UpdateWorkspaceSettingsDto) => {
-    return apiClient.patch<WorkspaceSettings>(ENDPOINTS.WORKSPACES.SETTINGS(id), dto);
+  updateSettings: (workspaceId: WorkspaceId, dto: UpdateWorkspaceSettingsDto) => {
+    const path = ENDPOINTS.WORKSPACES.SETTINGS(workspaceId);
+    return apiClient.patch<WorkspaceSettings>(path, dto);
   },
 
-  updateMemberRole: (workspaceId: string, memberId: string, dto: UpdateMemberRoleDto) => {
-    return apiClient.patch<WorkspaceMember>(
-      ENDPOINTS.WORKSPACES.MEMBER(workspaceId, memberId),
-      dto,
-    );
+  updateMemberRole: (workspaceId: WorkspaceId, memberId: MemberId, dto: UpdateMemberRoleDto) => {
+    const path = ENDPOINTS.WORKSPACES.MEMBER(workspaceId, memberId);
+    return apiClient.patch<WorkspaceMember>(path, dto);
   },
 
-  createInvite: (workspaceId: string, dto: CreateInviteDto) => {
-    return apiClient.post<WorkspaceInvite>(ENDPOINTS.WORKSPACES.INVITES(workspaceId), dto);
+  createInvite: (workspaceId: WorkspaceId, dto: CreateInviteDto) => {
+    const path = ENDPOINTS.WORKSPACES.INVITES(workspaceId);
+    return apiClient.post<WorkspaceInvite>(path, dto);
   },
 
-  acceptInvite: (token: string) => {
-    return apiClient.post<Workspace>(ENDPOINTS.INVITES.ACCEPT(token));
+  acceptInvite: (token: InviteToken) => {
+    const path = ENDPOINTS.INVITES.ACCEPT(token);
+    return apiClient.post<Workspace>(path);
   },
 
-  rejectInvite: (token: string) => {
-    return apiClient.post<void>(ENDPOINTS.INVITES.REJECT(token));
+  rejectInvite: (token: InviteToken) => {
+    const path = ENDPOINTS.INVITES.REJECT(token);
+    return apiClient.post<void>(path);
   },
 
-  delete: (id: string) => {
-    return apiClient.delete<void>(ENDPOINTS.WORKSPACES.DELETE(id));
+  delete: (workspaceId: WorkspaceId) => {
+    const path = ENDPOINTS.WORKSPACES.DELETE(workspaceId);
+    return apiClient.delete<void>(path);
   },
 
-  removeMember: (workspaceId: string, memberId: string) => {
-    return apiClient.delete<void>(ENDPOINTS.WORKSPACES.MEMBER(workspaceId, memberId));
+  removeMember: (workspaceId: WorkspaceId, memberId: MemberId) => {
+    const path = ENDPOINTS.WORKSPACES.MEMBER(workspaceId, memberId);
+    return apiClient.delete<void>(path);
   },
 
-  leave: (workspaceId: string) => {
-    return apiClient.delete<void>(ENDPOINTS.WORKSPACES.LEAVE(workspaceId));
+  leave: (workspaceId: WorkspaceId) => {
+    const path = ENDPOINTS.WORKSPACES.LEAVE(workspaceId);
+    return apiClient.delete<void>(path);
   },
 
-  cancelInvite: (workspaceId: string, inviteId: string) => {
-    return apiClient.delete<void>(ENDPOINTS.WORKSPACES.CANCEL_INVITE(workspaceId, inviteId));
+  cancelInvite: (workspaceId: WorkspaceId, inviteId: InviteId) => {
+    const path = ENDPOINTS.WORKSPACES.CANCEL_INVITE(workspaceId, inviteId);
+    return apiClient.delete<void>(path);
   },
 };

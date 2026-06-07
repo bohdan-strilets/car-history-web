@@ -1,3 +1,4 @@
+import type { InviteToken } from '@entities/workspace';
 import { useErrorHandler } from '@shared/lib/form';
 import { showToast } from '@shared/lib/toast';
 import { useMutation } from '@tanstack/react-query';
@@ -10,7 +11,9 @@ export const useRejectInviteMutation = () => {
   const handleError = useErrorHandler();
 
   return useMutation({
-    mutationFn: (token: string) => workspaceApi.rejectInvite(token),
+    mutationFn: (token: InviteToken) => {
+      return workspaceApi.rejectInvite(token);
+    },
 
     onSuccess: () => {
       showToast.info(t('workspace.invite.rejectSuccess'));

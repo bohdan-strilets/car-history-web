@@ -1,13 +1,14 @@
-import { VehicleForm } from '@features/vehicle/ui/VehicleForm';
+import { useWorkspaceId } from '@entities/workspace';
+import { VehicleForm } from '@features/vehicle';
 import { ROUTES } from '@shared/config';
 import { Stack } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const NewVehiclePage = () => {
   const { t } = useTranslation();
-  const { workspaceId } = useParams<{ workspaceId: string }>();
+  const workspaceId = useWorkspaceId();
   const navigate = useNavigate();
 
   return (

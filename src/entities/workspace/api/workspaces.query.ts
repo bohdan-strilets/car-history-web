@@ -1,7 +1,11 @@
 import { queryKeys } from '@shared/config';
 import { useQuery } from '@tanstack/react-query';
 
+import type { WorkspaceId, WorkspaceSettingsId } from '../model';
+
 import { workspaceApi } from './workspace.api';
+
+// Get all workspaces for current user
 
 export const useWorkspacesQuery = (enabled = true) => {
   return useQuery({
@@ -11,7 +15,9 @@ export const useWorkspacesQuery = (enabled = true) => {
   });
 };
 
-export const useWorkspaceQuery = (id: string) => {
+// Get workspace by id
+
+export const useWorkspaceQuery = (id: WorkspaceId) => {
   return useQuery({
     queryKey: queryKeys.workspaces.detail(id),
     queryFn: () => workspaceApi.getById(id),
@@ -19,7 +25,9 @@ export const useWorkspaceQuery = (id: string) => {
   });
 };
 
-export const useWorkspaceSettingsQuery = (id: string) => {
+// Get workspace settings by workspace id
+
+export const useWorkspaceSettingsQuery = (id: WorkspaceSettingsId) => {
   return useQuery({
     queryKey: queryKeys.workspaces.settings(id),
     queryFn: () => workspaceApi.getSettings(id),

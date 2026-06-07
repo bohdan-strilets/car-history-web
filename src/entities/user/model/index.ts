@@ -6,5 +6,6 @@ export {
   type Theme,
   type UserStatus,
 } from './user.constants';
+
 export { UserConstraints } from './user.constraints';
-export type { User, UserSettings } from './user.types';
+export type { User, UserId, UserSettings, UserSettingsId } from './user.types';

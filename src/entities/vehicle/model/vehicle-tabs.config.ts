@@ -1,8 +1,6 @@
 import type { SegmentControlOption } from '@shared/ui';
 
-// Vehicle tabs configuration
-
-export const VEHICLE_TABS: SegmentControlOption<VehicleTab>[] = [
+export const VEHICLE_TABS = [
   {
     label: 'vehicle.detail.tabs.overview',
     icon: 'carFront',
@@ -38,19 +36,8 @@ export const VEHICLE_TABS: SegmentControlOption<VehicleTab>[] = [
     icon: 'circle',
     value: 'tires',
   },
-];
+] as const satisfies SegmentControlOption<string>[];
 
-// Default tab
+export type VehicleTab = (typeof VEHICLE_TABS)[number]['value'];
 
 export const DEFAULT_VEHICLE_TAB: VehicleTab = 'overview';
-
-// Types
-
-export type VehicleTab =
-  | 'overview'
-  | 'timeline'
-  | 'reminders'
-  | 'maintenance'
-  | 'stats'
-  | 'gallery'
-  | 'tires';

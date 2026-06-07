@@ -1,3 +1,4 @@
+import type { WorkspaceId } from '@entities/workspace';
 import { queryKeys } from '@shared/config';
 import { useErrorHandler } from '@shared/lib/form';
 import { showToast } from '@shared/lib/toast';
@@ -12,7 +13,9 @@ export const useLeaveWorkspaceMutation = () => {
   const handleError = useErrorHandler();
 
   return useMutation({
-    mutationFn: (workspaceId: string) => workspaceApi.leave(workspaceId),
+    mutationFn: (workspaceId: WorkspaceId) => {
+      return workspaceApi.leave(workspaceId);
+    },
 
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.workspaces.all() });

@@ -2,7 +2,7 @@ import { WORKSPACE_ROLE_CONFIG, WORKSPACE_TYPE_CONFIG } from '@entities/workspac
 import { ROUTES } from '@shared/config';
 import { useFormatDate } from '@shared/hooks';
 import { Badge, Heading, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
-import { translateCardSelectOptions } from '@shared/utils';
+import { getConfigOption } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,17 +22,15 @@ export const WorkspaceCard = ({
   const formatDate = useFormatDate();
   const navigate = useNavigate();
 
-  const typeConfig = translateCardSelectOptions(t, WORKSPACE_TYPE_CONFIG).find(
-    (option) => option.value === type,
-  );
-  const roleConfig = translateCardSelectOptions(t, WORKSPACE_ROLE_CONFIG).find(
-    (option) => option.value === role,
-  );
+  const typeConfig = getConfigOption(t, WORKSPACE_TYPE_CONFIG, type);
+  const roleConfig = getConfigOption(t, WORKSPACE_ROLE_CONFIG, role);
 
   const createdAtDate = formatDate(createdAt);
 
+  const handleClick = () => navigate(ROUTES.WORKSPACES.DETAIL(id));
+
   return (
-    <Panel gap="xl" onClick={() => navigate(ROUTES.WORKSPACES.DETAIL(id))} hoverable>
+    <Panel gap="xl" onClick={handleClick} hoverable>
       <Stack direction="row" align="center" justify="between">
         <Stack direction="row" align="center" gap="xs">
           <Text weight="medium" size="sm">

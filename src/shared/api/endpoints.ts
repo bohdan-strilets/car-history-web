@@ -1,3 +1,6 @@
+import type { VehicleId } from '@entities/vehicle';
+import type { InviteId, InviteToken, WorkspaceId } from '@entities/workspace';
+
 export const ENDPOINTS = {
   AUTH: {
     ME: '/auth/me',
@@ -24,44 +27,51 @@ export const ENDPOINTS = {
   WORKSPACES: {
     LIST: '/workspaces',
     CREATE: '/workspaces',
-    DETAIL: (id: string) => `/workspaces/${id}`,
-    UPDATE: (id: string) => `/workspaces/${id}`,
-    DELETE: (id: string) => `/workspaces/${id}`,
-    LEAVE: (id: string) => `/workspaces/${id}/members/me`,
-    MEMBERS: (id: string) => `/workspaces/${id}/members`,
-    MEMBER: (id: string, memberId: string) => `/workspaces/${id}/members/${memberId}`,
-    INVITES: (id: string) => `/workspaces/${id}/invites`,
-    SETTINGS: (id: string) => `/workspaces/${id}/settings`,
-    PENDING_INVITES: (id: string) => `/workspaces/${id}/invites`,
-    CANCEL_INVITE: (id: string, inviteId: string) => `/workspaces/${id}/invites/${inviteId}`,
+    DETAIL: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}`,
+    UPDATE: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}`,
+    DELETE: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}`,
+    LEAVE: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}/members/me`,
+    MEMBERS: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}/members`,
+    MEMBER: (workspaceId: WorkspaceId, memberId: string) =>
+      `/workspaces/${workspaceId}/members/${memberId}`,
+    INVITES: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}/invites`,
+    SETTINGS: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}/settings`,
+    PENDING_INVITES: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}/invites`,
+    CANCEL_INVITE: (workspaceId: WorkspaceId, inviteId: InviteId) =>
+      `/workspaces/${workspaceId}/invites/${inviteId}`,
   },
 
   INVITES: {
-    DETAIL: (token: string) => `/invites/${token}`,
-    ACCEPT: (token: string) => `/invites/${token}/accept`,
-    REJECT: (token: string) => `/invites/${token}/reject`,
+    DETAIL: (token: InviteToken) => `/invites/${token}`,
+    ACCEPT: (token: InviteToken) => `/invites/${token}/accept`,
+    REJECT: (token: InviteToken) => `/invites/${token}/reject`,
   },
 
   VEHICLES: {
-    LIST: (workspaceId: string) => `/workspaces/${workspaceId}/vehicles`,
-    CREATE: (workspaceId: string) => `/workspaces/${workspaceId}/vehicles`,
-    DETAIL: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}`,
-    UPDATE: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}`,
-    DELETE: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}`,
-    STATS: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}/stats`,
-    GALLERY: (workspaceId: string, id: string) =>
-      `/workspaces/${workspaceId}/vehicles/${id}/gallery`,
-    TIMELINE: (workspaceId: string, id: string) =>
-      `/workspaces/${workspaceId}/vehicles/${id}/timeline`,
-    REMINDERS: (workspaceId: string, id: string) =>
-      `/workspaces/${workspaceId}/vehicles/${id}/reminders`,
-    MAINTENANCE: (workspaceId: string, id: string) =>
-      `/workspaces/${workspaceId}/vehicles/${id}/maintenance`,
-    TIRES: (workspaceId: string, id: string) => `/workspaces/${workspaceId}/vehicles/${id}/tires`,
-    FILL_SPECS_AI: (workspaceId: string, id: string) =>
-      `/workspaces/${workspaceId}/vehicles/${id}/specs/ai`,
-    UPDATE_SPECS: (workspaceId: string, id: string) =>
-      `/workspaces/${workspaceId}/vehicles/${id}/specs`,
+    LIST: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}/vehicles`,
+    CREATE: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}/vehicles`,
+    DETAIL: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}`,
+    UPDATE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}`,
+    DELETE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}`,
+    STATS: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/stats`,
+    GALLERY: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/gallery`,
+    TIMELINE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/timeline`,
+    REMINDERS: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders`,
+    MAINTENANCE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance`,
+    TIRES: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/tires`,
+    FILL_SPECS_AI: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/specs/ai`,
+    UPDATE_SPECS: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/specs`,
   },
 
   TIMELINE: {

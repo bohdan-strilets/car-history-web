@@ -1,3 +1,4 @@
+import type { WorkspaceId } from '@entities/workspace';
 import { queryKeys } from '@shared/config';
 import { showToast } from '@shared/lib/toast';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -7,7 +8,7 @@ import type { UpdateWorkspaceDto } from '../model';
 
 import { workspaceApi } from './workspace.api';
 
-export const useUpdateWorkspaceMutation = (workspaceId: string) => {
+export const useUpdateWorkspaceMutation = (workspaceId: WorkspaceId) => {
   const queryClient = useQueryClient();
   const { t } = useTranslation();
 
@@ -17,12 +18,8 @@ export const useUpdateWorkspaceMutation = (workspaceId: string) => {
     },
 
     onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: queryKeys.workspaces.detail(workspaceId),
-      });
-      queryClient.invalidateQueries({
-        queryKey: queryKeys.workspaces.all(),
-      });
+      const keys = queryKeys.workspaces.all();
+      queryClient.invalidateQueries({ queryKey: keys });
       showToast.success(t('workspace.detail.updateSuccess'));
     },
   });

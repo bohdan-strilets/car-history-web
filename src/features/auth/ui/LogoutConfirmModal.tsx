@@ -4,7 +4,7 @@ import { ConfirmModal } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import { useLogoutMutation } from '../api/logout.mutation';
+import { useLogoutMutation } from '../api/mutations/logout.mutation';
 
 export const LogoutConfirmModal = () => {
   const { t } = useTranslation();

@@ -1,5 +1,5 @@
 import type { Language, Theme } from '@entities/user';
-import { useMeQuery, useResendConfirmationMutation } from '@features/auth';
+import { useInitQuery, useResendConfirmationMutation } from '@features/auth';
 import { useUpdateUserSettingsMutation } from '@features/user';
 import { APP_CONSTANTS } from '@shared/config';
 import { useCooldown, useVisibilityRefetch } from '@shared/hooks';
@@ -16,16 +16,17 @@ import { LANGUAGE_CONFIG, THEME_CONFIG, type WelcomeStepProps } from '../model';
 
 export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
   const { t } = useTranslation();
-  const { user } = useAuth();
 
+  const { user } = useAuth();
   const isEmailVerified = user?.emailVerified;
 
-  const { cooldown, start, isActive } = useCooldown(APP_CONSTANTS.RESEND_COOLDOWN);
-  const { mutate: resend, isPending } = useResendConfirmationMutation({
-    onSuccess: start,
-  });
+  const coldown = APP_CONSTANTS.RESEND_COOLDOWN;
+  const { cooldown, start, isActive } = useCooldown(coldown);
 
-  const { refetch } = useMeQuery();
+  const mutation = useResendConfirmationMutation({ onSuccess: start });
+  const { mutate: resend, isPending } = mutation;
+
+  const { refetch } = useInitQuery();
   useVisibilityRefetch(refetch);
 
   const { setLanguage, currentLanguage } = useLanguage();

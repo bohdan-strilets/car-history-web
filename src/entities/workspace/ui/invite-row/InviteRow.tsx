@@ -1,11 +1,7 @@
-import type { WorkspaceInvite } from '@entities/workspace/model';
 import { Avatar, Badge, Button, Panel, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 
-interface InviteRowProps {
-  invite: WorkspaceInvite;
-  onCancel: (invite: WorkspaceInvite) => void;
-}
+import type { InviteRowProps } from './invite-row.types';
 
 export const InviteRow = ({ invite, onCancel }: InviteRowProps) => {
   const { t } = useTranslation();

@@ -6,3 +6,4 @@ export * from './workspace-detail-skeleton';
 export * from './workspace-list';
 export * from './workspace-settings-info';
 export * from './workspace-state';
+export * from './workspace-tabs';

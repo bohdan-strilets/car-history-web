@@ -1,4 +1,4 @@
-import { useMeQuery } from '@features/auth/api';
+import { useInitQuery } from '@features/auth/api';
 import { ROUTES } from '@shared/config/routes';
 import { authService } from '@shared/store/auth';
 import { Spinner, Stack } from '@shared/ui';
@@ -8,7 +8,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 export const GoogleCallbackPage = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const { refetch } = useMeQuery();
+  const { refetch } = useInitQuery();
 
   useEffect(() => {
     const handle = async () => {
@@ -24,7 +24,7 @@ export const GoogleCallbackPage = () => {
     };
 
     handle();
-  }, []);
+  }, [navigate, refetch, searchParams]);
 
   return (
     <Stack align="center" justify="center" style={{ height: '100vh' }}>

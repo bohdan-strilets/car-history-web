@@ -1,3 +1,6 @@
+import type { VehicleId } from '@entities/vehicle';
+import type { WorkspaceId } from '@entities/workspace';
+
 export const ROUTES = {
   ROOT: '/',
 
@@ -16,17 +19,17 @@ export const ROUTES = {
   WORKSPACES: {
     ROOT: '/workspaces',
     NEW: '/workspaces/new',
-    DETAIL: (id: string) => `/workspace/${id}`,
-    MEMBERS: (id: string) => `/workspace/${id}/members`,
-    SETTINGS: (id: string) => `/workspace/${id}/settings`,
+    DETAIL: (workspaceId: WorkspaceId) => `/workspace/${workspaceId}`,
+    MEMBERS: (workspaceId: WorkspaceId) => `/workspace/${workspaceId}/members`,
+    SETTINGS: (workspaceId: WorkspaceId) => `/workspace/${workspaceId}/settings`,
     VEHICLES: {
-      ROOT: (workspaceId: string) => `/workspace/${workspaceId}/vehicles`,
-      NEW: (workspaceId: string) => `/workspace/${workspaceId}/vehicles/new`,
-      DETAIL: (workspaceId: string, vehicleId: string) =>
+      ROOT: (workspaceId: WorkspaceId) => `/workspace/${workspaceId}/vehicles`,
+      NEW: (workspaceId: WorkspaceId) => `/workspace/${workspaceId}/vehicles/new`,
+      DETAIL: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
         `/workspace/${workspaceId}/vehicles/${vehicleId}`,
-      EDIT: (workspaceId: string, vehicleId: string) =>
+      EDIT: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
         `/workspace/${workspaceId}/vehicles/${vehicleId}/edit`,
-      EDIT_SPECS: (workspaceId: string, vehicleId: string) =>
+      EDIT_SPECS: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
         `/workspace/${workspaceId}/vehicles/${vehicleId}/specs/edit`,
     },
   },

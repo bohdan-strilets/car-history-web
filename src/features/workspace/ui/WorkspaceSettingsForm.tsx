@@ -4,10 +4,11 @@ import {
   DISTANCE_UNIT_CONFIG,
   FUEL_UNIT_CONFIG,
 } from '@entities/workspace';
-import { TIMEZONE_OPTIONS, type WorkspaceSettingsFormProps } from '@features/workspace/model';
 import { Form, FormFieldCardSelect, FormFieldCombobox } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
+
+import { TIMEZONE_OPTIONS, type WorkspaceSettingsFormProps } from '../model';
 
 export const WorkspaceSettingsForm = ({
   control,

@@ -12,38 +12,47 @@ import type {
 
 export const authApi = {
   getMe: () => {
-    return apiClient.get<User>(ENDPOINTS.AUTH.ME);
+    const path = ENDPOINTS.AUTH.ME;
+    return apiClient.get<User>(path);
   },
 
   login: (dto: LoginDto) => {
-    return apiClient.post<AuthResponse>(ENDPOINTS.AUTH.LOGIN, dto);
+    const path = ENDPOINTS.AUTH.LOGIN;
+    return apiClient.post<AuthResponse>(path, dto);
   },
 
   register: (dto: RegisterDto) => {
-    return apiClient.post<AuthResponse>(ENDPOINTS.AUTH.REGISTER, dto);
+    const path = ENDPOINTS.AUTH.REGISTER;
+    return apiClient.post<AuthResponse>(path, dto);
   },
 
   logout: () => {
-    return apiClient.post<void>(ENDPOINTS.AUTH.LOGOUT);
+    const path = ENDPOINTS.AUTH.LOGOUT;
+    return apiClient.post<void>(path);
   },
 
   refresh: () => {
-    return apiClient.post<AuthResponse>(ENDPOINTS.AUTH.REFRESH);
+    const path = ENDPOINTS.AUTH.REFRESH;
+    return apiClient.post<AuthResponse>(path);
   },
 
   forgotPassword: (dto: ForgotPasswordDto) => {
-    return apiClient.post<void>(ENDPOINTS.AUTH.FORGOT_PASSWORD, dto);
+    const path = ENDPOINTS.AUTH.FORGOT_PASSWORD;
+    return apiClient.post<void>(path, dto);
   },
 
   resetPassword: (dto: ResetPasswordDto) => {
-    return apiClient.post<void>(ENDPOINTS.AUTH.RESET_PASSWORD, dto);
+    const path = ENDPOINTS.AUTH.RESET_PASSWORD;
+    return apiClient.post<void>(path, dto);
   },
 
   confirmEmail: (dto: ConfirmEmailDto) => {
-    return apiClient.post<void>(ENDPOINTS.AUTH.CONFIRM_EMAIL, dto);
+    const path = ENDPOINTS.AUTH.CONFIRM_EMAIL;
+    return apiClient.post<void>(path, dto);
   },
 
   resendConfirmation: () => {
-    return apiClient.post<void>(ENDPOINTS.AUTH.RESEND_CONFIRMATION);
+    const path = ENDPOINTS.AUTH.RESEND_CONFIRMATION;
+    return apiClient.post<void>(path);
   },
 };

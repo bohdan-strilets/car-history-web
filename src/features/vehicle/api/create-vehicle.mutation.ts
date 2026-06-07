@@ -12,8 +12,10 @@ export const useCreateVehicleMutation = () => {
     mutationFn: ({ workspaceId, dto }: CreateVehicleParams) => {
       return vehicleApi.create(workspaceId, dto);
     },
+
     onSuccess: (_, { workspaceId }) => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.vehicles.all(workspaceId) });
+      const keys = queryKeys.vehicles.all(workspaceId);
+      queryClient.invalidateQueries({ queryKey: keys });
     },
   });
 };

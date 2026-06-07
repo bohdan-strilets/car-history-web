@@ -1,3 +1,6 @@
+import type { User, UserId } from '@entities/user';
+import type { WorkspaceId } from '@entities/workspace';
+
 import type {
   BodyType,
   DriveType,
@@ -5,6 +8,10 @@ import type {
   Transmission,
   VehicleStatus,
 } from './vehicle.constants';
+
+// Types
+
+export type VehicleId = string;
 
 // Vehicle entity
 
@@ -21,7 +28,6 @@ export interface VehicleSaleInfo {
 }
 
 export interface VehicleSpecs {
-  // Engine
   engineCode?: string;
   enginePowerHp?: number;
   enginePowerKw?: number;
@@ -29,25 +35,15 @@ export interface VehicleSpecs {
   cylindersCount?: number;
   engineLayout?: string;
   turbo?: boolean;
-
-  // Transmission
   gearsCount?: number;
-
-  // Consumption
   fuelTankCapacity?: number;
   cityConsumption?: number;
   highwayConsumption?: number;
   combinedConsumption?: number;
-
-  // Electric / Hybrid
   batteryCapacityKwh?: number;
   electricRangeKm?: number;
-
-  // Performance
   accelerationSec?: number;
   topSpeedKmh?: number;
-
-  // Dimensions
   lengthMm?: number;
   widthMm?: number;
   heightMm?: number;
@@ -55,36 +51,23 @@ export interface VehicleSpecs {
   wheelbaseMm?: number;
   groundClearanceMm?: number;
   trunkVolumeLiters?: number;
-
-  // Interior
   numberOfDoors?: number;
   numberOfSeats?: number;
   airbagsCount?: number;
-
-  // Safety & Eco
   euroStandard?: string;
   ncapRating?: number;
   co2EmissionGKm?: number;
-
-  // Tires
   tireSizeFront?: string;
   tireSizeRear?: string;
-
-  // Registration
   firstRegistrationDate?: string;
 }
 
-export interface VehicleOwner {
-  id: string;
-  firstName: string;
-  lastName: string;
-  avatarUrl: string | null;
-}
+export type VehicleOwner = Pick<User, 'id' | 'firstName' | 'lastName' | 'avatarUrl'>;
 
 export interface Vehicle {
-  id: string;
-  ownerId: string;
-  workspaceId: string;
+  id: VehicleId;
+  ownerId: UserId;
+  workspaceId: WorkspaceId;
   brand: string;
   model: string;
   year: number;
@@ -112,7 +95,7 @@ export interface Vehicle {
 // Store
 
 export interface VehicleStore {
-  activeVehicleId: string | null;
-  setActiveVehicleId: (id: string) => void;
+  activeVehicleId: VehicleId | null;
+  setActiveVehicleId: (id: VehicleId) => void;
   clearActiveVehicleId: () => void;
 }

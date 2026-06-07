@@ -42,6 +42,14 @@ export const VehicleActions = ({
     );
   };
 
+  const handleEditVehicle = () => {
+    navigate(ROUTES.WORKSPACES.VEHICLES.EDIT(workspaceId, vehicleId));
+  };
+
+  const handleEditSpecs = () => {
+    navigate(ROUTES.WORKSPACES.VEHICLES.EDIT_SPECS(workspaceId, vehicleId));
+  };
+
   if (!canEdit && !canDelete) return null;
 
   return (
@@ -58,14 +66,14 @@ export const VehicleActions = ({
         <DropdownItem
           label={t('vehicle.detail.edit')}
           leftIcon="edit"
-          onClick={() => navigate(ROUTES.WORKSPACES.VEHICLES.EDIT(workspaceId, vehicleId))}
+          onClick={handleEditVehicle}
         />
       )}
       {canEdit && (
         <DropdownItem
           label={t('vehicle.detail.editSpecs')}
           leftIcon="settings"
-          onClick={() => navigate(ROUTES.WORKSPACES.VEHICLES.EDIT_SPECS(workspaceId, vehicleId))}
+          onClick={handleEditSpecs}
         />
       )}
       {canDelete && (

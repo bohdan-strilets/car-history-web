@@ -11,8 +11,6 @@ export const useSidebarStore = create<SidebarStore>()(
       toggle: () => set((state) => ({ expanded: !state.expanded })),
       setExpanded: (expanded) => set({ expanded }),
     }),
-    {
-      name: STORAGE_KEYS.SIDEBAR_STORAGE_KEY,
-    },
+    { name: STORAGE_KEYS.SIDEBAR_STORAGE_KEY },
   ),
 );

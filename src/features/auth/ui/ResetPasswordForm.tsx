@@ -5,10 +5,9 @@ import { useResetPasswordForm, type ResetPasswordFormProps } from '../model';
 
 export const ResetPasswordForm = ({ token, onSuccess }: ResetPasswordFormProps) => {
   const { t } = useTranslation();
-  const { control, errorMessage, handleSubmit, isPending } = useResetPasswordForm({
-    token,
-    onSuccess,
-  });
+
+  const form = useResetPasswordForm({ token, onSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   return (
     <Form

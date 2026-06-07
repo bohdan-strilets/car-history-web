@@ -1,3 +1,4 @@
+import type { InviteToken } from '@entities/workspace';
 import { queryKeys } from '@shared/config';
 import { useErrorHandler } from '@shared/lib/form';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -6,11 +7,12 @@ import { workspaceApi } from './workspace.api';
 
 export const useAcceptInviteMutation = () => {
   const queryClient = useQueryClient();
-
   const handleError = useErrorHandler();
 
   return useMutation({
-    mutationFn: (token: string) => workspaceApi.acceptInvite(token),
+    mutationFn: (token: InviteToken) => {
+      return workspaceApi.acceptInvite(token);
+    },
 
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.workspaces.all() });

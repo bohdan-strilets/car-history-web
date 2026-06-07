@@ -1,9 +1,13 @@
 import { queryKeys } from '@shared/config';
 import { useQuery } from '@tanstack/react-query';
 
+import type { WorkspaceId } from '../model';
+
 import { workspaceApi } from './workspace.api';
 
-export const useWorkspaceMembersQuery = (id: string) => {
+// Get all workspaces for current user
+
+export const useWorkspaceMembersQuery = (id: WorkspaceId) => {
   return useQuery({
     queryKey: queryKeys.workspaces.members(id),
     queryFn: () => workspaceApi.getMembers(id),
@@ -11,7 +15,9 @@ export const useWorkspaceMembersQuery = (id: string) => {
   });
 };
 
-export const useWorkspacePendingInvitesQuery = (id: string) => {
+// Get workspace by id
+
+export const useWorkspacePendingInvitesQuery = (id: WorkspaceId) => {
   return useQuery({
     queryKey: queryKeys.workspaces.invites(id),
     queryFn: () => workspaceApi.getPendingInvites(id),

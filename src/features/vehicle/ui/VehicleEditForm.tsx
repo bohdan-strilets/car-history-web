@@ -16,14 +16,13 @@ export const VehicleEditForm = ({ vehicle, workspaceId, vehicleId }: VehicleEdit
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const { control, handleSubmit, isPending, errorMessage } = useEditVehicleForm({
-    vehicle,
-    workspaceId,
-    onSuccess: () => {
-      showToast.success(t('vehicle.detail.editSuccess'));
-      navigate(ROUTES.WORKSPACES.VEHICLES.DETAIL(workspaceId, vehicleId));
-    },
-  });
+  const onSuccess = () => {
+    showToast.success(t('vehicle.detail.editSuccess'));
+    navigate(ROUTES.WORKSPACES.VEHICLES.DETAIL(workspaceId, vehicleId));
+  };
+
+  const form = useEditVehicleForm({ vehicle, workspaceId, onSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   return (
     <Form

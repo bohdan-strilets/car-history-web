@@ -10,7 +10,9 @@ export const useOnboardingStore = create<OnboardingStore>((set, get) => ({
   goNext: () => {
     const { currentStep, completedSteps } = get();
     const currentIndex = ONBOARDING_STEPS.indexOf(currentStep);
-    if (currentIndex < ONBOARDING_STEPS.length - 1) {
+    const hasNextStep = currentIndex < ONBOARDING_STEPS.length - 1;
+
+    if (hasNextStep) {
       set({
         currentStep: ONBOARDING_STEPS[currentIndex + 1],
         completedSteps: [...completedSteps, currentStep],

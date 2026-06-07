@@ -1,3 +1,5 @@
+export { workspaceApi } from './workspace.api';
+
 export { useAcceptInviteMutation } from './accept-invite.mutation';
 export { useCancelInviteMutation } from './cancel-invite.mutation';
 export { useCreateInviteMutation } from './create-invite.mutation';
@@ -9,4 +11,3 @@ export { useRemoveMemberMutation } from './remove-member.mutation';
 export { useUpdateMemberRoleMutation } from './update-member-role.mutation';
 export { useUpdateWorkspaceSettingsMutation } from './update-workspace-settings.mutation';
 export { useUpdateWorkspaceMutation } from './update-workspace.mutation';
-export { workspaceApi } from './workspace.api';

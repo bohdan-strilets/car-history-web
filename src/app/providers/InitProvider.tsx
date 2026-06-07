@@ -1,12 +1,12 @@
 import { useWorkspace } from '@entities/workspace';
 import { useWorkspacesQuery } from '@entities/workspace/api';
-import { useMeQuery } from '@features/auth/api';
+import { useInitQuery } from '@features/auth/api';
 import { useAuth } from '@shared/store/auth';
 import { Spinner, Stack } from '@shared/ui';
 import { useEffect, type PropsWithChildren } from 'react';
 
 export const InitProvider = ({ children }: PropsWithChildren) => {
-  const { isLoading: isMeLoading } = useMeQuery();
+  const { isLoading: isMeLoading } = useInitQuery();
   const { isAuthenticated } = useAuth();
 
   const { data: workspacesData, isLoading: isWorkspacesLoading } =

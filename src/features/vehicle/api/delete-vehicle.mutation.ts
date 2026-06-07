@@ -9,12 +9,13 @@ export const useDeleteVehicleMutation = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ id, workspaceId }: DeleteVehicleParams) => {
-      return vehicleApi.delete(workspaceId, id);
+    mutationFn: ({ vehicleId, workspaceId }: DeleteVehicleParams) => {
+      return vehicleApi.delete(workspaceId, vehicleId);
     },
 
     onSuccess: (_, { workspaceId }) => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.vehicles.all(workspaceId) });
+      const keys = queryKeys.vehicles.all(workspaceId);
+      queryClient.invalidateQueries({ queryKey: keys });
     },
   });
 };

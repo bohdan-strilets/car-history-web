@@ -12,6 +12,7 @@ export const useCreateWorkspaceMutation = () => {
     mutationFn: (dto: CreateWorkspaceDto) => {
       return workspaceApi.create(dto);
     },
+
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.workspaces.all() });
     },

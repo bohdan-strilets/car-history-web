@@ -1,7 +1,7 @@
-import type { WorkspaceRole, WorkspaceType } from '@entities/workspace/model';
+import type { WorkspaceId, WorkspaceRole, WorkspaceType } from '@entities/workspace';
 
 export interface WorkspaceCardProps {
-  id: string;
+  id: WorkspaceId;
   name: string;
   type: WorkspaceType;
   role: WorkspaceRole;
