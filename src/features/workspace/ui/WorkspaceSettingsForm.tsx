@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   CURRENCY_CONFIG,
   DATE_FORMAT_CONFIG,
@@ -6,7 +8,6 @@ import {
 } from '@entities/workspace';
 import { Form, FormFieldCardSelect, FormFieldCombobox } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
-import { useTranslation } from 'react-i18next';
 
 import { TIMEZONE_OPTIONS, type WorkspaceSettingsFormProps } from '../model';
 

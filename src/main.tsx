@@ -1,6 +1,8 @@
-import { AppProvider } from '@app/providers';
 import { StrictMode } from 'react';
+
 import { createRoot } from 'react-dom/client';
+
+import { AppProvider } from '@app/providers';
 
 import '@shared/styles/global/global.css';
 import '@shared/styles/global/reset.css';

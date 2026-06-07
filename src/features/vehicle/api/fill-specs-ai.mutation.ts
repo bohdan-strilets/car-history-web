@@ -1,9 +1,10 @@
-import { queryKeys } from '@shared/config';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-import type { FillSpecsAiParams } from '../model';
+import { queryKeys } from '@shared/config';
 
 import { vehicleApi } from './vehicle.api';
+
+import type { FillSpecsAiParams } from '../model';
 
 export const useFillSpecsAiMutation = () => {
   const queryClient = useQueryClient();

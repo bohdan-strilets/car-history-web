@@ -1,8 +1,11 @@
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
-import { clsx } from 'clsx';
 import { type ElementType } from 'react';
 
+import { clsx } from 'clsx';
+
+import { baseToken, resolveResponsive } from '@shared/lib';
+
 import { responsiveStyles, root } from './text.css';
+
 import type { TextProps } from './text.types';
 
 export const Text = <T extends ElementType = 'p'>({

@@ -1,5 +1,6 @@
-import { media, type Breakpoint } from '@shared/styles';
 import { styleVariants } from '@vanilla-extract/css';
+
+import { media, type Breakpoint } from '@shared/styles';
 
 export const createResponsiveStyles = <T extends Record<string, string>>(
   values: T,

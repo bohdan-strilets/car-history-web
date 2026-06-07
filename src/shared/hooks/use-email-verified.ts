@@ -1,4 +1,4 @@
-import { useAuth } from '@shared/store/auth';
+import { useAuth } from '@shared/store';
 
 export const useEmailVerified = () => {
   const { user } = useAuth();

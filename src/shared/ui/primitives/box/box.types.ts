@@ -1,8 +1,8 @@
+import { root } from './box.css';
+
 import type { ResponsiveValue } from '@shared/types';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
-
-import { root } from './box.css';
 
 export type BoxVariants = NonNullable<RecipeVariants<typeof root>>;
 

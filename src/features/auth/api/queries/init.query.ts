@@ -1,6 +1,7 @@
-import { queryKeys } from '@shared/config';
-import { authService } from '@shared/store/auth';
 import { useQuery } from '@tanstack/react-query';
+
+import { queryKeys } from '@shared/config';
+import { authService } from '@shared/store';
 
 import { authApi } from '../auth.api';
 

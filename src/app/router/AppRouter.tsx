@@ -1,3 +1,5 @@
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+
 import { AppLayout, AuthLayout, OnboardingLayout } from '@app/layouts';
 import {
   ConfirmEmailPage,
@@ -9,15 +11,19 @@ import {
 } from '@pages/auth';
 import { DashboardPage } from '@pages/dashboard';
 import { OnboardingPage } from '@pages/onboarding';
-import { VehicleDetailPage } from '@pages/vehicles/detail';
-import { VehicleEditPage, VehicleEditSpecsPage } from '@pages/vehicles/edit';
-import { NewVehiclePage } from '@pages/vehicles/new';
-import { WorkspaceDetailPage } from '@pages/workspaces/detail';
-import { InvitePage } from '@pages/workspaces/invite';
-import { WorkspacesPage } from '@pages/workspaces/list';
-import { NewWorkspacePage } from '@pages/workspaces/new';
+import {
+  NewVehiclePage,
+  VehicleDetailPage,
+  VehicleEditPage,
+  VehicleEditSpecsPage,
+} from '@pages/vehicles';
+import {
+  InvitePage,
+  NewWorkspacePage,
+  WorkspaceDetailPage,
+  WorkspacesPage,
+} from '@pages/workspaces';
 import { ROUTES } from '@shared/config';
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 import { GuestRoute, ProtectedRoute } from './guards';
 

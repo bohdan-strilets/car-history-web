@@ -1,5 +1,6 @@
-import { authService } from '@shared/store/auth';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+
+import { authService } from '@shared/store';
 
 import { authApi } from '../auth.api';
 

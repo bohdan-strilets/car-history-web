@@ -1,4 +1,4 @@
-import { Dropdown, DropdownItem } from '@shared/ui/components';
+import { Dropdown, DropdownItem } from '@shared/ui';
 
 import { useCombobox, type ComboboxProps } from '../model';
 import { ComboboxTrigger, EmptyMessage } from '../ui';

@@ -1,7 +1,7 @@
-import { radialGradient, rgba } from '@shared/lib/css';
-import { media } from '@shared/styles';
-import { vars } from '@shared/styles/contract';
 import { style } from '@vanilla-extract/css';
+
+import { radialGradient, rgba } from '@shared/lib';
+import { media, vars } from '@shared/styles';
 
 const accentRgb = rgba(vars.color.accent.rgb, 0.15);
 const glowGradient = radialGradient({

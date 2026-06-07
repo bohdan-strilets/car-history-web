@@ -1,5 +1,6 @@
-import { Button, Heading, IconBox, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { Button, Heading, IconBox, Stack, Text } from '@shared/ui';
 
 import type { TimelineStepProps } from '../model';
 

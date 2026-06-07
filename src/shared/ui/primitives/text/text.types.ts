@@ -1,8 +1,10 @@
-import type { ResponsiveValue } from '@shared/types';
-import { type RecipeVariants } from '@vanilla-extract/recipes';
 import { type ComponentPropsWithoutRef, type ElementType } from 'react';
 
+import { type RecipeVariants } from '@vanilla-extract/recipes';
+
 import { root } from './text.css';
+
+import type { ResponsiveValue } from '@shared/types';
 
 export type TextVariants = NonNullable<RecipeVariants<typeof root>>;
 

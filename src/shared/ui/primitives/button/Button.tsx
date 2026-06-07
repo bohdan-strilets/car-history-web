@@ -1,10 +1,12 @@
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
-import { Icon } from '@shared/ui/primitives/icon';
 import { clsx } from 'clsx';
+
+import { baseToken, resolveResponsive } from '@shared/lib';
+import { Icon } from '@shared/ui';
 
 import { Spinner } from '../spinner';
 
 import { responsiveStyles, root } from './button.css';
+
 import type { ButtonProps } from './button.types';
 
 export const Button = ({

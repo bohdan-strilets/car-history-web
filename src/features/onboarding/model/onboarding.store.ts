@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 import { ONBOARDING_STEPS } from './onboarding.config';
+
 import type { OnboardingStore } from './onboarding.types';
 
 export const useOnboardingStore = create<OnboardingStore>((set, get) => ({

@@ -1,4 +1,5 @@
 import { root } from './overlay.css';
+
 import type { OverlayProps } from './overlay.types';
 
 export const Overlay = ({ onClick }: OverlayProps) => {

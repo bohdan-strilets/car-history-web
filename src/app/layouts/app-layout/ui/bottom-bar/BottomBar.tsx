@@ -1,6 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 import { NAV_ITEMS } from '@shared/config';
 import { NavItem, Stack } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
 
 import { root } from './bottom-bar.css';
 

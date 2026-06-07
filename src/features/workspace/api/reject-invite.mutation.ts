@@ -1,10 +1,12 @@
-import type { InviteToken } from '@entities/workspace';
-import { useErrorHandler } from '@shared/lib/form';
-import { showToast } from '@shared/lib/toast';
-import { useMutation } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
+import { useMutation } from '@tanstack/react-query';
+
+import { showToast, useErrorHandler } from '@shared/lib';
+
 import { workspaceApi } from './workspace.api';
+
+import type { InviteToken } from '@entities/workspace';
 
 export const useRejectInviteMutation = () => {
   const { t } = useTranslation();

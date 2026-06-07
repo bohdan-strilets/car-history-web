@@ -1,5 +1,6 @@
-import { Heading, Stack, SuccessState, Text } from '@shared/ui/primitives';
 import { useEffect } from 'react';
+
+import { Heading, Stack, SuccessState, Text } from '@shared/ui';
 
 import type { StepSuccessProps } from '../model';
 

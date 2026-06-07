@@ -1,7 +1,9 @@
-import type { Vehicle } from '@entities/vehicle';
+import { useTranslation } from 'react-i18next';
+
 import { EditVehicleDescriptionModal } from '@features/vehicle';
 import { useModal } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
+
+import type { Vehicle } from '@entities/vehicle';
 
 export const useEditVehicleDescription = () => {
   const { t } = useTranslation();

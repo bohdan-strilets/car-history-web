@@ -1,6 +1,5 @@
-import type { Theme } from '@entities/user';
-
 import type { vars } from '../contract';
+import type { Theme } from '@entities/user';
 
 // Themes
 export type ResolvedTheme = 'LIGHT' | 'DARK';

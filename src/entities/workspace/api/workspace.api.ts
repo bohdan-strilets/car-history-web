@@ -1,3 +1,6 @@
+import { apiClient } from '@shared/api';
+import { ENDPOINTS } from '@shared/config';
+
 import type {
   InviteToken,
   MemberId,
@@ -7,8 +10,6 @@ import type {
   WorkspaceMember,
   WorkspaceSettings,
 } from '@entities/workspace';
-import { apiClient } from '@shared/api';
-import { ENDPOINTS } from '@shared/config';
 
 export const workspaceApi = {
   getAll: () => {

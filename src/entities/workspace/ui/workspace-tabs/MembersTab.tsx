@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   EditMemberRoleModal,
   InviteForm,
@@ -6,7 +8,6 @@ import {
 } from '@features/workspace';
 import { Stack, useModal } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
-import { useTranslation } from 'react-i18next';
 
 import { MembersList, MembersListSkeleton } from '../members-list';
 

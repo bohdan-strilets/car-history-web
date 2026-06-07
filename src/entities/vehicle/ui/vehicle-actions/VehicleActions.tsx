@@ -1,10 +1,10 @@
-import { useDeleteVehicleMutation } from '@features/vehicle/api';
-import { ROUTES } from '@shared/config';
-import { useConfirmModal } from '@shared/lib/modal';
-import { Button, Icon } from '@shared/ui';
-import { Dropdown, DropdownItem } from '@shared/ui/components/dropdown';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import { useDeleteVehicleMutation } from '@features/vehicle';
+import { ROUTES } from '@shared/config';
+import { useConfirmModal } from '@shared/lib/modal';
+import { Button, Dropdown, DropdownItem, Icon } from '@shared/ui';
 
 import type { VehicleActionsProps } from './vehicle-actions.types';
 
@@ -29,7 +29,7 @@ export const VehicleActions = ({
       {
         onConfirm: (close) => {
           deleteVehicle(
-            { id: vehicleId, workspaceId },
+            { vehicleId, workspaceId },
             {
               onSuccess: () => {
                 close();

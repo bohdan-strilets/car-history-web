@@ -1,5 +1,6 @@
-import { FormFieldMileageInput, FormFieldNumberInput } from '@shared/ui/components';
 import { useTranslation } from 'react-i18next';
+
+import { FormFieldMileageInput, FormFieldNumberInput } from '@shared/ui';
 
 import type { VehicleStepProps } from '../model';
 

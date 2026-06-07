@@ -1,6 +1,8 @@
-import { WORKSPACE_MEMBER_ROLE } from '@entities/workspace';
-import type { TFunction } from 'i18next';
 import z from 'zod';
+
+import { WORKSPACE_MEMBER_ROLE } from '@entities/workspace';
+
+import type { TFunction } from 'i18next';
 
 export const createEditMemberRoleSchema = (t: TFunction) =>
   z.object({

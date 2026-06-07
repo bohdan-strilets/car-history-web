@@ -1,7 +1,8 @@
-import { ROUTES } from '@shared/config';
-import { Center, Heading, Panel, Spinner, Stack, StateView, SuccessState, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import { ROUTES } from '@shared/config';
+import { Center, Heading, Panel, Spinner, Stack, StateView, SuccessState, Text } from '@shared/ui';
 
 // Loading state when fetching invite data
 

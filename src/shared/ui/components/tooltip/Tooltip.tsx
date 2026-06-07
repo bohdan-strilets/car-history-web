@@ -1,9 +1,11 @@
-import { Portal } from '@shared/ui/primitives';
 import { useState } from 'react';
 
+import { Portal } from '@shared/ui';
+
 import { tooltip } from './tooltip.css';
-import type { TooltipProps } from './tooltip.types';
 import { getPosition } from './tooltip.utils';
+
+import type { TooltipProps } from './tooltip.types';
 
 export const Tooltip = ({ label, children, placement = 'top', disabled }: TooltipProps) => {
   const [open, setOpen] = useState(false);

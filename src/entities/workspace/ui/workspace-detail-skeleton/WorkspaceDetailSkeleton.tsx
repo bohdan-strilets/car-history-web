@@ -1,5 +1,4 @@
-import { Stack } from '@shared/ui';
-import { TabsSkeleton } from '@shared/ui/components/tabs';
+import { Stack, TabsSkeleton } from '@shared/ui';
 import { PageHeaderSkeleton } from '@widgets/page-header';
 
 import { MembersListSkeleton } from '../members-list';

@@ -1,18 +1,19 @@
-import type { Language, Theme } from '@entities/user';
+import { useTranslation } from 'react-i18next';
+
 import { useInitQuery, useResendConfirmationMutation } from '@features/auth';
 import { useUpdateUserSettingsMutation } from '@features/user';
 import { APP_CONSTANTS } from '@shared/config';
 import { useCooldown, useVisibilityRefetch } from '@shared/hooks';
 import { useLanguage } from '@shared/i18n';
-import { showToast } from '@shared/lib/toast';
-import { useAuth } from '@shared/store/auth';
-import { useTheme } from '@shared/styles';
-import { CardSelect } from '@shared/ui';
-import { Button, Divider, Heading, Icon, Logo, Spinner, Stack, Text } from '@shared/ui/primitives';
+import { showToast } from '@shared/lib';
+import { useAuth } from '@shared/store';
+import { useTheme } from '@shared/styles/model';
+import { Button, CardSelect, Divider, Heading, Icon, Logo, Spinner, Stack, Text } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
-import { useTranslation } from 'react-i18next';
 
 import { LANGUAGE_CONFIG, THEME_CONFIG, type WelcomeStepProps } from '../model';
+
+import type { Language, Theme } from '@entities/user';
 
 export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
   const { t } = useTranslation();

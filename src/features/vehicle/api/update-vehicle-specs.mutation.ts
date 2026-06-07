@@ -1,9 +1,10 @@
-import { queryKeys } from '@shared/config';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
-import type { UpdateVehicleSpecsParams } from '../model';
+import { queryKeys } from '@shared/config';
 
 import { vehicleApi } from './vehicle.api';
+
+import type { UpdateVehicleSpecsParams } from '../model';
 
 export const useUpdateVehicleSpecsMutation = () => {
   const queryClient = useQueryClient();

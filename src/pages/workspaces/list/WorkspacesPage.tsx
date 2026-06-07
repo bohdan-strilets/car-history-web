@@ -1,3 +1,6 @@
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import {
   useWorkspacesQuery,
   WorkspaceEmpty,
@@ -8,8 +11,6 @@ import {
 import { ROUTES } from '@shared/config';
 import { Stack } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 export const WorkspacesPage = () => {
   const { t } = useTranslation();

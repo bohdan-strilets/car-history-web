@@ -1,4 +1,4 @@
-import type { Vehicle } from '@entities/vehicle/model';
+import type { Vehicle } from '@entities/vehicle';
 
 export interface VehicleHeroProps {
   vehicle: Vehicle;

@@ -1,9 +1,11 @@
-import { isHttpError, isValidationError } from '@shared/api';
-import i18next from 'i18next';
 import { useEffect } from 'react';
-import type { FieldValues, Path } from 'react-hook-form';
+
+import i18next from 'i18next';
+
+import { isHttpError, isValidationError } from '@shared/api';
 
 import type { FormErrorsParams } from './form-errors.types';
+import type { FieldValues, Path } from 'react-hook-form';
 
 export const useFormErrors = <T extends FieldValues>({
   error,

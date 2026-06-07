@@ -1,8 +1,9 @@
-import type { IconName } from '@shared/icons';
-import type { ResponsiveValue } from '@shared/types';
 import { type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { root } from './icon.css';
+
+import type { IconName } from '@shared/icons';
+import type { ResponsiveValue } from '@shared/types';
 
 export type IconVariants = NonNullable<RecipeVariants<typeof root>>;
 export type IconSize = NonNullable<IconVariants['size']>;

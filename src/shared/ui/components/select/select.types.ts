@@ -1,5 +1,5 @@
 import type { IconName } from '@shared/icons';
-import type { InputSize, InputState } from '@shared/ui/primitives';
+import type { InputSize, InputState } from '@shared/ui';
 
 export interface SelectOption {
   id: string;

@@ -1,7 +1,8 @@
-import { Grid } from '@shared/ui/primitives';
+import { Grid } from '@shared/ui';
+
+import { CardSelectItem } from './CardSelectItem';
 
 import type { CardSelectProps } from './card-select.types';
-import { CardSelectItem } from './CardSelectItem';
 
 export const CardSelect = ({ options, value, onChange, maxSelect = 1 }: CardSelectProps) => {
   const handleSelect = (val: string) => {

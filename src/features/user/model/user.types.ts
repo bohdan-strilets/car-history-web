@@ -1,5 +1,3 @@
-// DTOs;
-
 import type { Language, Theme } from '@entities/user';
 
 export interface UpdateUserSettingsDto {

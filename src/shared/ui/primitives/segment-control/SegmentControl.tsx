@@ -1,4 +1,4 @@
-import { Panel, Tooltip } from '@shared/ui/components';
+import { Panel, Tooltip } from '@shared/ui';
 
 import { Icon } from '../icon';
 import { Stack } from '../stack';

@@ -1,6 +1,7 @@
-import { createResponsiveStyles } from '@shared/lib/primitives';
-import { vars } from '@shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { createResponsiveStyles } from '@shared/lib';
+import { vars } from '@shared/styles';
 
 export const responsiveStyles = {
   p: createResponsiveStyles(vars.spacing, (v) => ({ padding: v })),

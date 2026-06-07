@@ -1,6 +1,8 @@
-import { THEME } from '@entities/user';
-import { darkTheme, lightTheme, useTheme } from '@shared/styles';
 import { useEffect, type PropsWithChildren } from 'react';
+
+import { THEME } from '@entities/user';
+import { darkTheme, lightTheme } from '@shared/styles';
+import { useTheme } from '@shared/styles/model';
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const { theme, setResolvedTheme } = useTheme();

@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
 
 import { labelText, root, withLabel } from './divider.css';
+
 import type { DividerProps } from './divider.types';
 
 export const Divider = ({ orientation, color, label, className }: DividerProps) => {

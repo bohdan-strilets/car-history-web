@@ -1,11 +1,14 @@
-import { useUpdateMemberRoleMutation } from '@features/workspace';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormErrors } from '@shared/lib/form';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { useUpdateMemberRoleMutation } from '@features/workspace';
+import { useFormErrors } from '@shared/lib';
+
 import { editMemberRoleDefaultValues } from '../default-values';
 import { createEditMemberRoleSchema, type EditMemberRoleValues } from '../schemes';
+
 import type { EditMemberRoleFormParams } from '../types';
 
 export const useEditMemberRoleForm = ({

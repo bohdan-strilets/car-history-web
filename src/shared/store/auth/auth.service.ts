@@ -1,6 +1,6 @@
-import type { User } from '@entities/user';
-
 import { useAuthStore } from './auth.store';
+
+import type { User } from '@entities/user';
 
 export const authService = {
   getUser: () => useAuthStore.getState().user,

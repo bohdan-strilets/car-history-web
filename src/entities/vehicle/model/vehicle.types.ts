@@ -1,6 +1,3 @@
-import type { User, UserId } from '@entities/user';
-import type { WorkspaceId } from '@entities/workspace';
-
 import type {
   BodyType,
   DriveType,
@@ -8,6 +5,8 @@ import type {
   Transmission,
   VehicleStatus,
 } from './vehicle.constants';
+import type { User, UserId } from '@entities/user';
+import type { WorkspaceId } from '@entities/workspace';
 
 // Types
 

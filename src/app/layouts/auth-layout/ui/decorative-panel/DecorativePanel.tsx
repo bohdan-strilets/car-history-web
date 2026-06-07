@@ -1,5 +1,6 @@
-import { Heading, Logo, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { Heading, Logo, Stack, Text } from '@shared/ui';
 
 import { FeatureList, type Feature } from '../feature-list';
 

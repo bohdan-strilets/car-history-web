@@ -1,4 +1,4 @@
-import { Divider, Icon, IconBox, Stack, Text } from '@shared/ui/primitives';
+import { Divider, Icon, IconBox, Stack, Text } from '@shared/ui';
 
 import { Panel } from '../panel';
 

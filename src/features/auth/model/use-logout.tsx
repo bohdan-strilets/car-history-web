@@ -1,5 +1,6 @@
-import { useAdaptiveModal } from '@shared/lib/modal';
 import { useTranslation } from 'react-i18next';
+
+import { useAdaptiveModal } from '@shared/lib/modal';
 
 import { LogoutConfirmModal } from '../ui';
 

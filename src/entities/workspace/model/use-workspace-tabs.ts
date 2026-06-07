@@ -1,5 +1,6 @@
-import { SEARCH_PARAM_TAB } from '@shared/config';
 import { useSearchParams } from 'react-router-dom';
+
+import { SEARCH_PARAM_TAB } from '@shared/config';
 
 import { DEFAULT_WORKSPACE_TAB, WORKSPACE_TABS, type WorkspaceTab } from './workspace-tabs.config';
 

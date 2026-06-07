@@ -1,7 +1,9 @@
-import { UserConstraints } from '@entities/user';
-import { WORKSPACE_MEMBER_ROLE } from '@entities/workspace/model';
-import type { TFunction } from 'i18next';
 import { z } from 'zod';
+
+import { UserConstraints } from '@entities/user';
+import { WORKSPACE_MEMBER_ROLE } from '@entities/workspace';
+
+import type { TFunction } from 'i18next';
 
 export const createInviteSchema = (t: TFunction) =>
   z.object({

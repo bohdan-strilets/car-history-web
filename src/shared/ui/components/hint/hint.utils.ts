@@ -1,7 +1,6 @@
-import type { IconName } from '@shared/icons';
-import type { IconColor, TextColor } from '@shared/ui/primitives';
-
 import type { HintVariant } from './hint.types';
+import type { IconName } from '@shared/icons';
+import type { IconColor, TextColor } from '@shared/ui';
 
 export const HINT_ICON_MAP: Record<HintVariant, IconName> = {
   default: 'info',

@@ -1,7 +1,6 @@
+import type { root } from './skeleton.css';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
 import type { CSSProperties } from 'react';
-
-import type { root } from './skeleton.css';
 
 export type SkeletonVariants = NonNullable<RecipeVariants<typeof root>>;
 export type SkeletonVariant = NonNullable<SkeletonVariants['variant']>;

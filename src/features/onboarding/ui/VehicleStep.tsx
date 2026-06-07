@@ -1,12 +1,14 @@
-import type { Vehicle } from '@entities/vehicle';
-import { useWorkspace } from '@entities/workspace';
-import { VehicleForm } from '@features/vehicle';
 import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
-import type { VehicleStepProps } from '../model';
+import { useWorkspace } from '@entities/workspace';
+import { VehicleForm } from '@features/vehicle';
 
 import { StepSuccess } from './StepSuccess';
+
+import type { VehicleStepProps } from '../model';
+import type { Vehicle } from '@entities/vehicle';
 
 export const VehicleStep = ({ onNext, onSkip }: VehicleStepProps) => {
   const { t } = useTranslation();

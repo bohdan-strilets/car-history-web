@@ -1,8 +1,9 @@
-import { Icon, Text } from '@shared/ui/primitives';
+import { Icon, Text } from '@shared/ui';
 
 import { root } from './hint.css';
-import type { HintProps } from './hint.types';
 import { HINT_ICON_COLOR_MAP, HINT_ICON_MAP, HINT_TEXT_COLOR_MAP } from './hint.utils';
+
+import type { HintProps } from './hint.types';
 
 export const Hint = ({ message, variant = 'default' }: HintProps) => {
   const icon = HINT_ICON_MAP[variant];

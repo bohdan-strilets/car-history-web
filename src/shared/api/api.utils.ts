@@ -1,6 +1,7 @@
 import { ERROR_CODES } from '@shared/config';
 
 import { HttpError, ValidationError } from './api.errors';
+
 import type { ApiError, ApiValidationError } from './api.types';
 
 export const isHttpError = (error: unknown): error is HttpError => {

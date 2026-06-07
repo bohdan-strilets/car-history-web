@@ -1,9 +1,8 @@
+import type { root } from './input.css';
 import type { IconName } from '@shared/icons';
 import type { ResponsiveValue } from '@shared/types';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
-
-import type { root } from './input.css';
 
 export type InputVariants = NonNullable<RecipeVariants<typeof root>>;
 

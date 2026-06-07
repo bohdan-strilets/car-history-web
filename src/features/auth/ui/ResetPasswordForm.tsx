@@ -1,5 +1,6 @@
-import { Form, FormFieldPasswordInput } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { Form, FormFieldPasswordInput } from '@shared/ui';
 
 import { useResetPasswordForm, type ResetPasswordFormProps } from '../model';
 

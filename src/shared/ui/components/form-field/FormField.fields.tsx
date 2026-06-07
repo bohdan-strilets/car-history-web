@@ -14,17 +14,18 @@ import {
   type NumberInputProps,
   type PasswordInputProps,
   type TextareaProps,
-} from '@shared/ui/primitives';
-import type { FieldValues } from 'react-hook-form';
+} from '@shared/ui';
 
 import { CardSelect } from '../card-select';
-import type { CardSelectProps } from '../card-select/card-select.types';
 import { Combobox, type ComboboxProps } from '../combobox';
 import { Select, type SelectProps } from '../select';
 import { YearPicker, type YearPickerProps } from '../year-picker';
 
-import type { FormFieldProps } from './form-field.types';
 import { FormField } from './FormField';
+
+import type { FormFieldProps } from './form-field.types';
+import type { CardSelectProps } from '../card-select/card-select.types';
+import type { FieldValues } from 'react-hook-form';
 
 type BaseProps<T extends FieldValues> = Omit<FormFieldProps<T>, 'render'>;
 

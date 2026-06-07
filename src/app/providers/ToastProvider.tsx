@@ -1,5 +1,6 @@
-import { useTheme } from '@shared/styles';
 import { Toaster } from 'sonner';
+
+import { useTheme } from '@shared/styles/model';
 
 export const ToastProvider = () => {
   const { resolvedTheme } = useTheme();

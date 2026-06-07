@@ -1,8 +1,8 @@
-import { LANGUAGE, type Language } from '@entities/user';
-import { DATE_FORMAT, useWorkspaceSettingsQuery } from '@entities/workspace';
-import { useWorkspaceStore } from '@entities/workspace/model/workspace.store';
-import { formatDate } from '@shared/lib/date';
 import { useTranslation } from 'react-i18next';
+
+import { LANGUAGE, type Language } from '@entities/user';
+import { DATE_FORMAT, useWorkspaceSettingsQuery, useWorkspaceStore } from '@entities/workspace';
+import { formatDate } from '@shared/lib';
 
 export const useFormatDate = () => {
   const { activeWorkspaceId } = useWorkspaceStore();

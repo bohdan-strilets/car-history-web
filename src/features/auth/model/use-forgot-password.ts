@@ -1,7 +1,8 @@
+import { useState } from 'react';
+
 import { useForgotPasswordMutation } from '@features/auth';
 import { APP_CONSTANTS } from '@shared/config';
 import { useCooldown } from '@shared/hooks';
-import { useState } from 'react';
 
 export const useForgotPassword = () => {
   const [sentTo, setSentTo] = useState<string | null>(null);

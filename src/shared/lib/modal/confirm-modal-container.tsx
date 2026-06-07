@@ -1,5 +1,6 @@
-import { ConfirmModal } from '@shared/ui';
 import { useState } from 'react';
+
+import { ConfirmModal } from '@shared/ui';
 
 import type { ConfirmModalProps } from './modal.types';
 

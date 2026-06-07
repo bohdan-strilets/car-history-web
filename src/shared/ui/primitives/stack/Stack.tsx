@@ -1,8 +1,11 @@
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
-import { clsx } from 'clsx';
 import { type ElementType } from 'react';
 
+import { clsx } from 'clsx';
+
+import { baseToken, resolveResponsive } from '@shared/lib';
+
 import { responsiveStyles, root } from './stack.css';
+
 import type { StackProps } from './stack.types';
 
 export const Stack = <T extends ElementType = 'div'>({

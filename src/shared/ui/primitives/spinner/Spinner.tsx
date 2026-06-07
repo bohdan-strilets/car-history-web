@@ -1,7 +1,9 @@
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
 import { clsx } from 'clsx';
 
+import { baseToken, resolveResponsive } from '@shared/lib';
+
 import { innerRing, outerRing, responsiveStyles, root } from './spinner.css';
+
 import type { SpinnerProps } from './spinner.types';
 
 export const Spinner = ({ size, color = 'accent', className }: SpinnerProps) => {

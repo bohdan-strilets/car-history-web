@@ -2,6 +2,7 @@ import { type ConfirmOptions } from '@shared/ui';
 
 import { useAdaptiveModal } from './adaptive-modal';
 import { ConfirmModalContainer } from './confirm-modal-container';
+
 import type { ConfirmCallbacks } from './modal.types';
 
 export const useConfirmModal = () => {

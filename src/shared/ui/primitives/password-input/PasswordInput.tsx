@@ -1,10 +1,12 @@
 import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
 import { Icon } from '../icon';
 import { Input } from '../input';
 
 import { button } from './password-input.css';
+
 import type { PasswordInputProps } from './password-input.types';
 
 export const PasswordInput = ({ ...rest }: PasswordInputProps) => {

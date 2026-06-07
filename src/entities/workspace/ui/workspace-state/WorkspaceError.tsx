@@ -1,5 +1,6 @@
-import { StateView } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { StateView } from '@shared/ui';
 
 import type { WorkspaceErrorProps } from './workspace-state.types';
 

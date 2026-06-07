@@ -1,10 +1,13 @@
-import type { ConfirmEmailDto } from '@features/auth/model';
-import { ROUTES } from '@shared/config';
-import { authService, useAuth } from '@shared/store/auth';
-import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
+import { useMutation } from '@tanstack/react-query';
+
+import { ROUTES } from '@shared/config';
+import { authService, useAuth } from '@shared/store';
+
 import { authApi } from '../auth.api';
+
+import type { ConfirmEmailDto } from '@features/auth';
 
 export const useConfirmEmailMutation = () => {
   const navigate = useNavigate();

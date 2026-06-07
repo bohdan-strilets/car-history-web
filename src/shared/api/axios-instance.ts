@@ -1,7 +1,8 @@
+import axios from 'axios';
+
 import { env } from '@config/env';
 import { ENDPOINTS, ROUTES } from '@shared/config';
-import { authService } from '@shared/store/auth';
-import axios from 'axios';
+import { authService } from '@shared/store';
 
 import { setupRequestInterceptor, setupResponseInterceptor } from './interceptors';
 

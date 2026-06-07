@@ -1,10 +1,11 @@
-import { useLanguage } from '@shared/i18n';
-import { Button, SegmentControl } from '@shared/ui';
-import { Tooltip } from '@shared/ui/components';
-import { getNextCycleItem } from '@shared/utils';
 import { useTranslation } from 'react-i18next';
 
+import { useLanguage } from '@shared/i18n';
+import { Button, SegmentControl, Tooltip } from '@shared/ui';
+import { getNextCycleItem } from '@shared/utils';
+
 import { LANGUAGE_CYCLE, LANGUAGE_OPTIONS } from './language-toggle.config';
+
 import type { LanguageToggleProps } from './language-toggle.types';
 
 export const LanguageToggle = ({ collapsed, className, tooltipPlacement }: LanguageToggleProps) => {

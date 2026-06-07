@@ -1,3 +1,5 @@
+import { z } from 'zod';
+
 import {
   BODY_TYPE,
   DRIVE_TYPE,
@@ -5,8 +7,8 @@ import {
   TRANSMISSION,
   VehicleConstraints,
 } from '@entities/vehicle';
+
 import type { TFunction } from 'i18next';
-import { z } from 'zod';
 
 // Step 1
 

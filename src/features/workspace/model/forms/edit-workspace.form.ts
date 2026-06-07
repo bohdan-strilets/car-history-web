@@ -1,11 +1,14 @@
-import { useUpdateWorkspaceMutation } from '@features/workspace';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormErrors } from '@shared/lib/form';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { useUpdateWorkspaceMutation } from '@features/workspace';
+import { useFormErrors } from '@shared/lib';
+
 import { editWorkspaceDefaultValues } from '../default-values';
 import { createWorkspaceSchema, type WorkspaceValues } from '../schemes';
+
 import type { EditWorkspaceFormParams } from '../types';
 
 export const useEditWorkspaceForm = ({ workspace, onSuccess }: EditWorkspaceFormParams) => {

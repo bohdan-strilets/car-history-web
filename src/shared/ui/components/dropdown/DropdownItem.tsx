@@ -1,7 +1,9 @@
-import { Box, Button, Icon, Stack } from '@shared/ui/primitives';
 import clsx from 'clsx';
 
+import { Box, Button, Icon, Stack } from '@shared/ui';
+
 import { item } from './dropdown.css';
+
 import type { DropdownItemProps } from './dropdown.types';
 
 export const DropdownItem = ({

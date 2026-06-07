@@ -1,6 +1,8 @@
-import { UserConstraints } from '@entities/user';
-import type { TFunction } from 'i18next';
 import { z } from 'zod';
+
+import { UserConstraints } from '@entities/user';
+
+import type { TFunction } from 'i18next';
 
 export const createForgotPasswordSchema = (t: TFunction) =>
   z.object({

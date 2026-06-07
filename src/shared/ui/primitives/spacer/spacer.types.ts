@@ -1,6 +1,6 @@
-import type { RecipeVariants } from '@vanilla-extract/recipes';
-
 import { root } from './spacer.css';
+
+import type { RecipeVariants } from '@vanilla-extract/recipes';
 
 type RootVariants = RecipeVariants<typeof root>;
 

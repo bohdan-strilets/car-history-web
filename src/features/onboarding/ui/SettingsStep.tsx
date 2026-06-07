@@ -1,12 +1,14 @@
-import type { WorkspaceSettings } from '@entities/workspace';
-import { useWorkspace } from '@entities/workspace';
-import { useWorkspaceSettingsForm, WorkspaceSettingsForm } from '@features/workspace';
 import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
-import type { SettingsStepProps } from '../model';
+import { useWorkspace } from '@entities/workspace';
+import { useWorkspaceSettingsForm, WorkspaceSettingsForm } from '@features/workspace';
 
 import { StepSuccess } from './StepSuccess';
+
+import type { SettingsStepProps } from '../model';
+import type { WorkspaceSettings } from '@entities/workspace';
 
 export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
   const { t } = useTranslation();

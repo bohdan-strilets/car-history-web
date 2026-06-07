@@ -1,7 +1,8 @@
-import { createResponsiveStyles } from '@shared/lib/primitives';
-import { vars } from '@shared/styles';
 import { keyframes, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { createResponsiveStyles } from '@shared/lib';
+import { vars } from '@shared/styles';
 
 const spinCw = keyframes({
   from: { transform: 'rotate(0deg)' },

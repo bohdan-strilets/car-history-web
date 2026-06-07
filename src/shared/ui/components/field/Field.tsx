@@ -1,4 +1,4 @@
-import { Stack, Text } from '@shared/ui/primitives';
+import { Stack, Text } from '@shared/ui';
 
 import type { FieldProps } from './field.types';
 

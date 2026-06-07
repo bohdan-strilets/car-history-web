@@ -1,7 +1,9 @@
-import { Box, Stack, Surface } from '@shared/ui/primitives';
 import clsx from 'clsx';
 
+import { Box, Stack, Surface } from '@shared/ui';
+
 import { root } from './panel.css';
+
 import type { PanelOwnProps } from './panel.types';
 
 export const Panel = ({

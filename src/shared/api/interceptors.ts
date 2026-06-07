@@ -1,5 +1,6 @@
-import { ENDPOINTS } from '@shared/config';
 import axios, { type AxiosInstance } from 'axios';
+
+import { ENDPOINTS } from '@shared/config';
 
 import { parseApiError } from './api.utils';
 

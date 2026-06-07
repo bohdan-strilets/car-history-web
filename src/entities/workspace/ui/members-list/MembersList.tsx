@@ -1,5 +1,6 @@
-import { Spacer, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { Spacer, Stack, Text } from '@shared/ui';
 
 import { InviteRow } from '../invite-row';
 import { MemberRow } from '../member-row';

@@ -1,3 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
+import { clsx } from 'clsx';
+
 import { NAV_ITEMS } from '@shared/config';
 import {
   Box,
@@ -15,10 +19,9 @@ import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { UserBar } from '@widgets/user-bar';
 import { WorkspaceSwitcher } from '@widgets/workspace-switcher';
-import { clsx } from 'clsx';
-import { useTranslation } from 'react-i18next';
 
 import { root, spacer } from './sidebar.css';
+
 import type { SidebarProps } from './sidebar.types';
 
 export const Sidebar = ({ expanded, onToggle }: SidebarProps) => {

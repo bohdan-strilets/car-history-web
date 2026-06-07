@@ -1,11 +1,12 @@
-import { useCompleteOnboardingMutation } from '@entities/user';
-import { ROUTES } from '@shared/config';
-import { authService } from '@shared/store/auth';
-import { Stepper } from '@shared/ui/components/stepper';
-import { Heading, Stack, Text } from '@shared/ui/primitives';
 import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import { useCompleteOnboardingMutation } from '@entities/user';
+import { ROUTES } from '@shared/config';
+import { authService } from '@shared/store';
+import { Heading, Stack, Stepper, Text } from '@shared/ui';
 
 import {
   ONBOARDING_STEP_INDEX,

@@ -1,5 +1,6 @@
-import { Grid, Heading, Panel, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { Grid, Heading, Panel, Stack, Text } from '@shared/ui';
 
 import type { VehicleFunFactsProps } from './vehicle-fun-facts.types';
 

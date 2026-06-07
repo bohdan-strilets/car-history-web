@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
+
+import { useSearchParams } from 'react-router-dom';
+
 import { APP_CONSTANTS, SEARCH_PARAM_TOKEN } from '@shared/config';
 import { useCooldown } from '@shared/hooks';
-import { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
 
 import { useConfirmEmailMutation, useResendConfirmationMutation } from '../api/index.ts';
 

@@ -1,12 +1,14 @@
-import type { WorkspaceId } from '@entities/workspace';
-import { queryKeys } from '@shared/config';
-import { showToast } from '@shared/lib/toast';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 
-import type { CreateInviteDto } from '../model';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+
+import { queryKeys } from '@shared/config';
+import { showToast } from '@shared/lib';
 
 import { workspaceApi } from './workspace.api';
+
+import type { CreateInviteDto } from '../model';
+import type { WorkspaceId } from '@entities/workspace';
 
 export const useCreateInviteMutation = (workspaceId: WorkspaceId) => {
   const queryClient = useQueryClient();

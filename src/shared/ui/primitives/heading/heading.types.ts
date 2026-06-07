@@ -1,8 +1,10 @@
-import type { ResponsiveValue } from '@shared/types';
-import { type RecipeVariants } from '@vanilla-extract/recipes';
 import { type ComponentPropsWithoutRef } from 'react';
 
+import { type RecipeVariants } from '@vanilla-extract/recipes';
+
 import { root } from './heading.css';
+
+import type { ResponsiveValue } from '@shared/types';
 
 export type HeadingVariants = NonNullable<RecipeVariants<typeof root>>;
 

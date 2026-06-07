@@ -1,11 +1,14 @@
-import { useUpdateWorkspaceSettingsMutation } from '@features/workspace';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormErrors } from '@shared/lib/form';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { useUpdateWorkspaceSettingsMutation } from '@features/workspace';
+import { useFormErrors } from '@shared/lib';
+
 import { workspaceSettingsDefaultValues } from '../default-values';
 import { createWorkspaceSettingsSchema, type WorkspaceSettingsValues } from '../schemes';
+
 import type { WorkspaceSettingsFormParams } from '../types';
 
 export const useWorkspaceSettingsForm = ({

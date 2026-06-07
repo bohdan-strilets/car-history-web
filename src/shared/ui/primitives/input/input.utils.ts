@@ -1,6 +1,7 @@
-import { resolveResponsive } from '@shared/lib/primitives';
+import { resolveResponsive } from '@shared/lib';
 
 import { iconSlot, responsiveStyles, root } from './input.css';
+
 import type { InputClassesParams } from './input.types';
 
 export const useInputClasses = ({

@@ -1,5 +1,6 @@
-import { SEARCH_PARAM_TAB } from '@shared/config';
 import { useSearchParams } from 'react-router-dom';
+
+import { SEARCH_PARAM_TAB } from '@shared/config';
 
 import { DEFAULT_VEHICLE_TAB, VEHICLE_TABS, type VehicleTab } from './vehicle-tabs.config';
 

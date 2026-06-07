@@ -1,9 +1,11 @@
-import { Icons } from '@shared/icons';
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
 import { clsx } from 'clsx';
+
+import { Icons } from '@shared/icons';
+import { baseToken, resolveResponsive } from '@shared/lib';
 
 import { strokeWidthMap } from './icon.config';
 import { responsiveStyles, root } from './icon.css';
+
 import type { IconProps } from './icon.types';
 
 export const Icon = ({

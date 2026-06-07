@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   BODY_TYPE_CONFIG,
   DRIVE_TYPE_CONFIG,
@@ -8,7 +10,6 @@ import {
 import { InfoRow, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section/InfoSection';
-import { useTranslation } from 'react-i18next';
 
 import { VehicleFunFacts } from '../vehicle-fun-facts';
 import { VehicleHero } from '../vehicle-hero';

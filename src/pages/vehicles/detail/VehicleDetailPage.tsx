@@ -1,3 +1,6 @@
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import {
   canDeleteVehicle,
   canEditVehicle,
@@ -10,12 +13,10 @@ import {
 } from '@entities/vehicle';
 import { useWorkspace } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
-import { useAuth } from '@shared/store/auth';
+import { useAuth } from '@shared/store';
 import { Stack, StateView, Tabs } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 export const VehicleDetailPage = () => {
   const { t } = useTranslation();

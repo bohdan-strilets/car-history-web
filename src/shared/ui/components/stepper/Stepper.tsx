@@ -1,7 +1,9 @@
-import { Stack, Text } from '@shared/ui/primitives';
 import { useTranslation } from 'react-i18next';
 
+import { Stack, Text } from '@shared/ui';
+
 import { segment, segmentFill, segments } from './stepper.css';
+
 import type { StepperProps } from './stepper.types';
 
 export const Stepper = ({ currentStep, totalSteps, size, color }: StepperProps) => {

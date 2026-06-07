@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   BODY_TYPE_CONFIG,
   DRIVE_TYPE_CONFIG,
@@ -6,7 +8,6 @@ import {
 } from '@entities/vehicle';
 import { FormFieldCardSelect } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
-import { useTranslation } from 'react-i18next';
 
 import type { VehicleStepProps } from '../model';
 

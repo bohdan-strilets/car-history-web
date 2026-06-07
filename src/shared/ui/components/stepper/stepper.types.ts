@@ -1,6 +1,6 @@
-import type { RecipeVariants } from '@vanilla-extract/recipes';
-
 import { segment, segmentFill } from './stepper.css';
+
+import type { RecipeVariants } from '@vanilla-extract/recipes';
 
 export type StepperSegmentVariants = NonNullable<RecipeVariants<typeof segment>>;
 export type StepperSize = NonNullable<StepperSegmentVariants['size']>;

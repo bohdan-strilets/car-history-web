@@ -1,8 +1,8 @@
-import { WORKSPACE_ROLE_CONFIG } from '@entities/workspace/model';
-import { canEditMember, canRemoveMember } from '@entities/workspace/utils';
+import { useTranslation } from 'react-i18next';
+
+import { WORKSPACE_ROLE_CONFIG, canEditMember, canRemoveMember } from '@entities/workspace';
 import { Avatar, Badge, Button, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
-import { useTranslation } from 'react-i18next';
 
 import type { MemberRowProps } from './member-row.types';
 

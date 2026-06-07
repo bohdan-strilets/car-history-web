@@ -1,12 +1,14 @@
-import { useDismiss } from '@shared/hooks';
-import { Box } from '@shared/ui/primitives';
-import { Portal } from '@shared/ui/primitives/portal';
-import { clsx } from 'clsx';
 import { useRef, useState } from 'react';
 
+import { clsx } from 'clsx';
+
+import { useDismiss } from '@shared/hooks';
+import { Box, Portal } from '@shared/ui';
+
 import { content, root } from './dropdown.css';
-import type { DropdownProps } from './dropdown.types';
 import { useDropdown } from './use-dropdown';
+
+import type { DropdownProps } from './dropdown.types';
 
 export const Dropdown = ({
   trigger,

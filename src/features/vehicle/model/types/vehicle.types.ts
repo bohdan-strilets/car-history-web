@@ -1,10 +1,8 @@
+import type { VehicleFormValues, VehicleSpecsValues } from '../schemes';
+import type { CreateVehicleDto, UpdateVehicleDto } from './vehicle.dto';
 import type { Vehicle, VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
 import type { Control } from 'react-hook-form';
-
-import type { VehicleFormValues, VehicleSpecsValues } from '../schemes';
-
-import type { CreateVehicleDto, UpdateVehicleDto } from './vehicle.dto';
 
 // Params
 

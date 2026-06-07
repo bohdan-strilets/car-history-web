@@ -1,6 +1,6 @@
 import type { IconName } from '@shared/icons';
 import type { ResponsiveValue } from '@shared/types';
-import type { InputSize, InputState } from '@shared/ui/primitives';
+import type { InputSize, InputState } from '@shared/ui';
 
 // Options
 

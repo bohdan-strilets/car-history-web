@@ -1,5 +1,6 @@
-import { vars } from '@shared/styles';
 import { style } from '@vanilla-extract/css';
+
+import { vars } from '@shared/styles';
 
 export const card = style({
   display: 'flex',

@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   CURRENCY_CONFIG,
   DATE_FORMAT_CONFIG,
@@ -5,11 +7,10 @@ import {
   FUEL_UNIT_CONFIG,
   TIMEZONE_CONFIG,
   WORKSPACE_TYPE_CONFIG,
-} from '@entities/workspace/model';
+} from '@entities/workspace';
 import { InfoRow } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section/InfoSection';
-import { useTranslation } from 'react-i18next';
 
 import type { WorkspaceSettingsInfoProps } from './workspace-settings-info.types';
 

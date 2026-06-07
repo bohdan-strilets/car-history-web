@@ -1,9 +1,10 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   useWorkspaceSettingsForm,
   WorkspaceSettingsForm,
   type EditWorkspaceSettingsModalProps,
 } from '@features/workspace';
-import { useTranslation } from 'react-i18next';
 
 export const EditWorkspaceSettingsModal = ({
   workspaceId,

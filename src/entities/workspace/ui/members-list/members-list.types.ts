@@ -1,5 +1,5 @@
 import type { UserId } from '@entities/user';
-import type { WorkspaceInvite, WorkspaceMember, WorkspaceRole } from '@entities/workspace/model';
+import type { WorkspaceInvite, WorkspaceMember, WorkspaceRole } from '@entities/workspace';
 
 export interface MembersListProps {
   members: WorkspaceMember[];

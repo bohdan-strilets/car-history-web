@@ -1,8 +1,9 @@
 import { Button, Heading, IconBox, Panel, Spacer, Stack, Text } from '@shared/ui';
 
 import { content, iconWrapper, wrapper } from './state-view.css';
-import type { StateViewProps } from './state-view.types';
 import { resolvedIcon, resolvedVariant } from './state-view.utils';
+
+import type { StateViewProps } from './state-view.types';
 
 export const StateView = ({
   icon,

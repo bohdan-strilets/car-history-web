@@ -1,10 +1,13 @@
-import { Button, Stack } from '@shared/ui';
-import { clsx } from 'clsx';
 import { useTranslation } from 'react-i18next';
+
+import { clsx } from 'clsx';
+
+import { Button, Stack } from '@shared/ui';
 
 import { FormError } from '../form-error';
 
 import { root } from './form.css';
+
 import type { FormProps } from './form.types';
 
 export const Form = ({

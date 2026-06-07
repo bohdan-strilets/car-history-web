@@ -1,4 +1,4 @@
-import type { WorkspaceMember, WorkspaceRole } from '@entities/workspace/model';
+import type { WorkspaceMember, WorkspaceRole } from '@entities/workspace';
 
 export interface MemberRowProps {
   member: WorkspaceMember;

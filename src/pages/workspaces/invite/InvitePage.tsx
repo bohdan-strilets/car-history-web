@@ -1,9 +1,15 @@
-import { useInviteQuery, useInviteToken } from '@entities/workspace';
+import { useEffect, useState } from 'react';
+
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import {
+  useInviteQuery,
+  useInviteToken,
   useWorkspace,
   WORKSPACE_INVITE_STATUS,
   WORKSPACE_TYPE_CONFIG,
-} from '@entities/workspace/model';
+} from '@entities/workspace';
 import {
   InviteAcceptedState,
   InviteAlreadyAcceptedState,
@@ -16,9 +22,6 @@ import {
 import { ROUTES } from '@shared/config';
 import { Button, Center, Heading, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 export const InvitePage = () => {
   const [isAcceptedSuccess, setIsAcceptedSuccess] = useState(false);

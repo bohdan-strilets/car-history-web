@@ -1,6 +1,7 @@
-import { STORAGE_KEYS } from '@shared/lib/storage';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+
+import { STORAGE_KEYS } from '@shared/lib';
 
 import type { WorkspaceStore } from './workspace.types';
 

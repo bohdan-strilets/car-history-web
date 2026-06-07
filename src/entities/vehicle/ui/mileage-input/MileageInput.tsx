@@ -1,8 +1,9 @@
-import { Hint } from '@shared/ui';
-import { IconBox, Stack, Text } from '@shared/ui/primitives';
 import { useRef } from 'react';
 
+import { Hint, IconBox, Stack, Text } from '@shared/ui';
+
 import { card, nativeInput, valueText } from './mileage-input.css';
+
 import type { MileageInputProps } from './mileage-input.types';
 
 export const MileageInput = ({ value, onChange, hint }: MileageInputProps) => {

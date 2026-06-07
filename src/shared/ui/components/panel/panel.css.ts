@@ -1,5 +1,6 @@
-import { vars } from '@shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { vars } from '@shared/styles';
 
 const { duration, easing } = vars.transition;
 const baseInOut = `${duration.base} ${easing.inOut}`;

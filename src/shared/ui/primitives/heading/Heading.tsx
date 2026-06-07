@@ -1,7 +1,9 @@
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
 import { clsx } from 'clsx';
 
+import { baseToken, resolveResponsive } from '@shared/lib';
+
 import { responsiveStyles, root } from './heading.css';
+
 import type { HeadingProps } from './heading.types';
 
 export const Heading = ({

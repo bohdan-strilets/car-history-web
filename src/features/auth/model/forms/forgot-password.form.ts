@@ -1,13 +1,15 @@
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+
+import { zodResolver } from '@hookform/resolvers/zod';
+
 import {
   createForgotPasswordSchema,
   useForgotPasswordMutation,
   type ForgotPasswordFormParams,
   type ForgotPasswordValues,
 } from '@features/auth';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormErrors } from '@shared/lib/form';
-import { useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
+import { useFormErrors } from '@shared/lib';
 
 export const useForgotPasswordForm = ({ onSuccess }: ForgotPasswordFormParams) => {
   const { t } = useTranslation();

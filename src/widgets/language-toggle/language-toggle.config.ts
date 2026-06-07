@@ -1,4 +1,5 @@
 import { LANGUAGE, type Language } from '@entities/user';
+
 import type { SegmentControlOption } from '@shared/ui';
 
 export const LANGUAGE_CYCLE: Language[] = Object.values(LANGUAGE);

@@ -1,12 +1,9 @@
-import { RegisterForm, useGoogleAuth } from '@features/auth';
-import { ROUTES } from '@shared/config/routes';
-import { Button } from '@shared/ui/primitives/button';
-import { Divider } from '@shared/ui/primitives/divider';
-import { Stack } from '@shared/ui/primitives/stack';
-import { Text } from '@shared/ui/primitives/text';
-import { TextLink } from '@shared/ui/primitives/text-link';
-import { AuthHeader } from '@widgets/auth-header';
 import { useTranslation } from 'react-i18next';
+
+import { RegisterForm, useGoogleAuth } from '@features/auth';
+import { ROUTES } from '@shared/config';
+import { Button, Divider, Stack, Text, TextLink } from '@shared/ui';
+import { AuthHeader } from '@widgets/auth-header';
 
 export const RegisterPage = () => {
   const { t } = useTranslation();

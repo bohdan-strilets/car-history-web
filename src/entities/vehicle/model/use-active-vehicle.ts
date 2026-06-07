@@ -1,9 +1,11 @@
-import { useWorkspace } from '@entities/workspace';
 import { useEffect } from 'react';
+
+import { useWorkspace } from '@entities/workspace';
 
 import { useVehiclesQuery } from '../api';
 
 import { useVehicle } from './use-vehicle';
+
 import type { Vehicle } from './vehicle.types';
 
 export const useActiveVehicle = () => {

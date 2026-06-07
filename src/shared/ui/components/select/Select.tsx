@@ -1,8 +1,10 @@
-import { Dropdown, DropdownItem } from '@shared/ui/components/dropdown';
 import { useState } from 'react';
 
-import type { SelectProps } from './select.types';
+import { Dropdown, DropdownItem } from '@shared/ui';
+
 import { SelectTrigger } from './SelectTrigger';
+
+import type { SelectProps } from './select.types';
 
 export const Select = ({
   options,

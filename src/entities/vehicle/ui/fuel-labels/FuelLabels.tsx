@@ -1,7 +1,8 @@
-import { FUEL_TYPE_CONFIG } from '@entities/vehicle/model';
+import { useTranslation } from 'react-i18next';
+
+import { FUEL_TYPE_CONFIG } from '@entities/vehicle';
 import { Badge, Icon, Stack } from '@shared/ui';
 import { translateConfigOptions } from '@shared/utils';
-import { useTranslation } from 'react-i18next';
 
 import type { FuelLabelsProps } from './fuel-labels.types';
 

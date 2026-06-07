@@ -1,5 +1,5 @@
 import { useActiveVehicle } from '@entities/vehicle';
-import { useAuth } from '@shared/store/auth';
+import { useAuth } from '@shared/store';
 import { Badge, Button, Heading, IconBox, Panel, Stack, Text } from '@shared/ui';
 
 export const DashboardPage = () => {

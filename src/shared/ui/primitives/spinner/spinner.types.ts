@@ -1,7 +1,6 @@
+import type { outerRing, root } from './spinner.css';
 import type { ResponsiveValue } from '@shared/types';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
-
-import type { outerRing, root } from './spinner.css';
 
 export type SpinnerSizeVariants = NonNullable<RecipeVariants<typeof root>>;
 export type SpinnerColorVariants = NonNullable<RecipeVariants<typeof outerRing>>;

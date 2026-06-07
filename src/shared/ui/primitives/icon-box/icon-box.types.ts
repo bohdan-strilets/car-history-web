@@ -1,9 +1,10 @@
-import type { IconName } from '@shared/icons';
-import type { ResponsiveValue } from '@shared/types';
-import type { IconStrokeWidth } from '@shared/ui/primitives/icon';
 import { type RecipeVariants } from '@vanilla-extract/recipes';
 
 import { root } from './icon-box.css';
+
+import type { IconName } from '@shared/icons';
+import type { ResponsiveValue } from '@shared/types';
+import type { IconStrokeWidth } from '@shared/ui';
 
 export type IconBoxVariants = NonNullable<RecipeVariants<typeof root>>;
 export type IconBoxSize = NonNullable<IconBoxVariants['size']>;

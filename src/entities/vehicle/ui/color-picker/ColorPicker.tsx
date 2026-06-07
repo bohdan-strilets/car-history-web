@@ -1,8 +1,10 @@
-import { getContrastColor } from '@shared/lib/css';
-import { Grid, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 
+import { getContrastColor } from '@shared/lib';
+import { Grid, Text } from '@shared/ui';
+
 import { item } from './color-picker.css';
+
 import type { ColorPickerProps } from './color-picker.types';
 
 export const ColorPicker = ({ options, value, onChange }: ColorPickerProps) => {

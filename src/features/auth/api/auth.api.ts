@@ -1,4 +1,3 @@
-import type { User } from '@entities/user';
 import { apiClient } from '@shared/api';
 import { ENDPOINTS } from '@shared/config';
 
@@ -10,6 +9,7 @@ import type {
   RegisterDto,
   ResetPasswordDto,
 } from '../model';
+import type { User } from '@entities/user';
 
 export const authApi = {
   getMe: () => {

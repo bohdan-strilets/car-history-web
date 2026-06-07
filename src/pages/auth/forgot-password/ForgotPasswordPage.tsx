@@ -1,8 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
 import { ForgotPasswordForm, useForgotPassword } from '@features/auth';
-import { ROUTES } from '@shared/config/routes';
+import { ROUTES } from '@shared/config';
 import { Button, Heading, Spinner, Stack, SuccessState, Text, TextLink } from '@shared/ui';
 import { AuthHeader } from '@widgets/auth-header';
-import { useTranslation } from 'react-i18next';
 
 export const ForgotPasswordPage = () => {
   const { t } = useTranslation();

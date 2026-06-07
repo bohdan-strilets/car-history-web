@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   useDeleteWorkspace,
   useEditWorkspace,
@@ -5,7 +7,6 @@ import {
   useLeaveWorkspace,
 } from '@features/workspace';
 import { Button, Stack, Text } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
 
 import { WorkspaceSettingsInfo, WorkspaceSettingsSkeleton } from '../workspace-settings-info';
 

@@ -1,7 +1,9 @@
-import { Button, Icon, Stack, Text } from '@shared/ui/primitives';
 import { useTranslation } from 'react-i18next';
 
+import { Button, Icon, Stack, Text } from '@shared/ui';
+
 import { body, handle, handleBar, header, modal, root } from '../modal.css';
+
 import type { BaseBottomSheetProps } from '../model';
 
 export const BaseBottomSheet = ({

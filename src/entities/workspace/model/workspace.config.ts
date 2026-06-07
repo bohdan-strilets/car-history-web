@@ -1,5 +1,3 @@
-import type { EntityOption } from '@shared/types';
-
 import {
   CURRENCY,
   DATE_FORMAT,
@@ -15,6 +13,8 @@ import {
   type WorkspaceRole,
   type WorkspaceType,
 } from './workspace.constants';
+
+import type { EntityOption } from '@shared/types';
 
 // Workspace
 

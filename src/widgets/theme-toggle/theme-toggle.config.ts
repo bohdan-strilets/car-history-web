@@ -1,4 +1,5 @@
 import { THEME, type Theme } from '@entities/user';
+
 import type { IconName } from '@shared/icons';
 import type { SegmentControlOption } from '@shared/ui';
 

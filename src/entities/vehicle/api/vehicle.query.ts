@@ -1,5 +1,6 @@
-import { queryKeys } from '@shared/config';
 import { useQuery } from '@tanstack/react-query';
+
+import { queryKeys } from '@shared/config';
 
 import { vehicleApi } from './vehicle.api';
 

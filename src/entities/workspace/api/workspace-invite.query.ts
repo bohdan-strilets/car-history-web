@@ -1,9 +1,10 @@
-import { queryKeys } from '@shared/config';
 import { useQuery } from '@tanstack/react-query';
 
-import type { InviteToken } from '../model';
+import { queryKeys } from '@shared/config';
 
 import { workspaceApi } from './workspace.api';
+
+import type { InviteToken } from '../model';
 
 // Get invite by token
 

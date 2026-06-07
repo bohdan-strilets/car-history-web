@@ -1,10 +1,13 @@
-import type { RegisterDto } from '@features/auth/model';
-import { ROUTES } from '@shared/config/routes';
-import { authService } from '@shared/store/auth';
-import { useMutation } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 
+import { useMutation } from '@tanstack/react-query';
+
+import { ROUTES } from '@shared/config';
+import { authService } from '@shared/store';
+
 import { authApi } from '../auth.api';
+
+import type { RegisterDto } from '@features/auth';
 
 export const useRegisterMutation = () => {
   const navigate = useNavigate();

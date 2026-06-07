@@ -1,6 +1,5 @@
-import type { Vehicle } from '@entities/vehicle';
-
 import type { DescriptionValues, VehicleFormValues, VehicleSpecsValues } from '../schemes';
+import type { Vehicle } from '@entities/vehicle';
 
 // Get default values for edit vehicle specs form
 

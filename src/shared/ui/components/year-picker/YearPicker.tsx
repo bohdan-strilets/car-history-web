@@ -1,8 +1,9 @@
 import { VehicleConstraints } from '@entities/vehicle';
 import { APP_CONSTANTS } from '@shared/config';
-import { Button, Divider, Grid, Stack } from '@shared/ui/primitives';
+import { Button, Divider, Grid, Stack } from '@shared/ui';
 
 import { useYearPicker } from './use-year-picker';
+
 import type { YearPickerProps } from './year-picker.types';
 
 export const YearPicker = ({

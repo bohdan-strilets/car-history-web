@@ -1,10 +1,11 @@
-import { ResetPasswordForm } from '@features/auth';
-import { ROUTES, SEARCH_PARAM_TOKEN } from '@shared/config';
-import { showToast } from '@shared/lib/toast';
-import { Stack } from '@shared/ui';
-import { AuthHeader } from '@widgets/auth-header';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+
+import { ResetPasswordForm } from '@features/auth';
+import { ROUTES, SEARCH_PARAM_TOKEN } from '@shared/config';
+import { showToast } from '@shared/lib';
+import { Stack } from '@shared/ui';
+import { AuthHeader } from '@widgets/auth-header';
 
 export const ResetPasswordPage = () => {
   const { t } = useTranslation();

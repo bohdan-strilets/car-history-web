@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   Form,
   FormFieldCheckbox,
@@ -6,7 +8,6 @@ import {
   Stack,
   Text,
 } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
 
 import type { VehicleSpecsFormProps } from '../model';
 

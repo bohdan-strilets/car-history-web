@@ -1,9 +1,11 @@
-import { useInitQuery } from '@features/auth/api';
-import { ROUTES } from '@shared/config/routes';
-import { authService } from '@shared/store/auth';
-import { Spinner, Stack } from '@shared/ui';
 import { useEffect } from 'react';
+
 import { useNavigate, useSearchParams } from 'react-router-dom';
+
+import { useInitQuery } from '@features/auth';
+import { ROUTES } from '@shared/config';
+import { authService } from '@shared/store';
+import { Spinner, Stack } from '@shared/ui';
 
 export const GoogleCallbackPage = () => {
   const [searchParams] = useSearchParams();

@@ -1,6 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 import { FuelLabels } from '@entities/vehicle';
 import { Badge, Grid, Heading, Panel, Stack, Text } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
 
 import type { VehicleHeroProps } from './vehicle-hero.types';
 

@@ -1,15 +1,15 @@
-import { useWorkspace, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
-import { useWorkspacesQuery } from '@entities/workspace/api';
-import { useLogout } from '@features/auth';
-import { ROUTES } from '@shared/config';
-import { useAuth } from '@shared/store/auth';
-import { Avatar, IconBox, Panel, Stack, Text } from '@shared/ui';
-import { Dropdown, DropdownItem } from '@shared/ui/components/dropdown';
-import { LanguageToggle } from '@widgets/language-toggle';
-import { ThemeToggle } from '@widgets/theme-toggle';
 import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import { useWorkspace, useWorkspacesQuery, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
+import { useLogout } from '@features/auth';
+import { ROUTES } from '@shared/config';
+import { useAuth } from '@shared/store';
+import { Avatar, Dropdown, DropdownItem, IconBox, Panel, Stack, Text } from '@shared/ui';
+import { LanguageToggle } from '@widgets/language-toggle';
+import { ThemeToggle } from '@widgets/theme-toggle';
 
 export const HeaderBar = () => {
   const { t } = useTranslation();

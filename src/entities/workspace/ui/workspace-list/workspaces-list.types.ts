@@ -1,4 +1,4 @@
-import type { Workspace } from '@entities/workspace/model';
+import type { Workspace } from '@entities/workspace';
 
 export type WorkspacesListProps = {
   workspaces: Workspace[];

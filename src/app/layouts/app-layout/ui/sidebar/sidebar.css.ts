@@ -1,6 +1,7 @@
-import { media, vars } from '@shared/styles';
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { media, vars } from '@shared/styles';
 
 const { duration, easing } = vars.transition;
 const slowInOut = `${duration.slow} ${easing.inOut}`;

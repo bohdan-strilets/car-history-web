@@ -1,5 +1,6 @@
-import { Button, Stack, Text } from '@shared/ui/primitives';
 import { useTranslation } from 'react-i18next';
+
+import { Button, Stack, Text } from '@shared/ui';
 
 import type { ConfirmModalProps } from '../model';
 

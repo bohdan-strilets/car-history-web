@@ -1,5 +1,6 @@
-import { Box, Chevron, Icon, Stack, Text, useInputClasses } from '@shared/ui/primitives';
 import clsx from 'clsx';
+
+import { Box, Chevron, Icon, Stack, Text, useInputClasses } from '@shared/ui';
 
 import type { SelectTriggerProps } from './select.types';
 

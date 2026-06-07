@@ -1,4 +1,4 @@
-import { Input, Text } from '@shared/ui/primitives';
+import { Input, Text } from '@shared/ui';
 
 import type { NumberInputProps } from './number-input.types';
 

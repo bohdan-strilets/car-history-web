@@ -1,12 +1,11 @@
-import { useWorkspace, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
-import { useWorkspacesQuery } from '@entities/workspace/api';
-import { ROUTES } from '@shared/config';
-import { Panel } from '@shared/ui';
-import { Dropdown, DropdownItem } from '@shared/ui/components/dropdown';
-import { IconBox, Stack, Text } from '@shared/ui/primitives';
 import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import { useWorkspace, useWorkspacesQuery, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
+import { ROUTES } from '@shared/config';
+import { Dropdown, DropdownItem, IconBox, Panel, Stack, Text } from '@shared/ui';
 
 import type { WorkspaceSwitcherProps } from './workspace-switcher.types';
 

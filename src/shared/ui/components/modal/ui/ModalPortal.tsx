@@ -1,4 +1,4 @@
-import { Portal } from '@shared/ui/primitives';
+import { Portal } from '@shared/ui';
 
 import type { ModalPortalProps } from '../model';
 

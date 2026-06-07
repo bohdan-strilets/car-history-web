@@ -1,3 +1,6 @@
+import { useWatch } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+
 import { VEHICLE_POPULAR_BRANDS_CONFIG } from '@entities/vehicle';
 import {
   FormFieldCardSelect,
@@ -5,8 +8,6 @@ import {
   FormFieldInput,
   FormFieldYearPicker,
 } from '@shared/ui';
-import { useWatch } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 
 import { getBrandOptions, getModelOptions, type VehicleStepProps } from '../model';
 

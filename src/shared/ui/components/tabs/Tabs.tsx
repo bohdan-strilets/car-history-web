@@ -1,5 +1,5 @@
 import { useMediaQuery } from '@shared/hooks';
-import { ScrollView, SegmentControl } from '@shared/ui/primitives';
+import { ScrollView, SegmentControl } from '@shared/ui';
 
 import type { TabsProps } from './tabs.types';
 

@@ -1,6 +1,7 @@
 import { clsx } from 'clsx';
 
 import { root } from './scroll-view.css';
+
 import type { ScrollViewProps } from './scroll-view.types';
 
 export const ScrollView = ({

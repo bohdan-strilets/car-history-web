@@ -1,8 +1,10 @@
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
-import { Icon } from '@shared/ui/primitives/icon';
 import { clsx } from 'clsx';
 
+import { baseToken, resolveResponsive } from '@shared/lib';
+import { Icon } from '@shared/ui';
+
 import { responsiveStyles, root } from './icon-box.css';
+
 import type { IconBoxProps } from './icon-box.types';
 
 export const IconBox = ({

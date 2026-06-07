@@ -1,10 +1,13 @@
-import { mergeRefs } from '@shared/utils';
-import { clsx } from 'clsx';
 import { forwardRef, useCallback } from 'react';
 
+import { clsx } from 'clsx';
+
+import { mergeRefs } from '@shared/utils';
+
 import { nativeTextarea, root } from './textarea.css';
-import type { TextareaProps } from './textarea.types';
 import { useAutoResize } from './use-auto-resize';
+
+import type { TextareaProps } from './textarea.types';
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ size, resize, state, className, disabled, maxRows, rows = 3, onChange, ...rest }, ref) => {

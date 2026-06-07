@@ -1,4 +1,4 @@
-import { Icon, Text } from '@shared/ui/primitives';
+import { Icon, Text } from '@shared/ui';
 
 import { Panel } from '../panel';
 

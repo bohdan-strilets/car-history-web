@@ -1,8 +1,8 @@
 import { useMutation } from '@tanstack/react-query';
 
-import type { UpdateUserSettingsDto } from '../model';
-
 import { userApi } from './user.api';
+
+import type { UpdateUserSettingsDto } from '../model';
 
 export const useUpdateUserSettingsMutation = () =>
   useMutation({

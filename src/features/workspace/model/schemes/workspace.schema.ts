@@ -1,6 +1,8 @@
-import { WORKSPACE_TYPE, WorkspaceConstraints } from '@entities/workspace';
-import type { TFunction } from 'i18next';
 import { z } from 'zod';
+
+import { WORKSPACE_TYPE, WorkspaceConstraints } from '@entities/workspace';
+
+import type { TFunction } from 'i18next';
 
 export const createWorkspaceSchema = (t: TFunction) =>
   z.object({

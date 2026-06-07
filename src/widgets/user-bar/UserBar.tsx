@@ -1,11 +1,12 @@
-import { useLogout } from '@features/auth';
-import { ROUTES } from '@shared/config';
-import { useAuth } from '@shared/store/auth';
-import { Avatar, Panel, Stack, Text } from '@shared/ui';
-import { Dropdown, DropdownItem } from '@shared/ui/components/dropdown';
 import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import { useLogout } from '@features/auth';
+import { ROUTES } from '@shared/config';
+import { useAuth } from '@shared/store';
+import { Avatar, Dropdown, DropdownItem, Panel, Stack, Text } from '@shared/ui';
 
 import type { UserBarProps } from './user-bar.types';
 

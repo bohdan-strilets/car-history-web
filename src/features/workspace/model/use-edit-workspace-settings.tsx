@@ -1,8 +1,10 @@
-import type { WorkspaceSettings } from '@entities/workspace';
-import { useModal } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 
+import { useModal } from '@shared/ui';
+
 import { EditWorkspaceSettingsModal } from '../ui';
+
+import type { WorkspaceSettings } from '@entities/workspace';
 
 export const useEditWorkspaceSettings = () => {
   const { t } = useTranslation();

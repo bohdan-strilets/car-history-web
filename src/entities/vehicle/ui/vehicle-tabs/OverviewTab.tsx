@@ -1,6 +1,7 @@
+import { useNavigate } from 'react-router-dom';
+
 import { useEditVehicleDescription } from '@features/vehicle';
 import { ROUTES } from '@shared/config';
-import { useNavigate } from 'react-router-dom';
 
 import { VehicleActions } from '../vehicle-actions';
 import { VehicleOverview } from '../vehicle-overview';

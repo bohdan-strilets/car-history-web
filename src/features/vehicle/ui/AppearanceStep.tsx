@@ -1,6 +1,7 @@
-import { VEHICLE_COLORS_CONFIG } from '@entities/vehicle';
-import { FormFieldColorPicker, FormFieldTextarea } from '@shared/ui/components';
 import { useTranslation } from 'react-i18next';
+
+import { VEHICLE_COLORS_CONFIG } from '@entities/vehicle';
+import { FormFieldColorPicker, FormFieldTextarea } from '@shared/ui';
 
 import type { VehicleStepProps } from '../model';
 

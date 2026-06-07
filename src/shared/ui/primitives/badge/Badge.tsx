@@ -1,12 +1,15 @@
-import { resolveResponsive } from '@shared/lib/primitives';
-import { clsx } from 'clsx';
 import { type ElementType } from 'react';
+
+import { clsx } from 'clsx';
+
+import { resolveResponsive } from '@shared/lib';
 
 import { Icon } from '../icon';
 
 import { responsiveStyles, root } from './badge.css';
-import type { BadgeProps } from './badge.types';
 import { iconSizeMap } from './badge.utils';
+
+import type { BadgeProps } from './badge.types';
 
 export const Badge = <T extends ElementType = 'span'>({
   as,

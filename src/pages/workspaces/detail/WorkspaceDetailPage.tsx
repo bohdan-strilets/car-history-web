@@ -1,3 +1,8 @@
+import { useEffect } from 'react';
+
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import { useVehiclesQuery } from '@entities/vehicle';
 import {
   canDeleteWorkspace,
@@ -17,13 +22,10 @@ import {
   WorkspaceDetailSkeleton,
 } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
-import { useAuth } from '@shared/store/auth';
+import { useAuth } from '@shared/store';
 import { Stack, StateView, Tabs } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
-import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 export const WorkspaceDetailPage = () => {
   const { t } = useTranslation();

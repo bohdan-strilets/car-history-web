@@ -1,5 +1,6 @@
-import { vars } from '@shared/styles';
 import { style } from '@vanilla-extract/css';
+
+import { vars } from '@shared/styles';
 
 const { duration, easing } = vars.transition;
 const fastInOut = `${duration.fast} ${easing.inOut}`;

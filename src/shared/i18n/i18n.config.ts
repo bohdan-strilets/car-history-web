@@ -1,6 +1,8 @@
-import { storage, STORAGE_KEYS } from '@shared/lib/storage';
-import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+
+import i18n from 'i18next';
+
+import { storage, STORAGE_KEYS } from '@shared/lib';
 
 import { DEFAULT_LANGUAGE } from './i18n.constants';
 import { resources } from './i18n.resources';

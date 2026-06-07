@@ -1,9 +1,10 @@
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import { VehiclesList, VehiclesListSkeleton } from '@entities/vehicle';
 import { ROUTES } from '@shared/config';
 import { Stack, StateView } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 import type { VehiclesTabProps } from './workspace-tabs.types';
 

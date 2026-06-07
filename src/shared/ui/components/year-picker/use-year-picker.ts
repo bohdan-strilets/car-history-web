@@ -1,9 +1,11 @@
-import { VehicleConstraints } from '@entities/vehicle';
-import { APP_CONSTANTS } from '@shared/config';
 import { useState } from 'react';
 
-import type { YearPickerParams } from './year-picker.types';
+import { VehicleConstraints } from '@entities/vehicle';
+import { APP_CONSTANTS } from '@shared/config';
+
 import { getDecades } from './year-picker.utils';
+
+import type { YearPickerParams } from './year-picker.types';
 
 export const useYearPicker = ({
   value,

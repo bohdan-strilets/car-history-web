@@ -1,11 +1,13 @@
-import { useWorkspace, type Workspace } from '@entities/workspace';
-import { useWorkspaceForm, WorkspaceForm } from '@features/workspace';
 import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
-import type { WorkspaceStepProps } from '../model';
+import { useWorkspace, type Workspace } from '@entities/workspace';
+import { useWorkspaceForm, WorkspaceForm } from '@features/workspace';
 
 import { StepSuccess } from './StepSuccess';
+
+import type { WorkspaceStepProps } from '../model';
 
 export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
   const { t } = useTranslation();

@@ -1,8 +1,10 @@
-import { useFillSpecsAiMutation } from '@features/vehicle/api';
-import { Button, Heading, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 
+import { useFillSpecsAiMutation } from '@features/vehicle';
+import { Button, Heading, IconBox, Panel, Stack, Text } from '@shared/ui';
+
 import { pulseButton } from './vehicle-ai-fill.css';
+
 import type { VehicleAiFillProps } from './vehicle-ai-fill.types';
 
 export const VehicleAiFill = ({ vehicleId, workspaceId, onFill }: VehicleAiFillProps) => {

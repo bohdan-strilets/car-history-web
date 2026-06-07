@@ -1,7 +1,7 @@
-import { useMediaQuery } from '@shared/hooks';
-import { BaseBottomSheet, BaseModal, ModalPortal, useModalStore } from '@shared/ui';
-import { Overlay } from '@shared/ui/primitives';
 import { useEffect, type PropsWithChildren } from 'react';
+
+import { useMediaQuery } from '@shared/hooks';
+import { BaseBottomSheet, BaseModal, ModalPortal, Overlay, useModalStore } from '@shared/ui';
 
 export const ModalProvider = ({ children }: PropsWithChildren) => {
   const { stack, closeLast, close } = useModalStore();

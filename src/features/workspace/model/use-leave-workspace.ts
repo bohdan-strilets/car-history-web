@@ -1,8 +1,9 @@
-import { useLeaveWorkspaceMutation } from '@features/workspace/api';
-import { ROUTES } from '@shared/config';
-import { useConfirmModal } from '@shared/lib/modal';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import { useLeaveWorkspaceMutation } from '@features/workspace';
+import { ROUTES } from '@shared/config';
+import { useConfirmModal } from '@shared/lib/modal';
 
 import type { LeaveWorkspaceParams } from './types';
 

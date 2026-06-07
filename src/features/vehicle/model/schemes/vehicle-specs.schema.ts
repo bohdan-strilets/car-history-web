@@ -1,6 +1,8 @@
-import { VehicleConstraints } from '@entities/vehicle';
-import type { TFunction } from 'i18next';
 import z from 'zod';
+
+import { VehicleConstraints } from '@entities/vehicle';
+
+import type { TFunction } from 'i18next';
 
 const positiveInt = (t: TFunction) => {
   return z.number().int(t('validation.MUST_BE_INTEGER')).positive(t('validation.MUST_BE_POSITIVE'));

@@ -1,8 +1,10 @@
-import type { WorkspaceMember } from '@entities/workspace';
-import { useRemoveMemberMutation } from '@features/workspace/api';
+import { useTranslation } from 'react-i18next';
+
+import { useRemoveMemberMutation } from '@features/workspace';
 import { useConfirmModal } from '@shared/lib/modal';
 import { useModal } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
+
+import type { WorkspaceMember } from '@entities/workspace';
 
 export const useRemoveMember = (workspaceId: string) => {
   const { t } = useTranslation();

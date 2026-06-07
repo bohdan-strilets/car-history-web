@@ -1,9 +1,11 @@
-import type { IconName } from '@shared/icons';
-import type { ResponsiveValue } from '@shared/types';
-import { type RecipeVariants } from '@vanilla-extract/recipes';
 import { type ComponentPropsWithoutRef, type ElementType } from 'react';
 
+import { type RecipeVariants } from '@vanilla-extract/recipes';
+
 import { root } from './badge.css';
+
+import type { IconName } from '@shared/icons';
+import type { ResponsiveValue } from '@shared/types';
 
 export type BadgeVariants = NonNullable<RecipeVariants<typeof root>>;
 

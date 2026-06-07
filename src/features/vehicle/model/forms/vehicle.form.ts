@@ -1,3 +1,10 @@
+import { useState } from 'react';
+
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+
+import { zodResolver } from '@hookform/resolvers/zod';
+
 import {
   createVehicleFormSchema,
   useCreateVehicleMutation,
@@ -6,11 +13,7 @@ import {
   type VehicleFormParams,
   type VehicleFormValues,
 } from '@features/vehicle';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormErrors } from '@shared/lib/form';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
+import { useFormErrors } from '@shared/lib';
 
 export const useVehicleForm = ({ workspaceId, onSuccess }: VehicleFormParams) => {
   const [currentStep, setCurrentStep] = useState(1);

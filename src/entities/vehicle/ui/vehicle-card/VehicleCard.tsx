@@ -1,13 +1,14 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   BODY_TYPE_CONFIG,
   DRIVE_TYPE_CONFIG,
   FuelLabels,
   TRANSMISSION_CONFIG,
 } from '@entities/vehicle';
-import { useAuth } from '@shared/store/auth';
+import { useAuth } from '@shared/store';
 import { Avatar, Badge, Box, Icon, Panel, Stack, Surface, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
-import { useTranslation } from 'react-i18next';
 
 import type { VehicleCardProps } from './vehicle-card.types';
 

@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import {
   AppearanceStep,
   RegistrationStep,
@@ -7,7 +9,6 @@ import {
   type VehicleFormProps,
 } from '@features/vehicle';
 import { Form, Stack, Stepper } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
 
 import { BasicInfoStep } from './BasicInfoStep';
 import { MileageStep } from './MileageStep';

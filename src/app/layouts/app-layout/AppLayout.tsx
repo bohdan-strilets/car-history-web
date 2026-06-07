@@ -1,5 +1,6 @@
-import { ModalProvider } from '@app/providers';
 import { Outlet } from 'react-router-dom';
+
+import { ModalProvider } from '@app/providers';
 
 import { contentWrapper, main, root } from './app-layout.css';
 import { useSidebar } from './model';

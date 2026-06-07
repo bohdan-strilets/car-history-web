@@ -1,7 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 import { WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
 import { Form, FormFieldCardSelect, FormFieldInput } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
-import { useTranslation } from 'react-i18next';
 
 import type { WorkspaceFormProps } from '../model';
 

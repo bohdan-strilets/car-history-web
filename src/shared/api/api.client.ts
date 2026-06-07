@@ -1,7 +1,7 @@
-import type { AxiosRequestConfig } from 'axios';
+import { axiosInstance } from './axios-instance';
 
 import type { ApiPaginatedResponse, ApiResponse } from './api.types';
-import { axiosInstance } from './axios-instance';
+import type { AxiosRequestConfig } from 'axios';
 
 export const apiClient = {
   async get<T>(url: string, config?: AxiosRequestConfig): Promise<ApiResponse<T>> {

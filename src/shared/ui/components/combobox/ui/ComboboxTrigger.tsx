@@ -1,4 +1,4 @@
-import { Chevron, Input } from '@shared/ui/primitives';
+import { Chevron, Input } from '@shared/ui';
 
 import type { ComboboxTriggerProps } from '../model';
 

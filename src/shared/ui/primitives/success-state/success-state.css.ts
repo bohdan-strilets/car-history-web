@@ -1,5 +1,6 @@
-import { vars } from '@shared/styles';
 import { keyframes, style } from '@vanilla-extract/css';
+
+import { vars } from '@shared/styles';
 
 const pulseAnimation = keyframes({
   '0%': {

@@ -1,5 +1,6 @@
-import { Box, Logo, Stack } from '@shared/ui';
 import { Outlet } from 'react-router-dom';
+
+import { Box, Logo, Stack } from '@shared/ui';
 
 import { container, logoWrapper, wrapper } from './form-side.css';
 

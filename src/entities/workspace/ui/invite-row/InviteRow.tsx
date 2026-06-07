@@ -1,5 +1,6 @@
-import { Avatar, Badge, Button, Panel, Stack, Text } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { Avatar, Badge, Button, Panel, Stack, Text } from '@shared/ui';
 
 import type { InviteRowProps } from './invite-row.types';
 

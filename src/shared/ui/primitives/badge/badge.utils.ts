@@ -1,5 +1,4 @@
 import type { IconSize } from '../icon';
-
 import type { BadgeSize } from './badge.types';
 
 export const iconSizeMap: Record<BadgeSize, IconSize> = {

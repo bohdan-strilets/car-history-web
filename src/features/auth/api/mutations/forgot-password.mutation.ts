@@ -1,7 +1,8 @@
-import type { ForgotPasswordDto, ForgotPasswordFormProps } from '@features/auth/model';
 import { useMutation } from '@tanstack/react-query';
 
 import { authApi } from '../auth.api';
+
+import type { ForgotPasswordDto, ForgotPasswordFormProps } from '@features/auth';
 
 export const useForgotPasswordMutation = ({ onSuccess }: ForgotPasswordFormProps) => {
   return useMutation({

@@ -1,5 +1,6 @@
-import { vars } from '@shared/styles';
 import { useEffect, useRef, useState } from 'react';
+
+import { vars } from '@shared/styles';
 
 import type { Coords, DropdownParams } from './dropdown.types';
 

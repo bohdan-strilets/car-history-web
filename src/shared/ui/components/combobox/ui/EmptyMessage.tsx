@@ -1,5 +1,6 @@
-import { Text } from '@shared/ui/primitives';
 import { useTranslation } from 'react-i18next';
+
+import { Text } from '@shared/ui';
 
 import type { EmptyMessageProps } from '../model';
 

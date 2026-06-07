@@ -1,5 +1,6 @@
-import { breakpoints, type Breakpoint } from '@shared/styles';
 import { useEffect, useState } from 'react';
+
+import { breakpoints, type Breakpoint } from '@shared/styles';
 
 export const useMediaQuery = (breakpoint: Breakpoint, direction: 'up' | 'down'): boolean => {
   const value = breakpoints[breakpoint];

@@ -1,5 +1,6 @@
-import { Form, FormFieldInput, FormFieldPasswordInput } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { Form, FormFieldInput, FormFieldPasswordInput } from '@shared/ui';
 
 import { useRegisterForm } from '../model';
 

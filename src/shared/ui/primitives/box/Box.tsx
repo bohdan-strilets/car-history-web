@@ -1,8 +1,11 @@
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
-import { clsx } from 'clsx';
 import { type ElementType } from 'react';
 
+import { clsx } from 'clsx';
+
+import { baseToken, resolveResponsive } from '@shared/lib';
+
 import { responsiveStyles, root } from './box.css';
+
 import type { BoxProps } from './box.types';
 
 export const Box = <T extends ElementType = 'div'>({

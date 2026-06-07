@@ -1,5 +1,6 @@
-import { vars } from '@shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { vars } from '@shared/styles';
 
 export const root = recipe({
   base: {

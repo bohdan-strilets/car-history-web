@@ -1,8 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
 import { useResendConfirmationMutation } from '@features/auth';
 import { APP_CONSTANTS } from '@shared/config';
 import { useCooldown, useEmailVerified } from '@shared/hooks';
 import { Box, Button, Icon, Stack, Surface, Text } from '@shared/ui';
-import { useTranslation } from 'react-i18next';
 
 export const EmailVerificationBanner = () => {
   const { t } = useTranslation();

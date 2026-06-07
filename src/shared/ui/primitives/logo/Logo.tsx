@@ -1,8 +1,10 @@
-import logoSrc from '@shared/assets/arvino-logo.png';
-import { baseToken, resolveResponsive } from '@shared/lib/primitives';
 import { clsx } from 'clsx';
 
+import logoSrc from '@shared/assets/arvino-logo.png';
+import { baseToken, resolveResponsive } from '@shared/lib';
+
 import { icon, responsiveStyles, root, text } from './logo.css';
+
 import type { LogoProps } from './logo.types';
 
 export const Logo = ({ variant = 'full', size, className }: LogoProps) => {

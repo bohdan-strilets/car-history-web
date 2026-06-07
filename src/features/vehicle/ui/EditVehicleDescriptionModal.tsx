@@ -1,5 +1,6 @@
-import { Form, FormFieldTextarea } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
+
+import { Form, FormFieldTextarea } from '@shared/ui';
 
 import { useEditVehicleDescriptionForm, type EditVehicleDescriptionModalProps } from '../model';
 

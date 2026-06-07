@@ -1,7 +1,8 @@
-import { THEME } from '@entities/user';
-import { STORAGE_KEYS } from '@shared/lib/storage';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+
+import { THEME } from '@entities/user';
+import { STORAGE_KEYS } from '@shared/lib';
 
 import type { ThemeStore } from './theme.types';
 

@@ -24,18 +24,47 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
     },
+    settings: {
+      'import-x/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+        },
+      },
+      'import-x/internal-regex': '^@(app|pages|widgets|features|entities|shared|config)/',
+    },
     rules: {
       'prettier/prettier': 'warn',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'import-x/no-duplicates': 'error',
       'import-x/order': [
         'warn',
         {
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+          groups: [
+            'builtin',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'object',
+            'type',
+          ],
+          pathGroups: [
+            { pattern: 'react', group: 'external', position: 'before' },
+            { pattern: 'react-*', group: 'external', position: 'before' },
+            { pattern: '@app/**', group: 'internal' },
+            { pattern: '@config/**', group: 'internal' },
+            { pattern: '@entities/**', group: 'internal' },
+            { pattern: '@features/**', group: 'internal' },
+            { pattern: '@pages/**', group: 'internal' },
+            { pattern: '@shared/**', group: 'internal' },
+            { pattern: '@widgets/**', group: 'internal' },
+          ],
+          pathGroupsExcludedImportTypes: ['react', 'react-*', 'type'],
           'newlines-between': 'always',
           alphabetize: { order: 'asc', caseInsensitive: true },
         },
       ],
-      'import-x/no-duplicates': 'error',
     },
   },
 ]);

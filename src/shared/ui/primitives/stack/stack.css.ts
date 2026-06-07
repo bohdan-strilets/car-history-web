@@ -1,6 +1,7 @@
-import { createResponsiveStyles } from '@shared/lib/primitives';
-import { vars } from '@shared/styles';
 import { recipe } from '@vanilla-extract/recipes';
+
+import { createResponsiveStyles } from '@shared/lib';
+import { vars } from '@shared/styles';
 
 import { direction, wrap } from './stack.config';
 

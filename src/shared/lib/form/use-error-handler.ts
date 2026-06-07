@@ -1,8 +1,10 @@
-import { getErrorCode } from '@shared/api';
-import type { ParseKeys } from 'i18next';
 import { useTranslation } from 'react-i18next';
 
+import { getErrorCode } from '@shared/api';
+
 import { showToast } from '../toast';
+
+import type { ParseKeys } from 'i18next';
 
 export const useErrorHandler = () => {
   const { t } = useTranslation();

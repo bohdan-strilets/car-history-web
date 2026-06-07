@@ -1,11 +1,11 @@
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+
 import { useVehicleParams, useVehicleQuery, VehicleSpecsFormSkeleton } from '@entities/vehicle';
-import { useEditVehicleSpecsForm } from '@features/vehicle';
-import { VehicleSpecsForm } from '@features/vehicle/ui';
+import { useEditVehicleSpecsForm, VehicleSpecsForm } from '@features/vehicle';
 import { ROUTES } from '@shared/config';
 import { Stack, StateView } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 export const VehicleEditSpecsPage = () => {
   const { t } = useTranslation();

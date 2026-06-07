@@ -1,13 +1,3 @@
-import type {
-  InviteId,
-  InviteToken,
-  MemberId,
-  Workspace,
-  WorkspaceId,
-  WorkspaceInvite,
-  WorkspaceMember,
-  WorkspaceSettings,
-} from '@entities/workspace';
 import { apiClient } from '@shared/api';
 import { ENDPOINTS } from '@shared/config';
 
@@ -18,6 +8,16 @@ import type {
   UpdateWorkspaceDto,
   UpdateWorkspaceSettingsDto,
 } from '../model';
+import type {
+  InviteId,
+  InviteToken,
+  MemberId,
+  Workspace,
+  WorkspaceId,
+  WorkspaceInvite,
+  WorkspaceMember,
+  WorkspaceSettings,
+} from '@entities/workspace';
 
 export const workspaceApi = {
   create: (dto: CreateWorkspaceDto) => {

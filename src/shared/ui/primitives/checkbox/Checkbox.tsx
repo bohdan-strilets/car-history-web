@@ -1,10 +1,13 @@
-import { mergeRefs } from '@shared/utils';
-import { clsx } from 'clsx';
 import { forwardRef, useEffect, useRef } from 'react';
+
+import { clsx } from 'clsx';
+
+import { mergeRefs } from '@shared/utils';
 
 import { Icon } from '../icon';
 
 import { iconSlot, labelText, nativeInput, root, wrapper } from './checkbox.css';
+
 import type { CheckboxProps } from './checkbox.types';
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(

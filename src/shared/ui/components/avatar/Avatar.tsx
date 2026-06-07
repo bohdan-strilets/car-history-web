@@ -1,9 +1,11 @@
-import { clsx } from 'clsx';
 import { useState } from 'react';
 
+import { clsx } from 'clsx';
+
 import { root } from './avatar.css';
-import type { AvatarProps } from './avatar.types';
 import { getInitials } from './avatar.utils';
+
+import type { AvatarProps } from './avatar.types';
 
 export const Avatar = ({
   firstName,

@@ -1,8 +1,8 @@
 import { LANGUAGE, THEME } from '@entities/user';
-import type { CardSelectOption } from '@shared/ui';
-import type { ParseKeys } from 'i18next';
 
 import type { OnboardingStep } from './onboarding.types';
+import type { CardSelectOption } from '@shared/ui';
+import type { ParseKeys } from 'i18next';
 
 // Onboarding
 

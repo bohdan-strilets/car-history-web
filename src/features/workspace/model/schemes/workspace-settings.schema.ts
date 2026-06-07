@@ -1,6 +1,8 @@
-import { CURRENCY, DATE_FORMAT, DISTANCE_UNIT, FUEL_UNIT } from '@entities/workspace';
-import type { TFunction } from 'i18next';
 import { z } from 'zod';
+
+import { CURRENCY, DATE_FORMAT, DISTANCE_UNIT, FUEL_UNIT } from '@entities/workspace';
+
+import type { TFunction } from 'i18next';
 
 export const createWorkspaceSettingsSchema = (t: TFunction) =>
   z.object({

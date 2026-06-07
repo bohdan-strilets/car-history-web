@@ -1,6 +1,7 @@
-import { ROUTES } from '@shared/config/routes';
-import { useAuth } from '@shared/store/auth';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
+
+import { ROUTES } from '@shared/config';
+import { useAuth } from '@shared/store';
 
 export const ProtectedRoute = () => {
   const { isAuthenticated, user } = useAuth();

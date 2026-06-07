@@ -1,3 +1,5 @@
+import type { WorkspaceSettingsValues, WorkspaceValues } from '../schemes';
+import type { UpdateMemberRoleDto, UpdateWorkspaceSettingsDto } from './workspace.dto';
 import type {
   MemberId,
   Workspace,
@@ -6,10 +8,6 @@ import type {
   WorkspaceSettings,
 } from '@entities/workspace';
 import type { Control } from 'react-hook-form';
-
-import type { WorkspaceSettingsValues, WorkspaceValues } from '../schemes';
-
-import type { UpdateMemberRoleDto, UpdateWorkspaceSettingsDto } from './workspace.dto';
 
 // Params
 

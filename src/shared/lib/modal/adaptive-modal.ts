@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@shared/hooks';
+import { useMediaQuery } from '@shared/hooks/use-media-query';
 import { useModalStore, type AdaptiveModalOptions } from '@shared/ui';
 
 export const useAdaptiveModal = () => {

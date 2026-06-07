@@ -1,9 +1,10 @@
-import { queryKeys } from '@shared/config';
 import { useQuery } from '@tanstack/react-query';
 
-import type { WorkspaceId } from '../model';
+import { queryKeys } from '@shared/config';
 
 import { workspaceApi } from './workspace.api';
+
+import type { WorkspaceId } from '../model';
 
 // Get all workspaces for current user
 

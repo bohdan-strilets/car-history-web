@@ -1,8 +1,9 @@
-import { ROUTES } from '@shared/config';
-import { showToast } from '@shared/lib/toast';
-import { Form, Stack } from '@shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+
+import { ROUTES } from '@shared/config';
+import { showToast } from '@shared/lib';
+import { Form, Stack } from '@shared/ui';
 
 import { useEditVehicleForm, type VehicleEditFormProps } from '../model';
 

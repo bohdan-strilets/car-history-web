@@ -1,4 +1,4 @@
-import type { SegmentControlOption } from '@shared/ui/primitives';
+import type { SegmentControlOption } from '@shared/ui';
 
 export interface TabsProps<T extends string> {
   tabs: SegmentControlOption<T>[];
