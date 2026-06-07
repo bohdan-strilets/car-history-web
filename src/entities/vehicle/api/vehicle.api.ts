@@ -1,6 +1,7 @@
 import type { Vehicle, VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
-import { apiClient, ENDPOINTS } from '@shared/api';
+import { apiClient } from '@shared/api';
+import { ENDPOINTS } from '@shared/config';
 
 export const vehicleApi = {
   getAll: (workspaceId: WorkspaceId) => {

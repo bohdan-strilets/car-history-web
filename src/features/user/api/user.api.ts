@@ -1,5 +1,6 @@
 import type { UserSettings } from '@entities/user';
-import { apiClient, ENDPOINTS } from '@shared/api';
+import { apiClient } from '@shared/api';
+import { ENDPOINTS } from '@shared/config';
 
 export const userApi = {
   updateSettings: (dto: Partial<UserSettings>) => {

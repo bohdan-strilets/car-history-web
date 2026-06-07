@@ -1,7 +1,7 @@
+import { ENDPOINTS } from '@shared/config';
 import axios, { type AxiosInstance } from 'axios';
 
 import { parseApiError } from './api.utils';
-import { ENDPOINTS } from './endpoints';
 
 export const setupRequestInterceptor = (instance: AxiosInstance, getToken: () => string | null) => {
   instance.interceptors.request.use(

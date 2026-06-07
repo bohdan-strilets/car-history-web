@@ -1,9 +1,8 @@
 import { env } from '@config/env';
-import { ROUTES } from '@shared/config';
+import { ENDPOINTS, ROUTES } from '@shared/config';
 import { authService } from '@shared/store/auth';
 import axios from 'axios';
 
-import { ENDPOINTS } from './endpoints';
 import { setupRequestInterceptor, setupResponseInterceptor } from './interceptors';
 
 export const axiosInstance = axios.create({

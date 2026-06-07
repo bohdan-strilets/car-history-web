@@ -8,7 +8,8 @@ import type {
   WorkspaceMember,
   WorkspaceSettings,
 } from '@entities/workspace';
-import { apiClient, ENDPOINTS } from '@shared/api';
+import { apiClient } from '@shared/api';
+import { ENDPOINTS } from '@shared/config';
 
 import type {
   CreateInviteDto,

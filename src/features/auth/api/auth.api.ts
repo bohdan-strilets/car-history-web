@@ -1,5 +1,6 @@
 import type { User } from '@entities/user';
-import { apiClient, ENDPOINTS } from '@shared/api';
+import { apiClient } from '@shared/api';
+import { ENDPOINTS } from '@shared/config';
 
 import type {
   AuthResponse,

@@ -1,5 +1,5 @@
 import { env } from '@config/env';
-import { ENDPOINTS } from '@shared/api';
+import { ENDPOINTS } from '@shared/config';
 
 export const useGoogleAuth = () => {
   const endpoint = ENDPOINTS.AUTH.GOOGLE;
