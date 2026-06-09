@@ -1,31 +1,42 @@
+import type { EventId } from '@entities/timeline';
+import type { VehicleId } from '@entities/vehicle';
+import type { InviteToken, WorkspaceId } from '@entities/workspace';
+
 export const queryKeys = {
   auth: {
     me: () => ['auth', 'me'] as const,
   },
+
   workspaces: {
     all: () => ['workspaces'] as const,
-    detail: (id: string) => ['workspaces', id] as const,
-    members: (id: string) => ['workspaces', id, 'members'] as const,
-    invites: (id: string) => ['workspaces', id, 'invites'] as const,
-    settings: (id: string) => ['workspaces', id, 'settings'] as const,
+    detail: (workspaceId: WorkspaceId) => ['workspaces', workspaceId] as const,
+    members: (workspaceId: WorkspaceId) => ['workspaces', workspaceId, 'members'] as const,
+    invites: (workspaceId: WorkspaceId) => ['workspaces', workspaceId, 'invites'] as const,
+    settings: (workspaceId: WorkspaceId) => ['workspaces', workspaceId, 'settings'] as const,
   },
+
   invites: {
-    detail: (token: string) => ['invites', token] as const,
+    detail: (token: InviteToken) => ['invites', token] as const,
   },
+
   vehicles: {
-    all: (workspaceId: string) => ['vehicles', workspaceId] as const,
-    detail: (id: string) => ['vehicles', id] as const,
-    timeline: (id: string) => ['vehicles', id, 'timeline'] as const,
-    reminders: (id: string) => ['vehicles', id, 'reminders'] as const,
-    maintenance: (id: string) => ['vehicles', id, 'maintenance'] as const,
-    tires: (id: string) => ['vehicles', id, 'tires'] as const,
-    stats: (id: string) => ['vehicles', id, 'stats'] as const,
-    gallery: (id: string) => ['vehicles', id, 'gallery'] as const,
+    all: (workspaceId: WorkspaceId) => ['vehicles', workspaceId] as const,
+    detail: (vehicleId: VehicleId) => ['vehicles', vehicleId] as const,
+    timeline: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'timeline'] as const,
+    timelineEvent: (vehicleId: VehicleId, eventId: EventId) =>
+      ['vehicles', vehicleId, 'timeline', eventId] as const,
+    reminders: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'reminders'] as const,
+    maintenance: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'maintenance'] as const,
+    tires: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'tires'] as const,
+    stats: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'stats'] as const,
+    gallery: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'gallery'] as const,
   },
+
   serviceStations: {
     all: () => ['service-stations'] as const,
     detail: (id: string) => ['service-stations', id] as const,
   },
+
   ai: {
     conversations: () => ['ai', 'conversations'] as const,
     conversation: (id: string) => ['ai', 'conversations', id] as const,

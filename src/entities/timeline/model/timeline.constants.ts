@@ -1,0 +1,13 @@
+export const TIMELINE_EVENT_TYPE = {
+  PURCHASE: 'PURCHASE',
+  SALE: 'SALE',
+  REFUEL: 'REFUEL',
+  CHARGE: 'CHARGE',
+  SERVICE: 'SERVICE',
+  DOCUMENT: 'DOCUMENT',
+  EXPENSE: 'EXPENSE',
+  TIRE_CHANGE: 'TIRE_CHANGE',
+  TRIP: 'TRIP',
+} as const;
+
+export type TimelineEventType = (typeof TIMELINE_EVENT_TYPE)[keyof typeof TIMELINE_EVENT_TYPE];

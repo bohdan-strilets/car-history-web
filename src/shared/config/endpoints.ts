@@ -1,3 +1,4 @@
+import type { EventId } from '@entities/timeline';
 import type { VehicleId } from '@entities/vehicle';
 import type { InviteId, InviteToken, WorkspaceId } from '@entities/workspace';
 
@@ -75,18 +76,16 @@ export const ENDPOINTS = {
   },
 
   TIMELINE: {
-    DETAIL: (eventId: string) => `/timeline/${eventId}`,
-    UPDATE: (eventId: string) => `/timeline/${eventId}`,
-    DELETE: (eventId: string) => `/timeline/${eventId}`,
-    REFUEL: (eventId: string) => `/timeline/${eventId}/refuel`,
-    CHARGE: (eventId: string) => `/timeline/${eventId}/charge`,
-    SERVICE: (eventId: string) => `/timeline/${eventId}/service`,
-    DOCUMENT: (eventId: string) => `/timeline/${eventId}/document`,
-    EXPENSE: (eventId: string) => `/timeline/${eventId}/expense`,
-    TIRE_CHANGE: (eventId: string) => `/timeline/${eventId}/tire-change`,
-    TRIP: (eventId: string) => `/timeline/${eventId}/trip`,
-    PURCHASE: (eventId: string) => `/timeline/${eventId}/purchase`,
-    SALE: (eventId: string) => `/timeline/${eventId}/sale`,
+    LIST: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/timeline`,
+    CREATE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/timeline`,
+    DETAIL: (workspaceId: WorkspaceId, vehicleId: VehicleId, eventId: EventId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/timeline/${eventId}`,
+    UPDATE: (workspaceId: WorkspaceId, vehicleId: VehicleId, eventId: EventId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/timeline/${eventId}`,
+    DELETE: (workspaceId: WorkspaceId, vehicleId: VehicleId, eventId: EventId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/timeline/${eventId}`,
   },
 
   REMINDERS: {
