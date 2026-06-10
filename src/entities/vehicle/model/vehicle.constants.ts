@@ -26,6 +26,14 @@ export const FUEL_TYPE = {
 
 export type FuelType = (typeof FUEL_TYPE)[keyof typeof FUEL_TYPE];
 
+export const REFUEL_TYPE = {
+  PETROL: 'PETROL',
+  DIESEL: 'DIESEL',
+  LPG: 'LPG',
+} as const;
+
+export type RefuelType = (typeof REFUEL_TYPE)[keyof typeof REFUEL_TYPE];
+
 export const TRANSMISSION = {
   MANUAL: 'MANUAL',
   AUTOMATIC: 'AUTOMATIC',

@@ -1,17 +1,20 @@
+import type { EntityOption } from '@shared/types';
+
 import {
   BODY_TYPE,
   DRIVE_TYPE,
   FUEL_TYPE,
+  REFUEL_TYPE,
   TRANSMISSION,
   type BodyType,
   type DriveType,
   type FuelType,
+  type RefuelType,
   type Transmission,
 } from './vehicle.constants';
 
 import type { ColorPickerOption } from '../ui';
 import type { VehiclePopularBrand } from './vehicle.data';
-import type { EntityOption } from '@shared/types';
 
 // Entity options
 
@@ -92,35 +95,59 @@ export const FUEL_TYPE_CONFIG: EntityOption<FuelType>[] = [
   {
     id: '1',
     value: FUEL_TYPE.PETROL,
-    label: `vehicle.fuelType.${FUEL_TYPE.PETROL}`,
+    label: `enums.fuelType.${FUEL_TYPE.PETROL}`,
     icon: 'fuel',
     color: 'orange',
   },
   {
     id: '2',
     value: FUEL_TYPE.DIESEL,
-    label: `vehicle.fuelType.${FUEL_TYPE.DIESEL}`,
+    label: `enums.fuelType.${FUEL_TYPE.DIESEL}`,
     icon: 'fuel',
     color: 'gray',
   },
   {
     id: '3',
     value: FUEL_TYPE.HYBRID,
-    label: `vehicle.fuelType.${FUEL_TYPE.HYBRID}`,
+    label: `enums.fuelType.${FUEL_TYPE.HYBRID}`,
     icon: 'zap',
     color: 'green',
   },
   {
     id: '4',
     value: FUEL_TYPE.ELECTRIC,
-    label: `vehicle.fuelType.${FUEL_TYPE.ELECTRIC}`,
+    label: `enums.fuelType.${FUEL_TYPE.ELECTRIC}`,
     icon: 'batteryCharging',
     color: 'teal',
   },
   {
     id: '5',
     value: FUEL_TYPE.LPG,
-    label: `vehicle.fuelType.${FUEL_TYPE.LPG}`,
+    label: `enums.fuelType.${FUEL_TYPE.LPG}`,
+    icon: 'flame',
+    color: 'amber',
+  },
+];
+
+export const REFUEL_TYPE_CONFIG: EntityOption<RefuelType>[] = [
+  {
+    id: '1',
+    value: REFUEL_TYPE.PETROL,
+    label: `enums.fuelType.${REFUEL_TYPE.PETROL}`,
+    icon: 'fuel',
+    color: 'orange',
+  },
+  {
+    id: '2',
+    value: REFUEL_TYPE.DIESEL,
+    label: `enums.fuelType.${REFUEL_TYPE.DIESEL}`,
+    icon: 'fuel',
+    color: 'gray',
+  },
+  {
+    id: '3',
+    value: REFUEL_TYPE.LPG,
+    label: `enums.fuelType.${REFUEL_TYPE.LPG}`,
     icon: 'flame',
     color: 'amber',
   },
