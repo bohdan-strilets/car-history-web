@@ -60,7 +60,7 @@ export default defineConfig([
             { pattern: '@shared/**', group: 'internal' },
             { pattern: '@widgets/**', group: 'internal' },
           ],
-          pathGroupsExcludedImportTypes: ['react', 'react-*', 'type'],
+          pathGroupsExcludedImportTypes: ['react', 'react-*'],
           'newlines-between': 'always',
           alphabetize: { order: 'asc', caseInsensitive: true },
         },

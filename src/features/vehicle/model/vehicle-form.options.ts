@@ -1,5 +1,4 @@
 import { VEHICLE_MODELS } from '@entities/vehicle';
-
 import type { ComboboxOption } from '@shared/ui';
 
 export const getBrandOptions = (): ComboboxOption[] =>

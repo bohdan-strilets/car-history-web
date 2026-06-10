@@ -1,4 +1,5 @@
 import type { EntityOption } from '@shared/types';
+
 import type { ParseKeys, TFunction } from 'i18next';
 
 // Translate config options

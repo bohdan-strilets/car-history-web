@@ -1,6 +1,7 @@
+import type { ComponentPropsWithoutRef } from 'react';
+
 import type { root } from './checkbox.css';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
-import type { ComponentPropsWithoutRef } from 'react';
 
 export type CheckboxVariants = NonNullable<RecipeVariants<typeof root>>;
 

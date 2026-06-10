@@ -1,6 +1,7 @@
+import type { ComponentPropsWithoutRef } from 'react';
+
 import type { root } from './textarea.css';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
-import type { ComponentPropsWithoutRef } from 'react';
 
 export type TextareaVariants = NonNullable<RecipeVariants<typeof root>>;
 

@@ -1,5 +1,6 @@
-import type { IconName } from '@shared/icons';
 import type { ReactNode } from 'react';
+
+import type { IconName } from '@shared/icons';
 
 export interface FormProps {
   children: ReactNode;

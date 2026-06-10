@@ -1,9 +1,10 @@
+import type { ElementType } from 'react';
+
 import clsx from 'clsx';
 
 import { root } from './center.css';
 
 import type { CenterProps } from './center.types';
-import type { ElementType } from 'react';
 
 export const Center = <T extends ElementType = 'div'>({
   as,

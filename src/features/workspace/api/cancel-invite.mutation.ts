@@ -2,12 +2,11 @@ import { useTranslation } from 'react-i18next';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
+import type { InviteId, WorkspaceId } from '@entities/workspace';
 import { queryKeys } from '@shared/config';
 import { showToast, useErrorHandler } from '@shared/lib';
 
 import { workspaceApi } from './workspace.api';
-
-import type { InviteId, WorkspaceId } from '@entities/workspace';
 
 export const useCancelInviteMutation = (workspaceId: WorkspaceId) => {
   const queryClient = useQueryClient();

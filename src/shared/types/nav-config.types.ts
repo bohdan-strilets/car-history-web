@@ -1,4 +1,5 @@
 import type { IconName } from '@shared/icons';
+
 import type { ParseKeys } from 'i18next';
 
 export interface NavConfig {

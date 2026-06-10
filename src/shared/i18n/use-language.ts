@@ -1,8 +1,7 @@
+import type { Language } from '@entities/user';
 import { storage, STORAGE_KEYS } from '@shared/lib';
 
 import i18n from './i18n.config';
-
-import type { Language } from '@entities/user';
 
 export const useLanguage = () => {
   const setLanguage = (lang: Language) => {

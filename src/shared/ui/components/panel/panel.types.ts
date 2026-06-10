@@ -1,5 +1,6 @@
-import type { BoxOwnProps, StackProps, SurfaceOwnProps } from '@shared/ui';
 import type { ElementType } from 'react';
+
+import type { BoxOwnProps, StackProps, SurfaceOwnProps } from '@shared/ui';
 
 type BoxWithoutRadius = Omit<BoxOwnProps, 'radius'>;
 

@@ -2,13 +2,13 @@ import { useTranslation } from 'react-i18next';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
+import type { WorkspaceId } from '@entities/workspace';
 import { queryKeys } from '@shared/config';
 import { showToast } from '@shared/lib';
 
 import { workspaceApi } from './workspace.api';
 
 import type { UpdateMemberRoleParams } from '../model';
-import type { WorkspaceId } from '@entities/workspace';
 
 export const useUpdateMemberRoleMutation = (workspaceId: WorkspaceId) => {
   const queryClient = useQueryClient();

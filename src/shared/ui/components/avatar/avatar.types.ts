@@ -1,7 +1,8 @@
+import type { ComponentPropsWithoutRef } from 'react';
+
 import { root } from './avatar.css';
 
 import type { RecipeVariants } from '@vanilla-extract/recipes';
-import type { ComponentPropsWithoutRef } from 'react';
 
 type RootVariants = NonNullable<RecipeVariants<typeof root>>;
 

@@ -1,7 +1,8 @@
-import type { TimelineEventType } from '../timeline.constants';
-import type { ServiceStationRef, TimelineEventDetails } from './timeline-events.types';
 import type { VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
+
+import type { TimelineEventType } from '../timeline.constants';
+import type { ServiceStationRef, TimelineEventDetails } from './timeline-events.types';
 
 // Timeline event types
 

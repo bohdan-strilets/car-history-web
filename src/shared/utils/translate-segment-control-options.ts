@@ -1,4 +1,5 @@
 import type { SegmentControlOption } from '@shared/ui';
+
 import type { ParseKeys, TFunction } from 'i18next';
 
 export const translateSegmentControlOptions = <T extends string>(

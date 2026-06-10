@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
+import type { Language, Theme } from '@entities/user';
 import { useInitQuery, useResendConfirmationMutation } from '@features/auth';
 import { useUpdateUserSettingsMutation } from '@features/user';
 import { APP_CONSTANTS } from '@shared/config';
@@ -12,8 +13,6 @@ import { Button, CardSelect, Divider, Heading, Icon, Logo, Spinner, Stack, Text 
 import { translateCardSelectOptions } from '@shared/utils';
 
 import { LANGUAGE_CONFIG, THEME_CONFIG, type WelcomeStepProps } from '../model';
-
-import type { Language, Theme } from '@entities/user';
 
 export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
   const { t } = useTranslation();

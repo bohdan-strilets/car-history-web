@@ -1,3 +1,5 @@
+import type { User, UserId } from '@entities/user';
+
 import type {
   Currency,
   DateFormat,
@@ -7,7 +9,6 @@ import type {
   WorkspaceRole,
   WorkspaceType,
 } from './workspace.constants';
-import type { User, UserId } from '@entities/user';
 
 // Types
 

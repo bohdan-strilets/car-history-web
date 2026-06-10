@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react';
+
 import { useModalStore } from '../model/modal.store';
 
 import type { ModalOptions } from '../model/modal.types';
-import type { ReactNode } from 'react';
 
 export const useModal = () => {
   const { open, close, closeLast, closeAll, stack } = useModalStore();

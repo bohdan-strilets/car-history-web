@@ -1,6 +1,6 @@
-import { ROUTES } from './routes';
-
 import type { NavConfig } from '@shared/types';
+
+import { ROUTES } from './routes';
 
 export const NAV_ITEMS: NavConfig[] = [
   {

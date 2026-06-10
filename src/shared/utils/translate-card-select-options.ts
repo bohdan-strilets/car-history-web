@@ -1,4 +1,5 @@
 import type { CardSelectOption } from '@shared/ui';
+
 import type { ParseKeys, TFunction } from 'i18next';
 
 export const translateCardSelectOptions = (

@@ -2,12 +2,11 @@ import { useTranslation } from 'react-i18next';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
+import type { WorkspaceId } from '@entities/workspace';
 import { queryKeys } from '@shared/config';
 import { showToast, useErrorHandler } from '@shared/lib';
 
 import { workspaceApi } from './workspace.api';
-
-import type { WorkspaceId } from '@entities/workspace';
 
 export const useLeaveWorkspaceMutation = () => {
   const queryClient = useQueryClient();

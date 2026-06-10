@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
+import type { WorkspaceInvite } from '@entities/workspace';
 import { useCancelInviteMutation } from '@features/workspace';
 import { useConfirmModal } from '@shared/lib/modal';
-
-import type { WorkspaceInvite } from '@entities/workspace';
 
 export const useCancelInvite = (workspaceId: string) => {
   const { t } = useTranslation();

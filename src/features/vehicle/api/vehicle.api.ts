@@ -1,9 +1,9 @@
+import type { Vehicle, VehicleId } from '@entities/vehicle';
+import type { WorkspaceId } from '@entities/workspace';
 import { apiClient } from '@shared/api';
 import { ENDPOINTS } from '@shared/config';
 
 import type { CreateVehicleDto, UpdateVehicleDto, VehicleSpecsValues } from '../model';
-import type { Vehicle, VehicleId } from '@entities/vehicle';
-import type { WorkspaceId } from '@entities/workspace';
 
 export const vehicleApi = {
   create: (workspaceId: WorkspaceId, dto: CreateVehicleDto) => {

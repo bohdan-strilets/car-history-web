@@ -1,5 +1,6 @@
-import type { DropdownDirection } from '@shared/ui';
 import type { ComponentPropsWithoutRef } from 'react';
+
+import type { DropdownDirection } from '@shared/ui';
 
 export interface UserBarOwnProps {
   expanded?: boolean;

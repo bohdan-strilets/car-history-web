@@ -2,9 +2,9 @@ import { type ComponentPropsWithoutRef, type ElementType } from 'react';
 
 import { type RecipeVariants } from '@vanilla-extract/recipes';
 
-import { root } from './grid.css';
-
 import type { ResponsiveValue } from '@shared/types';
+
+import { root } from './grid.css';
 
 export type GridVariants = NonNullable<RecipeVariants<typeof root>>;
 

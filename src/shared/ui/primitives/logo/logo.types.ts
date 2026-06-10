@@ -1,5 +1,6 @@
-import type { root } from './logo.css';
 import type { ResponsiveValue } from '@shared/types';
+
+import type { root } from './logo.css';
 import type { RecipeVariants } from '@vanilla-extract/recipes';
 
 export type LogoVariants = NonNullable<RecipeVariants<typeof root>>;
