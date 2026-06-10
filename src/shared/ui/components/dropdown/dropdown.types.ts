@@ -1,5 +1,6 @@
-import type { IconName } from '@shared/icons';
 import type { ReactNode } from 'react';
+
+import type { IconName } from '@shared/icons';
 
 export type DropdownAlign = 'start' | 'end';
 export type DropdownDirection = 'top' | 'bottom' | 'left' | 'right';
@@ -15,6 +16,8 @@ export interface DropdownProps {
   fullWidth?: boolean;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  minWidth?: number | string;
+  maxHeight?: number | string;
   className?: string;
 }
 

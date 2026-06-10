@@ -19,6 +19,8 @@ export const Dropdown = ({
   fullWidth,
   open: controlledOpen,
   onOpenChange,
+  minWidth = '200px',
+  maxHeight = '300px',
   className,
 }: DropdownProps) => {
   const [internalOpen, setInternalOpen] = useState(false);
@@ -55,7 +57,7 @@ export const Dropdown = ({
         <Portal>
           <div
             ref={portalRef}
-            style={getPortalStyle()}
+            style={{ ...getPortalStyle(), minWidth, maxHeight }}
             className={content({ fullWidth: fullWidth && direction === 'bottom' })}
             role="menu"
           >
