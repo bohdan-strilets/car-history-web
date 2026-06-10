@@ -6,5 +6,6 @@ export interface FormFieldProps<T extends FieldValues> {
   label?: string;
   hint?: string;
   required?: boolean;
+  fullWidth?: boolean;
   render: (field: ControllerRenderProps<T, Path<T>>) => React.ReactNode;
 }

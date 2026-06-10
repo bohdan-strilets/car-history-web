@@ -1,6 +1,7 @@
 export * from './avatar';
 export * from './card-select';
 export * from './combobox';
+export * from './date-picker';
 export * from './dropdown';
 export * from './field';
 export * from './form';

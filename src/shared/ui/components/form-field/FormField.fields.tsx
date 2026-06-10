@@ -1,3 +1,5 @@
+import type { FieldValues } from 'react-hook-form';
+
 import {
   ColorPicker,
   MileageInput,
@@ -6,10 +8,12 @@ import {
 } from '@entities/vehicle';
 import {
   Checkbox,
+  DatePicker,
   Input,
   NumberInput,
   PasswordInput,
   Textarea,
+  type DatePickerProps,
   type InputProps,
   type NumberInputProps,
   type PasswordInputProps,
@@ -25,7 +29,6 @@ import { FormField } from './FormField';
 
 import type { FormFieldProps } from './form-field.types';
 import type { CardSelectProps } from '../card-select/card-select.types';
-import type { FieldValues } from 'react-hook-form';
 
 type BaseProps<T extends FieldValues> = Omit<FormFieldProps<T>, 'render'>;
 
@@ -239,5 +242,29 @@ export const FormFieldColorPicker = <T extends FieldValues>({
     hint={hint}
     required={required}
     render={(field) => <ColorPicker value={field.value} onChange={field.onChange} {...props} />}
+  />
+);
+
+export const FormFieldDatePicker = <T extends FieldValues>({
+  control,
+  name,
+  label,
+  hint,
+  required,
+  ...props
+}: BaseProps<T> & Omit<DatePickerProps, 'value' | 'onChange'>) => (
+  <FormField
+    control={control}
+    name={name}
+    label={label}
+    hint={hint}
+    required={required}
+    render={(field) => (
+      <DatePicker
+        value={field.value ? new Date(field.value) : undefined}
+        onChange={(date) => field.onChange(date?.toISOString().split('T')[0])}
+        {...props}
+      />
+    )}
   />
 );

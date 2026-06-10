@@ -10,6 +10,7 @@ export const FormField = <T extends FieldValues>({
   label,
   hint,
   required,
+  fullWidth,
   render,
 }: FormFieldProps<T>) => {
   return (
@@ -23,6 +24,7 @@ export const FormField = <T extends FieldValues>({
           required={required}
           error={fieldState.error?.message}
           htmlFor={name}
+          fullWidth={fullWidth}
         >
           {render(field)}
         </Field>
