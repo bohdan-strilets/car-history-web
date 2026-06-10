@@ -7,5 +7,6 @@ export interface FieldProps {
   required?: boolean;
   htmlFor?: string;
   children: ReactNode;
+  fullWidth?: boolean;
   className?: string;
 }

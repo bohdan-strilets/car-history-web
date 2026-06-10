@@ -9,10 +9,13 @@ export const Field = ({
   required,
   htmlFor,
   children,
+  fullWidth = true,
   className,
 }: FieldProps) => {
+  const widthStyle = fullWidth ? { width: '100%' } : { width: 'fit-content' };
+
   return (
-    <Stack className={className} gap="md">
+    <Stack className={className} gap="md" style={widthStyle}>
       {labelProp && (
         <label htmlFor={htmlFor}>
           <Stack direction="row" gap="xs" align="center">
