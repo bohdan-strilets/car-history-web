@@ -1,5 +1,6 @@
-import type { InputSize, InputState } from '../input';
 import type { ResponsiveValue } from '@shared/types';
+
+import type { InputSize, InputState } from '../input';
 
 export interface NumberInputProps {
   value: number | undefined;
