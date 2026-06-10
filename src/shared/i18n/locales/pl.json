@@ -56,6 +56,57 @@
       "title": "Coś poszło nie tak",
       "description": "Spróbuj odświeżyć stronę.",
       "retry": "Spróbuj ponownie"
+    },
+    "calendar": {
+      "weekdays": {
+        "mon": "Pn",
+        "tue": "Wt",
+        "wed": "Śr",
+        "thu": "Cz",
+        "fri": "Pt",
+        "sat": "Sb",
+        "sun": "Nd"
+      },
+      "months": {
+        "january": "Styczeń",
+        "february": "Luty",
+        "march": "Marzec",
+        "april": "Kwiecień",
+        "may": "Maj",
+        "june": "Czerwiec",
+        "july": "Lipiec",
+        "august": "Sierpień",
+        "september": "Wrzesień",
+        "october": "Październik",
+        "november": "Listopad",
+        "december": "Grudzień"
+      },
+      "monthsShort": {
+        "january": "Sty",
+        "february": "Lut",
+        "march": "Mar",
+        "april": "Kwi",
+        "may": "Maj",
+        "june": "Cze",
+        "july": "Lip",
+        "august": "Sie",
+        "september": "Wrz",
+        "october": "Paź",
+        "november": "Lis",
+        "december": "Gru"
+      }
+    }
+  },
+
+  "ui": {
+    "datePicker": {
+      "placeholder": "Wybierz datę",
+      "prevMonth": "Poprzedni miesiąc",
+      "nextMonth": "Następny miesiąc",
+      "prevYear": "Poprzedni rok",
+      "nextYear": "Następny rok",
+      "prevDecade": "Poprzednia dekada",
+      "nextDecade": "Następna dekada"
     }
   },
 
@@ -717,6 +768,92 @@
       "description": "Asystent AI automatycznie wypełni dane techniczne na podstawie marki, modelu i roku produkcji.",
       "action": "Uzupełnij z AI",
       "loading": "AI analizuje pojazd..."
+    }
+  },
+
+  "timeline": {
+    "types": {
+      "refuel": "Tankowanie",
+      "charge": "Ładowanie",
+      "service": "Serwis",
+      "document": "Dokument",
+      "expense": "Wydatek",
+      "tireChange": "Zmiana opon",
+      "trip": "Trasa",
+      "purchase": "Zakup",
+      "sale": "Sprzedaż"
+    },
+
+    "actions": {
+      "addEvent": "Dodaj zdarzenie",
+      "editEvent": "Edytuj zdarzenie",
+      "deleteEvent": "Usuń zdarzenie",
+      "deleteConfirm": "Czy na pewno chcesz usunąć to zdarzenie?"
+    },
+
+    "fields": {
+      "title": "Tytuł",
+      "titlePlaceholder": "np. Shell ul. Marszałkowska",
+      "eventDate": "Data zdarzenia",
+      "mileage": "Przebieg",
+      "cost": "Koszt (PLN)",
+      "description": "Opis",
+      "descriptionPlaceholder": "Dodatkowe informacje...",
+
+      "liters": "Ilość (l)",
+      "pricePerLiter": "Cena za litr",
+      "fuelType": "Rodzaj paliwa",
+      "isFullTank": "Pełny bak",
+
+      "kWh": "Energia (kWh)",
+      "pricePerKWh": "Cena za kWh",
+      "chargeType": "Typ ładowania",
+      "chargerNetwork": "Sieć ładowania",
+      "batteryBefore": "Bateria przed (%)",
+      "batteryAfter": "Bateria po (%)",
+
+      "serviceCategory": "Kategoria serwisu",
+      "works": "Robocizna",
+      "parts": "Części",
+      "workName": "Nazwa",
+      "workPrice": "Cena",
+      "workDescription": "Opis",
+      "partName": "Nazwa",
+      "partPrice": "Cena",
+      "partQuantity": "Ilość",
+      "partDescription": "Opis",
+      "addWork": "Dodaj pozycję",
+      "addPart": "Dodaj część",
+
+      "documentType": "Typ dokumentu",
+      "documentNumber": "Numer dokumentu",
+      "issuedBy": "Wystawca",
+      "issueDate": "Data wystawienia",
+      "expireDate": "Data ważności",
+
+      "expenseCategory": "Kategoria wydatku",
+
+      "tireId": "Zestaw opon",
+      "installedMileage": "Przebieg przy montażu",
+      "removedMileage": "Przebieg przy demontażu",
+      "removedDate": "Data demontażu",
+
+      "startMileage": "Przebieg startowy",
+      "endMileage": "Przebieg końcowy",
+      "startLocation": "Miejsce startu",
+      "endLocation": "Miejsce docelowe",
+      "distanceKm": "Dystans (km)",
+      "purpose": "Cel podróży",
+
+      "purchasedFrom": "Zakupiono od",
+      "country": "Kraj",
+
+      "soldTo": "Sprzedano"
+    },
+
+    "empty": {
+      "title": "Brak zdarzeń",
+      "description": "Dodaj pierwsze zdarzenie do historii pojazdu."
     }
   },
 

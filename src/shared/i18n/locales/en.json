@@ -56,6 +56,57 @@
       "title": "Something went wrong",
       "description": "Try refreshing the page.",
       "retry": "Try again"
+    },
+    "calendar": {
+      "weekdays": {
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat",
+        "sun": "Sun"
+      },
+      "months": {
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+      },
+      "monthsShort": {
+        "january": "Jan",
+        "february": "Feb",
+        "march": "Mar",
+        "april": "Apr",
+        "may": "May",
+        "june": "Jun",
+        "july": "Jul",
+        "august": "Aug",
+        "september": "Sep",
+        "october": "Oct",
+        "november": "Nov",
+        "december": "Dec"
+      }
+    }
+  },
+
+  "ui": {
+    "datePicker": {
+      "placeholder": "Select a date",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month",
+      "prevYear": "Previous year",
+      "nextYear": "Next year",
+      "prevDecade": "Previous decade",
+      "nextDecade": "Next decade"
     }
   },
 
@@ -713,6 +764,92 @@
       "description": "The AI assistant will automatically fill in technical data based on the make, model and year.",
       "action": "Fill with AI",
       "loading": "AI is analysing the vehicle..."
+    }
+  },
+
+  "timeline": {
+    "types": {
+      "refuel": "Refuel",
+      "charge": "Charge",
+      "service": "Service",
+      "document": "Document",
+      "expense": "Expense",
+      "tireChange": "Tire change",
+      "trip": "Trip",
+      "purchase": "Purchase",
+      "sale": "Sale"
+    },
+
+    "actions": {
+      "addEvent": "Add event",
+      "editEvent": "Edit event",
+      "deleteEvent": "Delete event",
+      "deleteConfirm": "Are you sure you want to delete this event?"
+    },
+
+    "fields": {
+      "title": "Title",
+      "titlePlaceholder": "e.g. Shell ul. Marszałkowska",
+      "eventDate": "Event date",
+      "mileage": "Mileage",
+      "cost": "Cost (PLN)",
+      "description": "Description",
+      "descriptionPlaceholder": "Additional information...",
+
+      "liters": "Amount (l)",
+      "pricePerLiter": "Price per liter",
+      "fuelType": "Fuel type",
+      "isFullTank": "Full tank",
+
+      "kWh": "Energy (kWh)",
+      "pricePerKWh": "Price per kWh",
+      "chargeType": "Charge type",
+      "chargerNetwork": "Charger network",
+      "batteryBefore": "Battery before (%)",
+      "batteryAfter": "Battery after (%)",
+
+      "serviceCategory": "Service category",
+      "works": "Works",
+      "parts": "Parts",
+      "workName": "Name",
+      "workPrice": "Price",
+      "workDescription": "Description",
+      "partName": "Name",
+      "partPrice": "Price",
+      "partQuantity": "Quantity",
+      "partDescription": "Description",
+      "addWork": "Add work",
+      "addPart": "Add part",
+
+      "documentType": "Document type",
+      "documentNumber": "Document number",
+      "issuedBy": "Issued by",
+      "issueDate": "Issue date",
+      "expireDate": "Expiry date",
+
+      "expenseCategory": "Expense category",
+
+      "tireId": "Tire set",
+      "installedMileage": "Mileage at installation",
+      "removedMileage": "Mileage at removal",
+      "removedDate": "Removal date",
+
+      "startMileage": "Start mileage",
+      "endMileage": "End mileage",
+      "startLocation": "Start location",
+      "endLocation": "End location",
+      "distanceKm": "Distance (km)",
+      "purpose": "Trip purpose",
+
+      "purchasedFrom": "Purchased from",
+      "country": "Country",
+
+      "soldTo": "Sold to"
+    },
+
+    "empty": {
+      "title": "No events",
+      "description": "Add the first event to the vehicle's history."
     }
   },
 

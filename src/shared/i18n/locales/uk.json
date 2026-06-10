@@ -56,6 +56,57 @@
       "title": "Щось пішло не так",
       "description": "Спробуйте оновити сторінку.",
       "retry": "Спробувати ще раз"
+    },
+    "calendar": {
+      "weekdays": {
+        "mon": "Пн",
+        "tue": "Вт",
+        "wed": "Ср",
+        "thu": "Чт",
+        "fri": "Пт",
+        "sat": "Сб",
+        "sun": "Нд"
+      },
+      "months": {
+        "january": "Січень",
+        "february": "Лютий",
+        "march": "Березень",
+        "april": "Квітень",
+        "may": "Травень",
+        "june": "Червень",
+        "july": "Липень",
+        "august": "Серпень",
+        "september": "Вересень",
+        "october": "Жовтень",
+        "november": "Листопад",
+        "december": "Грудень"
+      },
+      "monthsShort": {
+        "january": "Січ",
+        "february": "Лют",
+        "march": "Бер",
+        "april": "Кві",
+        "may": "Тра",
+        "june": "Чер",
+        "july": "Лип",
+        "august": "Сер",
+        "september": "Вер",
+        "october": "Жов",
+        "november": "Лис",
+        "december": "Гру"
+      }
+    }
+  },
+
+  "ui": {
+    "datePicker": {
+      "placeholder": "Виберіть дату",
+      "prevMonth": "Попередній місяць",
+      "nextMonth": "Наступний місяць",
+      "prevYear": "Попередній рік",
+      "nextYear": "Наступний рік",
+      "prevDecade": "Попереднє десятиліття",
+      "nextDecade": "Наступне десятиліття"
     }
   },
 
@@ -719,6 +770,92 @@
       "description": "Асистент AI автоматично заповнить технічні дані на основі марки, моделі та року випуску.",
       "action": "Заповнити з AI",
       "loading": "AI аналізує автомобіль..."
+    }
+  },
+
+  "timeline": {
+    "types": {
+      "refuel": "Заправка",
+      "charge": "Зарядка",
+      "service": "Сервіс",
+      "document": "Документ",
+      "expense": "Витрати",
+      "tireChange": "Заміна шин",
+      "trip": "Поїздка",
+      "purchase": "Купівля",
+      "sale": "Продаж"
+    },
+
+    "actions": {
+      "addEvent": "Додати подію",
+      "editEvent": "Редагувати подію",
+      "deleteEvent": "Видалити подію",
+      "deleteConfirm": "Ви впевнені, що хочете видалити цю подію?"
+    },
+
+    "fields": {
+      "title": "Назва",
+      "titlePlaceholder": "наприклад, Shell вул. Маршалковська",
+      "eventDate": "Дата події",
+      "mileage": "Пробіг",
+      "cost": "Вартість (UAH)",
+      "description": "Опис",
+      "descriptionPlaceholder": "Додаткова інформація...",
+
+      "liters": "Кількість (л)",
+      "pricePerLiter": "Ціна за літр",
+      "fuelType": "Тип палива",
+      "isFullTank": "Повний бак",
+
+      "kWh": "Енергія (кВт·год)",
+      "pricePerKWh": "Ціна за кВт·год",
+      "chargeType": "Тип зарядки",
+      "chargerNetwork": "Мережа зарядки",
+      "batteryBefore": "Батарея перед (%)",
+      "batteryAfter": "Батарея після (%)",
+
+      "serviceCategory": "Категорія сервісу",
+      "works": "Робота",
+      "parts": "Запчастини",
+      "workName": "Назва",
+      "workPrice": "Ціна",
+      "workDescription": "Опис",
+      "partName": "Назва",
+      "partPrice": "Ціна",
+      "partQuantity": "Кількість",
+      "partDescription": "Опис",
+      "addWork": "Додати позицію",
+      "addPart": "Додати частину",
+
+      "documentType": "Тип документу",
+      "documentNumber": "Номер документу",
+      "issuedBy": "Видавець",
+      "issueDate": "Дата видачі",
+      "expireDate": "Дата закінчення",
+
+      "expenseCategory": "Категорія витрат",
+
+      "tireId": "Комплект шин",
+      "installedMileage": "Пробіг при монтажі",
+      "removedMileage": "Пробіг при демонтажі",
+      "removedDate": "Дата демонтажу",
+
+      "startMileage": "Початковий пробіг",
+      "endMileage": "Кінцевий пробіг",
+      "startLocation": "Місце старту",
+      "endLocation": "Місце призначення",
+      "distanceKm": "Відстань (км)",
+      "purpose": "Мета поїздки",
+
+      "purchasedFrom": "Куплено у",
+      "country": "Країна",
+
+      "soldTo": "Продано"
+    },
+
+    "empty": {
+      "title": "Немає подій",
+      "description": "Додайте першу подію до історії автомобіля."
     }
   },
 

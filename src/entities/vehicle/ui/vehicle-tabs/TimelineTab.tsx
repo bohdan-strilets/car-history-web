@@ -1,4 +1,4 @@
-import { useCreateTimelineEvent } from '@features/timeline/model/use-create-timeline-event';
+import { useOpenCreateTimelineEvent } from '@features/timeline';
 
 import type { TimelineTabProps } from './vehicle-tabs.types';
 
@@ -8,7 +8,7 @@ export const TimelineTab = ({
   currentMileage,
   fuelType,
 }: TimelineTabProps) => {
-  const { handleCreate } = useCreateTimelineEvent({
+  const { handleCreate } = useOpenCreateTimelineEvent({
     workspaceId,
     vehicleId,
     currentMileage,

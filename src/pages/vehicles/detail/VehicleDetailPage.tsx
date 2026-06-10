@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import {
   canDeleteVehicle,
   canEditVehicle,
+  getRefuelType,
   OverviewTab,
+  TimelineTab,
   useVehicleParams,
   useVehicleQuery,
   useVehicleTab,
@@ -38,6 +40,8 @@ export const VehicleDetailPage = () => {
 
   const canEdit = canEditVehicle(role, ownerId, userId);
   const canDelete = canDeleteVehicle(role, ownerId, userId);
+
+  const refuelType = getRefuelType(vehicle?.fuelType ?? []);
 
   if (isPending) return <VehicleDetailSkeleton />;
   if (isError || !vehicle) {
@@ -74,7 +78,15 @@ export const VehicleDetailPage = () => {
         />
       )}
 
-      {activeTab === 'timeline' && <div>Timeline</div>}
+      {activeTab === 'timeline' && (
+        <TimelineTab
+          workspaceId={workspaceId}
+          vehicleId={vehicleId}
+          currentMileage={vehicle?.currentMileage ?? 0}
+          fuelType={refuelType}
+        />
+      )}
+
       {activeTab === 'reminders' && <div>Reminders</div>}
       {activeTab === 'maintenance' && <div>Maintenance</div>}
       {activeTab === 'stats' && <div>Stats</div>}
