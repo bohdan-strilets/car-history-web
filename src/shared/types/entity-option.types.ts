@@ -1,5 +1,5 @@
 import type { IconName } from '@shared/icons';
-import type { PaletteColors } from '@shared/styles';
+import type { PaletteColors } from '@shared/styles/model';
 
 export interface EntityOption<T = string> {
   id: string;
