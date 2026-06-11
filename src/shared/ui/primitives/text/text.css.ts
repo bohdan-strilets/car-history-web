@@ -11,11 +11,14 @@ export const responsiveStyles = {
 };
 
 export const root = recipe({
-  base: {
-    fontFamily: vars.typography.font.body,
-  },
+  base: {},
 
   variants: {
+    family: {
+      body: { fontFamily: vars.typography.font.body },
+      heading: { fontFamily: vars.typography.font.display },
+    },
+
     size: {
       xs: { fontSize: vars.typography.size.xs },
       sm: { fontSize: vars.typography.size.sm },
@@ -120,6 +123,7 @@ export const root = recipe({
   },
 
   defaultVariants: {
+    family: 'body',
     size: 'md',
     weight: 'regular',
     color: 'primary',

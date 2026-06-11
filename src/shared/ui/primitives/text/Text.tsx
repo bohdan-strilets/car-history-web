@@ -23,6 +23,7 @@ export const Text = <T extends ElementType = 'p'>({
   underline,
   strike,
   truncate,
+  family,
   ...rest
 }: TextProps<T>) => {
   const Tag = (as ?? 'p') as ElementType;
@@ -39,6 +40,7 @@ export const Text = <T extends ElementType = 'p'>({
     underline,
     strike,
     truncate,
+    family,
   });
 
   const responsiveClasses = [

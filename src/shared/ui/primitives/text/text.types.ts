@@ -15,6 +15,7 @@ export type TextAlign = NonNullable<TextVariants['align']>;
 export type TextLineHeight = NonNullable<TextVariants['lineHeight']>;
 export type TextLetterSpacing = NonNullable<TextVariants['letterSpacing']>;
 export type TextTransform = NonNullable<TextVariants['transform']>;
+export type TextFamily = NonNullable<TextVariants['family']>;
 
 export interface TextOwnProps {
   size?: ResponsiveValue<TextSize>;
@@ -28,6 +29,7 @@ export interface TextOwnProps {
   underline?: boolean;
   strike?: boolean;
   truncate?: boolean;
+  family?: TextFamily;
 }
 
 export type TextProps<T extends ElementType = 'p'> = TextOwnProps & {
