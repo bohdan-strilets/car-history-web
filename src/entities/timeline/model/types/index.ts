@@ -20,5 +20,8 @@ export type {
   GetOneParams,
   TimelineEvent,
   TimelineEventParams,
+  TimelineListEvent,
+  TimelineListItem,
+  TimelineListMilestone,
   TimelineQuery,
 } from './timeline.types';

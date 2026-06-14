@@ -30,6 +30,7 @@ export const queryKeys = {
     tires: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'tires'] as const,
     stats: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'stats'] as const,
     gallery: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'gallery'] as const,
+    milestones: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'milestones'] as const,
   },
 
   serviceStations: {

@@ -8,6 +8,7 @@ import {
   ArrowRight,
   ArrowUp,
   BadgeCheck,
+  BadgeDollarSign,
   BadgePercent,
   Banknote,
   BarChart2,
@@ -44,6 +45,7 @@ import {
   Clock,
   Cloud,
   Cog,
+  Coins,
   Copy,
   Cpu,
   CreditCard,
@@ -73,6 +75,7 @@ import {
   Gauge,
   Gift,
   Globe,
+  Goal,
   Grid2x2,
   Hammer,
   Hash,
@@ -85,9 +88,11 @@ import {
   Inbox,
   Info,
   KeyRound,
+  Landmark,
   Laptop,
   Layers,
   LayoutGrid,
+  Leaf,
   Link,
   List,
   Loader2,
@@ -124,6 +129,7 @@ import {
   QrCode,
   Receipt,
   RefreshCw,
+  Road,
   RotateCcw,
   RotateCw,
   Ruler,
@@ -263,6 +269,7 @@ export const Icons = {
   grid: Grid2x2,
   note: NotebookText,
   ruler: Ruler,
+  road: Road,
 
   // Documents & Files
   fileText: FileText,
@@ -301,6 +308,7 @@ export const Icons = {
   crosshair: Crosshair,
   globe: Globe,
   phone: Phone,
+  goal: Goal,
 
   // Media
   image: Image,
@@ -377,6 +385,10 @@ export const Icons = {
   smartphone: Smartphone,
   laptop: Laptop,
   caseSensitive: CaseSensitive,
+  leaf: Leaf,
+  badgeDollarSign: BadgeDollarSign,
+  landmark: Landmark,
+  coins: Coins,
 } as const;
 
 export type IconName = keyof typeof Icons;

@@ -1,3 +1,4 @@
+import type { VehicleMilestone } from '@entities/milestone';
 import type { VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
 
@@ -7,6 +8,15 @@ import type { ServiceStationRef, TimelineEventDetails } from './timeline-events.
 // Timeline event types
 
 export type EventId = string;
+export type TimelineListItem = TimelineListEvent | TimelineListMilestone;
+export type TimelineListEvent = TimelineEvent & {
+  itemType: 'event';
+};
+export type TimelineListMilestone = VehicleMilestone & {
+  itemType: 'milestone';
+};
+
+// Timeline event
 
 export type TimelineEvent = {
   id: EventId;

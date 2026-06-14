@@ -127,6 +127,12 @@
       "USD": "Dolar (USD)",
       "UAH": "Hrywna (UAH)"
     },
+    "currencyShort": {
+      "PLN": "PLN",
+      "EUR": "EUR",
+      "USD": "USD",
+      "UAH": "UAH"
+    },
     "distanceUnit": {
       "KM": "Kilometry (km)",
       "MI": "Mile (mi)"
@@ -312,7 +318,19 @@
     "sec": "s",
     "liters": "l",
     "pcs": "szt",
-    "km": "km"
+    "km": "km",
+    "years_one": "rok",
+    "years_few": "lata",
+    "years_many": "lat",
+    "years_other": "lat",
+    "months_one": "miesiąc",
+    "months_few": "miesiące",
+    "months_many": "miesięcy",
+    "months_other": "miesięcy",
+    "days_one": "dzień",
+    "days_few": "dni",
+    "days_many": "dni",
+    "days_other": "dni"
   },
 
   "fields": {
@@ -854,7 +872,239 @@
     "empty": {
       "title": "Brak zdarzeń",
       "description": "Dodaj pierwsze zdarzenie do historii pojazdu."
+    },
+
+    "list": {
+      "title": "Historia pojazdu"
+    },
+
+    "labels": {
+      "works": "prace",
+      "parts": "części"
     }
+  },
+
+  "milestone": {
+    "category": {
+      "mileage": "Przebieg",
+      "time": "Czas",
+      "expenses": "Wydatki",
+      "fuel": "Paliwo",
+      "activity": "Aktywność",
+      "achievement": "Osiągnięcie"
+    },
+    "label": "Milestone",
+    "empty": {
+      "title": "Brak osiągnięć",
+      "description": "Dodawaj zdarzenia, aby odblokować pierwsze osiągnięcia."
+    },
+    "definitions": {
+      "MILEAGE_1000": {
+        "title": "Pierwsze 1 000 km za Tobą!",
+        "description": "Twój pojazd przejechał 1 000 km od rejestracji"
+      },
+      "MILEAGE_5000": {
+        "title": "Już 5 000 km razem!",
+        "description": "Twój pojazd przejechał 5 000 km od rejestracji"
+      },
+      "MILEAGE_10000": {
+        "title": "10 000 km — nie do zatrzymania!",
+        "description": "Twój pojazd przejechał 10 000 km od rejestracji"
+      },
+      "MILEAGE_25000": {
+        "title": "Już 25 000 km razem!",
+        "description": "Twój pojazd przejechał 25 000 km od rejestracji"
+      },
+      "MILEAGE_50000": {
+        "title": "50 000 km — półmetek!",
+        "description": "Twój pojazd przejechał 50 000 km od rejestracji"
+      },
+      "MILEAGE_75000": {
+        "title": "75 000 km — nie zwalniaj!",
+        "description": "Twój pojazd przejechał 75 000 km od rejestracji"
+      },
+      "MILEAGE_100000": {
+        "title": "100 000 km — legenda!",
+        "description": "Twój pojazd przejechał 100 000 km od rejestracji"
+      },
+      "MILEAGE_150000": {
+        "title": "150 000 km — niezniszczalny!",
+        "description": "Twój pojazd przejechał 150 000 km od rejestracji"
+      },
+      "MILEAGE_200000": {
+        "title": "200 000 km — ikona!",
+        "description": "Twój pojazd przejechał 200 000 km od rejestracji"
+      },
+      "ONE_WEEK": {
+        "title": "Pierwszy tydzień za nami!",
+        "description": "Masz pojazd od tygodnia"
+      },
+      "ONE_MONTH": {
+        "title": "Już miesiąc razem!",
+        "description": "Masz pojazd od miesiąca"
+      },
+      "THREE_MONTHS": {
+        "title": "Trzy miesiące w trasie!",
+        "description": "Masz pojazd od trzech miesięcy"
+      },
+      "SIX_MONTHS": {
+        "title": "Pół roku — świetna robota!",
+        "description": "Masz pojazd od sześciu miesięcy"
+      },
+      "ONE_YEAR": {
+        "title": "Rok razem — nie do zatrzymania!",
+        "description": "Minął rok od zakupu pojazdu"
+      },
+      "TWO_YEARS": {
+        "title": "Dwa lata i ani chwili żalu!",
+        "description": "Masz pojazd od dwóch lat"
+      },
+      "EXPENSES_500": {
+        "title": "Pierwsze 500 PLN wydane",
+        "description": "Wydałeś łącznie 500 PLN na pojazd"
+      },
+      "EXPENSES_1000": {
+        "title": "Już 1 000 PLN w pojeździe!",
+        "description": "Wydałeś łącznie 1 000 PLN na pojazd"
+      },
+      "EXPENSES_5000": {
+        "title": "5 000 PLN — poważna inwestycja!",
+        "description": "Wydałeś łącznie 5 000 PLN na pojazd"
+      },
+      "EXPENSES_10000": {
+        "title": "10 000 PLN w Twoim aucie!",
+        "description": "Wydałeś łącznie 10 000 PLN na pojazd"
+      },
+      "EXPENSES_25000": {
+        "title": "25 000 PLN — prawdziwy fan!",
+        "description": "Wydałeś łącznie 25 000 PLN na pojazd"
+      },
+      "EXPENSES_50000": {
+        "title": "50 000 PLN — dedykacja!",
+        "description": "Wydałeś łącznie 50 000 PLN na pojazd"
+      },
+      "EXPENSES_100000": {
+        "title": "100 000 PLN — legenda garażu!",
+        "description": "Wydałeś łącznie 100 000 PLN na pojazd"
+      },
+      "EXPENSES_200000": {
+        "title": "200 000 PLN — absolutny mistrz!",
+        "description": "Wydałeś łącznie 200 000 PLN na pojazd"
+      },
+      "FIRST_REFUEL": {
+        "title": "Pierwsze tankowanie — ruszamy!",
+        "description": "Pierwszy raz zatankowałeś swój pojazd"
+      },
+      "REFUEL_10": {
+        "title": "10 tankowań za Tobą!",
+        "description": "Zatankowałeś pojazd 10 razy"
+      },
+      "REFUEL_50": {
+        "title": "50 tankowań — stały bywalec!",
+        "description": "Zatankowałeś pojazd 50 razy"
+      },
+      "REFUEL_100": {
+        "title": "100 tankowań — nie do zatrzymania!",
+        "description": "Zatankowałeś pojazd 100 razy"
+      },
+      "REFUEL_500": {
+        "title": "500 tankowań — legenda stacji!",
+        "description": "Zatankowałeś pojazd 500 razy"
+      },
+      "FUEL_1000L": {
+        "title": "1 000 litrów w baku!",
+        "description": "Łącznie zatankowałeś 1 000 litrów paliwa"
+      },
+      "FUEL_5000L": {
+        "title": "5 000 litrów — imponujące!",
+        "description": "Łącznie zatankowałeś 5 000 litrów paliwa"
+      },
+      "FIRST_TIMELINE_EVENT": {
+        "title": "Historia się zaczyna!",
+        "description": "Dodałeś pierwsze zdarzenie do historii pojazdu"
+      },
+      "FIRST_SERVICE": {
+        "title": "Pierwsze wejście do warsztatu!",
+        "description": "Dodałeś pierwszy wpis serwisowy"
+      },
+      "FIRST_DOCUMENT": {
+        "title": "Dokumenty w porządku!",
+        "description": "Dodałeś pierwszy dokument do pojazdu"
+      },
+      "FIRST_TRIP": {
+        "title": "Pierwsza trasa zapisana!",
+        "description": "Zapisałeś pierwszą trasę"
+      },
+      "FIRST_TIRE_CHANGE": {
+        "title": "Zmiana opon — nowy sezon!",
+        "description": "Zapisałeś pierwszą zmianę opon"
+      },
+      "FIRST_SERVICE_STATION": {
+        "title": "Pierwsza stacja w bazie!",
+        "description": "Dodałeś pierwszą stację serwisową"
+      },
+      "TIMELINE_10": {
+        "title": "10 zdarzeń — dobrze idzie!",
+        "description": "Dodałeś 10 zdarzeń do historii pojazdu"
+      },
+      "TIMELINE_50": {
+        "title": "50 zdarzeń — prawdziwy kronikarz!",
+        "description": "Dodałeś 50 zdarzeń do historii pojazdu"
+      },
+      "SERVICE_5": {
+        "title": "5 wizyt serwisowych!",
+        "description": "Zapisałeś 5 wizyt serwisowych"
+      },
+      "SERVICE_10": {
+        "title": "10 serwisów — dbasz o swoje auto!",
+        "description": "Zapisałeś 10 wizyt serwisowych"
+      },
+      "FIRST_PHOTO": {
+        "title": "Pierwsze zdjęcie w galerii!",
+        "description": "Dodałeś pierwsze zdjęcie pojazdu"
+      },
+      "FIRST_AI_MESSAGE": {
+        "title": "Witaj w świecie AI!",
+        "description": "Wysłałeś pierwszą wiadomość do asystenta AI"
+      },
+      "PROFILE_COMPLETE": {
+        "title": "Profil w 100% uzupełniony!",
+        "description": "Profil pojazdu jest w 100% uzupełniony"
+      },
+      "ALL_DOCUMENTS_VALID": {
+        "title": "Wszystkie dokumenty aktualne!",
+        "description": "Wszystkie dokumenty pojazdu są ważne"
+      },
+      "STREAK_7": {
+        "title": "7 dni z rzędu — tak trzymaj!",
+        "description": "Byłeś aktywny przez 7 dni z rzędu"
+      },
+      "STREAK_30": {
+        "title": "30 dni z rzędu — niesamowite!",
+        "description": "Byłeś aktywny przez 30 dni z rzędu"
+      },
+      "FIRST_INVITE": {
+        "title": "Pierwsze zaproszenie wysłane!",
+        "description": "Zaprosiłeś kogoś do swojego workspace"
+      },
+      "FIRST_SHARED_WORKSPACE": {
+        "title": "Razem jest lepiej!",
+        "description": "Utworzyłeś pierwszy współdzielony workspace"
+      },
+      "VEHICLE_SOLD": {
+        "title": "Rozdział zamknięty — pojazd sprzedany",
+        "description": "Sprzedałeś swój pojazd"
+      },
+      "NEW_VEHICLE": {
+        "title": "Nowy rozdział — nowy pojazd!",
+        "description": "Dodałeś kolejny pojazd do garażu"
+      }
+    },
+    "activityCount_one": "{{count}} zdarzenie",
+    "activityCount_few": "{{count}} zdarzenia",
+    "activityCount_many": "{{count}} zdarzeń",
+    "activityCount_other": "{{count}} zdarzeń",
+    "achieved": "Odblokowano"
   },
 
   "user": {
