@@ -22,6 +22,7 @@ export const useCreateTimelineEventForm = ({
   onSuccess,
 }: TimelineEventFormParams) => {
   const { t } = useTranslation();
+
   const resolver = zodResolver(createTimelineEventSchema(t, currentMileage));
   const defaultValues = timelineEventDefaultValues({
     type,
@@ -30,7 +31,7 @@ export const useCreateTimelineEventForm = ({
   });
 
   const form = useForm<TimelineEventValues>({ resolver, defaultValues });
-  const { control, handleSubmit, setError } = form;
+  const { control, handleSubmit, setError, setValue } = form;
 
   const mutation = useCreateTimelineEventMutation({ vehicleId, workspaceId });
   const { mutate: create, isPending, error } = mutation;
@@ -44,6 +45,7 @@ export const useCreateTimelineEventForm = ({
 
   return {
     control,
+    setValue,
     handleSubmit: handleSubmit(onSubmit),
     isPending,
     errorMessage,

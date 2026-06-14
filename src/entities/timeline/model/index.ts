@@ -1,6 +1,8 @@
 export * from './types';
 
+export { SERVICE_CATEGORY_CONFIG } from './service-category.config';
 export { TIMELINE_EVENT_TYPE_CONFIG } from './timeline.config';
+
 export { TimelineConstraints } from './timeline.constraints';
 
 export {

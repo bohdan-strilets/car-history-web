@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { TIMELINE_EVENT_TYPE } from '@entities/timeline';
-import { RefuelForm, useCreateTimelineEventForm } from '@features/timeline';
+import { RefuelForm, ServiceForm, useCreateTimelineEventForm } from '@features/timeline';
 
 import type { SelectedTypeFormProps } from './create-timeline-event-modal.types';
 
@@ -23,10 +23,11 @@ export const SelectedTypeForm = ({
     onSuccess,
   });
 
-  const { control, handleSubmit, isPending, errorMessage } = form;
+  const { control, handleSubmit, isPending, errorMessage, setValue } = form;
 
   const props = {
     control,
+    setValue,
     handleSubmit,
     isPending,
     errorMessage,
@@ -36,6 +37,10 @@ export const SelectedTypeForm = ({
   switch (type) {
     case TIMELINE_EVENT_TYPE.REFUEL:
       return <RefuelForm {...props} />;
+
+    case TIMELINE_EVENT_TYPE.SERVICE:
+      return <ServiceForm {...props} />;
+
     default:
       return null;
   }

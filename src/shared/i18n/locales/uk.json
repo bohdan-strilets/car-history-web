@@ -808,7 +808,11 @@
       "addEvent": "Додати подію",
       "editEvent": "Редагувати подію",
       "deleteEvent": "Видалити подію",
-      "deleteConfirm": "Ви впевнені, що хочете видалити цю подію?"
+      "deleteConfirm": "Ви впевнені, що хочете видалити цю подію?",
+      "addWork": "Додати роботу",
+      "removeWork": "Видалити роботу",
+      "addPart": "Додати запчастину",
+      "removePart": "Видалити запчастину"
     },
 
     "fields": {
@@ -835,10 +839,8 @@
       "serviceCategory": "Категорія сервісу",
       "works": "Робота",
       "parts": "Запчастини",
-      "workName": "Назва",
       "workPrice": "Ціна",
       "workDescription": "Опис",
-      "partName": "Назва",
       "partPrice": "Ціна",
       "partQuantity": "Кількість",
       "partDescription": "Опис",
@@ -868,7 +870,14 @@
       "purchasedFrom": "Куплено у",
       "country": "Країна",
 
-      "soldTo": "Продано"
+      "soldTo": "Продано",
+
+      "workName": "Назва роботи",
+      "workNamePlaceholder": "напр. Заміна оливи",
+      "partName": "Назва запчастини",
+      "partNamePlaceholder": "напр. Масляний фільтр",
+      "price": "Ціна",
+      "quantity": "Кількість"
     },
 
     "empty": {

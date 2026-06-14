@@ -1,4 +1,4 @@
-import type { Control } from 'react-hook-form';
+import type { Control, UseFormSetValue } from 'react-hook-form';
 
 import type { EventId, TimelineEventType } from '@entities/timeline';
 import type { RefuelType, VehicleId } from '@entities/vehicle';
@@ -51,6 +51,7 @@ export type OpenCreateTimelineEventParams = TimelineEventParams & VehicleContext
 
 export type TimelineEventFormProps = {
   control: Control<TimelineEventValues>;
+  setValue: UseFormSetValue<TimelineEventValues>;
   handleSubmit: () => void;
   isPending: boolean;
   errorMessage?: string;

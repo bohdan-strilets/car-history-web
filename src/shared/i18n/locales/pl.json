@@ -806,7 +806,11 @@
       "addEvent": "Dodaj zdarzenie",
       "editEvent": "Edytuj zdarzenie",
       "deleteEvent": "Usuń zdarzenie",
-      "deleteConfirm": "Czy na pewno chcesz usunąć to zdarzenie?"
+      "deleteConfirm": "Czy na pewno chcesz usunąć to zdarzenie?",
+      "addWork": "Dodaj usługę",
+      "removeWork": "Usuń usługę",
+      "addPart": "Dodaj część",
+      "removePart": "Usuń część"
     },
 
     "fields": {
@@ -833,10 +837,8 @@
       "serviceCategory": "Kategoria serwisu",
       "works": "Robocizna",
       "parts": "Części",
-      "workName": "Nazwa",
       "workPrice": "Cena",
       "workDescription": "Opis",
-      "partName": "Nazwa",
       "partPrice": "Cena",
       "partQuantity": "Ilość",
       "partDescription": "Opis",
@@ -866,7 +868,14 @@
       "purchasedFrom": "Zakupiono od",
       "country": "Kraj",
 
-      "soldTo": "Sprzedano"
+      "soldTo": "Sprzedano",
+
+      "workName": "Nazwa usługi",
+      "workNamePlaceholder": "np. Wymiana oleju",
+      "partName": "Nazwa części",
+      "partNamePlaceholder": "np. Filtr oleju",
+      "price": "Cena",
+      "quantity": "Ilość"
     },
 
     "empty": {
