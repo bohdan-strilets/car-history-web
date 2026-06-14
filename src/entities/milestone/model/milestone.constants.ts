@@ -1,0 +1,10 @@
+export const MILESTONE_CATEGORIES = {
+  MILEAGE: 'MILEAGE',
+  TIME: 'TIME',
+  EXPENSES: 'EXPENSES',
+  FUEL: 'FUEL',
+  ACTIVITY: 'ACTIVITY',
+  ACHIEVEMENT: 'ACHIEVEMENT',
+} as const;
+
+export type MilestoneCategory = (typeof MILESTONE_CATEGORIES)[keyof typeof MILESTONE_CATEGORIES];
