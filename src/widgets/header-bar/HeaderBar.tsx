@@ -20,11 +20,11 @@ export const HeaderBar = () => {
   const [workspaceOpen, setWorkspaceOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
 
-  const { activeWorkspaceId, activeWorkspace, setActiveWorkspaceId, setActiveWorkspace } =
-    useWorkspace();
+  const { activeWorkspaceId, setActiveWorkspaceId } = useWorkspace();
 
   const { data } = useWorkspacesQuery();
   const workspaces = data?.data ?? [];
+  const activeWorkspace = workspaces.find((ws) => ws.id === activeWorkspaceId);
 
   const activeWorkspaceConfig = WORKSPACE_TYPE_CONFIG.find(
     (c) => c.value === activeWorkspace?.type,
@@ -64,7 +64,6 @@ export const HeaderBar = () => {
                 selected={ws.id === activeWorkspaceId}
                 onClick={() => {
                   setActiveWorkspaceId(ws.id);
-                  setActiveWorkspace(ws);
                   setWorkspaceOpen(false);
                 }}
               />

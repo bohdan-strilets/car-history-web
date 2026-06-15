@@ -15,12 +15,12 @@ export const WorkspaceSwitcher = ({ expanded = true, className }: WorkspaceSwitc
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const { activeWorkspaceId, activeWorkspace, setActiveWorkspaceId, setActiveWorkspace } =
-    useWorkspace();
+  const { activeWorkspaceId, setActiveWorkspaceId } = useWorkspace();
 
   const { data } = useWorkspacesQuery();
   const workspaces = data?.data ?? [];
   const workspaceCount = workspaces.length;
+  const activeWorkspace = workspaces.find((ws) => ws.id === activeWorkspaceId);
 
   const activeWorkspaceConfig = WORKSPACE_TYPE_CONFIG.find(
     (config) => config.value === activeWorkspace?.type,
@@ -29,7 +29,6 @@ export const WorkspaceSwitcher = ({ expanded = true, className }: WorkspaceSwitc
 
   const handleSelect = (workspace: (typeof workspaces)[number]) => {
     setActiveWorkspaceId(workspace.id);
-    setActiveWorkspace(workspace);
     setOpen(false);
   };
 

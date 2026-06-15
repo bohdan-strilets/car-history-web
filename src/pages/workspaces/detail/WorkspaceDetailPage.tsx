@@ -35,8 +35,7 @@ export const WorkspaceDetailPage = () => {
   const workspaceId = useWorkspaceId();
   const navigate = useNavigate();
 
-  const { setActiveWorkspace, setActiveWorkspaceId, clearActiveWorkspace, clearActiveWorkspaceId } =
-    useWorkspace();
+  const { setActiveWorkspaceId, clearActiveWorkspaceId } = useWorkspace();
 
   const {
     data: workspaceData,
@@ -65,9 +64,7 @@ export const WorkspaceDetailPage = () => {
 
     if (next) {
       setActiveWorkspaceId(next.id);
-      setActiveWorkspace(next);
     } else {
-      clearActiveWorkspace();
       clearActiveWorkspaceId();
     }
   };
@@ -75,8 +72,7 @@ export const WorkspaceDetailPage = () => {
   useEffect(() => {
     if (!workspace) return;
     setActiveWorkspaceId(workspace.id);
-    setActiveWorkspace(workspace);
-  }, [workspace?.id, setActiveWorkspaceId, setActiveWorkspace, workspace]);
+  }, [workspace?.id, setActiveWorkspaceId, workspace]);
 
   if (isWorkspacePending) return <WorkspaceDetailSkeleton />;
 

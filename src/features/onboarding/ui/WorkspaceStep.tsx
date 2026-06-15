@@ -11,12 +11,11 @@ import type { WorkspaceStepProps } from '../model';
 
 export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
   const { t } = useTranslation();
-  const { setActiveWorkspaceId, setActiveWorkspace } = useWorkspace();
+  const { setActiveWorkspaceId } = useWorkspace();
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSuccess = (workspace: Workspace) => {
     setActiveWorkspaceId(workspace.id);
-    setActiveWorkspace(workspace);
     setIsSuccess(true);
   };
 

@@ -5,6 +5,7 @@ import {
   WorkspaceSettingsForm,
   type EditWorkspaceSettingsModalProps,
 } from '@features/workspace';
+import { showToast } from '@shared/lib';
 
 export const EditWorkspaceSettingsModal = ({
   workspaceId,
@@ -13,7 +14,12 @@ export const EditWorkspaceSettingsModal = ({
 }: EditWorkspaceSettingsModalProps) => {
   const { t } = useTranslation();
 
-  const form = useWorkspaceSettingsForm({ workspaceId, settings, onSuccess });
+  const handleSuccess = () => {
+    onSuccess();
+    showToast.success(t('workspace.settings.updateSuccess'));
+  };
+
+  const form = useWorkspaceSettingsForm({ workspaceId, settings, onSuccess: handleSuccess });
   const { control, handleSubmit, isPending, errorMessage } = form;
 
   return (

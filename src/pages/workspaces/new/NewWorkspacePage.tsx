@@ -11,11 +11,10 @@ import { PageHeader } from '@widgets/page-header';
 export const NewWorkspacePage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { setActiveWorkspace, setActiveWorkspaceId } = useWorkspace();
+  const { setActiveWorkspaceId } = useWorkspace();
 
   const handleSuccess = (workspace: Workspace) => {
     setActiveWorkspaceId(workspace.id);
-    setActiveWorkspace(workspace);
     showToast.success(t('workspace.new.success'));
     navigate(ROUTES.WORKSPACES.DETAIL(workspace.id));
   };

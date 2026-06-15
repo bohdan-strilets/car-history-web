@@ -28,7 +28,7 @@ export const InvitePage = () => {
   const [redirectWorkspaceId, setRedirectWorkspaceId] = useState<string | null>(null);
 
   const { t } = useTranslation();
-  const { setActiveWorkspace, setActiveWorkspaceId } = useWorkspace();
+  const { setActiveWorkspaceId } = useWorkspace();
   const navigate = useNavigate();
   const token = useInviteToken();
 
@@ -68,7 +68,6 @@ export const InvitePage = () => {
     accept(token, {
       onSuccess: (response) => {
         setActiveWorkspaceId(response.data.id);
-        setActiveWorkspace(response.data);
         setRedirectWorkspaceId(response.data.id);
         setIsAcceptedSuccess(true);
       },

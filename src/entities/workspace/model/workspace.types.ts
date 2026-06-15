@@ -77,10 +77,7 @@ export interface WorkspaceInvite {
 // Store
 
 export interface WorkspaceStore {
-  activeWorkspace: Workspace | null;
   activeWorkspaceId: WorkspaceId | null;
-  setActiveWorkspace: (workspace: Workspace) => void;
   setActiveWorkspaceId: (workspaceId: WorkspaceId) => void;
-  clearActiveWorkspace: () => void;
   clearActiveWorkspaceId: () => void;
 }

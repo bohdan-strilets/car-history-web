@@ -8,11 +8,8 @@ import type { WorkspaceStore } from './workspace.types';
 export const useWorkspaceStore = create<WorkspaceStore>()(
   persist(
     (set) => ({
-      activeWorkspace: null,
       activeWorkspaceId: null,
 
-      setActiveWorkspace: (wk) => set({ activeWorkspace: wk }),
-      clearActiveWorkspace: () => set({ activeWorkspace: null }),
       setActiveWorkspaceId: (id) => set({ activeWorkspaceId: id }),
       clearActiveWorkspaceId: () => set({ activeWorkspaceId: null }),
     }),

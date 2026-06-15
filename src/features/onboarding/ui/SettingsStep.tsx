@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { useWorkspace } from '@entities/workspace';
 import type { WorkspaceSettings } from '@entities/workspace';
+import { useWorkspace } from '@entities/workspace';
 import { useWorkspaceSettingsForm, WorkspaceSettingsForm } from '@features/workspace';
 
 import { StepSuccess } from './StepSuccess';
