@@ -38,6 +38,7 @@ export {
   type VehicleBrand,
   type VehiclePopularBrand,
 } from './vehicle.data';
+export { VEHICLE_GENERATIONS } from './vehicle.generations';
 
 export type {
   Vehicle,
