@@ -853,11 +853,6 @@
       "addPart": "Додати частину",
 
       "documentType": "Тип документу",
-      "documentNumber": "Номер документу",
-      "issuedBy": "Видавець",
-      "issueDate": "Дата видачі",
-      "expireDate": "Дата закінчення",
-
       "expenseCategory": "Категорія витрат",
 
       "tireId": "Комплект шин",
@@ -882,7 +877,14 @@
       "partName": "Назва запчастини",
       "partNamePlaceholder": "напр. Масляний фільтр",
       "price": "Ціна",
-      "quantity": "Кількість"
+      "quantity": "Кількість",
+
+      "issueDate": "Дата видачі",
+      "expireDate": "Дата закінчення",
+      "documentNumber": "Номер документу",
+      "documentNumberPlaceholder": "наприклад, PL/2026/123456",
+      "issuedBy": "Видавець",
+      "issuedByPlaceholder": "наприклад, PZU, Warta"
     },
 
     "empty": {

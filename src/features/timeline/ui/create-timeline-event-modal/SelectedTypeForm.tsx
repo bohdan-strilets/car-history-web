@@ -1,7 +1,12 @@
 import { useTranslation } from 'react-i18next';
 
 import { TIMELINE_EVENT_TYPE } from '@entities/timeline';
-import { RefuelForm, ServiceForm, useCreateTimelineEventForm } from '@features/timeline';
+import {
+  DocumentForm,
+  RefuelForm,
+  ServiceForm,
+  useCreateTimelineEventForm,
+} from '@features/timeline';
 
 import type { SelectedTypeFormProps } from './create-timeline-event-modal.types';
 
@@ -40,6 +45,9 @@ export const SelectedTypeForm = ({
 
     case TIMELINE_EVENT_TYPE.SERVICE:
       return <ServiceForm {...props} />;
+
+    case TIMELINE_EVENT_TYPE.DOCUMENT:
+      return <DocumentForm {...props} />;
 
     default:
       return null;

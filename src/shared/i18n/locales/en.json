@@ -847,11 +847,6 @@
       "addPart": "Add part",
 
       "documentType": "Document type",
-      "documentNumber": "Document number",
-      "issuedBy": "Issued by",
-      "issueDate": "Issue date",
-      "expireDate": "Expiry date",
-
       "expenseCategory": "Expense category",
 
       "tireId": "Tire set",
@@ -876,7 +871,14 @@
       "partName": "Part name",
       "partNamePlaceholder": "e.g. Oil filter",
       "price": "Price",
-      "quantity": "Quantity"
+      "quantity": "Quantity",
+
+      "issueDate": "Issue date",
+      "expireDate": "Expiry date",
+      "documentNumber": "Document number",
+      "documentNumberPlaceholder": "e.g. PL/2026/123456",
+      "issuedBy": "Issued by",
+      "issuedByPlaceholder": "e.g. PZU, Warta"
     },
 
     "empty": {

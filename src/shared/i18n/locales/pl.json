@@ -851,11 +851,6 @@
       "addPart": "Dodaj część",
 
       "documentType": "Typ dokumentu",
-      "documentNumber": "Numer dokumentu",
-      "issuedBy": "Wystawca",
-      "issueDate": "Data wystawienia",
-      "expireDate": "Data ważności",
-
       "expenseCategory": "Kategoria wydatku",
 
       "tireId": "Zestaw opon",
@@ -880,7 +875,14 @@
       "partName": "Nazwa części",
       "partNamePlaceholder": "np. Filtr oleju",
       "price": "Cena",
-      "quantity": "Ilość"
+      "quantity": "Ilość",
+
+      "issueDate": "Data wydania",
+      "expireDate": "Data wygaśnięcia",
+      "documentNumber": "Numer dokumentu",
+      "documentNumberPlaceholder": "np. PL/2026/123456",
+      "issuedBy": "Wydane przez",
+      "issuedByPlaceholder": "np. PZU, Warta"
     },
 
     "empty": {

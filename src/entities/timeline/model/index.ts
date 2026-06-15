@@ -1,5 +1,6 @@
 export * from './types';
 
+export { DOCUMENT_TYPE_CONFIG } from './document-type.config';
 export { SERVICE_CATEGORY_CONFIG } from './service-category.config';
 export { TIMELINE_EVENT_TYPE_CONFIG } from './timeline.config';
 
