@@ -20,9 +20,8 @@ export const WorkspaceStep = ({ onNext }: WorkspaceStepProps) => {
     setIsSuccess(true);
   };
 
-  const { control, handleSubmit, isPending, errorMessage } = useWorkspaceForm({
-    onSuccess: handleSuccess,
-  });
+  const form = useWorkspaceForm({ onSuccess: handleSuccess });
+  const { control, handleSubmit, isPending, errorMessage } = form;
 
   if (isSuccess) {
     return (

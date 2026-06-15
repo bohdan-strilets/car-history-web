@@ -195,6 +195,11 @@
       "RWD": "Rear-wheel (RWD)",
       "AWD": "All-wheel (AWD)"
     },
+    "driveTypeShort": {
+      "FWD": "FWD",
+      "RWD": "RWD",
+      "AWD": "AWD"
+    },
     "color": {
       "BLACK": "Black",
       "WHITE": "White",

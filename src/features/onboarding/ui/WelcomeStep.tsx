@@ -80,7 +80,7 @@ export const WelcomeStep = ({ onNext }: WelcomeStepProps) => {
               {isUpdatingLanguage && <Spinner size="xs" />}
             </Stack>
             <CardSelect
-              options={LANGUAGE_CONFIG}
+              options={translateCardSelectOptions(t, LANGUAGE_CONFIG)}
               value={[currentLanguage]}
               onChange={handleLanguage}
               maxSelect={1}

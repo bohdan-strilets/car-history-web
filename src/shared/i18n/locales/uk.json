@@ -195,6 +195,11 @@
       "RWD": "Задній (RWD)",
       "AWD": "Повний (AWD)"
     },
+    "driveTypeShort": {
+      "FWD": "FWD",
+      "RWD": "RWD",
+      "AWD": "AWD"
+    },
     "color": {
       "BLACK": "Чорний",
       "WHITE": "Білий",
