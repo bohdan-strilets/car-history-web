@@ -10,7 +10,7 @@ export const YearPicker = ({
   value,
   onChange,
   min = VehicleConstraints.YEAR_MIN,
-  max = APP_CONSTANTS.CURENT_YEAR,
+  max = APP_CONSTANTS.CURRENT_YEAR,
 }: YearPickerProps) => {
   const { activeDec, decades, getYearState, setActiveDec, years } = useYearPicker({
     value,
@@ -23,13 +23,6 @@ export const YearPicker = ({
       <Grid columns={{ mobile: '2', tablet: '4' }} gap="xs">
         {decades.map((decade) => {
           const isActive = decade === activeDec;
-          const isLast = decade + 9 >= max;
-
-          const handleClick = () => {
-            if (!isLast) {
-              setActiveDec(decade);
-            }
-          };
 
           return (
             <Button
@@ -38,7 +31,7 @@ export const YearPicker = ({
               variant="soft"
               color={isActive ? 'accent' : 'gray'}
               size="sm"
-              onClick={handleClick}
+              onClick={() => setActiveDec(decade)}
             >
               {decade}–{Math.min(decade + 9, max)}
             </Button>

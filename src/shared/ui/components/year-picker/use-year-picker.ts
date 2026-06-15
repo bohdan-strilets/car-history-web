@@ -10,21 +10,35 @@ import type { YearPickerParams } from './year-picker.types';
 export const useYearPicker = ({
   value,
   min = VehicleConstraints.YEAR_MIN,
-  max = APP_CONSTANTS.CURENT_YEAR,
+  max = APP_CONSTANTS.CURRENT_YEAR,
 }: YearPickerParams) => {
   const normalizedValue = value ? Number(value) : null;
 
-  const [activeDec, setActiveDec] = useState(() => {
-    if (normalizedValue) return Math.floor(normalizedValue / 10) * 10;
-    return Math.floor(APP_CONSTANTS.CURENT_YEAR / 10) * 10;
-  });
+  const getDecadeFor = (year: number) => Math.floor(year / 10) * 10;
+
+  const getDefaultDecade = () => {
+    if (normalizedValue) return getDecadeFor(normalizedValue);
+
+    const clampedYear = Math.min(Math.max(APP_CONSTANTS.CURRENT_YEAR, min), max);
+    return getDecadeFor(clampedYear);
+  };
+
+  const rangeKey = `${min}-${max}`;
+
+  const [prevRangeKey, setPrevRangeKey] = useState(rangeKey);
+  const [activeDec, setActiveDec] = useState(getDefaultDecade);
+
+  if (prevRangeKey !== rangeKey) {
+    setPrevRangeKey(rangeKey);
+    setActiveDec(getDefaultDecade());
+  }
 
   const decades = getDecades(min, max);
   const years = Array.from({ length: 10 }, (_, i) => activeDec + i);
 
   const getYearState = (y: number) => ({
     isSelected: y === normalizedValue,
-    isCurrent: y === APP_CONSTANTS.CURENT_YEAR,
+    isCurrent: y === APP_CONSTANTS.CURRENT_YEAR,
     isDim: y < min || y > max,
   });
 
