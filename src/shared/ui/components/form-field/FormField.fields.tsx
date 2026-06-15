@@ -221,9 +221,10 @@ export const FormFieldMileageInput = <T extends FieldValues>({
     control={control}
     name={name}
     label={label}
-    hint={hint}
     required={required}
-    render={(field) => <MileageInput value={field.value} onChange={field.onChange} {...props} />}
+    render={(field) => (
+      <MileageInput value={field.value} onChange={field.onChange} hint={hint} {...props} />
+    )}
   />
 );
 

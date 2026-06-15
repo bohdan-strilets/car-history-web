@@ -1,45 +1,49 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 
-import { Hint, IconBox, Stack, Text } from '@shared/ui';
+import { useTranslation } from 'react-i18next';
 
-import { card, nativeInput, valueText } from './mileage-input.css';
+import { Hint, IconBox, Panel, Stack, Text } from '@shared/ui';
+
+import { input } from './mileage-input.css';
 
 import type { MileageInputProps } from './mileage-input.types';
 
 export const MileageInput = ({ value, onChange, hint }: MileageInputProps) => {
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const handleCardClick = () => {
-    inputRef.current?.focus();
-  };
+  const [focused, setFocused] = useState(false);
+  const { t } = useTranslation();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value.replace(/\D/g, '');
-    onChange(raw ? Number(raw) : undefined);
+    onChange(raw === '' ? undefined : Number(raw));
   };
 
-  const numericValue = value !== undefined ? Number(value) : undefined;
+  const displayValue =
+    typeof value === 'number' && !Number.isNaN(value)
+      ? focused
+        ? String(value)
+        : value.toLocaleString()
+      : '';
 
   return (
     <Stack gap="lg">
-      <div className={card} onClick={handleCardClick}>
+      <Panel align="center" justify="center" p="4xl">
+        <IconBox name="road" size="2xl" soft="accent" radius="md" strokeWidth="medium" />
+
         <input
-          ref={inputRef}
-          type="number"
-          min={0}
-          value={numericValue ?? ''}
+          type="text"
+          inputMode="numeric"
+          value={displayValue}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           onChange={handleChange}
-          className={nativeInput}
+          placeholder="0"
+          className={input}
         />
 
-        <IconBox name="gauge" size="xl" soft="accent" radius="md" />
-
-        <Text className={valueText}>{numericValue?.toLocaleString() ?? '0'}</Text>
-
         <Text size="md" weight="medium" color="tertiary">
-          km
+          {t('units.km')}
         </Text>
-      </div>
+      </Panel>
 
       {hint && <Hint message={hint} variant="info" />}
     </Stack>
