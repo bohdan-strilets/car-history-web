@@ -75,6 +75,7 @@ import {
   FolderOpen,
   Fuel,
   Gauge,
+  Gavel,
   Gift,
   Globe,
   Goal,
@@ -151,6 +152,7 @@ import {
   SortAsc,
   SortDesc,
   Sparkles,
+  SquareParking,
   Star,
   StarOff,
   Sun,
@@ -280,6 +282,8 @@ export const Icons = {
   filePenLine: FilePenLine,
   signpost: Signpost,
   ticketCheck: TicketCheck,
+  squareParking: SquareParking,
+  gavel: Gavel,
 
   // Documents & Files
   fileText: FileText,

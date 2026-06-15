@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { TIMELINE_EVENT_TYPE } from '@entities/timeline';
 import {
   DocumentForm,
+  ExpenseForm,
   RefuelForm,
   ServiceForm,
   useCreateTimelineEventForm,
@@ -48,6 +49,9 @@ export const SelectedTypeForm = ({
 
     case TIMELINE_EVENT_TYPE.DOCUMENT:
       return <DocumentForm {...props} />;
+
+    case TIMELINE_EVENT_TYPE.EXPENSE:
+      return <ExpenseForm {...props} />;
 
     default:
       return null;
