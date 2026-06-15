@@ -9,14 +9,14 @@ export const ComboboxTrigger = ({
   leftIcon,
   open,
   query,
-  selected,
   handleInputChange,
   handleFocus,
   placeholder,
+  displayValue,
 }: ComboboxTriggerProps) => {
   return (
     <Input
-      value={open ? query : (selected?.label ?? '')}
+      value={open ? query : displayValue}
       onChange={open ? handleInputChange : () => {}}
       onFocus={handleFocus}
       onClick={(e) => e.stopPropagation()}

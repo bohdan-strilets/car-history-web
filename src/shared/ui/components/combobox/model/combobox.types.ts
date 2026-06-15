@@ -24,6 +24,7 @@ export interface ComboboxProps {
   state?: InputState;
   leftIcon?: IconName;
   fullWidth?: boolean;
+  allowCustomValue?: boolean;
 }
 
 export type ComboboxTriggerProps = Pick<
@@ -33,6 +34,7 @@ export type ComboboxTriggerProps = Pick<
   open: boolean;
   query: string;
   selected?: ComboboxOption;
+  displayValue: string;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleFocus: () => void;
 };
@@ -41,4 +43,7 @@ export type EmptyMessageProps = Pick<ComboboxProps, 'emptyMessage'>;
 
 // Params
 
-export type ComboboxParams = Pick<ComboboxProps, 'options' | 'value' | 'onChange'>;
+export type ComboboxParams = Pick<
+  ComboboxProps,
+  'options' | 'value' | 'onChange' | 'allowCustomValue'
+>;

@@ -14,23 +14,24 @@ export const Combobox = ({
   leftIcon,
   size,
   state,
+  allowCustomValue = false,
 }: ComboboxProps) => {
   const {
     query,
     open,
-    setOpen,
-    selected,
+    displayValue,
     filtered,
     isEmpty,
     handleInputChange,
     handleFocus,
     handleSelect,
-  } = useCombobox({ options, value, onChange });
+    handleOpenChange,
+  } = useCombobox({ options, value, onChange, allowCustomValue });
 
   return (
     <Dropdown
       open={open}
-      onOpenChange={setOpen}
+      onOpenChange={handleOpenChange}
       fullWidth={fullWidth ?? true}
       disabled={disabled}
       trigger={
@@ -41,7 +42,7 @@ export const Combobox = ({
           leftIcon={leftIcon}
           open={open}
           query={query}
-          selected={selected}
+          displayValue={displayValue}
           handleInputChange={handleInputChange}
           handleFocus={handleFocus}
           placeholder={placeholder}
