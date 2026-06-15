@@ -25,12 +25,13 @@ export const VehicleForm = ({ workspaceId, onSuccess, onSkip }: VehicleFormProps
     handleBack,
     handleSubmit,
     errorMessage,
+    setValue,
   } = useVehicleForm({ workspaceId, onSuccess });
 
   const renderFields = () => {
     switch (currentStep) {
       case 1:
-        return <BasicInfoStep control={control} />;
+        return <BasicInfoStep control={control} setValue={setValue} />;
       case 2:
         return <TypeStep control={control} />;
       case 3:

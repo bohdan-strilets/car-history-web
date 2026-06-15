@@ -41,7 +41,7 @@ export const useVehicleForm = ({ workspaceId, onSuccess }: VehicleFormParams) =>
       description: '',
     },
   });
-  const { control, handleSubmit, setError, trigger } = form;
+  const { control, handleSubmit, setError, trigger, setValue } = form;
 
   const { mutate: create, isPending, error } = useCreateVehicleMutation();
   const errorMessage = useFormErrors({ error, setError, t });
@@ -71,5 +71,6 @@ export const useVehicleForm = ({ workspaceId, onSuccess }: VehicleFormParams) =>
     handleBack,
     handleSubmit: handleSubmit(onSubmit),
     errorMessage,
+    setValue,
   };
 };

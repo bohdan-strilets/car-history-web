@@ -1,4 +1,4 @@
-import type { Control } from 'react-hook-form';
+import type { Control, UseFormSetValue } from 'react-hook-form';
 
 import type { Vehicle, VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
@@ -56,7 +56,17 @@ export interface EditVehicleSpecsFormParams {
   onSuccess?: () => void;
 }
 
+export interface GenerationYearRangeParams {
+  startYear: number | null;
+  endYear: number | null;
+}
+
 // Props
+
+export interface VehicleBasicInfoStepProps {
+  control: Control<VehicleFormValues>;
+  setValue: UseFormSetValue<VehicleFormValues>;
+}
 
 export interface VehicleStepProps {
   control: Control<VehicleFormValues>;

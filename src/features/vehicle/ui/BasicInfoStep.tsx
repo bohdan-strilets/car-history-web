@@ -1,7 +1,10 @@
+import { useEffect, useMemo } from 'react';
+
 import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { VEHICLE_POPULAR_BRANDS_CONFIG } from '@entities/vehicle';
+import { APP_CONSTANTS } from '@shared/config';
 import {
   FormFieldCardSelect,
   FormFieldCombobox,
@@ -9,14 +12,38 @@ import {
   FormFieldYearPicker,
 } from '@shared/ui';
 
-import { getBrandOptions, getModelOptions, type VehicleStepProps } from '../model';
+import {
+  getBrandOptions,
+  getGenerationOptions,
+  getGenerationYearRange,
+  getModelOptions,
+  type VehicleBasicInfoStepProps,
+} from '../model';
 
-export const BasicInfoStep = ({ control }: VehicleStepProps) => {
+export const BasicInfoStep = ({ control, setValue }: VehicleBasicInfoStepProps) => {
   const { t } = useTranslation();
 
   const selectedBrand = useWatch({ control, name: 'brand' });
+  const selectedModel = useWatch({ control, name: 'model' });
+  const selectedGeneration = useWatch({ control, name: 'generation' });
+  const selectedYear = useWatch({ control, name: 'year' });
+
   const brandOptions = getBrandOptions();
   const modelOptions = getModelOptions(selectedBrand);
+  const generationOptions = getGenerationOptions(selectedBrand, selectedModel);
+
+  const { startYear, endYear } = useMemo(
+    () => getGenerationYearRange(selectedGeneration),
+    [selectedGeneration],
+  );
+
+  useEffect(() => {
+    if (startYear === null || endYear === null || Number.isNaN(selectedYear)) return;
+
+    if (selectedYear < startYear || selectedYear > endYear) {
+      setValue('year', NaN);
+    }
+  }, [startYear, endYear, selectedYear, setValue]);
 
   return (
     <>
@@ -48,20 +75,25 @@ export const BasicInfoStep = ({ control }: VehicleStepProps) => {
         size="lg"
       />
 
+      <FormFieldCombobox
+        control={control}
+        name="generation"
+        label={t('vehicle.fields.generation')}
+        required
+        allowCustomValue
+        options={generationOptions}
+        placeholder={t('vehicle.fields.generationPlaceholder')}
+        disabled={!selectedBrand || !selectedModel}
+        size="lg"
+      />
+
       <FormFieldYearPicker
         control={control}
         name="year"
         label={t('vehicle.fields.year')}
         required
-        min={1990}
-      />
-
-      <FormFieldInput
-        control={control}
-        name="generation"
-        label={t('vehicle.fields.generation')}
-        size="lg"
-        placeholder={t('vehicle.fields.generationPlaceholder')}
+        min={startYear ?? 1990}
+        max={endYear ?? APP_CONSTANTS.CURRENT_YEAR}
       />
 
       <FormFieldInput

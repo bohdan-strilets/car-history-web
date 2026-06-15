@@ -1,4 +1,4 @@
-import { VEHICLE_MODELS } from '@entities/vehicle';
+import { VEHICLE_GENERATIONS, VEHICLE_MODELS } from '@entities/vehicle';
 import type { ComboboxOption } from '@shared/ui';
 
 export const getBrandOptions = (): ComboboxOption[] =>
@@ -13,4 +13,11 @@ export const getModelOptions = (brand: string): ComboboxOption[] =>
     id: model,
     value: model,
     label: model,
+  })) || [];
+
+export const getGenerationOptions = (brand: string, model: string): ComboboxOption[] =>
+  VEHICLE_GENERATIONS[brand]?.[model]?.map((generation) => ({
+    id: generation,
+    value: generation,
+    label: generation,
   })) || [];
