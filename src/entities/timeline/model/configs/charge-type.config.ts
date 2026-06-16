@@ -1,6 +1,6 @@
 import type { EntityOption } from '@shared/types';
 
-import { CHARGE_TYPES, type ChargeType } from './timeline.constants';
+import { CHARGE_TYPES, type ChargeType } from '../timeline.constants';
 
 export const CHARGE_TYPE_CONFIG: EntityOption<ChargeType>[] = [
   {

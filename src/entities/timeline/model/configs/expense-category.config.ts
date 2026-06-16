@@ -1,6 +1,6 @@
 import type { EntityOption } from '@shared/types';
 
-import { EXPENSE_CATEGORIES, type ExpenseCategory } from './timeline.constants';
+import { EXPENSE_CATEGORIES, type ExpenseCategory } from '../timeline.constants';
 
 export const EXPENSE_CATEGORY_CONFIG: EntityOption<ExpenseCategory>[] = [
   {

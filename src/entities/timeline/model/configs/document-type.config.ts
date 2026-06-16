@@ -1,6 +1,6 @@
 import type { EntityOption } from '@shared/types';
 
-import { DOCUMENT_TYPES, type DocumentType } from './timeline.constants';
+import { DOCUMENT_TYPES, type DocumentType } from '../timeline.constants';
 
 export const DOCUMENT_TYPE_CONFIG: EntityOption<DocumentType>[] = [
   {

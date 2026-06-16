@@ -1,6 +1,6 @@
 import type { EntityOption } from '@shared/types';
 
-import { TRIP_PURPOSES, type TripPurpose } from './timeline.constants';
+import { TRIP_PURPOSES, type TripPurpose } from '../timeline.constants';
 
 export const TRIP_PURPOSE_CONFIG: EntityOption<TripPurpose>[] = [
   {

@@ -1,6 +1,6 @@
 import type { EntityOption } from '@shared/types';
 
-import { PURCHASE_FROM, type PurchaseFrom } from './timeline.constants';
+import { PURCHASE_FROM, type PurchaseFrom } from '../timeline.constants';
 
 export const PURCHASE_CONFIG: EntityOption<PurchaseFrom>[] = [
   {

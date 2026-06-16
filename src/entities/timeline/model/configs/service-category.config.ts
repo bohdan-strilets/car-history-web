@@ -1,6 +1,6 @@
 import type { EntityOption } from '@shared/types';
 
-import type { ServiceCategory } from './timeline.constants';
+import type { ServiceCategory } from '../timeline.constants';
 
 export const SERVICE_CATEGORY_CONFIG: EntityOption<ServiceCategory>[] = [
   {
