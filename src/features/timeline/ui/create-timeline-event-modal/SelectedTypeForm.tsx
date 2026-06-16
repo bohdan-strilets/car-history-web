@@ -4,6 +4,7 @@ import { TIMELINE_EVENT_TYPE } from '@entities/timeline';
 import {
   DocumentForm,
   ExpenseForm,
+  PurchaseForm,
   RefuelForm,
   ServiceForm,
   useCreateTimelineEventForm,
@@ -20,6 +21,7 @@ export const SelectedTypeForm = ({
   onSuccess,
 }: SelectedTypeFormProps) => {
   const { t } = useTranslation();
+
   const form = useCreateTimelineEventForm({
     workspaceId,
     vehicleId,
@@ -52,6 +54,9 @@ export const SelectedTypeForm = ({
 
     case TIMELINE_EVENT_TYPE.EXPENSE:
       return <ExpenseForm {...props} />;
+
+    case TIMELINE_EVENT_TYPE.PURCHASE:
+      return <PurchaseForm {...props} />;
 
     default:
       return null;

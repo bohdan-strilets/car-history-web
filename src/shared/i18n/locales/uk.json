@@ -884,7 +884,10 @@
       "documentNumber": "Номер документу",
       "documentNumberPlaceholder": "наприклад, PL/2026/123456",
       "issuedBy": "Видавець",
-      "issuedByPlaceholder": "наприклад, PZU, Warta"
+      "issuedByPlaceholder": "наприклад, PZU, Warta",
+
+      "purchasePrice": "Ціна покупки",
+      "countryPlaceholder": "наприклад, Німеччина"
     },
 
     "empty": {

@@ -882,7 +882,10 @@
       "documentNumber": "Numer dokumentu",
       "documentNumberPlaceholder": "np. PL/2026/123456",
       "issuedBy": "Wydane przez",
-      "issuedByPlaceholder": "np. PZU, Warta"
+      "issuedByPlaceholder": "np. PZU, Warta",
+
+      "purchasePrice": "Cena zakupu",
+      "countryPlaceholder": "np. Niemcy"
     },
 
     "empty": {

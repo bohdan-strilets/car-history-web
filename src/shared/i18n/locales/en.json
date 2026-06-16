@@ -878,7 +878,10 @@
       "documentNumber": "Document number",
       "documentNumberPlaceholder": "e.g. PL/2026/123456",
       "issuedBy": "Issued by",
-      "issuedByPlaceholder": "e.g. PZU, Warta"
+      "issuedByPlaceholder": "e.g. PZU, Warta",
+
+      "purchasePrice": "Purchase price",
+      "countryPlaceholder": "e.g. Germany"
     },
 
     "empty": {

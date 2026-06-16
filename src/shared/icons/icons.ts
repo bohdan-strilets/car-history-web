@@ -155,6 +155,7 @@ import {
   SquareParking,
   Star,
   StarOff,
+  Store,
   Sun,
   Tag,
   Tags,
@@ -304,6 +305,7 @@ export const Icons = {
   percent: BadgePercent,
   banknote: Banknote,
   shoppingCart: ShoppingCart,
+  store: Store,
 
   // Time & Calendar
   calendar: Calendar,
