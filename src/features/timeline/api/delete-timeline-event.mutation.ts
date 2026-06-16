@@ -19,7 +19,7 @@ export const useDeleteTimelineEventMutation = ({
     },
 
     onSuccess: () => {
-      const keys = queryKeys.vehicles.timeline(vehicleId);
+      const keys = queryKeys.vehicles.timelineRoot(vehicleId);
       queryClient.invalidateQueries({ queryKey: keys });
     },
   });

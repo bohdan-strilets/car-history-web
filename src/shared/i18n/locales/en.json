@@ -21,7 +21,8 @@
       "download": "Download",
       "search": "Search",
       "filter": "Filter",
-      "refresh": "Refresh"
+      "refresh": "Refresh",
+      "clear": "Clear"
     },
     "state": {
       "loading": "Loading...",

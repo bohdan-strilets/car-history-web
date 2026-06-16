@@ -1,7 +1,16 @@
+import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
 import { useMilestones } from '@entities/milestone';
-import { EventList, EventListSkeleton, mergeTimeline, useTimeline } from '@entities/timeline';
+import {
+  EventList,
+  EventListSkeleton,
+  mergeTimeline,
+  TimelineFilter,
+  useTimeline,
+  type TimelineEventType,
+} from '@entities/timeline';
 import { useOpenCreateTimelineEvent } from '@features/timeline';
 import { Stack, StateView } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
@@ -14,6 +23,8 @@ export const TimelineTab = ({
   currentMileage,
   fuelType,
 }: TimelineTabProps) => {
+  const [typeFilter, setTypeFilter] = useState<TimelineEventType[]>([]);
+
   const { t } = useTranslation();
 
   const { handleCreate } = useOpenCreateTimelineEvent({
@@ -27,7 +38,12 @@ export const TimelineTab = ({
     data: timelineData,
     isPending: timelinePending,
     isError,
-  } = useTimeline({ workspaceId, vehicleId });
+  } = useTimeline({
+    workspaceId,
+    vehicleId,
+    query: { type: typeFilter.length > 0 ? typeFilter : undefined },
+  });
+
   const { data: milestonesData, isPending: milestonesPending } = useMilestones({
     workspaceId,
     vehicleId,
@@ -35,7 +51,8 @@ export const TimelineTab = ({
 
   const isPending = timelinePending || milestonesPending;
   const events = timelineData?.data ?? [];
-  const milestones = milestonesData?.data ?? [];
+  const hasFilter = typeFilter.length > 0;
+  const milestones = hasFilter ? [] : (milestonesData?.data ?? []);
   const items = mergeTimeline(events, milestones);
   const isEmpty = items.length === 0;
 
@@ -71,6 +88,7 @@ export const TimelineTab = ({
         onCreate={handleCreate}
       />
 
+      <TimelineFilter value={typeFilter} onChange={setTypeFilter} />
       <EventList items={items} />
     </Stack>
   );

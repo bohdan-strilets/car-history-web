@@ -10,7 +10,7 @@ import type { GetManyParams, TimelineEventParams } from '../model';
 
 export const useTimeline = ({ workspaceId, vehicleId, query }: GetManyParams) => {
   return useQuery({
-    queryKey: queryKeys.vehicles.timeline(vehicleId),
+    queryKey: queryKeys.vehicles.timeline(vehicleId, query),
     queryFn: () => timelineApi.getMany({ workspaceId, vehicleId, query }),
     placeholderData: keepPreviousData,
   });

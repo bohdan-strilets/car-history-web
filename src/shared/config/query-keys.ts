@@ -1,4 +1,4 @@
-import type { EventId } from '@entities/timeline';
+import type { EventId, TimelineQuery } from '@entities/timeline';
 import type { VehicleId } from '@entities/vehicle';
 import type { InviteToken, WorkspaceId } from '@entities/workspace';
 
@@ -22,7 +22,9 @@ export const queryKeys = {
   vehicles: {
     all: (workspaceId: WorkspaceId) => ['vehicles', workspaceId] as const,
     detail: (vehicleId: VehicleId) => ['vehicles', vehicleId] as const,
-    timeline: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'timeline'] as const,
+    timeline: (vehicleId: VehicleId, query?: TimelineQuery) =>
+      ['vehicles', vehicleId, 'timeline', query ?? {}] as const,
+    timelineRoot: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'timeline'] as const,
     timelineEvent: (vehicleId: VehicleId, eventId: EventId) =>
       ['vehicles', vehicleId, 'timeline', eventId] as const,
     reminders: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'reminders'] as const,

@@ -21,7 +21,8 @@
       "download": "Pobierz",
       "search": "Szukaj",
       "filter": "Filtruj",
-      "refresh": "Odśwież"
+      "refresh": "Odśwież",
+      "clear": "Wyczyść"
     },
     "state": {
       "loading": "Ładowanie...",
