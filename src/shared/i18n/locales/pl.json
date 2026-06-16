@@ -885,7 +885,8 @@
       "issuedByPlaceholder": "np. PZU, Warta",
 
       "purchasePrice": "Cena zakupu",
-      "countryPlaceholder": "np. Niemcy"
+      "countryPlaceholder": "np. Niemcy",
+      "salePrice": "Cena sprzedaży"
     },
 
     "empty": {

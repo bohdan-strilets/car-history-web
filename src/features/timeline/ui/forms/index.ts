@@ -2,4 +2,5 @@ export { DocumentForm } from './DocumentForm';
 export { ExpenseForm } from './ExpenseForm';
 export { PurchaseForm } from './PurchaseForm';
 export { RefuelForm } from './RefuelForm';
+export { SaleForm } from './SaleForm';
 export { ServiceForm } from './ServiceForm';

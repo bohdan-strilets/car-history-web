@@ -6,6 +6,7 @@ import {
   ExpenseForm,
   PurchaseForm,
   RefuelForm,
+  SaleForm,
   ServiceForm,
   useCreateTimelineEventForm,
 } from '@features/timeline';
@@ -57,6 +58,9 @@ export const SelectedTypeForm = ({
 
     case TIMELINE_EVENT_TYPE.PURCHASE:
       return <PurchaseForm {...props} />;
+
+    case TIMELINE_EVENT_TYPE.SALE:
+      return <SaleForm {...props} />;
 
     default:
       return null;

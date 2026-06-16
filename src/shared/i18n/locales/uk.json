@@ -887,7 +887,8 @@
       "issuedByPlaceholder": "наприклад, PZU, Warta",
 
       "purchasePrice": "Ціна покупки",
-      "countryPlaceholder": "наприклад, Німеччина"
+      "countryPlaceholder": "наприклад, Німеччина",
+      "salePrice": "Ціна продажу"
     },
 
     "empty": {
