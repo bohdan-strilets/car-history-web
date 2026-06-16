@@ -888,7 +888,10 @@
       "countryPlaceholder": "e.g. Germany",
       "salePrice": "Sale price",
 
-      "chargerNetworkPlaceholder": "e.g. GreenWay, Orlen Charge"
+      "chargerNetworkPlaceholder": "e.g. GreenWay, Orlen Charge",
+
+      "startLocationPlaceholder": "e.g. Warsaw",
+      "endLocationPlaceholder": "e.g. Kraków"
     },
 
     "empty": {

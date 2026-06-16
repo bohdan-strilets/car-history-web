@@ -9,6 +9,7 @@ import {
   RefuelForm,
   SaleForm,
   ServiceForm,
+  TripForm,
   useCreateTimelineEventForm,
 } from '@features/timeline';
 
@@ -65,6 +66,9 @@ export const SelectedTypeForm = ({
 
     case TIMELINE_EVENT_TYPE.CHARGE:
       return <ChargeForm {...props} />;
+
+    case TIMELINE_EVENT_TYPE.TRIP:
+      return <TripForm {...props} />;
 
     default:
       return null;

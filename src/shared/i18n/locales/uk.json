@@ -894,7 +894,10 @@
       "countryPlaceholder": "наприклад, Німеччина",
       "salePrice": "Ціна продажу",
 
-      "chargerNetworkPlaceholder": "наприклад, GreenWay, Orlen Charge"
+      "chargerNetworkPlaceholder": "наприклад, GreenWay, Orlen Charge",
+
+      "startLocationPlaceholder": "наприклад, Варшава",
+      "endLocationPlaceholder": "наприклад, Краків"
     },
 
     "empty": {

@@ -892,7 +892,10 @@
       "countryPlaceholder": "np. Niemcy",
       "salePrice": "Cena sprzedaży",
 
-      "chargerNetworkPlaceholder": "np. GreenWay, Orlen Charge"
+      "chargerNetworkPlaceholder": "np. GreenWay, Orlen Charge",
+
+      "startLocationPlaceholder": "np. Warszawa",
+      "endLocationPlaceholder": "np. Kraków"
     },
 
     "empty": {
