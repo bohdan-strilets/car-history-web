@@ -305,6 +305,10 @@
       "PERSONAL": "Особиста",
       "WORK": "Службова",
       "OTHER": "Інша"
+    },
+    "chargeType": {
+      "AC": "AC (повільна зарядка)",
+      "DC": "DC (швидка зарядка)"
     }
   },
 
@@ -888,7 +892,9 @@
 
       "purchasePrice": "Ціна покупки",
       "countryPlaceholder": "наприклад, Німеччина",
-      "salePrice": "Ціна продажу"
+      "salePrice": "Ціна продажу",
+
+      "chargerNetworkPlaceholder": "наприклад, GreenWay, Orlen Charge"
     },
 
     "empty": {

@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { TIMELINE_EVENT_TYPE } from '@entities/timeline';
 import {
+  ChargeForm,
   DocumentForm,
   ExpenseForm,
   PurchaseForm,
@@ -61,6 +62,9 @@ export const SelectedTypeForm = ({
 
     case TIMELINE_EVENT_TYPE.SALE:
       return <SaleForm {...props} />;
+
+    case TIMELINE_EVENT_TYPE.CHARGE:
+      return <ChargeForm {...props} />;
 
     default:
       return null;

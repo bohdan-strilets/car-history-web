@@ -305,6 +305,10 @@
       "PERSONAL": "Prywatna",
       "WORK": "Służbowa",
       "OTHER": "Inna"
+    },
+    "chargeType": {
+      "AC": "AC (wolne ładowanie)",
+      "DC": "DC (szybkie ładowanie)"
     }
   },
 
@@ -886,7 +890,9 @@
 
       "purchasePrice": "Cena zakupu",
       "countryPlaceholder": "np. Niemcy",
-      "salePrice": "Cena sprzedaży"
+      "salePrice": "Cena sprzedaży",
+
+      "chargerNetworkPlaceholder": "np. GreenWay, Orlen Charge"
     },
 
     "empty": {

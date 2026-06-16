@@ -127,6 +127,7 @@ import {
   Paperclip,
   Phone,
   PiggyBank,
+  Plug,
   Plus,
   Power,
   QrCode,
@@ -285,6 +286,7 @@ export const Icons = {
   ticketCheck: TicketCheck,
   squareParking: SquareParking,
   gavel: Gavel,
+  plug: Plug,
 
   // Documents & Files
   fileText: FileText,

@@ -60,3 +60,10 @@ export const PURCHASE_FROM = {
 } as const;
 
 export type PurchaseFrom = (typeof PURCHASE_FROM)[keyof typeof PURCHASE_FROM];
+
+export const CHARGE_TYPES = {
+  AC: 'AC',
+  DC: 'DC',
+} as const;
+
+export type ChargeType = (typeof CHARGE_TYPES)[keyof typeof CHARGE_TYPES];
