@@ -12,7 +12,8 @@ import {
   type TimelineEventType,
 } from '@entities/timeline';
 import { useOpenCreateTimelineEvent } from '@features/timeline';
-import { Stack, StateView } from '@shared/ui';
+import { useMediaQuery } from '@shared/hooks';
+import { Fab, Stack, StateView } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
 
 import type { TimelineTabProps } from './vehicle-tabs.types';
@@ -26,6 +27,7 @@ export const TimelineTab = ({
   const [typeFilter, setTypeFilter] = useState<TimelineEventType[]>([]);
 
   const { t } = useTranslation();
+  const isTabletUp = useMediaQuery('tablet', 'up');
 
   const { handleCreate } = useOpenCreateTimelineEvent({
     workspaceId,
@@ -80,16 +82,25 @@ export const TimelineTab = ({
     );
 
   return (
-    <Stack gap="xl">
-      <PageHeader
-        title={t('timeline.list.title')}
-        buttonLabel={t('timeline.actions.addEvent')}
-        buttonIcon="plus"
-        onCreate={handleCreate}
-      />
+    <>
+      <Stack gap="xl">
+        <PageHeader
+          title={t('timeline.list.title')}
+          buttonLabel={t('timeline.actions.addEvent')}
+          buttonIcon="plus"
+          onCreate={handleCreate}
+        />
 
-      <TimelineFilter value={typeFilter} onChange={setTypeFilter} />
-      <EventList items={items} />
-    </Stack>
+        <TimelineFilter value={typeFilter} onChange={setTypeFilter} />
+        <EventList items={items} />
+      </Stack>
+
+      <Fab
+        icon="plus"
+        aria-label={t('timeline.actions.addEvent')}
+        onClick={handleCreate}
+        size={isTabletUp ? 'lg' : 'md'}
+      />
+    </>
   );
 };

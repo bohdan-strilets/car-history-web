@@ -3,6 +3,7 @@ export * from './card-select';
 export * from './combobox';
 export * from './date-picker';
 export * from './dropdown';
+export * from './fab';
 export * from './field';
 export * from './form';
 export * from './form-error';
