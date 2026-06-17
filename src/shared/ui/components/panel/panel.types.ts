@@ -17,4 +17,5 @@ export interface PanelOwnProps extends BoxWithoutRadius, SurfaceOwnProps {
   hoverable?: boolean;
   onClick?: () => void;
   disabled?: boolean;
+  style?: React.CSSProperties;
 }

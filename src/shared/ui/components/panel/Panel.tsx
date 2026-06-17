@@ -34,10 +34,18 @@ export const Panel = ({
   onClick,
   disabled,
   maxWidth,
+  style,
   ...rest
 }: PanelOwnProps) => {
   return (
-    <Box width={width} height={height} position={position} overflow={overflow} maxWidth={maxWidth}>
+    <Box
+      width={width}
+      height={height}
+      position={position}
+      overflow={overflow}
+      maxWidth={maxWidth}
+      style={style}
+    >
       <Surface
         as={onClick ? 'button' : as}
         type={onClick ? 'button' : undefined}
