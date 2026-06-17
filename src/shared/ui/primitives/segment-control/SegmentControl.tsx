@@ -16,7 +16,14 @@ export const SegmentControl = <T extends string>({
   className,
 }: SegmentControlProps<T>) => {
   return (
-    <Panel direction="row" variant="neuInsetSm" p={size} radius="md" className={className}>
+    <Panel
+      direction="row"
+      variant="neuInsetSm"
+      p={size}
+      radius="md"
+      className={className}
+      style={{ width: '100%', minWidth: 'max-content' }}
+    >
       {options.map((opt) => {
         const displayLabel = opt.displayLabel ?? opt.value;
         const ariaLabel = withLabel ? undefined : (opt.label ?? opt.value);
