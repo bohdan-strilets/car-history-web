@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
 
-import { FormFieldInput } from '@shared/ui';
+import { FormFieldCombobox, FormFieldInput } from '@shared/ui';
 
-import type { VehicleStepProps } from '../model';
+import { getCountryOptions, type VehicleStepProps } from '../model';
 
 export const RegistrationStep = ({ control }: VehicleStepProps) => {
   const { t } = useTranslation();
+  const countryOptions = getCountryOptions();
 
   return (
     <>
@@ -26,12 +27,13 @@ export const RegistrationStep = ({ control }: VehicleStepProps) => {
         placeholder={t('vehicle.fields.vinPlaceholder')}
       />
 
-      <FormFieldInput
+      <FormFieldCombobox
         control={control}
         name="countryOfOrigin"
         label={t('vehicle.fields.countryOfOrigin')}
-        size="lg"
+        options={countryOptions}
         placeholder={t('vehicle.fields.countryOfOriginPlaceholder')}
+        size="lg"
       />
     </>
   );

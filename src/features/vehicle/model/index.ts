@@ -7,4 +7,10 @@ export { getGenerationYearRange } from './get-generation-year-range';
 export { useEditVehicleDescription } from './use-edit-vehicle-description';
 
 export { VEHICLE_FORM_TOTAL_STEPS, VEHICLE_STEP_FIELDS } from './vehicle-form.configs';
-export { getBrandOptions, getGenerationOptions, getModelOptions } from './vehicle-form.options';
+
+export {
+  getBrandOptions,
+  getCountryOptions,
+  getGenerationOptions,
+  getModelOptions,
+} from './vehicle-form.options';
