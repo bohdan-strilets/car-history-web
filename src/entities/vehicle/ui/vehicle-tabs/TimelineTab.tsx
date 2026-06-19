@@ -9,9 +9,10 @@ import {
   mergeTimeline,
   TimelineFilter,
   useTimeline,
+  type TimelineEvent,
   type TimelineEventType,
 } from '@entities/timeline';
-import { useOpenCreateTimelineEvent } from '@features/timeline';
+import { useOpenCreateTimelineEvent, useOpenTimelineEventDetail } from '@features/timeline';
 import { useMediaQuery } from '@shared/hooks';
 import { Fab, Stack, StateView } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
@@ -35,6 +36,8 @@ export const TimelineTab = ({
     currentMileage,
     fuelType,
   });
+
+  const { handleOpen } = useOpenTimelineEventDetail();
 
   const {
     data: timelineData,
@@ -92,7 +95,7 @@ export const TimelineTab = ({
         />
 
         <TimelineFilter value={typeFilter} onChange={setTypeFilter} />
-        <EventList items={items} />
+        <EventList items={items} onEventClick={(event: TimelineEvent) => handleOpen(event)} />
       </Stack>
 
       <Fab

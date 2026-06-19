@@ -9,7 +9,7 @@ import { getEventDetailsLabel } from './event-card.utils';
 
 import type { EventCardProps } from './event-card.types';
 
-export const EventCard = ({ event }: EventCardProps) => {
+export const EventCard = ({ event, onClick }: EventCardProps) => {
   const { t } = useTranslation();
   const formatDate = useFormatDate();
   const isTabletUp = useMediaQuery('tablet', 'up');
@@ -23,6 +23,8 @@ export const EventCard = ({ event }: EventCardProps) => {
       align={isTabletUp ? 'center' : 'start'}
       justify="between"
       p="2xl"
+      onClick={onClick}
+      hoverable={!!onClick}
     >
       <Stack direction="row" align="start" gap="xl">
         <IconBox

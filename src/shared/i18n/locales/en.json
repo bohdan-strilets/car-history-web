@@ -370,7 +370,8 @@
     "rating": "Rating",
     "category": "Category",
     "type": "Type",
-    "status": "Status"
+    "status": "Status",
+    "serviceStation": "Service Station"
   },
 
   "nav": {
@@ -907,6 +908,21 @@
     "labels": {
       "works": "works",
       "parts": "parts"
+    },
+
+    "detail": {
+      "sections": {
+        "general": "General information",
+        "refuel": "Refuel details",
+        "charge": "Charge details",
+        "service": "Service details",
+        "document": "Document details",
+        "expense": "Expense details",
+        "trip": "Trip details",
+        "purchase": "Purchase details",
+        "sale": "Sale details",
+        "tireChange": "Tire change details"
+      }
     }
   },
 

@@ -370,7 +370,8 @@
     "rating": "Ocena",
     "category": "Kategoria",
     "type": "Typ",
-    "status": "Status"
+    "status": "Status",
+    "serviceStation": "Stacja serwisowa"
   },
 
   "nav": {
@@ -911,6 +912,21 @@
     "labels": {
       "works": "prace",
       "parts": "części"
+    },
+
+    "detail": {
+      "sections": {
+        "general": "Informacje ogólne",
+        "refuel": "Szczegóły tankowania",
+        "charge": "Szczegóły ładowania",
+        "service": "Szczegóły serwisu",
+        "document": "Szczegóły dokumentu",
+        "expense": "Szczegóły wydatku",
+        "trip": "Szczegóły trasy",
+        "purchase": "Szczegóły zakupu",
+        "sale": "Szczegóły sprzedaży",
+        "tireChange": "Szczegóły zmiany opon"
+      }
     }
   },
 

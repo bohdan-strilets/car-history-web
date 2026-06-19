@@ -1,6 +1,5 @@
 import type { TimelineEvent } from '@entities/timeline';
 
-export type EventCardProps = {
+export interface EventDetailProps {
   event: TimelineEvent;
-  onClick?: () => void;
-};
+}

@@ -26,6 +26,7 @@ import {
   Building2,
   Calendar,
   CalendarCheck,
+  CalendarClock,
   CalendarPlus,
   CalendarX,
   Camera,
@@ -59,6 +60,7 @@ import {
   Droplets,
   Edit,
   EllipsisVertical,
+  EvCharger,
   ExternalLink,
   Eye,
   EyeOff,
@@ -287,6 +289,7 @@ export const Icons = {
   squareParking: SquareParking,
   gavel: Gavel,
   plug: Plug,
+  evCharger: EvCharger,
 
   // Documents & Files
   fileText: FileText,
@@ -318,6 +321,7 @@ export const Icons = {
   bell: Bell,
   bellOff: BellOff,
   bellRing: BellRing,
+  calendarClock: CalendarClock,
 
   // Location & Map
   map: Map,
