@@ -19,8 +19,13 @@ export const useUpdateTimelineEventMutation = ({
     },
 
     onSuccess: () => {
-      const keys = queryKeys.vehicles.timelineRoot(vehicleId);
-      queryClient.invalidateQueries({ queryKey: keys });
+      const timelineKeys = queryKeys.vehicles.timelineRoot(vehicleId);
+      const vehicleDetailKeys = queryKeys.vehicles.detail(vehicleId);
+      const vehicleMilestonesKeys = queryKeys.vehicles.milestones(vehicleId);
+
+      queryClient.invalidateQueries({ queryKey: timelineKeys });
+      queryClient.invalidateQueries({ queryKey: vehicleDetailKeys });
+      queryClient.invalidateQueries({ queryKey: vehicleMilestonesKeys });
     },
   });
 };

@@ -1,0 +1,1 @@
+export { EventDetailModal } from './EventDetailModal';

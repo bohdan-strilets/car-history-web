@@ -18,6 +18,10 @@ export type EventParams = TimelineEventParams & {
   eventId: EventId;
 };
 
+export type DeleteTimelineEventParams = EventParams & {
+  onSuccess?: () => void;
+};
+
 export type UpdateTimelineEventParams = EventParams & {
   dto: UpdateTimelineEventDto;
 };
@@ -36,8 +40,8 @@ export type TimelineEventFormParams = TimelineEventParams & {
   onSuccess: () => void;
 } & VehicleContext;
 
-export type TimelineEventEditFormParams = TimelineEventFormParams & {
-  eventId: EventId;
+export type TimelineEventEditFormParams = EventParams & {
+  onSuccess: () => void;
   defaultValues: Partial<TimelineEventValues>;
 };
 
@@ -46,6 +50,23 @@ export type TimelineEventFormContext = {
 } & VehicleContext;
 
 export type OpenCreateTimelineEventParams = TimelineEventParams & VehicleContext;
+
+export type OpenTimelineEventDetailParams = {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+};
+
+export type OpenEditTimelineEventParams = {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+};
+
+export type OpenDeleteEventParams = {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+  eventId: EventId;
+  onSuccess?: () => void;
+};
 
 // Props
 

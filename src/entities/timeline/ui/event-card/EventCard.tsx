@@ -34,21 +34,25 @@ export const EventCard = ({ event, onClick }: EventCardProps) => {
           size={isTabletUp ? '2xl' : 'xl'}
         />
         <Stack gap="md">
-          <Stack gap="none">
-            <Text weight="bold" size="xl">
+          <Stack gap="none" align="start">
+            <Text weight="bold" size="xl" align="left">
               {config?.label}
             </Text>
-            <Text color="tertiary" size="sm">
+            <Text color="tertiary" size="sm" align="left">
               {event.title}
             </Text>
             {event.description && (
-              <Text color="tertiary" size="sm">
+              <Text color="tertiary" size="sm" align="left">
                 {event.description}
               </Text>
             )}
           </Stack>
 
-          {details && <Text size="md">{details}</Text>}
+          {details && (
+            <Text size="md" align="left">
+              {details}
+            </Text>
+          )}
 
           <Stack direction="row" align="center" gap="2xl">
             <Stack direction="row" align="center" gap="sm">

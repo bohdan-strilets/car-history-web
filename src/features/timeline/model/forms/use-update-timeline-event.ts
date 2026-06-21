@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { useUpdateTimelineEventMutation } from '@features/timeline';
+import { buildUpdateDto, useUpdateTimelineEventMutation } from '@features/timeline';
 import { useFormErrors } from '@shared/lib';
 
 import { createUpdateTimelineEventSchema, type UpdateTimelineEventValues } from '../schemes';
@@ -29,7 +29,7 @@ export const useUpdateTimelineEventForm = ({
   const errorMessage = useFormErrors({ error, setError, t });
 
   const onSubmit = (data: UpdateTimelineEventValues) => {
-    update(data, { onSuccess });
+    update(buildUpdateDto(data), { onSuccess });
   };
 
   return {

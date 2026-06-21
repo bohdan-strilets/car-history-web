@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { getTypedDetails, TIMELINE_EVENT_TYPE_CONFIG } from '@entities/timeline';
-import { Heading, IconBox, Stack, Text } from '@shared/ui';
+import { Button, Heading, IconBox, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 
 import {
@@ -19,7 +19,7 @@ import {
 
 import type { EventDetailProps } from './event-detail.types';
 
-export const EventDetail = ({ event }: EventDetailProps) => {
+export const EventDetail = ({ event, onEdit, onDelete }: EventDetailProps) => {
   const { t } = useTranslation();
 
   const config = getConfigOption(t, TIMELINE_EVENT_TYPE_CONFIG, event.type);
@@ -79,6 +79,33 @@ export const EventDetail = ({ event }: EventDetailProps) => {
 
       <GeneralSection event={event} />
       {renderTypeSection()}
+
+      <Stack gap="md">
+        {onEdit && (
+          <Button
+            type="button"
+            leftIcon="edit"
+            size="md"
+            variant="soft"
+            color="gray"
+            onClick={onEdit}
+          >
+            {t('timeline.actions.editEvent')}
+          </Button>
+        )}
+        {onDelete && (
+          <Button
+            type="button"
+            leftIcon="trash"
+            size="sm"
+            variant="soft"
+            color="danger"
+            onClick={onDelete}
+          >
+            {t('timeline.actions.deleteEvent')}
+          </Button>
+        )}
+      </Stack>
     </Stack>
   );
 };

@@ -1,7 +1,7 @@
 import { TIMELINE_EVENT_TYPE } from '@entities/timeline';
 
-import type { TimelineEventValues } from '../schemes';
-import type { CreateTimelineEventDto } from '../types';
+import type { TimelineEventValues, UpdateTimelineEventValues } from '../schemes';
+import type { CreateTimelineEventDto, UpdateTimelineEventDto } from '../types';
 
 export const buildDto = (data: TimelineEventValues): CreateTimelineEventDto => {
   const base: CreateTimelineEventDto = {
@@ -105,3 +105,12 @@ export const buildDto = (data: TimelineEventValues): CreateTimelineEventDto => {
       return base;
   }
 };
+
+export const buildUpdateDto = (data: UpdateTimelineEventValues): UpdateTimelineEventDto => ({
+  title: data.title,
+  eventDate: data.eventDate,
+  mileage: data.mileage,
+  cost: data.cost != null && !isNaN(data.cost) ? data.cost.toString() : undefined,
+  description: data.description || undefined,
+  serviceStationId: data.serviceStationId || undefined,
+});

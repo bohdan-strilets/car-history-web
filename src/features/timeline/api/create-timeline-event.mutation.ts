@@ -17,9 +17,11 @@ export const useCreateTimelineEventMutation = ({ workspaceId, vehicleId }: Timel
     onSuccess: () => {
       const timelineKeys = queryKeys.vehicles.timelineRoot(vehicleId);
       const milestonesKeys = queryKeys.vehicles.milestones(vehicleId);
+      const vehicleKeys = queryKeys.vehicles.detail(vehicleId);
 
       queryClient.invalidateQueries({ queryKey: timelineKeys });
       queryClient.invalidateQueries({ queryKey: milestonesKeys });
+      queryClient.invalidateQueries({ queryKey: vehicleKeys });
     },
   });
 };

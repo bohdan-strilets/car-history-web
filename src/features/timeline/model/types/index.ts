@@ -2,8 +2,12 @@ export type { CreateTimelineEventDto, UpdateTimelineEventDto } from './timeline.
 
 export type {
   CreateTimelineEventParams,
+  DeleteTimelineEventParams,
   EventParams,
   OpenCreateTimelineEventParams,
+  OpenDeleteEventParams,
+  OpenEditTimelineEventParams,
+  OpenTimelineEventDetailParams,
   TimelineEventEditFormParams,
   TimelineEventFormContext,
   TimelineEventFormParams,

@@ -37,7 +37,7 @@ export const TimelineTab = ({
     fuelType,
   });
 
-  const { handleOpen } = useOpenTimelineEventDetail();
+  const { handleOpen } = useOpenTimelineEventDetail({ workspaceId, vehicleId });
 
   const {
     data: timelineData,
@@ -95,7 +95,10 @@ export const TimelineTab = ({
         />
 
         <TimelineFilter value={typeFilter} onChange={setTypeFilter} />
-        <EventList items={items} onEventClick={(event: TimelineEvent) => handleOpen(event)} />
+        <EventList
+          items={items}
+          onEventClick={(event: TimelineEvent) => handleOpen(event.id, event.type)}
+        />
       </Stack>
 
       <Fab
