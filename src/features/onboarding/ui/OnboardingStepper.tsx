@@ -64,7 +64,7 @@ export const OnboardingStepper = () => {
         return <SettingsStep onNext={goNext} onSkip={skip} />;
 
       case 'timeline':
-        return <TimelineStep onNext={handleFinish} />;
+        return <TimelineStep onNext={handleFinish} onSkip={handleFinish} />;
     }
   };
 

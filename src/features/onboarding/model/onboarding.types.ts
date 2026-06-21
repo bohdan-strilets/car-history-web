@@ -35,6 +35,7 @@ export interface SettingsStepProps {
 
 export interface TimelineStepProps {
   onNext: () => void;
+  onSkip?: () => void;
 }
 
 export interface StepSuccessProps {
