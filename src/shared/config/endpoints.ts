@@ -1,3 +1,5 @@
+import type { MaintenanceId } from '@entities/maintenance-interval';
+import type { ReminderId } from '@entities/reminder';
 import type { EventId } from '@entities/timeline';
 import type { VehicleId } from '@entities/vehicle';
 import type { InviteId, InviteToken, WorkspaceId } from '@entities/workspace';
@@ -61,14 +63,6 @@ export const ENDPOINTS = {
       `/workspaces/${workspaceId}/vehicles/${vehicleId}/stats`,
     GALLERY: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
       `/workspaces/${workspaceId}/vehicles/${vehicleId}/gallery`,
-    TIMELINE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
-      `/workspaces/${workspaceId}/vehicles/${vehicleId}/timeline`,
-    REMINDERS: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
-      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders`,
-    MAINTENANCE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
-      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance`,
-    TIRES: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
-      `/workspaces/${workspaceId}/vehicles/${vehicleId}/tires`,
     FILL_SPECS_AI: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
       `/workspaces/${workspaceId}/vehicles/${vehicleId}/specs/ai`,
     UPDATE_SPECS: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
@@ -91,15 +85,39 @@ export const ENDPOINTS = {
   },
 
   REMINDERS: {
-    DETAIL: (id: string) => `/reminders/${id}`,
-    UPDATE: (id: string) => `/reminders/${id}`,
-    DELETE: (id: string) => `/reminders/${id}`,
+    LIST: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders`,
+    CREATE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders`,
+    DETAIL: (workspaceId: WorkspaceId, vehicleId: VehicleId, reminderId: ReminderId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders/${reminderId}`,
+    UPDATE: (workspaceId: WorkspaceId, vehicleId: VehicleId, reminderId: ReminderId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders/${reminderId}`,
+    DELETE: (workspaceId: WorkspaceId, vehicleId: VehicleId, reminderId: ReminderId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders/${reminderId}`,
+    COMPLETE: (workspaceId: WorkspaceId, vehicleId: VehicleId, reminderId: ReminderId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders/${reminderId}/complete`,
+    DISMISS: (workspaceId: WorkspaceId, vehicleId: VehicleId, reminderId: ReminderId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/reminders/${reminderId}/dismiss`,
   },
 
   MAINTENANCE: {
-    DETAIL: (id: string) => `/maintenance/${id}`,
-    UPDATE: (id: string) => `/maintenance/${id}`,
-    DELETE: (id: string) => `/maintenance/${id}`,
+    LIST: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance`,
+    CREATE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance`,
+    DETAIL: (workspaceId: WorkspaceId, vehicleId: VehicleId, maintenanceId: MaintenanceId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance/${maintenanceId}`,
+    UPDATE: (workspaceId: WorkspaceId, vehicleId: VehicleId, maintenanceId: MaintenanceId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance/${maintenanceId}`,
+    DELETE: (workspaceId: WorkspaceId, vehicleId: VehicleId, maintenanceId: MaintenanceId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance/${maintenanceId}`,
+    DISABLE: (workspaceId: WorkspaceId, vehicleId: VehicleId, maintenanceId: MaintenanceId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance/${maintenanceId}/disable`,
+    ENABLE: (workspaceId: WorkspaceId, vehicleId: VehicleId, maintenanceId: MaintenanceId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance/${maintenanceId}/enable`,
+    MARK_DONE: (workspaceId: WorkspaceId, vehicleId: VehicleId, maintenanceId: MaintenanceId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/maintenance/${maintenanceId}/mark-done`,
   },
 
   TIRES: {
