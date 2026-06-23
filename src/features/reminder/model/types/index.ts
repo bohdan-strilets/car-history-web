@@ -4,3 +4,9 @@ export type {
   ReminderParams,
   UpdateReminderDto,
 } from './reminder.dto';
+
+export type {
+  CreateReminderFormParams,
+  CreateReminderFormProps,
+  OpenCreateReminderParams,
+} from './reminder.types';

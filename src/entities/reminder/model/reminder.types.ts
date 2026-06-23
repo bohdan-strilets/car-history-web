@@ -1,7 +1,7 @@
 import type { MaintenanceId } from '@entities/maintenance-interval';
 import type { VehicleId } from '@entities/vehicle';
 
-import type { ReminderStatus, ReminderType } from './milestone.constants';
+import type { ReminderStatus, ReminderType } from './reminder.constants';
 
 export type ReminderId = string;
 

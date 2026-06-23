@@ -6,6 +6,7 @@ import {
   canEditVehicle,
   getRefuelType,
   OverviewTab,
+  RemindersTab,
   TimelineTab,
   useVehicleParams,
   useVehicleQuery,
@@ -13,7 +14,7 @@ import {
   VEHICLE_TABS,
   VehicleDetailSkeleton,
 } from '@entities/vehicle';
-import { useWorkspace } from '@entities/workspace';
+import { useWorkspace, useWorkspaceQuery } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
 import { useAuth } from '@shared/store';
 import { Stack, StateView, Tabs } from '@shared/ui';
@@ -32,7 +33,11 @@ export const VehicleDetailPage = () => {
   const tabs = translateSegmentControlOptions(t, VEHICLE_TABS);
 
   const { user } = useAuth();
-  const { activeWorkspace } = useWorkspace();
+
+  const { activeWorkspaceId } = useWorkspace();
+  const { data: workspaceData } = useWorkspaceQuery(activeWorkspaceId ?? '');
+
+  const activeWorkspace = activeWorkspaceId === workspaceId ? workspaceData?.data : null;
 
   const role = activeWorkspace?.role ?? 'MEMBER';
   const userId = user?.id ?? '';
@@ -87,7 +92,14 @@ export const VehicleDetailPage = () => {
         />
       )}
 
-      {activeTab === 'reminders' && <div>Reminders</div>}
+      {activeTab === 'reminders' && (
+        <RemindersTab
+          workspaceId={workspaceId}
+          vehicleId={vehicleId}
+          currentMileage={vehicle?.currentMileage ?? 0}
+        />
+      )}
+
       {activeTab === 'maintenance' && <div>Maintenance</div>}
       {activeTab === 'stats' && <div>Stats</div>}
       {activeTab === 'gallery' && <div>Gallery</div>}

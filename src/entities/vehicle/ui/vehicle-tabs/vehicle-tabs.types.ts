@@ -14,3 +14,15 @@ export interface TimelineTabProps {
   currentMileage: number;
   fuelType: RefuelType;
 }
+
+export interface RemindersTabProps {
+  workspaceId: string;
+  vehicleId: string;
+  currentMileage?: number;
+}
+
+export interface MaintenanceTabProps {
+  workspaceId: string;
+  vehicleId: string;
+  currentMileage: number;
+}

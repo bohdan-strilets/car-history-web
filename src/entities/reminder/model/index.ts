@@ -5,4 +5,6 @@ export {
   REMINDER_TYPES,
   type ReminderStatus,
   type ReminderType,
-} from './milestone.constants';
+} from './reminder.constants';
+
+export { REMINDER_TYPE_CONFIG } from './reminder.config';

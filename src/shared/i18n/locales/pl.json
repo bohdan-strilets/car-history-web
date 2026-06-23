@@ -310,6 +310,11 @@
     "chargeType": {
       "AC": "AC (wolne ładowanie)",
       "DC": "DC (szybkie ładowanie)"
+    },
+    "reminderStatus": {
+      "ACTIVE": "Aktywne",
+      "COMPLETED": "Zrealizowane",
+      "DISMISSED": "Odrzucone"
     }
   },
 
@@ -371,7 +376,11 @@
     "category": "Kategoria",
     "type": "Typ",
     "status": "Status",
-    "serviceStation": "Stacja serwisowa"
+    "serviceStation": "Stacja serwisowa",
+    "dueDate": "Termin",
+    "dueDateHint": "Data, do której chcesz otrzymać przypomnienie",
+    "dueMileage": "Przebieg docelowy",
+    "dueMileageHint": "Przebieg, przy którym chcesz otrzymać przypomnienie"
   },
 
   "nav": {
@@ -927,6 +936,79 @@
         "sale": "Szczegóły sprzedaży",
         "tireChange": "Szczegóły zmiany opon"
       }
+    }
+  },
+
+  "reminder": {
+    "list": {
+      "title": "Przypomnienia",
+      "active": "Aktywne",
+      "archive": "Archiwum"
+    },
+    "empty": {
+      "title": "Brak przypomnień",
+      "description": "Dodaj przypomnienie o dokumentach lub serwisie.",
+      "action": "Dodaj przypomnienie"
+    },
+    "actions": {
+      "add": "Dodaj przypomnienie",
+      "complete": "Oznacz jako wykonane",
+      "dismiss": "Odrzuć",
+      "delete": "Usuń przypomnienie",
+      "completeConfirm": "Czy na pewno chcesz oznaczyć to przypomnienie jako wykonane?",
+      "dismissConfirm": "Czy na pewno chcesz odrzucić to przypomnienie?",
+      "deleteConfirm": "Czy na pewno chcesz usunąć to przypomnienie?"
+    },
+    "status": {
+      "overdue": "Przeterminowane",
+      "daysLeft": "{{count}} dni"
+    }
+  },
+
+  "maintenance": {
+    "list": {
+      "title": "Interwały serwisowe",
+      "active": "Aktywne",
+      "disabled": "Wyłączone"
+    },
+    "empty": {
+      "title": "Brak interwałów serwisowych",
+      "description": "Dodaj interwał, aby śledzić terminy serwisowe.",
+      "action": "Dodaj interwał"
+    },
+    "actions": {
+      "add": "Dodaj interwał",
+      "edit": "Edytuj interwał",
+      "disable": "Wyłącz",
+      "enable": "Włącz",
+      "markDone": "Oznacz jako wykonane",
+      "delete": "Usuń interwał",
+      "deleteConfirm": "Czy na pewno chcesz usunąć ten interwał serwisowy?",
+      "markDoneConfirm": "Czy na pewno chcesz oznaczyć ten serwis jako wykonany?"
+    },
+    "fields": {
+      "type": "Typ serwisu",
+      "title": "Nazwa",
+      "titlePlaceholder": "np. Wymiana oleju silnikowego",
+      "intervalKm": "Interwał (km)",
+      "intervalKmPlaceholder": "np. 10 000",
+      "intervalMonths": "Interwał (miesiące)",
+      "intervalMonthsPlaceholder": "np. 12",
+      "lastServiceMileage": "Przebieg ostatniego serwisu",
+      "lastServiceDate": "Data ostatniego serwisu",
+      "nextServiceMileage": "Następny serwis (km)",
+      "nextServiceDate": "Następny serwis (data)"
+    },
+    "status": {
+      "overdue": "Przeterminowany",
+      "critical": "Pilny",
+      "warning": "Wkrótce",
+      "ok": "W porządku",
+      "disabled": "Wyłączony"
+    },
+    "next": {
+      "km": "za {{count}} km",
+      "date": "{{date}}"
     }
   },
 
