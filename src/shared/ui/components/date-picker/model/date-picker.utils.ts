@@ -100,6 +100,13 @@ export const normalizeValue = (value?: Date | string | null): Date | null => {
   if (!value) return null;
   if (value instanceof Date) return isNaN(value.getTime()) ? null : value;
 
+  const isoDateOnly = /^\d{4}-\d{2}-\d{2}$/;
+  if (isoDateOnly.test(value)) {
+    const [year, month, day] = value.split('-').map(Number);
+    const parsed = new Date(year, month - 1, day);
+    return isNaN(parsed.getTime()) ? null : parsed;
+  }
+
   const parsed = new Date(value);
   return isNaN(parsed.getTime()) ? null : parsed;
 };
