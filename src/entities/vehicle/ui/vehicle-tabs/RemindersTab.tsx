@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ReminderList, ReminderListSkeleton, useRemindersQuery } from '@entities/reminder';
 import { useOpenCreateReminder } from '@features/reminder';
 import { useMediaQuery } from '@shared/hooks';
-import { Fab, Stack, StateView } from '@shared/ui';
+import { Center, Fab, Stack, StateView } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
 
 import type { RemindersTabProps } from './vehicle-tabs.types';
@@ -28,23 +28,27 @@ export const RemindersTab = ({ workspaceId, vehicleId, currentMileage }: Reminde
 
   if (isError)
     return (
-      <StateView
-        icon="alertCircle"
-        variant="error"
-        title={t('common.error.title')}
-        description={t('common.error.description')}
-      />
+      <Center style={{ flex: '1' }}>
+        <StateView
+          icon="alertCircle"
+          variant="error"
+          title={t('common.error.title')}
+          description={t('common.error.description')}
+        />
+      </Center>
     );
 
   if (isEmpty)
     return (
-      <StateView
-        icon="bell"
-        title={t('reminder.empty.title')}
-        description={t('reminder.empty.description')}
-        actionLabel={t('reminder.empty.action')}
-        onAction={handleCreate}
-      />
+      <Center style={{ flex: '1' }}>
+        <StateView
+          icon="bell"
+          title={t('reminder.empty.title')}
+          description={t('reminder.empty.description')}
+          actionLabel={t('reminder.empty.action')}
+          onAction={handleCreate}
+        />
+      </Center>
     );
 
   return (

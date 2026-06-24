@@ -14,7 +14,7 @@ import {
 } from '@entities/timeline';
 import { useOpenCreateTimelineEvent, useOpenTimelineEventDetail } from '@features/timeline';
 import { useMediaQuery } from '@shared/hooks';
-import { Fab, Stack, StateView } from '@shared/ui';
+import { Center, Fab, Stack, StateView, Text } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
 
 import type { TimelineTabProps } from './vehicle-tabs.types';
@@ -60,28 +60,34 @@ export const TimelineTab = ({
   const milestones = hasFilter ? [] : (milestonesData?.data ?? []);
   const items = mergeTimeline(events, milestones);
   const isEmpty = items.length === 0;
+  const isFilterEmpty = isEmpty && hasFilter;
+  const isTrulyEmpty = isEmpty && !hasFilter;
 
   if (isPending) return <EventListSkeleton />;
 
   if (isError)
     return (
-      <StateView
-        icon="alertCircle"
-        variant="error"
-        title={t('common.error.title')}
-        description={t('common.error.description')}
-      />
+      <Center style={{ flex: '1' }}>
+        <StateView
+          icon="alertCircle"
+          variant="error"
+          title={t('common.error.title')}
+          description={t('common.error.description')}
+        />
+      </Center>
     );
 
-  if (isEmpty)
+  if (isTrulyEmpty)
     return (
-      <StateView
-        icon="clock"
-        title={t('timeline.empty.title')}
-        description={t('timeline.empty.description')}
-        actionLabel={t('timeline.actions.addEvent')}
-        onAction={handleCreate}
-      />
+      <Center style={{ flex: '1' }}>
+        <StateView
+          icon="clock"
+          title={t('timeline.empty.title')}
+          description={t('timeline.empty.description')}
+          actionLabel={t('timeline.actions.addEvent')}
+          onAction={handleCreate}
+        />
+      </Center>
     );
 
   return (
@@ -95,10 +101,21 @@ export const TimelineTab = ({
         />
 
         <TimelineFilter value={typeFilter} onChange={setTypeFilter} />
-        <EventList
-          items={items}
-          onEventClick={(event: TimelineEvent) => handleOpen(event.id, event.type)}
-        />
+        {isFilterEmpty ? (
+          <Stack align="center" gap="xs" justify="center">
+            <Text weight="semibold" size={'2xl'} color="tertiary">
+              {t('timeline.filterEmpty.title')}
+            </Text>
+            <Text size="sm" color="tertiary">
+              {t('timeline.filterEmpty.description')}
+            </Text>
+          </Stack>
+        ) : (
+          <EventList
+            items={items}
+            onEventClick={(event: TimelineEvent) => handleOpen(event.id, event.type)}
+          />
+        )}
       </Stack>
 
       <Fab

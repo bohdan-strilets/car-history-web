@@ -63,7 +63,7 @@ export const VehicleDetailPage = () => {
   }
 
   return (
-    <Stack gap="2xl">
+    <Stack gap="2xl" style={{ minHeight: '100%' }}>
       <PageHeader
         title={`${vehicle?.brand} ${vehicle?.model}`}
         buttonLabel={t('common.actions.back')}

@@ -932,6 +932,11 @@
         "sale": "Sale details",
         "tireChange": "Tire change details"
       }
+    },
+
+    "filterEmpty": {
+      "title": "No results",
+      "description": "No events found for the selected filters"
     }
   },
 

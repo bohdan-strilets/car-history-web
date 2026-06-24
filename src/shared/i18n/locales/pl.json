@@ -936,6 +936,11 @@
         "sale": "Szczegóły sprzedaży",
         "tireChange": "Szczegóły zmiany opon"
       }
+    },
+
+    "filterEmpty": {
+      "title": "Brak wyników",
+      "description": "Nie znaleziono wydarzeń dla wybranych filtrów"
     }
   },
 
