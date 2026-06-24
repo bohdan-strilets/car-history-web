@@ -1,3 +1,4 @@
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@shared/styles';
@@ -15,6 +16,16 @@ export const root = recipe({
       },
     },
   },
+});
+
+export const triggerButton = style({
+  display: 'block',
+  width: '100%',
+  background: 'none',
+  border: 'none',
+  padding: 0,
+  cursor: 'pointer',
+  borderRadius: vars.radius.md,
 });
 
 export const content = recipe({

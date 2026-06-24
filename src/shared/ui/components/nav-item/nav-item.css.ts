@@ -30,3 +30,9 @@ export const labelText = style({
   whiteSpace: 'nowrap',
   overflow: 'hidden',
 });
+
+export const link = style({
+  borderRadius: vars.radius.md,
+  width: '100%',
+  display: 'block',
+});

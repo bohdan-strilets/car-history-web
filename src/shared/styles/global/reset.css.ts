@@ -88,10 +88,6 @@ globalStyle('button:disabled', {
   pointerEvents: 'none',
 });
 
-globalStyle(':focus-visible', {
-  outline: 'none',
-});
-
 globalStyle('input, textarea', {
   outline: 'none',
   border: 'none',

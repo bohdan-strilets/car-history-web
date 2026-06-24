@@ -41,8 +41,13 @@ globalStyle('::-webkit-scrollbar-thumb:hover', {
 
 // Focus visible
 globalStyle(':focus-visible', {
-  outline: `2px solid ${vars.color.border.focus}`,
-  outlineOffset: '2px',
+  outline: 'none',
+  boxShadow: `0 0 0 2px ${vars.color.bg.canvas}, 0 0 0 4px ${vars.color.border.focus}`,
+});
+
+globalStyle('input:focus-visible, textarea:focus-visible', {
+  outline: 'none',
+  boxShadow: 'none',
 });
 
 // Placeholder

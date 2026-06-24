@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, ElementType } from 'react';
+import type { ComponentPropsWithoutRef, ElementType, Ref } from 'react';
 
 import type { ResponsiveValue } from '@shared/types';
 
@@ -30,4 +30,5 @@ export interface BoxOwnProps {
 
 export type BoxProps<T extends ElementType = 'div'> = BoxOwnProps & {
   as?: T;
-} & Omit<ComponentPropsWithoutRef<T>, keyof BoxOwnProps | 'as'>;
+  ref?: Ref<unknown>;
+} & Omit<ComponentPropsWithoutRef<T>, keyof BoxOwnProps | 'as' | 'ref'>;

@@ -4,13 +4,13 @@ import { clsx } from 'clsx';
 
 import { Icon, Surface } from '@shared/ui';
 
-import { labelText, root } from './nav-item.css';
+import { labelText, link, root } from './nav-item.css';
 
 import type { NavItemProps } from './nav-item.types';
 
 export const NavItem = ({ icon, label, to, collapsed }: NavItemProps) => {
   return (
-    <NavLink to={to} aria-label={label}>
+    <NavLink to={to} aria-label={label} className={link}>
       {({ isActive }) => (
         <Surface variant={isActive ? 'neuInset' : 'neuRaised'} className={clsx(root)}>
           <Icon name={icon} size="md" color={isActive ? 'accent' : 'secondary'} />
