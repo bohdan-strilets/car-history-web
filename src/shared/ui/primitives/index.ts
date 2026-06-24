@@ -6,6 +6,7 @@ export * from './center';
 export * from './checkbox';
 export * from './chevron';
 export * from './divider';
+export * from './google-icon';
 export * from './grid';
 export * from './heading';
 export * from './icon';

@@ -2,12 +2,12 @@ import { useTranslation } from 'react-i18next';
 
 import { LoginForm, useGoogleAuth } from '@features/auth';
 import { ROUTES } from '@shared/config';
-import { Button, Divider, Stack, Text, TextLink } from '@shared/ui';
+import { Button, Divider, GoogleIcon, Stack, Text, TextLink } from '@shared/ui';
 import { AuthHeader } from '@widgets/auth-header';
 
 export const LoginPage = () => {
   const { t } = useTranslation();
-  const { redirectToGoogle } = useGoogleAuth();
+  const { redirectToGoogle, isLoading } = useGoogleAuth();
 
   return (
     <Stack gap="2xl">
@@ -36,9 +36,11 @@ export const LoginPage = () => {
         color="blue"
         size="lg"
         fullWidth
-        leftIcon="globe"
         onClick={redirectToGoogle}
+        disabled={isLoading}
+        loading={isLoading}
       >
+        <GoogleIcon />
         Google
       </Button>
     </Stack>
