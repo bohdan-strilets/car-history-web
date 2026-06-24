@@ -9,14 +9,17 @@ export const InitProvider = ({ children }: PropsWithChildren) => {
   const { isLoading: isMeLoading } = useInitQuery();
   const { isAuthenticated } = useAuth();
 
-  const { data: workspacesData, isLoading: isWorkspacesLoading } =
-    useWorkspacesQuery(isAuthenticated);
+  const query = useWorkspacesQuery(isAuthenticated);
+  const { data: workspacesData, isLoading: isWorkspacesLoading } = query;
   const { activeWorkspaceId, setActiveWorkspaceId } = useWorkspace();
 
   useEffect(() => {
     if (!isAuthenticated) return;
     const workspaces = workspacesData?.data ?? [];
-    if (!activeWorkspaceId && workspaces.length > 0) {
+    if (workspaces.length === 0) return;
+
+    const isValid = workspaces.some((w) => w.id === activeWorkspaceId);
+    if (!isValid) {
       setActiveWorkspaceId(workspaces[0].id);
     }
   }, [workspacesData, activeWorkspaceId, isAuthenticated, setActiveWorkspaceId]);
