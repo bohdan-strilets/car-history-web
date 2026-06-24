@@ -95,7 +95,7 @@ export const WorkspaceDetailPage = () => {
   const canLeave = !canDelete;
 
   return (
-    <Stack gap="2xl">
+    <Stack gap="2xl" style={{ minHeight: '100%' }}>
       <PageHeader
         title={workspace.name}
         buttonLabel={t('common.actions.back')}
