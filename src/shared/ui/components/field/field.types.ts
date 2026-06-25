@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+export type FieldDirection = 'row-reverse' | 'column';
 export interface FieldProps {
   label?: string;
   hint?: string;
@@ -9,4 +10,5 @@ export interface FieldProps {
   children: ReactNode;
   fullWidth?: boolean;
   className?: string;
+  direction?: FieldDirection;
 }

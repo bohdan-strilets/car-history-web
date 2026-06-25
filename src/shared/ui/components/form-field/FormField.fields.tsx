@@ -206,6 +206,7 @@ export const FormFieldCheckbox = <T extends FieldValues>({
     hint={hint}
     required={required}
     render={(field) => <Checkbox checked={field.value} onChange={field.onChange} {...props} />}
+    direction="row-reverse"
   />
 );
 

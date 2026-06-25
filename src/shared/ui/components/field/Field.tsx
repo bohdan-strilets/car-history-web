@@ -11,27 +11,35 @@ export const Field = ({
   children,
   fullWidth = true,
   className,
+  direction = 'column',
 }: FieldProps) => {
   const widthStyle = fullWidth ? { width: '100%' } : { width: 'fit-content' };
 
   return (
     <Stack className={className} gap="md" style={widthStyle}>
-      {labelProp && (
-        <label htmlFor={htmlFor}>
-          <Stack direction="row" gap="xs" align="center">
-            <Text color="secondary" size="sm">
-              {labelProp}
-            </Text>
-            {required && (
-              <Text as="span" color="danger">
-                *
+      <Stack
+        direction={direction}
+        gap="md"
+        justify={direction === 'row-reverse' ? 'end' : undefined}
+        align={direction === 'row-reverse' ? 'center' : undefined}
+      >
+        {labelProp && (
+          <label htmlFor={htmlFor}>
+            <Stack direction="row" gap="xs" align="center">
+              <Text color="secondary" size="sm">
+                {labelProp}
               </Text>
-            )}
-          </Stack>
-        </label>
-      )}
+              {required && (
+                <Text as="span" color="danger">
+                  *
+                </Text>
+              )}
+            </Stack>
+          </label>
+        )}
 
-      {children}
+        {children}
+      </Stack>
 
       {error && (
         <Text color="danger" size="sm">

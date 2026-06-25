@@ -1,2 +1,2 @@
 export { Field } from './Field';
-export type { FieldProps } from './field.types';
+export type { FieldDirection, FieldProps } from './field.types';
