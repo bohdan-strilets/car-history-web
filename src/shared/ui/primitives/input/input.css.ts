@@ -93,6 +93,21 @@ export const root = recipe({
         pointerEvents: 'none',
       },
     },
+
+    transform: {
+      none: {
+        textTransform: 'none',
+      },
+      uppercase: {
+        textTransform: 'uppercase',
+      },
+      lowercase: {
+        textTransform: 'lowercase',
+      },
+      capitalize: {
+        textTransform: 'capitalize',
+      },
+    },
   },
 
   defaultVariants: {
@@ -100,6 +115,7 @@ export const root = recipe({
     state: 'default',
     hasLeftIcon: false,
     hasRightIcon: false,
+    transform: 'none',
   },
 });
 
@@ -118,6 +134,7 @@ export const nativeInput = recipe({
     fontSize: 'inherit',
     fontWeight: 'inherit',
     lineHeight: vars.typography.height.normal,
+    textTransform: 'inherit',
 
     selectors: {
       '&::placeholder': {

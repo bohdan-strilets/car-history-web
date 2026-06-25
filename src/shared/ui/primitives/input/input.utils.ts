@@ -10,6 +10,7 @@ export const useInputClasses = ({
   disabled,
   hasLeftIcon,
   hasRightIcon,
+  transform,
 }: InputClassesParams) => {
   const resolvedState = disabled ? 'disabled' : (state ?? 'default');
 
@@ -18,6 +19,7 @@ export const useInputClasses = ({
     state: resolvedState,
     hasLeftIcon,
     hasRightIcon,
+    transform,
   });
 
   const iconClass = iconSlot({

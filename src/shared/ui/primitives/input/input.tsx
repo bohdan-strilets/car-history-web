@@ -10,13 +10,17 @@ import { useInputClasses } from './input.utils';
 import type { InputProps } from './input.types';
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ size, state, leftIcon, rightIcon, rightElement, className, disabled, ...rest }, ref) => {
+  (
+    { size, state, transform, leftIcon, rightIcon, rightElement, className, disabled, ...rest },
+    ref,
+  ) => {
     const hasLeftIcon = !!leftIcon;
     const hasRightIcon = !!(rightIcon || rightElement);
 
     const { rootClass, iconClass, responsiveClasses } = useInputClasses({
       size,
       state,
+      transform,
       disabled,
       hasLeftIcon,
       hasRightIcon,

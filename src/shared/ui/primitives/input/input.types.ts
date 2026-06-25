@@ -10,6 +10,7 @@ export type InputVariants = NonNullable<RecipeVariants<typeof root>>;
 
 export type InputSize = NonNullable<InputVariants['size']>;
 export type InputState = NonNullable<InputVariants['state']>;
+export type InputTransform = NonNullable<InputVariants['transform']>;
 
 export interface InputOwnProps {
   size?: ResponsiveValue<InputSize>;
@@ -17,14 +18,18 @@ export interface InputOwnProps {
   leftIcon?: IconName;
   rightIcon?: IconName;
   rightElement?: ReactNode;
+  transform?: InputTransform;
 }
 
 export type InputProps = InputOwnProps &
   Omit<ComponentPropsWithoutRef<'input'>, keyof InputOwnProps>;
 
+// Params
+
 export interface InputClassesParams {
   size?: ResponsiveValue<InputSize>;
   state?: InputState;
+  transform?: InputTransform;
   disabled?: boolean;
   hasLeftIcon?: boolean;
   hasRightIcon?: boolean;
