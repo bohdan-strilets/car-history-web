@@ -1,5 +1,6 @@
 export * from './color-picker';
 export * from './fuel-labels';
+export * from './license-plate';
 export * from './mileage-input';
 export * from './vehicle-actions';
 export * from './vehicle-ai-fill';

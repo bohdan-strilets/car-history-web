@@ -1,0 +1,1 @@
+export { LicensePlate } from './LicensePlate';
