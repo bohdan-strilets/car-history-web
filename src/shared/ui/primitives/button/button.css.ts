@@ -1,6 +1,6 @@
 import { recipe } from '@vanilla-extract/recipes';
 
-import { createResponsiveStyles } from '@shared/lib';
+import { createResponsiveStyles } from '@shared/lib/';
 import { vars } from '@shared/styles';
 
 export const responsiveStyles = {

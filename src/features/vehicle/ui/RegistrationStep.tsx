@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 import { LicensePlate } from '@entities/vehicle';
 import { FormFieldCombobox, FormFieldInput } from '@shared/ui';
+import { getCountryOptions } from '@shared/utils';
 
-import { getCountryOptions, type VehicleStepProps } from '../model';
+import { type VehicleStepProps } from '../model';
 
 export const RegistrationStep = ({ control }: VehicleStepProps) => {
   const { t } = useTranslation();

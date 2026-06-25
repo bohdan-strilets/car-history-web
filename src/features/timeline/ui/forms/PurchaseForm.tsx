@@ -8,13 +8,14 @@ import { generateEventTitle, type TimelineEventFormProps } from '@features/timel
 import {
   Form,
   FormFieldCardSelect,
+  FormFieldCombobox,
   FormFieldDatePicker,
   FormFieldInput,
   FormFieldNumberInput,
   FormFieldTextarea,
   Stack,
 } from '@shared/ui';
-import { translateCardSelectOptions } from '@shared/utils';
+import { getCountryOptions, translateCardSelectOptions } from '@shared/utils';
 
 export const PurchaseForm = ({
   control,
@@ -35,6 +36,8 @@ export const PurchaseForm = ({
     const title = generateEventTitle(t, { type: 'PURCHASE', purchasedFrom, cost });
     if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
   }, [purchasedFrom, cost, t, setValue]);
+
+  const countryOptions = getCountryOptions();
 
   return (
     <Form
@@ -86,11 +89,12 @@ export const PurchaseForm = ({
           format="decimal"
         />
 
-        <FormFieldInput
+        <FormFieldCombobox
           control={control}
           name="country"
           label={t('timeline.fields.country')}
           placeholder={t('timeline.fields.countryPlaceholder')}
+          options={countryOptions}
           size="lg"
         />
 

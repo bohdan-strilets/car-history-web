@@ -1,3 +1,4 @@
+export { getCountryOptions } from './combobox.options';
 export { getConfigOption, translateConfigOption, translateConfigOptions } from './config-options';
 export { getNextCycleItem } from './get-next-cycle-item';
 export { mergeRefs } from './merge-refs';
