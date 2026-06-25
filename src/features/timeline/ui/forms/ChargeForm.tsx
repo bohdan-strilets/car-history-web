@@ -1,7 +1,10 @@
+import { useEffect, useRef } from 'react';
+
+import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { CHARGE_TYPE_CONFIG } from '@entities/timeline';
-import type { TimelineEventFormProps } from '@features/timeline';
+import { generateEventTitle, type TimelineEventFormProps } from '@features/timeline';
 import {
   Form,
   FormFieldCardSelect,
@@ -19,8 +22,38 @@ export const ChargeForm = ({
   isPending,
   errorMessage,
   submitLabel,
+  setValue,
 }: TimelineEventFormProps) => {
   const { t } = useTranslation();
+
+  const kWh = useWatch({ control, name: 'kWh' });
+  const pricePerKWh = useWatch({ control, name: 'pricePerKWh' });
+  const chargeType = useWatch({ control, name: 'chargeType' });
+  const cost = useWatch({ control, name: 'cost' });
+  const chargerNetwork = useWatch({ control, name: 'chargerNetwork' });
+  const batteryAfter = useWatch({ control, name: 'batteryAfter' });
+  const isTitleManual = useRef(false);
+
+  // Auto-calculate cost
+  useEffect(() => {
+    if (kWh == null || pricePerKWh == null) return;
+    const calculated = parseFloat((kWh * pricePerKWh).toFixed(2));
+    setValue('cost', calculated, { shouldValidate: false, shouldDirty: false });
+  }, [kWh, pricePerKWh, setValue]);
+
+  // Auto-generate title
+  useEffect(() => {
+    if (isTitleManual.current) return;
+    const title = generateEventTitle(t, {
+      type: 'CHARGE',
+      chargeType,
+      kWh,
+      cost,
+      chargerNetwork,
+      batteryAfter,
+    });
+    if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
+  }, [chargeType, kWh, cost, chargerNetwork, batteryAfter, t, setValue]);
 
   return (
     <Form

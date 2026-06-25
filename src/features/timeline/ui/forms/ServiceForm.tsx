@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useFieldArray, useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { SERVICE_CATEGORY_CONFIG } from '@entities/timeline';
-import type { TimelineEventFormProps } from '@features/timeline';
+import { generateEventTitle, type TimelineEventFormProps } from '@features/timeline';
 import {
   Button,
   Form,
@@ -44,6 +44,16 @@ export const ServiceForm = ({
     const partsSum = nextParts.reduce((sum, p) => sum + (p.price ?? 0) * (p.quantity ?? 1), 0);
     setValue('cost', worksSum + partsSum);
   };
+
+  const serviceCategory = useWatch({ control, name: 'serviceCategory' });
+  const cost = useWatch({ control, name: 'cost' });
+  const isTitleManual = useRef(false);
+
+  useEffect(() => {
+    if (isTitleManual.current) return;
+    const title = generateEventTitle(t, { type: 'SERVICE', serviceCategory, cost });
+    if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
+  }, [serviceCategory, cost, t, setValue]);
 
   return (
     <Form

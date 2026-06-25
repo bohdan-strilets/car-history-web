@@ -1,7 +1,10 @@
+import { useEffect, useRef } from 'react';
+
+import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { REFUEL_TYPE_CONFIG } from '@entities/vehicle';
-import type { TimelineEventFormProps } from '@features/timeline';
+import { generateEventTitle, type TimelineEventFormProps } from '@features/timeline';
 import {
   Form,
   FormFieldCardSelect,
@@ -20,8 +23,32 @@ export const RefuelForm = ({
   isPending,
   errorMessage,
   submitLabel,
+  setValue,
 }: TimelineEventFormProps) => {
   const { t } = useTranslation();
+
+  const liters = useWatch({ control, name: 'liters' });
+  const pricePerLiter = useWatch({ control, name: 'pricePerLiter' });
+  const fuelType = useWatch({ control, name: 'fuelType' });
+  const cost = useWatch({ control, name: 'cost' });
+  const isFullTank = useWatch({ control, name: 'isFullTank' });
+  const isTitleManual = useRef(false);
+
+  // Auto-calculate cost
+  useEffect(() => {
+    if (liters == null || pricePerLiter == null) return;
+
+    const calculated = parseFloat((liters * pricePerLiter).toFixed(2));
+    setValue('cost', calculated, { shouldValidate: false, shouldDirty: false });
+  }, [liters, pricePerLiter, setValue]);
+
+  // Auto-generate title
+  useEffect(() => {
+    if (isTitleManual.current) return;
+
+    const title = generateEventTitle(t, { type: 'REFUEL', fuelType, liters, cost, isFullTank });
+    if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
+  }, [fuelType, liters, cost, t, setValue, isFullTank]);
 
   return (
     <Form

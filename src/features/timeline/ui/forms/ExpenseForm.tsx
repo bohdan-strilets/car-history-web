@@ -1,7 +1,10 @@
+import { useEffect, useRef } from 'react';
+
+import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { EXPENSE_CATEGORY_CONFIG } from '@entities/timeline';
-import type { TimelineEventFormProps } from '@features/timeline';
+import { generateEventTitle, type TimelineEventFormProps } from '@features/timeline';
 import {
   Form,
   FormFieldCardSelect,
@@ -19,8 +22,19 @@ export const ExpenseForm = ({
   isPending,
   errorMessage,
   submitLabel,
+  setValue,
 }: TimelineEventFormProps) => {
   const { t } = useTranslation();
+
+  const expenseCategory = useWatch({ control, name: 'expenseCategory' });
+  const cost = useWatch({ control, name: 'cost' });
+  const isTitleManual = useRef(false);
+
+  useEffect(() => {
+    if (isTitleManual.current) return;
+    const title = generateEventTitle(t, { type: 'EXPENSE', expenseCategory, cost });
+    if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
+  }, [expenseCategory, cost, t, setValue]);
 
   return (
     <Form

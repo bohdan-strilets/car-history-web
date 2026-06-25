@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { TRIP_PURPOSE_CONFIG } from '@entities/timeline';
-import type { TimelineEventFormProps } from '@features/timeline';
+import { generateEventTitle, type TimelineEventFormProps } from '@features/timeline';
 import {
   Form,
   FormFieldCardSelect,
@@ -28,8 +28,12 @@ export const TripForm = ({
 
   const startMileage = useWatch({ control, name: 'startMileage' });
   const endMileage = useWatch({ control, name: 'endMileage' });
+  const purpose = useWatch({ control, name: 'purpose' });
+  const startLocation = useWatch({ control, name: 'startLocation' });
+  const endLocation = useWatch({ control, name: 'endLocation' });
+  const distanceKm = useWatch({ control, name: 'distanceKm' });
+  const isTitleManual = useRef(false);
 
-  // auto-calculate distance and mileage
   useEffect(() => {
     if (startMileage != null && endMileage != null && endMileage > startMileage) {
       const distance = endMileage - startMileage;
@@ -37,6 +41,18 @@ export const TripForm = ({
       setValue('mileage', endMileage);
     }
   }, [startMileage, endMileage, setValue]);
+
+  useEffect(() => {
+    if (isTitleManual.current) return;
+    const title = generateEventTitle(t, {
+      type: 'TRIP',
+      purpose,
+      startLocation,
+      endLocation,
+      distanceKm,
+    });
+    if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
+  }, [purpose, startLocation, endLocation, distanceKm, t, setValue]);
 
   return (
     <Form

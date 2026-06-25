@@ -8,7 +8,8 @@ export const formatValue = (value: number, format: NumberInputFormat): string =>
 };
 
 export const parseRaw = (raw: string, format: NumberInputFormat): number | undefined => {
-  const cleaned = format === 'mileage' ? raw.replace(/\s/g, '') : raw;
+  const cleaned = format === 'mileage' ? raw.replace(/\s/g, '') : raw.replace(',', '.');
+
   if (cleaned === '') return undefined;
 
   const isValid = format === 'decimal' ? /^-?\d*\.?\d*$/.test(cleaned) : /^\d+$/.test(cleaned);

@@ -1,7 +1,10 @@
+import { useEffect, useRef } from 'react';
+
+import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { PURCHASE_CONFIG } from '@entities/timeline';
-import type { TimelineEventFormProps } from '@features/timeline';
+import { generateEventTitle, type TimelineEventFormProps } from '@features/timeline';
 import {
   Form,
   FormFieldCardSelect,
@@ -19,8 +22,19 @@ export const PurchaseForm = ({
   isPending,
   errorMessage,
   submitLabel,
+  setValue,
 }: TimelineEventFormProps) => {
   const { t } = useTranslation();
+
+  const purchasedFrom = useWatch({ control, name: 'purchasedFrom' });
+  const cost = useWatch({ control, name: 'cost' });
+  const isTitleManual = useRef(false);
+
+  useEffect(() => {
+    if (isTitleManual.current) return;
+    const title = generateEventTitle(t, { type: 'PURCHASE', purchasedFrom, cost });
+    if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
+  }, [purchasedFrom, cost, t, setValue]);
 
   return (
     <Form

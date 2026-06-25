@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
+
+import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { DOCUMENT_TYPE_CONFIG } from '@entities/timeline';
-import type { TimelineEventFormProps } from '@features/timeline';
+import { generateEventTitle, type TimelineEventFormProps } from '@features/timeline';
 import {
   Form,
   FormFieldCardSelect,
@@ -19,8 +22,18 @@ export const DocumentForm = ({
   isPending,
   errorMessage,
   submitLabel,
+  setValue,
 }: TimelineEventFormProps) => {
   const { t } = useTranslation();
+
+  const documentType = useWatch({ control, name: 'documentType' });
+  const expireDate = useWatch({ control, name: 'expireDate' });
+  const cost = useWatch({ control, name: 'cost' });
+
+  useEffect(() => {
+    const title = generateEventTitle(t, { type: 'DOCUMENT', documentType, expireDate, cost });
+    if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
+  }, [documentType, expireDate, cost, t, setValue]);
 
   return (
     <Form

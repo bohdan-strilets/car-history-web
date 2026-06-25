@@ -3,6 +3,7 @@ export * from './forms';
 export * from './schemes';
 export * from './types';
 
+export { generateEventTitle } from './generate-event-title';
 export { useOpenCreateTimelineEvent } from './use-open-create-timeline-event';
 export { useOpenDeleteEvent } from './use-open-delete-event';
 export { useOpenEditTimelineEvent } from './use-open-edit-timeline-event';
