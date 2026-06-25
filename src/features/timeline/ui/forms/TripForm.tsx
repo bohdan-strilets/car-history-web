@@ -75,6 +75,7 @@ export const TripForm = ({
             label={t('timeline.fields.startMileage')}
             placeholder="0"
             unit={t('units.km')}
+            format="mileage"
             size="lg"
           />
           <FormFieldNumberInput
@@ -83,6 +84,7 @@ export const TripForm = ({
             label={t('timeline.fields.endMileage')}
             placeholder="0"
             unit={t('units.km')}
+            format="mileage"
             size="lg"
           />
         </Stack>
@@ -93,6 +95,7 @@ export const TripForm = ({
           label={t('timeline.fields.distanceKm')}
           placeholder="0"
           unit={t('units.km')}
+          format="mileage"
           size="lg"
         />
 
@@ -120,6 +123,7 @@ export const TripForm = ({
           placeholder="0.00"
           size="lg"
           unit={t('enums.currencyShort.PLN')}
+          format="decimal"
         />
 
         <FormFieldTextarea

@@ -58,6 +58,7 @@ export const ChargeForm = ({
           label={t('timeline.fields.mileage')}
           placeholder="0"
           unit={t('units.km')}
+          format="mileage"
           size="lg"
         />
 
@@ -68,6 +69,7 @@ export const ChargeForm = ({
             label={t('timeline.fields.kWh')}
             placeholder="0.00"
             unit={t('units.kwh')}
+            format="decimal"
             size="lg"
             fullWidth
           />
@@ -77,6 +79,7 @@ export const ChargeForm = ({
             label={t('timeline.fields.pricePerKWh')}
             placeholder="0.00"
             unit={t('enums.currencyShort.PLN')}
+            format="decimal"
             size="lg"
             fullWidth
           />
@@ -97,6 +100,7 @@ export const ChargeForm = ({
             label={t('timeline.fields.batteryBefore')}
             placeholder="0"
             unit="%"
+            format="decimal"
             size="lg"
             fullWidth
           />
@@ -106,6 +110,7 @@ export const ChargeForm = ({
             label={t('timeline.fields.batteryAfter')}
             placeholder="100"
             unit="%"
+            format="decimal"
             size="lg"
             fullWidth
           />
@@ -118,6 +123,7 @@ export const ChargeForm = ({
           placeholder="0.00"
           size="lg"
           unit={t('enums.currencyShort.PLN')}
+          format="decimal"
         />
 
         <FormFieldTextarea

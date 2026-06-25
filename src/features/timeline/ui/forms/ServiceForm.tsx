@@ -81,6 +81,7 @@ export const ServiceForm = ({
           label={t('timeline.fields.mileage')}
           placeholder="0"
           unit={t('units.km')}
+          format="mileage"
           size="lg"
         />
 
@@ -178,6 +179,7 @@ export const ServiceForm = ({
           placeholder="0.00"
           size="lg"
           unit={t('enums.currencyShort.PLN')}
+          format="decimal"
         />
 
         <FormFieldTextarea

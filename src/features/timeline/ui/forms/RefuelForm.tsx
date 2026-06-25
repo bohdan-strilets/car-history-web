@@ -59,6 +59,7 @@ export const RefuelForm = ({
           label={t('timeline.fields.mileage')}
           placeholder="0"
           unit={t('units.km')}
+          format="mileage"
           size="lg"
         />
 
@@ -70,6 +71,7 @@ export const RefuelForm = ({
             placeholder="0.00"
             size="lg"
             unit={t('units.liters')}
+            format="decimal"
             fullWidth
           />
 
@@ -80,6 +82,7 @@ export const RefuelForm = ({
             placeholder="0.000"
             size="lg"
             unit={t('enums.currency.UAH')}
+            format="decimal"
             fullWidth
           />
         </Stack>
@@ -91,6 +94,7 @@ export const RefuelForm = ({
           placeholder="0.00"
           size="lg"
           unit={t('enums.currency.UAH')}
+          format="decimal"
         />
 
         <FormFieldCheckbox

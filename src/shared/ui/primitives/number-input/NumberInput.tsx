@@ -1,10 +1,15 @@
+import { useState } from 'react';
+
 import { Input, Text } from '@shared/ui';
+
+import { formatValue, parseRaw } from './number-input.utils';
 
 import type { NumberInputProps } from './number-input.types';
 
 export const NumberInput = ({
   value,
   onChange,
+  format = 'decimal',
   unit,
   min,
   max,
@@ -13,23 +18,47 @@ export const NumberInput = ({
   size,
   state,
 }: NumberInputProps) => {
+  const [localValue, setLocalValue] = useState<string>(
+    value != null ? formatValue(value, format) : '',
+  );
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    if (value != null) {
+      setLocalValue(format === 'mileage' ? String(value) : formatValue(value, format));
+    }
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+    if (localValue !== '' && value != null) {
+      setLocalValue(formatValue(value, format));
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value;
+    setLocalValue(raw);
 
-    if (raw === '') {
-      onChange(undefined);
-      return;
-    }
-
-    const num = Number(raw);
-    if (!isNaN(num)) onChange(num);
+    const parsed = parseRaw(raw, format);
+    onChange(parsed);
   };
+
+  const displayValue = isFocused
+    ? localValue
+    : value != null
+      ? formatValue(value, format)
+      : localValue;
 
   return (
     <Input
-      type="number"
-      value={value ?? ''}
+      type="text"
+      inputMode={format === 'decimal' ? 'decimal' : 'numeric'}
+      value={displayValue}
       onChange={handleChange}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       min={min}
       max={max}
       placeholder={placeholder}
