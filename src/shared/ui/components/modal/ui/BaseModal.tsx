@@ -13,11 +13,12 @@ export const BaseModal = ({
   onClose,
   onBack,
   children,
+  zIndex,
 }: BaseModalProps) => {
   const { t } = useTranslation();
 
   return (
-    <div className={root({ centered: true })}>
+    <div className={root({ centered: true })} style={{ zIndex }}>
       <div className={modal({ centered: true })} role="dialog" aria-modal="true" aria-label={title}>
         <div className={header}>
           <Stack direction="row" align="center" gap="xs">

@@ -1,7 +1,10 @@
-import { useEffect, type PropsWithChildren } from 'react';
+import { Fragment, useEffect, type PropsWithChildren } from 'react';
 
 import { useMediaQuery } from '@shared/hooks';
 import { BaseBottomSheet, BaseModal, ModalPortal, Overlay, useModalStore } from '@shared/ui';
+
+const BASE_Z = 5000;
+const STEP = 10;
 
 export const ModalProvider = ({ children }: PropsWithChildren) => {
   const { stack, closeLast, close } = useModalStore();
@@ -29,8 +32,8 @@ export const ModalProvider = ({ children }: PropsWithChildren) => {
 
       {stack.length > 0 && (
         <ModalPortal>
-          <Overlay onClick={closeLast} />
           {stack.map((modal, index) => {
+            const z = BASE_Z + index * STEP;
             const isTop = index === stack.length - 1;
             const hasBack = stack.length > 1 && isTop;
 
@@ -39,16 +42,18 @@ export const ModalProvider = ({ children }: PropsWithChildren) => {
               closable: modal.closable,
               hasBack,
               isTop,
+              zIndex: z + 1,
               onClose: () => close(modal.id),
               onBack: closeLast,
               children: modal.content,
             };
 
-            if (!isDesktop) {
-              return <BaseBottomSheet key={modal.id} {...props} />;
-            }
-
-            return <BaseModal key={modal.id} {...props} />;
+            return (
+              <Fragment key={modal.id}>
+                <Overlay style={{ zIndex: z }} onClick={isTop ? closeLast : undefined} />
+                {isDesktop ? <BaseModal {...props} /> : <BaseBottomSheet {...props} />}
+              </Fragment>
+            );
           })}
         </ModalPortal>
       )}

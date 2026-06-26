@@ -13,11 +13,12 @@ export const BaseBottomSheet = ({
   onClose,
   onBack,
   children,
+  zIndex,
 }: BaseBottomSheetProps) => {
   const { t } = useTranslation();
 
   return (
-    <div className={root({ bottom: true })}>
+    <div className={root({ bottom: true })} style={{ zIndex }}>
       <div className={modal({ bottom: true })} role="dialog" aria-modal="true" aria-label={title}>
         <div className={handle}>
           <div className={handleBar} />

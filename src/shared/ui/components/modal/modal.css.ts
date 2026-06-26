@@ -7,7 +7,6 @@ export const root = recipe({
   base: {
     position: 'fixed',
     inset: 0,
-    zIndex: vars.zIndex.modal,
 
     display: 'flex',
     justifyContent: 'center',

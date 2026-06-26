@@ -57,6 +57,7 @@ export interface BaseModalProps {
   onClose: () => void;
   onBack?: () => void;
   children: React.ReactNode;
+  zIndex?: number;
 }
 
 export interface BaseBottomSheetProps {
@@ -67,6 +68,7 @@ export interface BaseBottomSheetProps {
   onClose: () => void;
   onBack?: () => void;
   children: React.ReactNode;
+  zIndex?: number;
 }
 
 export interface ConfirmModalProps extends ConfirmOptions {
