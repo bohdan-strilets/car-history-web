@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { cloneElement, isValidElement, useEffect, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 
 import { useDismiss } from '@shared/hooks';
-import { Box, Portal } from '@shared/ui';
+import { Portal } from '@shared/ui';
 
-import { content, root, triggerButton } from './dropdown.css';
+import { content, root } from './dropdown.css';
 import { useDropdown } from './use-dropdown';
 
 import type { DropdownProps } from './dropdown.types';
@@ -26,7 +26,6 @@ export const Dropdown = ({
   const [internalOpen, setInternalOpen] = useState(false);
 
   const portalRef = useRef<HTMLDivElement>(null);
-  const triggerRef = useRef<HTMLButtonElement>(null);
 
   const isControlled = controlledOpen !== undefined;
   const open = isControlled ? controlledOpen : internalOpen;
@@ -37,6 +36,13 @@ export const Dropdown = ({
   };
 
   const prevOpenRef = useRef<boolean | undefined>(undefined);
+
+  const { rootRef, getPortalStyle } = useDropdown({
+    open,
+    align,
+    direction,
+    fullWidth,
+  });
 
   useEffect(() => {
     if (prevOpenRef.current === undefined) {
@@ -49,16 +55,13 @@ export const Dropdown = ({
     if (open && !wasOpen) {
       portalRef.current?.focus();
     } else if (!open && wasOpen) {
-      triggerRef.current?.focus();
+      (
+        rootRef.current?.querySelector(
+          'button, [role="button"], [tabindex="0"]',
+        ) as HTMLElement | null
+      )?.focus();
     }
-  }, [open]);
-
-  const { rootRef, getPortalStyle } = useDropdown({
-    open,
-    align,
-    direction,
-    fullWidth,
-  });
+  }, [open, rootRef]);
 
   useDismiss({
     enabled: open,
@@ -71,21 +74,23 @@ export const Dropdown = ({
     if (!disabled) setOpen(!open);
   };
 
+  const clonedTrigger = isValidElement(trigger)
+    ? cloneElement(trigger as React.ReactElement<Record<string, unknown>>, {
+        onClick: handleTriggerClick,
+        disabled,
+        'aria-expanded': open,
+        'aria-haspopup': 'menu',
+        style: { width: fullWidth ? '100%' : undefined },
+      })
+    : trigger;
+
   return (
-    <div className={clsx(root({ fullWidth }), className)} ref={rootRef}>
-      <Box
-        as="button"
-        ref={triggerRef}
-        type="button"
-        onClick={handleTriggerClick}
-        disabled={disabled}
-        aria-expanded={open}
-        aria-haspopup="menu"
-        width={fullWidth ? 'full' : 'auto'}
-        className={triggerButton}
-      >
-        {trigger}
-      </Box>
+    <div
+      className={clsx(root({ fullWidth }), className)}
+      ref={rootRef}
+      style={{ width: fullWidth ? '100%' : 'auto' }}
+    >
+      {clonedTrigger}
 
       {open && (
         <Portal>
