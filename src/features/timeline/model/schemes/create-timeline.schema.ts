@@ -18,11 +18,10 @@ export const createTimelineEventSchema = (t: TFunction, currentMileage: number) 
         .max(C.TITLE_MAX, t('validation.TOO_LONG')),
 
       eventDate: z.string(t('validation.REQUIRED')),
-
       mileage: z
         .number(t('validation.REQUIRED'))
         .int(t('validation.MUST_BE_INTEGER'))
-        .min(currentMileage, t('validation.TOO_SMALL'))
+        .min(0, t('validation.TOO_SMALL'))
         .max(C.MILEAGE_MAX, t('validation.TOO_LARGE')),
 
       cost: z
@@ -143,7 +142,7 @@ export const createTimelineEventSchema = (t: TFunction, currentMileage: number) 
       installedMileage: z
         .number(t('validation.INVALID_FORMAT'))
         .int(t('validation.MUST_BE_INTEGER'))
-        .min(currentMileage, t('validation.TOO_SMALL'))
+        .min(0, t('validation.TOO_SMALL'))
         .max(C.MILEAGE_MAX, t('validation.TOO_LARGE'))
         .nullable()
         .optional(),
@@ -162,7 +161,7 @@ export const createTimelineEventSchema = (t: TFunction, currentMileage: number) 
       startMileage: z
         .number(t('validation.INVALID_FORMAT'))
         .int(t('validation.MUST_BE_INTEGER'))
-        .min(currentMileage, t('validation.TOO_SMALL'))
+        .min(0, t('validation.TOO_SMALL'))
         .max(C.MILEAGE_MAX, t('validation.TOO_LARGE'))
         .nullable()
         .optional(),
@@ -170,7 +169,7 @@ export const createTimelineEventSchema = (t: TFunction, currentMileage: number) 
       endMileage: z
         .number(t('validation.INVALID_FORMAT'))
         .int(t('validation.MUST_BE_INTEGER'))
-        .min(currentMileage, t('validation.TOO_SMALL'))
+        .min(0, t('validation.TOO_SMALL'))
         .max(C.MILEAGE_MAX, t('validation.TOO_LARGE'))
         .nullable()
         .optional(),
@@ -197,6 +196,15 @@ export const createTimelineEventSchema = (t: TFunction, currentMileage: number) 
     })
     .superRefine((data, ctx) => {
       const required = (path: string) => ctx.addIssue(zodIssue(t('validation.REQUIRED'), [path]));
+
+      // Mileage validation — skip for PURCHASE
+      if (
+        data.type !== TIMELINE_EVENT_TYPE.PURCHASE &&
+        data.mileage != null &&
+        data.mileage < currentMileage
+      ) {
+        ctx.addIssue(zodIssue(t('validation.TOO_SMALL'), ['mileage']));
+      }
 
       // REFUEL
       if (data.type === TIMELINE_EVENT_TYPE.REFUEL) {
