@@ -1,7 +1,10 @@
 import { useMemo, useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 import { TIMELINE_EVENT_TYPE, useTimeline, type TimelineEventType } from '@entities/timeline';
 import { EventTypeGrid } from '@features/timeline';
+import { Hint, Stack } from '@shared/ui';
 
 import { SelectedTypeForm } from './SelectedTypeForm';
 
@@ -16,11 +19,13 @@ export const CreateTimelineEventModal = ({
   onSuccess,
 }: CreateTimelineEventModalProps) => {
   const [selectedType, setSelectedType] = useState<TimelineEventType | null>(null);
+  const { t } = useTranslation();
 
   const { data } = useTimeline({ workspaceId, vehicleId });
+  const timeline = useMemo(() => data?.data ?? [], [data?.data]);
+  const isTimelineEmpty = timeline.length === 0;
 
   const disabledTypes = useMemo<TimelineEventType[]>(() => {
-    const timeline = data?.data ?? [];
     const types = timeline.map((e) => e.type);
     const alwaysUnique = [TIMELINE_EVENT_TYPE.PURCHASE, TIMELINE_EVENT_TYPE.SALE];
 
@@ -35,10 +40,24 @@ export const CreateTimelineEventModal = ({
     }
 
     return disabled;
-  }, [data?.data, vehicleFuelType]);
+  }, [timeline, vehicleFuelType]);
+
+  const hasPurchase = timeline.some((e) => e.type === TIMELINE_EVENT_TYPE.PURCHASE);
+  const highlightTypes = isTimelineEmpty && !hasPurchase ? [TIMELINE_EVENT_TYPE.PURCHASE] : [];
 
   if (!selectedType) {
-    return <EventTypeGrid onSelect={setSelectedType} disabledTypes={disabledTypes} />;
+    return (
+      <Stack gap="lg">
+        {isTimelineEmpty && !hasPurchase && (
+          <Hint message={t('timeline.empty.purchaseTip')} variant="info" />
+        )}
+        <EventTypeGrid
+          onSelect={setSelectedType}
+          disabledTypes={disabledTypes}
+          highlightTypes={highlightTypes}
+        />
+      </Stack>
+    );
   }
 
   return (

@@ -4,32 +4,43 @@ import { TIMELINE_EVENT_TYPE_CONFIG } from '@entities/timeline';
 import { Grid, Icon, Panel, Stack, Text } from '@shared/ui';
 import { translateConfigOptions } from '@shared/utils';
 
+import { highlighted } from './event-type-grid.css';
+
 import type { EventTypeGridProps } from './event-type-grid.types';
 
-export const EventTypeGrid = ({ onSelect, disabledTypes = [] }: EventTypeGridProps) => {
+export const EventTypeGrid = ({
+  onSelect,
+  disabledTypes = [],
+  highlightTypes = [],
+}: EventTypeGridProps) => {
   const { t } = useTranslation();
   const config = translateConfigOptions(t, TIMELINE_EVENT_TYPE_CONFIG);
 
   return (
     <Grid columns={{ mobile: '2', tablet: '3' }} gap="md">
-      {config.map(({ value, icon, color, label }) => (
-        <Panel
-          key={value}
-          variant="neuRaised"
-          radius="md"
-          p="md"
-          onClick={() => onSelect(value)}
-          hoverable
-          disabled={disabledTypes.includes(value)}
-        >
-          <Stack align="center" gap="sm">
-            <Icon name={icon ?? 'circleQuestionMark'} size="xl" color={color} />
-            <Text size="sm" weight="medium" color="secondary" align="center">
-              {label}
-            </Text>
-          </Stack>
-        </Panel>
-      ))}
+      {config.map(({ value, icon, color, label }) => {
+        const isHighlighted = highlightTypes.includes(value);
+
+        return (
+          <Panel
+            key={value}
+            variant="neuRaised"
+            radius="md"
+            p="md"
+            onClick={() => onSelect(value)}
+            hoverable
+            disabled={disabledTypes.includes(value)}
+            className={isHighlighted ? highlighted : undefined}
+          >
+            <Stack align="center" gap="sm">
+              <Icon name={icon ?? 'circleQuestionMark'} size="xl" color={color} />
+              <Text size="sm" weight="medium" color="secondary" align="center">
+                {label}
+              </Text>
+            </Stack>
+          </Panel>
+        );
+      })}
     </Grid>
   );
 };

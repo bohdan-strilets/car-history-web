@@ -911,7 +911,8 @@
 
     "empty": {
       "title": "Brak zdarzeń",
-      "description": "Dodaj pierwsze zdarzenie do historii pojazdu."
+      "description": "Dodaj pierwsze zdarzenie do historii pojazdu.",
+      "purchaseTip": "Zacznij od dodania zakupu — to początek historii Twojego pojazdu"
     },
 
     "list": {

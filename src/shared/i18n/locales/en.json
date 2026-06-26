@@ -907,7 +907,8 @@
 
     "empty": {
       "title": "No events",
-      "description": "Add the first event to the vehicle's history."
+      "description": "Add the first event to the vehicle's history.",
+      "purchaseTip": "Start by adding a purchase — it's the beginning of your vehicle's history."
     },
 
     "list": {
