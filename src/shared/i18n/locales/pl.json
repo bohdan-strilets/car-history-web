@@ -1303,6 +1303,7 @@
     "TIMELINE_INVALID_MILEAGE": "Podany przebieg jest nieprawidłowy",
     "TIMELINE_INVALID_EVENT_TYPE": "Nieznany typ zdarzenia",
     "TIMELINE_EVENT_ALREADY_EXISTS": "Zdarzenie już istnieje",
+    "TIMELINE_CHARGE_NOT_SUPPORTED": "Ładowanie pojazdu elektrycznego nie jest obsługiwane dla tego typu pojazdu",
     "REMINDER_NOT_FOUND": "Przypomnienie nie zostało znalezione",
     "REMINDER_ALREADY_COMPLETED": "To przypomnienie zostało już oznaczone jako wykonane",
     "REMINDER_ALREADY_DISMISSED": "To przypomnienie zostało już odrzucone",
