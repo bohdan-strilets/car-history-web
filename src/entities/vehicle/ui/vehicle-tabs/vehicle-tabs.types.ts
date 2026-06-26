@@ -14,12 +14,14 @@ export interface TimelineTabProps {
   currentMileage: number;
   fuelType: RefuelType;
   vehicleFuelType?: FuelType[];
+  isSold: boolean;
 }
 
 export interface RemindersTabProps {
   workspaceId: string;
   vehicleId: string;
   currentMileage?: number;
+  isSold: boolean;
 }
 
 export interface MaintenanceTabProps {

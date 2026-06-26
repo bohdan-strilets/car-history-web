@@ -3,12 +3,17 @@ import { useTranslation } from 'react-i18next';
 import { ReminderList, ReminderListSkeleton, useRemindersQuery } from '@entities/reminder';
 import { useOpenCreateReminder } from '@features/reminder';
 import { useMediaQuery } from '@shared/hooks';
-import { Center, Fab, Stack, StateView } from '@shared/ui';
+import { Center, Fab, Hint, Stack, StateView } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
 
 import type { RemindersTabProps } from './vehicle-tabs.types';
 
-export const RemindersTab = ({ workspaceId, vehicleId, currentMileage }: RemindersTabProps) => {
+export const RemindersTab = ({
+  workspaceId,
+  vehicleId,
+  currentMileage,
+  isSold,
+}: RemindersTabProps) => {
   const { t } = useTranslation();
   const isTabletUp = useMediaQuery('tablet', 'up');
 
@@ -46,7 +51,7 @@ export const RemindersTab = ({ workspaceId, vehicleId, currentMileage }: Reminde
           title={t('reminder.empty.title')}
           description={t('reminder.empty.description')}
           actionLabel={t('reminder.empty.action')}
-          onAction={handleCreate}
+          onAction={isSold ? undefined : handleCreate}
         />
       </Center>
     );
@@ -58,16 +63,21 @@ export const RemindersTab = ({ workspaceId, vehicleId, currentMileage }: Reminde
           title={t('reminder.list.title')}
           buttonLabel={t('reminder.actions.add')}
           buttonIcon="plus"
-          onCreate={handleCreate}
+          onCreate={isSold ? undefined : handleCreate}
         />
+
+        {isSold && <Hint message={t('reminder.solid.hint')} variant="warning" />}
+
         <ReminderList reminders={reminders} onReminderClick={() => {}} />
       </Stack>
-      <Fab
-        icon="plus"
-        aria-label={t('reminder.actions.add')}
-        onClick={handleCreate}
-        size={isTabletUp ? 'lg' : 'md'}
-      />
+      {!isSold && (
+        <Fab
+          icon="plus"
+          aria-label={t('reminder.actions.add')}
+          onClick={handleCreate}
+          size={isTabletUp ? 'lg' : 'md'}
+        />
+      )}
     </>
   );
 };

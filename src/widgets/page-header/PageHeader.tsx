@@ -25,7 +25,7 @@ export const PageHeader = ({
             {title}
           </Heading>
 
-          {isTablet ? (
+          {onCreate && isTablet ? (
             <Button
               leftIcon={buttonIcon}
               onClick={onCreate}
@@ -33,7 +33,7 @@ export const PageHeader = ({
             >
               {buttonLabel}
             </Button>
-          ) : (
+          ) : onCreate ? (
             <Tooltip label={buttonLabel} placement="left">
               <Button
                 leftIcon={buttonIcon}
@@ -42,7 +42,7 @@ export const PageHeader = ({
                 iconOnly
               />
             </Tooltip>
-          )}
+          ) : null}
         </Stack>
 
         {description && (

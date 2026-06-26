@@ -47,6 +47,7 @@ export const VehicleDetailPage = () => {
   const canDelete = canDeleteVehicle(role, ownerId, userId);
 
   const refuelType = getRefuelType(vehicle?.fuelType ?? []);
+  const isSold = vehicle?.status === 'ARCHIVE';
 
   if (isPending) return <VehicleDetailSkeleton />;
   if (isError || !vehicle) {
@@ -90,6 +91,7 @@ export const VehicleDetailPage = () => {
           currentMileage={vehicle?.currentMileage ?? 0}
           fuelType={refuelType}
           vehicleFuelType={vehicle.fuelType}
+          isSold={isSold}
         />
       )}
 
@@ -98,6 +100,7 @@ export const VehicleDetailPage = () => {
           workspaceId={workspaceId}
           vehicleId={vehicleId}
           currentMileage={vehicle?.currentMileage ?? 0}
+          isSold={isSold}
         />
       )}
 

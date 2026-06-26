@@ -14,7 +14,7 @@ import {
 } from '@entities/timeline';
 import { useOpenCreateTimelineEvent, useOpenTimelineEventDetail } from '@features/timeline';
 import { useMediaQuery } from '@shared/hooks';
-import { Center, Fab, Stack, StateView, Text } from '@shared/ui';
+import { Center, Fab, Hint, Stack, StateView, Text } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
 
 import type { TimelineTabProps } from './vehicle-tabs.types';
@@ -25,6 +25,7 @@ export const TimelineTab = ({
   currentMileage,
   fuelType,
   vehicleFuelType,
+  isSold,
 }: TimelineTabProps) => {
   const [typeFilter, setTypeFilter] = useState<TimelineEventType[]>([]);
 
@@ -87,7 +88,7 @@ export const TimelineTab = ({
           title={t('timeline.empty.title')}
           description={t('timeline.empty.description')}
           actionLabel={t('timeline.actions.addEvent')}
-          onAction={handleCreate}
+          onAction={isSold ? undefined : handleCreate}
         />
       </Center>
     );
@@ -99,8 +100,10 @@ export const TimelineTab = ({
           title={t('timeline.list.title')}
           buttonLabel={t('timeline.actions.addEvent')}
           buttonIcon="plus"
-          onCreate={handleCreate}
+          onCreate={isSold ? undefined : handleCreate}
         />
+
+        {isSold && <Hint message={t('timeline.sold.hint')} variant="warning" />}
 
         <TimelineFilter value={typeFilter} onChange={setTypeFilter} />
         {isFilterEmpty ? (
@@ -120,12 +123,14 @@ export const TimelineTab = ({
         )}
       </Stack>
 
-      <Fab
-        icon="plus"
-        aria-label={t('timeline.actions.addEvent')}
-        onClick={handleCreate}
-        size={isTabletUp ? 'lg' : 'md'}
-      />
+      {!isSold && (
+        <Fab
+          icon="plus"
+          aria-label={t('timeline.actions.addEvent')}
+          onClick={handleCreate}
+          size={isTabletUp ? 'lg' : 'md'}
+        />
+      )}
     </>
   );
 };

@@ -938,6 +938,10 @@
     "filterEmpty": {
       "title": "No results",
       "description": "No events found for the selected filters"
+    },
+
+    "sold": {
+      "hint": "This vehicle has been sold. You cannot add new events."
     }
   },
 
@@ -964,6 +968,10 @@
     "status": {
       "overdue": "Overdue",
       "daysLeft": "{{count}} days"
+    },
+
+    "solid": {
+      "hint": "This vehicle has been sold. You cannot add new reminders."
     }
   },
 

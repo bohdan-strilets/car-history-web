@@ -942,6 +942,10 @@
     "filterEmpty": {
       "title": "Brak wyników",
       "description": "Nie znaleziono wydarzeń dla wybranych filtrów"
+    },
+
+    "sold": {
+      "hint": "Ten pojazd został sprzedany. Nie można dodawać nowych zdarzeń."
     }
   },
 
@@ -968,6 +972,10 @@
     "status": {
       "overdue": "Przeterminowane",
       "daysLeft": "{{count}} dni"
+    },
+
+    "solid": {
+      "hint": "Ten pojazd został sprzedany. Nie można dodawać nowych przypomnień."
     }
   },
 
