@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
-import { type TimelineEventType } from '@entities/timeline';
+import { TIMELINE_EVENT_TYPE, useTimeline, type TimelineEventType } from '@entities/timeline';
 import { EventTypeGrid } from '@features/timeline';
 
 import { SelectedTypeForm } from './SelectedTypeForm';
@@ -12,12 +12,33 @@ export const CreateTimelineEventModal = ({
   vehicleId,
   currentMileage,
   fuelType,
+  vehicleFuelType,
   onSuccess,
 }: CreateTimelineEventModalProps) => {
   const [selectedType, setSelectedType] = useState<TimelineEventType | null>(null);
 
+  const { data } = useTimeline({ workspaceId, vehicleId });
+
+  const disabledTypes = useMemo<TimelineEventType[]>(() => {
+    const timeline = data?.data ?? [];
+    const types = timeline.map((e) => e.type);
+    const alwaysUnique = [TIMELINE_EVENT_TYPE.PURCHASE, TIMELINE_EVENT_TYPE.SALE];
+
+    const disabled: TimelineEventType[] = alwaysUnique.filter((t) => types.includes(t));
+
+    const isElectric = vehicleFuelType?.includes('ELECTRIC');
+    const isHybrid = vehicleFuelType?.includes('HYBRID');
+    const isChargeable = isElectric || isHybrid;
+
+    if (!isChargeable) {
+      disabled.push(TIMELINE_EVENT_TYPE.CHARGE);
+    }
+
+    return disabled;
+  }, [data?.data, vehicleFuelType]);
+
   if (!selectedType) {
-    return <EventTypeGrid onSelect={setSelectedType} />;
+    return <EventTypeGrid onSelect={setSelectedType} disabledTypes={disabledTypes} />;
   }
 
   return (

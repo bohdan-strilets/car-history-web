@@ -1,4 +1,4 @@
-import type { RefuelType, Vehicle } from '@entities/vehicle';
+import type { FuelType, RefuelType, Vehicle } from '@entities/vehicle';
 
 export interface OverviewTabProps {
   vehicle: Vehicle;
@@ -13,6 +13,7 @@ export interface TimelineTabProps {
   vehicleId: string;
   currentMileage: number;
   fuelType: RefuelType;
+  vehicleFuelType?: FuelType[];
 }
 
 export interface RemindersTabProps {

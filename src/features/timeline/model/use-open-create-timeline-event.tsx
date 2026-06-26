@@ -11,6 +11,7 @@ export const useOpenCreateTimelineEvent = ({
   vehicleId,
   currentMileage,
   fuelType,
+  vehicleFuelType,
 }: OpenCreateTimelineEventParams) => {
   const { t } = useTranslation();
   const modal = useAdaptiveModal();
@@ -22,6 +23,7 @@ export const useOpenCreateTimelineEvent = ({
         vehicleId={vehicleId}
         currentMileage={currentMileage}
         fuelType={fuelType}
+        vehicleFuelType={vehicleFuelType}
         onSuccess={() => modal.closeLast()}
       />,
       { title: t('timeline.actions.addEvent') },

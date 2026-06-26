@@ -1,11 +1,12 @@
 import type { TimelineEventType } from '@entities/timeline';
-import type { RefuelType } from '@entities/vehicle';
+import type { FuelType, RefuelType } from '@entities/vehicle';
 
 export type CreateTimelineEventModalProps = {
   workspaceId: string;
   vehicleId: string;
   currentMileage: number;
   fuelType?: RefuelType;
+  vehicleFuelType?: FuelType[];
   onSuccess: () => void;
 };
 

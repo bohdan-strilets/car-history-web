@@ -1293,6 +1293,7 @@
     "TIMELINE_EVENT_NOT_FOUND": "Zdarzenie nie zostało znalezione",
     "TIMELINE_INVALID_MILEAGE": "Podany przebieg jest nieprawidłowy",
     "TIMELINE_INVALID_EVENT_TYPE": "Nieznany typ zdarzenia",
+    "TIMELINE_EVENT_ALREADY_EXISTS": "Zdarzenie już istnieje",
     "REMINDER_NOT_FOUND": "Przypomnienie nie zostało znalezione",
     "REMINDER_ALREADY_COMPLETED": "To przypomnienie zostało już oznaczone jako wykonane",
     "REMINDER_ALREADY_DISMISSED": "To przypomnienie zostało już odrzucone",

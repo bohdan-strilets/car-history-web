@@ -24,6 +24,7 @@ export const TimelineTab = ({
   vehicleId,
   currentMileage,
   fuelType,
+  vehicleFuelType,
 }: TimelineTabProps) => {
   const [typeFilter, setTypeFilter] = useState<TimelineEventType[]>([]);
 
@@ -35,6 +36,7 @@ export const TimelineTab = ({
     vehicleId,
     currentMileage,
     fuelType,
+    vehicleFuelType,
   });
 
   const { handleOpen } = useOpenTimelineEventDetail({ workspaceId, vehicleId });

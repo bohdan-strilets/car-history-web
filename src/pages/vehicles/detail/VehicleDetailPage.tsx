@@ -89,6 +89,7 @@ export const VehicleDetailPage = () => {
           vehicleId={vehicleId}
           currentMileage={vehicle?.currentMileage ?? 0}
           fuelType={refuelType}
+          vehicleFuelType={vehicle.fuelType}
         />
       )}
 

@@ -1,7 +1,7 @@
 import type { Control, UseFormSetValue } from 'react-hook-form';
 
 import type { EventId, TimelineEventType } from '@entities/timeline';
-import type { RefuelType, VehicleId } from '@entities/vehicle';
+import type { FuelType, RefuelType, VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
 
 import type { TimelineEventValues } from '../schemes';
@@ -49,7 +49,10 @@ export type TimelineEventFormContext = {
   type: TimelineEventType;
 } & VehicleContext;
 
-export type OpenCreateTimelineEventParams = TimelineEventParams & VehicleContext;
+export type OpenCreateTimelineEventParams = TimelineEventParams &
+  VehicleContext & {
+    vehicleFuelType?: FuelType[];
+  };
 
 export type OpenTimelineEventDetailParams = {
   workspaceId: WorkspaceId;

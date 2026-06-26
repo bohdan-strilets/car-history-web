@@ -1289,6 +1289,7 @@
     "TIMELINE_EVENT_NOT_FOUND": "Event not found",
     "TIMELINE_INVALID_MILEAGE": "The mileage provided is invalid",
     "TIMELINE_INVALID_EVENT_TYPE": "Unknown event type",
+    "TIMELINE_EVENT_ALREADY_EXISTS": "Event already exists",
     "REMINDER_NOT_FOUND": "Reminder not found",
     "REMINDER_ALREADY_COMPLETED": "This reminder has already been marked as done",
     "REMINDER_ALREADY_DISMISSED": "This reminder has already been dismissed",

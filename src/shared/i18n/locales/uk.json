@@ -1295,6 +1295,7 @@
     "TIMELINE_EVENT_NOT_FOUND": "Подію не знайдено",
     "TIMELINE_INVALID_MILEAGE": "Вказаний пробіг некоректний",
     "TIMELINE_INVALID_EVENT_TYPE": "Невідомий тип події",
+    "TIMELINE_EVENT_ALREADY_EXISTS": "Подія вже існує",
     "REMINDER_NOT_FOUND": "Нагадування не знайдено",
     "REMINDER_ALREADY_COMPLETED": "Це нагадування вже позначено як виконане",
     "REMINDER_ALREADY_DISMISSED": "Це нагадування вже відхилено",
