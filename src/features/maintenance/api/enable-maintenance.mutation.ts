@@ -2,24 +2,27 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { queryKeys } from '@shared/config';
 
-import { maintenanceIntervalMutationApi } from './maintenance-interval.api';
+import { maintenanceIntervalMutationApi } from './maintenance.api';
 
-import type { CreateMaintenanceIntervalDto, MaintenanceIntervalParams } from '../model';
+import type { MaintenanceIntervalActionParams } from '../model';
 
-export const useCreateMaintenanceIntervalMutation = ({
+export const useEnableMaintenanceIntervalMutation = ({
   workspaceId,
   vehicleId,
-}: MaintenanceIntervalParams) => {
+  maintenanceId,
+  onSuccess,
+}: MaintenanceIntervalActionParams) => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (dto: CreateMaintenanceIntervalDto) => {
-      return maintenanceIntervalMutationApi.create(workspaceId, vehicleId, dto);
+    mutationFn: () => {
+      return maintenanceIntervalMutationApi.enable(workspaceId, vehicleId, maintenanceId);
     },
 
     onSuccess: () => {
       const maintenanceKeys = queryKeys.vehicles.maintenance(vehicleId);
       queryClient.invalidateQueries({ queryKey: maintenanceKeys });
+      onSuccess?.();
     },
   });
 };

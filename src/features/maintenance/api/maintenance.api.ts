@@ -1,4 +1,4 @@
-import type { MaintenanceId } from '@entities/maintenance-interval';
+import type { MaintenanceId } from '@entities/maintenance';
 import type { VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
 import { apiClient } from '@shared/api';

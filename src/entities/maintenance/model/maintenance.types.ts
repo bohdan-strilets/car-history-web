@@ -1,6 +1,6 @@
 import type { VehicleId } from '@entities/vehicle';
 
-import type { MaintenanceStatus, MaintenanceType } from './maintenance-interval.constants';
+import type { MaintenanceStatus, MaintenanceType } from './maintenance.constants';
 
 export type MaintenanceId = string;
 

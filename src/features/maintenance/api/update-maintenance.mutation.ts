@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { queryKeys } from '@shared/config';
 
-import { maintenanceIntervalMutationApi } from './maintenance-interval.api';
+import { maintenanceIntervalMutationApi } from './maintenance.api';
 
 import type { MaintenanceIntervalActionParams, UpdateMaintenanceIntervalDto } from '../model';
 

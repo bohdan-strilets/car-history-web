@@ -3,4 +3,4 @@ export type {
   MaintenanceIntervalActionParams,
   MaintenanceIntervalParams,
   UpdateMaintenanceIntervalDto,
-} from './maintenance-interval.dto';
+} from './maintenance.dto';

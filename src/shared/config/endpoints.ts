@@ -1,4 +1,4 @@
-import type { MaintenanceId } from '@entities/maintenance-interval';
+import type { MaintenanceId } from '@entities/maintenance';
 import type { ReminderId } from '@entities/reminder';
 import type { EventId } from '@entities/timeline';
 import type { VehicleId } from '@entities/vehicle';

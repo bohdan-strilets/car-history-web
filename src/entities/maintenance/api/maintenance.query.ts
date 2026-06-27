@@ -4,7 +4,7 @@ import type { VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
 import { queryKeys } from '@shared/config';
 
-import { maintenanceIntervalApi } from './maintenance-interval.api';
+import { maintenanceIntervalApi } from './maintenance.api';
 
 export const useMaintenanceIntervalsQuery = (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
   useQuery({

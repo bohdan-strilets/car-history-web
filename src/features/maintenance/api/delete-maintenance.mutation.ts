@@ -2,11 +2,11 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { queryKeys } from '@shared/config';
 
-import { maintenanceIntervalMutationApi } from './maintenance-interval.api';
+import { maintenanceIntervalMutationApi } from './maintenance.api';
 
-import type { MaintenanceIntervalActionParams } from '../model/types';
+import type { MaintenanceIntervalActionParams } from '../model';
 
-export const useMarkDoneMaintenanceIntervalMutation = ({
+export const useDeleteMaintenanceIntervalMutation = ({
   workspaceId,
   vehicleId,
   maintenanceId,
@@ -15,13 +15,8 @@ export const useMarkDoneMaintenanceIntervalMutation = ({
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (currentMileage: number) => {
-      return maintenanceIntervalMutationApi.markDone(
-        workspaceId,
-        vehicleId,
-        maintenanceId,
-        currentMileage,
-      );
+    mutationFn: () => {
+      return maintenanceIntervalMutationApi.delete(workspaceId, vehicleId, maintenanceId);
     },
 
     onSuccess: () => {
