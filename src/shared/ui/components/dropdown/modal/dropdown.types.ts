@@ -45,3 +45,8 @@ export interface Coords {
 // Params
 
 export type DropdownParams = Pick<DropdownProps, 'align' | 'direction' | 'fullWidth' | 'open'>;
+
+export interface DropdownKeyboardParams {
+  open: boolean;
+  onClose: () => void;
+}

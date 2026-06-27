@@ -1,3 +1,4 @@
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@shared/styles';
@@ -15,6 +16,11 @@ export const root = recipe({
       },
     },
   },
+});
+
+export const triggerWrapper = style({
+  outline: 'none',
+  borderRadius: vars.radius.md,
 });
 
 export const content = recipe({
