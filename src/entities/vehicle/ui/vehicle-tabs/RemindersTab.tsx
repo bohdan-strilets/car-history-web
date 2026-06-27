@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { ReminderList, ReminderListSkeleton, useRemindersQuery } from '@entities/reminder';
-import { useOpenCreateReminder } from '@features/reminder';
+import { useOpenCreateReminder, useOpenReminderDetail } from '@features/reminder';
 import { useMediaQuery } from '@shared/hooks';
 import { Center, Fab, Hint, Stack, StateView } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
@@ -28,6 +28,8 @@ export const RemindersTab = ({
 
   const reminders = data?.data ?? [];
   const isEmpty = reminders.length === 0;
+
+  const { handleOpen } = useOpenReminderDetail({ workspaceId, vehicleId });
 
   if (isPending) return <ReminderListSkeleton />;
 
@@ -68,7 +70,7 @@ export const RemindersTab = ({
 
         {isSold && <Hint message={t('reminder.solid.hint')} variant="warning" />}
 
-        <ReminderList reminders={reminders} onReminderClick={() => {}} />
+        <ReminderList reminders={reminders} onReminderClick={handleOpen} />
       </Stack>
       {!isSold && (
         <Fab

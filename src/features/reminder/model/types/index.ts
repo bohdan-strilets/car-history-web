@@ -9,4 +9,5 @@ export type {
   CreateReminderFormParams,
   CreateReminderFormProps,
   OpenCreateReminderParams,
+  ReminderTitleContext,
 } from './reminder.types';

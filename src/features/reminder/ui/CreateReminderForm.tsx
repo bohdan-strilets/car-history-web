@@ -1,3 +1,6 @@
+import { useEffect, useRef } from 'react';
+
+import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { REMINDER_TYPE_CONFIG } from '@entities/reminder';
@@ -12,7 +15,14 @@ import {
 } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 
-import { useCreateReminderForm, type CreateReminderFormProps } from '../model';
+import { generateReminderTitle, useCreateReminderForm } from '../model';
+
+interface CreateReminderFormProps {
+  workspaceId: string;
+  vehicleId: string;
+  currentMileage: number;
+  onSuccess?: () => void;
+}
 
 export const CreateReminderForm = ({
   workspaceId,
@@ -21,13 +31,26 @@ export const CreateReminderForm = ({
   onSuccess,
 }: CreateReminderFormProps) => {
   const { t } = useTranslation();
+  const isTitleManual = useRef(false);
 
-  const { control, handleSubmit, isPending, errorMessage } = useCreateReminderForm({
+  const { control, handleSubmit, isPending, errorMessage, setValue } = useCreateReminderForm({
     workspaceId,
     vehicleId,
     currentMileage,
     onSuccess,
   });
+
+  const type = useWatch({ control, name: 'type' });
+  const dueDate = useWatch({ control, name: 'dueDate' });
+  const dueMileage = useWatch({ control, name: 'dueMileage' });
+
+  useEffect(() => {
+    if (isTitleManual.current) return;
+    if (!type) return;
+
+    const title = generateReminderTitle(t, { type, dueDate, dueMileage });
+    if (title) setValue('title', title, { shouldValidate: false, shouldDirty: false });
+  }, [type, dueDate, dueMileage, t, setValue]);
 
   return (
     <Form
@@ -40,7 +63,6 @@ export const CreateReminderForm = ({
         <FormFieldCardSelect
           control={control}
           name="type"
-          label={t('fields.type')}
           options={translateCardSelectOptions(t, REMINDER_TYPE_CONFIG)}
         />
         <FormFieldInput
@@ -49,6 +71,9 @@ export const CreateReminderForm = ({
           label={t('fields.title')}
           placeholder={t('maintenance.fields.titlePlaceholder')}
           size="lg"
+          onChange={() => {
+            isTitleManual.current = true;
+          }}
         />
         <FormFieldDatePicker
           control={control}
@@ -62,6 +87,7 @@ export const CreateReminderForm = ({
           name="dueMileage"
           label={t('fields.dueMileage')}
           hint={t('fields.dueMileageHint')}
+          placeholder="0"
           unit={t('units.km')}
           size="lg"
         />

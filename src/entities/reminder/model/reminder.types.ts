@@ -20,3 +20,7 @@ export interface Reminder {
   createdAt: string;
   updatedAt: string;
 }
+
+// Utils
+
+export type ReminderUrgency = 'overdue' | 'critical' | 'warning' | 'ok' | 'inactive';

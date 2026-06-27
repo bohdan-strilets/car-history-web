@@ -1,17 +1,16 @@
 import { useTranslation } from 'react-i18next';
 
-import { REMINDER_TYPE_CONFIG } from '@entities/reminder';
-import { useFormatDate, useMediaQuery } from '@shared/hooks';
-import { Badge, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
-import { getConfigOption } from '@shared/utils';
-
 import {
-  getDaysLeftLabel,
+  getDaysLeftDisplay,
   getReminderUrgency,
+  REMINDER_TYPE_CONFIG,
   STATUS_COLOR,
   STATUS_ICON,
   URGENCY_COLOR,
-} from './reminder-card.utils';
+} from '@entities/reminder';
+import { useFormatDate, useMediaQuery } from '@shared/hooks';
+import { Badge, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
+import { getConfigOption } from '@shared/utils';
 
 import type { ReminderCardProps } from './reminder-card.types';
 
@@ -21,10 +20,15 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
   const isTabletUp = useMediaQuery('tablet', 'up');
 
   const urgency = getReminderUrgency(reminder.dueDate, reminder.status);
-  const daysLeft = getDaysLeftLabel(reminder.dueDate);
   const isInactive = reminder.status !== 'ACTIVE';
 
   const config = getConfigOption(t, REMINDER_TYPE_CONFIG, reminder.type);
+
+  const daysLeftDisplay = getDaysLeftDisplay(reminder.dueDate, {
+    overdue: (count) => t('reminder.status.overdue', { count }),
+    today: t('reminder.status.today'),
+    days: (count) => `${count} ${t('units.days', { count })}`,
+  });
 
   return (
     <Panel
@@ -69,9 +73,7 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
             )}
             <Badge soft={URGENCY_COLOR[urgency]}>
               <Icon name="timer" size="sm" strokeWidth="medium" color="inherit" />
-              <Text color="inherit">
-                {daysLeft} {t('units.days', { count: parseInt(daysLeft ?? '0', 10) })}
-              </Text>
+              <Text color="inherit">{daysLeftDisplay}</Text>
             </Badge>
           </Stack>
         </Stack>

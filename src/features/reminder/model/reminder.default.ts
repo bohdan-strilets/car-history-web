@@ -6,6 +6,6 @@ export const createReminderDefaultValues = (currentMileage?: number): CreateRemi
   type: REMINDER_TYPES.CUSTOM,
   title: '',
   description: '',
-  dueDate: undefined,
+  dueDate: new Date().toISOString().split('T')[0],
   dueMileage: currentMileage || undefined,
 });

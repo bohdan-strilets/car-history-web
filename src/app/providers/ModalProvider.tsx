@@ -3,7 +3,7 @@ import { Fragment, useEffect, type PropsWithChildren } from 'react';
 import { useMediaQuery } from '@shared/hooks';
 import { BaseBottomSheet, BaseModal, ModalPortal, Overlay, useModalStore } from '@shared/ui';
 
-const BASE_Z = 5000;
+const BASE_Z = 4000;
 const STEP = 10;
 
 export const ModalProvider = ({ children }: PropsWithChildren) => {

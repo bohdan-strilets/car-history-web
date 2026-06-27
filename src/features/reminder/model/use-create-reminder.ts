@@ -23,7 +23,7 @@ export const useCreateReminderForm = ({
   const defaultValues = createReminderDefaultValues(currentMileage);
 
   const form = useForm<CreateReminderValues>({ resolver, defaultValues });
-  const { control, handleSubmit, setError } = form;
+  const { control, handleSubmit, setError, setValue } = form;
 
   const mutation = useCreateReminderMutation({ workspaceId, vehicleId });
   const { mutate: create, isPending, error } = mutation;
@@ -43,6 +43,7 @@ export const useCreateReminderForm = ({
 
   return {
     control,
+    setValue,
     handleSubmit: handleSubmit(onSubmit),
     isPending,
     errorMessage,

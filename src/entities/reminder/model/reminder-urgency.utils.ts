@@ -2,7 +2,7 @@ import type { ReminderStatus } from '@entities/reminder';
 import type { IconName } from '@shared/icons';
 import type { PaletteColors } from '@shared/styles/model';
 
-import type { ReminderUrgency } from './reminder-card.types';
+import type { ReminderUrgency } from './reminder.types';
 
 // Helper functions to determine urgency and days left for a reminder
 
@@ -29,6 +29,21 @@ export const getDaysLeftLabel = (dueDate: string | null): string | null => {
   const due = new Date(dueDate);
   const daysLeft = Math.ceil((due.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
   return daysLeft.toString();
+};
+
+export const getDaysLeftDisplay = (
+  dueDate: string | null,
+  labels: { overdue: (count: number) => string; today: string; days: (count: number) => string },
+): string | null => {
+  if (!dueDate) return null;
+
+  const now = new Date();
+  const due = new Date(dueDate);
+  const daysLeft = Math.ceil((due.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+
+  if (daysLeft < 0) return labels.overdue(Math.abs(daysLeft));
+  if (daysLeft === 0) return labels.today;
+  return labels.days(daysLeft);
 };
 
 // Colors and icons for urgency and status
