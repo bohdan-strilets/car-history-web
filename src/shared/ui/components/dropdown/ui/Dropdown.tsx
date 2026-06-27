@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 
 import { useDismiss } from '@shared/hooks';
-import { Portal, useDropdown, useDropdownKeyboard, type DropdownProps } from '@shared/ui';
+import { Portal } from '@shared/ui';
+
+import { useDropdown, useDropdownKeyboard, type DropdownProps } from '../modal';
 
 import { content, root, triggerWrapper } from './dropdown.css';
 
@@ -22,11 +24,13 @@ export const Dropdown = ({
 }: DropdownProps) => {
   const [internalOpen, setInternalOpen] = useState(false);
   const [shouldFocus, setShouldFocus] = useState<'first' | 'last' | null>(null);
+  const [hasFocusableTrigger, setHasFocusableTrigger] = useState(false);
 
   const isControlled = controlledOpen !== undefined;
   const open = isControlled ? controlledOpen : internalOpen;
 
   const innerTriggerRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const setOpen = (val: boolean) => {
     if (!isControlled) setInternalOpen(val);
@@ -35,12 +39,29 @@ export const Dropdown = ({
 
   const handleClose = () => {
     setOpen(false);
-    innerTriggerRef.current?.focus();
+    const focusable = innerTriggerRef.current?.querySelector<HTMLElement>(
+      'input, button, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    (focusable ?? innerTriggerRef.current)?.focus();
   };
 
-  const { rootRef, getPortalStyle } = useDropdown({ open, align, direction, fullWidth });
+  useEffect(() => {
+    if (!innerTriggerRef.current) return;
+    const focusable = !!innerTriggerRef.current.querySelector<HTMLElement>(
+      'input, button, select, textarea, [tabindex]:not([tabindex="-1"])',
+    );
+    setHasFocusableTrigger(focusable);
+  }, [trigger]);
 
-  const { menuRef, handleMenuKeyDown } = useDropdownKeyboard({
+  const { rootRef, getPortalStyle } = useDropdown({
+    open,
+    align,
+    direction,
+    fullWidth,
+    menuRef,
+  });
+
+  const { handleMenuKeyDown } = useDropdownKeyboard({
     open,
     onClose: handleClose,
   });
@@ -56,7 +77,7 @@ export const Dropdown = ({
     if (shouldFocus === 'last') items[items.length - 1]?.focus();
 
     setShouldFocus(null);
-  }, [open, shouldFocus, menuRef]);
+  }, [open, shouldFocus]);
 
   const handleWrapperKeyDown = (e: React.KeyboardEvent) => {
     if (disabled) return;
@@ -85,18 +106,23 @@ export const Dropdown = ({
   });
 
   return (
-    <div ref={rootRef} className={clsx(root({ fullWidth }), className)}>
+    <div
+      ref={rootRef}
+      className={clsx(root({ fullWidth }), className)}
+      style={{ width: fullWidth ? '100%' : 'auto' }}
+    >
       <div
         ref={innerTriggerRef}
         onClick={() => {
           if (!disabled) setOpen(!open);
         }}
-        onKeyDown={handleWrapperKeyDown}
+        onKeyDown={hasFocusableTrigger ? undefined : handleWrapperKeyDown}
+        onKeyDownCapture={hasFocusableTrigger ? handleWrapperKeyDown : undefined}
         aria-expanded={open}
         aria-haspopup="menu"
-        tabIndex={disabled ? -1 : 0}
-        className={triggerWrapper}
+        tabIndex={disabled ? -1 : hasFocusableTrigger ? -1 : 0}
         style={{ width: fullWidth ? '100%' : undefined }}
+        className={triggerWrapper}
       >
         {trigger}
       </div>

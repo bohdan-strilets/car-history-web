@@ -44,7 +44,9 @@ export interface Coords {
 
 // Params
 
-export type DropdownParams = Pick<DropdownProps, 'align' | 'direction' | 'fullWidth' | 'open'>;
+export type DropdownParams = Pick<DropdownProps, 'align' | 'direction' | 'fullWidth' | 'open'> & {
+  menuRef: React.RefObject<HTMLDivElement | null>;
+};
 
 export interface DropdownKeyboardParams {
   open: boolean;
