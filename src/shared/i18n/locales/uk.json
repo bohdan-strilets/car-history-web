@@ -972,8 +972,14 @@
       "deleteConfirm": "Ви впевнені, що хочете видалити це нагадування?"
     },
     "status": {
-      "overdue": "Прострочено",
-      "daysLeft": "{{count}} днів"
+      "daysLeft": "{{count}} днів",
+      "daysLeftLabel": "Залишилось днів",
+      "overdue": "Прострочено на {{count}} днів",
+      "today": "Сьогодні"
+    },
+
+    "fields": {
+      "completedAt": "Виконано"
     },
 
     "solid": {

@@ -966,8 +966,14 @@
       "deleteConfirm": "Are you sure you want to delete this reminder?"
     },
     "status": {
-      "overdue": "Overdue",
-      "daysLeft": "{{count}} days"
+      "daysLeft": "{{count}} days",
+      "daysLeftLabel": "Days left",
+      "overdue": "Overdue by {{count}} days",
+      "today": "Today"
+    },
+
+    "fields": {
+      "completedAt": "Completed at"
     },
 
     "solid": {

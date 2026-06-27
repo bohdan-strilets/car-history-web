@@ -30,6 +30,8 @@ export interface ConfirmOptions {
   confirmLabel?: string;
   cancelLabel?: string;
   danger?: boolean;
+  warning?: boolean;
+  success?: boolean;
   isLoading?: boolean;
 }
 

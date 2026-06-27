@@ -9,11 +9,20 @@ export const ConfirmModal = ({
   confirmLabel,
   cancelLabel,
   danger = false,
+  warning = false,
+  success = false,
   isLoading = false,
   onConfirm,
   onCancel,
 }: ConfirmModalProps) => {
   const { t } = useTranslation();
+
+  const getButtonColor = () => {
+    if (danger) return 'danger';
+    if (warning) return 'warning';
+    if (success) return 'success';
+    return 'gray';
+  };
 
   return (
     <Stack gap="xl">
@@ -25,12 +34,7 @@ export const ConfirmModal = ({
             {cancelLabel ?? t('common.actions.cancel')}
           </Button>
         )}
-        <Button
-          variant="solid"
-          color={danger ? 'danger' : 'gray'}
-          onClick={onConfirm}
-          loading={isLoading}
-        >
+        <Button variant="solid" color={getButtonColor()} onClick={onConfirm} loading={isLoading}>
           {confirmLabel ?? t('common.actions.confirm')}
         </Button>
       </Stack>

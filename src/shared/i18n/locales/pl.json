@@ -970,8 +970,14 @@
       "deleteConfirm": "Czy na pewno chcesz usunąć to przypomnienie?"
     },
     "status": {
-      "overdue": "Przeterminowane",
-      "daysLeft": "{{count}} dni"
+      "daysLeft": "{{count}} dni",
+      "daysLeftLabel": "Pozostało dni",
+      "overdue": "Przeterminowane o {{count}} dni",
+      "today": "Dzisiaj"
+    },
+
+    "fields": {
+      "completedAt": "Wykonano"
     },
 
     "solid": {
