@@ -20,6 +20,7 @@ export const ReminderDetail = ({
   onComplete,
   onDismiss,
   onDelete,
+  onEdit,
 }: ReminderDetailProps) => {
   const { t } = useTranslation();
   const formatDate = useFormatDate();
@@ -109,6 +110,20 @@ export const ReminderDetail = ({
           />
         )}
       </InfoSection>
+
+      {onEdit && (
+        <Button
+          type="button"
+          leftIcon="edit"
+          size="md"
+          variant="soft"
+          color="gray"
+          fullWidth
+          onClick={onEdit}
+        >
+          {t('common.actions.edit')}
+        </Button>
+      )}
 
       {!isInactive && (
         <Stack gap="md">

@@ -5,6 +5,7 @@ import {
   useCompleteReminderMutation,
   useDeleteReminderMutation,
   useDismissReminderMutation,
+  useOpenEditReminder,
 } from '@features/reminder';
 import { useAdaptiveModal, useConfirmModal } from '@shared/lib/modal';
 
@@ -97,12 +98,15 @@ export const ReminderDetailModal = ({
     );
   };
 
+  const { handleEdit } = useOpenEditReminder({ workspaceId, vehicleId });
+
   return (
     <ReminderDetail
       reminder={reminder}
       onComplete={handleComplete}
       onDismiss={handleDismiss}
       onDelete={handleDelete}
+      onEdit={() => handleEdit(reminder)}
     />
   );
 };

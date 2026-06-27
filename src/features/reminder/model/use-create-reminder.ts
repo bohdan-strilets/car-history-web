@@ -30,15 +30,7 @@ export const useCreateReminderForm = ({
   const errorMessage = useFormErrors({ error, setError, t });
 
   const onSubmit = (data: CreateReminderValues) => {
-    create(
-      {
-        type: data.type,
-        title: data.title,
-        description: data.description || undefined,
-        dueDate: data.dueDate || undefined,
-      },
-      { onSuccess },
-    );
+    create(data, { onSuccess });
   };
 
   return {

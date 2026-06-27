@@ -8,6 +8,9 @@ export type {
 export type {
   CreateReminderFormParams,
   CreateReminderFormProps,
+  EditReminderFormProps,
   OpenCreateReminderParams,
+  OpenEditReminderParams,
   ReminderTitleContext,
+  UpdateReminderFormParams,
 } from './reminder.types';

@@ -1,4 +1,4 @@
-import { REMINDER_TYPES } from '@entities/reminder';
+import { REMINDER_TYPES, type Reminder } from '@entities/reminder';
 
 import type { CreateReminderValues } from './reminder.schema';
 
@@ -8,4 +8,12 @@ export const createReminderDefaultValues = (currentMileage?: number): CreateRemi
   description: '',
   dueDate: new Date().toISOString().split('T')[0],
   dueMileage: currentMileage || undefined,
+});
+
+export const updateReminderDefaultValues = (reminder: Reminder): CreateReminderValues => ({
+  type: reminder.type,
+  title: reminder.title,
+  description: reminder.description ?? '',
+  dueDate: reminder.dueDate ?? undefined,
+  dueMileage: reminder.dueMileage ?? undefined,
 });
