@@ -1277,6 +1277,7 @@
     "REFRESH_TOKEN_INVALID": "Sesja jest nieprawidłowa — zaloguj się ponownie",
     "REFRESH_TOKEN_EXPIRED": "Sesja wygasła — zaloguj się ponownie",
     "REFRESH_TOKEN_REUSE": "Wykryto podejrzaną aktywność — zaloguj się ponownie",
+    "CSRF_TOKEN_INVALID": "Nieprawidłowy token CSRF — zaloguj się ponownie",
     "SESSION_NOT_FOUND": "Sesja nie została znaleziona",
     "SESSION_EXPIRED": "Sesja wygasła — zaloguj się ponownie",
     "SESSION_REVOKED": "Sesja została zakończona",

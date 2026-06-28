@@ -25,3 +25,8 @@ export const getErrorCode = (error: unknown): string => {
   if (isHttpError(error)) return error.errorCode;
   return ERROR_CODES.General.UNKNOWN_ERROR;
 };
+
+export const getCookieValue = (name: string): string | null => {
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : null;
+};

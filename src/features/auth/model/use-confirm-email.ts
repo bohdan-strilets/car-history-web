@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import { APP_CONSTANTS, SEARCH_PARAM_TOKEN } from '@shared/config';
 import { useCooldown } from '@shared/hooks';
 
-import { useConfirmEmailMutation, useResendConfirmationMutation } from '../api/index.ts';
+import { useConfirmEmailMutation, useResendConfirmationMutation } from '../api';
 
 export const useConfirmEmail = () => {
   const [searchParams] = useSearchParams();

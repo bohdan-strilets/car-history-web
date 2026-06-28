@@ -2,15 +2,28 @@ import axios, { type AxiosInstance } from 'axios';
 
 import { ENDPOINTS } from '@shared/config';
 
-import { parseApiError } from './api.utils';
+import { getCookieValue, parseApiError } from './api.utils';
+import { BEARER_PREFIX, CSRF_TOKEN_COOKIE, CSRF_TOKEN_HEADER } from './constants.cookie';
 
 export const setupRequestInterceptor = (instance: AxiosInstance, getToken: () => string | null) => {
   instance.interceptors.request.use(
     (config) => {
       const token = getToken();
+      config.headers = config.headers ?? {};
 
       if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
+        config.headers.Authorization = `${BEARER_PREFIX} ${token}`;
+      }
+
+      const isCsrfRequired =
+        config.url?.includes(ENDPOINTS.AUTH.REFRESH) || config.url?.includes(ENDPOINTS.AUTH.LOGOUT);
+
+      if (isCsrfRequired) {
+        const csrfToken = getCookieValue(CSRF_TOKEN_COOKIE);
+
+        if (csrfToken) {
+          config.headers[CSRF_TOKEN_HEADER] = csrfToken;
+        }
       }
 
       return config;
@@ -55,7 +68,7 @@ export const setupResponseInterceptor = (
           return new Promise((resolve, reject) => {
             queue.push({ resolve, reject });
           }).then((token) => {
-            originalRequest.headers.Authorization = `Bearer ${token}`;
+            originalRequest.headers.Authorization = `${BEARER_PREFIX} ${token}`;
             return instance(originalRequest);
           });
         }
@@ -66,7 +79,7 @@ export const setupResponseInterceptor = (
         try {
           const newToken = await onRefresh();
           processQueue(null, newToken);
-          originalRequest.headers.Authorization = `Bearer ${newToken}`;
+          originalRequest.headers.Authorization = `${BEARER_PREFIX} ${newToken}`;
           return instance(originalRequest);
         } catch (refreshError) {
           processQueue(refreshError, null);

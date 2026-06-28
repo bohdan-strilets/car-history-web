@@ -1279,6 +1279,7 @@
     "REFRESH_TOKEN_INVALID": "Сесія недійсна — увійдіть повторно",
     "REFRESH_TOKEN_EXPIRED": "Сесія закінчилась — увійдіть повторно",
     "REFRESH_TOKEN_REUSE": "Виявлено підозрілу активність — увійдіть повторно",
+    "CSRF_TOKEN_INVALID": "Недійсний токен CSRF — увійдіть повторно",
     "SESSION_NOT_FOUND": "Сесію не знайдено",
     "SESSION_EXPIRED": "Сесія закінчилась — увійдіть повторно",
     "SESSION_REVOKED": "Сесію завершено",

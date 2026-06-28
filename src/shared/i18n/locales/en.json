@@ -1273,6 +1273,7 @@
     "REFRESH_TOKEN_INVALID": "Session is invalid — please sign in again",
     "REFRESH_TOKEN_EXPIRED": "Session has expired — please sign in again",
     "REFRESH_TOKEN_REUSE": "Suspicious activity detected — please sign in again",
+    "CSRF_TOKEN_INVALID": "Invalid CSRF token — please sign in again",
     "SESSION_NOT_FOUND": "Session not found",
     "SESSION_EXPIRED": "Session expired — please sign in again",
     "SESSION_REVOKED": "Session has been terminated",
