@@ -1,8 +1,4 @@
-import type { ReminderStatus } from '@entities/reminder';
-import type { IconName } from '@shared/icons';
-import type { PaletteColors } from '@shared/styles/model';
-
-import type { ReminderUrgency } from './reminder.types';
+import type { ReminderStatus, ReminderUrgency } from '@entities/reminder';
 
 // Helper functions to determine urgency and days left for a reminder
 
@@ -45,25 +41,3 @@ export const getDaysLeftDisplay = (
   if (daysLeft === 0) return labels.today;
   return labels.days(daysLeft);
 };
-
-// Colors and icons for urgency and status
-
-export const URGENCY_COLOR: Record<string, PaletteColors> = {
-  overdue: 'rose',
-  critical: 'rose',
-  warning: 'orange',
-  ok: 'green',
-  inactive: 'gray',
-} as const;
-
-export const STATUS_COLOR: Record<string, PaletteColors> = {
-  ACTIVE: 'blue',
-  COMPLETED: 'green',
-  DISMISSED: 'gray',
-} as const;
-
-export const STATUS_ICON: Record<string, IconName> = {
-  ACTIVE: 'circle',
-  COMPLETED: 'checkCircle',
-  DISMISSED: 'xCircle',
-} as const;

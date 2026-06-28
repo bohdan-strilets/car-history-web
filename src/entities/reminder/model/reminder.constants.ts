@@ -16,3 +16,13 @@ export const REMINDER_STATUS = {
 } as const;
 
 export type ReminderStatus = (typeof REMINDER_STATUS)[keyof typeof REMINDER_STATUS];
+
+export const REMINDER_URGENCY = {
+  OVERDUE: 'overdue',
+  CRITICAL: 'critical',
+  WARNING: 'warning',
+  OK: 'ok',
+  INACTIVE: 'inactive',
+} as const;
+
+export type ReminderUrgency = (typeof REMINDER_URGENCY)[keyof typeof REMINDER_URGENCY];

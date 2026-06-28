@@ -3,10 +3,9 @@ import { useTranslation } from 'react-i18next';
 import {
   getDaysLeftDisplay,
   getReminderUrgency,
+  REMINDER_STATUS_CONFIG,
   REMINDER_TYPE_CONFIG,
-  STATUS_COLOR,
-  STATUS_ICON,
-  URGENCY_COLOR,
+  REMINDER_URGENCY_CONFIG,
 } from '@entities/reminder';
 import { useFormatDate } from '@shared/hooks';
 import { Button, Heading, IconBox, InfoRow, Stack } from '@shared/ui';
@@ -26,11 +25,11 @@ export const ReminderDetail = ({
   const formatDate = useFormatDate();
 
   const urgency = getReminderUrgency(reminder.dueDate, reminder.status);
-  const urgencyColor = URGENCY_COLOR[urgency];
-  const statusIcon = STATUS_ICON[reminder.status];
-  const statusColor = STATUS_COLOR[reminder.status];
-  const config = getConfigOption(t, REMINDER_TYPE_CONFIG, reminder.type);
   const isInactive = reminder.status !== 'ACTIVE';
+
+  const urgencyConfig = getConfigOption(t, REMINDER_URGENCY_CONFIG, urgency);
+  const typeConfig = getConfigOption(t, REMINDER_TYPE_CONFIG, reminder.type);
+  const statusConfig = getConfigOption(t, REMINDER_STATUS_CONFIG, reminder.status);
 
   const daysLeftDisplay = getDaysLeftDisplay(reminder.dueDate, {
     overdue: (count) => t('reminder.status.overdue', { count }),
@@ -42,8 +41,8 @@ export const ReminderDetail = ({
     <Stack gap="3xl">
       <Stack direction="row" align="center" gap="xl">
         <IconBox
-          name={config?.icon ?? 'bell'}
-          soft={config?.color ?? 'gray'}
+          name={typeConfig?.icon ?? 'bell'}
+          soft={typeConfig?.color ?? 'gray'}
           strokeWidth="medium"
           size="2xl"
         />
@@ -58,8 +57,8 @@ export const ReminderDetail = ({
       <InfoSection title={t('reminder.list.title')}>
         <InfoRow
           label={t('fields.status')}
-          icon={statusIcon}
-          iconColor={statusColor}
+          icon={statusConfig?.icon ?? 'circleQuestionMark'}
+          iconColor={statusConfig?.color}
           value={t(`enums.reminderStatus.${reminder.status}`)}
           bottomDivider={!!(reminder.dueDate || reminder.dueMileage || reminder.description)}
         />
@@ -67,8 +66,8 @@ export const ReminderDetail = ({
         {reminder.completedAt && (
           <InfoRow
             label={t('reminder.fields.completedAt')}
-            icon={statusIcon}
-            iconColor={statusColor}
+            icon={statusConfig?.icon ?? 'circleQuestionMark'}
+            iconColor={statusConfig?.color}
             value={formatDate(reminder.completedAt)}
             bottomDivider={!!(reminder.dueDate || reminder.dueMileage || reminder.description)}
           />
@@ -79,14 +78,14 @@ export const ReminderDetail = ({
             <InfoRow
               label={t('fields.dueDate')}
               icon="calendar"
-              iconColor={urgencyColor}
+              iconColor={urgencyConfig?.color}
               value={formatDate(reminder.dueDate)}
               bottomDivider
             />
             <InfoRow
               label={t('reminder.status.daysLeftLabel')}
               icon="timer"
-              iconColor={urgencyColor}
+              iconColor={urgencyConfig?.color}
               value={daysLeftDisplay ?? ''}
               bottomDivider={!!(reminder.dueMileage || reminder.description)}
             />
@@ -96,7 +95,7 @@ export const ReminderDetail = ({
           <InfoRow
             label={t('fields.dueMileage')}
             icon="road"
-            iconColor={urgencyColor}
+            iconColor={urgencyConfig?.color}
             value={`${reminder.dueMileage.toLocaleString()} ${t('units.km')}`}
             bottomDivider={!!reminder.description}
           />

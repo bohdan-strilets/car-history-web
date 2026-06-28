@@ -3,10 +3,9 @@ import { useTranslation } from 'react-i18next';
 import {
   getDaysLeftDisplay,
   getReminderUrgency,
+  REMINDER_STATUS_CONFIG,
   REMINDER_TYPE_CONFIG,
-  STATUS_COLOR,
-  STATUS_ICON,
-  URGENCY_COLOR,
+  REMINDER_URGENCY_CONFIG,
 } from '@entities/reminder';
 import { useFormatDate, useMediaQuery } from '@shared/hooks';
 import { Badge, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
@@ -22,7 +21,9 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
   const urgency = getReminderUrgency(reminder.dueDate, reminder.status);
   const isInactive = reminder.status !== 'ACTIVE';
 
-  const config = getConfigOption(t, REMINDER_TYPE_CONFIG, reminder.type);
+  const urgencyConfig = getConfigOption(t, REMINDER_URGENCY_CONFIG, urgency);
+  const typeConfig = getConfigOption(t, REMINDER_TYPE_CONFIG, reminder.type);
+  const statusConfig = getConfigOption(t, REMINDER_STATUS_CONFIG, reminder.status);
 
   const daysLeftDisplay = getDaysLeftDisplay(reminder.dueDate, {
     overdue: (count) => t('reminder.status.overdue', { count }),
@@ -41,8 +42,8 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
     >
       <Stack direction="row" align="start" gap="xl">
         <IconBox
-          name={config?.icon ?? 'circleQuestionMark'}
-          soft={isInactive ? 'gray' : config?.color}
+          name={typeConfig?.icon ?? 'circleQuestionMark'}
+          soft={isInactive ? 'gray' : typeConfig?.color}
           strokeWidth="medium"
           size={isTabletUp ? '2xl' : 'xl'}
         />
@@ -71,7 +72,7 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
                 </Text>
               </Stack>
             )}
-            <Badge soft={URGENCY_COLOR[urgency]}>
+            <Badge soft={urgencyConfig?.color}>
               <Icon name="timer" size="sm" strokeWidth="medium" color="inherit" />
               <Text color="inherit">{daysLeftDisplay}</Text>
             </Badge>
@@ -80,10 +81,10 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
       </Stack>
 
       <Stack direction="row" align="center" gap="sm">
-        <Badge size="md" soft={STATUS_COLOR[reminder.status]}>
+        <Badge size="md" soft={statusConfig?.color}>
           {t(`enums.reminderStatus.${reminder.status}`)}
         </Badge>
-        <Icon name={STATUS_ICON[reminder.status]} color={STATUS_COLOR[reminder.status]} />
+        <Icon name={statusConfig?.icon ?? 'circleQuestionMark'} color={statusConfig?.color} />
       </Stack>
     </Panel>
   );
