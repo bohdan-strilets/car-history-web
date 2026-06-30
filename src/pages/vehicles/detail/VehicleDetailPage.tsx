@@ -5,6 +5,7 @@ import {
   canDeleteVehicle,
   canEditVehicle,
   getRefuelType,
+  MaintenanceTab,
   OverviewTab,
   RemindersTab,
   TimelineTab,
@@ -50,6 +51,7 @@ export const VehicleDetailPage = () => {
   const isSold = vehicle?.status === 'ARCHIVE';
 
   if (isPending) return <VehicleDetailSkeleton />;
+
   if (isError || !vehicle) {
     return (
       <StateView
@@ -104,7 +106,14 @@ export const VehicleDetailPage = () => {
         />
       )}
 
-      {activeTab === 'maintenance' && <div>Maintenance</div>}
+      {activeTab === 'maintenance' && (
+        <MaintenanceTab
+          workspaceId={workspaceId}
+          vehicleId={vehicleId}
+          currentMileage={vehicle?.currentMileage ?? 0}
+        />
+      )}
+
       {activeTab === 'stats' && <div>Stats</div>}
       {activeTab === 'gallery' && <div>Gallery</div>}
       {activeTab === 'tires' && <div>Tires</div>}

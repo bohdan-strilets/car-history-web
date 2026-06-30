@@ -20,3 +20,13 @@ export const MAINTENANCE_TYPE = {
 } as const;
 
 export type MaintenanceType = (typeof MAINTENANCE_TYPE)[keyof typeof MAINTENANCE_TYPE];
+
+export const MAINTENANCE_URGENCY = {
+  OVERDUE: 'OVERDUE',
+  CRITICAL: 'CRITICAL',
+  WARNING: 'WARNING',
+  OK: 'OK',
+  INACTIVE: 'INACTIVE',
+} as const;
+
+export type MaintenanceUrgency = (typeof MAINTENANCE_URGENCY)[keyof typeof MAINTENANCE_URGENCY];

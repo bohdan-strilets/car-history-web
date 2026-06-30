@@ -43,7 +43,9 @@
       "noOptions": "Brak wyników",
       "cannotBeUndone": "Tej operacji nie można cofnąć.",
       "learnMore": "Dowiedz się więcej",
-      "seeAll": "Zobacz wszystkie"
+      "seeAll": "Zobacz wszystkie",
+      "every": "co",
+      "everyPlural": "co"
     },
     "password": {
       "show": "Pokaż hasło",
@@ -315,6 +317,17 @@
       "ACTIVE": "Aktywne",
       "COMPLETED": "Zrealizowane",
       "DISMISSED": "Odrzucone"
+    },
+    "maintenanceStatus": {
+      "ACTIVE": "Aktywne",
+      "DISABLED": "Wyłączone"
+    },
+    "urgency": {
+      "OVERDUE": "Przeterminowane",
+      "CRITICAL": "Krytyczne",
+      "WARNING": "Ostrzeżenie",
+      "OK": "OK",
+      "INACTIVE": "Nieaktywne"
     }
   },
 
@@ -1000,6 +1013,7 @@
       "add": "Dodaj interwał",
       "edit": "Edytuj interwał",
       "disable": "Wyłącz",
+      "disableConfirm": "Czy na pewno chcesz wyłączyć ten interwał serwisowy?",
       "enable": "Włącz",
       "markDone": "Oznacz jako wykonane",
       "delete": "Usuń interwał",

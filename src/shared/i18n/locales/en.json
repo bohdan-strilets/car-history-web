@@ -43,7 +43,9 @@
       "noOptions": "No options found",
       "cannotBeUndone": "This action cannot be undone.",
       "learnMore": "Learn more",
-      "seeAll": "See all"
+      "seeAll": "See all",
+      "every": "every",
+      "everyPlural": "every"
     },
     "password": {
       "show": "Show password",
@@ -315,6 +317,17 @@
       "ACTIVE": "Active",
       "COMPLETED": "Completed",
       "DISMISSED": "Dismissed"
+    },
+    "maintenanceStatus": {
+      "ACTIVE": "Active",
+      "DISABLED": "Disabled"
+    },
+    "urgency": {
+      "OVERDUE": "Overdue",
+      "CRITICAL": "Critical",
+      "WARNING": "Warning",
+      "OK": "OK",
+      "INACTIVE": "Inactive"
     }
   },
 
@@ -996,6 +1009,7 @@
       "add": "Add interval",
       "edit": "Edit interval",
       "disable": "Disable",
+      "disableConfirm": "Are you sure you want to disable this service interval?",
       "enable": "Enable",
       "markDone": "Mark as done",
       "delete": "Delete interval",

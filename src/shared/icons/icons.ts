@@ -42,6 +42,7 @@ import {
   Circle,
   CircleAlert,
   CircleDot,
+  CirclePause,
   CircleQuestionMark,
   ClipboardCheck,
   Clock,
@@ -53,6 +54,7 @@ import {
   CreditCard,
   Crosshair,
   Crown,
+  Disc2,
   DollarSign,
   DoorClosed,
   Dot,
@@ -129,6 +131,7 @@ import {
   Paperclip,
   Phone,
   PiggyBank,
+  PlayCircle,
   Plug,
   Plus,
   Power,
@@ -290,6 +293,7 @@ export const Icons = {
   gavel: Gavel,
   plug: Plug,
   evCharger: EvCharger,
+  disc2: Disc2,
 
   // Documents & Files
   fileText: FileText,
@@ -322,6 +326,8 @@ export const Icons = {
   bellOff: BellOff,
   bellRing: BellRing,
   calendarClock: CalendarClock,
+  pauseCircle: CirclePause,
+  playCircle: PlayCircle,
 
   // Location & Map
   map: Map,

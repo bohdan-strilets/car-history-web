@@ -1,0 +1,1 @@
+export { MaintenanceDetail } from './MaintenanceDetail';

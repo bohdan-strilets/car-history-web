@@ -9,7 +9,7 @@ export {
   type ReminderUrgency,
 } from './reminder.constants';
 
-export { getDaysLeftDisplay, getDaysLeftLabel, getReminderUrgency } from './reminder-urgency.utils';
+export { getDaysLeftDisplay, getDaysLeftLabel, getReminderUrgency } from './reminder.utils';
 
 export {
   REMINDER_STATUS_CONFIG,
