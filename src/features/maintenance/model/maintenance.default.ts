@@ -1,5 +1,6 @@
 import type { MaintenanceInterval } from '@entities/maintenance';
 
+import type { EditMaintenanceIntervalValues } from './edit-maintenance.schema';
 import type { CreateMaintenanceIntervalValues } from './maintenance.schema';
 import type { MarkMaintenanceDoneValues } from './mark-done.schema';
 
@@ -32,4 +33,14 @@ export const markMaintenanceDoneDefaultValues = (
 ): MarkMaintenanceDoneValues => ({
   mileage: currentMileage,
   date: now,
+});
+
+export const editMaintenanceIntervalDefaultValues = (
+  interval: MaintenanceInterval,
+): EditMaintenanceIntervalValues => ({
+  title: interval.title,
+  intervalKm: interval.intervalKm ?? undefined,
+  intervalMonths: interval.intervalMonths ?? undefined,
+  lastServiceMileage: interval.lastServiceMileage ?? undefined,
+  lastServiceDate: interval.lastServiceDate ?? undefined,
 });

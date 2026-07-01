@@ -10,6 +10,7 @@ import {
   useEnableMaintenanceIntervalMutation,
 } from '../api';
 
+import { EditMaintenanceIntervalForm } from './EditMaintenanceIntervalForm';
 import { MarkMaintenanceDoneForm } from './MarkMaintenanceDoneForm';
 
 import type { MaintenanceDetailModalProps } from '../model';
@@ -99,6 +100,18 @@ export const MaintenanceDetailModal = ({
     );
   };
 
+  const handleEdit = () => {
+    modal.open(
+      <EditMaintenanceIntervalForm
+        workspaceId={workspaceId}
+        vehicleId={vehicleId}
+        interval={interval}
+        onSuccess={() => modal.closeAll()}
+      />,
+      { title: t('maintenance.actions.edit') },
+    );
+  };
+
   return (
     <MaintenanceDetail
       interval={interval}
@@ -107,7 +120,7 @@ export const MaintenanceDetailModal = ({
       onDisable={handleDisable}
       onEnable={handleEnable}
       onDelete={handleDelete}
-      onEdit={() => {}}
+      onEdit={handleEdit}
     />
   );
 };

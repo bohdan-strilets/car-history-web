@@ -7,6 +7,8 @@ export type {
 export type {
   CreateMaintenanceIntervalFormParams,
   CreateMaintenanceIntervalFormProps,
+  EditMaintenanceIntervalFormParams,
+  EditMaintenanceIntervalFormProps,
   MaintenanceDetailModalProps,
   MaintenanceIntervalActionParams,
   MaintenanceIntervalParams,

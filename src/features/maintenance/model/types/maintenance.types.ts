@@ -48,6 +48,13 @@ export interface MarkMaintenanceDoneFormParams {
   onSuccess?: () => void;
 }
 
+export interface EditMaintenanceIntervalFormParams {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+  interval: MaintenanceInterval;
+  onSuccess?: () => void;
+}
+
 // Props
 
 export interface CreateMaintenanceIntervalFormProps {
@@ -62,4 +69,11 @@ export interface MaintenanceDetailModalProps {
   workspaceId: WorkspaceId;
   vehicleId: VehicleId;
   currentMileage: number;
+}
+
+export interface EditMaintenanceIntervalFormProps {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+  interval: MaintenanceInterval;
+  onSuccess?: () => void;
 }
