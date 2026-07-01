@@ -2,13 +2,15 @@ import { useTranslation } from 'react-i18next';
 
 import { MaintenanceDetail } from '@entities/maintenance';
 import { useAdaptiveModal, useConfirmModal } from '@shared/lib/modal';
+import { Hint, Stack } from '@shared/ui';
 
 import {
   useDeleteMaintenanceIntervalMutation,
   useDisableMaintenanceIntervalMutation,
   useEnableMaintenanceIntervalMutation,
-  useMarkDoneMaintenanceIntervalMutation,
 } from '../api';
+
+import { MarkMaintenanceDoneForm } from './MarkMaintenanceDoneForm';
 
 import type { MaintenanceDetailModalProps } from '../model';
 
@@ -21,13 +23,6 @@ export const MaintenanceDetailModal = ({
   const { t } = useTranslation();
   const modal = useAdaptiveModal();
   const { confirm } = useConfirmModal();
-
-  const markDone = useMarkDoneMaintenanceIntervalMutation({
-    workspaceId,
-    vehicleId,
-    maintenanceId: interval.id,
-    onSuccess: () => modal.closeAll(),
-  });
 
   const disable = useDisableMaintenanceIntervalMutation({
     workspaceId,
@@ -51,19 +46,18 @@ export const MaintenanceDetailModal = ({
   });
 
   const handleMarkDone = () => {
-    confirm(
-      {
-        title: t('maintenance.actions.markDone'),
-        description: t('maintenance.actions.markDoneConfirm'),
-        confirmLabel: t('common.actions.confirm'),
-        cancelLabel: t('common.actions.cancel'),
-        success: true,
-      },
-      {
-        onConfirm: (done) => {
-          markDone.mutate(currentMileage, { onSuccess: done });
-        },
-      },
+    modal.open(
+      <Stack gap="md">
+        <Hint message={t('maintenance.actions.markDoneDescription')} variant="info" />
+        <MarkMaintenanceDoneForm
+          workspaceId={workspaceId}
+          vehicleId={vehicleId}
+          maintenanceId={interval.id}
+          currentMileage={currentMileage}
+          onSuccess={() => modal.closeAll()}
+        />
+      </Stack>,
+      { title: t('maintenance.actions.markDone') },
     );
   };
 

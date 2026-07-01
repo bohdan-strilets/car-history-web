@@ -4,7 +4,11 @@ import type { WorkspaceId } from '@entities/workspace';
 import { apiClient } from '@shared/api';
 import { ENDPOINTS } from '@shared/config';
 
-import type { CreateMaintenanceIntervalDto, UpdateMaintenanceIntervalDto } from '../model';
+import type {
+  CreateMaintenanceIntervalDto,
+  MarkMaintenanceDoneDto,
+  UpdateMaintenanceIntervalDto,
+} from '../model';
 
 export const maintenanceIntervalMutationApi = {
   create: (workspaceId: WorkspaceId, vehicleId: VehicleId, dto: CreateMaintenanceIntervalDto) => {
@@ -36,12 +40,10 @@ export const maintenanceIntervalMutationApi = {
     workspaceId: WorkspaceId,
     vehicleId: VehicleId,
     maintenanceId: MaintenanceId,
-    currentMileage: number,
+    dto: MarkMaintenanceDoneDto,
   ) => {
     const path = ENDPOINTS.MAINTENANCE.MARK_DONE(workspaceId, vehicleId, maintenanceId);
-    return apiClient.patch(path, {
-      currentMileage,
-    });
+    return apiClient.patch(path, dto);
   },
 
   delete: (workspaceId: WorkspaceId, vehicleId: VehicleId, maintenanceId: MaintenanceId) => {

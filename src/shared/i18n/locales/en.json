@@ -1014,7 +1014,8 @@
       "markDone": "Mark as done",
       "delete": "Delete interval",
       "deleteConfirm": "Are you sure you want to delete this service interval?",
-      "markDoneConfirm": "Are you sure you want to mark this service as done?"
+      "markDoneConfirm": "Are you sure you want to mark this service as done?",
+      "markDoneDescription": "This action will save a record in the vehicle's service history and update the next service date."
     },
     "fields": {
       "type": "Service type",
@@ -1027,7 +1028,9 @@
       "lastServiceMileage": "Last service mileage",
       "lastServiceDate": "Last service date",
       "nextServiceMileage": "Next service (km)",
-      "nextServiceDate": "Next service (date)"
+      "nextServiceDate": "Next service (date)",
+      "mileage": "Mileage",
+      "date": "Service date"
     },
     "status": {
       "overdue": "Overdue",

@@ -1,4 +1,4 @@
-import type { MaintenanceInterval, MaintenanceType } from '@entities/maintenance';
+import type { MaintenanceId, MaintenanceInterval, MaintenanceType } from '@entities/maintenance';
 import type { VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
 
@@ -28,6 +28,24 @@ export interface OpenMaintenanceDetailParams {
   workspaceId: WorkspaceId;
   vehicleId: VehicleId;
   currentMileage: number;
+}
+
+export interface MaintenanceIntervalParams {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+}
+
+export interface MaintenanceIntervalActionParams extends MaintenanceIntervalParams {
+  maintenanceId: MaintenanceId;
+  onSuccess?: () => void;
+}
+
+export interface MarkMaintenanceDoneFormParams {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+  maintenanceId: MaintenanceId;
+  currentMileage: number;
+  onSuccess?: () => void;
 }
 
 // Props

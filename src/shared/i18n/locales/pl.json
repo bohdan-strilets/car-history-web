@@ -1018,7 +1018,8 @@
       "markDone": "Oznacz jako wykonane",
       "delete": "Usuń interwał",
       "deleteConfirm": "Czy na pewno chcesz usunąć ten interwał serwisowy?",
-      "markDoneConfirm": "Czy na pewno chcesz oznaczyć ten serwis jako wykonany?"
+      "markDoneConfirm": "Czy na pewno chcesz oznaczyć ten serwis jako wykonany?",
+      "markDoneDescription": "Ta czynność zapisze wpis w historii serwisowej pojazdu i zaktualizuje termin następnego przeglądu."
     },
     "fields": {
       "type": "Typ serwisu",
@@ -1031,7 +1032,9 @@
       "lastServiceMileage": "Przebieg ostatniego serwisu",
       "lastServiceDate": "Data ostatniego serwisu",
       "nextServiceMileage": "Następny serwis (km)",
-      "nextServiceDate": "Następny serwis (data)"
+      "nextServiceDate": "Następny serwis (data)",
+      "mileage": "Przebieg",
+      "date": "Data wykonania"
     },
     "status": {
       "overdue": "Przeterminowany",

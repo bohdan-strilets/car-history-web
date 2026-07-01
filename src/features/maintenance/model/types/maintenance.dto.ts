@@ -1,6 +1,4 @@
-import type { MaintenanceId, MaintenanceType } from '@entities/maintenance';
-import type { VehicleId } from '@entities/vehicle';
-import type { WorkspaceId } from '@entities/workspace';
+import type { MaintenanceType } from '@entities/maintenance';
 
 export interface CreateMaintenanceIntervalDto {
   type: MaintenanceType;
@@ -20,12 +18,7 @@ export interface UpdateMaintenanceIntervalDto {
   lastServiceDate?: string;
 }
 
-export interface MaintenanceIntervalParams {
-  workspaceId: WorkspaceId;
-  vehicleId: VehicleId;
-}
-
-export interface MaintenanceIntervalActionParams extends MaintenanceIntervalParams {
-  maintenanceId: MaintenanceId;
-  onSuccess?: () => void;
+export interface MarkMaintenanceDoneDto {
+  mileage: number;
+  date: string;
 }
