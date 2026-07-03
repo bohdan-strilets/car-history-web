@@ -14,6 +14,7 @@ import {
   useVehicleTab,
   VEHICLE_TABS,
   VehicleDetailSkeleton,
+  VehicleStatsTab,
 } from '@entities/vehicle';
 import { useWorkspace, useWorkspaceQuery } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
@@ -114,7 +115,8 @@ export const VehicleDetailPage = () => {
         />
       )}
 
-      {activeTab === 'stats' && <div>Stats</div>}
+      {activeTab === 'stats' && <VehicleStatsTab workspaceId={workspaceId} vehicleId={vehicleId} />}
+
       {activeTab === 'gallery' && <div>Gallery</div>}
       {activeTab === 'tires' && <div>Tires</div>}
     </Stack>

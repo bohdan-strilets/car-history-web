@@ -34,7 +34,7 @@ export const PageHeader = ({
               {buttonLabel}
             </Button>
           ) : onCreate ? (
-            <Tooltip label={buttonLabel} placement="left">
+            <Tooltip label={buttonLabel ?? ''} placement="left">
               <Button
                 leftIcon={buttonIcon}
                 onClick={onCreate}

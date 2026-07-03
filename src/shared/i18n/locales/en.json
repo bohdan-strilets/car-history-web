@@ -1268,6 +1268,37 @@
     "achieved": "Unlocked"
   },
 
+  "stats": {
+    "period": {
+      "month": "Month",
+      "quarter": "Quarter",
+      "year": "Year",
+      "all": "All"
+    },
+    "charts": {
+      "costsByMonth": "Costs by month",
+      "totalCost": "Total cost",
+      "costsByCategory": "Costs by category",
+      "fuelConsumption": "Fuel consumption",
+      "avg": "Average",
+      "visits": "Service visits",
+      "insuranceCost": "Insurance cost",
+      "total": "Total cost"
+    },
+    "summary": {
+      "totalCost": "Total cost",
+      "avgCostPerKm": "Average cost per km",
+      "fuelConsumption": "Average fuel consumption",
+      "tco": "Total cost of ownership (TCO)",
+      "vsPreviousPeriod": "Compared to the previous period",
+      "fuelCostByType": "Fuel cost by type",
+      "costsByServiceStation": "Costs by service station"
+    },
+    "list": {
+      "title": "Vehicle Statistics"
+    }
+  },
+
   "user": {
     "profile": {
       "title": "Profile",

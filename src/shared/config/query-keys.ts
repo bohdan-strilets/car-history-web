@@ -1,3 +1,4 @@
+import type { StatsPeriod } from '@entities/stats';
 import type { EventId, TimelineQuery } from '@entities/timeline';
 import type { VehicleId } from '@entities/vehicle';
 import type { InviteToken, WorkspaceId } from '@entities/workspace';
@@ -30,7 +31,8 @@ export const queryKeys = {
     reminders: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'reminders'] as const,
     maintenance: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'maintenance'] as const,
     tires: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'tires'] as const,
-    stats: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'stats'] as const,
+    stats: (vehicleId: VehicleId, period: StatsPeriod, date?: string) =>
+      ['vehicles', vehicleId, 'stats', period, date ?? null] as const,
     gallery: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'gallery'] as const,
     milestones: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'milestones'] as const,
   },

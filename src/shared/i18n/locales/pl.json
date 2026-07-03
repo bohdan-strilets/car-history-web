@@ -1272,6 +1272,37 @@
     "achieved": "Odblokowano"
   },
 
+  "stats": {
+    "period": {
+      "month": "Miesiąc",
+      "quarter": "Kwartał",
+      "year": "Rok",
+      "all": "Wszystko"
+    },
+    "charts": {
+      "costsByMonth": "Koszty według miesiąca",
+      "totalCost": "Całkowity koszt",
+      "costsByCategory": "Koszty według kategorii",
+      "fuelConsumption": "Zużycie paliwa",
+      "avg": "Średnie",
+      "visits": "Wizyty w warsztacie",
+      "insuranceCost": "Koszt ubezpieczenia",
+      "total": "Całkowity koszt"
+    },
+    "summary": {
+      "totalCost": "Całkowity koszt",
+      "avgCostPerKm": "Średni koszt na km",
+      "fuelConsumption": "Średnie zużycie paliwa",
+      "tco": "Całkowity koszt posiadania (TCO)",
+      "vsPreviousPeriod": "W porównaniu do poprzedniego okresu",
+      "fuelCostByType": "Koszt paliwa według rodzaju",
+      "costsByServiceStation": "Koszty według stacji serwisowej"
+    },
+    "list": {
+      "title": "Statystyki pojazdu"
+    }
+  },
+
   "user": {
     "profile": {
       "title": "Profil",
