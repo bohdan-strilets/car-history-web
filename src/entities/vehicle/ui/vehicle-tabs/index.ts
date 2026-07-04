@@ -1,3 +1,4 @@
+export { GalleryTab } from './GalleryTab';
 export { MaintenanceTab } from './MaintenanceTab';
 export { OverviewTab } from './OverviewTab';
 export { RemindersTab } from './RemindersTab';

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   canDeleteVehicle,
   canEditVehicle,
+  GalleryTab,
   getRefuelType,
   MaintenanceTab,
   OverviewTab,
@@ -117,7 +118,8 @@ export const VehicleDetailPage = () => {
 
       {activeTab === 'stats' && <VehicleStatsTab workspaceId={workspaceId} vehicleId={vehicleId} />}
 
-      {activeTab === 'gallery' && <div>Gallery</div>}
+      {activeTab === 'gallery' && <GalleryTab workspaceId={workspaceId} vehicleId={vehicleId} />}
+
       {activeTab === 'tires' && <div>Tires</div>}
     </Stack>
   );
