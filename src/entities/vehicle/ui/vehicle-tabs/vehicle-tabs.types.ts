@@ -1,16 +1,17 @@
-import type { FuelType, RefuelType, Vehicle } from '@entities/vehicle';
+import type { FuelType, RefuelType, Vehicle, VehicleId } from '@entities/vehicle';
+import type { WorkspaceId } from '@entities/workspace';
 
 export interface OverviewTabProps {
   vehicle: Vehicle;
-  workspaceId: string;
-  vehicleId: string;
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
   canEdit: boolean;
   canDelete: boolean;
 }
 
 export interface TimelineTabProps {
-  workspaceId: string;
-  vehicleId: string;
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
   currentMileage: number;
   fuelType: RefuelType;
   vehicleFuelType?: FuelType[];
@@ -18,14 +19,19 @@ export interface TimelineTabProps {
 }
 
 export interface RemindersTabProps {
-  workspaceId: string;
-  vehicleId: string;
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
   currentMileage?: number;
   isSold: boolean;
 }
 
 export interface MaintenanceTabProps {
-  workspaceId: string;
-  vehicleId: string;
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
   currentMileage: number;
+}
+
+export interface GalleryTabProps {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
 }
