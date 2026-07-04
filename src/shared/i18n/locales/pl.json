@@ -328,6 +328,13 @@
       "WARNING": "Ostrzeżenie",
       "OK": "OK",
       "INACTIVE": "Nieaktywne"
+    },
+    "mediaCategory": {
+      "EXTERIOR": "Zewnętrzne",
+      "INTERIOR": "Wnętrze",
+      "ENGINE": "Silnik",
+      "DAMAGE": "Uszkodzenia",
+      "OTHER": "Inne"
     }
   },
 
@@ -1300,6 +1307,38 @@
     },
     "list": {
       "title": "Statystyki pojazdu"
+    }
+  },
+
+  "media": {
+    "category": {
+      "exterior": "Zewnętrzne",
+      "interior": "Wnętrze",
+      "engine": "Silnik",
+      "damage": "Uszkodzenia",
+      "other": "Inne"
+    },
+    "uploader": {
+      "dragOrClickToUpload": "Przeciągnij zdjęcia tutaj lub kliknij, aby wybrać",
+      "tapToTakePhoto": "Dotknij, aby zrobić zdjęcie lub wybrać z galerii",
+      "uploadFailed": "Nie udało się przesłać",
+      "title": "Dodaj zdjęcia",
+      "uploadCount_one": "Prześlij ({{count}})",
+      "uploadCount_few": "Prześlij ({{count}})",
+      "uploadCount_many": "Prześlij ({{count}})",
+      "uploadCount_other": "Prześlij ({{count}})"
+    },
+    "gallery": {
+      "title": "Galeria",
+      "empty": {
+        "title": "Brak zdjęć",
+        "description": "Dodaj pierwsze zdjęcie swojego pojazdu."
+      },
+      "setPrimary": "Ustaw jako główne",
+      "delete": "Usuń zdjęcie",
+      "deleteConfirm": "Czy na pewno chcesz usunąć to zdjęcie?",
+      "add": "Dodaj zdjęcia",
+      "primary": "Główne"
     }
   },
 

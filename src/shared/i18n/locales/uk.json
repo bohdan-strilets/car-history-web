@@ -328,6 +328,13 @@
       "WARNING": "Попередження",
       "OK": "Добре",
       "INACTIVE": "Неактивне"
+    },
+    "mediaCategory": {
+      "EXTERIOR": "Зовнішнє",
+      "INTERIOR": "Внутрішнє",
+      "ENGINE": "Двигун",
+      "DAMAGE": "Пошкодження",
+      "OTHER": "Інше"
     }
   },
 
@@ -1302,6 +1309,38 @@
     },
     "list": {
       "title": "Статистика автомобіля"
+    }
+  },
+
+  "media": {
+    "category": {
+      "exterior": "Зовнішнє",
+      "interior": "Внутрішнє",
+      "engine": "Двигун",
+      "damage": "Пошкодження",
+      "other": "Інше"
+    },
+    "uploader": {
+      "dragOrClickToUpload": "Перетягніть фото сюди або натисніть, щоб вибрати",
+      "tapToTakePhoto": "Торкніться, щоб зробити фото або вибрати з галереї",
+      "uploadFailed": "Не вдалося завантажити",
+      "title": "Додати фото",
+      "uploadCount_one": "Завантажити ({{count}})",
+      "uploadCount_few": "Завантажити ({{count}})",
+      "uploadCount_many": "Завантажити ({{count}})",
+      "uploadCount_other": "Завантажити ({{count}})"
+    },
+    "gallery": {
+      "title": "Галерея",
+      "empty": {
+        "title": "Немає фото",
+        "description": "Додайте перше фото свого автомобіля."
+      },
+      "setPrimary": "Встановити як основне",
+      "delete": "Видалити фото",
+      "deleteConfirm": "Ви впевнені, що хочете видалити це фото?",
+      "add": "Додати фото",
+      "primary": "Основне"
     }
   },
 

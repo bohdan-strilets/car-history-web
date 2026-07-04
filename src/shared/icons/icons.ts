@@ -3,6 +3,7 @@ import {
   AlertCircle,
   AlertTriangle,
   Archive,
+  Armchair,
   ArrowDown,
   ArrowLeft,
   ArrowRight,
@@ -131,6 +132,7 @@ import {
   Paperclip,
   Phone,
   PiggyBank,
+  Play,
   PlayCircle,
   Plug,
   Plus,
@@ -236,6 +238,7 @@ export const Icons = {
   externalLink: ExternalLink,
   link: Link,
   dots: EllipsisVertical,
+  play: Play,
 
   // Status & Feedback
   check: Check,
@@ -417,6 +420,7 @@ export const Icons = {
   badgeDollarSign: BadgeDollarSign,
   landmark: Landmark,
   coins: Coins,
+  armchair: Armchair,
 } as const;
 
 export type IconName = keyof typeof Icons;

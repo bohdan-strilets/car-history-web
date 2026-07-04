@@ -137,7 +137,7 @@ export const ENDPOINTS = {
   MEDIA: {
     UPLOAD: '/media/upload',
     DETAIL: (id: string) => `/media/${id}`,
-    USAGE: (id: string) => `/media/${id}/usage`,
+    SET_PRIMARY: (id: string) => `/media/${id}/primary`,
   },
 
   AI: {

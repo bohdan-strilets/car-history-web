@@ -1,3 +1,4 @@
+import type { MediaCategory } from '@entities/media';
 import type { StatsPeriod } from '@entities/stats';
 import type { EventId, TimelineQuery } from '@entities/timeline';
 import type { VehicleId } from '@entities/vehicle';
@@ -33,7 +34,8 @@ export const queryKeys = {
     tires: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'tires'] as const,
     stats: (vehicleId: VehicleId, period: StatsPeriod, date?: string) =>
       ['vehicles', vehicleId, 'stats', period, date ?? null] as const,
-    gallery: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'gallery'] as const,
+    gallery: (vehicleId: VehicleId, category?: MediaCategory) =>
+      ['vehicles', vehicleId, 'gallery', category ?? null] as const,
     milestones: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'milestones'] as const,
   },
 

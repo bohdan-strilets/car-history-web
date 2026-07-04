@@ -328,6 +328,13 @@
       "WARNING": "Warning",
       "OK": "OK",
       "INACTIVE": "Inactive"
+    },
+    "mediaCategory": {
+      "EXTERIOR": "Exterior",
+      "INTERIOR": "Interior",
+      "ENGINE": "Engine",
+      "DAMAGE": "Damage",
+      "OTHER": "Other"
     }
   },
 
@@ -1296,6 +1303,38 @@
     },
     "list": {
       "title": "Vehicle Statistics"
+    }
+  },
+
+  "media": {
+    "category": {
+      "exterior": "Exterior",
+      "interior": "Interior",
+      "engine": "Engine",
+      "damage": "Damage",
+      "other": "Other"
+    },
+    "uploader": {
+      "dragOrClickToUpload": "Drag photos here or click to select",
+      "tapToTakePhoto": "Tap to take a photo or select from the gallery",
+      "uploadFailed": "Upload failed",
+      "title": "Add photos",
+      "uploadCount_one": "Upload ({{count}})",
+      "uploadCount_few": "Upload ({{count}})",
+      "uploadCount_many": "Upload ({{count}})",
+      "uploadCount_other": "Upload ({{count}})"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "empty": {
+        "title": "No photos",
+        "description": "Add the first photo of your vehicle."
+      },
+      "setPrimary": "Set as primary",
+      "delete": "Delete photo",
+      "deleteConfirm": "Are you sure you want to delete this photo?",
+      "add": "Add photos",
+      "primary": "Primary"
     }
   },
 
