@@ -27,7 +27,7 @@ export const UploadMediaForm = ({ workspaceId, vehicleId, onSuccess }: UploadMed
 
   const handleFiles = (fileList: FileList | null) => {
     if (!fileList || fileList.length === 0) return;
-    selectFiles(Array.from(fileList));
+    void selectFiles(Array.from(fileList));
     if (inputRef.current) inputRef.current.value = '';
   };
 

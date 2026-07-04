@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import type { MediaCategory } from '@entities/media';
 import type { VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
+import { compressImage } from '@shared/utils';
 
 import { useUploadGalleryMediaMutation } from '../api';
 
@@ -16,8 +17,18 @@ export const useGalleryUploader = (workspaceId: WorkspaceId, vehicleId: VehicleI
     setItems((prev) => prev.map((item) => (item.id === id ? { ...item, ...patch } : item)));
   }, []);
 
-  const selectFiles = useCallback((files: File[]) => {
-    const newItems: UploadItem[] = files.map((file) => ({
+  const selectFiles = useCallback(async (files: File[]) => {
+    const compressedFiles = await Promise.all(
+      files.map(async (file) => {
+        try {
+          return await compressImage(file);
+        } catch {
+          return file;
+        }
+      }),
+    );
+
+    const newItems: UploadItem[] = compressedFiles.map((file) => ({
       id: crypto.randomUUID(),
       file,
       previewUrl: URL.createObjectURL(file),

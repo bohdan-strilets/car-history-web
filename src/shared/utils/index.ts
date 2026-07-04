@@ -1,4 +1,5 @@
 export { getCountryOptions } from './combobox.options';
+export { compressImage } from './compress-image';
 export { formatBytes } from './format-bytes';
 export { getNextCycleItem } from './get-next-cycle-item';
 export { mergeRefs } from './merge-refs';
