@@ -35,3 +35,8 @@ export interface GalleryTabProps {
   workspaceId: WorkspaceId;
   vehicleId: VehicleId;
 }
+
+export interface TiresTabProps {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+}

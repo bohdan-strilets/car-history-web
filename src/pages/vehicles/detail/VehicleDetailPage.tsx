@@ -10,6 +10,7 @@ import {
   OverviewTab,
   RemindersTab,
   TimelineTab,
+  TiresTab,
   useVehicleParams,
   useVehicleQuery,
   useVehicleTab,
@@ -120,7 +121,7 @@ export const VehicleDetailPage = () => {
 
       {activeTab === 'gallery' && <GalleryTab workspaceId={workspaceId} vehicleId={vehicleId} />}
 
-      {activeTab === 'tires' && <div>Tires</div>}
+      {activeTab === 'tires' && <TiresTab workspaceId={workspaceId} vehicleId={vehicleId} />}
     </Stack>
   );
 };
