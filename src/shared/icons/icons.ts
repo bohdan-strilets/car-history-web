@@ -48,6 +48,7 @@ import {
   ClipboardCheck,
   Clock,
   Cloud,
+  CloudSun,
   Cog,
   Coins,
   Copy,
@@ -157,6 +158,7 @@ import {
   SlidersHorizontal,
   SlidersVertical,
   Smartphone,
+  Snowflake,
   SortAsc,
   SortDesc,
   Sparkles,
@@ -384,6 +386,8 @@ export const Icons = {
   battery: Battery,
   batteryFull: BatteryFull,
   batteryLow: BatteryLow,
+  cloudSun: CloudSun,
+  snowflake: Snowflake,
 
   // Misc
   qrCode: QrCode,
