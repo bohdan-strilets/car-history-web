@@ -400,7 +400,8 @@
     "dueDate": "Termin",
     "dueDateHint": "Data, do której chcesz otrzymać przypomnienie",
     "dueMileage": "Przebieg docelowy",
-    "dueMileageHint": "Przebieg, przy którym chcesz otrzymać przypomnienie"
+    "dueMileageHint": "Przebieg, przy którym chcesz otrzymać przypomnienie",
+    "quantity": "Ilość"
   },
 
   "nav": {
@@ -1339,6 +1340,38 @@
       "deleteConfirm": "Czy na pewno chcesz usunąć to zdjęcie?",
       "add": "Dodaj zdjęcia",
       "primary": "Główne"
+    }
+  },
+
+  "tire": {
+    "fields": {
+      "brand": "Marka",
+      "brandPlaceholder": "np. Michelin, Continental",
+      "model": "Model",
+      "modelPlaceholder": "np. Pilot Sport 4",
+      "width": "Szerokość",
+      "aspectRatio": "Profil",
+      "rimDiameter": "Średnica felgi",
+      "storageLocation": "Miejsce przechowywania",
+      "storageLocationPlaceholder": "np. garaż, wulkanizacja"
+    },
+    "list": {
+      "title": "Opony"
+    },
+    "empty": {
+      "title": "Brak opon",
+      "description": "Dodaj swój pierwszy zestaw opon.",
+      "action": "Dodaj oponę"
+    },
+    "actions": {
+      "add": "Dodaj oponę",
+      "edit": "Edytuj oponę",
+      "delete": "Usuń oponę",
+      "deleteConfirm": "Czy na pewno chcesz usunąć ten zestaw opon?",
+      "mount": "Zamontuj oponę",
+      "unmount": "Zdemontuj oponę",
+      "retire": "Wycofaj oponę",
+      "retireConfirm": "Czy na pewno chcesz wycofać ten zestaw opon z użycia?"
     }
   },
 

@@ -1,6 +1,7 @@
 import type { MaintenanceId } from '@entities/maintenance';
 import type { ReminderId } from '@entities/reminder';
 import type { EventId } from '@entities/timeline';
+import type { TireId } from '@entities/tire';
 import type { VehicleId } from '@entities/vehicle';
 import type { InviteId, InviteToken, WorkspaceId } from '@entities/workspace';
 
@@ -121,9 +122,13 @@ export const ENDPOINTS = {
   },
 
   TIRES: {
-    DETAIL: (id: string) => `/tires/${id}`,
-    UPDATE: (id: string) => `/tires/${id}`,
-    DELETE: (id: string) => `/tires/${id}`,
+    LIST: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/tires`,
+    CREATE: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/tires`,
+    DETAIL: (tireId: TireId) => `/tires/${tireId}`,
+    UPDATE: (tireId: TireId) => `/tires/${tireId}`,
+    DELETE: (tireId: TireId) => `/tires/${tireId}`,
   },
 
   SERVICE_STATIONS: {
