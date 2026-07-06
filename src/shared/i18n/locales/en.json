@@ -335,6 +335,10 @@
       "ENGINE": "Engine",
       "DAMAGE": "Damage",
       "OTHER": "Other"
+    },
+    "tireChangeType": {
+      "INSTALL": "Installation",
+      "REMOVE": "Removal"
     }
   },
 
@@ -1368,6 +1372,14 @@
       "unmount": "Unmount tire",
       "retire": "Retire tire",
       "retireConfirm": "Are you sure you want to retire this tire set?"
+    },
+    "history": {
+      "totalKm": "Total km driven",
+      "empty": "No history for this tire set.",
+      "ongoing": "ongoing",
+      "now": "now",
+      "unknownMileage": "unknown mileage",
+      "title": "Tire History"
     }
   },
 

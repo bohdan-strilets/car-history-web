@@ -335,6 +335,10 @@
       "ENGINE": "Silnik",
       "DAMAGE": "Uszkodzenia",
       "OTHER": "Inne"
+    },
+    "tireChangeType": {
+      "INSTALL": "Montaż",
+      "REMOVE": "Demontaż"
     }
   },
 
@@ -1372,6 +1376,14 @@
       "unmount": "Zdemontuj oponę",
       "retire": "Wycofaj oponę",
       "retireConfirm": "Czy na pewno chcesz wycofać ten zestaw opon z użycia?"
+    },
+    "history": {
+      "totalKm": "Łącznie przejechano",
+      "empty": "Brak historii dla tego zestawu opon.",
+      "ongoing": "obecnie",
+      "now": "teraz",
+      "unknownMileage": "nieznany przebieg",
+      "title": "Historia montaży"
     }
   },
 
