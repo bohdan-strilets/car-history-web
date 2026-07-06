@@ -23,7 +23,7 @@ export const VehicleEditForm = ({ vehicle, workspaceId, vehicleId }: VehicleEdit
   };
 
   const form = useEditVehicleForm({ vehicle, workspaceId, onSuccess });
-  const { control, handleSubmit, isPending, errorMessage } = form;
+  const { control, handleSubmit, isPending, errorMessage, setValue } = form;
 
   return (
     <Form
@@ -33,7 +33,7 @@ export const VehicleEditForm = ({ vehicle, workspaceId, vehicleId }: VehicleEdit
       error={errorMessage}
     >
       <Stack gap="3xl">
-        <BasicInfoStep control={control} />
+        <BasicInfoStep control={control} setValue={setValue} />
         <TypeStep control={control} />
         <RegistrationStep control={control} />
         <MileageStep control={control} />

@@ -13,12 +13,11 @@ import type { EditVehicleFormParams } from '../types';
 
 export const useEditVehicleForm = ({ vehicle, workspaceId, onSuccess }: EditVehicleFormParams) => {
   const { t } = useTranslation();
-
   const resolver = zodResolver(createVehicleFormSchema(t));
   const defaultValues = editVehicleFormDefaultValues(vehicle);
 
   const form = useForm<VehicleFormValues>({ resolver, defaultValues });
-  const { control, handleSubmit, setError } = form;
+  const { control, handleSubmit, setError, setValue } = form;
 
   const { mutate: update, isPending, error } = useUpdateVehicleMutation();
   const errorMessage = useFormErrors({ error, setError, t });
@@ -29,6 +28,7 @@ export const useEditVehicleForm = ({ vehicle, workspaceId, onSuccess }: EditVehi
 
   return {
     control,
+    setValue,
     handleSubmit: handleSubmit(onSubmit),
     isPending,
     errorMessage,

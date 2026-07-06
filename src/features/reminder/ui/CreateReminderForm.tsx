@@ -15,14 +15,11 @@ import {
 } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 
-import { generateReminderTitle, useCreateReminderForm } from '../model';
-
-interface CreateReminderFormProps {
-  workspaceId: string;
-  vehicleId: string;
-  currentMileage: number;
-  onSuccess?: () => void;
-}
+import {
+  generateReminderTitle,
+  useCreateReminderForm,
+  type CreateReminderFormProps,
+} from '../model';
 
 export const CreateReminderForm = ({
   workspaceId,

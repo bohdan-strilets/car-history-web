@@ -6,12 +6,17 @@ import {
   MAINTENANCE_URGENCY_CONFIG,
 } from '@entities/maintenance';
 import { useFormatDate, useMediaQuery } from '@shared/hooks';
-import { Badge, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
+import { Badge, Button, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 
 import type { MaintenanceCardProps } from './maintenance-card.types';
 
-export const MaintenanceCard = ({ interval, currentMileage, onClick }: MaintenanceCardProps) => {
+export const MaintenanceCard = ({
+  interval,
+  currentMileage,
+  onMarkDone,
+  onClick,
+}: MaintenanceCardProps) => {
   const { t } = useTranslation();
   const formatDate = useFormatDate();
   const isTabletUp = useMediaQuery('tablet', 'up');
@@ -78,15 +83,33 @@ export const MaintenanceCard = ({ interval, currentMileage, onClick }: Maintenan
         </Stack>
       </Stack>
 
-      {!isInactive ? (
-        <Badge soft={urgencyConfig?.color ?? 'gray'} size="sm">
-          {urgencyConfig?.label}
-        </Badge>
-      ) : (
-        <Badge soft="gray" size="sm">
-          {t('maintenance.status.disabled')}
-        </Badge>
-      )}
+      <Stack direction={isTabletUp ? 'row' : 'column'} align="center" gap="md">
+        {!isInactive ? (
+          <Badge soft={urgencyConfig?.color ?? 'gray'} size="sm">
+            {urgencyConfig?.label}
+          </Badge>
+        ) : (
+          <Badge soft="gray" size="sm">
+            {t('maintenance.status.disabled')}
+          </Badge>
+        )}
+
+        {onMarkDone && (
+          <Button
+            type="button"
+            size="sm"
+            variant="soft"
+            color="success"
+            leftIcon="checkCircle"
+            onClick={(e) => {
+              e.stopPropagation();
+              onMarkDone();
+            }}
+          >
+            {t('maintenance.actions.markDone')}
+          </Button>
+        )}
+      </Stack>
     </Panel>
   );
 };
