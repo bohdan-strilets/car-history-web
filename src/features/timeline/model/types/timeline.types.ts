@@ -81,3 +81,35 @@ export type TimelineEventFormProps = {
   errorMessage?: string;
   submitLabel: string;
 };
+
+export interface TireChangeFormProps extends TimelineEventFormProps {
+  workspaceId: WorkspaceId;
+  vehicleId: VehicleId;
+  currentMileage: number;
+}
+
+// Context
+
+export type TitleContext = {
+  type?: TimelineEventType;
+  fuelType?: string;
+  liters?: number;
+  cost?: number;
+  kWh?: number;
+  chargeType?: string;
+  chargerNetwork?: string;
+  batteryAfter?: number | null;
+  serviceCategory?: string;
+  documentType?: string;
+  expireDate?: string;
+  expenseCategory?: string;
+  startLocation?: string;
+  endLocation?: string;
+  distanceKm?: number;
+  purpose?: string;
+  purchasedFrom?: string;
+  soldTo?: string;
+  isFullTank?: boolean;
+  changeType?: string;
+  tireLabel?: string;
+};

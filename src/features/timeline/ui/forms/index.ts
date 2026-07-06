@@ -5,4 +5,5 @@ export { PurchaseForm } from './PurchaseForm';
 export { RefuelForm } from './RefuelForm';
 export { SaleForm } from './SaleForm';
 export { ServiceForm } from './ServiceForm';
+export { TireChangeForm } from './TireChangeForm';
 export { TripForm } from './TripForm';

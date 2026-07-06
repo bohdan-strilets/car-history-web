@@ -13,5 +13,7 @@ export type {
   TimelineEventFormParams,
   TimelineEventFormProps,
   TimelineEventParams,
+  TireChangeFormProps,
+  TitleContext,
   UpdateTimelineEventParams,
 } from './timeline.types';

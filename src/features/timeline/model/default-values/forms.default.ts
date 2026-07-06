@@ -45,6 +45,7 @@ export const timelineEventDefaultValues = ({
 
   // TIRE_CHANGE
   tireId: '',
+  changeType: undefined,
   installedMileage: null,
   removedMileage: null,
   removedDate: '',

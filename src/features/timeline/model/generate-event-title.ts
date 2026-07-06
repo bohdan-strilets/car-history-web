@@ -1,28 +1,5 @@
-import type { TimelineEventType } from '@entities/timeline';
-
+import type { TitleContext } from './types';
 import type { TFunction } from 'i18next';
-
-type TitleContext = {
-  type?: TimelineEventType;
-  fuelType?: string;
-  liters?: number;
-  cost?: number;
-  kWh?: number;
-  chargeType?: string;
-  chargerNetwork?: string;
-  batteryAfter?: number | null;
-  serviceCategory?: string;
-  documentType?: string;
-  expireDate?: string;
-  expenseCategory?: string;
-  startLocation?: string;
-  endLocation?: string;
-  distanceKm?: number;
-  purpose?: string;
-  purchasedFrom?: string;
-  soldTo?: string;
-  isFullTank?: boolean;
-};
 
 const fmt = (value: number, decimals = 2) => parseFloat(value.toFixed(decimals));
 
@@ -112,8 +89,15 @@ export const generateEventTitle = (t: TFunction, ctx: Partial<TitleContext>): st
       return parts.join(' ');
     }
 
-    case 'TIRE_CHANGE':
-      return t('enums.timelineType.TIRE_CHANGE');
+    case 'TIRE_CHANGE': {
+      const parts = [
+        ctx.changeType
+          ? t(`enums.tireChangeType.${ctx.changeType}` as never)
+          : t('enums.timelineType.TIRE_CHANGE'),
+      ];
+      if (ctx.tireLabel) parts.push(`· ${ctx.tireLabel}`);
+      return parts.join(' ');
+    }
 
     default:
       return '';

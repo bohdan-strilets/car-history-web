@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 import { TimelineConstraints as C, TIMELINE_EVENT_TYPE } from '@entities/timeline';
+import { TIRE_CHANGE_TYPE } from '@entities/tire';
 import { REFUEL_TYPE } from '@entities/vehicle';
 import { zodIssue } from '@shared/lib';
 
@@ -139,6 +140,8 @@ export const createTimelineEventSchema = (t: TFunction, currentMileage: number) 
       // TIRE_CHANGE
       tireId: z.string().optional(),
 
+      changeType: z.enum(TIRE_CHANGE_TYPE).optional(),
+
       installedMileage: z
         .number(t('validation.INVALID_FORMAT'))
         .int(t('validation.MUST_BE_INTEGER'))
@@ -238,6 +241,7 @@ export const createTimelineEventSchema = (t: TFunction, currentMileage: number) 
       // TIRE_CHANGE
       if (data.type === TIMELINE_EVENT_TYPE.TIRE_CHANGE) {
         if (!data.tireId) required('tireId');
+        if (!data.changeType) required('changeType');
       }
 
       // TRIP

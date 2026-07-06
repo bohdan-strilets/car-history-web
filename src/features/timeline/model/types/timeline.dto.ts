@@ -1,4 +1,5 @@
 import type { PartDetails, TimelineEventType, WorkDetails } from '@entities/timeline';
+import type { TireChangeType, TireId } from '@entities/tire';
 
 export type CreateTimelineEventDto = {
   // shared
@@ -40,7 +41,8 @@ export type CreateTimelineEventDto = {
   expenseCategory?: string;
 
   // TIRE_CHANGE
-  tireId?: string;
+  tireId?: TireId;
+  changeType?: TireChangeType;
   installedMileage?: number;
   removedMileage?: number;
   removedDate?: string;

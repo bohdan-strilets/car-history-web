@@ -69,6 +69,7 @@ export const buildDto = (data: TimelineEventValues): CreateTimelineEventDto => {
       return {
         ...base,
         tireId: data.tireId,
+        changeType: data.changeType,
         installedMileage: data.installedMileage ?? undefined,
         removedMileage: data.removedMileage ?? undefined,
         removedDate: data.removedDate || undefined,
