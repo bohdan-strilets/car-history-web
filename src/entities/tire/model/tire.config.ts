@@ -1,6 +1,13 @@
 import type { EntityOption } from '@shared/types';
 
-import { TIRE_STATUS, TIRE_TYPE, type TireStatus, type TireType } from './tire.constants';
+import {
+  TIRE_CHANGE_TYPE,
+  TIRE_STATUS,
+  TIRE_TYPE,
+  type TireChangeType,
+  type TireStatus,
+  type TireType,
+} from './tire.constants';
 
 export const TIRE_TYPE_CONFIG: EntityOption<TireType>[] = [
   {
@@ -47,5 +54,22 @@ export const TIRE_STATUS_CONFIG: EntityOption<TireStatus>[] = [
     value: TIRE_STATUS.RETIRED,
     color: 'gray',
     icon: 'xCircle',
+  },
+];
+
+export const TIRE_CHANGE_TYPE_CONFIG: EntityOption<TireChangeType>[] = [
+  {
+    id: '1',
+    label: `enums.tireChangeType.${TIRE_CHANGE_TYPE.INSTALL}`,
+    value: TIRE_CHANGE_TYPE.INSTALL,
+    color: 'green',
+    icon: 'checkCircle',
+  },
+  {
+    id: '2',
+    label: `enums.tireChangeType.${TIRE_CHANGE_TYPE.REMOVE}`,
+    value: TIRE_CHANGE_TYPE.REMOVE,
+    color: 'orange',
+    icon: 'package',
   },
 ];

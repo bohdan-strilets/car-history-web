@@ -13,3 +13,10 @@ export const TIRE_STATUS = {
 } as const;
 
 export type TireStatus = (typeof TIRE_STATUS)[keyof typeof TIRE_STATUS];
+
+export const TIRE_CHANGE_TYPE = {
+  INSTALL: 'INSTALL',
+  REMOVE: 'REMOVE',
+} as const;
+
+export type TireChangeType = (typeof TIRE_CHANGE_TYPE)[keyof typeof TIRE_CHANGE_TYPE];

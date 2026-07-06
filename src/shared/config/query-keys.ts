@@ -39,6 +39,10 @@ export const queryKeys = {
     milestones: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'milestones'] as const,
   },
 
+  tires: {
+    history: (tireId: string) => ['tires', tireId, 'history'] as const,
+  },
+
   serviceStations: {
     all: () => ['service-stations'] as const,
     detail: (id: string) => ['service-stations', id] as const,

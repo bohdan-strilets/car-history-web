@@ -1,23 +1,23 @@
 import { useTranslation } from 'react-i18next';
 
 import { useFormatDate } from '@shared/hooks';
-import { Button, Heading, IconBox, InfoRow, Stack } from '@shared/ui';
+import { Button, Heading, IconBox, InfoRow, Spinner, Stack } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section';
 
 import { TIRE_STATUS, TIRE_STATUS_CONFIG, TIRE_TYPE_CONFIG } from '../../model';
+import { TireHistoryList } from '../tire-history';
 
 import type { TireDetailProps } from './tire-detail.types';
 
 export const TireDetail = ({
   tire,
+  periods = [],
+  totalKmDriven = 0,
+  isHistoryLoading,
   onEdit,
-  onMount,
-  onUnmount,
   onRetire,
   onDelete,
-  isMounting,
-  isUnmounting,
   isRetiring,
 }: TireDetailProps) => {
   const { t } = useTranslation();
@@ -28,7 +28,6 @@ export const TireDetail = ({
 
   const isMounted = tire.status === TIRE_STATUS.MOUNTED;
   const isRetired = tire.status === TIRE_STATUS.RETIRED;
-  const isStored = tire.status === TIRE_STATUS.STORED;
 
   return (
     <Stack gap="3xl">
@@ -65,7 +64,7 @@ export const TireDetail = ({
           bottomDivider
         />
         <InfoRow
-          label={t('fields.quantity') ?? 'Quantity'}
+          label={t('fields.quantity')}
           icon="package"
           iconColor="gray"
           value={`x${tire.quantity}`}
@@ -99,6 +98,14 @@ export const TireDetail = ({
         )}
       </InfoSection>
 
+      <InfoSection title={t('tire.history.title')}>
+        {isHistoryLoading ? (
+          <Spinner size="md" />
+        ) : (
+          <TireHistoryList periods={periods} totalKmDriven={totalKmDriven} />
+        )}
+      </InfoSection>
+
       {onEdit && (
         <Button
           type="button"
@@ -113,50 +120,20 @@ export const TireDetail = ({
         </Button>
       )}
 
-      <Stack gap="md">
-        {isStored && onMount && (
-          <Button
-            type="button"
-            leftIcon="checkCircle"
-            size="md"
-            variant="soft"
-            color="success"
-            fullWidth
-            loading={isMounting}
-            onClick={onMount}
-          >
-            {t('tire.actions.mount')}
-          </Button>
-        )}
-        {isMounted && onUnmount && (
-          <Button
-            type="button"
-            leftIcon="package"
-            size="md"
-            variant="soft"
-            color="info"
-            fullWidth
-            loading={isUnmounting}
-            onClick={onUnmount}
-          >
-            {t('tire.actions.unmount')}
-          </Button>
-        )}
-        {!isRetired && !isMounted && onRetire && (
-          <Button
-            type="button"
-            leftIcon="xCircle"
-            size="md"
-            variant="soft"
-            color="warning"
-            fullWidth
-            loading={isRetiring}
-            onClick={onRetire}
-          >
-            {t('tire.actions.retire')}
-          </Button>
-        )}
-      </Stack>
+      {!isRetired && !isMounted && onRetire && (
+        <Button
+          type="button"
+          leftIcon="xCircle"
+          size="md"
+          variant="soft"
+          color="warning"
+          fullWidth
+          loading={isRetiring}
+          onClick={onRetire}
+        >
+          {t('tire.actions.retire')}
+        </Button>
+      )}
 
       {onDelete && !isMounted && (
         <Button

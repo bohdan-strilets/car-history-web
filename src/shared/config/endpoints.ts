@@ -129,6 +129,7 @@ export const ENDPOINTS = {
     DETAIL: (tireId: TireId) => `/tires/${tireId}`,
     UPDATE: (tireId: TireId) => `/tires/${tireId}`,
     DELETE: (tireId: TireId) => `/tires/${tireId}`,
+    HISTORY: (tireId: TireId) => `/tires/${tireId}/history`,
   },
 
   SERVICE_STATIONS: {

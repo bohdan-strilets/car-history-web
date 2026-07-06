@@ -22,3 +22,22 @@ export interface Tire {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface TirePeriod {
+  installedAt: string;
+  installedMileage: number | null;
+  removedAt: string | null;
+  removedMileage: number | null;
+  kmDriven: number | null;
+  daysDriven: number | null;
+  isOngoing: boolean;
+}
+
+export interface TireHistory {
+  tire: Tire;
+  history: {
+    periods: TirePeriod[];
+    totalKmDriven: number;
+    totalMountCount: number;
+  };
+}
