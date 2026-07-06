@@ -1,10 +1,16 @@
 import { useTranslation } from 'react-i18next';
 
-import { TIRE_STATUS, TireDetail } from '@entities/tire';
+import { TIRE_STATUS, TireDetail, useTireHistoryQuery, type Tire } from '@entities/tire';
+import type { VehicleId } from '@entities/vehicle';
 import { useAdaptiveModal, useConfirmModal } from '@shared/lib/modal';
 
 import { useDeleteTireMutation, useUpdateTireMutation } from '../api';
-import { useOpenEditTire, type TireDetailModalProps } from '../model';
+import { useOpenEditTire } from '../model';
+
+interface TireDetailModalProps {
+  tire: Tire;
+  vehicleId: VehicleId;
+}
 
 export const TireDetailModal = ({ tire, vehicleId }: TireDetailModalProps) => {
   const { t } = useTranslation();
@@ -14,20 +20,7 @@ export const TireDetailModal = ({ tire, vehicleId }: TireDetailModalProps) => {
   const updateMutation = useUpdateTireMutation(vehicleId);
   const deleteMutation = useDeleteTireMutation(vehicleId);
   const { handleEdit } = useOpenEditTire({ vehicleId });
-
-  const handleMount = () => {
-    updateMutation.mutate(
-      { tireId: tire.id, dto: { status: TIRE_STATUS.MOUNTED } },
-      { onSuccess: () => modal.closeAll() },
-    );
-  };
-
-  const handleUnmount = () => {
-    updateMutation.mutate(
-      { tireId: tire.id, dto: { status: TIRE_STATUS.STORED } },
-      { onSuccess: () => modal.closeAll() },
-    );
-  };
+  const { data: historyData, isPending: isHistoryLoading } = useTireHistoryQuery(tire.id);
 
   const handleRetire = () => {
     confirm(
@@ -74,13 +67,12 @@ export const TireDetailModal = ({ tire, vehicleId }: TireDetailModalProps) => {
   return (
     <TireDetail
       tire={tire}
+      periods={historyData?.data.history.periods}
+      totalKmDriven={historyData?.data.history.totalKmDriven}
+      isHistoryLoading={isHistoryLoading}
       onEdit={() => handleEdit(tire)}
-      onMount={handleMount}
-      onUnmount={handleUnmount}
       onRetire={handleRetire}
       onDelete={handleDelete}
-      isMounting={updateMutation.isPending}
-      isUnmounting={updateMutation.isPending}
       isRetiring={updateMutation.isPending}
     />
   );
