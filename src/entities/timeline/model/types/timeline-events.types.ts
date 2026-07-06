@@ -1,3 +1,4 @@
+import type { TireChangeType } from '@entities/tire';
 import type { FuelType } from '@entities/vehicle';
 
 import type {
@@ -64,6 +65,7 @@ export type ExpenseDetails = {
 
 export type TireChangeDetails = {
   tireId: string;
+  changeType: TireChangeType;
   installedMileage: number | null;
   removedMileage: number | null;
   removedDate: string | null;
