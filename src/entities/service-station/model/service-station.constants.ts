@@ -1,0 +1,10 @@
+export const SERVICE_STATION_TYPE = {
+  MECHANIC: 'MECHANIC',
+  TIRE_SHOP: 'TIRE_SHOP',
+  CAR_WASH: 'CAR_WASH',
+  FUEL_STATION: 'FUEL_STATION',
+  DEALERSHIP: 'DEALERSHIP',
+  OTHER: 'OTHER',
+} as const;
+
+export type ServiceStationType = (typeof SERVICE_STATION_TYPE)[keyof typeof SERVICE_STATION_TYPE];

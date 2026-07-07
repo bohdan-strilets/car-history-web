@@ -1387,6 +1387,38 @@
     }
   },
 
+  "serviceStation": {
+    "actions": {
+      "toggleFavorite": "Ulubione",
+      "add": "Dodaj stację serwisową"
+    },
+    "counts": {
+      "visits_one": "{{count}} wizyta",
+      "visits_few": "{{count}} wizyty",
+      "visits_many": "{{count}} wizyt",
+      "visits_other": "{{count}} wizyt"
+    },
+    "places": {
+      "searchPlaceholder": "Wyszukaj stację serwisową lub sieć"
+    },
+    "fields": {
+      "streetPlaceholder": "np. ul. Marszałkowska 1",
+      "number": "Numer",
+      "city": "Miasto",
+      "postCode": "Kod pocztowy"
+    },
+    "new": {
+      "title": "Dodaj stację serwisową"
+    },
+    "list": {
+      "title": "Stacje serwisowe",
+      "empty": {
+        "title": "Brak stacji serwisowych",
+        "description": "Dodaj swoją pierwszą stację serwisową."
+      }
+    }
+  },
+
   "user": {
     "profile": {
       "title": "Profil",

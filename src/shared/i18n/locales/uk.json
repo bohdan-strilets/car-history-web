@@ -1389,6 +1389,38 @@
     }
   },
 
+  "serviceStation": {
+    "actions": {
+      "toggleFavorite": "Улюблене",
+      "add": "Додати сервісну станцію"
+    },
+    "counts": {
+      "visits_one": "{{count}} візит",
+      "visits_few": "{{count}} візити",
+      "visits_many": "{{count}} візитів",
+      "visits_other": "{{count}} візитів"
+    },
+    "places": {
+      "searchPlaceholder": "Шукати сервісну станцію або мережу"
+    },
+    "fields": {
+      "streetPlaceholder": "напр. вул. Маршалковська 1",
+      "number": "Номер",
+      "city": "Місто",
+      "postCode": "Поштовий індекс"
+    },
+    "new": {
+      "title": "Додати сервісну станцію"
+    },
+    "list": {
+      "title": "Сервісні станції",
+      "empty": {
+        "title": "Немає сервісних станцій",
+        "description": "Додайте свою першу сервісну станцію."
+      }
+    }
+  },
+
   "user": {
     "profile": {
       "title": "Профіль",

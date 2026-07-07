@@ -138,6 +138,9 @@ export const ENDPOINTS = {
     DETAIL: (id: string) => `/service-stations/${id}`,
     UPDATE: (id: string) => `/service-stations/${id}`,
     DELETE: (id: string) => `/service-stations/${id}`,
+    FAVORITE: (id: string) => `/service-stations/${id}/favorite`,
+    PLACES_AUTOCOMPLETE: '/service-stations/places/autocomplete',
+    PLACES_DETAILS: '/service-stations/places/details',
   },
 
   MEDIA: {

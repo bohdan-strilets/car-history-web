@@ -1383,6 +1383,38 @@
     }
   },
 
+  "serviceStation": {
+    "actions": {
+      "toggleFavorite": "Favorite",
+      "add": "Add service station"
+    },
+    "counts": {
+      "visits_one": "{{count}} visit",
+      "visits_few": "{{count}} visits",
+      "visits_many": "{{count}} visits",
+      "visits_other": "{{count}} visits"
+    },
+    "places": {
+      "searchPlaceholder": "Search for a service station or network"
+    },
+    "fields": {
+      "streetPlaceholder": "e.g. 1 Marszałkowska St.",
+      "number": "Number",
+      "city": "City",
+      "postCode": "Postal code"
+    },
+    "new": {
+      "title": "Add service station"
+    },
+    "list": {
+      "title": "Service Stations",
+      "empty": {
+        "title": "No service stations",
+        "description": "Add your first service station."
+      }
+    }
+  },
+
   "user": {
     "profile": {
       "title": "Profile",
