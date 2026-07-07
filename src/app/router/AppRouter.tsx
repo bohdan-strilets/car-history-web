@@ -11,6 +11,9 @@ import {
 } from '@pages/auth';
 import { DashboardPage } from '@pages/dashboard';
 import { OnboardingPage } from '@pages/onboarding';
+import { ServiceStationDetailPage, ServiceStationsPage } from '@pages/service-stations/detail';
+import { ServiceStationEditPage } from '@pages/service-stations/edit';
+import { ServiceStationNewPage } from '@pages/service-stations/new';
 import {
   NewVehiclePage,
   VehicleDetailPage,
@@ -79,11 +82,10 @@ const router = createBrowserRouter([
             path: ROUTES.WORKSPACES.VEHICLES.DETAIL(':workspaceId', ':vehicleId'),
             element: <VehicleDetailPage />,
           },
-          {
-            path: ROUTES.WORKSPACES.VEHICLES.DETAIL(':workspaceId', ':vehicleId'),
-            element: <div>Vehicle Detail</div>,
-          },
-          { path: ROUTES.SERVICE_STATIONS.ROOT, element: <div>Service Stations</div> },
+          { path: ROUTES.SERVICE_STATIONS.ROOT, element: <ServiceStationsPage /> },
+          { path: ROUTES.SERVICE_STATIONS.NEW, element: <ServiceStationNewPage /> },
+          { path: ROUTES.SERVICE_STATIONS.DETAIL(':id'), element: <ServiceStationDetailPage /> },
+          { path: ROUTES.SERVICE_STATIONS.EDIT(':id'), element: <ServiceStationEditPage /> },
           { path: ROUTES.AI.ROOT, element: <div>AI</div> },
           { path: ROUTES.PROFILE.ROOT, element: <div>Profile</div> },
         ],
