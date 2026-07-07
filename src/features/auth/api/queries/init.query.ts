@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { CSRF_TOKEN_COOKIE, getCookieValue } from '@shared/api';
 import { queryKeys } from '@shared/config';
 import { authService } from '@shared/store';
 
@@ -12,6 +13,13 @@ export const useInitQuery = () => {
     queryFn: async () => {
       try {
         if (!authService.getAccessToken()) {
+          const hasSessionHint = getCookieValue(CSRF_TOKEN_COOKIE);
+
+          if (!hasSessionHint) {
+            authService.clearAuth();
+            return null;
+          }
+
           const refreshResponse = await authApi.refresh();
           authService.setAccessToken(refreshResponse.data.accessToken);
         }
