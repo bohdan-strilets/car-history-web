@@ -10,4 +10,5 @@ export type {
   ServiceStationId,
 } from './service-station.types';
 
+export { getServiceStationPinColor } from './service-station-map-colors';
 export { usePlacesAutocomplete } from './use-places-autocomplete';
