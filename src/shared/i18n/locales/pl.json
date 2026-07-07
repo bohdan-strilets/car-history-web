@@ -1390,7 +1390,9 @@
   "serviceStation": {
     "actions": {
       "toggleFavorite": "Ulubione",
-      "add": "Dodaj stację serwisową"
+      "add": "Dodaj stację serwisową",
+      "delete": "Usuń stację serwisową",
+      "deleteConfirm": "Czy na pewno chcesz usunąć tę stację serwisową?"
     },
     "counts": {
       "visits_one": "{{count}} wizyta",
@@ -1410,12 +1412,22 @@
     "new": {
       "title": "Dodaj stację serwisową"
     },
+    "edit": {
+      "title": "Edytuj stację serwisową"
+    },
     "list": {
       "title": "Stacje serwisowe",
       "empty": {
         "title": "Brak stacji serwisowych",
         "description": "Dodaj swoją pierwszą stację serwisową."
       }
+    },
+    "map": {
+      "viewDetails": "Zobacz szczegóły"
+    },
+    "view": {
+      "list": "Lista",
+      "map": "Mapa"
     }
   },
 

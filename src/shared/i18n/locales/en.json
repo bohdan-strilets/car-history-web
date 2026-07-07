@@ -1386,7 +1386,10 @@
   "serviceStation": {
     "actions": {
       "toggleFavorite": "Favorite",
-      "add": "Add service station"
+      "add": "Add service station",
+      "edit": "Edit service station",
+      "delete": "Delete service station",
+      "deleteConfirm": "Are you sure you want to delete this service station?"
     },
     "counts": {
       "visits_one": "{{count}} visit",
@@ -1406,12 +1409,22 @@
     "new": {
       "title": "Add service station"
     },
+    "edit": {
+      "title": "Edit service station"
+    },
     "list": {
       "title": "Service Stations",
       "empty": {
         "title": "No service stations",
         "description": "Add your first service station."
       }
+    },
+    "map": {
+      "viewDetails": "View details"
+    },
+    "view": {
+      "list": "List",
+      "map": "Map"
     }
   },
 
