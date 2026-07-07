@@ -1504,6 +1504,7 @@
     "MEDIA_ACCESS_DENIED": "Nie masz dostępu do tego pliku",
     "SERVICE_STATION_ALREADY_EXISTS": "Ta stacja serwisowa już istnieje",
     "AI_CONVERSATION_NOT_FOUND": "Rozmowa nie została znaleziona",
+    "AI_CONVERSATION_ACCESS_DENIED": "Nie masz dostępu do tej rozmowy",
     "AI_MESSAGE_FAILED": "Nie udało się wysłać wiadomości — spróbuj ponownie",
     "AI_SERVICE_UNAVAILABLE": "Asystent AI jest chwilowo niedostępny",
     "VALIDATION_ERROR": "Sprawdź poprawność wprowadzonych danych",

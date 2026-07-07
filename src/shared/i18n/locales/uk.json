@@ -1509,6 +1509,7 @@
     "MEDIA_ACCESS_DENIED": "У вас немає доступу до цього файлу",
     "SERVICE_STATION_ALREADY_EXISTS": "Ця сервісна станція вже існує",
     "AI_CONVERSATION_NOT_FOUND": "Розмову не знайдено",
+    "AI_CONVERSATION_ACCESS_DENIED": "У вас немає доступу до цієї розмови",
     "AI_MESSAGE_FAILED": "Не вдалося надіслати повідомлення — спробуйте ще раз",
     "AI_SERVICE_UNAVAILABLE": "Асистент AI тимчасово недоступний",
     "VALIDATION_ERROR": "Перевірте правильність введених даних",

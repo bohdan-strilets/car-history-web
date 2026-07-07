@@ -1501,6 +1501,7 @@
     "MEDIA_ACCESS_DENIED": "You don't have access to this file",
     "SERVICE_STATION_ALREADY_EXISTS": "This service station already exists",
     "AI_CONVERSATION_NOT_FOUND": "Conversation not found",
+    "AI_CONVERSATION_ACCESS_DENIED": "You don't have access to this conversation",
     "AI_MESSAGE_FAILED": "Failed to send message — please try again",
     "AI_SERVICE_UNAVAILABLE": "AI assistant is temporarily unavailable",
     "VALIDATION_ERROR": "Please check the information you entered",
