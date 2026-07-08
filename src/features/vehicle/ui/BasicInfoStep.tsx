@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { useWatch } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -36,6 +36,32 @@ export const BasicInfoStep = ({ control, setValue }: VehicleBasicInfoStepProps) 
     () => getGenerationYearRange(selectedGeneration),
     [selectedGeneration],
   );
+
+  const isFirstBrandRender = useRef(true);
+  const isFirstModelRender = useRef(true);
+
+  useEffect(() => {
+    if (isFirstBrandRender.current) {
+      isFirstBrandRender.current = false;
+      return;
+    }
+
+    setValue('model', '');
+    setValue('generation', '');
+    setValue('year', NaN);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedBrand]);
+
+  useEffect(() => {
+    if (isFirstModelRender.current) {
+      isFirstModelRender.current = false;
+      return;
+    }
+
+    setValue('generation', '');
+    setValue('year', NaN);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedModel]);
 
   useEffect(() => {
     if (startYear === null || endYear === null || Number.isNaN(selectedYear)) return;
