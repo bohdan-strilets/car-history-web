@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
 import { TIMELINE_EVENT_TYPE } from '@entities/timeline';
@@ -13,12 +15,20 @@ export const TimelineStep = ({ onNext, onSkip }: TimelineStepProps) => {
   const { activeWorkspaceId } = useWorkspace();
   const { activeVehicleId } = useVehicle();
 
+  const hasContext = !!activeWorkspaceId && !!activeVehicleId;
+
   const query = useVehicleQuery(activeWorkspaceId ?? '', activeVehicleId ?? '');
   const { data, isLoading } = query;
   const vehicle = data?.data;
 
-  if (!activeWorkspaceId || !activeVehicleId) {
-    onNext();
+  useEffect(() => {
+    if (!hasContext) {
+      onNext();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasContext]);
+
+  if (!hasContext) {
     return null;
   }
 
