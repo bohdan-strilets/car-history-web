@@ -1,2 +1,2 @@
-export type { ServiceStationCardProps } from './service-station-card.types';
 export { ServiceStationCard } from './ServiceStationCard';
+export { ServiceStationCardSkeleton } from './ServiceStationCardSkeleton';

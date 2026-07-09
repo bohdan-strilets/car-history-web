@@ -4,14 +4,17 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import {
+  ServiceStationEmpty,
+  ServiceStationError,
   ServiceStationsList,
+  ServiceStationsListSkeleton,
   ServiceStationsMap,
   useServiceStationsQuery,
 } from '@entities/service-station';
 import { useToggleFavoriteServiceStationMutation } from '@features/service-station';
 import { ROUTES } from '@shared/config';
-import { Center, Stack, StateView, Tabs } from '@shared/ui';
-import { PageHeader, PageHeaderSkeleton } from '@widgets/page-header';
+import { Stack, Tabs } from '@shared/ui';
+import { PageHeader } from '@widgets/page-header';
 
 const VIEW_TABS = [
   { label: 'serviceStation.view.list', icon: 'list', value: 'list' },
@@ -25,7 +28,7 @@ export const ServiceStationsPage = () => {
   const navigate = useNavigate();
   const [view, setView] = useState<ViewMode>('list');
 
-  const { data, isPending, isError } = useServiceStationsQuery();
+  const { data, isPending, isError, refetch } = useServiceStationsQuery();
   const toggleFavoriteMutation = useToggleFavoriteServiceStationMutation();
 
   const stations = data?.data ?? [];
@@ -33,19 +36,9 @@ export const ServiceStationsPage = () => {
 
   const tabs = VIEW_TABS.map((tab) => ({ ...tab, label: t(tab.label) }));
 
-  if (isPending) return <PageHeaderSkeleton />;
-
-  if (isError)
-    return (
-      <Center style={{ flex: '1' }}>
-        <StateView
-          icon="alertCircle"
-          variant="error"
-          title={t('common.error.title')}
-          description={t('common.error.description')}
-        />
-      </Center>
-    );
+  if (isPending) return <ServiceStationsListSkeleton />;
+  if (isEmpty) return <ServiceStationEmpty />;
+  if (isError) return <ServiceStationError onAction={refetch} />;
 
   return (
     <Stack gap="2xl">
@@ -55,20 +48,8 @@ export const ServiceStationsPage = () => {
         buttonIcon="plus"
         onCreate={() => navigate(ROUTES.SERVICE_STATIONS.NEW)}
       />
-
       {!isEmpty && <Tabs tabs={tabs} activeTab={view} onChange={setView} />}
-
-      {isEmpty ? (
-        <Center style={{ flex: '1' }}>
-          <StateView
-            icon="mapPin"
-            title={t('serviceStation.list.empty.title')}
-            description={t('serviceStation.list.empty.description')}
-            actionLabel={t('serviceStation.actions.add')}
-            onAction={() => navigate(ROUTES.SERVICE_STATIONS.NEW)}
-          />
-        </Center>
-      ) : view === 'list' ? (
+      {view === 'list' ? (
         <ServiceStationsList
           stations={stations}
           onToggleFavorite={(station) => toggleFavoriteMutation.mutate(station.id)}
