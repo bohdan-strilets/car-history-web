@@ -18,24 +18,28 @@ import {
   useWorkspacesQuery,
   useWorkspaceTab,
   VehiclesTab,
+  WORKSPACE_ROLE_CONFIG,
   WORKSPACE_TABS,
+  WORKSPACE_TYPE_CONFIG,
   WorkspaceDetailSkeleton,
 } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
+import { useFormatDate } from '@shared/hooks';
 import { useAuth } from '@shared/store';
-import { Stack, StateView, Tabs } from '@shared/ui';
-import { translateSegmentControlOptions } from '@shared/utils';
+import { Badge, Icon, Stack, StateView, Tabs, Text } from '@shared/ui';
+import { getConfigOption, translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
 
 export const WorkspaceDetailPage = () => {
   const { t } = useTranslation();
   const { user } = useAuth();
   const { activeTab, setTab } = useWorkspaceTab();
+  const formatDate = useFormatDate();
 
   const workspaceId = useWorkspaceId();
   const navigate = useNavigate();
 
-  const { setActiveWorkspaceId, clearActiveWorkspaceId } = useWorkspace();
+  const { setActiveWorkspaceId, clearActiveWorkspaceId, activeWorkspaceId } = useWorkspace();
 
   const {
     data: workspaceData,
@@ -53,10 +57,14 @@ export const WorkspaceDetailPage = () => {
 
   const workspace = workspaceData?.data ?? null;
   const workspaceList = workspacesListData?.data ?? [];
+  const isCurrentWorkspace = workspace?.id === activeWorkspaceId;
   const members = membersData?.data ?? [];
   const pendingInvites = pendingInvitesData?.data ?? [];
   const settings = settingsData?.data ?? null;
   const vehicles = vehiclesData?.data ?? [];
+
+  const typeConfig = getConfigOption(t, WORKSPACE_TYPE_CONFIG, workspace?.type ?? '');
+  const roleConfig = getConfigOption(t, WORKSPACE_ROLE_CONFIG, workspace?.role ?? '');
 
   const switchToNextWorkspace = () => {
     if (!workspace) return;
@@ -102,6 +110,37 @@ export const WorkspaceDetailPage = () => {
         buttonIcon="arrowLeft"
         onCreate={() => navigate(ROUTES.WORKSPACES.ROOT)}
       />
+      <Stack
+        direction={{ mobile: 'column', tablet: 'row' }}
+        align="start"
+        justify="between"
+        gap="md"
+      >
+        <Stack>
+          <Text weight="medium" size="sm">
+            {t('common.labels.createdAt')} {formatDate(workspace.createdAt)}
+          </Text>
+          <Stack direction="row" align="center" gap="md">
+            <Stack direction="row" align="center" gap="sm">
+              <Icon name="users" size="sm" />
+              <Text color="tertiary" size="sm">
+                {t('workspace.counts.members', { count: workspace.membersCount })}
+              </Text>
+            </Stack>
+            <Stack direction="row" align="center" gap="sm">
+              <Icon name="car" size="sm" />
+              <Text color="tertiary" size="sm">
+                {t('workspace.counts.vehicles', { count: workspace.vehiclesCount })}
+              </Text>
+            </Stack>
+          </Stack>
+        </Stack>
+        <Stack direction="row" align="center" gap="sm">
+          <Badge soft={typeConfig?.color}>{typeConfig?.label}</Badge>
+          <Badge soft={roleConfig?.color}>{roleConfig?.label}</Badge>
+          {isCurrentWorkspace && <Badge soft="green">{t('common.state.active')}</Badge>}
+        </Stack>
+      </Stack>
 
       <Tabs tabs={tabs} activeTab={activeTab} onChange={setTab} />
 
