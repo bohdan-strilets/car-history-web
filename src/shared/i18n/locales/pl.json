@@ -831,6 +831,10 @@
       "description": "Asystent AI automatycznie wypełni dane techniczne na podstawie marki, modelu i roku produkcji.",
       "action": "Uzupełnij z AI",
       "loading": "AI analizuje pojazd..."
+    },
+
+    "sold": {
+      "hint": "Ten pojazd został sprzedany — zmiany nie są już możliwe."
     }
   },
 
@@ -967,10 +971,6 @@
     "filterEmpty": {
       "title": "Brak wyników",
       "description": "Nie znaleziono wydarzeń dla wybranych filtrów"
-    },
-
-    "sold": {
-      "hint": "Ten pojazd został sprzedany. Nie można dodawać nowych zdarzeń."
     }
   },
 

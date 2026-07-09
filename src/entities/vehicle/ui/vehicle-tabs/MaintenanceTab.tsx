@@ -7,17 +7,25 @@ import {
 } from '@entities/maintenance';
 import { useOpenCreateMaintenanceInterval, useOpenMaintenanceDetail } from '@features/maintenance';
 import { useMediaQuery } from '@shared/hooks';
-import { Center, Fab, Stack, StateView } from '@shared/ui';
+import { Fab, Stack } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
+
+import { SoldVehicleHint } from '../sold-vehicle-hint';
+import { MaintenanceEmpty, TabsError } from '../vehicle-state';
 
 import type { MaintenanceTabProps } from './vehicle-tabs.types';
 
-export const MaintenanceTab = ({ workspaceId, vehicleId, currentMileage }: MaintenanceTabProps) => {
+export const MaintenanceTab = ({
+  workspaceId,
+  vehicleId,
+  currentMileage,
+  isSold,
+}: MaintenanceTabProps) => {
   const { t } = useTranslation();
   const isTabletUp = useMediaQuery('tablet', 'up');
 
   const query = useMaintenanceIntervalsQuery(workspaceId, vehicleId);
-  const { data, isPending, isError } = query;
+  const { data, isPending, isError, refetch } = query;
 
   const intervals = data?.data ?? [];
   const isEmpty = intervals.length === 0;
@@ -35,29 +43,8 @@ export const MaintenanceTab = ({ workspaceId, vehicleId, currentMileage }: Maint
   });
 
   if (isPending) return <MaintenanceListSkeleton />;
-
-  if (isError)
-    return (
-      <StateView
-        icon="alertCircle"
-        variant="error"
-        title={t('common.error.title')}
-        description={t('common.error.description')}
-      />
-    );
-
-  if (isEmpty)
-    return (
-      <Center style={{ flex: '1' }}>
-        <StateView
-          icon="wrench"
-          title={t('maintenance.empty.title')}
-          description={t('maintenance.empty.description')}
-          actionLabel={t('maintenance.empty.action')}
-          onAction={handleCreate}
-        />
-      </Center>
-    );
+  if (isError) return <TabsError onAction={refetch} />;
+  if (isEmpty) return <MaintenanceEmpty onAction={handleCreate} isSold={isSold} />;
 
   return (
     <>
@@ -66,8 +53,11 @@ export const MaintenanceTab = ({ workspaceId, vehicleId, currentMileage }: Maint
           title={t('maintenance.list.title')}
           buttonLabel={t('maintenance.actions.add')}
           buttonIcon="plus"
-          onCreate={handleCreate}
+          onCreate={isSold ? undefined : handleCreate}
         />
+
+        {isSold && <SoldVehicleHint />}
+
         <MaintenanceList
           intervals={intervals}
           currentMileage={currentMileage}
@@ -75,12 +65,14 @@ export const MaintenanceTab = ({ workspaceId, vehicleId, currentMileage }: Maint
         />
       </Stack>
 
-      <Fab
-        icon="plus"
-        aria-label={t('maintenance.actions.add')}
-        onClick={handleCreate}
-        size={isTabletUp ? 'lg' : 'md'}
-      />
+      {!isSold && (
+        <Fab
+          icon="plus"
+          aria-label={t('maintenance.actions.add')}
+          onClick={handleCreate}
+          size={isTabletUp ? 'lg' : 'md'}
+        />
+      )}
     </>
   );
 };

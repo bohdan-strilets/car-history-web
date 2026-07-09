@@ -3,8 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { ReminderList, ReminderListSkeleton, useRemindersQuery } from '@entities/reminder';
 import { useOpenCreateReminder, useOpenReminderDetail } from '@features/reminder';
 import { useMediaQuery } from '@shared/hooks';
-import { Center, Fab, Hint, Stack, StateView } from '@shared/ui';
+import { Fab, Stack } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
+
+import { SoldVehicleHint } from '../sold-vehicle-hint';
+import { ReminderEmpty, TabsError } from '../vehicle-state';
 
 import type { RemindersTabProps } from './vehicle-tabs.types';
 
@@ -24,7 +27,7 @@ export const RemindersTab = ({
   });
 
   const mutation = useRemindersQuery(workspaceId, vehicleId);
-  const { data, isPending, isError } = mutation;
+  const { data, isPending, isError, refetch } = mutation;
 
   const reminders = data?.data ?? [];
   const isEmpty = reminders.length === 0;
@@ -32,31 +35,8 @@ export const RemindersTab = ({
   const { handleOpen } = useOpenReminderDetail({ workspaceId, vehicleId });
 
   if (isPending) return <ReminderListSkeleton />;
-
-  if (isError)
-    return (
-      <Center style={{ flex: '1' }}>
-        <StateView
-          icon="alertCircle"
-          variant="error"
-          title={t('common.error.title')}
-          description={t('common.error.description')}
-        />
-      </Center>
-    );
-
-  if (isEmpty)
-    return (
-      <Center style={{ flex: '1' }}>
-        <StateView
-          icon="bell"
-          title={t('reminder.empty.title')}
-          description={t('reminder.empty.description')}
-          actionLabel={t('reminder.empty.action')}
-          onAction={isSold ? undefined : handleCreate}
-        />
-      </Center>
-    );
+  if (isError) return <TabsError onAction={refetch} />;
+  if (isEmpty) return <ReminderEmpty isSold={isSold} onAction={handleCreate} />;
 
   return (
     <>
@@ -68,10 +48,11 @@ export const RemindersTab = ({
           onCreate={isSold ? undefined : handleCreate}
         />
 
-        {isSold && <Hint message={t('reminder.solid.hint')} variant="warning" />}
+        {isSold && <SoldVehicleHint />}
 
         <ReminderList reminders={reminders} onReminderClick={handleOpen} />
       </Stack>
+
       {!isSold && (
         <Fab
           icon="plus"

@@ -14,8 +14,11 @@ import {
 } from '@entities/timeline';
 import { useOpenCreateTimelineEvent, useOpenTimelineEventDetail } from '@features/timeline';
 import { useMediaQuery } from '@shared/hooks';
-import { Center, Fab, Hint, Stack, StateView, Text } from '@shared/ui';
+import { Fab, Stack, Text } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
+
+import { SoldVehicleHint } from '../sold-vehicle-hint';
+import { TabsError, TimelineEmpty } from '../vehicle-state';
 
 import type { TimelineTabProps } from './vehicle-tabs.types';
 
@@ -45,19 +48,31 @@ export const TimelineTab = ({
   const {
     data: timelineData,
     isPending: timelinePending,
-    isError,
+    isError: timelineError,
+    refetch: refetchTimeline,
   } = useTimeline({
     workspaceId,
     vehicleId,
     query: { type: typeFilter.length > 0 ? typeFilter : undefined },
   });
 
-  const { data: milestonesData, isPending: milestonesPending } = useMilestones({
+  const {
+    data: milestonesData,
+    isPending: milestonesPending,
+    isError: milestonesError,
+    refetch: refetchMilestones,
+  } = useMilestones({
     workspaceId,
     vehicleId,
   });
 
+  const refetch = () => {
+    refetchTimeline();
+    refetchMilestones();
+  };
+
   const isPending = timelinePending || milestonesPending;
+  const isError = timelineError || milestonesError;
   const events = timelineData?.data ?? [];
   const hasFilter = typeFilter.length > 0;
   const milestones = hasFilter ? [] : (milestonesData?.data ?? []);
@@ -67,31 +82,8 @@ export const TimelineTab = ({
   const isTrulyEmpty = isEmpty && !hasFilter;
 
   if (isPending) return <EventListSkeleton />;
-
-  if (isError)
-    return (
-      <Center style={{ flex: '1' }}>
-        <StateView
-          icon="alertCircle"
-          variant="error"
-          title={t('common.error.title')}
-          description={t('common.error.description')}
-        />
-      </Center>
-    );
-
-  if (isTrulyEmpty)
-    return (
-      <Center style={{ flex: '1' }}>
-        <StateView
-          icon="clock"
-          title={t('timeline.empty.title')}
-          description={t('timeline.empty.description')}
-          actionLabel={t('timeline.actions.addEvent')}
-          onAction={isSold ? undefined : handleCreate}
-        />
-      </Center>
-    );
+  if (isError) return <TabsError onAction={refetch} />;
+  if (isTrulyEmpty) return <TimelineEmpty isSold={isSold} onAction={handleCreate} />;
 
   return (
     <>
@@ -103,9 +95,10 @@ export const TimelineTab = ({
           onCreate={isSold ? undefined : handleCreate}
         />
 
-        {isSold && <Hint message={t('timeline.sold.hint')} variant="warning" />}
+        {isSold && <SoldVehicleHint />}
 
         <TimelineFilter value={typeFilter} onChange={setTypeFilter} />
+
         {isFilterEmpty ? (
           <Stack align="center" gap="xs" justify="center">
             <Text weight="semibold" size={'2xl'} color="tertiary">

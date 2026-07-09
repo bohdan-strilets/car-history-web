@@ -9,6 +9,7 @@ import {
   MaintenanceTab,
   OverviewTab,
   RemindersTab,
+  StatsTab,
   TimelineTab,
   TiresTab,
   useVehicleParams,
@@ -16,12 +17,12 @@ import {
   useVehicleTab,
   VEHICLE_TABS,
   VehicleDetailSkeleton,
-  VehicleStatsTab,
+  VehicleError,
 } from '@entities/vehicle';
 import { useWorkspace, useWorkspaceQuery } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
 import { useAuth } from '@shared/store';
-import { Stack, StateView, Tabs } from '@shared/ui';
+import { Stack, Tabs } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
 
@@ -54,19 +55,7 @@ export const VehicleDetailPage = () => {
   const isSold = vehicle?.status === 'ARCHIVE';
 
   if (isPending) return <VehicleDetailSkeleton />;
-
-  if (isError || !vehicle) {
-    return (
-      <StateView
-        icon="alertCircle"
-        variant="error"
-        title={t('common.error.title')}
-        description={t('common.error.description')}
-        actionLabel={t('common.actions.back')}
-        onAction={() => navigate(ROUTES.WORKSPACES.DETAIL(workspaceId))}
-      />
-    );
-  }
+  if (isError || !vehicle) return <VehicleError workspaceId={workspaceId} />;
 
   return (
     <Stack gap="2xl" style={{ minHeight: '100%' }}>
@@ -114,14 +103,21 @@ export const VehicleDetailPage = () => {
           workspaceId={workspaceId}
           vehicleId={vehicleId}
           currentMileage={vehicle?.currentMileage ?? 0}
+          isSold={isSold}
         />
       )}
 
-      {activeTab === 'stats' && <VehicleStatsTab workspaceId={workspaceId} vehicleId={vehicleId} />}
+      {activeTab === 'stats' && (
+        <StatsTab workspaceId={workspaceId} vehicleId={vehicleId} isSold={isSold} />
+      )}
 
-      {activeTab === 'gallery' && <GalleryTab workspaceId={workspaceId} vehicleId={vehicleId} />}
+      {activeTab === 'gallery' && (
+        <GalleryTab workspaceId={workspaceId} vehicleId={vehicleId} isSold={isSold} />
+      )}
 
-      {activeTab === 'tires' && <TiresTab workspaceId={workspaceId} vehicleId={vehicleId} />}
+      {activeTab === 'tires' && (
+        <TiresTab workspaceId={workspaceId} vehicleId={vehicleId} isSold={isSold} />
+      )}
     </Stack>
   );
 };

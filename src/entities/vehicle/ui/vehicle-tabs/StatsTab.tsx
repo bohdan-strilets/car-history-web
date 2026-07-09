@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { StatsPeriodFilter, useStatsPeriod, useVehicleStats } from '@entities/stats';
 import { StatsSkeleton } from '@entities/stats/ui';
-import { Center, Stack, StateView } from '@shared/ui';
+import { Stack } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
 import {
   CostsByCategoryChart,
@@ -15,12 +15,12 @@ import {
   StatsSummaryCards,
 } from '@widgets/vehicle-charts';
 
-type VehicleStatsTabProps = {
-  workspaceId: string;
-  vehicleId: string;
-};
+import { SoldVehicleHint } from '../sold-vehicle-hint';
+import { TabsError } from '../vehicle-state';
 
-export const VehicleStatsTab = ({ workspaceId, vehicleId }: VehicleStatsTabProps) => {
+import type { StatsTabProps } from './vehicle-tabs.types';
+
+export const StatsTab = ({ workspaceId, vehicleId, isSold }: StatsTabProps) => {
   const { t } = useTranslation();
   const { period, date } = useStatsPeriod();
 
@@ -34,24 +34,13 @@ export const VehicleStatsTab = ({ workspaceId, vehicleId }: VehicleStatsTabProps
   const stats = data?.data;
 
   if (isLoading) return <StatsSkeleton />;
-
-  if (isError || !stats)
-    return (
-      <Center style={{ flex: '1' }}>
-        <StateView
-          icon="alertCircle"
-          variant="error"
-          title={t('common.error.title')}
-          description={t('common.error.description')}
-          onAction={refetch}
-          actionLabel={t('common.error.retry')}
-        />
-      </Center>
-    );
+  if (isError || !stats) return <TabsError onAction={refetch} />;
 
   return (
     <Stack gap="xl">
       <PageHeader title={t('stats.list.title')} />
+      {isSold && <SoldVehicleHint />}
+
       <StatsPeriodFilter />
 
       <StatsSummaryCards stats={stats} />

@@ -29,14 +29,23 @@ export interface MaintenanceTabProps {
   workspaceId: WorkspaceId;
   vehicleId: VehicleId;
   currentMileage: number;
+  isSold: boolean;
 }
 
 export interface GalleryTabProps {
   workspaceId: WorkspaceId;
   vehicleId: VehicleId;
+  isSold: boolean;
 }
 
 export interface TiresTabProps {
   workspaceId: WorkspaceId;
   vehicleId: VehicleId;
+  isSold: boolean;
 }
+
+export type StatsTabProps = {
+  workspaceId: string;
+  vehicleId: string;
+  isSold: boolean;
+};

@@ -827,6 +827,10 @@
       "description": "The AI assistant will automatically fill in technical data based on the make, model and year.",
       "action": "Fill with AI",
       "loading": "AI is analysing the vehicle..."
+    },
+
+    "sold": {
+      "hint": "This vehicle has been sold — changes are no longer possible."
     }
   },
 
@@ -963,10 +967,6 @@
     "filterEmpty": {
       "title": "No results",
       "description": "No events found for the selected filters"
-    },
-
-    "sold": {
-      "hint": "This vehicle has been sold. You cannot add new events."
     }
   },
 
