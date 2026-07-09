@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { VehiclesList, VehiclesListSkeleton } from '@entities/vehicle';
 import { ROUTES } from '@shared/config';
-import { Center, Stack, StateView } from '@shared/ui';
+import { Stack } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
+
+import { VehicleTabsEmptyState } from '../workspace-state';
 
 import type { VehiclesTabProps } from './workspace-tabs.types';
 
@@ -15,19 +17,7 @@ export const VehiclesTab = ({ workspaceId, vehicles, isPending }: VehiclesTabPro
   const isEmpty = !isPending && vehicles.length === 0;
 
   if (isPending) return <VehiclesListSkeleton />;
-
-  if (isEmpty)
-    return (
-      <Center style={{ flex: 1 }}>
-        <StateView
-          icon="car"
-          title={t('vehicle.list.empty.title')}
-          description={t('vehicle.list.empty.description')}
-          actionLabel={t('vehicle.list.add')}
-          onAction={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(workspaceId))}
-        />
-      </Center>
-    );
+  if (isEmpty) return <VehicleTabsEmptyState workspaceId={workspaceId} />;
 
   return (
     <Stack gap="xl">

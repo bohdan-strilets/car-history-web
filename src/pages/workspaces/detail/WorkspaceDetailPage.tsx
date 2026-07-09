@@ -22,11 +22,12 @@ import {
   WORKSPACE_TABS,
   WORKSPACE_TYPE_CONFIG,
   WorkspaceDetailSkeleton,
+  WorkspaceError,
 } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
 import { useFormatDate } from '@shared/hooks';
 import { useAuth } from '@shared/store';
-import { Badge, Icon, Stack, StateView, Tabs, Text } from '@shared/ui';
+import { Badge, Icon, Stack, Tabs, Text } from '@shared/ui';
 import { getConfigOption, translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
 
@@ -45,6 +46,7 @@ export const WorkspaceDetailPage = () => {
     data: workspaceData,
     isPending: isWorkspacePending,
     isError: isWorkspaceError,
+    refetch,
   } = useWorkspaceQuery(workspaceId);
 
   const { data: workspacesListData } = useWorkspacesQuery();
@@ -83,18 +85,7 @@ export const WorkspaceDetailPage = () => {
   }, [workspace?.id, setActiveWorkspaceId, workspace]);
 
   if (isWorkspacePending) return <WorkspaceDetailSkeleton />;
-
-  if (isWorkspaceError || !workspace)
-    return (
-      <StateView
-        icon="alertCircle"
-        variant="error"
-        title={t('workspace.notFound.title')}
-        description={t('workspace.notFound.description')}
-        actionLabel={t('workspace.notFound.action')}
-        onAction={() => navigate(ROUTES.WORKSPACES.ROOT)}
-      />
-    );
+  if (isWorkspaceError || !workspace) return <WorkspaceError retry={refetch} />;
 
   const tabs = translateSegmentControlOptions(t, WORKSPACE_TABS);
 
