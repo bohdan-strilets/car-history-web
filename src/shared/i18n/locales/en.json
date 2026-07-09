@@ -1308,6 +1308,10 @@
     },
     "list": {
       "title": "Vehicle Statistics"
+    },
+    "insufficientData": {
+      "title": "Za mało danych do statystyk",
+      "description": "Dodaj jeszcze kilka wpisów, aby zobaczyć wykresy i trendy."
     }
   },
 

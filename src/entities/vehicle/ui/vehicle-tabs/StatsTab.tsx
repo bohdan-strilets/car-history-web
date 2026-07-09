@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { StatsPeriodFilter, useStatsPeriod, useVehicleStats } from '@entities/stats';
-import { StatsSkeleton } from '@entities/stats/ui';
+import { InsufficientDataHint, StatsSkeleton } from '@entities/stats/ui';
 import { Stack } from '@shared/ui';
 import { PageHeader } from '@widgets/page-header';
 import {
@@ -32,6 +32,7 @@ export const StatsTab = ({ workspaceId, vehicleId, isSold }: StatsTabProps) => {
   });
 
   const stats = data?.data;
+  const hasNoData = stats?.costsByMonth.length === 0 && stats?.costsByCategory.length === 0;
 
   if (isLoading) return <StatsSkeleton />;
   if (isError || !stats) return <TabsError onAction={refetch} />;
@@ -42,8 +43,10 @@ export const StatsTab = ({ workspaceId, vehicleId, isSold }: StatsTabProps) => {
       {isSold && <SoldVehicleHint />}
 
       <StatsPeriodFilter />
-
       <StatsSummaryCards stats={stats} />
+
+      {hasNoData && <InsufficientDataHint />}
+
       <PreviousPeriodBadge comparison={stats.previousPeriodComparison} />
       <CostsByMonthChart data={stats.costsByMonth} />
       <CostsByCategoryChart data={stats.costsByCategory} />
