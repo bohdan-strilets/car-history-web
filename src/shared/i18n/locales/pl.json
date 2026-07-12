@@ -1477,6 +1477,32 @@
     }
   },
 
+  "ai": {
+    "conversationList": {
+      "hasVehicleContext": "Wiadomości z kontekstem pojazdu",
+      "noVehicleContext": "Wiadomości bez kontekstu pojazdu"
+    },
+    "chat": {
+      "inputPlaceholder": "Napisz wiadomość..."
+    },
+    "list": {
+      "empty": {
+        "title": "Brak wiadomości",
+        "description": "Wyślij pierwszą wiadomość do asystenta AI, aby uzyskać pomoc lub porady dotyczące Twojego pojazdu."
+      },
+      "create": "Nowa wiadomość",
+      "title": "Rozmowy z asystentem AI",
+      "count_one": "{{count}} rozmowa",
+      "count_few": "{{count}} rozmowy",
+      "count_many": "{{count}} rozmów",
+      "count_other": "{{count}} rozmów"
+    },
+    "new": {
+      "title": "Nowa wiadomość",
+      "start": "Rozpocznij rozmowę"
+    }
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Nieprawidłowy email lub hasło",
     "ACCOUNT_LOCKED": "Konto zostało tymczasowo zablokowane z powodu zbyt wielu nieudanych prób logowania",

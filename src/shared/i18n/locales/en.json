@@ -1474,6 +1474,32 @@
     }
   },
 
+  "ai": {
+    "conversationList": {
+      "hasVehicleContext": "Messages with vehicle context",
+      "noVehicleContext": "Messages without vehicle context"
+    },
+    "chat": {
+      "inputPlaceholder": "Write a message..."
+    },
+    "list": {
+      "empty": {
+        "title": "No messages",
+        "description": "Send the first message to the AI assistant to get help or advice regarding your vehicle."
+      },
+      "create": "New message",
+      "title": "Conversations with the AI assistant",
+      "count_one": "{{count}} conversation",
+      "count_few": "{{count}} conversations",
+      "count_many": "{{count}} conversations",
+      "count_other": "{{count}} conversations"
+    },
+    "new": {
+      "title": "New message",
+      "start": "Start conversation"
+    }
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Invalid email or password",
     "ACCOUNT_LOCKED": "Account temporarily locked due to too many failed login attempts",
