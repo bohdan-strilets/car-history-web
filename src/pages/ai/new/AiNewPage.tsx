@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import { useVehiclesQuery } from '@entities/vehicle';
-import { useWorkspaceId } from '@entities/workspace';
+import { useWorkspace } from '@entities/workspace';
 import { useCreateConversationMutation } from '@features/ai-chat';
 import { ROUTES } from '@shared/config';
 import { showToast } from '@shared/lib';
@@ -14,7 +14,8 @@ import { PageHeader } from '@widgets/page-header';
 export const AiNewPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const workspaceId = useWorkspaceId();
+  const { activeWorkspaceId } = useWorkspace();
+  const workspaceId = activeWorkspaceId ?? '';
 
   const { data: vehiclesData } = useVehiclesQuery(workspaceId);
   const vehicles = vehiclesData?.data ?? [];
