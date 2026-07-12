@@ -17,17 +17,17 @@ const refreshInstance = axios.create({
   withCredentials: true,
 });
 
+export const refreshAccessToken = async (): Promise<string> => {
+  const response = await refreshInstance.post(ENDPOINTS.AUTH.REFRESH);
+  const newToken = response.data.data.accessToken;
+  authService.setAccessToken(newToken);
+  return newToken;
+};
+
+export const logoutAndRedirect = (): void => {
+  authService.clearAuth();
+  window.location.href = ROUTES.AUTH.LOGIN;
+};
+
 setupRequestInterceptor(axiosInstance, () => authService.getAccessToken());
-setupResponseInterceptor(
-  axiosInstance,
-  async () => {
-    const response = await refreshInstance.post(ENDPOINTS.AUTH.REFRESH);
-    const newToken = response.data.data.accessToken;
-    authService.setAccessToken(newToken);
-    return newToken;
-  },
-  () => {
-    authService.clearAuth();
-    window.location.href = ROUTES.AUTH.LOGIN;
-  },
-);
+setupResponseInterceptor(axiosInstance, refreshAccessToken, logoutAndRedirect);
