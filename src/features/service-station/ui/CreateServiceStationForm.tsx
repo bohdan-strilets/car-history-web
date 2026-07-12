@@ -5,7 +5,14 @@ import {
   SERVICE_STATION_TYPE_CONFIG,
   type PlaceDetails,
 } from '@entities/service-station';
-import { Form, FormFieldCardSelect, FormFieldInput, FormFieldTextarea, Stack } from '@shared/ui';
+import {
+  Form,
+  FormFieldCardSelect,
+  FormFieldInput,
+  FormFieldTextarea,
+  Stack,
+  Text,
+} from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 
 import { useCreateServiceStationForm } from '../model';
@@ -45,6 +52,9 @@ export const CreateServiceStationForm = ({ onSuccess }: CreateServiceStationForm
     >
       <Stack gap="md">
         <PlacesAutocomplete onSelect={handlePlaceSelect} />
+        <Text size="xs" color="tertiary">
+          {t('serviceStation.fields.placesAutocompleteHint')}
+        </Text>
 
         <FormFieldCardSelect
           control={control}

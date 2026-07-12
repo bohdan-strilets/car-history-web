@@ -53,6 +53,9 @@ export const UploadMediaForm = ({ workspaceId, vehicleId, onSuccess }: UploadMed
         value={[category]}
         maxSelect={1}
       />
+      <Text size="xs" color="tertiary">
+        {t('media.uploader.categoryHint')}
+      </Text>
 
       <div
         className={clsx(styles.dropzone, isDragActive && styles.dropzoneActive)}

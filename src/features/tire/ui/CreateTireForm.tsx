@@ -3,7 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { TIRE_TYPE_CONFIG } from '@entities/tire';
 import type { VehicleId } from '@entities/vehicle';
 import type { WorkspaceId } from '@entities/workspace';
-import { Form, FormFieldCardSelect, FormFieldInput, FormFieldNumberInput, Stack } from '@shared/ui';
+import {
+  Form,
+  FormFieldCardSelect,
+  FormFieldInput,
+  FormFieldNumberInput,
+  Stack,
+  Text,
+} from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 
 import { useCreateTireForm } from '../model';
@@ -73,6 +80,9 @@ export const CreateTireForm = ({ workspaceId, vehicleId, onSuccess }: CreateTire
             size="lg"
           />
         </Stack>
+        <Text size="xs" color="tertiary">
+          {t('tire.fields.widthHint')}
+        </Text>
         <FormFieldNumberInput
           control={control}
           name="price"

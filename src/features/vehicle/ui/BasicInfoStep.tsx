@@ -78,6 +78,7 @@ export const BasicInfoStep = ({ control, setValue }: VehicleBasicInfoStepProps) 
         name="brand"
         label={t('vehicle.form.popularBrands')}
         options={VEHICLE_POPULAR_BRANDS_CONFIG}
+        hint={t('vehicle.fields.popularBrandsHint')}
       />
 
       <FormFieldCombobox
@@ -111,6 +112,7 @@ export const BasicInfoStep = ({ control, setValue }: VehicleBasicInfoStepProps) 
         placeholder={t('vehicle.fields.generationPlaceholder')}
         disabled={!selectedBrand || !selectedModel}
         size="lg"
+        hint={t('vehicle.fields.generationHint')}
       />
 
       <FormFieldYearPicker
@@ -128,6 +130,7 @@ export const BasicInfoStep = ({ control, setValue }: VehicleBasicInfoStepProps) 
         label={t('vehicle.fields.nickname')}
         size="lg"
         placeholder={t('vehicle.fields.nicknamePlaceholder')}
+        hint={t('vehicle.fields.nicknameHint')}
       />
     </>
   );

@@ -71,6 +71,7 @@ export const CreateMaintenanceIntervalForm = ({
           onChange={() => {
             isTitleManual.current = true;
           }}
+          hint={t('maintenance.fields.titleHint')}
         />
         <Stack direction="row" gap="md">
           <FormFieldNumberInput
@@ -81,6 +82,7 @@ export const CreateMaintenanceIntervalForm = ({
             unit={t('units.km')}
             size="lg"
             fullWidth
+            hint={t('maintenance.fields.intervalKmHint')}
           />
           <FormFieldNumberInput
             control={control}
@@ -101,6 +103,7 @@ export const CreateMaintenanceIntervalForm = ({
             unit={t('units.km')}
             size="lg"
             fullWidth
+            hint={t('maintenance.fields.lastServiceMileageHint')}
           />
           <FormFieldDatePicker
             control={control}

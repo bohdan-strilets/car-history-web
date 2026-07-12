@@ -53,6 +53,7 @@ export const PurchaseForm = ({
           label={t('timeline.fields.title')}
           placeholder={t('timeline.fields.titlePlaceholder')}
           size="lg"
+          hint={t('timeline.fields.titleHint')}
         />
 
         <FormFieldCardSelect
@@ -96,6 +97,7 @@ export const PurchaseForm = ({
           placeholder={t('timeline.fields.countryPlaceholder')}
           options={countryOptions}
           size="lg"
+          hint={t('timeline.fields.countryHint')}
         />
 
         <FormFieldTextarea

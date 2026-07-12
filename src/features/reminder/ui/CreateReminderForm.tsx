@@ -71,6 +71,7 @@ export const CreateReminderForm = ({
           onChange={() => {
             isTitleManual.current = true;
           }}
+          hint={t('reminder.fields.titleHint')}
         />
         <FormFieldDatePicker
           control={control}

@@ -64,6 +64,7 @@ export const RefuelForm = ({
           label={t('timeline.fields.title')}
           placeholder={t('timeline.fields.titlePlaceholder')}
           size="lg"
+          hint={t('timeline.fields.titleHint')}
         />
 
         <FormFieldCardSelect
@@ -122,12 +123,14 @@ export const RefuelForm = ({
           size="lg"
           unit={t('enums.currency.UAH')}
           format="decimal"
+          hint={t('timeline.fields.costHint')}
         />
 
         <FormFieldCheckbox
           control={control}
           name="isFullTank"
           label={t('timeline.fields.isFullTank')}
+          hint={t('timeline.fields.isFullTankHint')}
         />
 
         <FormFieldTextarea

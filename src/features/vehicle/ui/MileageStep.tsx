@@ -24,7 +24,9 @@ export const MileageStep = ({ control }: VehicleStepProps) => {
         size="lg"
         min={0}
         placeholder="1600"
+        required
         unit={t('units.cc')}
+        hint={t('vehicle.fields.engineDisplacementCcHint')}
       />
     </>
   );

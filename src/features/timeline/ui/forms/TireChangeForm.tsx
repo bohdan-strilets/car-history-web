@@ -97,6 +97,7 @@ export const TireChangeForm = ({
           onChange={() => {
             isTitleManual.current = true;
           }}
+          hint={t('timeline.fields.titleHint')}
         />
 
         <FormFieldCardSelect
@@ -113,6 +114,7 @@ export const TireChangeForm = ({
           placeholder={t('common.labels.noOptions')}
           size="lg"
           fullWidth
+          hint={t('timeline.fields.tireIdHint')}
         />
 
         <FormFieldDatePicker
@@ -128,6 +130,7 @@ export const TireChangeForm = ({
             control={control}
             name="installedMileage"
             label={t('timeline.fields.installedMileage')}
+            hint={t('timeline.fields.installedMileageHint')}
             placeholder="0"
             unit={t('units.km')}
             format="mileage"
@@ -141,6 +144,7 @@ export const TireChangeForm = ({
               control={control}
               name="removedMileage"
               label={t('timeline.fields.removedMileage')}
+              hint={t('timeline.fields.removedMileageHint')}
               placeholder="0"
               unit={t('units.km')}
               format="mileage"

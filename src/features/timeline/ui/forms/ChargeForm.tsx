@@ -69,6 +69,7 @@ export const ChargeForm = ({
           label={t('timeline.fields.title')}
           placeholder={t('timeline.fields.titlePlaceholder')}
           size="lg"
+          hint={t('timeline.fields.titleHint')}
         />
 
         <FormFieldCardSelect
@@ -124,6 +125,7 @@ export const ChargeForm = ({
           label={t('timeline.fields.chargerNetwork')}
           placeholder={t('timeline.fields.chargerNetworkPlaceholder')}
           size="lg"
+          hint={t('timeline.fields.chargerNetworkHint')}
         />
 
         <Stack direction="row" gap="md">
@@ -157,6 +159,7 @@ export const ChargeForm = ({
           size="lg"
           unit={t('enums.currencyShort.PLN')}
           format="decimal"
+          hint={t('timeline.fields.costHintCharge')}
         />
 
         <FormFieldTextarea

@@ -24,6 +24,7 @@ export const TypeStep = ({ control }: VehicleStepProps) => {
         options={translateCardSelectOptions(t, FUEL_TYPE_CONFIG)}
         maxSelect={2}
         multi
+        hint={t('vehicle.fields.fuelTypeHint')}
       />
 
       <FormFieldCardSelect

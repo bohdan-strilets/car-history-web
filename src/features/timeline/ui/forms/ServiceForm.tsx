@@ -69,6 +69,7 @@ export const ServiceForm = ({
           label={t('timeline.fields.title')}
           placeholder={t('timeline.fields.titlePlaceholder')}
           size="lg"
+          hint={t('timeline.fields.titleHint')}
         />
 
         <FormFieldCardSelect
@@ -99,6 +100,9 @@ export const ServiceForm = ({
         <Stack gap="sm">
           <Text weight="bold">
             {t('timeline.labels.works')} ({worksArray.fields.length})
+          </Text>
+          <Text size="sm" color="tertiary">
+            {t('timeline.fields.worksHint')}
           </Text>
 
           {worksArray.fields.map((field, index) => (
@@ -142,6 +146,9 @@ export const ServiceForm = ({
         <Stack gap="sm">
           <Text weight="bold">
             {t('timeline.labels.parts')} ({partsArray.fields.length})
+          </Text>
+          <Text size="sm" color="tertiary">
+            {t('timeline.fields.partsHint')}
           </Text>
 
           {partsArray.fields.map((field, index) => (
@@ -190,6 +197,7 @@ export const ServiceForm = ({
           size="lg"
           unit={t('enums.currencyShort.PLN')}
           format="decimal"
+          hint={t('timeline.fields.costHintService')}
         />
 
         <FormFieldTextarea

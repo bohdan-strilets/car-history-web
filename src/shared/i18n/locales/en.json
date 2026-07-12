@@ -698,7 +698,14 @@
       "engineDisplacementCc": "Engine displacement",
       "color": "Color",
       "description": "Description",
-      "descriptionPlaceholder": "Additional information about the vehicle..."
+      "descriptionPlaceholder": "Additional information about the vehicle...",
+      "generationHint": "E.g. Mk7, F30, W205. Not in the list? Enter your own value",
+      "nicknameHint": "How you name this car — it will be displayed in the list instead of the brand and model",
+      "popularBrandsHint": "Choose from popular ones or search the full list below",
+      "fuelTypeHint": "Select 2 types if the car runs on two types of fuel",
+      "vinHint": "You can find it in the registration certificate. Helps to check the vehicle's history",
+      "countryOfOriginHint": "The country from which the car was imported, not the country of the brand manufacturer",
+      "engineDisplacementCcHint": "Enter in cm³, e.g. 1600 instead of 1.6"
     },
     "form": {
       "popularBrands": "Popular brands"
@@ -931,7 +938,23 @@
       "chargerNetworkPlaceholder": "e.g. GreenWay, Orlen Charge",
 
       "startLocationPlaceholder": "e.g. Warsaw",
-      "endLocationPlaceholder": "e.g. Kraków"
+      "endLocationPlaceholder": "e.g. Kraków",
+
+      "titleHint": "Will be filled automatically based on the data below. You can change it",
+      "costHint": "Calculated automatically (liters × price per liter). You can enter your own amount",
+      "isFullTankHint": "Check if you filled the tank — necessary for accurate fuel consumption calculation",
+      "costHintCharge": "Calculated automatically (kWh × price per kWh). You can enter your own amount",
+      "chargerNetworkHint": "e.g. Orlen Charge, Ionity, Tesla Supercharger",
+      "costHintService": "Calculated automatically (sum of all works and parts below). You can enter your own amount",
+      "worksHint": "Works performed in the workshop, e.g. oil change, diagnostics",
+      "partsHint": "Parts used during the service, with the price per unit",
+      "expireDateHint": "Based on this date, we will create automatic reminders before expiration",
+      "issuedByHint": "E.g. name of the insurer or inspection station",
+      "tireIdHint": "No tires in the list? Add a set in the Tires tab",
+      "installedMileageHint": "By default set to the current mileage. You can change it",
+      "removedMileageHint": "Mileage at the time of tire removal — may differ from the event date",
+      "distanceKmHint": "Calculated automatically from the mileage difference. You can enter your own value",
+      "countryHint": "Country from which the car was imported, not the country of the brand manufacturer"
     },
 
     "empty": {
@@ -998,7 +1021,8 @@
     },
 
     "fields": {
-      "completedAt": "Completed at"
+      "completedAt": "Completed at",
+      "titleHint": "Filled automatically based on the data below. You can change it"
     },
 
     "solid": {
@@ -1042,7 +1066,10 @@
       "nextServiceMileage": "Next service (km)",
       "nextServiceDate": "Next service (date)",
       "mileage": "Mileage",
-      "date": "Service date"
+      "date": "Service date",
+      "titleHint": "Filled automatically based on the data below. You can change it",
+      "intervalKmHint": "We will remind you of the next service depending on what comes first — mileage or date",
+      "lastServiceMileageHint": "Provide if this service has already been performed earlier — it will help calculate the next due date"
     },
     "status": {
       "overdue": "Overdue",
@@ -1331,7 +1358,8 @@
       "uploadCount_one": "Upload ({{count}})",
       "uploadCount_few": "Upload ({{count}})",
       "uploadCount_many": "Upload ({{count}})",
-      "uploadCount_other": "Upload ({{count}})"
+      "uploadCount_other": "Upload ({{count}})",
+      "categoryHint": "This category will be assigned to all photos in this batch"
     },
     "gallery": {
       "title": "Gallery",
@@ -1357,7 +1385,8 @@
       "aspectRatio": "Aspect ratio",
       "rimDiameter": "Rim diameter",
       "storageLocation": "Storage location",
-      "storageLocationPlaceholder": "e.g. garage, tire shop"
+      "storageLocationPlaceholder": "e.g. garage, tire shop",
+      "widthHint": "You can find it on the side of the tire, e.g. 205/55 R16 — width / aspect ratio / rim diameter"
     },
     "list": {
       "title": "Tires"
@@ -1408,7 +1437,8 @@
       "streetPlaceholder": "e.g. 1 Marszałkowska St.",
       "number": "Number",
       "city": "City",
-      "postCode": "Postal code"
+      "postCode": "Postal code",
+      "placesAutocompleteHint": "Find a place in Google, and the data below will be filled in automatically. You can also fill it in manually"
     },
     "new": {
       "title": "Add service station"

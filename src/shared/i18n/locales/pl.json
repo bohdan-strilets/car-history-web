@@ -702,7 +702,14 @@
       "engineDisplacementCc": "Pojemność silnika",
       "color": "Kolor",
       "description": "Opis",
-      "descriptionPlaceholder": "Dodatkowe informacje o pojeździe..."
+      "descriptionPlaceholder": "Dodatkowe informacje o pojeździe...",
+      "generationHint": "Np. Mk7, F30, W205. Nie ma na liście? Wpisz własną wartość",
+      "nicknameHint": "Jak sam nazywasz to auto — będzie widoczne na liście zamiast marki i modelu",
+      "popularBrandsHint": "Wybierz z popularnych lub wyszukaj z pełnej listy poniżej",
+      "fuelTypeHint": "Wybierz 2 rodzaje, jeśli auto działa na dwóch paliwach",
+      "vinHint": "Znajdziesz w dowodzie rejestracyjnym. Przyda się do sprawdzenia historii pojazdu",
+      "countryOfOriginHint": "Kraj, z którego auto zostało sprowadzone, a nie kraj producenta marki",
+      "engineDisplacementCcHint": "Podaj w cm³, np. 1600 zamiast 1.6"
     },
     "form": {
       "popularBrands": "Popularne marki"
@@ -935,7 +942,23 @@
       "chargerNetworkPlaceholder": "np. GreenWay, Orlen Charge",
 
       "startLocationPlaceholder": "np. Warszawa",
-      "endLocationPlaceholder": "np. Kraków"
+      "endLocationPlaceholder": "np. Kraków",
+
+      "titleHint": "Wypełni się automatycznie na podstawie danych poniżej. Możesz to zmienić",
+      "costHint": "Wyliczane automatycznie (litry × cena za litr). Możesz wpisać własną kwotę",
+      "isFullTankHint": "Zaznacz, jeśli zatankowałeś do pełna — potrzebne do dokładnego wyliczenia spalania",
+      "costHintCharge": "Wyliczane automatycznie (kWh × cena za kWh). Możesz wpisać własną kwotę",
+      "chargerNetworkHint": "Np. Orlen Charge, Ionity, Tesla Supercharger",
+      "costHintService": "Suma wszystkich prac i części poniżej. Możesz wpisać własną kwotę",
+      "worksHint": "Usługi wykonane w warsztacie, np. wymiana oleju, diagnostyka",
+      "partsHint": "Części użyte podczas serwisu, z ceną za sztukę",
+      "expireDateHint": "Na podstawie tej daty utworzymy automatyczne przypomnienia przed wygaśnięciem",
+      "issuedByHint": "Np. nazwa ubezpieczyciela lub stacji diagnostycznej",
+      "tireIdHint": "Brak opon na liście? Dodaj komplet w zakładce Opony",
+      "installedMileageHint": "Domyślnie ustawiony na aktualny przebieg. Możesz zmienić",
+      "removedMileageHint": "Przebieg w momencie zdjęcia opony — może różnić się od daty zdarzenia",
+      "distanceKmHint": "Wyliczane automatycznie z różnicy przebiegu. Możesz wpisać własną wartość",
+      "countryHint": "Kraj, z którego auto zostało sprowadzone, a nie kraj producenta marki"
     },
 
     "empty": {
@@ -1002,7 +1025,8 @@
     },
 
     "fields": {
-      "completedAt": "Wykonano"
+      "completedAt": "Wykonano",
+      "titleHint": "Wypełni się automatycznie na podstawie danych poniżej. Możesz to zmienić"
     },
 
     "solid": {
@@ -1046,7 +1070,10 @@
       "nextServiceMileage": "Następny serwis (km)",
       "nextServiceDate": "Następny serwis (data)",
       "mileage": "Przebieg",
-      "date": "Data wykonania"
+      "date": "Data wykonania",
+      "titleHint": "Wypełni się automatycznie na podstawie danych poniżej. Możesz to zmienić",
+      "intervalKmHint": "Przypomnimy o kolejnym serwisie w zależności od tego, co nastąpi wcześniej — przebieg czy data",
+      "lastServiceMileageHint": "Podaj, jeśli ten serwis był już wykonany wcześniej — pomoże wyliczyć termin następnego"
     },
     "status": {
       "overdue": "Przeterminowany",
@@ -1335,7 +1362,8 @@
       "uploadCount_one": "Prześlij ({{count}})",
       "uploadCount_few": "Prześlij ({{count}})",
       "uploadCount_many": "Prześlij ({{count}})",
-      "uploadCount_other": "Prześlij ({{count}})"
+      "uploadCount_other": "Prześlij ({{count}})",
+      "categoryHint": "Ta kategoria zostanie przypisana do wszystkich zdjęć w tej partii"
     },
     "gallery": {
       "title": "Galeria",
@@ -1361,7 +1389,8 @@
       "aspectRatio": "Profil",
       "rimDiameter": "Średnica felgi",
       "storageLocation": "Miejsce przechowywania",
-      "storageLocationPlaceholder": "np. garaż, wulkanizacja"
+      "storageLocationPlaceholder": "np. garaż, wulkanizacja",
+      "widthHint": "Znajdziesz na boku opony, np. 205/55 R16 — szerokość / profil / średnica felgi"
     },
     "list": {
       "title": "Opony"
@@ -1411,7 +1440,8 @@
       "streetPlaceholder": "np. ul. Marszałkowska 1",
       "number": "Numer",
       "city": "Miasto",
-      "postCode": "Kod pocztowy"
+      "postCode": "Kod pocztowy",
+      "placesAutocompleteHint": "Znajdź miejsce w Google, a dane poniżej wypełnią się automatycznie. Możesz też wypełnić je ręcznie"
     },
     "new": {
       "title": "Dodaj stację serwisową"

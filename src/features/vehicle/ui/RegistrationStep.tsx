@@ -33,6 +33,7 @@ export const RegistrationStep = ({ control }: VehicleStepProps) => {
         size="lg"
         transform="uppercase"
         placeholder={t('vehicle.fields.vinPlaceholder')}
+        hint={t('vehicle.fields.vinHint')}
       />
 
       <FormFieldCombobox
@@ -42,6 +43,7 @@ export const RegistrationStep = ({ control }: VehicleStepProps) => {
         options={countryOptions}
         placeholder={t('vehicle.fields.countryOfOriginPlaceholder')}
         size="lg"
+        hint={t('vehicle.fields.countryOfOriginHint')}
       />
     </>
   );

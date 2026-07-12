@@ -49,6 +49,7 @@ export const DocumentForm = ({
           label={t('timeline.fields.title')}
           placeholder={t('timeline.fields.titlePlaceholder')}
           size="lg"
+          hint={t('timeline.fields.titleHint')}
         />
 
         <FormFieldCardSelect
@@ -90,6 +91,7 @@ export const DocumentForm = ({
             label={t('timeline.fields.expireDate')}
             size="lg"
             fullWidth
+            hint={t('timeline.fields.expireDateHint')}
           />
         </Stack>
 
@@ -107,6 +109,7 @@ export const DocumentForm = ({
           label={t('timeline.fields.issuedBy')}
           placeholder={t('timeline.fields.issuedByPlaceholder')}
           size="lg"
+          hint={t('timeline.fields.issuedByHint')}
         />
 
         <FormFieldNumberInput

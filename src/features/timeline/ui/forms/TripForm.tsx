@@ -68,6 +68,7 @@ export const TripForm = ({
           label={t('timeline.fields.title')}
           placeholder={t('timeline.fields.titlePlaceholder')}
           size="lg"
+          hint={t('timeline.fields.titleHint')}
         />
 
         <FormFieldCardSelect
@@ -113,6 +114,7 @@ export const TripForm = ({
           unit={t('units.km')}
           format="mileage"
           size="lg"
+          hint={t('timeline.fields.distanceKmHint')}
         />
 
         <Stack direction="row" gap="md">
