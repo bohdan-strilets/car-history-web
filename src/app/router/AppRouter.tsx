@@ -1,6 +1,9 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 import { AppLayout, AuthLayout, OnboardingLayout } from '@app/layouts';
+import { AiConversationPage } from '@pages/ai/conversation';
+import { AiListPage } from '@pages/ai/list';
+import { AiNewPage } from '@pages/ai/new';
 import {
   ConfirmEmailPage,
   ForgotPasswordPage,
@@ -32,12 +35,10 @@ import { GuestRoute, ProtectedRoute } from './guards';
 
 const router = createBrowserRouter([
   { path: ROUTES.ROOT, element: <Navigate to={ROUTES.AUTH.LOGIN} replace /> },
-
   {
     element: <AuthLayout />,
     children: [{ path: ROUTES.AUTH.CONFIRM_EMAIL, element: <ConfirmEmailPage /> }],
   },
-
   {
     element: <GuestRoute />,
     children: [
@@ -53,7 +54,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
   {
     element: <ProtectedRoute />,
     children: [
@@ -86,7 +86,9 @@ const router = createBrowserRouter([
           { path: ROUTES.SERVICE_STATIONS.NEW, element: <ServiceStationNewPage /> },
           { path: ROUTES.SERVICE_STATIONS.DETAIL(':id'), element: <ServiceStationDetailPage /> },
           { path: ROUTES.SERVICE_STATIONS.EDIT(':id'), element: <ServiceStationEditPage /> },
-          { path: ROUTES.AI.ROOT, element: <div>AI</div> },
+          { path: ROUTES.AI.ROOT, element: <AiListPage /> },
+          { path: ROUTES.AI.NEW, element: <AiNewPage /> },
+          { path: ROUTES.AI.DETAIL(':conversationId'), element: <AiConversationPage /> },
           { path: ROUTES.PROFILE.ROOT, element: <div>Profile</div> },
         ],
       },
