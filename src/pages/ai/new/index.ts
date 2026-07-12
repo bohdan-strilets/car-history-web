@@ -1,0 +1,1 @@
+export { AiNewPage } from './AiNewPage';
