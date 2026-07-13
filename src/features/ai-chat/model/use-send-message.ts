@@ -24,6 +24,7 @@ interface UseSendMessageParams {
 const INITIAL_STATE: SendMessageState = {
   isStreaming: false,
   streamedContent: '',
+  pendingUserContent: null,
   error: null,
 };
 
@@ -48,9 +49,21 @@ export const useSendMessage = ({ conversationId }: UseSendMessageParams) => {
     [conversationId],
   );
 
+  const invalidateConversation = useCallback(async () => {
+    await queryClient.invalidateQueries({
+      queryKey: queryKeys.ai.conversation(conversationId),
+    });
+    await queryClient.invalidateQueries({ queryKey: queryKeys.ai.conversations() });
+  }, [conversationId, queryClient]);
+
   const sendMessage = useCallback(
     async (content: string) => {
-      setState({ isStreaming: true, streamedContent: '', error: null });
+      setState({
+        isStreaming: true,
+        streamedContent: '',
+        pendingUserContent: content,
+        error: null,
+      });
 
       const abortController = new AbortController();
       abortControllerRef.current = abortController;
@@ -93,16 +106,15 @@ export const useSendMessage = ({ conversationId }: UseSendMessageParams) => {
             if (parsed.event === 'complete') {
               const completeData = parsed.data as CompleteEventData;
               setState((prev) => ({ ...prev, streamedContent: completeData.content }));
-
-              await queryClient.invalidateQueries({
-                queryKey: queryKeys.ai.conversation(conversationId),
-              });
-              await queryClient.invalidateQueries({ queryKey: queryKeys.ai.conversations() });
+              await invalidateConversation();
+              setState((prev) => ({ ...prev, pendingUserContent: null, streamedContent: '' }));
             }
 
             if (parsed.event === 'error') {
               const { error } = parsed.data as ErrorEventData;
               setState((prev) => ({ ...prev, error }));
+              await invalidateConversation();
+              setState((prev) => ({ ...prev, pendingUserContent: null }));
             }
           }
         }
@@ -118,7 +130,7 @@ export const useSendMessage = ({ conversationId }: UseSendMessageParams) => {
         setState((prev) => ({ ...prev, isStreaming: false, error: message }));
       }
     },
-    [conversationId, performRequest, queryClient],
+    [invalidateConversation, performRequest],
   );
 
   const cancel = useCallback(() => {

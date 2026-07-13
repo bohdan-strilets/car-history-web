@@ -1,10 +1,5 @@
 import type { VehicleId } from '@entities/vehicle';
 
-export interface SseEvent<T = unknown> {
-  event: string;
-  data: T;
-}
-
 export interface ChunkEventData {
   chunk: string;
 }
@@ -22,6 +17,7 @@ export interface ErrorEventData {
 export interface SendMessageState {
   isStreaming: boolean;
   streamedContent: string;
+  pendingUserContent: string | null;
   error: string | null;
 }
 

@@ -21,7 +21,9 @@ export const AiConversationPage = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   const { data, isPending, isError } = useConversationQuery(conversationId);
-  const { isStreaming, streamedContent, error, sendMessage } = useSendMessage({ conversationId });
+  const { isStreaming, streamedContent, pendingUserContent, error, sendMessage } = useSendMessage({
+    conversationId,
+  });
 
   const messages = data?.data.messages ?? [];
 
@@ -37,7 +39,7 @@ export const AiConversationPage = () => {
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages.length, streamedContent]);
+  }, [messages.length, streamedContent, pendingUserContent]);
 
   if (isPending) {
     return (
@@ -59,6 +61,20 @@ export const AiConversationPage = () => {
         {messages.map((message) => (
           <MessageBubble key={message.id} message={message} />
         ))}
+
+        {pendingUserContent && (
+          <MessageBubble
+            message={{
+              id: 'pending-user',
+              conversationId,
+              role: 'USER',
+              content: pendingUserContent,
+              tokensUsed: null,
+              isError: false,
+              createdAt: new Date(),
+            }}
+          />
+        )}
 
         {isStreaming && streamedContent && (
           <MessageBubble
