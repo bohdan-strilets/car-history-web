@@ -24,6 +24,7 @@ export const ENDPOINTS = {
     ME: '/users/me',
     ME_PASSWORD: '/users/me/password',
     ME_CHANGE_EMAIL: '/users/me/change-email',
+    ME_CONFIRM_EMAIL_CHANGE: '/users/me/confirm-email-change',
     ME_SETTINGS: '/users/me/settings',
     ME_ONBOARDING: '/users/me/onboarding',
   },
