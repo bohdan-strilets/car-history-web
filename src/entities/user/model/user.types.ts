@@ -25,3 +25,14 @@ export interface UserSettings {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface UserSettingsSummary {
+  language: Language;
+  theme: Theme;
+  notificationsEmail: boolean;
+  notificationsPush: boolean;
+}
+
+export interface UserProfile extends User {
+  settings: UserSettingsSummary;
+}

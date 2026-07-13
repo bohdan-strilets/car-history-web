@@ -7,5 +7,14 @@ export {
   type UserStatus,
 } from './user.constants';
 
+export { LANGUAGE_CONFIG, THEME_CONFIG } from './user-settings.config';
 export { UserConstraints } from './user.constraints';
-export type { User, UserId, UserSettings, UserSettingsId } from './user.types';
+
+export type {
+  User,
+  UserId,
+  UserProfile,
+  UserSettings,
+  UserSettingsId,
+  UserSettingsSummary,
+} from './user.types';

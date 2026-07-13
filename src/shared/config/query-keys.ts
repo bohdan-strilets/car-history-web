@@ -52,4 +52,8 @@ export const queryKeys = {
     conversations: () => ['ai', 'conversations'] as const,
     conversation: (id: string) => ['ai', 'conversations', id] as const,
   },
+
+  user: {
+    me: () => ['user', 'me'] as const,
+  },
 } as const;
