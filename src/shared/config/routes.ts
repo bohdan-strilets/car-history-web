@@ -50,6 +50,7 @@ export const ROUTES = {
   PROFILE: {
     ROOT: '/profile',
     SETTINGS: '/profile/settings',
+    CONFIRM_EMAIL_CHANGE: '/profile/confirm-email-change',
   },
 
   INVITE: (token: string) => `/invite/${token}`,

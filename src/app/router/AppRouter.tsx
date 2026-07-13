@@ -14,6 +14,9 @@ import {
 } from '@pages/auth';
 import { DashboardPage } from '@pages/dashboard';
 import { OnboardingPage } from '@pages/onboarding';
+import { ConfirmEmailChangePage } from '@pages/profile/confirm-email-change';
+import { ProfilePage } from '@pages/profile/detail';
+import { ProfileSettingsPage } from '@pages/profile/settings';
 import { ServiceStationDetailPage, ServiceStationsPage } from '@pages/service-stations/detail';
 import { ServiceStationEditPage } from '@pages/service-stations/edit';
 import { ServiceStationNewPage } from '@pages/service-stations/new';
@@ -37,7 +40,10 @@ const router = createBrowserRouter([
   { path: ROUTES.ROOT, element: <Navigate to={ROUTES.AUTH.LOGIN} replace /> },
   {
     element: <AuthLayout />,
-    children: [{ path: ROUTES.AUTH.CONFIRM_EMAIL, element: <ConfirmEmailPage /> }],
+    children: [
+      { path: ROUTES.AUTH.CONFIRM_EMAIL, element: <ConfirmEmailPage /> },
+      { path: ROUTES.PROFILE.CONFIRM_EMAIL_CHANGE, element: <ConfirmEmailChangePage /> },
+    ],
   },
   {
     element: <GuestRoute />,
@@ -89,7 +95,8 @@ const router = createBrowserRouter([
           { path: ROUTES.AI.ROOT, element: <AiListPage /> },
           { path: ROUTES.AI.NEW, element: <AiNewPage /> },
           { path: ROUTES.AI.DETAIL(':conversationId'), element: <AiConversationPage /> },
-          { path: ROUTES.PROFILE.ROOT, element: <div>Profile</div> },
+          { path: ROUTES.PROFILE.ROOT, element: <ProfilePage /> },
+          { path: ROUTES.PROFILE.SETTINGS, element: <ProfileSettingsPage /> },
         ],
       },
     ],
