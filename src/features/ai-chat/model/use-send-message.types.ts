@@ -27,3 +27,8 @@ export interface CreateConversationPayload {
   vehicleId?: VehicleId;
   title?: string;
 }
+
+export interface SseEvent {
+  event: string;
+  data: unknown;
+}
