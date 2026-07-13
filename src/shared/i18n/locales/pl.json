@@ -1474,6 +1474,46 @@
     "logout": {
       "action": "Wyloguj się",
       "confirm": "Czy na pewno chcesz się wylogować?"
+    },
+    "security": {
+      "title": "Bezpieczeństwo",
+      "changePassword": "Zmień hasło",
+      "changePasswordSuccess": "Hasło zostało zmienione",
+      "currentPassword": "Obecne hasło",
+      "newPassword": "Nowe hasło",
+      "changeEmail": "Zmień adres email",
+      "newEmail": "Nowy adres email",
+      "changeEmailSuccess": "Wysłaliśmy link potwierdzający na nowy adres email",
+      "confirmEmailChange": {
+        "verifying": "Potwierdzamy Twój nowy adres email...",
+        "success": {
+          "title": "Email zmieniony!",
+          "subtitle": "Twój nowy adres email został potwierdzony.",
+          "action": "Przejdź do profilu"
+        },
+        "error": {
+          "title": "Link jest nieprawidłowy lub wygasł",
+          "subtitle": "Poproś o zmianę adresu email jeszcze raz w ustawieniach profilu."
+        }
+      }
+    },
+    "danger": {
+      "title": "Strefa niebezpieczna",
+      "deleteAccount": "Usuń konto",
+      "deleteAccountWarning": "Usunięcie konta jest nieodwracalne. Wszystkie Twoje dane zostaną trwale usunięte.",
+      "confirmPassword": "Potwierdź hasłem",
+      "deleteAccountSuccess": "Konto zostało usunięte"
+    },
+    "settings": {
+      "title": "Ustawienia",
+      "language": "Język interfejsu",
+      "theme": "Motyw",
+      "notifications": {
+        "title": "Powiadomienia",
+        "email": "Powiadomienia email",
+        "push": "Powiadomienia push"
+      },
+      "updateSuccess": "Ustawienia zostały zapisane"
     }
   },
 

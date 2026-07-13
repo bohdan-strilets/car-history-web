@@ -1471,6 +1471,46 @@
     "logout": {
       "action": "Sign out",
       "confirm": "Are you sure you want to sign out?"
+    },
+    "security": {
+      "title": "Security",
+      "changePassword": "Change password",
+      "changePasswordSuccess": "Password changed",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "changeEmail": "Change email address",
+      "newEmail": "New email address",
+      "changeEmailSuccess": "We sent a confirmation link to the new email address",
+      "confirmEmailChange": {
+        "verifying": "Verifying your new email address...",
+        "success": {
+          "title": "Email changed!",
+          "subtitle": "Your new email address has been confirmed.",
+          "action": "Go to profile"
+        },
+        "error": {
+          "title": "Link is invalid or expired",
+          "subtitle": "Request an email change again in the profile settings."
+        }
+      }
+    },
+    "danger": {
+      "title": "Danger zone",
+      "deleteAccount": "Delete account",
+      "deleteAccountWarning": "Deleting the account is irreversible. All your data will be permanently deleted.",
+      "confirmPassword": "Confirm with password",
+      "deleteAccountSuccess": "Account deleted"
+    },
+    "settings": {
+      "title": "Settings",
+      "language": "Interface language",
+      "theme": "Theme",
+      "notifications": {
+        "title": "Notifications",
+        "email": "Email notifications",
+        "push": "Push notifications"
+      },
+      "updateSuccess": "Settings saved"
     }
   },
 
