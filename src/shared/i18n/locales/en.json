@@ -98,6 +98,10 @@
         "november": "Nov",
         "december": "Dec"
       }
+    },
+    "errorBoundary": {
+      "title": "Something went wrong",
+      "description": "An unexpected error occurred. Try refreshing the page."
     }
   },
 

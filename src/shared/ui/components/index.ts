@@ -4,6 +4,7 @@ export * from './charts';
 export * from './combobox';
 export * from './date-picker';
 export * from './dropdown';
+export * from './error-fallback';
 export * from './fab';
 export * from './field';
 export * from './form';

@@ -5,4 +5,6 @@ export const envSchema = z.object({
 
   VITE_GOOGLE_MAPS_API_KEY: z.string(),
   VITE_GOOGLE_MAPS_MAP_ID: z.string(),
+
+  VITE_SENTRY_DSN: z.string().optional().default(''),
 });

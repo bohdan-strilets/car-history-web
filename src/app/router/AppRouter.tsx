@@ -1,5 +1,7 @@
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
+import * as Sentry from '@sentry/react';
+
 import { AppLayout, AuthLayout, OnboardingLayout } from '@app/layouts';
 import { AiConversationPage } from '@pages/ai/conversation';
 import { AiListPage } from '@pages/ai/list';
@@ -33,13 +35,21 @@ import {
   WorkspacesPage,
 } from '@pages/workspaces';
 import { ROUTES } from '@shared/config';
+import { ErrorFallback } from '@shared/ui';
 
 import { GuestRoute, ProtectedRoute } from './guards';
 
-const router = createBrowserRouter([
-  { path: ROUTES.ROOT, element: <Navigate to={ROUTES.AUTH.LOGIN} replace /> },
+const sentryCreateBrowserRouter = Sentry.wrapCreateBrowserRouter(createBrowserRouter);
+
+const router = sentryCreateBrowserRouter([
+  {
+    path: ROUTES.ROOT,
+    element: <Navigate to={ROUTES.AUTH.LOGIN} replace />,
+    errorElement: <ErrorFallback />,
+  },
   {
     element: <AuthLayout />,
+    errorElement: <ErrorFallback />,
     children: [
       { path: ROUTES.AUTH.CONFIRM_EMAIL, element: <ConfirmEmailPage /> },
       { path: ROUTES.PROFILE.CONFIRM_EMAIL_CHANGE, element: <ConfirmEmailChangePage /> },
@@ -47,6 +57,7 @@ const router = createBrowserRouter([
   },
   {
     element: <GuestRoute />,
+    errorElement: <ErrorFallback />,
     children: [
       {
         element: <AuthLayout />,
@@ -62,6 +73,7 @@ const router = createBrowserRouter([
   },
   {
     element: <ProtectedRoute />,
+    errorElement: <ErrorFallback />,
     children: [
       {
         element: <OnboardingLayout />,

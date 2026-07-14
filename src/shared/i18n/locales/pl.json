@@ -98,6 +98,10 @@
         "november": "Lis",
         "december": "Gru"
       }
+    },
+    "errorBoundary": {
+      "title": "Coś poszło nie tak",
+      "description": "Wystąpił nieoczekiwany błąd. Spróbuj odświeżyć stronę."
     }
   },
 
