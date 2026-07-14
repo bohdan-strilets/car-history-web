@@ -19,7 +19,7 @@ export const ComboboxTrigger = ({
       value={open ? query : displayValue}
       onChange={open ? handleInputChange : () => {}}
       onFocus={handleFocus}
-      onClick={(e) => e.stopPropagation()}
+      onClick={(e: React.MouseEvent) => e.stopPropagation()}
       placeholder={placeholder}
       disabled={disabled}
       size={size}

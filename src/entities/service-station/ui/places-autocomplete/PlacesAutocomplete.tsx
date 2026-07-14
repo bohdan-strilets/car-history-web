@@ -40,7 +40,7 @@ export const PlacesAutocomplete = ({ onSelect, placeholder }: PlacesAutocomplete
         <Input
           value={query}
           onChange={handleInputChange}
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e: React.MouseEvent) => e.stopPropagation()}
           onFocus={() => setOpen(true)}
           placeholder={placeholder ?? t('serviceStation.places.searchPlaceholder')}
           leftIcon="search"
