@@ -4,4 +4,5 @@ export const STORAGE_KEYS = {
   SIDEBAR_STORAGE_KEY: 'arvino-sidebar',
   WORKSPACE_STORAGE_KEY: 'arvino-workspace',
   VEHICLE_STORAGE_KEY: 'arvino-vehicle',
+  SESSION_HINT_KEY: 'arvino-session-hint',
 } as const;
