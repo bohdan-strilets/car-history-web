@@ -1,9 +1,10 @@
 import axios, { type AxiosInstance } from 'axios';
 
 import { ENDPOINTS } from '@shared/config';
+import { authService } from '@shared/store';
 
-import { getCookieValue, parseApiError } from './api.utils';
-import { BEARER_PREFIX, CSRF_TOKEN_COOKIE, CSRF_TOKEN_HEADER } from './constants.cookie';
+import { parseApiError } from './api.utils';
+import { BEARER_PREFIX, CSRF_TOKEN_HEADER } from './constants.cookie';
 
 const AUTH_ENDPOINTS_WITHOUT_REFRESH: string[] = [
   ENDPOINTS.AUTH.LOGIN,
@@ -32,7 +33,7 @@ export const setupRequestInterceptor = (instance: AxiosInstance, getToken: () =>
         config.url?.includes(ENDPOINTS.AUTH.REFRESH) || config.url?.includes(ENDPOINTS.AUTH.LOGOUT);
 
       if (isCsrfRequired) {
-        const csrfToken = getCookieValue(CSRF_TOKEN_COOKIE);
+        const csrfToken = authService.getCsrfToken();
 
         if (csrfToken) {
           config.headers[CSRF_TOKEN_HEADER] = csrfToken;

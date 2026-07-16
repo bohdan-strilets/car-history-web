@@ -17,6 +17,7 @@ export const useInitQuery = () => {
           }
           const refreshResponse = await authApi.refresh();
           authService.setAccessToken(refreshResponse.data.accessToken);
+          authService.setCsrfToken(refreshResponse.data.csrfToken);
         }
         const meResponse = await authApi.getMe();
         authService.setUser(meResponse.data);

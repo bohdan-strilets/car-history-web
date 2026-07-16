@@ -8,6 +8,7 @@ export const authService = {
   setUser: (user: User) => useAuthStore.getState().setUser(user),
   clearAuth: () => {
     storage.remove(STORAGE_KEYS.SESSION_HINT_KEY);
+    storage.remove(STORAGE_KEYS.CSRF_TOKEN_KEY);
     useAuthStore.getState().clearAuth();
   },
   isAuthenticated: () => useAuthStore.getState().isAuthenticated,
@@ -16,6 +17,11 @@ export const authService = {
   setAccessToken: (token: string) => {
     storage.set(STORAGE_KEYS.SESSION_HINT_KEY, '1');
     useAuthStore.getState().setAccessToken(token);
+  },
+  getCsrfToken: () => useAuthStore.getState().csrfToken ?? storage.get(STORAGE_KEYS.CSRF_TOKEN_KEY),
+  setCsrfToken: (token: string) => {
+    storage.set(STORAGE_KEYS.CSRF_TOKEN_KEY, token);
+    useAuthStore.getState().setCsrfToken(token);
   },
   updateUser: (partial: Partial<User>) => useAuthStore.getState().updateUser(partial),
   hasSessionHint: () => storage.get(STORAGE_KEYS.SESSION_HINT_KEY) === '1',

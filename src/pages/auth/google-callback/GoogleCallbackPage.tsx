@@ -15,9 +15,11 @@ export const GoogleCallbackPage = () => {
   useEffect(() => {
     const handle = async () => {
       const accessToken = searchParams.get('accessToken');
+      const csrfToken = searchParams.get('csrfToken');
 
-      if (accessToken) {
+      if (accessToken && csrfToken) {
         authService.setAccessToken(accessToken);
+        authService.setCsrfToken(csrfToken);
         await refetch();
         navigate(ROUTES.DASHBOARD, { replace: true });
       } else {

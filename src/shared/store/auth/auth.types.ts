@@ -3,13 +3,13 @@ import type { User } from '@entities/user';
 export interface AuthState {
   user: User | null;
   accessToken: string | null;
+  csrfToken: string | null;
   isAuthenticated: boolean;
   isLoading: boolean;
-
   setUser: (user: User) => void;
   setAccessToken: (token: string) => void;
+  setCsrfToken: (token: string) => void;
   clearAuth: () => void;
   setLoading: (loading: boolean) => void;
-
   updateUser: (partial: Partial<User>) => void;
 }
