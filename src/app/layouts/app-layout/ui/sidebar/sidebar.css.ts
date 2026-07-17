@@ -17,7 +17,8 @@ export const root = recipe({
     backgroundColor: vars.color.bg.base,
     borderRight: `1px solid ${vars.color.border.base}`,
 
-    overflow: 'hidden',
+    overflowY: 'auto',
+    overflowX: 'hidden',
     transition: `width ${slowInOut}`,
 
     '@media': {
