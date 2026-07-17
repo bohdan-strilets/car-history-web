@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Portal } from '@shared/ui';
 
@@ -10,6 +10,7 @@ import type { TooltipProps } from './tooltip.types';
 export const Tooltip = ({ label, children, placement = 'top', disabled }: TooltipProps) => {
   const [open, setOpen] = useState(false);
   const [style, setStyle] = useState<React.CSSProperties>({});
+  const triggerRef = useRef<HTMLDivElement>(null);
 
   const handleShow = (e: React.MouseEvent<HTMLDivElement> | React.FocusEvent<HTMLDivElement>) => {
     if (disabled) return;
@@ -21,9 +22,36 @@ export const Tooltip = ({ label, children, placement = 'top', disabled }: Toolti
 
   const handleHide = () => setOpen(false);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const handleOutside = (e: MouseEvent | TouchEvent) => {
+      if (triggerRef.current && !triggerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleOutside);
+    document.addEventListener('touchstart', handleOutside);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('click', handleOutside);
+      document.removeEventListener('touchstart', handleOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open]);
+
   return (
     <>
       <div
+        ref={triggerRef}
         style={{ display: 'inline-block' }}
         onMouseEnter={handleShow}
         onMouseLeave={handleHide}
