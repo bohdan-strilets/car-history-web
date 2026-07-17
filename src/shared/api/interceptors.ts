@@ -51,24 +51,6 @@ export const setupResponseInterceptor = (
   onRefresh: () => Promise<string>,
   onLogout: () => void,
 ) => {
-  let isRefreshing = false;
-  let queue: Array<{
-    resolve: (token: string) => void;
-    reject: (error: unknown) => void;
-  }> = [];
-
-  const processQueue = (error: unknown, token: string | null) => {
-    queue.forEach((p) => {
-      if (error) {
-        p.reject(error);
-      } else {
-        p.resolve(token!);
-      }
-    });
-
-    queue = [];
-  };
-
   instance.interceptors.response.use(
     (response) => response,
     async (error) => {
@@ -79,29 +61,15 @@ export const setupResponseInterceptor = (
       const is401 = axios.isAxiosError(error) && error.response?.status === 401;
 
       if (is401 && !originalRequest._retry && !isAuthEndpoint) {
-        if (isRefreshing) {
-          return new Promise((resolve, reject) => {
-            queue.push({ resolve, reject });
-          }).then((token) => {
-            originalRequest.headers.Authorization = `${BEARER_PREFIX} ${token}`;
-            return instance(originalRequest);
-          });
-        }
-
         originalRequest._retry = true;
-        isRefreshing = true;
 
         try {
           const newToken = await onRefresh();
-          processQueue(null, newToken);
           originalRequest.headers.Authorization = `${BEARER_PREFIX} ${newToken}`;
           return instance(originalRequest);
         } catch (refreshError) {
-          processQueue(refreshError, null);
           onLogout();
           return Promise.reject(refreshError);
-        } finally {
-          isRefreshing = false;
         }
       }
 

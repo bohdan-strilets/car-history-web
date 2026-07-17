@@ -1,9 +1,11 @@
 import axios from 'axios';
 
 import { env } from '@config/env';
+import type { AuthResponse } from '@features/auth';
 import { ENDPOINTS, ROUTES } from '@shared/config';
 import { authService } from '@shared/store';
 
+import { CSRF_TOKEN_HEADER } from './constants.cookie';
 import { setupRequestInterceptor, setupResponseInterceptor } from './interceptors';
 
 export const axiosInstance = axios.create({
@@ -17,11 +19,36 @@ const refreshInstance = axios.create({
   withCredentials: true,
 });
 
-export const refreshAccessToken = async (): Promise<string> => {
-  const response = await refreshInstance.post(ENDPOINTS.AUTH.REFRESH);
-  const newToken = response.data.data.accessToken;
-  authService.setAccessToken(newToken);
-  return newToken;
+let refreshPromise: Promise<string> | null = null;
+
+const doRefresh = async (): Promise<string> => {
+  const csrfToken = authService.getCsrfToken();
+
+  const response = await refreshInstance.post<{ data: AuthResponse }>(
+    ENDPOINTS.AUTH.REFRESH,
+    undefined,
+    { headers: csrfToken ? { [CSRF_TOKEN_HEADER]: csrfToken } : undefined },
+  );
+
+  const newAccessToken = response.data.data.accessToken;
+  const newCsrfToken = response.data.data.csrfToken;
+
+  authService.setAccessToken(newAccessToken);
+  authService.setCsrfToken(newCsrfToken);
+
+  return newAccessToken;
+};
+
+export const refreshAccessToken = (): Promise<string> => {
+  if (refreshPromise) {
+    return refreshPromise;
+  }
+
+  refreshPromise = doRefresh().finally(() => {
+    refreshPromise = null;
+  });
+
+  return refreshPromise;
 };
 
 export const logoutAndRedirect = (): void => {

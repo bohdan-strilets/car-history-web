@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { refreshAccessToken } from '@shared/api';
 import { queryKeys } from '@shared/config';
 import { authService } from '@shared/store';
 
@@ -15,9 +16,7 @@ export const useInitQuery = () => {
             authService.clearAuth();
             return null;
           }
-          const refreshResponse = await authApi.refresh();
-          authService.setAccessToken(refreshResponse.data.accessToken);
-          authService.setCsrfToken(refreshResponse.data.csrfToken);
+          await refreshAccessToken();
         }
         const meResponse = await authApi.getMe();
         authService.setUser(meResponse.data);
