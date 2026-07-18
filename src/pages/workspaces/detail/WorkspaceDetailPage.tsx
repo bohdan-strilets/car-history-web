@@ -9,7 +9,7 @@ import {
   canEditWorkspace,
   MembersTab,
   SettingsTab,
-  useWorkspace,
+  useActiveWorkspace,
   useWorkspaceId,
   useWorkspaceMembersQuery,
   useWorkspacePendingInvitesQuery,
@@ -24,7 +24,8 @@ import {
   WorkspaceDetailSkeleton,
   WorkspaceError,
 } from '@entities/workspace';
-import { ROUTES } from '@shared/config';
+import { getErrorCode } from '@shared/api';
+import { ERROR_CODES, ROUTES } from '@shared/config';
 import { useFormatDate } from '@shared/hooks';
 import { useAuth } from '@shared/store';
 import { Badge, Icon, Stack, Tabs, Text } from '@shared/ui';
@@ -40,22 +41,31 @@ export const WorkspaceDetailPage = () => {
   const workspaceId = useWorkspaceId();
   const navigate = useNavigate();
 
-  const { setActiveWorkspaceId, clearActiveWorkspaceId, activeWorkspaceId } = useWorkspace();
+  const { setActiveWorkspaceId, activeWorkspaceId, switchAwayFrom, handleAccessDenied } =
+    useActiveWorkspace();
 
   const {
     data: workspaceData,
     isPending: isWorkspacePending,
     isError: isWorkspaceError,
+    error: workspaceError,
     refetch,
   } = useWorkspaceQuery(workspaceId);
 
-  const { data: workspacesListData } = useWorkspacesQuery();
-  const { data: membersData, isPending: isMembersPending } = useWorkspaceMembersQuery(workspaceId);
-  const { data: pendingInvitesData, isPending: isInvitesPending } =
-    useWorkspacePendingInvitesQuery(workspaceId);
-  const { data: settingsData, isPending: isSettingsPending } =
-    useWorkspaceSettingsQuery(workspaceId);
-  const { data: vehiclesData, isPending: isVehiclesPending } = useVehiclesQuery(workspaceId);
+  const workspaceQuery = useWorkspacesQuery();
+  const { data: workspacesListData } = workspaceQuery;
+
+  const membersQuery = useWorkspaceMembersQuery(workspaceId);
+  const { data: membersData, isPending: isMembersPending } = membersQuery;
+
+  const invitesQuery = useWorkspacePendingInvitesQuery(workspaceId);
+  const { data: pendingInvitesData, isPending: isInvitesPending } = invitesQuery;
+
+  const settingsQuery = useWorkspaceSettingsQuery(workspaceId);
+  const { data: settingsData, isPending: isSettingsPending } = settingsQuery;
+
+  const vehiclesQuery = useVehiclesQuery(workspaceId);
+  const { data: vehiclesData, isPending: isVehiclesPending } = vehiclesQuery;
 
   const workspace = workspaceData?.data ?? null;
   const workspaceList = workspacesListData?.data ?? [];
@@ -69,14 +79,13 @@ export const WorkspaceDetailPage = () => {
   const roleConfig = getConfigOption(t, WORKSPACE_ROLE_CONFIG, workspace?.role ?? '');
 
   const switchToNextWorkspace = () => {
-    if (!workspace) return;
-    const next = workspaceList.find((w) => w.id !== workspace.id);
+    switchAwayFrom(workspaceId, workspaceList);
+  };
 
-    if (next) {
-      setActiveWorkspaceId(next.id);
-    } else {
-      clearActiveWorkspaceId();
-    }
+  const isAccessIssue = (code: string) => {
+    const isAccessDenied = code === ERROR_CODES.Workspace.ACCESS_DENIED;
+    const isNotFound = code === ERROR_CODES.Workspace.NOT_FOUND;
+    return isAccessDenied || isNotFound;
   };
 
   useEffect(() => {
@@ -84,8 +93,29 @@ export const WorkspaceDetailPage = () => {
     setActiveWorkspaceId(workspace.id);
   }, [workspace?.id, setActiveWorkspaceId, workspace]);
 
+  useEffect(() => {
+    if (!isWorkspaceError) return;
+    const code = getErrorCode(workspaceError);
+    const accessIssue = isAccessIssue(code);
+
+    if (accessIssue) {
+      handleAccessDenied(workspaceId);
+    }
+  }, [isWorkspaceError, workspaceError, workspaceId, handleAccessDenied]);
+
   if (isWorkspacePending) return <WorkspaceDetailSkeleton />;
-  if (isWorkspaceError || !workspace) return <WorkspaceError retry={refetch} />;
+
+  if (isWorkspaceError || !workspace) {
+    const code = getErrorCode(workspaceError);
+    const accessIssue = isAccessIssue(code);
+
+    if (accessIssue) {
+      navigate(ROUTES.WORKSPACES.ROOT, { replace: true });
+      return null;
+    }
+
+    return <WorkspaceError retry={refetch} />;
+  }
 
   const tabs = translateSegmentControlOptions(t, WORKSPACE_TABS);
 
