@@ -1,4 +1,4 @@
-export { useWorkspace } from './use-workspace';
+export { useActiveWorkspace } from './use-active-workspace';
 export { useWorkspaceTab } from './use-workspace-tabs';
 export { WorkspaceConstraints } from './workspace.constraints';
 export { useWorkspaceStore } from './workspace.store';
