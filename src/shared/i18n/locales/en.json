@@ -1515,6 +1515,18 @@
         "push": "Push notifications"
       },
       "updateSuccess": "Settings saved"
+    },
+    "sessions": {
+      "title": "Active sessions",
+      "unknownDevice": "Unknown device",
+      "unknownIp": "Unknown IP address",
+      "current": "This device",
+      "revoke": "Revoke session",
+      "revokeConfirm": "Are you sure you want to revoke this session? The device will be signed out.",
+      "revokeSuccess": "Session revoked",
+      "revokeAll": "Sign out from other devices",
+      "revokeAllConfirm": "Are you sure you want to sign out from all other devices?",
+      "revokeAllSuccess": "Signed out from all other devices"
     }
   },
 

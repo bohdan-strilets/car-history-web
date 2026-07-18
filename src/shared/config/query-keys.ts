@@ -55,5 +55,6 @@ export const queryKeys = {
 
   user: {
     me: () => ['user', 'me'] as const,
+    sessions: () => ['user', 'sessions'] as const,
   },
 } as const;

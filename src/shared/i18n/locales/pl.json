@@ -1518,6 +1518,18 @@
         "push": "Powiadomienia push"
       },
       "updateSuccess": "Ustawienia zostały zapisane"
+    },
+    "sessions": {
+      "title": "Aktywne sesje",
+      "unknownDevice": "Nieznane urządzenie",
+      "unknownIp": "Nieznany adres IP",
+      "current": "To urządzenie",
+      "revoke": "Zakończ sesję",
+      "revokeConfirm": "Czy na pewno chcesz zakończyć tę sesję? Urządzenie zostanie wylogowane.",
+      "revokeSuccess": "Sesja została zakończona",
+      "revokeAll": "Wyloguj z innych urządzeń",
+      "revokeAllConfirm": "Czy na pewno chcesz wylogować wszystkie inne urządzenia?",
+      "revokeAllSuccess": "Wylogowano ze wszystkich innych urządzeń"
     }
   },
 

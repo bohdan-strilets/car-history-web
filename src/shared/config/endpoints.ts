@@ -1,5 +1,6 @@
 import type { MaintenanceId } from '@entities/maintenance';
 import type { ReminderId } from '@entities/reminder';
+import type { SessionId } from '@entities/session';
 import type { EventId } from '@entities/timeline';
 import type { TireId } from '@entities/tire';
 import type { VehicleId } from '@entities/vehicle';
@@ -27,6 +28,8 @@ export const ENDPOINTS = {
     ME_CONFIRM_EMAIL_CHANGE: '/users/me/confirm-email-change',
     ME_SETTINGS: '/users/me/settings',
     ME_ONBOARDING: '/users/me/onboarding',
+    ME_SESSIONS: '/users/me/sessions',
+    ME_SESSION: (sessionId: SessionId) => `/users/me/sessions/${sessionId}`,
   },
 
   WORKSPACES: {
