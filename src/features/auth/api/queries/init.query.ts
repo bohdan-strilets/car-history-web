@@ -1,10 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 
+import { useWorkspaceStore } from '@entities/workspace';
 import { refreshAccessToken } from '@shared/api';
 import { queryKeys } from '@shared/config';
 import { authService } from '@shared/store';
 
 import { authApi } from '../auth.api';
+
+const clearAuthAndWorkspace = () => {
+  authService.clearAuth();
+  useWorkspaceStore.getState().clearActiveWorkspaceId();
+};
 
 export const useInitQuery = () => {
   return useQuery({
@@ -13,7 +19,7 @@ export const useInitQuery = () => {
       try {
         if (!authService.getAccessToken()) {
           if (!authService.hasSessionHint()) {
-            authService.clearAuth();
+            clearAuthAndWorkspace();
             return null;
           }
           await refreshAccessToken();
@@ -22,7 +28,7 @@ export const useInitQuery = () => {
         authService.setUser(meResponse.data);
         return meResponse.data;
       } catch {
-        authService.clearAuth();
+        clearAuthAndWorkspace();
         return null;
       }
     },

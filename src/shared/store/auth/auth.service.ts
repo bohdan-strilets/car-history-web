@@ -9,6 +9,7 @@ export const authService = {
   clearAuth: () => {
     storage.remove(STORAGE_KEYS.SESSION_HINT_KEY);
     storage.remove(STORAGE_KEYS.CSRF_TOKEN_KEY);
+    storage.remove(STORAGE_KEYS.WORKSPACE_STORAGE_KEY);
     useAuthStore.getState().clearAuth();
   },
   isAuthenticated: () => useAuthStore.getState().isAuthenticated,
