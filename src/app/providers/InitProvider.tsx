@@ -1,6 +1,6 @@
 import { useEffect, type PropsWithChildren } from 'react';
 
-import { useWorkspace, useWorkspacesQuery } from '@entities/workspace';
+import { useActiveWorkspace, useWorkspacesQuery } from '@entities/workspace';
 import { useInitQuery } from '@features/auth';
 import { useAuth } from '@shared/store';
 import { Spinner, Stack } from '@shared/ui';
@@ -9,20 +9,15 @@ export const InitProvider = ({ children }: PropsWithChildren) => {
   const { isLoading: isMeLoading } = useInitQuery();
   const { isAuthenticated } = useAuth();
 
-  const query = useWorkspacesQuery(isAuthenticated);
-  const { data: workspacesData, isLoading: isWorkspacesLoading } = query;
-  const { activeWorkspaceId, setActiveWorkspaceId } = useWorkspace();
+  const { data: workspacesData, isLoading: isWorkspacesLoading } =
+    useWorkspacesQuery(isAuthenticated);
+  const { ensureValid } = useActiveWorkspace();
 
   useEffect(() => {
     if (!isAuthenticated) return;
     const workspaces = workspacesData?.data ?? [];
-    if (workspaces.length === 0) return;
-
-    const isValid = workspaces.some((w) => w.id === activeWorkspaceId);
-    if (!isValid) {
-      setActiveWorkspaceId(workspaces[0].id);
-    }
-  }, [workspacesData, activeWorkspaceId, isAuthenticated, setActiveWorkspaceId]);
+    ensureValid(workspaces);
+  }, [workspacesData, isAuthenticated, ensureValid]);
 
   const isLoading = isMeLoading || (isAuthenticated && isWorkspacesLoading);
 
