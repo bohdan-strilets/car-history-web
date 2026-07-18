@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import type { WorkspaceSettings } from '@entities/workspace';
-import { useWorkspace } from '@entities/workspace';
+import { useActiveWorkspace } from '@entities/workspace';
 import { useWorkspaceSettingsForm, WorkspaceSettingsForm } from '@features/workspace';
 
 import { StepSuccess } from './StepSuccess';
@@ -12,7 +12,7 @@ import type { SettingsStepProps } from '../model';
 
 export const SettingsStep = ({ onNext, onSkip }: SettingsStepProps) => {
   const { t } = useTranslation();
-  const { activeWorkspaceId } = useWorkspace();
+  const { activeWorkspaceId } = useActiveWorkspace();
   const [isSuccess, setIsSuccess] = useState(false);
 
   if (!activeWorkspaceId) throw new Error('Active workspace ID is required');

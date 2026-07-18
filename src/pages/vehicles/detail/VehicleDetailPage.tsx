@@ -19,7 +19,7 @@ import {
   VehicleDetailSkeleton,
   VehicleError,
 } from '@entities/vehicle';
-import { useWorkspace, useWorkspaceQuery } from '@entities/workspace';
+import { useActiveWorkspace, useWorkspaceQuery } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
 import { useAuth } from '@shared/store';
 import { Stack, Tabs } from '@shared/ui';
@@ -39,7 +39,7 @@ export const VehicleDetailPage = () => {
 
   const { user } = useAuth();
 
-  const { activeWorkspaceId } = useWorkspace();
+  const { activeWorkspaceId } = useActiveWorkspace();
   const { data: workspaceData } = useWorkspaceQuery(activeWorkspaceId ?? '');
 
   const activeWorkspace = activeWorkspaceId === workspaceId ? workspaceData?.data : null;

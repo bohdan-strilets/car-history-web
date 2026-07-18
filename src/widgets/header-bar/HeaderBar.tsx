@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import { useWorkspace, useWorkspacesQuery, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
+import { useActiveWorkspace, useWorkspacesQuery, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
 import { useLogout } from '@features/auth';
 import { ROUTES } from '@shared/config';
 import { useAuth } from '@shared/store';
@@ -20,7 +20,7 @@ export const HeaderBar = () => {
   const [workspaceOpen, setWorkspaceOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
 
-  const { activeWorkspaceId, setActiveWorkspaceId } = useWorkspace();
+  const { activeWorkspaceId, setActiveWorkspaceId } = useActiveWorkspace();
 
   const { data } = useWorkspacesQuery();
   const workspaces = data?.data ?? [];

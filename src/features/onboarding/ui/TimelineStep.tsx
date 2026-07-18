@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { TIMELINE_EVENT_TYPE } from '@entities/timeline';
 import { useVehicle, useVehicleQuery } from '@entities/vehicle';
-import { useWorkspace } from '@entities/workspace';
+import { useActiveWorkspace } from '@entities/workspace';
 import { SelectedTypeForm } from '@features/timeline';
 import { Button, Spinner, Stack } from '@shared/ui';
 
@@ -12,7 +12,7 @@ import type { TimelineStepProps } from '../model';
 
 export const TimelineStep = ({ onNext, onSkip }: TimelineStepProps) => {
   const { t } = useTranslation();
-  const { activeWorkspaceId } = useWorkspace();
+  const { activeWorkspaceId } = useActiveWorkspace();
   const { activeVehicleId } = useVehicle();
 
   const hasContext = !!activeWorkspaceId && !!activeVehicleId;

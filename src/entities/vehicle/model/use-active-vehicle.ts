@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useWorkspace } from '@entities/workspace';
+import { useActiveWorkspace } from '@entities/workspace';
 
 import { useVehiclesQuery } from '../api';
 
@@ -9,26 +9,20 @@ import { useVehicle } from './use-vehicle';
 import type { Vehicle } from './vehicle.types';
 
 export const useActiveVehicle = () => {
-  const { activeWorkspaceId } = useWorkspace();
+  const { activeWorkspaceId } = useActiveWorkspace();
   const { activeVehicleId, setActiveVehicleId } = useVehicle();
 
-  if (!activeWorkspaceId) throw new Error('Active workspace ID is required');
-  const { data, isLoading, isError } = useVehiclesQuery(activeWorkspaceId);
+  const { data, isLoading, isError } = useVehiclesQuery(activeWorkspaceId ?? '');
 
   const vehicles = data?.data;
 
-  const activeVehicle = vehicles?.find((vehicle: Vehicle) => {
-    const active = vehicle.id === activeVehicleId;
-
-    if (active) return vehicles?.[0] ?? null;
-    return active;
-  });
+  const activeVehicle = vehicles?.find((vehicle: Vehicle) => vehicle.id === activeVehicleId);
 
   useEffect(() => {
     if (!vehicles?.length) return;
 
-    const active = vehicles.some((vehicle) => vehicle.id === activeVehicleId);
-    if (activeVehicleId && active) return;
+    const isActiveVehicleValid = vehicles.some((vehicle) => vehicle.id === activeVehicleId);
+    if (activeVehicleId && isActiveVehicleValid) return;
 
     setActiveVehicleId(vehicles[0].id);
   }, [vehicles, activeVehicleId, setActiveVehicleId]);
@@ -36,7 +30,7 @@ export const useActiveVehicle = () => {
   return {
     vehicles: vehicles ?? [],
     activeVehicle,
-    isLoading,
+    isLoading: isLoading || !activeWorkspaceId,
     isError,
     setActiveVehicleId,
   };

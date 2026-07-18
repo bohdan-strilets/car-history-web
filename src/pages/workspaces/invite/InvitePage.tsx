@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   useInviteQuery,
   useInviteToken,
-  useWorkspace,
+  useActiveWorkspace,
   WORKSPACE_INVITE_STATUS,
   WORKSPACE_TYPE_CONFIG,
 } from '@entities/workspace';
@@ -28,7 +28,7 @@ export const InvitePage = () => {
   const [redirectWorkspaceId, setRedirectWorkspaceId] = useState<string | null>(null);
 
   const { t } = useTranslation();
-  const { setActiveWorkspaceId } = useWorkspace();
+  const { setActiveWorkspaceId } = useActiveWorkspace();
   const navigate = useNavigate();
   const token = useInviteToken();
 

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import { useWorkspace, useWorkspacesQuery, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
+import { useActiveWorkspace, useWorkspacesQuery, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
 import { Dropdown, DropdownItem, IconBox, Panel, Stack, Text } from '@shared/ui';
 
@@ -15,7 +15,7 @@ export const WorkspaceSwitcher = ({ expanded = true, className }: WorkspaceSwitc
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const { activeWorkspaceId, setActiveWorkspaceId } = useWorkspace();
+  const { activeWorkspaceId, setActiveWorkspaceId } = useActiveWorkspace();
 
   const { data } = useWorkspacesQuery();
   const workspaces = data?.data ?? [];

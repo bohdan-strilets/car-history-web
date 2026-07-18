@@ -1,4 +1,4 @@
-import { useWorkspace } from '@entities/workspace';
+import { useActiveWorkspace } from '@entities/workspace';
 import { Grid } from '@shared/ui';
 
 import { WorkspaceCard } from '../workspace-card';
@@ -6,7 +6,7 @@ import { WorkspaceCard } from '../workspace-card';
 import type { WorkspacesListProps } from './workspaces-list.types';
 
 export const WorkspacesList = ({ workspaces }: WorkspacesListProps) => {
-  const { activeWorkspaceId } = useWorkspace();
+  const { activeWorkspaceId } = useActiveWorkspace();
 
   return (
     <Grid columns={{ mobile: '1', tablet: '2', desktop: '3' }} gap="2xl">

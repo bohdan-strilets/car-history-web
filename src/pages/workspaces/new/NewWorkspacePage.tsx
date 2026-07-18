@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import { useWorkspace, type Workspace } from '@entities/workspace';
+import { useActiveWorkspace, type Workspace } from '@entities/workspace';
 import { useWorkspaceForm, WorkspaceForm } from '@features/workspace';
 import { ROUTES } from '@shared/config';
 import { showToast } from '@shared/lib';
@@ -11,7 +11,7 @@ import { PageHeader } from '@widgets/page-header';
 export const NewWorkspacePage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { setActiveWorkspaceId } = useWorkspace();
+  const { setActiveWorkspaceId } = useActiveWorkspace();
 
   const handleSuccess = (workspace: Workspace) => {
     setActiveWorkspaceId(workspace.id);

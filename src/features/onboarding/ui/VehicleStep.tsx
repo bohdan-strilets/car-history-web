@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useVehicle, type Vehicle } from '@entities/vehicle';
-import { useWorkspace } from '@entities/workspace';
+import { useActiveWorkspace } from '@entities/workspace';
 import { VehicleForm } from '@features/vehicle';
 
 import { StepSuccess } from './StepSuccess';
@@ -14,7 +14,7 @@ export const VehicleStep = ({ onNext, onSkip }: VehicleStepProps) => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const { t } = useTranslation();
-  const { activeWorkspaceId } = useWorkspace();
+  const { activeWorkspaceId } = useActiveWorkspace();
   const { setActiveVehicleId } = useVehicle();
 
   if (!activeWorkspaceId) throw new Error('Active workspace ID is required');
