@@ -675,7 +675,9 @@
       "title": "Workspace nie istnieje",
       "description": "Nie masz dostępu do tego workspace lub został usunięty.",
       "action": "Wróć do listy workspace'ów"
-    }
+    },
+    "createWorkspaceSuccess": "Workspace został utworzony",
+    "deleteWorkspaceSuccess": "Workspace został usunięty"
   },
 
   "vehicle": {

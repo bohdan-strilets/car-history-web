@@ -677,7 +677,9 @@
       "title": "Workspace не існує",
       "description": "У вас немає доступу до цього workspace або його було видалено.",
       "action": "Повернутись до списку workspace'ів"
-    }
+    },
+    "createWorkspaceSuccess": "Workspace створено",
+    "deleteWorkspaceSuccess": "Workspace видалено"
   },
 
   "vehicle": {

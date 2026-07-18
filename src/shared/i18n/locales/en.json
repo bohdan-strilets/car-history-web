@@ -671,7 +671,10 @@
       "title": "Workspace doesn't exist",
       "description": "You don't have access to this workspace or it has been deleted.",
       "action": "Back to workspaces"
-    }
+    },
+
+    "createWorkspaceSuccess": "Workspace created",
+    "deleteWorkspaceSuccess": "Workspace deleted"
   },
 
   "vehicle": {
