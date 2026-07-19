@@ -6,7 +6,7 @@ import { Center, StateView } from '@shared/ui';
 
 import type { VehicleTabsEmptyStateProps } from './workspace-state.types';
 
-export const VehicleTabsEmptyState = ({ workspaceId }: VehicleTabsEmptyStateProps) => {
+export const VehicleTabsEmptyState = ({ workspaceId, canCreate }: VehicleTabsEmptyStateProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -18,6 +18,8 @@ export const VehicleTabsEmptyState = ({ workspaceId }: VehicleTabsEmptyStateProp
         description={t('vehicle.list.empty.description')}
         actionLabel={t('vehicle.list.add')}
         onAction={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(workspaceId))}
+        disabled={!canCreate}
+        disabledReason={t('vehicle.list.noPermissions')}
       />
     </Center>
   );

@@ -9,4 +9,6 @@ export interface StateViewProps {
   description?: string;
   actionLabel?: string;
   onAction?: () => void;
+  disabled?: boolean;
+  disabledReason?: string;
 }

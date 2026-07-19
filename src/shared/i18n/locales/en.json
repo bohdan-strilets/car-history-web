@@ -723,7 +723,8 @@
       "empty": {
         "title": "No vehicles yet",
         "description": "Add your first vehicle to this workspace."
-      }
+      },
+      "noPermissions": "Only the owner or workspace administrator can add a vehicle."
     },
     "new": {
       "title": "New vehicle"
@@ -756,7 +757,8 @@
         "daysOwned": "days owned",
         "monthsOwned": "months owned",
         "fuelCostEstimate": "est. fuel cost (PLN)"
-      }
+      },
+      "noPermissions": "Only the owner or workspace administrator can perform this action."
     },
     "overview": {
       "sections": {

@@ -6,4 +6,6 @@ export type PageHeaderProps = {
   buttonLabel?: string;
   buttonIcon?: IconName;
   description?: string;
+  disabled?: boolean;
+  disabledReason?: string;
 };

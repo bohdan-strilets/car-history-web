@@ -10,14 +10,14 @@ import { VehicleTabsEmptyState } from '../workspace-state';
 
 import type { VehiclesTabProps } from './workspace-tabs.types';
 
-export const VehiclesTab = ({ workspaceId, vehicles, isPending }: VehiclesTabProps) => {
+export const VehiclesTab = ({ workspaceId, vehicles, isPending, canCreate }: VehiclesTabProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   const isEmpty = !isPending && vehicles.length === 0;
 
   if (isPending) return <VehiclesListSkeleton />;
-  if (isEmpty) return <VehicleTabsEmptyState workspaceId={workspaceId} />;
+  if (isEmpty) return <VehicleTabsEmptyState workspaceId={workspaceId} canCreate={canCreate} />;
 
   return (
     <Stack gap="xl">
@@ -26,8 +26,9 @@ export const VehiclesTab = ({ workspaceId, vehicles, isPending }: VehiclesTabPro
         buttonLabel={t('vehicle.list.add')}
         buttonIcon="plus"
         onCreate={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(workspaceId))}
+        disabled={!canCreate}
+        disabledReason={t('vehicle.list.noPermissions')}
       />
-
       {!isPending && !isEmpty && (
         <VehiclesList
           vehicles={vehicles}

@@ -166,7 +166,12 @@ export const WorkspaceDetailPage = () => {
       <Tabs tabs={tabs} activeTab={activeTab} onChange={setTab} />
 
       {activeTab === 'vehicles' && (
-        <VehiclesTab workspaceId={workspaceId} vehicles={vehicles} isPending={isVehiclesPending} />
+        <VehiclesTab
+          workspaceId={workspaceId}
+          vehicles={vehicles}
+          isPending={isVehiclesPending}
+          canCreate={canEdit}
+        />
       )}
 
       {activeTab === 'members' && (

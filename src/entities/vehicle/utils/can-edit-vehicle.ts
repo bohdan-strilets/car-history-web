@@ -1,21 +1,11 @@
 import type { WorkspaceRole } from '@entities/workspace';
 
-export const canEditVehicle = (
-  role: WorkspaceRole,
-  vehicleOwnerId: string,
-  userId: string,
-): boolean => {
-  if (role === 'OWNER') return true;
-  return vehicleOwnerId === userId;
+export const canEditVehicle = (role: WorkspaceRole): boolean => {
+  return role === 'OWNER' || role === 'ADMIN';
 };
 
-export const canDeleteVehicle = (
-  role: WorkspaceRole,
-  vehicleOwnerId: string,
-  userId: string,
-): boolean => {
-  if (role === 'OWNER') return true;
-  return vehicleOwnerId === userId;
+export const canDeleteVehicle = (role: WorkspaceRole): boolean => {
+  return role === 'OWNER' || role === 'ADMIN';
 };
 
 export const canAddTimelineEvent = (

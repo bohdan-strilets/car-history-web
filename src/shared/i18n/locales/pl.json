@@ -726,7 +726,8 @@
       "empty": {
         "title": "Brak pojazdów",
         "description": "Dodaj swój pierwszy pojazd do tego workspace'u."
-      }
+      },
+      "noPermissions": "Tylko właściciel lub administrator workspace może dodać pojazd."
     },
     "new": {
       "title": "Nowy pojazd"
@@ -759,7 +760,8 @@
         "daysOwned": "dni posiadania",
         "monthsOwned": "miesięcy posiadania",
         "fuelCostEstimate": "szac. koszt paliwa (PLN)"
-      }
+      },
+      "noPermissions": "Tylko właściciel lub administrator workspace może wykonać tę akcję."
     },
     "overview": {
       "sections": {

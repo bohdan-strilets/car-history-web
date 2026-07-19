@@ -19,9 +19,8 @@ import {
   VehicleDetailSkeleton,
   VehicleError,
 } from '@entities/vehicle';
-import { useActiveWorkspace, useWorkspaceQuery } from '@entities/workspace';
+import { useWorkspaceQuery } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
-import { useAuth } from '@shared/store';
 import { Stack, Tabs } from '@shared/ui';
 import { translateSegmentControlOptions } from '@shared/utils';
 import { PageHeader } from '@widgets/page-header';
@@ -37,19 +36,11 @@ export const VehicleDetailPage = () => {
 
   const tabs = translateSegmentControlOptions(t, VEHICLE_TABS);
 
-  const { user } = useAuth();
+  const { data: workspaceData } = useWorkspaceQuery(workspaceId);
+  const role = workspaceData?.data?.role ?? 'MEMBER';
 
-  const { activeWorkspaceId } = useActiveWorkspace();
-  const { data: workspaceData } = useWorkspaceQuery(activeWorkspaceId ?? '');
-
-  const activeWorkspace = activeWorkspaceId === workspaceId ? workspaceData?.data : null;
-
-  const role = activeWorkspace?.role ?? 'MEMBER';
-  const userId = user?.id ?? '';
-  const ownerId = vehicle?.ownerId ?? '';
-
-  const canEdit = canEditVehicle(role, ownerId, userId);
-  const canDelete = canDeleteVehicle(role, ownerId, userId);
+  const canEdit = canEditVehicle(role);
+  const canDelete = canDeleteVehicle(role);
 
   const refuelType = getRefuelType(vehicle?.fuelType ?? []);
   const isSold = vehicle?.status === 'ARCHIVE';

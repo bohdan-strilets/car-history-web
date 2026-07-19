@@ -9,8 +9,13 @@ export const PageHeader = ({
   buttonLabel,
   buttonIcon,
   description,
+  disabled,
+  disabledReason,
 }: PageHeaderProps) => {
   const isTablet = useMediaQuery('tablet', 'up');
+
+  const tooltipLabel = disabled && disabledReason ? disabledReason : (buttonLabel ?? '');
+  const isTooltipDisabled = !disabled && isTablet;
 
   return (
     <Box p={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}>
@@ -24,27 +29,29 @@ export const PageHeader = ({
           <Heading size={{ mobile: 'xl', tablet: '2xl', desktop: '4xl' }} weight="bold">
             {title}
           </Heading>
-
           {onCreate && isTablet ? (
-            <Button
-              leftIcon={buttonIcon}
-              onClick={onCreate}
-              size={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}
-            >
-              {buttonLabel}
-            </Button>
+            <Tooltip label={tooltipLabel} placement="left" disabled={isTooltipDisabled}>
+              <Button
+                leftIcon={buttonIcon}
+                onClick={onCreate}
+                size={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}
+                disabled={disabled}
+              >
+                {buttonLabel}
+              </Button>
+            </Tooltip>
           ) : onCreate ? (
-            <Tooltip label={buttonLabel ?? ''} placement="left">
+            <Tooltip label={tooltipLabel} placement="left">
               <Button
                 leftIcon={buttonIcon}
                 onClick={onCreate}
                 size={{ mobile: 'sm', tablet: 'md', desktop: 'lg' }}
                 iconOnly
+                disabled={disabled}
               />
             </Tooltip>
           ) : null}
         </Stack>
-
         {description && (
           <Text size="sm" color="tertiary">
             {description}

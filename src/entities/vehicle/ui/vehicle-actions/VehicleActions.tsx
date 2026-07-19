@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDeleteVehicleMutation } from '@features/vehicle';
 import { ROUTES } from '@shared/config';
 import { useConfirmModal } from '@shared/lib/modal';
-import { Button, Dropdown, DropdownItem, Icon } from '@shared/ui';
+import { Button, Dropdown, DropdownItem, Icon, Stack, Tooltip } from '@shared/ui';
 
 import type { VehicleActionsProps } from './vehicle-actions.types';
 
@@ -50,8 +50,6 @@ export const VehicleActions = ({
     navigate(ROUTES.WORKSPACES.VEHICLES.EDIT_SPECS(workspaceId, vehicleId));
   };
 
-  if (!canEdit && !canDelete) return null;
-
   return (
     <Dropdown
       direction="bottom"
@@ -62,28 +60,35 @@ export const VehicleActions = ({
         </Button>
       }
     >
-      {canEdit && (
-        <DropdownItem
-          label={t('vehicle.detail.edit')}
-          leftIcon="edit"
-          onClick={handleEditVehicle}
-        />
-      )}
-      {canEdit && (
-        <DropdownItem
-          label={t('vehicle.detail.editSpecs')}
-          leftIcon="settings"
-          onClick={handleEditSpecs}
-        />
-      )}
-      {canDelete && (
-        <DropdownItem
-          label={t('vehicle.detail.delete')}
-          leftIcon="trash"
-          danger
-          onClick={handleDelete}
-        />
-      )}
+      <Stack>
+        <Tooltip label={t('vehicle.detail.noPermissions')} placement="left" disabled={canEdit}>
+          <DropdownItem
+            label={t('vehicle.detail.edit')}
+            leftIcon="edit"
+            onClick={handleEditVehicle}
+            disabled={!canEdit}
+          />
+        </Tooltip>
+
+        <Tooltip label={t('vehicle.detail.noPermissions')} placement="left" disabled={canEdit}>
+          <DropdownItem
+            label={t('vehicle.detail.editSpecs')}
+            leftIcon="settings"
+            onClick={handleEditSpecs}
+            disabled={!canEdit}
+          />
+        </Tooltip>
+
+        <Tooltip label={t('vehicle.detail.noPermissions')} placement="left" disabled={canDelete}>
+          <DropdownItem
+            label={t('vehicle.detail.delete')}
+            leftIcon="trash"
+            danger
+            onClick={handleDelete}
+            disabled={!canDelete}
+          />
+        </Tooltip>
+      </Stack>
     </Dropdown>
   );
 };

@@ -1,4 +1,4 @@
-import { Button, Heading, IconBox, Panel, Spacer, Stack, Text } from '@shared/ui';
+import { Button, Heading, IconBox, Panel, Spacer, Stack, Text, Tooltip } from '@shared/ui';
 
 import { content, iconWrapper, wrapper } from './state-view.css';
 import { resolvedIcon, resolvedVariant } from './state-view.utils';
@@ -12,6 +12,8 @@ export const StateView = ({
   description,
   actionLabel,
   onAction,
+  disabled,
+  disabledReason,
 }: StateViewProps) => {
   return (
     <div className={wrapper}>
@@ -19,7 +21,6 @@ export const StateView = ({
         <Panel soft={resolvedVariant(variant)} p="lg" className={iconWrapper({ variant })}>
           <IconBox name={icon} size="4xl" solid={resolvedVariant(variant)} />
         </Panel>
-
         <Stack align="center" gap="sm">
           <Heading size="3xl">{title}</Heading>
           {description && (
@@ -28,19 +29,20 @@ export const StateView = ({
             </Text>
           )}
         </Stack>
-
         <Spacer />
-
         {actionLabel && onAction && (
-          <Button
-            leftIcon={resolvedIcon(variant)}
-            onClick={onAction}
-            color={resolvedVariant(variant)}
-            size="xl"
-            fullWidth
-          >
-            {actionLabel}
-          </Button>
+          <Tooltip label={disabledReason ?? ''} placement="top" disabled={!disabled}>
+            <Button
+              leftIcon={resolvedIcon(variant)}
+              onClick={onAction}
+              color={resolvedVariant(variant)}
+              size="xl"
+              fullWidth
+              disabled={disabled}
+            >
+              {actionLabel}
+            </Button>
+          </Tooltip>
         )}
       </Panel>
     </div>

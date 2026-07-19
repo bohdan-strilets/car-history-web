@@ -11,6 +11,7 @@ export interface VehiclesTabProps {
   workspaceId: string;
   vehicles: Vehicle[];
   isPending: boolean;
+  canCreate: boolean;
 }
 
 export interface MembersTabProps {

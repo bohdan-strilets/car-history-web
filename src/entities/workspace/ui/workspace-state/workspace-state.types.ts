@@ -4,4 +4,5 @@ export type WorkspaceErrorProps = {
 
 export type VehicleTabsEmptyStateProps = {
   workspaceId: string;
+  canCreate: boolean;
 };
