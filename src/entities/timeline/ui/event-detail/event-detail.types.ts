@@ -4,4 +4,5 @@ export interface EventDetailProps {
   event: TimelineEvent;
   onEdit?: () => void;
   onDelete?: () => void;
+  canDelete?: boolean;
 }

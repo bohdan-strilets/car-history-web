@@ -21,6 +21,7 @@ export type TimelineListMilestone = VehicleMilestone & {
 export type TimelineEvent = {
   id: EventId;
   vehicleId: VehicleId;
+  createdBy: string | null;
   type: TimelineEventType;
   title: string;
   eventDate: string;

@@ -874,7 +874,8 @@
       "addWork": "Dodaj usługę",
       "removeWork": "Usuń usługę",
       "addPart": "Dodaj część",
-      "removePart": "Usuń część"
+      "removePart": "Usuń część",
+      "noDeletePermissions": "Tylko właściciel, administrator lub autor może usunąć to zdarzenie."
     },
 
     "fields": {

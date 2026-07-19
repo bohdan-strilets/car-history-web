@@ -871,7 +871,8 @@
       "addWork": "Add work",
       "removeWork": "Remove work",
       "addPart": "Add part",
-      "removePart": "Remove part"
+      "removePart": "Remove part",
+      "noDeletePermissions": "Only the owner, administrator, or author can delete this event."
     },
 
     "fields": {

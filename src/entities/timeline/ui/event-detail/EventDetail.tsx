@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { getTypedDetails, TIMELINE_EVENT_TYPE_CONFIG } from '@entities/timeline';
-import { Button, Heading, IconBox, Stack, Text } from '@shared/ui';
+import { Button, Heading, IconBox, Stack, Text, Tooltip } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 
 import {
@@ -19,7 +19,7 @@ import {
 
 import type { EventDetailProps } from './event-detail.types';
 
-export const EventDetail = ({ event, onEdit, onDelete }: EventDetailProps) => {
+export const EventDetail = ({ event, onEdit, onDelete, canDelete = true }: EventDetailProps) => {
   const { t } = useTranslation();
 
   const config = getConfigOption(t, TIMELINE_EVENT_TYPE_CONFIG, event.type);
@@ -94,16 +94,24 @@ export const EventDetail = ({ event, onEdit, onDelete }: EventDetailProps) => {
           </Button>
         )}
         {onDelete && (
-          <Button
-            type="button"
-            leftIcon="trash"
-            size="sm"
-            variant="soft"
-            color="danger"
-            onClick={onDelete}
+          <Tooltip
+            label={t('timeline.actions.noDeletePermissions')}
+            placement="top"
+            disabled={canDelete}
           >
-            {t('timeline.actions.deleteEvent')}
-          </Button>
+            <Button
+              type="button"
+              leftIcon="trash"
+              size="sm"
+              variant="soft"
+              color="danger"
+              onClick={onDelete}
+              disabled={!canDelete}
+              fullWidth
+            >
+              {t('timeline.actions.deleteEvent')}
+            </Button>
+          </Tooltip>
         )}
       </Stack>
     </Stack>
