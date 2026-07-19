@@ -665,7 +665,7 @@
       "title": "Налаштування workspace",
       "save": "Зберегти налаштування",
       "updateSuccess": "Налаштування збережено",
-      "noPermissions": "Тільки власник workspace може змінювати налаштування.",
+      "noPermissions": "Тільки власник або адміністратор workspace може змінювати налаштування.",
       "danger": {
         "title": "Небезпечна зона",
         "delete": "Видалити workspace",

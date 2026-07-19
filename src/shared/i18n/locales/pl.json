@@ -663,7 +663,7 @@
       "title": "Ustawienia workspace",
       "save": "Zapisz ustawienia",
       "updateSuccess": "Ustawienia zostały zapisane",
-      "noPermissions": "Tylko właściciel workspace może zmieniać ustawienia.",
+      "noPermissions": "Tylko właściciel lub administrator workspace może zmieniać ustawienia.",
       "danger": {
         "title": "Strefa niebezpieczna",
         "delete": "Usuń workspace",

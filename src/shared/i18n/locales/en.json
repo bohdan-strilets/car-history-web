@@ -659,7 +659,7 @@
       "title": "Workspace settings",
       "save": "Save settings",
       "updateSuccess": "Settings saved",
-      "noPermissions": "Only the workspace owner can change settings.",
+      "noPermissions": "Only the workspace owner or administrator can change settings.",
       "danger": {
         "title": "Danger zone",
         "delete": "Delete workspace",

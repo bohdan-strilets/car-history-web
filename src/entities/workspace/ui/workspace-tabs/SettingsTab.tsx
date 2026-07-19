@@ -6,7 +6,7 @@ import {
   useEditWorkspaceSettings,
   useLeaveWorkspace,
 } from '@features/workspace';
-import { Button, Stack, Text } from '@shared/ui';
+import { Button, Hint, Stack, Text } from '@shared/ui';
 
 import { WorkspaceSettingsInfo, WorkspaceSettingsSkeleton } from '../workspace-settings-info';
 
@@ -22,7 +22,6 @@ export const SettingsTab = ({
   onBeforeNavigate,
 }: SettingsTabProps) => {
   const { t } = useTranslation();
-
   const { handleEditWorkspace } = useEditWorkspace();
   const { handleEditSettings } = useEditWorkspaceSettings();
   const { handleDelete } = useDeleteWorkspace({ onBeforeNavigate });
@@ -32,6 +31,8 @@ export const SettingsTab = ({
 
   return (
     <Stack gap="3xl">
+      {!canEdit && <Hint message={t('workspace.settings.noPermissions')} variant="info" />}
+
       <WorkspaceSettingsInfo
         workspace={workspace}
         settings={settings}
@@ -44,7 +45,6 @@ export const SettingsTab = ({
           <Text weight="semibold" size="lg">
             {t('workspace.settings.danger.title')}
           </Text>
-
           {canLeave && (
             <Button
               variant="soft"
@@ -56,7 +56,6 @@ export const SettingsTab = ({
               {t('workspace.detail.leave')}
             </Button>
           )}
-
           {canDelete && (
             <Button
               variant="soft"
