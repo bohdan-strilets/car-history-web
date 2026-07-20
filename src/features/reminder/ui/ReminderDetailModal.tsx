@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
-import { ReminderDetail } from '@entities/reminder';
+import { canDeleteReminder, ReminderDetail } from '@entities/reminder';
+import { useWorkspaceQuery } from '@entities/workspace';
 import {
   useCompleteReminderMutation,
   useDeleteReminderMutation,
@@ -8,6 +9,7 @@ import {
   useOpenEditReminder,
 } from '@features/reminder';
 import { useAdaptiveModal, useConfirmModal } from '@shared/lib/modal';
+import { useAuth } from '@shared/store';
 
 interface ReminderDetailModalProps {
   reminderId: string;
@@ -25,6 +27,11 @@ export const ReminderDetailModal = ({
   const { t } = useTranslation();
   const modal = useAdaptiveModal();
   const { confirm } = useConfirmModal();
+
+  const { user } = useAuth();
+  const { data: workspaceData } = useWorkspaceQuery(workspaceId);
+  const role = workspaceData?.data?.role ?? 'MEMBER';
+  const canDelete = canDeleteReminder(role, reminder.createdBy, user?.id ?? '');
 
   const complete = useCompleteReminderMutation({
     workspaceId,
@@ -107,6 +114,7 @@ export const ReminderDetailModal = ({
       onDismiss={handleDismiss}
       onDelete={handleDelete}
       onEdit={() => handleEdit(reminder)}
+      canDelete={canDelete}
     />
   );
 };

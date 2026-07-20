@@ -6,4 +6,5 @@ export interface ReminderDetailProps {
   onDismiss?: () => void;
   onDelete?: () => void;
   onEdit?: () => void;
+  canDelete?: boolean;
 }

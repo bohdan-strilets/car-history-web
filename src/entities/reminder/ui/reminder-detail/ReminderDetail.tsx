@@ -8,7 +8,7 @@ import {
   REMINDER_URGENCY_CONFIG,
 } from '@entities/reminder';
 import { useFormatDate } from '@shared/hooks';
-import { Button, Heading, IconBox, InfoRow, Stack } from '@shared/ui';
+import { Button, Heading, IconBox, InfoRow, Stack, Tooltip } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section';
 
@@ -20,6 +20,7 @@ export const ReminderDetail = ({
   onDismiss,
   onDelete,
   onEdit,
+  canDelete = true,
 }: ReminderDetailProps) => {
   const { t } = useTranslation();
   const formatDate = useFormatDate();
@@ -156,16 +157,24 @@ export const ReminderDetail = ({
       )}
 
       {onDelete && (
-        <Button
-          type="button"
-          leftIcon="trash"
-          size="sm"
-          variant="soft"
-          color="danger"
-          onClick={onDelete}
+        <Tooltip
+          label={t('reminder.actions.noDeletePermissions')}
+          placement="top"
+          disabled={canDelete}
         >
-          {t('reminder.actions.delete')}
-        </Button>
+          <Button
+            type="button"
+            leftIcon="trash"
+            size="sm"
+            variant="soft"
+            color="danger"
+            onClick={onDelete}
+            disabled={!canDelete}
+            fullWidth
+          >
+            {t('reminder.actions.delete')}
+          </Button>
+        </Tooltip>
       )}
     </Stack>
   );

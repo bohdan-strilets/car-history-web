@@ -1024,7 +1024,8 @@
       "delete": "Usuń przypomnienie",
       "completeConfirm": "Czy na pewno chcesz oznaczyć to przypomnienie jako wykonane?",
       "dismissConfirm": "Czy na pewno chcesz odrzucić to przypomnienie?",
-      "deleteConfirm": "Czy na pewno chcesz usunąć to przypomnienie?"
+      "deleteConfirm": "Czy na pewno chcesz usunąć to przypomnienie?",
+      "noDeletePermissions": "Tylko właściciel, administrator lub autor może usunąć to przypomnienie."
     },
     "status": {
       "daysLeft": "{{count}} dni",

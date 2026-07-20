@@ -8,6 +8,7 @@ export type ReminderId = string;
 export interface Reminder {
   id: ReminderId;
   vehicleId: VehicleId;
+  createdBy: string | null;
   maintenanceIntervalId: MaintenanceId | null;
   documentId: string | null;
   type: ReminderType;
