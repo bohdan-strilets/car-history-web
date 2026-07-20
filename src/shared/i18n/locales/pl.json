@@ -747,7 +747,7 @@
       "editSuccess": "Dane pojazdu zostały zaktualizowane",
       "editSpecs": "Edytuj specyfikację",
       "delete": "Usuń pojazd",
-      "deleteConfirm": "Czy na pewno chcesz usunąć ten pojazd? Tej operacji nie można cofnąć.",
+      "deleteConfirm": "Czy na pewno chcesz usunąć ten pojazd? Wszystkie powiązane dane — historia, przypomnienia, przeglądy techniczne i opony — zostaną trwale usunięte. Tej operacji nie można cofnąć.",
       "deleteSuccess": "Pojazd został usunięty",
       "funFacts": {
         "title": "Ciekawostki",
