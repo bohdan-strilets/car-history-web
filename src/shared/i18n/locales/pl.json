@@ -668,7 +668,8 @@
         "title": "Strefa niebezpieczna",
         "delete": "Usuń workspace",
         "deleteConfirm": "Czy na pewno chcesz usunąć workspace? Tej operacji nie można cofnąć.",
-        "deleteSuccess": "Workspace został usunięty"
+        "deleteSuccess": "Workspace został usunięty",
+        "hasOtherMembers": "Nie można usunąć workspace, dopóki są w nim inni członkowie. Usuń ich najpierw."
       }
     },
     "notFound": {

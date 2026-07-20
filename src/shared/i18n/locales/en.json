@@ -664,7 +664,8 @@
         "title": "Danger zone",
         "delete": "Delete workspace",
         "deleteConfirm": "Are you sure you want to delete this workspace? This action cannot be undone.",
-        "deleteSuccess": "Workspace deleted"
+        "deleteSuccess": "Workspace deleted",
+        "hasOtherMembers": "Cannot delete the workspace while it has other members. Remove them first."
       }
     },
     "notFound": {

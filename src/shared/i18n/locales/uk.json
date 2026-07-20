@@ -670,7 +670,8 @@
         "title": "Небезпечна зона",
         "delete": "Видалити workspace",
         "deleteConfirm": "Ви впевнені, що хочете видалити workspace? Цю дію не можна скасувати.",
-        "deleteSuccess": "Workspace видалено"
+        "deleteSuccess": "Workspace видалено",
+        "hasOtherMembers": "Неможливо видалити workspace, поки в ньому є інші учасники. Спочатку видаліть їх."
       }
     },
     "notFound": {

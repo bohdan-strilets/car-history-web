@@ -6,7 +6,7 @@ import {
   useEditWorkspaceSettings,
   useLeaveWorkspace,
 } from '@features/workspace';
-import { Button, Hint, Stack, Text } from '@shared/ui';
+import { Button, Hint, Stack, Text, Tooltip } from '@shared/ui';
 
 import { WorkspaceSettingsInfo, WorkspaceSettingsSkeleton } from '../workspace-settings-info';
 
@@ -28,6 +28,9 @@ export const SettingsTab = ({
   const { handleLeave } = useLeaveWorkspace({ onBeforeNavigate });
 
   if (isPending) return <WorkspaceSettingsSkeleton />;
+
+  const hasOtherMembers = workspace.membersCount > 1;
+  const canActuallyDelete = canDelete && !hasOtherMembers;
 
   return (
     <Stack gap="3xl">
@@ -57,15 +60,23 @@ export const SettingsTab = ({
             </Button>
           )}
           {canDelete && (
-            <Button
-              variant="soft"
-              leftIcon="trash"
-              onClick={() => handleDelete(workspace.id)}
-              color="danger"
-              size="lg"
+            <Tooltip
+              label={t('workspace.settings.danger.hasOtherMembers')}
+              placement="top"
+              disabled={!hasOtherMembers}
             >
-              {t('workspace.settings.danger.delete')}
-            </Button>
+              <Button
+                variant="soft"
+                leftIcon="trash"
+                onClick={() => handleDelete(workspace.id)}
+                color="danger"
+                size="lg"
+                disabled={!canActuallyDelete}
+                fullWidth
+              >
+                {t('workspace.settings.danger.delete')}
+              </Button>
+            </Tooltip>
           )}
         </Stack>
       )}
