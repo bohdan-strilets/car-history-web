@@ -6,7 +6,7 @@ import {
   MAINTENANCE_URGENCY_CONFIG,
 } from '@entities/maintenance';
 import { useFormatDate } from '@shared/hooks';
-import { Button, Heading, IconBox, InfoRow, Stack } from '@shared/ui';
+import { Button, Heading, IconBox, InfoRow, Stack, Tooltip } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section';
 
@@ -20,6 +20,7 @@ export const MaintenanceDetail = ({
   onDisable,
   onEnable,
   onDelete,
+  canDelete = true,
 }: MaintenanceDetailProps) => {
   const { t } = useTranslation();
   const formatDate = useFormatDate();
@@ -196,16 +197,24 @@ export const MaintenanceDetail = ({
       )}
 
       {onDelete && (
-        <Button
-          type="button"
-          leftIcon="trash"
-          size="sm"
-          variant="soft"
-          color="danger"
-          onClick={onDelete}
+        <Tooltip
+          label={t('maintenance.actions.noDeletePermissions')}
+          placement="top"
+          disabled={canDelete}
         >
-          {t('maintenance.actions.delete')}
-        </Button>
+          <Button
+            type="button"
+            leftIcon="trash"
+            size="sm"
+            variant="soft"
+            color="danger"
+            onClick={onDelete}
+            disabled={!canDelete}
+            fullWidth
+          >
+            {t('maintenance.actions.delete')}
+          </Button>
+        </Tooltip>
       )}
     </Stack>
   );

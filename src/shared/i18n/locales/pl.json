@@ -1065,7 +1065,8 @@
       "delete": "Usuń interwał",
       "deleteConfirm": "Czy na pewno chcesz usunąć ten interwał serwisowy?",
       "markDoneConfirm": "Czy na pewno chcesz oznaczyć ten serwis jako wykonany?",
-      "markDoneDescription": "Ta czynność zapisze wpis w historii serwisowej pojazdu i zaktualizuje termin następnego przeglądu."
+      "markDoneDescription": "Ta czynność zapisze wpis w historii serwisowej pojazdu i zaktualizuje termin następnego przeglądu.",
+      "noDeletePermissions": "Tylko właściciel, administrator lub autor może usunąć ten interwał serwisowy."
     },
     "fields": {
       "type": "Typ serwisu",

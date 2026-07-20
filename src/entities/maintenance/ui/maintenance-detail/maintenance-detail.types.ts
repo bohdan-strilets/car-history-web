@@ -8,4 +8,5 @@ export interface MaintenanceDetailProps {
   onDisable?: () => void;
   onEnable?: () => void;
   onDelete?: () => void;
+  canDelete?: boolean;
 }

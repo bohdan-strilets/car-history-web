@@ -7,6 +7,7 @@ export type MaintenanceId = string;
 export interface MaintenanceInterval {
   id: MaintenanceId;
   vehicleId: VehicleId;
+  createdBy: string | null;
   type: MaintenanceType;
   title: string;
   intervalKm: number | null;

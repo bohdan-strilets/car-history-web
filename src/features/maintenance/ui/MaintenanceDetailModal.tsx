@@ -1,7 +1,9 @@
 import { useTranslation } from 'react-i18next';
 
-import { MaintenanceDetail } from '@entities/maintenance';
+import { canDeleteMaintenance, MaintenanceDetail } from '@entities/maintenance';
+import { useWorkspaceQuery } from '@entities/workspace';
 import { useAdaptiveModal, useConfirmModal } from '@shared/lib/modal';
+import { useAuth } from '@shared/store';
 import { Hint, Stack } from '@shared/ui';
 
 import {
@@ -25,20 +27,23 @@ export const MaintenanceDetailModal = ({
   const modal = useAdaptiveModal();
   const { confirm } = useConfirmModal();
 
+  const { user } = useAuth();
+  const { data: workspaceData } = useWorkspaceQuery(workspaceId);
+  const role = workspaceData?.data?.role ?? 'MEMBER';
+  const canDelete = canDeleteMaintenance(role, interval.createdBy, user?.id ?? '');
+
   const disable = useDisableMaintenanceIntervalMutation({
     workspaceId,
     vehicleId,
     maintenanceId: interval.id,
     onSuccess: () => modal.closeAll(),
   });
-
   const enable = useEnableMaintenanceIntervalMutation({
     workspaceId,
     vehicleId,
     maintenanceId: interval.id,
     onSuccess: () => modal.closeAll(),
   });
-
   const remove = useDeleteMaintenanceIntervalMutation({
     workspaceId,
     vehicleId,
@@ -121,6 +126,7 @@ export const MaintenanceDetailModal = ({
       onEnable={handleEnable}
       onDelete={handleDelete}
       onEdit={handleEdit}
+      canDelete={canDelete}
     />
   );
 };
