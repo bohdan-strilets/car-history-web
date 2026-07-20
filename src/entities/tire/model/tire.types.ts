@@ -7,6 +7,7 @@ export type TireId = string;
 export interface Tire {
   id: TireId;
   vehicleId: VehicleId;
+  createdBy: string | null;
   brand: string;
   model: string;
   type: TireType;

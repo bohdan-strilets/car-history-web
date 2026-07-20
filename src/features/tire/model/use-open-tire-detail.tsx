@@ -5,11 +5,11 @@ import { TireDetailModal } from '../ui';
 
 import type { OpenTireDetailParams } from './tire.types';
 
-export const useOpenTireDetail = ({ vehicleId }: OpenTireDetailParams) => {
+export const useOpenTireDetail = ({ vehicleId, workspaceId }: OpenTireDetailParams) => {
   const modal = useAdaptiveModal();
 
   const handleOpen = (tire: Tire) => {
-    modal.open(<TireDetailModal tire={tire} vehicleId={vehicleId} />, {
+    modal.open(<TireDetailModal tire={tire} vehicleId={vehicleId} workspaceId={workspaceId} />, {
       title: `${tire.brand} ${tire.model}`,
     });
   };

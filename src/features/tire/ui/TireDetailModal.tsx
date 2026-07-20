@@ -1,8 +1,16 @@
 import { useTranslation } from 'react-i18next';
 
-import { TIRE_STATUS, TireDetail, useTireHistoryQuery, type Tire } from '@entities/tire';
+import {
+  canDeleteTire,
+  TIRE_STATUS,
+  TireDetail,
+  useTireHistoryQuery,
+  type Tire,
+} from '@entities/tire';
 import type { VehicleId } from '@entities/vehicle';
+import { useWorkspaceQuery } from '@entities/workspace';
 import { useAdaptiveModal, useConfirmModal } from '@shared/lib/modal';
+import { useAuth } from '@shared/store';
 
 import { useDeleteTireMutation, useUpdateTireMutation } from '../api';
 import { useOpenEditTire } from '../model';
@@ -10,12 +18,18 @@ import { useOpenEditTire } from '../model';
 interface TireDetailModalProps {
   tire: Tire;
   vehicleId: VehicleId;
+  workspaceId: string;
 }
 
-export const TireDetailModal = ({ tire, vehicleId }: TireDetailModalProps) => {
+export const TireDetailModal = ({ tire, vehicleId, workspaceId }: TireDetailModalProps) => {
   const { t } = useTranslation();
   const modal = useAdaptiveModal();
   const { confirm } = useConfirmModal();
+
+  const { user } = useAuth();
+  const { data: workspaceData } = useWorkspaceQuery(workspaceId);
+  const role = workspaceData?.data?.role ?? 'MEMBER';
+  const canDelete = canDeleteTire(role, tire.createdBy, user?.id ?? '');
 
   const updateMutation = useUpdateTireMutation(vehicleId);
   const deleteMutation = useDeleteTireMutation(vehicleId);
@@ -74,6 +88,7 @@ export const TireDetailModal = ({ tire, vehicleId }: TireDetailModalProps) => {
       onRetire={handleRetire}
       onDelete={handleDelete}
       isRetiring={updateMutation.isPending}
+      canDelete={canDelete}
     />
   );
 };

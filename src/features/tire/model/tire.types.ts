@@ -27,8 +27,10 @@ export interface OpenEditTireParams {
 export interface TireDetailModalProps {
   tire: Tire;
   vehicleId: VehicleId;
+  workspaceId: WorkspaceId;
 }
 
 export interface OpenTireDetailParams {
   vehicleId: VehicleId;
+  workspaceId: WorkspaceId;
 }

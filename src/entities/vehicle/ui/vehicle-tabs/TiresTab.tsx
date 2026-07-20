@@ -15,7 +15,7 @@ export const TiresTab = ({ workspaceId, vehicleId, isSold }: TiresTabProps) => {
 
   const { data, isPending, isError, refetch } = useTiresQuery(workspaceId, vehicleId);
   const { handleCreate } = useOpenCreateTire({ workspaceId, vehicleId });
-  const { handleOpen } = useOpenTireDetail({ vehicleId });
+  const { handleOpen } = useOpenTireDetail({ vehicleId, workspaceId });
 
   const tires: Tire[] = data?.data ?? [];
   const isEmpty = tires.length === 0;

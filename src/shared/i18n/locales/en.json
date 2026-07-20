@@ -1416,7 +1416,8 @@
       "mount": "Mount tire",
       "unmount": "Unmount tire",
       "retire": "Retire tire",
-      "retireConfirm": "Are you sure you want to retire this tire set?"
+      "retireConfirm": "Are you sure you want to retire this tire set?",
+      "noDeletePermissions": "Only the owner, administrator, or author can delete this tire."
     },
     "history": {
       "totalKm": "Total km driven",

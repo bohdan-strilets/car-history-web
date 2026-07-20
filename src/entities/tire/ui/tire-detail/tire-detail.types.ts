@@ -9,4 +9,5 @@ export interface TireDetailProps {
   onRetire?: () => void;
   onDelete?: () => void;
   isRetiring?: boolean;
+  canDelete?: boolean;
 }

@@ -1419,7 +1419,8 @@
       "mount": "Zamontuj oponę",
       "unmount": "Zdemontuj oponę",
       "retire": "Wycofaj oponę",
-      "retireConfirm": "Czy na pewno chcesz wycofać ten zestaw opon z użycia?"
+      "retireConfirm": "Czy na pewno chcesz wycofać ten zestaw opon z użycia?",
+      "noDeletePermissions": "Tylko właściciel, administrator lub autor może usunąć tę oponę."
     },
     "history": {
       "totalKm": "Łącznie przejechano",

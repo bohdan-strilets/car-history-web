@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { useFormatDate } from '@shared/hooks';
-import { Button, Heading, IconBox, InfoRow, Spinner, Stack } from '@shared/ui';
+import { Button, Heading, IconBox, InfoRow, Spinner, Stack, Tooltip } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section';
 
@@ -19,6 +19,7 @@ export const TireDetail = ({
   onRetire,
   onDelete,
   isRetiring,
+  canDelete = true,
 }: TireDetailProps) => {
   const { t } = useTranslation();
   const formatDate = useFormatDate();
@@ -136,16 +137,20 @@ export const TireDetail = ({
       )}
 
       {onDelete && !isMounted && (
-        <Button
-          type="button"
-          leftIcon="trash"
-          size="sm"
-          variant="soft"
-          color="danger"
-          onClick={onDelete}
-        >
-          {t('tire.actions.delete')}
-        </Button>
+        <Tooltip label={t('tire.actions.noDeletePermissions')} placement="top" disabled={canDelete}>
+          <Button
+            type="button"
+            leftIcon="trash"
+            size="sm"
+            variant="soft"
+            color="danger"
+            onClick={onDelete}
+            disabled={!canDelete}
+            fullWidth
+          >
+            {t('tire.actions.delete')}
+          </Button>
+        </Tooltip>
       )}
     </Stack>
   );
