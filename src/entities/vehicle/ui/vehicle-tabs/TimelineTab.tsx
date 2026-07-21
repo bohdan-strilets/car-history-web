@@ -83,7 +83,7 @@ export const TimelineTab = ({
 
   if (isPending) return <EventListSkeleton />;
   if (isError) return <TabsError onAction={refetch} />;
-  if (isTrulyEmpty) return <TimelineEmpty isSold={isSold} onAction={handleCreate} />;
+  if (isTrulyEmpty) return <TimelineEmpty isSold={isSold} onAction={() => handleCreate()} />;
 
   return (
     <>
@@ -92,7 +92,7 @@ export const TimelineTab = ({
           title={t('timeline.list.title')}
           buttonLabel={t('timeline.actions.addEvent')}
           buttonIcon="plus"
-          onCreate={isSold ? undefined : handleCreate}
+          onCreate={isSold ? undefined : () => handleCreate()}
         />
 
         {isSold && <SoldVehicleHint />}
@@ -120,7 +120,7 @@ export const TimelineTab = ({
         <Fab
           icon="plus"
           aria-label={t('timeline.actions.addEvent')}
-          onClick={handleCreate}
+          onClick={() => handleCreate()}
           size={isTabletUp ? 'lg' : 'md'}
         />
       )}
