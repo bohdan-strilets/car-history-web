@@ -19,7 +19,10 @@ export const useCreateMaintenanceIntervalMutation = ({
 
     onSuccess: () => {
       const maintenanceKeys = queryKeys.vehicles.maintenance(vehicleId);
+      const vehiclesAllKeys = queryKeys.vehicles.all(workspaceId);
+
       queryClient.invalidateQueries({ queryKey: maintenanceKeys });
+      queryClient.invalidateQueries({ queryKey: vehiclesAllKeys });
     },
   });
 };

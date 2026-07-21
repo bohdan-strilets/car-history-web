@@ -24,11 +24,13 @@ export const useMarkDoneMaintenanceIntervalMutation = ({
       const remindersKeys = queryKeys.vehicles.reminders(vehicleId);
       const timelineKeys = queryKeys.vehicles.timelineRoot(vehicleId);
       const vehicleKeys = queryKeys.vehicles.detail(vehicleId);
+      const vehiclesAllKeys = queryKeys.vehicles.all(workspaceId);
 
       queryClient.invalidateQueries({ queryKey: maintenanceKeys });
       queryClient.invalidateQueries({ queryKey: remindersKeys });
       queryClient.invalidateQueries({ queryKey: timelineKeys, exact: false });
       queryClient.invalidateQueries({ queryKey: vehicleKeys });
+      queryClient.invalidateQueries({ queryKey: vehiclesAllKeys });
 
       onSuccess?.();
     },
