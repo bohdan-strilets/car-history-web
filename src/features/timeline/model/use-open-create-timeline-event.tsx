@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
+import type { TimelineEventType } from '@entities/timeline';
 import { useAdaptiveModal } from '@shared/lib/modal';
 
 import { CreateTimelineEventModal } from '../ui';
@@ -16,7 +17,7 @@ export const useOpenCreateTimelineEvent = ({
   const { t } = useTranslation();
   const modal = useAdaptiveModal();
 
-  const handleCreate = () => {
+  const handleCreate = (initialType?: TimelineEventType) => {
     modal.open(
       <CreateTimelineEventModal
         workspaceId={workspaceId}
@@ -24,6 +25,7 @@ export const useOpenCreateTimelineEvent = ({
         currentMileage={currentMileage}
         fuelType={fuelType}
         vehicleFuelType={vehicleFuelType}
+        initialType={initialType}
         onSuccess={() => modal.closeLast()}
       />,
       { title: t('timeline.actions.addEvent') },

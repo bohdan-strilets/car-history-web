@@ -16,11 +16,11 @@ export const CreateTimelineEventModal = ({
   currentMileage,
   fuelType,
   vehicleFuelType,
+  initialType,
   onSuccess,
 }: CreateTimelineEventModalProps) => {
-  const [selectedType, setSelectedType] = useState<TimelineEventType | null>(null);
+  const [selectedType, setSelectedType] = useState<TimelineEventType | null>(initialType ?? null);
   const { t } = useTranslation();
-
   const { data } = useTimeline({ workspaceId, vehicleId });
   const timeline = useMemo(() => data?.data ?? [], [data?.data]);
   const isTimelineEmpty = timeline.length === 0;
@@ -28,17 +28,13 @@ export const CreateTimelineEventModal = ({
   const disabledTypes = useMemo<TimelineEventType[]>(() => {
     const types = timeline.map((e) => e.type);
     const alwaysUnique = [TIMELINE_EVENT_TYPE.PURCHASE, TIMELINE_EVENT_TYPE.SALE];
-
     const disabled: TimelineEventType[] = alwaysUnique.filter((t) => types.includes(t));
-
     const isElectric = vehicleFuelType?.includes('ELECTRIC');
     const isHybrid = vehicleFuelType?.includes('HYBRID');
     const isChargeable = isElectric || isHybrid;
-
     if (!isChargeable) {
       disabled.push(TIMELINE_EVENT_TYPE.CHARGE);
     }
-
     return disabled;
   }, [timeline, vehicleFuelType]);
 

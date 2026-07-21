@@ -7,6 +7,7 @@ export type CreateTimelineEventModalProps = {
   currentMileage: number;
   fuelType?: RefuelType;
   vehicleFuelType?: FuelType[];
+  initialType?: TimelineEventType;
   onSuccess: () => void;
 };
 
