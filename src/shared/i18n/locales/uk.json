@@ -361,6 +361,7 @@
     "sec": "с",
     "liters": "л",
     "pcs": "шт",
+    "monthlyPln": "грн/міс",
     "km": "км",
     "years_one": "рік",
     "years_few": "роки",
@@ -853,6 +854,23 @@
 
     "sold": {
       "hint": "Це авто вже продано — зміни більше не вносяться."
+    },
+    "card": {
+      "insurance": {
+        "label": "OC",
+        "missing": "Немає даних"
+      },
+      "maintenance": {
+        "label": "Наступний технічний огляд"
+      },
+      "tireSeason": {
+        "label": "Сезон шин"
+      },
+      "actions": {
+        "addFuel": "Додати паливо",
+        "addService": "Додати сервіс",
+        "timeline": "Історія"
+      }
     }
   },
 

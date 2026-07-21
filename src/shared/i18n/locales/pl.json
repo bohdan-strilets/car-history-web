@@ -361,6 +361,7 @@
     "sec": "s",
     "liters": "l",
     "pcs": "szt",
+    "monthlyPln": "zł/mies.",
     "km": "km",
     "years_one": "rok",
     "years_few": "lata",
@@ -851,6 +852,23 @@
 
     "sold": {
       "hint": "Ten pojazd został sprzedany — zmiany nie są już możliwe."
+    },
+    "card": {
+      "insurance": {
+        "label": "OC",
+        "missing": "Brak danych"
+      },
+      "maintenance": {
+        "label": "Następny przegląd"
+      },
+      "tireSeason": {
+        "label": "Sezon opon"
+      },
+      "actions": {
+        "addFuel": "Dodaj paliwo",
+        "addService": "Dodaj serwis",
+        "timeline": "Historia"
+      }
     }
   },
 
