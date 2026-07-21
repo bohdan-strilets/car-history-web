@@ -9,6 +9,7 @@ export interface CreateTireFormParams {
 }
 
 export interface UpdateTireFormParams {
+  workspaceId: WorkspaceId;
   vehicleId: VehicleId;
   tireId: TireId;
   tire: Tire;
@@ -21,6 +22,7 @@ export interface OpenCreateTireParams {
 }
 
 export interface OpenEditTireParams {
+  workspaceId: WorkspaceId;
   vehicleId: VehicleId;
 }
 

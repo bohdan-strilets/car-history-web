@@ -31,9 +31,9 @@ export const TireDetailModal = ({ tire, vehicleId, workspaceId }: TireDetailModa
   const role = workspaceData?.data?.role ?? 'MEMBER';
   const canDelete = canDeleteTire(role, tire.createdBy, user?.id ?? '');
 
-  const updateMutation = useUpdateTireMutation(vehicleId);
-  const deleteMutation = useDeleteTireMutation(vehicleId);
-  const { handleEdit } = useOpenEditTire({ vehicleId });
+  const updateMutation = useUpdateTireMutation(workspaceId, vehicleId);
+  const deleteMutation = useDeleteTireMutation(workspaceId, vehicleId);
+  const { handleEdit } = useOpenEditTire({ workspaceId, vehicleId });
   const { data: historyData, isPending: isHistoryLoading } = useTireHistoryQuery(tire.id);
 
   const handleRetire = () => {

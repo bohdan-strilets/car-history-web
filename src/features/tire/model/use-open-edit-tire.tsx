@@ -7,13 +7,14 @@ import { UpdateTireForm } from '../ui';
 
 import type { OpenEditTireParams } from './tire.types';
 
-export const useOpenEditTire = ({ vehicleId }: OpenEditTireParams) => {
+export const useOpenEditTire = ({ workspaceId, vehicleId }: OpenEditTireParams) => {
   const { t } = useTranslation();
   const modal = useAdaptiveModal();
 
   const handleEdit = (tire: Tire) => {
     const id = modal.open(
       <UpdateTireForm
+        workspaceId={workspaceId}
         vehicleId={vehicleId}
         tireId={tire.id}
         tire={tire}

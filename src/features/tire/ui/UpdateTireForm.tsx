@@ -2,28 +2,35 @@ import { useTranslation } from 'react-i18next';
 
 import { TIRE_TYPE_CONFIG, type Tire, type TireId } from '@entities/tire';
 import type { VehicleId } from '@entities/vehicle';
+import type { WorkspaceId } from '@entities/workspace';
 import { Form, FormFieldCardSelect, FormFieldInput, FormFieldNumberInput, Stack } from '@shared/ui';
 import { translateCardSelectOptions } from '@shared/utils';
 
 import { useUpdateTireForm } from '../model';
 
 interface UpdateTireFormProps {
+  workspaceId: WorkspaceId;
   vehicleId: VehicleId;
   tireId: TireId;
   tire: Tire;
   onSuccess?: () => void;
 }
 
-export const UpdateTireForm = ({ vehicleId, tireId, tire, onSuccess }: UpdateTireFormProps) => {
+export const UpdateTireForm = ({
+  workspaceId,
+  vehicleId,
+  tireId,
+  tire,
+  onSuccess,
+}: UpdateTireFormProps) => {
   const { t } = useTranslation();
-
   const { control, handleSubmit, isPending, errorMessage } = useUpdateTireForm({
+    workspaceId,
     vehicleId,
     tireId,
     tire,
     onSuccess,
   });
-
   return (
     <Form
       onSubmit={handleSubmit}

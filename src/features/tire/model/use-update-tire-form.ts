@@ -12,7 +12,13 @@ import { createTireSchema, type CreateTireValues } from './tire.schema';
 
 import type { UpdateTireFormParams } from './tire.types';
 
-export const useUpdateTireForm = ({ vehicleId, tireId, tire, onSuccess }: UpdateTireFormParams) => {
+export const useUpdateTireForm = ({
+  workspaceId,
+  vehicleId,
+  tireId,
+  tire,
+  onSuccess,
+}: UpdateTireFormParams) => {
   const { t } = useTranslation();
   const resolver = zodResolver(createTireSchema(t));
   const defaultValues = updateTireDefaultValues(tire);
@@ -20,7 +26,7 @@ export const useUpdateTireForm = ({ vehicleId, tireId, tire, onSuccess }: Update
   const form = useForm<CreateTireValues>({ resolver, defaultValues });
   const { control, handleSubmit, setError } = form;
 
-  const mutation = useUpdateTireMutation(vehicleId);
+  const mutation = useUpdateTireMutation(workspaceId, vehicleId);
   const { mutate: update, isPending, error } = mutation;
   const errorMessage = useFormErrors({ error, setError, t });
 
