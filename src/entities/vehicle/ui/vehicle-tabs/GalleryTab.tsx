@@ -24,7 +24,7 @@ export const GalleryTab = ({ workspaceId, vehicleId, isSold }: GalleryTabProps) 
 
   const { data, isPending, isError, refetch } = useGalleryQuery(workspaceId, vehicleId);
   const deleteMutation = useDeleteMediaMutation(vehicleId);
-  const setPrimaryMutation = useSetPrimaryMediaMutation(vehicleId);
+  const setPrimaryMutation = useSetPrimaryMediaMutation(workspaceId, vehicleId);
   const { confirm } = useConfirmModal();
   const { handleOpen } = useOpenUploadMedia({ workspaceId, vehicleId });
 
