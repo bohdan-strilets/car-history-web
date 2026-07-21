@@ -10,4 +10,7 @@ export interface VehicleCardProps {
   vehicle: Vehicle;
   onClick?: () => void;
   documentBadge?: VehicleCardDocumentBadge;
+  onAddFuel?: () => void;
+  onAddService?: () => void;
+  onViewTimeline?: () => void;
 }

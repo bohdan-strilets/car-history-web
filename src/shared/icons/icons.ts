@@ -171,6 +171,7 @@ import {
   Tags,
   Thermometer,
   TicketCheck,
+  Timeline,
   Timer,
   ToggleLeft,
   ToggleRight,
@@ -299,6 +300,7 @@ export const Icons = {
   plug: Plug,
   evCharger: EvCharger,
   disc2: Disc2,
+  timeline: Timeline,
 
   // Documents & Files
   fileText: FileText,

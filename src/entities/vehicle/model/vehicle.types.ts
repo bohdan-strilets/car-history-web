@@ -1,3 +1,5 @@
+import type { MaintenanceType } from '@entities/maintenance';
+import type { TireType } from '@entities/tire';
 import type { User, UserId } from '@entities/user';
 import type { WorkspaceId } from '@entities/workspace';
 
@@ -64,6 +66,32 @@ export interface VehicleSpecs {
 
 export type VehicleOwner = Pick<User, 'id' | 'firstName' | 'lastName' | 'avatarUrl'>;
 
+export type InsuranceStatus = 'ACTIVE' | 'EXPIRING' | 'EXPIRED' | 'MISSING';
+
+export interface VehicleInsuranceInfo {
+  status: InsuranceStatus;
+  expireDate: string | null;
+}
+
+export interface VehicleNextMaintenanceInfo {
+  type: MaintenanceType;
+  dueDate: string | null;
+  dueMileage: number | null;
+}
+
+export interface VehicleLatestMilestoneInfo {
+  code: string;
+  title: string;
+  category: string;
+}
+
+export type FuelConsumptionSource = 'CALCULATED' | 'SPEC' | null;
+
+export interface VehicleFuelConsumptionInfo {
+  value: number | null;
+  source: FuelConsumptionSource;
+}
+
 export interface Vehicle {
   id: VehicleId;
   ownerId: UserId;
@@ -89,6 +117,14 @@ export interface Vehicle {
   purchaseInfo?: VehiclePurchaseInfo | null;
   saleInfo?: VehicleSaleInfo | null;
   specs?: VehicleSpecs | null;
+  primaryPhotoUrl: string | null;
+  monthlyExpenses: number;
+  insurance: VehicleInsuranceInfo;
+  tireSeason: TireType | null;
+  activeRemindersCount: number;
+  nextMaintenance: VehicleNextMaintenanceInfo | null;
+  latestMilestone: VehicleLatestMilestoneInfo | null;
+  fuelConsumption: VehicleFuelConsumptionInfo;
   createdAt: Date;
 }
 

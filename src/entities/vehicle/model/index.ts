@@ -41,8 +41,14 @@ export {
 export { VEHICLE_GENERATIONS } from './vehicle.generations';
 
 export type {
+  FuelConsumptionSource,
+  InsuranceStatus,
   Vehicle,
+  VehicleFuelConsumptionInfo,
   VehicleId,
+  VehicleInsuranceInfo,
+  VehicleLatestMilestoneInfo,
+  VehicleNextMaintenanceInfo,
   VehicleOwner,
   VehiclePurchaseInfo,
   VehicleSaleInfo,
