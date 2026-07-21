@@ -32,6 +32,3 @@ export const getDocumentBadge = (
     color: urgencyConfig?.color ?? 'gray',
   };
 };
-
-export const getVehicleLabel = (vehicle: DashboardVehicle): string =>
-  vehicle.nickname ?? `${vehicle.brand} ${vehicle.model}`;

@@ -18,6 +18,7 @@ import {
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
 import { UserBar } from '@widgets/user-bar';
+import { VehicleSwitcher } from '@widgets/vehicle-switcher';
 import { WorkspaceSwitcher } from '@widgets/workspace-switcher';
 
 import { root, spacer } from './sidebar.css';
@@ -32,6 +33,7 @@ export const Sidebar = ({ expanded, onToggle }: SidebarProps) => {
       <Logo size="lg" variant={!expanded ? 'icon' : 'full'} />
 
       <WorkspaceSwitcher expanded={expanded} onExpand={onToggle} />
+      <VehicleSwitcher expanded={expanded} />
 
       <Spacer size="xs" />
 

@@ -10,6 +10,7 @@ import { useAuth } from '@shared/store';
 import { Avatar, Dropdown, DropdownItem, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { LanguageToggle } from '@widgets/language-toggle';
 import { ThemeToggle } from '@widgets/theme-toggle';
+import { useVehicleSwitcher, VehicleSwitcher } from '@widgets/vehicle-switcher';
 
 export const HeaderBar = () => {
   const { t } = useTranslation();
@@ -20,6 +21,7 @@ export const HeaderBar = () => {
   const [workspaceOpen, setWorkspaceOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
 
+  const { vehicles } = useVehicleSwitcher();
   const { activeWorkspaceId, setActiveWorkspaceId } = useActiveWorkspace();
 
   const { data } = useWorkspacesQuery();
@@ -79,6 +81,8 @@ export const HeaderBar = () => {
           />
         </Stack>
       </Dropdown>
+
+      {vehicles.length > 0 && <VehicleSwitcher expanded={false} direction="bottom" align="end" />}
 
       <Dropdown
         open={userOpen}

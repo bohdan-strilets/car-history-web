@@ -2,11 +2,11 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import { ReminderCard } from '@entities/reminder';
-import { VehicleCard, VehicleEmptySection } from '@entities/vehicle';
+import { getVehicleDisplayName, VehicleCard, VehicleEmptySection } from '@entities/vehicle';
 import { ROUTES, SEARCH_PARAM_TAB } from '@shared/config';
 import { Button, Grid, Heading, Stack, Text } from '@shared/ui';
 
-import { getDocumentBadge, getVehicleLabel } from './dashboard-overview.utils';
+import { getDocumentBadge } from './dashboard-overview.utils';
 import { ExpensesSummary } from './ExpensesSummary';
 
 import type { DashboardOverviewProps } from './dashboard-overview.types';
@@ -14,6 +14,9 @@ import type { DashboardOverviewProps } from './dashboard-overview.types';
 export const DashboardOverview = ({ dashboard, workspaceId, currency }: DashboardOverviewProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  const activeVehicle = dashboard.vehicles[0];
+  const activeVehicleLabel = activeVehicle ? getVehicleDisplayName(activeVehicle) : '—';
 
   return (
     <Stack gap="3xl">
@@ -62,10 +65,7 @@ export const DashboardOverview = ({ dashboard, workspaceId, currency }: Dashboar
             {dashboard.upcomingReminders.map((reminder) => (
               <Stack key={reminder.id} gap="xs">
                 <Text size="xs" color="tertiary" weight="semibold">
-                  {getVehicleLabel(
-                    dashboard.vehicles.find((v) => v.id === reminder.vehicleId) ??
-                      dashboard.vehicles[0],
-                  )}
+                  {activeVehicleLabel}
                 </Text>
                 <ReminderCard
                   reminder={reminder}
