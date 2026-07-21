@@ -1568,6 +1568,21 @@
     }
   },
 
+  "dashboard": {
+    "greeting": "Dzień dobry, {{name}}",
+    "vehicles": {
+      "title": "Moje pojazdy",
+      "viewAll": "Zobacz wszystkie"
+    },
+    "expenses": {
+      "currentMonth": "Ten miesiąc",
+      "currentYear": "Ten rok"
+    },
+    "reminders": {
+      "title": "Najbliższe przypomnienia"
+    }
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Nieprawidłowy email lub hasło",
     "ACCOUNT_LOCKED": "Konto zostało tymczasowo zablokowane z powodu zbyt wielu nieudanych prób logowania",

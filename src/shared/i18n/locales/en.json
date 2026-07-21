@@ -1566,6 +1566,21 @@
     }
   },
 
+  "dashboard": {
+    "greeting": "Good day, {{name}}",
+    "vehicles": {
+      "title": "My vehicles",
+      "viewAll": "View all"
+    },
+    "expenses": {
+      "currentMonth": "This month",
+      "currentYear": "This year"
+    },
+    "reminders": {
+      "title": "Upcoming reminders"
+    }
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Invalid email or password",
     "ACCOUNT_LOCKED": "Account temporarily locked due to too many failed login attempts",

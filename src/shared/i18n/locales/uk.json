@@ -1570,6 +1570,21 @@
     }
   },
 
+  "dashboard": {
+    "greeting": "Доброго дня, {{name}}",
+    "vehicles": {
+      "title": "Мої автомобілі",
+      "viewAll": "Переглянути всі"
+    },
+    "expenses": {
+      "currentMonth": "Цього місяця",
+      "currentYear": "Цього року"
+    },
+    "reminders": {
+      "title": "Найближчі нагадування"
+    }
+  },
+
   "errors": {
     "INVALID_CREDENTIALS": "Невірний email або пароль",
     "ACCOUNT_LOCKED": "Акаунт тимчасово заблоковано через занадто багато невдалих спроб входу",
