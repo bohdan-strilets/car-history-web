@@ -12,7 +12,7 @@ import { getConfigOption } from '@shared/utils';
 
 import type { VehicleCardProps } from './vehicle-card.types';
 
-export const VehicleCard = ({ vehicle, onClick }: VehicleCardProps) => {
+export const VehicleCard = ({ vehicle, onClick, documentBadge }: VehicleCardProps) => {
   const { t } = useTranslation();
 
   const { user } = useAuth();
@@ -33,7 +33,8 @@ export const VehicleCard = ({ vehicle, onClick }: VehicleCardProps) => {
     <Panel p="none" onClick={onClick} hoverable>
       <Surface gradient="accentSolid" radius="md">
         <Box p="lg">
-          <Stack align="end">
+          <Stack direction="row" gap="xs" justify="end">
+            {documentBadge && <Badge soft={documentBadge.color}>{documentBadge.label}</Badge>}
             <Badge gradient="gray">{vehicle.year}</Badge>
           </Stack>
 
