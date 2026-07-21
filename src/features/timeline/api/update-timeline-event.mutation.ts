@@ -22,10 +22,12 @@ export const useUpdateTimelineEventMutation = ({
       const timelineKeys = queryKeys.vehicles.timelineRoot(vehicleId);
       const vehicleDetailKeys = queryKeys.vehicles.detail(vehicleId);
       const vehicleMilestonesKeys = queryKeys.vehicles.milestones(vehicleId);
+      const vehiclesAllKeys = queryKeys.vehicles.all(workspaceId);
 
       queryClient.invalidateQueries({ queryKey: timelineKeys });
       queryClient.invalidateQueries({ queryKey: vehicleDetailKeys });
       queryClient.invalidateQueries({ queryKey: vehicleMilestonesKeys });
+      queryClient.invalidateQueries({ queryKey: vehiclesAllKeys });
     },
   });
 };

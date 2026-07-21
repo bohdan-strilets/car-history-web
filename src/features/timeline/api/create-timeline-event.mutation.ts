@@ -18,10 +18,12 @@ export const useCreateTimelineEventMutation = ({ workspaceId, vehicleId }: Timel
       const timelineKeys = queryKeys.vehicles.timelineRoot(vehicleId);
       const milestonesKeys = queryKeys.vehicles.milestones(vehicleId);
       const vehicleKeys = queryKeys.vehicles.detail(vehicleId);
+      const vehiclesAllKeys = queryKeys.vehicles.all(workspaceId);
 
       queryClient.invalidateQueries({ queryKey: timelineKeys });
       queryClient.invalidateQueries({ queryKey: milestonesKeys });
       queryClient.invalidateQueries({ queryKey: vehicleKeys });
+      queryClient.invalidateQueries({ queryKey: vehiclesAllKeys });
     },
   });
 };

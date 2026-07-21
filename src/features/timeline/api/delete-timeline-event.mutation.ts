@@ -24,11 +24,13 @@ export const useDeleteTimelineEventMutation = ({
       const eventKeys = queryKeys.vehicles.timelineEvent(vehicleId, eventId);
       const vehicleDetailKeys = queryKeys.vehicles.detail(vehicleId);
       const vehicleMilestonesKeys = queryKeys.vehicles.milestones(vehicleId);
+      const vehiclesAllKeys = queryKeys.vehicles.all(workspaceId);
 
       queryClient.removeQueries({ queryKey: eventKeys });
       queryClient.invalidateQueries({ queryKey: timelineKeys, exact: false });
       queryClient.invalidateQueries({ queryKey: vehicleDetailKeys });
       queryClient.invalidateQueries({ queryKey: vehicleMilestonesKeys });
+      queryClient.invalidateQueries({ queryKey: vehiclesAllKeys });
 
       onSuccess?.();
     },
