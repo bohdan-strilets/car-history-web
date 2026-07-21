@@ -13,10 +13,12 @@ export const useFillSpecsAiMutation = () => {
     mutationFn: ({ workspaceId, vehicleId }: FillSpecsAiParams) => {
       return vehicleApi.fillSpecsAi(workspaceId, vehicleId);
     },
+    onSuccess: (_, { workspaceId, vehicleId }) => {
+      const vehicleDetailQueryKey = queryKeys.vehicles.detail(vehicleId);
+      const vehiclesAllQueryKey = queryKeys.vehicles.all(workspaceId);
 
-    onSuccess: (_, { vehicleId }) => {
-      const keys = queryKeys.vehicles.detail(vehicleId);
-      queryClient.invalidateQueries({ queryKey: keys });
+      queryClient.invalidateQueries({ queryKey: vehicleDetailQueryKey });
+      queryClient.invalidateQueries({ queryKey: vehiclesAllQueryKey });
     },
   });
 };
