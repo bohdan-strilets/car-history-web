@@ -159,5 +159,5 @@ export const ENDPOINTS = {
     MESSAGES: (id: string) => `/ai/conversations/${id}/messages`,
   },
 
-  DASHBOARD: '/dashboard',
+  DASHBOARD: (workspaceId: WorkspaceId) => `/workspaces/${workspaceId}/dashboard`,
 } as const;

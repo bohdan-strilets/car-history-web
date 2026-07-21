@@ -57,4 +57,8 @@ export const queryKeys = {
     me: () => ['user', 'me'] as const,
     sessions: () => ['user', 'sessions'] as const,
   },
+
+  dashboard: {
+    detail: (workspaceId: WorkspaceId) => ['dashboard', workspaceId] as const,
+  },
 } as const;
