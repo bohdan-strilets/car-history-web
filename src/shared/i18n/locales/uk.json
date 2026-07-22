@@ -778,7 +778,8 @@
         "quickSpecs": "Характеристики",
         "reminders": "Найближчі нагадування",
         "gallery": "Галерея",
-        "expenses": "Загальні витрати"
+        "expenses": "Загальні витрати",
+        "achievements": "Досягнення"
       },
       "fields": {
         "purchaseDate": "Дата купівлі",
@@ -1144,6 +1145,17 @@
       "fuel": "Паливо",
       "activity": "Активність",
       "achievement": "Досягнення"
+    },
+    "levels": {
+      "groups": {
+        "MILEAGE": "Пробіг",
+        "EXPENSES": "Витрати",
+        "REFUELS": "Заправки"
+      },
+      "notStarted": "Ще не розпочато",
+      "levelOf": "Рівень {{current}} з {{total}}",
+      "maxed": "Максимальний рівень",
+      "toNext": "До \"{{title}}\": {{value}}"
     },
     "label": "Досягнення",
     "empty": {

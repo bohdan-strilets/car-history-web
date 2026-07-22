@@ -776,7 +776,8 @@
         "quickSpecs": "Charakterystyka",
         "reminders": "Nadchodzące przypomnienia",
         "gallery": "Galeria",
-        "expenses": "Łączne wydatki"
+        "expenses": "Łączne wydatki",
+        "achievements": "Osiągnięcia"
       },
       "fields": {
         "purchaseDate": "Data zakupu",
@@ -1142,6 +1143,17 @@
       "fuel": "Paliwo",
       "activity": "Aktywność",
       "achievement": "Osiągnięcie"
+    },
+    "levels": {
+      "groups": {
+        "MILEAGE": "Przebieg",
+        "EXPENSES": "Wydatki",
+        "REFUELS": "Tankowania"
+      },
+      "notStarted": "Jeszcze nie rozpoczęto",
+      "levelOf": "Poziom {{current}} z {{total}}",
+      "maxed": "Maksymalny poziom",
+      "toNext": "Do \"{{title}}\": {{value}}"
     },
     "label": "Milestone",
     "empty": {

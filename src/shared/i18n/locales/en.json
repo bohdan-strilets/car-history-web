@@ -773,7 +773,8 @@
         "quickSpecs": "Quick specifications",
         "reminders": "Upcoming reminders",
         "gallery": "Gallery",
-        "expenses": "Total expenses"
+        "expenses": "Total expenses",
+        "achievements": "Achievements"
       },
       "fields": {
         "purchaseDate": "Purchase date",
@@ -1139,6 +1140,17 @@
       "fuel": "Fuel",
       "activity": "Activity",
       "achievement": "Achievement"
+    },
+    "levels": {
+      "groups": {
+        "MILEAGE": "Mileage",
+        "EXPENSES": "Expenses",
+        "REFUELS": "Refuels"
+      },
+      "notStarted": "Not started yet",
+      "levelOf": "Level {{current}} of {{total}}",
+      "maxed": "Max level",
+      "toNext": "To \"{{title}}\": {{value}}"
     },
     "label": "Milestone",
     "empty": {
