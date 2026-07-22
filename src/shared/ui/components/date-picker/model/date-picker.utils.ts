@@ -78,14 +78,6 @@ export const buildCalendarDays = (
   return days;
 };
 
-export const getDecadeStart = (year: number): number => {
-  return Math.floor(year / 10) * 10;
-};
-
-export const buildDecadeYears = (decadeStart: number): number[] => {
-  return Array.from({ length: 10 }, (_, i) => decadeStart + i);
-};
-
 export const normalizeDate = (date: Date): string => {
   return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 };

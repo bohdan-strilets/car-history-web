@@ -11,9 +11,7 @@ export type {
 
 export {
   buildCalendarDays,
-  buildDecadeYears,
   getDaysInMonth,
-  getDecadeStart,
   getFirstDayOffset,
   isDateDisabled,
   normalizeDate,

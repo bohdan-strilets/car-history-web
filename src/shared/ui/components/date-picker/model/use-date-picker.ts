@@ -1,11 +1,8 @@
 import { useState } from 'react';
 
-import {
-  buildCalendarDays,
-  buildDecadeYears,
-  getDecadeStart,
-  normalizeValue,
-} from './date-picker.utils';
+import { getDecadeStart, getDecadeYears } from '@shared/lib';
+
+import { buildCalendarDays, normalizeValue } from './date-picker.utils';
 
 import type { DatePickerProps, DatePickerView } from './date-picker.types';
 
@@ -28,7 +25,7 @@ export const useDatePicker = ({
   const [decadeStart, setDecadeStart] = useState(getDecadeStart(currentYear));
 
   const days = buildCalendarDays(viewYear, viewMonth, value, minDate, maxDate);
-  const decadeYears = buildDecadeYears(decadeStart);
+  const decadeYears = getDecadeYears(decadeStart);
 
   const prevMonth = () => {
     if (viewMonth === 0) {
