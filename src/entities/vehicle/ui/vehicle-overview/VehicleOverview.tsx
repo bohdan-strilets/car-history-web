@@ -1,5 +1,9 @@
+import { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 
+import { MediaCard } from '@entities/media';
+import { ReminderCard } from '@entities/reminder';
 import {
   BODY_TYPE_CONFIG,
   DRIVE_TYPE_CONFIG,
@@ -7,12 +11,16 @@ import {
   VehicleAiFill,
   VehicleEmptySection,
 } from '@entities/vehicle';
-import { InfoRow, Text } from '@shared/ui';
+import { Button, Grid, Heading, Icon, InfoRow, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section/InfoSection';
 
 import { VehicleFunFacts } from '../vehicle-fun-facts';
 import { VehicleHero } from '../vehicle-hero';
+
+import { SpecChip } from './SpecChip';
+import { getExpensesBreakdown } from './vehicle-overview.utils';
+import { SPEC_GROUPS } from './vehicle-specs-groups';
 
 import type { VehicleOverviewProps } from './vehicle-overview.types';
 
@@ -22,17 +30,62 @@ export const VehicleOverview = ({
   onAddPurchase,
   onAddSale,
   onEditDescription,
+  upcomingReminders,
+  onReminderClick,
+  onViewAllReminders,
+  galleryPreview,
+  onViewGallery,
+  stats,
+  onViewStats,
 }: VehicleOverviewProps) => {
   const { t } = useTranslation();
+  const [isFunFactsOpen, setIsFunFactsOpen] = useState(false);
 
   const bodyType = getConfigOption(t, BODY_TYPE_CONFIG, vehicle.bodyType);
   const transmission = getConfigOption(t, TRANSMISSION_CONFIG, vehicle.transmission);
   const driveType = getConfigOption(t, DRIVE_TYPE_CONFIG, vehicle.driveType);
 
+  const hasAnySpecs = Boolean(vehicle.specs) && Object.values(vehicle.specs ?? {}).some(Boolean);
+  const specGroupsWithItems = vehicle.specs
+    ? SPEC_GROUPS.map((group) => ({ group, items: group.getItems(vehicle.specs!, t) })).filter(
+        ({ items }) => items.length > 0,
+      )
+    : [];
+
+  const expenses = stats ? getExpensesBreakdown(stats) : null;
+  const hasExpenses = expenses && (expenses.total > 0 || stats!.costsByCategory.length > 0);
+
   return (
     <>
       <VehicleHero vehicle={vehicle} actions={actions} />
-      <VehicleFunFacts vehicle={vehicle} />
+
+      {galleryPreview.length > 0 && (
+        <Stack gap="md">
+          <Stack direction="row" align="center" justify="between">
+            <Heading size="xl">{t('vehicle.overview.sections.gallery')}</Heading>
+            <Button variant="ghost" size="sm" onClick={onViewGallery}>
+              {t('common.labels.seeAll')}
+            </Button>
+          </Stack>
+          <Grid columns={{ mobile: '2', tablet: '4' }} gap="sm">
+            {galleryPreview.map((media) => (
+              <MediaCard key={media.id} media={media} onClick={onViewGallery} />
+            ))}
+          </Grid>
+        </Stack>
+      )}
+
+      <Stack gap="md">
+        <Button
+          variant="ghost"
+          size="sm"
+          rightIcon={isFunFactsOpen ? 'chevronUp' : 'chevronDown'}
+          onClick={() => setIsFunFactsOpen((prev) => !prev)}
+        >
+          {t('vehicle.detail.funFacts.title')}
+        </Button>
+        {isFunFactsOpen && <VehicleFunFacts vehicle={vehicle} />}
+      </Stack>
 
       <InfoSection title={t('vehicle.overview.sections.basicInfo')}>
         <InfoRow
@@ -82,61 +135,79 @@ export const VehicleOverview = ({
           value={`${vehicle.currentMileage.toLocaleString()} km`}
           icon="gauge"
           iconColor="blue"
-        />
-      </InfoSection>
-
-      <InfoSection title={t('vehicle.overview.sections.specs')}>
-        <InfoRow
-          label={t('vehicle.fields.engineDisplacementCc')}
-          value={`${vehicle.engineDisplacementCc} cm³`}
-          icon="zap"
-          iconColor="violet"
           bottomDivider
         />
-        <InfoRow
-          label={t('vehicle.fields.bodyType')}
-          value={bodyType?.label}
-          icon="layoutGrid"
-          iconColor="violet"
-          bottomDivider
-        />
-        <InfoRow
-          label={t('vehicle.fields.transmission')}
-          value={transmission?.label}
-          icon="cog"
-          iconColor="violet"
-          bottomDivider
-        />
-        <InfoRow
-          label={t('vehicle.fields.driveType')}
-          value={driveType?.label}
-          icon="navigation"
-          iconColor="violet"
-        />
-      </InfoSection>
-
-      <InfoSection title={t('vehicle.overview.sections.appearance')}>
         <InfoRow
           label={t('vehicle.fields.color')}
           value={vehicle.color}
           icon="palette"
-          iconColor="teal"
+          iconColor="blue"
           bottomDivider
         />
         <InfoRow
           label={t('vehicle.fields.nickname')}
           value={vehicle.nickname}
           icon="caseSensitive"
-          iconColor="teal"
+          iconColor="blue"
           bottomDivider
         />
         <InfoRow
           label={t('vehicle.fields.countryOfOrigin')}
           value={vehicle.countryOfOrigin}
           icon="globe"
-          iconColor="teal"
+          iconColor="blue"
         />
       </InfoSection>
+
+      <Stack gap="md">
+        <Heading size="xl">{t('vehicle.overview.sections.quickSpecs')}</Heading>
+        <Grid columns={{ mobile: '2', tablet: '4' }} gap="lg">
+          <SpecChip
+            label={t('vehicle.fields.engineDisplacementCc')}
+            value={`${vehicle.engineDisplacementCc} ${t('units.cc')}`}
+            color="sky"
+          />
+          {bodyType && (
+            <SpecChip label={t('vehicle.fields.bodyType')} value={bodyType.label} color="sky" />
+          )}
+          {transmission && (
+            <SpecChip
+              label={t('vehicle.fields.transmission')}
+              value={transmission.label}
+              color="sky"
+            />
+          )}
+          {driveType && (
+            <SpecChip label={t('vehicle.fields.driveType')} value={driveType.label} color="sky" />
+          )}
+        </Grid>
+      </Stack>
+
+      {!hasAnySpecs ? (
+        <InfoSection title={t('vehicle.overview.sections.specs')}>
+          <VehicleAiFill
+            vehicleId={vehicle.id}
+            workspaceId={vehicle.workspaceId}
+            onFill={() => null}
+          />
+        </InfoSection>
+      ) : (
+        specGroupsWithItems.map(({ group, items }) => (
+          <Stack key={group.id} gap="md">
+            <Heading size="xl">{t(group.titleKey)}</Heading>
+            <Grid columns={{ mobile: '2', tablet: '3' }} gap="lg">
+              {items.map((item) => (
+                <SpecChip
+                  key={item.label}
+                  label={item.label}
+                  value={item.value}
+                  color={group.color}
+                />
+              ))}
+            </Grid>
+          </Stack>
+        ))
+      )}
 
       {!vehicle.purchaseInfo ? (
         <InfoSection title={t('vehicle.overview.sections.purchaseSale')}>
@@ -218,286 +289,97 @@ export const VehicleOverview = ({
         </InfoSection>
       )}
 
-      {!vehicle.specs || !Object.values(vehicle.specs).some(Boolean) ? (
-        <InfoSection title={t('vehicle.overview.sections.specs')}>
-          <VehicleAiFill
-            vehicleId={vehicle.id}
-            workspaceId={vehicle.workspaceId}
-            onFill={() => null}
-          />
-        </InfoSection>
-      ) : (
-        <InfoSection title={t('vehicle.overview.sections.specs')}>
-          {vehicle.specs.engineCode && (
-            <InfoRow
-              label={t('vehicle.specs.fields.engineCode')}
-              value={vehicle.specs.engineCode}
-              icon="hash"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.enginePowerHp && (
-            <InfoRow
-              label={t('vehicle.specs.fields.enginePowerHp')}
-              value={`${vehicle.specs.enginePowerHp} HP`}
-              icon="zap"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.enginePowerKw && (
-            <InfoRow
-              label={t('vehicle.specs.fields.enginePowerKw')}
-              value={`${vehicle.specs.enginePowerKw} kW`}
-              icon="zap"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.torqueNm && (
-            <InfoRow
-              label={t('vehicle.specs.fields.torqueNm')}
-              value={`${vehicle.specs.torqueNm} Nm`}
-              icon="gauge"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.cylindersCount && (
-            <InfoRow
-              label={t('vehicle.specs.fields.cylindersCount')}
-              value={String(vehicle.specs.cylindersCount)}
-              icon="grid"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.gearsCount && (
-            <InfoRow
-              label={t('vehicle.specs.fields.gearsCount')}
-              value={String(vehicle.specs.gearsCount)}
-              icon="cog"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.turbo !== undefined && (
-            <InfoRow
-              label={t('vehicle.specs.fields.turbo')}
-              value={vehicle.specs.turbo ? t('common.state.yes') : t('common.state.no')}
-              icon="wind"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.fuelTankCapacity && (
-            <InfoRow
-              label={t('vehicle.specs.fields.fuelTankCapacity')}
-              value={`${vehicle.specs.fuelTankCapacity} l`}
-              icon="droplets"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.combinedConsumption && (
-            <InfoRow
-              label={t('vehicle.specs.fields.combinedConsumption')}
-              value={`${vehicle.specs.combinedConsumption} l/100km`}
-              icon="fuel"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.cityConsumption && (
-            <InfoRow
-              label={t('vehicle.specs.fields.cityConsumption')}
-              value={`${vehicle.specs.cityConsumption} l/100km`}
-              icon="fuel"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.highwayConsumption && (
-            <InfoRow
-              label={t('vehicle.specs.fields.highwayConsumption')}
-              value={`${vehicle.specs.highwayConsumption} l/100km`}
-              icon="fuel"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.batteryCapacityKwh && (
-            <InfoRow
-              label={t('vehicle.specs.fields.batteryCapacityKwh')}
-              value={`${vehicle.specs.batteryCapacityKwh} kWh`}
-              icon="batteryCharging"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.electricRangeKm && (
-            <InfoRow
-              label={t('vehicle.specs.fields.electricRangeKm')}
-              value={`${vehicle.specs.electricRangeKm} km`}
-              icon="zap"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.co2EmissionGKm && (
-            <InfoRow
-              label={t('vehicle.specs.fields.co2EmissionGKm')}
-              value={`${vehicle.specs.co2EmissionGKm} g/km`}
-              icon="cloud"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.euroStandard && (
-            <InfoRow
-              label={t('vehicle.specs.fields.euroStandard')}
-              value={vehicle.specs.euroStandard}
-              icon="shield"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.accelerationSec && (
-            <InfoRow
-              label={t('vehicle.specs.fields.accelerationSec')}
-              value={`${vehicle.specs.accelerationSec}s`}
-              icon="timer"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.topSpeedKmh && (
-            <InfoRow
-              label={t('vehicle.specs.fields.topSpeedKmh')}
-              value={`${vehicle.specs.topSpeedKmh} km/h`}
-              icon="gauge"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.weightKg && (
-            <InfoRow
-              label={t('vehicle.specs.fields.weightKg')}
-              value={`${vehicle.specs.weightKg} kg`}
-              icon="package"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.lengthMm && (
-            <InfoRow
-              label={t('vehicle.specs.fields.lengthMm')}
-              value={`${vehicle.specs.lengthMm} mm`}
-              icon="ruler"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.widthMm && (
-            <InfoRow
-              label={t('vehicle.specs.fields.widthMm')}
-              value={`${vehicle.specs.widthMm} mm`}
-              icon="ruler"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.heightMm && (
-            <InfoRow
-              label={t('vehicle.specs.fields.heightMm')}
-              value={`${vehicle.specs.heightMm} mm`}
-              icon="ruler"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.wheelbaseMm && (
-            <InfoRow
-              label={t('vehicle.specs.fields.wheelbaseMm')}
-              value={`${vehicle.specs.wheelbaseMm} mm`}
-              icon="ruler"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.groundClearanceMm && (
-            <InfoRow
-              label={t('vehicle.specs.fields.groundClearanceMm')}
-              value={`${vehicle.specs.groundClearanceMm} mm`}
-              icon="ruler"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.trunkVolumeLiters && (
-            <InfoRow
-              label={t('vehicle.specs.fields.trunkVolumeLiters')}
-              value={`${vehicle.specs.trunkVolumeLiters} l`}
-              icon="package"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.numberOfSeats && (
-            <InfoRow
-              label={t('vehicle.specs.fields.numberOfSeats')}
-              value={String(vehicle.specs.numberOfSeats)}
-              icon="users"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.numberOfDoors && (
-            <InfoRow
-              label={t('vehicle.specs.fields.numberOfDoors')}
-              value={String(vehicle.specs.numberOfDoors)}
-              icon="doorClosed"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.airbagsCount && (
-            <InfoRow
-              label={t('vehicle.specs.fields.airbagsCount')}
-              value={String(vehicle.specs.airbagsCount)}
-              icon="shield"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.ncapRating && (
-            <InfoRow
-              label={t('vehicle.specs.fields.ncapRating')}
-              value={`${vehicle.specs.ncapRating}/5`}
-              icon="star"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.tireSizeFront && (
-            <InfoRow
-              label={t('vehicle.specs.fields.tireSizeFront')}
-              value={vehicle.specs.tireSizeFront}
-              icon="circle"
-              iconColor="sky"
-              bottomDivider
-            />
-          )}
-          {vehicle.specs.tireSizeRear && (
-            <InfoRow
-              label={t('vehicle.specs.fields.tireSizeRear')}
-              value={vehicle.specs.tireSizeRear}
-              icon="circle"
-              iconColor="sky"
-            />
-          )}
-        </InfoSection>
+      {upcomingReminders.length > 0 && (
+        <Stack gap="md">
+          <Stack direction="row" align="center" justify="between">
+            <Heading size="xl">{t('vehicle.overview.sections.reminders')}</Heading>
+            <Button variant="ghost" size="sm" onClick={onViewAllReminders}>
+              {t('common.labels.seeAll')}
+            </Button>
+          </Stack>
+          <Stack gap="lg">
+            {upcomingReminders.map((reminder) => (
+              <ReminderCard
+                key={reminder.id}
+                reminder={reminder}
+                onClick={() => onReminderClick(reminder)}
+              />
+            ))}
+          </Stack>
+        </Stack>
+      )}
+
+      {hasExpenses && expenses && (
+        <Panel gradient="purple" p={{ mobile: 'lg', tablet: '2xl' }}>
+          <Stack gap="xl">
+            <Stack direction="row" align="center" gap="md">
+              <Panel variant="glass" p="sm" radius="pill">
+                <Icon name="wallet" color="onColor" size="lg" />
+              </Panel>
+              <Stack gap="none">
+                <Text color="onColor" weight="bold" size="lg">
+                  {t('vehicle.overview.sections.expenses')}
+                </Text>
+                <Text color="secondary" size="sm">
+                  {t('vehicle.overview.expenses.subtitle')}
+                </Text>
+              </Stack>
+            </Stack>
+
+            <Panel variant="glass" p="lg">
+              <Text color="secondary" size="xs" transform="uppercase">
+                {t('vehicle.overview.expenses.total')}
+              </Text>
+              <Text color="onColor" size="3xl" weight="extraBold">
+                {expenses.total.toLocaleString()} zł
+              </Text>
+            </Panel>
+
+            <Grid columns={{ mobile: '2', tablet: '4' }} gap="lg">
+              <Panel variant="glass" p="md" gap="none">
+                <Text color="secondary" size="xs">
+                  {t('vehicle.overview.expenses.categories.fuel')}
+                </Text>
+                <Text color="onColor" weight="bold">
+                  {expenses.fuel.toLocaleString()} zł
+                </Text>
+              </Panel>
+              <Panel variant="glass" p="md" gap="none">
+                <Text color="secondary" size="xs">
+                  {t('vehicle.overview.expenses.categories.service')}
+                </Text>
+                <Text color="onColor" weight="bold">
+                  {expenses.service.toLocaleString()} zł
+                </Text>
+              </Panel>
+              <Panel variant="glass" p="md" gap="none">
+                <Text color="secondary" size="xs">
+                  {t('vehicle.overview.expenses.categories.documents')}
+                </Text>
+                <Text color="onColor" weight="bold">
+                  {expenses.documents.toLocaleString()} zł
+                </Text>
+              </Panel>
+              <Panel variant="glass" p="md" gap="none">
+                <Text color="secondary" size="xs">
+                  {t('vehicle.overview.expenses.categories.other')}
+                </Text>
+                <Text color="onColor" weight="bold">
+                  {expenses.other.toLocaleString()} zł
+                </Text>
+              </Panel>
+            </Grid>
+
+            <Panel variant="glass" hoverable onClick={onViewStats} align="center" justify="center">
+              <Stack direction="row" align="center" gap="sm">
+                <Icon name="trendingUp" color="onColor" size="sm" />
+                <Text color="onColor" weight="semibold">
+                  {t('vehicle.overview.expenses.viewDetails')}
+                </Text>
+              </Stack>
+            </Panel>
+          </Stack>
+        </Panel>
       )}
 
       {vehicle.description ? (
