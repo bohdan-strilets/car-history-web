@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { VehicleConstraints } from '@entities/vehicle';
 import { APP_CONSTANTS } from '@shared/config';
+import { getDecadeStart, getDecadeYears } from '@shared/lib';
 
 import { getDecades } from './year-picker.utils';
 
@@ -9,18 +9,16 @@ import type { YearPickerParams } from './year-picker.types';
 
 export const useYearPicker = ({
   value,
-  min = VehicleConstraints.YEAR_MIN,
+  min,
   max = APP_CONSTANTS.CURRENT_YEAR,
 }: YearPickerParams) => {
   const normalizedValue = value ? Number(value) : null;
 
-  const getDecadeFor = (year: number) => Math.floor(year / 10) * 10;
-
   const getDefaultDecade = () => {
-    if (normalizedValue) return getDecadeFor(normalizedValue);
+    if (normalizedValue) return getDecadeStart(normalizedValue);
 
     const clampedYear = Math.min(Math.max(APP_CONSTANTS.CURRENT_YEAR, min), max);
-    return getDecadeFor(clampedYear);
+    return getDecadeStart(clampedYear);
   };
 
   const rangeKey = `${min}-${max}`;
@@ -34,7 +32,7 @@ export const useYearPicker = ({
   }
 
   const decades = getDecades(min, max);
-  const years = Array.from({ length: 10 }, (_, i) => activeDec + i);
+  const years = getDecadeYears(activeDec);
 
   const getYearState = (y: number) => ({
     isSelected: y === normalizedValue,

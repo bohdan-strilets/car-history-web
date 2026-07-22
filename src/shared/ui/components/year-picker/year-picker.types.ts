@@ -1,7 +1,7 @@
 export interface YearPickerProps {
   value: number | string | null;
   onChange: (year: number) => void;
-  min?: number;
+  min: number;
   max?: number;
 }
 
