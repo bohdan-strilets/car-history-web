@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 
 import { Button, Stack } from '@shared/ui';
 
-import { FormError } from '../form-error';
+import { Hint } from '../hint';
 
 import { root } from './form.css';
 
@@ -32,7 +32,7 @@ export const Form = ({
     <form className={clsx(root, className)} onSubmit={handleSubmit}>
       {children}
 
-      {error && <FormError message={error} />}
+      {error && <Hint variant="danger" message={error} fullWidth />}
 
       <Stack direction="row" gap="md">
         {onBack && (

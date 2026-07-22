@@ -8,4 +8,5 @@ export type HintVariant = NonNullable<HintVariants['variant']>;
 export interface HintProps {
   message: string;
   variant?: HintVariant;
+  fullWidth?: boolean;
 }
