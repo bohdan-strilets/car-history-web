@@ -62,17 +62,6 @@ export interface BaseModalProps {
   zIndex?: number;
 }
 
-export interface BaseBottomSheetProps {
-  title?: string;
-  closable?: boolean;
-  hasBack?: boolean;
-  isTop?: boolean;
-  onClose: () => void;
-  onBack?: () => void;
-  children: React.ReactNode;
-  zIndex?: number;
-}
-
 export interface ConfirmModalProps extends ConfirmOptions {
   onConfirm: () => void;
   onCancel?: () => void;
