@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 import { clsx } from 'clsx';
 
 import { root } from './avatar.css';
@@ -17,6 +19,7 @@ export const Avatar = ({
   className,
   ...rest
 }: AvatarProps) => {
+  const { t } = useTranslation();
   const [imgError, setImgError] = useState(false);
   const initials = getInitials(firstName, lastName);
   const showImage = avatarUrl && !imgError;
@@ -24,7 +27,11 @@ export const Avatar = ({
   return (
     <div className={clsx(root({ size, shape, variant }), className)} {...rest}>
       {showImage ? (
-        <img src={avatarUrl} alt={initials || 'avatar'} onError={() => setImgError(true)} />
+        <img
+          src={avatarUrl}
+          alt={initials || t('common.labels.avatar')}
+          onError={() => setImgError(true)}
+        />
       ) : (
         initials || '?'
       )}
