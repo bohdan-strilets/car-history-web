@@ -1,12 +1,13 @@
 import axios from 'axios';
 
 import { env } from '@config/env';
-import type { AuthResponse } from '@features/auth';
 import { ENDPOINTS, ROUTES } from '@shared/config';
 import { authService } from '@shared/store';
 
 import { CSRF_TOKEN_HEADER } from './constants.cookie';
 import { setupRequestInterceptor, setupResponseInterceptor } from './interceptors';
+
+import type { ApiResponse, RefreshTokenResponse } from './api.types';
 
 export const axiosInstance = axios.create({
   baseURL: env.VITE_API_URL,
@@ -24,7 +25,7 @@ let refreshPromise: Promise<string> | null = null;
 const doRefresh = async (): Promise<string> => {
   const csrfToken = authService.getCsrfToken();
 
-  const response = await refreshInstance.post<{ data: AuthResponse }>(
+  const response = await refreshInstance.post<ApiResponse<RefreshTokenResponse>>(
     ENDPOINTS.AUTH.REFRESH,
     undefined,
     { headers: csrfToken ? { [CSRF_TOKEN_HEADER]: csrfToken } : undefined },

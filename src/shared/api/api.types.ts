@@ -27,3 +27,8 @@ export interface ApiValidationError {
     fields: Record<string, string>;
   };
 }
+
+export interface RefreshTokenResponse {
+  accessToken: string;
+  csrfToken: string;
+}

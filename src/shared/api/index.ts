@@ -6,6 +6,7 @@ export type {
   ApiPaginatedResponse,
   ApiResponse,
   ApiValidationError,
+  RefreshTokenResponse,
 } from './api.types';
 
 export {
