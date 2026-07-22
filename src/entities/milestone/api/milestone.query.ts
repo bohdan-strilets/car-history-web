@@ -12,3 +12,10 @@ export const useMilestones = ({ workspaceId, vehicleId }: MilestonesParams) => {
     queryFn: () => milestoneApi.getMany(workspaceId, vehicleId),
   });
 };
+
+export const useMilestoneLevels = ({ workspaceId, vehicleId }: MilestonesParams) => {
+  return useQuery({
+    queryKey: queryKeys.vehicles.milestoneLevels(vehicleId),
+    queryFn: () => milestoneApi.getLevels(workspaceId, vehicleId),
+  });
+};

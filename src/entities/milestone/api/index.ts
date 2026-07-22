@@ -1,2 +1,2 @@
 export { milestoneApi } from './milestone.api';
-export { useMilestones } from './milestone.query';
+export { useMilestoneLevels, useMilestones } from './milestone.query';
