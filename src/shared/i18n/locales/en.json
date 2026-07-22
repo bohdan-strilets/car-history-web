@@ -769,7 +769,11 @@
         "specs": "Technical specifications",
         "appearance": "Appearance",
         "description": "Description",
-        "purchaseSale": "Purchase / Sale"
+        "purchaseSale": "Purchase / Sale",
+        "quickSpecs": "Quick specifications",
+        "reminders": "Upcoming reminders",
+        "gallery": "Gallery",
+        "expenses": "Total expenses"
       },
       "fields": {
         "purchaseDate": "Purchase date",
@@ -794,6 +798,17 @@
           "title": "Still yours",
           "description": "When you decide to sell — add a sale event to the history",
           "action": "Add sale"
+        }
+      },
+      "expenses": {
+        "subtitle": "Since purchase",
+        "total": "Total spent on the vehicle",
+        "viewDetails": "Detailed statistics",
+        "categories": {
+          "fuel": "Fuel",
+          "service": "Service",
+          "documents": "Documents",
+          "other": "Other"
         }
       }
     },

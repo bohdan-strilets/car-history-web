@@ -772,7 +772,11 @@
         "specs": "Dane techniczne",
         "appearance": "Wygląd",
         "description": "Opis",
-        "purchaseSale": "Zakup / Sprzedaż"
+        "purchaseSale": "Zakup / Sprzedaż",
+        "quickSpecs": "Charakterystyka",
+        "reminders": "Nadchodzące przypomnienia",
+        "gallery": "Galeria",
+        "expenses": "Łączne wydatki"
       },
       "fields": {
         "purchaseDate": "Data zakupu",
@@ -797,6 +801,17 @@
           "title": "Pojazd nadal z Tobą",
           "description": "Gdy zdecydujesz się sprzedać — dodaj zdarzenie sprzedaży do historii",
           "action": "Dodaj sprzedaż"
+        }
+      },
+      "expenses": {
+        "subtitle": "Od momentu zakupu",
+        "total": "Wydano na pojazd",
+        "viewDetails": "Szczegółowe statystyki",
+        "categories": {
+          "fuel": "Paliwo",
+          "service": "Serwis",
+          "documents": "Dokumenty",
+          "other": "Inne"
         }
       }
     },
