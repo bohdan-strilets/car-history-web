@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { useFormatDate } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
 import { Button, Heading, IconBox, InfoRow, Spinner, Stack, Tooltip } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section';

@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
 import { MILESTONE_CATEGORY_CONFIG } from '@entities/milestone';
-import { useFormatDate, useMediaQuery } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
+import { useMediaQuery } from '@shared/hooks';
 import { Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 

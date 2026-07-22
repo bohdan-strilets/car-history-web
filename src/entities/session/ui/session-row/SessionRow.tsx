@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { useFormatDate } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
 import { Badge, Button, Icon, Panel, Stack, Text } from '@shared/ui';
 
 import { getDeviceIcon } from './session-row.utils';

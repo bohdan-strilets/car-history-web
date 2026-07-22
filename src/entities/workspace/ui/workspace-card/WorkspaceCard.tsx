@@ -1,9 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import { WORKSPACE_ROLE_CONFIG, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
+import { useFormatDate, WORKSPACE_ROLE_CONFIG, WORKSPACE_TYPE_CONFIG } from '@entities/workspace';
 import { ROUTES } from '@shared/config';
-import { useFormatDate } from '@shared/hooks';
 import { Badge, Heading, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 

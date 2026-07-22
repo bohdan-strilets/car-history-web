@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-import { useFormatDate } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
 import { InfoRow } from '@shared/ui';
 import { InfoSection } from '@widgets/info-section';
 

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { TIRE_CHANGE_TYPE_CONFIG } from '@entities/tire';
-import { useFormatDate } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
 import { InfoRow } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section';

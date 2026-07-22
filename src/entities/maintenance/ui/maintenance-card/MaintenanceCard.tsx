@@ -5,7 +5,8 @@ import {
   MAINTENANCE_TYPE_CONFIG,
   MAINTENANCE_URGENCY_CONFIG,
 } from '@entities/maintenance';
-import { useFormatDate, useMediaQuery } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
+import { useMediaQuery } from '@shared/hooks';
 import { Badge, Button, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 

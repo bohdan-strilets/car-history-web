@@ -7,7 +7,7 @@ import {
   REMINDER_TYPE_CONFIG,
   REMINDER_URGENCY_CONFIG,
 } from '@entities/reminder';
-import { useFormatDate } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
 import { Button, Heading, IconBox, InfoRow, Stack, Tooltip } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section';

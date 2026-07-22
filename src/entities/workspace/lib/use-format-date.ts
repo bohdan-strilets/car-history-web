@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 
 import { LANGUAGE, type Language } from '@entities/user';
-import { DATE_FORMAT, useActiveWorkspace, useWorkspaceSettingsQuery } from '@entities/workspace';
 import { formatDate } from '@shared/lib';
+
+import { useWorkspaceSettingsQuery } from '../api';
+import { DATE_FORMAT, useActiveWorkspace } from '../model';
 
 export const useFormatDate = () => {
   const { activeWorkspaceId } = useActiveWorkspace();

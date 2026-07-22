@@ -7,7 +7,8 @@ import {
   REMINDER_TYPE_CONFIG,
   REMINDER_URGENCY_CONFIG,
 } from '@entities/reminder';
-import { useFormatDate, useMediaQuery } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
+import { useMediaQuery } from '@shared/hooks';
 import { Badge, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 

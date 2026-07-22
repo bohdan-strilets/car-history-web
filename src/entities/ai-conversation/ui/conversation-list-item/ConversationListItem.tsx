@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
-import { useFormatDate, useMediaQuery } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
+import { useMediaQuery } from '@shared/hooks';
 import { IconBox, Panel, Stack, Text } from '@shared/ui';
 
 import type { ConversationListItemProps } from './conversation-list-item.types';

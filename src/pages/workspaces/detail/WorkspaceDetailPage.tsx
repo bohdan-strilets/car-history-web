@@ -10,6 +10,7 @@ import {
   MembersTab,
   SettingsTab,
   useActiveWorkspace,
+  useFormatDate,
   useWorkspaceId,
   useWorkspaceMembersQuery,
   useWorkspacePendingInvitesQuery,
@@ -26,7 +27,6 @@ import {
 } from '@entities/workspace';
 import { getErrorCode } from '@shared/api';
 import { ERROR_CODES, ROUTES } from '@shared/config';
-import { useFormatDate } from '@shared/hooks';
 import { useAuth } from '@shared/store';
 import { Badge, Icon, Stack, Tabs, Text } from '@shared/ui';
 import { getConfigOption, translateSegmentControlOptions } from '@shared/utils';

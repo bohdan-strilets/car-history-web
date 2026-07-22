@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
 import { TIMELINE_EVENT_TYPE_CONFIG } from '@entities/timeline';
-import { useFormatDate, useMediaQuery } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
+import { useMediaQuery } from '@shared/hooks';
 import { Box, Icon, IconBox, Panel, Stack, Text } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 

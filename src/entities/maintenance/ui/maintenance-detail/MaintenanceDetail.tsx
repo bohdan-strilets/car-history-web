@@ -5,7 +5,7 @@ import {
   MAINTENANCE_TYPE_CONFIG,
   MAINTENANCE_URGENCY_CONFIG,
 } from '@entities/maintenance';
-import { useFormatDate } from '@shared/hooks';
+import { useFormatDate } from '@entities/workspace';
 import { Button, Heading, IconBox, InfoRow, Stack, Tooltip } from '@shared/ui';
 import { getConfigOption } from '@shared/utils';
 import { InfoSection } from '@widgets/info-section';
