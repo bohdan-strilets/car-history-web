@@ -1,4 +1,5 @@
 import type { Media } from '@entities/media';
+import type { MilestoneLevel } from '@entities/milestone';
 import type { Reminder } from '@entities/reminder';
 import type { VehicleStats } from '@entities/stats';
 import type { Vehicle } from '@entities/vehicle';
@@ -17,6 +18,7 @@ export interface VehicleOverviewProps {
   onViewGallery: () => void;
   stats?: VehicleStats;
   onViewStats: () => void;
+  milestoneLevels: MilestoneLevel[];
 }
 export interface SpecChipProps {
   label: string;

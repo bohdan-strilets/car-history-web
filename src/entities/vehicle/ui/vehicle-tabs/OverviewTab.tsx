@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import { useGalleryQuery } from '@entities/media';
+import { useMilestoneLevels } from '@entities/milestone';
 import { useRemindersQuery, type Reminder } from '@entities/reminder';
 import { STATS_PERIODS, useVehicleStats } from '@entities/stats';
 import { useOpenReminderDetail } from '@features/reminder';
@@ -36,6 +37,9 @@ export const OverviewTab = ({
     vehicleId,
     period: STATS_PERIODS.ALL,
   });
+
+  const { data: milestoneLevelsData } = useMilestoneLevels({ workspaceId, vehicleId });
+  const milestoneLevels = milestoneLevelsData?.data ?? [];
 
   const upcomingReminders = getUpcomingReminders(
     remindersData?.data ?? [],
@@ -73,6 +77,7 @@ export const OverviewTab = ({
       onViewGallery={() => goToTab('gallery')}
       stats={statsData?.data}
       onViewStats={() => goToTab('stats')}
+      milestoneLevels={milestoneLevels}
     />
   );
 };

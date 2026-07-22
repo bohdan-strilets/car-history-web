@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { MediaCard } from '@entities/media';
+import { MilestoneLevelCard } from '@entities/milestone';
 import { ReminderCard } from '@entities/reminder';
 import {
   BODY_TYPE_CONFIG,
@@ -37,9 +38,11 @@ export const VehicleOverview = ({
   onViewGallery,
   stats,
   onViewStats,
+  milestoneLevels,
 }: VehicleOverviewProps) => {
-  const { t } = useTranslation();
   const [isFunFactsOpen, setIsFunFactsOpen] = useState(false);
+  const [isAchievementsOpen, setIsAchievementsOpen] = useState(false);
+  const { t } = useTranslation();
 
   const bodyType = getConfigOption(t, BODY_TYPE_CONFIG, vehicle.bodyType);
   const transmission = getConfigOption(t, TRANSMISSION_CONFIG, vehicle.transmission);
@@ -72,6 +75,26 @@ export const VehicleOverview = ({
               <MediaCard key={media.id} media={media} onClick={onViewGallery} />
             ))}
           </Grid>
+        </Stack>
+      )}
+
+      {milestoneLevels.length > 0 && (
+        <Stack gap="md">
+          <Button
+            variant="ghost"
+            size="sm"
+            rightIcon={isAchievementsOpen ? 'chevronUp' : 'chevronDown'}
+            onClick={() => setIsAchievementsOpen((prev) => !prev)}
+          >
+            {t('vehicle.overview.sections.achievements')}
+          </Button>
+          {isAchievementsOpen && (
+            <Grid columns={{ mobile: '1', tablet: '3' }} gap="sm">
+              {milestoneLevels.map((level) => (
+                <MilestoneLevelCard key={level.group} level={level} />
+              ))}
+            </Grid>
+          )}
         </Stack>
       )}
 
