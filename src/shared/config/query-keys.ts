@@ -37,6 +37,8 @@ export const queryKeys = {
     gallery: (vehicleId: VehicleId, category?: MediaCategory) =>
       ['vehicles', vehicleId, 'gallery', category ?? null] as const,
     milestones: (vehicleId: VehicleId) => ['vehicles', vehicleId, 'milestones'] as const,
+    milestoneLevels: (vehicleId: VehicleId) =>
+      ['vehicles', vehicleId, 'milestones', 'levels'] as const,
   },
 
   tires: {

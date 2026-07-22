@@ -74,6 +74,8 @@ export const ENDPOINTS = {
       `/workspaces/${workspaceId}/vehicles/${vehicleId}/specs`,
     MILESTONES: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
       `/workspaces/${workspaceId}/vehicles/${vehicleId}/milestones`,
+    MILESTONE_LEVELS: (workspaceId: WorkspaceId, vehicleId: VehicleId) =>
+      `/workspaces/${workspaceId}/vehicles/${vehicleId}/milestones/levels`,
   },
 
   TIMELINE: {
