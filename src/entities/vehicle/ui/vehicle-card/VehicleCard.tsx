@@ -102,14 +102,14 @@ export const VehicleCard = ({ vehicle, onClick, documentBadge }: VehicleCardProp
           <Box p="lg">
             <Stack direction="row" align="start" justify="between">
               {milestoneTitle ? (
-                <Badge gradient="amber" startIcon="trophy">
+                <Badge gradient="indigo" startIcon="trophy">
                   {milestoneTitle}
                 </Badge>
               ) : (
                 <span />
               )}
               <Stack direction="row" gap="xs" justify="end">
-                {documentBadge && <Badge soft={documentBadge.color}>{documentBadge.label}</Badge>}
+                {documentBadge && <Badge solid={documentBadge.color}>{documentBadge.label}</Badge>}
                 <Badge gradient="gray">{vehicle.year}</Badge>
               </Stack>
             </Stack>
@@ -174,7 +174,6 @@ export const VehicleCard = ({ vehicle, onClick, documentBadge }: VehicleCardProp
                 align="center"
                 justify="center"
                 gap="xs"
-                soft="blue"
                 p={{ mobile: 'sm', tablet: 'lg' }}
               >
                 <Text weight="extraBold" size="xl">
@@ -190,7 +189,6 @@ export const VehicleCard = ({ vehicle, onClick, documentBadge }: VehicleCardProp
                 align="center"
                 justify="center"
                 gap="xs"
-                soft="green"
                 p={{ mobile: 'sm', tablet: 'lg' }}
               >
                 <Text weight="extraBold" size="xl">
@@ -206,7 +204,6 @@ export const VehicleCard = ({ vehicle, onClick, documentBadge }: VehicleCardProp
                 align="center"
                 justify="center"
                 gap="xs"
-                soft="purple"
                 p={{ mobile: 'sm', tablet: 'lg' }}
               >
                 <Text weight="extraBold" size="xl">
@@ -275,7 +272,7 @@ export const VehicleCard = ({ vehicle, onClick, documentBadge }: VehicleCardProp
                     hoverable
                     p={{ mobile: 'sm', tablet: 'lg' }}
                   >
-                    <Icon name="activity" size="sm" color="violet" />
+                    <Icon name="timeline" size="sm" color="violet" />
                     <Text size="sm" color="violet" weight="semibold">
                       {t('vehicle.card.actions.timeline')}
                     </Text>

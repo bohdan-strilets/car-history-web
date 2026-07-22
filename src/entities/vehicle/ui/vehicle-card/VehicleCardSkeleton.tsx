@@ -16,9 +16,21 @@ export const VehicleCardSkeleton = () => {
           </Stack>
 
           <Stack direction={{ mobile: 'column', tablet: 'row' }} gap="sm">
-            <Skeleton width="full" height="40px" radius="sm" />
-            <Skeleton width="full" height="40px" radius="sm" />
-            <Skeleton width="full" height="40px" radius="sm" />
+            <Skeleton width="full" height="64px" radius="sm" />
+            <Skeleton width="full" height="64px" radius="sm" />
+            <Skeleton width="full" height="64px" radius="sm" />
+          </Stack>
+
+          <Stack direction={{ mobile: 'column', tablet: 'row' }} gap="sm">
+            <Skeleton width="full" height="48px" radius="sm" />
+            <Skeleton width="full" height="48px" radius="sm" />
+            <Skeleton width="full" height="48px" radius="sm" />
+          </Stack>
+
+          <Stack gap="none">
+            <Skeleton width="full" height="56px" radius="sm" />
+            <Skeleton width="full" height="56px" radius="sm" />
+            <Skeleton width="full" height="56px" radius="sm" />
           </Stack>
         </Stack>
       </Box>

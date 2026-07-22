@@ -45,7 +45,7 @@ export const DashboardOverview = ({ dashboard, workspaceId, currency }: Dashboar
             onAction={() => navigate(ROUTES.WORKSPACES.VEHICLES.NEW(workspaceId))}
           />
         ) : (
-          <Grid columns={{ mobile: '1', tablet: '2', desktop: '3' }} gap="2xl">
+          <Grid columns={{ mobile: '1', laptop: '2' }} gap="2xl">
             {dashboard.vehicles.map((vehicle) => (
               <VehicleCard
                 key={vehicle.id}
