@@ -1,4 +1,3 @@
-export * from './color-picker';
 export * from './fuel-labels';
 export * from './license-plate';
 export * from './mileage-input';

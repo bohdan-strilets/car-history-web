@@ -1,6 +1,7 @@
 export * from './avatar';
 export * from './card-select';
 export * from './charts';
+export * from './color-picker';
 export * from './combobox';
 export * from './date-picker';
 export * from './dropdown';
@@ -8,7 +9,6 @@ export * from './error-fallback';
 export * from './fab';
 export * from './field';
 export * from './form';
-export * from './form-error';
 export * from './form-field';
 export * from './hint';
 export * from './info-row';

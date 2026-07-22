@@ -1,12 +1,6 @@
 import type { FieldValues } from 'react-hook-form';
 
 import {
-  ColorPicker,
-  MileageInput,
-  type ColorPickerProps,
-  type MileageInputProps,
-} from '@entities/vehicle';
-import {
   Checkbox,
   DatePicker,
   Input,
@@ -21,6 +15,7 @@ import {
 } from '@shared/ui';
 
 import { CardSelect } from '../card-select';
+import { ColorPicker, type ColorPickerProps } from '../color-picker';
 import { Combobox, type ComboboxProps } from '../combobox';
 import { Select, type SelectProps } from '../select';
 import { YearPicker, type YearPickerProps } from '../year-picker';
@@ -207,25 +202,6 @@ export const FormFieldCheckbox = <T extends FieldValues>({
     required={required}
     render={(field) => <Checkbox checked={field.value} onChange={field.onChange} {...props} />}
     direction="row-reverse"
-  />
-);
-
-export const FormFieldMileageInput = <T extends FieldValues>({
-  control,
-  name,
-  label,
-  hint,
-  required,
-  ...props
-}: BaseProps<T> & Omit<MileageInputProps, 'value' | 'onChange'>) => (
-  <FormField
-    control={control}
-    name={name}
-    label={label}
-    required={required}
-    render={(field) => (
-      <MileageInput value={field.value} onChange={field.onChange} hint={hint} {...props} />
-    )}
   />
 );
 

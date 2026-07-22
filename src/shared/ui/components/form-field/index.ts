@@ -7,10 +7,11 @@ export {
   FormFieldCombobox,
   FormFieldDatePicker,
   FormFieldInput,
-  FormFieldMileageInput,
   FormFieldNumberInput,
   FormFieldPasswordInput,
   FormFieldSelect,
   FormFieldTextarea,
   FormFieldYearPicker,
 } from './FormField.fields';
+
+export type { FormFieldProps } from './form-field.types';

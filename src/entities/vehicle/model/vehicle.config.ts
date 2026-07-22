@@ -1,4 +1,5 @@
 import type { EntityOption } from '@shared/types';
+import type { ColorPickerOption } from '@shared/ui';
 
 import {
   BODY_TYPE,
@@ -13,7 +14,6 @@ import {
   type Transmission,
 } from './vehicle.constants';
 
-import type { ColorPickerOption } from '../ui';
 import type { VehiclePopularBrand } from './vehicle.data';
 
 // Entity options
