@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 .vscode
 
+# Claude Code local instructions (not shared with team)
+CLAUDE.md
+
