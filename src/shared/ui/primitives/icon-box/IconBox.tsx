@@ -16,7 +16,7 @@ export const IconBox = ({
   border,
   radius,
   shadow,
-  strokeWidth,
+  weight,
   className,
   'aria-label': ariaLabel,
 }: IconBoxProps) => {
@@ -33,7 +33,7 @@ export const IconBox = ({
       aria-label={ariaLabel}
       aria-hidden={ariaLabel ? undefined : true}
     >
-      <Icon name={name} strokeWidth={strokeWidth} size={size} color="inherit" />
+      <Icon name={name} weight={weight} size={size} color="inherit" />
     </span>
   );
 };

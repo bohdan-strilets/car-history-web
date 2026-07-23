@@ -2,7 +2,7 @@ import { type RecipeVariants } from '@vanilla-extract/recipes';
 
 import type { IconName } from '@shared/icons';
 import type { ResponsiveValue } from '@shared/types';
-import type { IconStrokeWidth } from '@shared/ui';
+import type { IconWeight } from '@shared/ui';
 
 import { root } from './icon-box.css';
 
@@ -24,7 +24,7 @@ export interface IconBoxProps {
   border?: IconBoxBorder;
   radius?: IconBoxRadius;
   shadow?: IconBoxShadow;
-  strokeWidth?: IconStrokeWidth;
+  weight?: IconWeight;
   className?: string;
   'aria-label'?: string;
 }
