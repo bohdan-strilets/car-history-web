@@ -177,6 +177,7 @@ import { TrophyIcon } from '@phosphor-icons/react/dist/csr/Trophy';
 import { UploadIcon } from '@phosphor-icons/react/dist/csr/Upload';
 import { UserIcon } from '@phosphor-icons/react/dist/csr/User';
 import { UserCheckIcon } from '@phosphor-icons/react/dist/csr/UserCheck';
+import { UserGearIcon } from '@phosphor-icons/react/dist/csr/UserGear';
 import { UserMinusIcon } from '@phosphor-icons/react/dist/csr/UserMinus';
 import { UserPlusIcon } from '@phosphor-icons/react/dist/csr/UserPlus';
 import { UsersIcon } from '@phosphor-icons/react/dist/csr/Users';
@@ -200,6 +201,7 @@ export const Icons = {
   bot: RobotIcon,
   user: UserIcon,
   settings: GearSixIcon,
+  userSettings: UserGearIcon,
   menu: ListIcon,
   close: XIcon,
   chevronLeft: CaretLeftIcon,

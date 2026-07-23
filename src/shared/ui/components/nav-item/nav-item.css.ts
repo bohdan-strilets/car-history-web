@@ -5,16 +5,10 @@ import { vars } from '@shared/styles';
 const { duration, easing } = vars.transition;
 const fastInOut = `${duration.fast} ${easing.inOut}`;
 
-export const root = style({
-  display: 'flex',
-  alignItems: 'center',
-  gap: vars.spacing.md,
-
-  padding: vars.spacing.md,
-  width: '100%',
-
+export const rootLink = style({
   borderRadius: vars.radius.md,
-  color: vars.color.text.secondary,
+  width: '100%',
+  display: 'block',
 
   transition: `color ${fastInOut}, background-color ${fastInOut}`,
 
@@ -22,17 +16,4 @@ export const root = style({
     color: vars.color.text.primary,
     backgroundColor: vars.color.accent.soft,
   },
-});
-
-export const labelText = style({
-  fontSize: vars.typography.size.md,
-  fontWeight: vars.typography.weight.medium,
-  whiteSpace: 'nowrap',
-  overflow: 'hidden',
-});
-
-export const link = style({
-  borderRadius: vars.radius.md,
-  width: '100%',
-  display: 'block',
 });

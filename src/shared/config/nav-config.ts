@@ -24,7 +24,7 @@ export const NAV_ITEMS: NavConfig[] = [
     to: ROUTES.AI.ROOT,
   },
   {
-    icon: 'slidersVertical',
+    icon: 'settings',
     labelKey: 'nav.items.profile',
     to: ROUTES.PROFILE.ROOT,
   },
