@@ -79,7 +79,6 @@ export const UploadMediaForm = ({ workspaceId, vehicleId, onSuccess }: UploadMed
           type="file"
           multiple
           accept="image/*,video/*"
-          capture={isMobile ? 'environment' : undefined}
           className={styles.hiddenInput}
           onChange={(e) => handleFiles(e.target.files)}
         />
