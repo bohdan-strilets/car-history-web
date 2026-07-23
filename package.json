@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@phosphor-icons/react": "^2.1.10",
     "@sentry/react": "^10.65.0",
     "@tanstack/react-query": "^5.100.10",
     "@vanilla-extract/css": "^1.20.1",
@@ -31,7 +32,6 @@
     "clsx": "^2.1.1",
     "i18n-iso-countries": "^7.14.0",
     "i18next": "^26.0.10",
-    "lucide-react": "^1.14.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-hook-form": "^7.75.0",
