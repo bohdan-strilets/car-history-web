@@ -26,7 +26,7 @@ export const Fab = ({
       className={clsx(fab({ size, extended, visible }), className)}
       onClick={onClick}
     >
-      <Icon name={icon} size={sizeMap} color="inherit" strokeWidth="medium" />
+      <Icon name={icon} size={sizeMap} color="inherit" weight="bold" />
       {label && (
         <Text size={sizeMap} weight="semibold" lineHeight="tight" color="inherit">
           {label}

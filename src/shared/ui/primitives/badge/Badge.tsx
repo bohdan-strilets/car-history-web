@@ -46,9 +46,9 @@ export const Badge = <T extends ElementType = 'span'>({
 
   return (
     <Tag className={clsx(rootClass, ...responsiveClasses, className)} {...rest}>
-      {startIcon && <Icon name={startIcon} size={iconSize} color="inherit" strokeWidth="medium" />}
+      {startIcon && <Icon name={startIcon} size={iconSize} color="inherit" weight="fill" />}
       {children}
-      {endIcon && <Icon name={endIcon} size={iconSize} color="inherit" strokeWidth="medium" />}
+      {endIcon && <Icon name={endIcon} size={iconSize} color="inherit" weight="fill" />}
     </Tag>
   );
 };

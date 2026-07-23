@@ -56,7 +56,7 @@ export const InfoRow = ({
           <Text size={{ mobile: 'sm', tablet: 'md' }} truncate>
             {value ?? '—'}
           </Text>
-          {isClickable && <Icon name="chevronRight" strokeWidth="medium" />}
+          {isClickable && <Icon name="chevronRight" weight="bold" />}
         </Stack>
       </Panel>
       {bottomDivider && <Divider color="subtle" />}

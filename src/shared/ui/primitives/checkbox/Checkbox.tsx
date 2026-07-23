@@ -34,7 +34,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
 
         {(checked || indeterminate) && (
           <span className={iconSlot}>
-            <Icon name={indeterminate ? 'minus' : 'check'} strokeWidth="bold" color="onColor" />
+            <Icon name={indeterminate ? 'minus' : 'check'} weight="bold" color="onColor" />
           </span>
         )}
       </span>
