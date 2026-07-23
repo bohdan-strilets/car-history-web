@@ -22,7 +22,7 @@ export const Button = ({
   disabled = false,
   leftIcon,
   rightIcon,
-  strokeWidth,
+  weight,
   ...rest
 }: ButtonProps) => {
   const baseSize = baseToken(size);
@@ -50,23 +50,11 @@ export const Button = ({
       ) : (
         <>
           {leftIcon && (
-            <Icon
-              name={leftIcon}
-              size={iconSize}
-              strokeWidth={strokeWidth}
-              color="inherit"
-              aria-hidden
-            />
+            <Icon name={leftIcon} size={iconSize} weight={weight} color="inherit" aria-hidden />
           )}
           {children}
           {rightIcon && (
-            <Icon
-              name={rightIcon}
-              size={iconSize}
-              strokeWidth={strokeWidth}
-              color="inherit"
-              aria-hidden
-            />
+            <Icon name={rightIcon} size={iconSize} weight={weight} color="inherit" aria-hidden />
           )}
         </>
       )}

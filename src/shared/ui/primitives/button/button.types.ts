@@ -4,7 +4,7 @@ import { type RecipeVariants } from '@vanilla-extract/recipes';
 
 import type { IconName } from '@shared/icons';
 import type { ResponsiveValue } from '@shared/types';
-import type { IconStrokeWidth } from '@shared/ui';
+import type { IconWeight } from '@shared/ui';
 
 import { root } from './button.css';
 
@@ -24,5 +24,5 @@ export interface ButtonProps extends Omit<ComponentPropsWithoutRef<'button'>, 'c
   loading?: boolean;
   leftIcon?: IconName;
   rightIcon?: IconName;
-  strokeWidth?: IconStrokeWidth;
+  weight?: IconWeight;
 }
