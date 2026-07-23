@@ -1,6 +1,10 @@
-export const strokeWidthMap = {
-  thin: 1,
-  regular: 1.5,
-  medium: 2,
-  bold: 2.5,
+import type { IconWeight } from './icon.types';
+
+export const weightMap: Record<IconWeight, IconWeight> = {
+  thin: 'thin',
+  light: 'light',
+  regular: 'regular',
+  bold: 'bold',
+  fill: 'fill',
+  duotone: 'duotone',
 } as const;
