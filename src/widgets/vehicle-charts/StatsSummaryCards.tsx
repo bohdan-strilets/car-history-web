@@ -11,7 +11,7 @@ export const StatsSummaryCards = ({ stats }: StatsSummaryCardsProps) => {
     <Grid columns={{ mobile: '2', tablet: '4' }} gap="md">
       <Panel radius="md" p="lg">
         <Stack gap="sm" align="center">
-          <IconBox name="wallet" size="2xl" soft="purple" strokeWidth="medium" />
+          <IconBox name="wallet" size="2xl" soft="purple" weight="bold" />
           <Text size="sm" color="tertiary">
             {t('stats.summary.totalCost')}
           </Text>
@@ -23,7 +23,7 @@ export const StatsSummaryCards = ({ stats }: StatsSummaryCardsProps) => {
 
       <Panel radius="md" p="lg">
         <Stack gap="sm" align="center">
-          <IconBox name="road" size="2xl" soft="gray" strokeWidth="medium" />
+          <IconBox name="road" size="2xl" soft="gray" weight="bold" />
           <Text size="sm" color="tertiary">
             {t('stats.summary.avgCostPerKm')}
           </Text>
@@ -37,7 +37,7 @@ export const StatsSummaryCards = ({ stats }: StatsSummaryCardsProps) => {
 
       <Panel radius="md" p="lg">
         <Stack gap="sm" align="center">
-          <IconBox name="gauge" size="2xl" soft="lime" strokeWidth="medium" />
+          <IconBox name="gauge" size="2xl" soft="lime" weight="bold" />
           <Text size="sm" color="tertiary">
             {t('stats.summary.fuelConsumption')}
           </Text>
@@ -51,7 +51,7 @@ export const StatsSummaryCards = ({ stats }: StatsSummaryCardsProps) => {
 
       <Panel radius="md" p="lg">
         <Stack gap="sm" align="center">
-          <IconBox name="calendar" size="2xl" soft="blue" strokeWidth="medium" />
+          <IconBox name="calendar" size="2xl" soft="blue" weight="bold" />
           <Text size="sm" color="tertiary">
             {t('stats.summary.tco')}
           </Text>

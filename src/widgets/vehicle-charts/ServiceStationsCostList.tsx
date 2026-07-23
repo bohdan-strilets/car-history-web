@@ -26,7 +26,7 @@ export const ServiceStationsCostList = ({ stations }: ServiceStationsCostListPro
               gap="md"
             >
               <Stack direction="row" align="center" gap="sm">
-                <Icon name="mapPin" size="sm" color="tertiary" strokeWidth="medium" />
+                <Icon name="mapPin" size="sm" color="tertiary" weight="bold" />
                 <Text size="md">{station.name}</Text>
                 <Text size="xs" color="tertiary">
                   ({station.visitCount} {t('stats.charts.visits')})

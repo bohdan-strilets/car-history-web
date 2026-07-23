@@ -17,7 +17,7 @@ export const PreviousPeriodBadge = ({ comparison }: PreviousPeriodBadgeProps) =>
   return (
     <Badge soft={color} size="xl">
       <Stack direction="row" align="center" gap="xs">
-        <Icon name={icon} size="sm" color={color} strokeWidth="medium" />
+        <Icon name={icon} size="sm" color={color} weight="bold" />
         <Text size="xs" color={color} weight="bold">
           {prefix}
           {comparison.changePercent}%
