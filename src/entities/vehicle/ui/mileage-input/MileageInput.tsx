@@ -27,7 +27,7 @@ export const MileageInput = ({ value, onChange, hint }: MileageInputProps) => {
   return (
     <Stack gap="lg">
       <Panel align="center" justify="center" p="4xl">
-        <IconBox name="road" size="2xl" soft="accent" radius="md" strokeWidth="medium" />
+        <IconBox name="road" size="2xl" soft="accent" radius="md" weight="fill" />
 
         <input
           type="text"

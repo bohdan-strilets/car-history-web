@@ -45,7 +45,7 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
         <IconBox
           name={typeConfig?.icon ?? 'circleQuestionMark'}
           soft={isInactive ? 'gray' : typeConfig?.color}
-          strokeWidth="medium"
+          weight="bold"
           size={isTabletUp ? '2xl' : 'xl'}
         />
         <Stack gap="md">
@@ -59,7 +59,7 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
           <Stack direction="row" align="center" gap="2xl">
             {reminder.dueDate && (
               <Stack direction="row" align="center" gap="sm">
-                <Icon name="calendar" size="sm" strokeWidth="medium" />
+                <Icon name="calendar" size="sm" weight="bold" />
                 <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                   {formatDate(reminder.dueDate)}
                 </Text>
@@ -67,14 +67,14 @@ export const ReminderCard = ({ reminder, onClick }: ReminderCardProps) => {
             )}
             {reminder.dueMileage && (
               <Stack direction="row" align="center" gap="sm">
-                <Icon name="road" size="sm" strokeWidth="medium" />
+                <Icon name="road" size="sm" weight="bold" />
                 <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                   {reminder.dueMileage.toLocaleString()} {t('units.km')}
                 </Text>
               </Stack>
             )}
             <Badge soft={urgencyConfig?.color}>
-              <Icon name="timer" size="sm" strokeWidth="medium" color="inherit" />
+              <Icon name="timer" size="sm" weight="bold" color="inherit" />
               <Text color="inherit">{daysLeftDisplay}</Text>
             </Badge>
           </Stack>

@@ -36,7 +36,7 @@ export const TireDetail = ({
         <IconBox
           name={typeConfig?.icon ?? 'circle'}
           soft={typeConfig?.color ?? 'gray'}
-          strokeWidth="medium"
+          weight="bold"
           size="2xl"
         />
         <Stack gap="xs">

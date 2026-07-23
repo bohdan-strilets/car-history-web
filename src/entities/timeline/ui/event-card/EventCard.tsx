@@ -31,7 +31,7 @@ export const EventCard = ({ event, onClick }: EventCardProps) => {
         <IconBox
           name={config?.icon ?? 'circleQuestionMark'}
           soft={config?.color ?? 'gray'}
-          strokeWidth="medium"
+          weight="bold"
           size={isTabletUp ? '2xl' : 'xl'}
         />
         <Stack gap="md">
@@ -57,20 +57,20 @@ export const EventCard = ({ event, onClick }: EventCardProps) => {
 
           <Stack direction="row" align="center" gap="2xl">
             <Stack direction="row" align="center" gap="sm">
-              <Icon name="calendar" size="sm" strokeWidth="medium" />
+              <Icon name="calendar" size="sm" weight="bold" />
               <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                 {formatDate(event.eventDate)}
               </Text>
             </Stack>
             <Stack direction="row" align="center" gap="sm">
-              <Icon name="road" size="sm" strokeWidth="medium" />
+              <Icon name="road" size="sm" weight="bold" />
               <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                 {event.mileage.toLocaleString()} {t('units.km')}
               </Text>
             </Stack>
             {event.serviceStation && (
               <Stack direction="row" align="center" gap="sm">
-                <Icon name="mapPin" size="sm" strokeWidth="medium" />
+                <Icon name="mapPin" size="sm" weight="bold" />
                 <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                   {event.serviceStation.name}
                 </Text>

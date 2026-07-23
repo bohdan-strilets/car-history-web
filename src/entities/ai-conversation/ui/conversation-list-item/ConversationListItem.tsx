@@ -21,7 +21,7 @@ export const ConversationListItem = ({ conversation, onClick }: ConversationList
       hoverable={!!onClick}
     >
       <Stack direction="row" align="center" gap="xl">
-        <IconBox name="bot" soft="orange" strokeWidth="medium" size={isTabletUp ? '2xl' : 'xl'} />
+        <IconBox name="bot" soft="orange" weight="bold" size={isTabletUp ? '2xl' : 'xl'} />
         <Stack gap="none" align="start">
           <Text weight="bold" size="xl" align="left">
             {conversation.title}

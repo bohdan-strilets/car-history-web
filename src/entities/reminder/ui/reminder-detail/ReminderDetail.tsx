@@ -44,7 +44,7 @@ export const ReminderDetail = ({
         <IconBox
           name={typeConfig?.icon ?? 'bell'}
           soft={typeConfig?.color ?? 'gray'}
-          strokeWidth="medium"
+          weight="bold"
           size="2xl"
         />
         <Stack gap="xs">

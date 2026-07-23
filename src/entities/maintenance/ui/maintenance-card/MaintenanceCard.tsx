@@ -42,7 +42,7 @@ export const MaintenanceCard = ({
         <IconBox
           name={typeConfig?.icon ?? 'wrench'}
           soft={isInactive ? 'gray' : (typeConfig?.color ?? 'gray')}
-          strokeWidth="medium"
+          weight="bold"
           size={isTabletUp ? '2xl' : 'xl'}
         />
         <Stack gap="md">
@@ -58,7 +58,7 @@ export const MaintenanceCard = ({
           <Stack direction="row" align="center" gap="xl">
             {interval.nextServiceMileage != null && (
               <Stack direction="row" align="center" gap="sm">
-                <Icon name="road" size="sm" strokeWidth="medium" />
+                <Icon name="road" size="sm" weight="bold" />
                 <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                   {interval.nextServiceMileage.toLocaleString()} {t('units.km')}
                 </Text>
@@ -66,7 +66,7 @@ export const MaintenanceCard = ({
             )}
             {interval.nextServiceDate && (
               <Stack direction="row" align="center" gap="sm">
-                <Icon name="calendar" size="sm" strokeWidth="medium" />
+                <Icon name="calendar" size="sm" weight="bold" />
                 <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                   {formatDate(interval.nextServiceDate)}
                 </Text>
@@ -74,7 +74,7 @@ export const MaintenanceCard = ({
             )}
             {interval.lastServiceMileage != null && (
               <Stack direction="row" align="center" gap="sm">
-                <Icon name="list" size="sm" strokeWidth="medium" />
+                <Icon name="list" size="sm" weight="bold" />
                 <Text color="tertiary" size="sm">
                   {interval.lastServiceMileage.toLocaleString()} {t('units.km')}
                 </Text>

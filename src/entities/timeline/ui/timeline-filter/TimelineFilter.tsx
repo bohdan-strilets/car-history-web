@@ -57,7 +57,7 @@ export const TimelineFilter = ({ value, onChange }: TimelineFilterProps) => {
                 name={option.icon ?? 'circleQuestionMark'}
                 size="sm"
                 color={isActive ? 'onColor' : option.color}
-                strokeWidth="medium"
+                weight="bold"
               />
               <Text
                 size="sm"

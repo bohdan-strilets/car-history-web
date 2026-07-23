@@ -38,7 +38,7 @@ export const MaintenanceDetail = ({
         <IconBox
           name={typeConfig?.icon ?? 'wrench'}
           soft={typeConfig?.color ?? 'gray'}
-          strokeWidth="medium"
+          weight="bold"
           size="2xl"
         />
         <Stack gap="xs">

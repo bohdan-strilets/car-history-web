@@ -32,14 +32,14 @@ export const MilestonesCard = ({ milestone }: MilestonesCardProps) => {
       <Stack direction="row" align="start" gap="xl">
         <IconBox
           name={config?.icon ?? 'circleQuestionMark'}
-          strokeWidth="medium"
+          weight="bold"
           gradient={config?.color}
           size={isTabletUp ? '3xl' : '2xl'}
           shadow={config?.color}
         />
         <Stack gap="sm">
           <Stack direction="row" align="center" gap="sm">
-            <Icon name="star" strokeWidth="bold" color={config?.color} />
+            <Icon name="star" weight="bold" color={config?.color} />
             <Text
               weight="bold"
               transform="uppercase"
@@ -55,7 +55,7 @@ export const MilestonesCard = ({ milestone }: MilestonesCardProps) => {
           </Text>
 
           <Text
-            weight="extraBold"
+            weight="bold"
             size={isTabletUp ? '2xl' : 'xl'}
             color={config?.color}
             family="heading"
@@ -69,13 +69,13 @@ export const MilestonesCard = ({ milestone }: MilestonesCardProps) => {
 
           <Stack direction="row" align="center" gap="xl">
             <Stack direction="row" align="center" gap="sm">
-              <Icon name="calendar" size="sm" strokeWidth="medium" />
+              <Icon name="calendar" size="sm" weight="bold" />
               <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                 {formatDate(achievedAt)}
               </Text>
             </Stack>
             <Stack direction="row" align="center" gap="sm">
-              <Icon name="road" size="sm" strokeWidth="medium" />
+              <Icon name="road" size="sm" weight="bold" />
               <Text weight="bold" size={isTabletUp ? 'md' : 'sm'}>
                 {milestone.mileage.toLocaleString()} {t('units.km')}
               </Text>

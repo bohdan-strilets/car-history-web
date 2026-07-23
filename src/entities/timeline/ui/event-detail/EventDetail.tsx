@@ -66,7 +66,7 @@ export const EventDetail = ({ event, onEdit, onDelete, canDelete = true }: Event
         <IconBox
           name={config?.icon ?? 'circleQuestionMark'}
           soft={config?.color ?? 'gray'}
-          strokeWidth="medium"
+          weight="bold"
           size="2xl"
         />
         <Stack gap="xs">
